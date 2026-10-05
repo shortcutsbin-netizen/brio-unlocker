@@ -1,3 +1,11 @@
+# Current continuation — V42, 2026-10-05
+
+V41 has now been run and analyzed; authenticated repository read/write succeeds. Current source is `src/brio.js`, payload `dist/brio-v42.min.js`, archive `versions/brio-v42.min.js`. Read the current V42 addenda in both knowledge documents, `docs/v42-findings.md`, latest full logs plus labeled observations, and `docs/v42-test-procedure.md`. V42 has source/minified integrated mock regression checks, but no live visual confirmation. Preserve built features and require relevant regression coverage whenever their dependencies change. The current test has ten blue flags (including Transparent roofs) and three action types: MATCH START, native emote wheel use, post-expiry full-map inspection.
+
+This current paragraph supersedes older pending-V41/access and documentation-only stopping instructions below; all remaining scope, UI, performance, evidence and delivery requirements still apply. Preserve old versions/logs and exact historical appendices. No prototype-only assumption for native container methods; observe actual reached instances with bounded coverage and report disconnected roots as unresolved. Do not promote mocks into visual proof.
+
+---
+
 # AGENTS.md — BRIO Unlocker project instructions
 
 Snapshot date: 2026-10-05. Repository: https://github.com/shortcutsbin-netizen/brio-unlocker .

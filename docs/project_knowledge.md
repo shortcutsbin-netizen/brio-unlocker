@@ -1,3 +1,17 @@
+# Current project update — V42, 2026-10-05
+
+This update supersedes the pending-V41 and next-thread access directions in the preserved 2026-10-05 handoff below. V41 has been run; latest full log is `logs/v41-log.txt`, accompanied by `logs/v41-2026-10-05-observations.md`. Read `docs/v42-findings.md` for exact evidence and limitations and `docs/v42-test-procedure.md` for the next run. No V42 live visual pass is established.
+
+Authenticated GitHub integration read and write succeeded in this thread (authenticated user shortcutsbin-netizen, push permission, existing AGENTS blob written). Current source: `src/brio.js`; complete plain Console payload: `dist/brio-v42.min.js`; archive: `versions/brio-v42.min.js`. Exact V41 appendix SHA-256 values were verified before recovering source; uploaded `dist/v41.js` matches the corrected payload except its terminal newline. Earlier versions and complete raw logs remain intact.
+
+V42 preserves feature/UI scope and adds regressions coverage, per-category cosmetic logs/failure isolation/scoped renderer adapters, four-slot emote activation/restoration, white outlined text and upright shaft-following labels, native scaled numeric clipping, own-container meteor observers with retry, and bounded already-present scene/roof discovery. Automatic meteor and roof reachability require live testing; successful native hold in V40 remains proven, new acquisition remains yellow. Source registration field/reference audits continue contents/bot recon without invented contents/NONE/classification. See findings for fixture coverage and exact limits.
+
+Carry forward the user's invariant: built features remain present, and changes to proven paths require regression coverage. This is a development contract, not a promise of zero runtime failures. Existing persistent selections/custom uploads, native multiplayer authority, established home/Extras UI and three-action limit remain binding. Next work starts with V42 logs/observations, retaining every unresolved roadmap item.
+
+The complete original handoff and literal source/log archives below remain historical evidence. Current source resides in the repository; do not recover V41 and silently treat it as the latest release.
+
+---
+
 # BRIO Unlocker — Project knowledge and complete continuation handoff
 
 Snapshot date: 2026-10-05. Repository: https://github.com/shortcutsbin-netizen/brio-unlocker .

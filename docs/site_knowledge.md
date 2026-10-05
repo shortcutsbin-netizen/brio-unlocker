@@ -1,3 +1,19 @@
+# Current site update — V42, 2026-10-05
+
+This update supersedes the pending-V41 status in the preserved snapshot below. The deployed bundle recorded in the V41 run is still `/js/uOfrVi.js`, 764701 characters; obfuscated fields remain deployment-specific. V41 observed a native meteorite, airdrop and fishing bubbles, but acquired no meteor map hold and captured zero roofs. V40 marker parent evidence lists native `add`, front-add and remove methods as own properties. A prototype-only add search is insufficient for that observed shape.
+
+V42 observes own or inherited native add/front-add methods on actual reached container instances (96-container cap), retains return values/descriptors, and performs bounded scene scans (3000-node limit, 1000ms) rooted in captured container ancestry/arrays and shape-validated own window data properties once per run. Does not invoke window getters, but no claim that private disconnected map roots are reachable. Scene coverage is logged. Already-present recognized roof drawables are eligible; unloaded art is not replaced with a 1×1 blank. Candidates lacking a parent remain retryable. V40 retention mechanism is retained; automatic acquisition needs live proof.
+
+Cosmetic adapters affect local drawable resources/approved visual fields, with latest native writes restored at cleanup; selected pickaxe art is applied only when held item is a pickaxe. Four emote selections preserve the exact icon-path exception and map an already-active native effect once assets resolve. Selected category modes/IDs and independent failures are logged. Native network, entitlement and remote cosmetic authority remain unchanged.
+
+Numbers use their respective native bar coordinates divided by the native draw scale, white fill/black rounded outline, interior clipping, fitted fonts and tiny-geometry suppression. Indicator labels remain contained, white/black outline, meter units, arrow-following rotation with only a 180° adjustment outside ±90°. Colors/fresh affine projection/active-target suppression remain unchanged. Live appearance is pending.
+
+V41 bot source terms were cosmetic Robot/robot catalog entries, not AI fields. MATCH START did establish phase separation; no classifier follows. Container removals and nearby loot still do not establish pre-open contents/NONE. V42 captures bounded registration field mappings and reference excerpts for player/chest/object/spellfield, with offsets/truncation; these require source/runtime attribution. All previous unresolved routes and retired failed routes remain as documented. See `docs/v42-findings.md` and test procedure.
+
+The original full field map, source evidence and historical archive follow.
+
+---
+
 # Build Royale — Current site/runtime knowledge
 
 Snapshot date: 2026-10-05. Repository: https://github.com/shortcutsbin-netizen/brio-unlocker .
