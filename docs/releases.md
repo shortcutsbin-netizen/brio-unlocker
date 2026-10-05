@@ -1,3 +1,9 @@
+# V45 release update
+
+Current source src/brio.js; direct payload dist/brio-v45.min.js; identical archive versions/brio-v45.min.js. Previous dist/brio-v44.min.js duplicate removed with identical versions/brio-v44.min.js preserved (SHA-25691ec386f5aabd4cffe37b135e0c234484cde38b233dcdf1748d6d7b238d21881). User-uploaded logs/v44-log.txt and docs/engine.js retain exact bytes and their existing remote history. No historical release is overwritten.
+
+---
+
 # Release paths
 
 `src/brio.js` is current editable source. `dist/` contains the current complete plain Console payload. `versions/` preserves released bytes under consistent names.

@@ -1,7 +1,9 @@
 # BRIO Unlocker
 
-Current release: **V44**. Complete plain DevTools Console script: [dist/brio-v44.min.js](dist/brio-v44.min.js). Open it, **Copy raw file** or **Raw → select all/copy**, then paste the complete script on Build Royale home. Ordinary Play is sufficient; there is no MATCH START action.
+Current release: **V45**. Complete plain Console script: [dist/brio-v45.min.js](dist/brio-v45.min.js). Use **Copy raw file** or **Raw → select all/copy**, paste on Build Royale home, and use normal Play. No manual match-start/probe arm.
 
-Current readable source: [src/brio.js](src/brio.js). [Live test](docs/v44-test-procedure.md), [findings](docs/v44-findings.md), [all-feature status](docs/v44-status.md), [release path map](docs/releases.md). Native asset/HUD acquisition, warnings, equal shield height and dual meteor retention changed; live visual confirmation remains pending. Contents/bots remain unresolved, not impossible.
+[Source](src/brio.js) · [Live test](docs/v45-test-procedure.md) · [Findings and detailed contents/bot assessment](docs/v45-findings.md) · [All-feature status](docs/v45-status.md) · [Raw native engine reference](docs/engine.js) · [Static engine analysis](docs/v45-engine-analysis.json) · [Release path map](docs/releases.md).
 
-Local visual customization only; native network/ownership remain native. Source and direct payload pass ten integrated mock scenarios; mocks do not prove live game pixels. Run `npm ci`, `npm run build`, `npm test`. Current dist only; immutable historical bytes under versions/. Complete logs under logs/ and both knowledge histories under docs/ are preserved.
+V44 user confirms meteor, bars/numbers, low-health warning, distance indicators and remote warning numbers. V45 corrects native HUD/stack acquisition and own borders, native asset/geometry/font/opacity replication, empty-slot X and optional arrow name; live comparison pending. It maximizes passive contents/bot evidence through complete source/AST, native decoder result observation and lifecycle metadata. Those two features remain unresolved, not proven impossible.
+
+Local visual customization only; native protocol/ownership remain unchanged. Eighteen integrated source/payload scenarios pass, including real engine parsing with mock HUD rendering. `npm ci`, `npm run build`, `npm test`; static reference analysis `node tools/analyze-engine.cjs`. Prior versions/logs/reference source are preserved. Current dist only; immutable old releases in versions/. [Third-party parser license](THIRD_PARTY_NOTICES.md).
