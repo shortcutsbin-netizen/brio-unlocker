@@ -1,12 +1,12 @@
 (() => {
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v43";
-    for (const k of [ K, "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
+    const W = window, D = document, K = "__brio_unlocker_v44";
+    for (const k of [ K, "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
         W[k]?.destroy?.();
     } catch (_) {}
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "43",
+        v: "44",
         log: [],
         errors: [],
         renderer: null,
@@ -174,7 +174,7 @@
     };
     const STATUS = {
         green: new Set([ "playersInvisible", "lootInvisible", "buildsInvisible", "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventorySlots", "inventoryMaterials", "inventoryAmmo", "inventorySize", "permanentMeteor" ]),
-        yellow: new Set([ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "nearestPlayer", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "noChestsVisible", "noFoliage", "transparentFoliage", "monochrome", "highlightLoot", "cleanLoot", "highContrastPlayers", "buildMaterialLabels", "deployableLabels", "deployableRadius" ])
+        yellow: new Set([ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "nearestPlayer", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "lowAmmoWarning", "noChestsVisible", "noFoliage", "transparentFoliage", "monochrome", "highlightLoot", "cleanLoot", "highContrastPlayers", "buildMaterialLabels", "deployableLabels", "deployableRadius" ])
     }, statusOf = id => STATUS.yellow.has(id) ? "yellow" : STATUS.green.has(id) ? "green" : "red";
     const style = D.createElement("style");
     style.textContent = `#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
@@ -348,9 +348,9 @@
     };
     const EXTRA = {
         challenges: [ [ "playersInvisible", "All players invisible", "remote players only" ], [ "lootInvisible", "Loot invisible", "includes pickup visuals when complete" ], [ "buildsInvisible", "Builds invisible", "walls + special deployables + placement preview" ], [ "noMinimap", "No minimap", "planned" ], [ "noCrosshair", "No crosshair", "planned" ], [ "noInventoryHud", "No inventory/item bar", "planned" ], [ "invisibleStorm", "Invisible storm", "hide zone on minimap + full map" ], [ "noChestsVisible", "Chests invisible", "chests + ammo/grenade crates · test" ], [ "noFoliage", "Foliage invisible", "identified native entities · test" ], [ "noHealthShieldHud", "No health/shield HUD", "planned" ], [ "monochrome", "Monochrome vision", "game canvas grayscale · test" ], [ "flashlightMode", "Flashlight mode", "configurable radius; mouse/player follow" ] ],
-        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "highlightLoot", "Highlight loot", "native yellow pickup ring · test" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · test" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "normal + legendary + ammo/grenade crates · active" ], [ "screenAirdrops", "Screen airdrops", "contents + object identity · active" ], [ "screenFishing", "Screen fishing spots", "contents; NONE is a valid result · active" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · test" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "native yellow silhouette ring · test" ], [ "cleanLoot", "Remove loot glow/effects", "identified glow resource only · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "buildMaterialLabels", "Build material labels", "wood/brick/metal from native sprite · test" ], [ "deployableLabels", "Deployable labels", "campfire/boostpad/shield/drill · test" ], [ "deployableRadius", "Deployable effect-radius display", "current native spellfield radius · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP ≤30; red glowing/flashing player outline" ], [ "lowAmmoWarning", "Low-ammo visual warning", "magazine + ammo-type mapping recon" ], [ "lowMatsWarning", "Low-material warning", "own HUD: each wood/brick/metal count <30; red flashing outline" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "native widget replica; capture/layout testing", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / special", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + counts", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
+        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "highlightLoot", "Highlight loot", "native yellow pickup ring · test" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · test" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "normal + legendary + ammo/grenade crates · active" ], [ "screenAirdrops", "Screen airdrops", "contents + object identity · active" ], [ "screenFishing", "Screen fishing spots", "contents; NONE is a valid result · active" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · test" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "native yellow silhouette ring · test" ], [ "cleanLoot", "Remove loot glow/effects", "identified glow resource only · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "buildMaterialLabels", "Build material labels", "wood/brick/metal from native sprite · test" ], [ "deployableLabels", "Deployable labels", "campfire/boostpad/shield/drill · test" ], [ "deployableRadius", "Deployable effect-radius display", "current native spellfield radius · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP ≤30; red glowing/flashing player outline" ], [ "lowAmmoWarning", "Low-ammo visual warning", "remote ammo-type values <20 flash red · test" ], [ "lowMatsWarning", "Low-material warning", "own material outline + remote values <30 flash red · test" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "captured native assets/geometry; appearance testing", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / special", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + counts", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
     };
-    const REQUIRED_TESTS = [ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "healthBars", "nearestPlayer", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "identifyBots" ];
+    const REQUIRED_TESTS = [ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "healthBars", "nearestPlayer", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "lowAmmoWarning", "identifyBots" ];
     const renderExtras = () => {
         const a = extras.querySelector(".brioTabs"), p = extras.querySelector(".brioPage"), s = extrasState();
         if (![ "small", "medium", "large", "xl" ].includes(s.inventorySize)) {
@@ -680,6 +680,98 @@
             }
         }
         return roots;
+    };
+    const renderArrays = new Map;
+    let renderDiscovery = null, renderSeen = new WeakSet;
+    const nativeDrawable = n => !!(n && typeof n === "object" && !n.__brioHudClone && !String(n.type || "").startsWith("brio") && typeof n["éa"] === "function" && Array.isArray(n["âè"]) && n["ë"]);
+    const observeRendered = n => {
+        if (!nativeDrawable(n) || renderSeen.has(n)) return;
+        renderSeen.add(n);
+        try {
+            meteorCandidate(n);
+            hudCandidate(n);
+            sceneObserve(n.parent);
+            sceneObserve(n);
+            if (!n["À"] && !n.canvas && !("text" in n) && typeof n.add === "function") {
+                observeRenderArray(n["âè"], true);
+                if (Array.isArray(n["ÉE"])) observeRenderArray(n["ÉE"], true);
+            }
+        } catch (_) {}
+    };
+    const observeRenderArray = (a, nativeOwner = false) => {
+        if (renderArrays.has(a) || renderArrays.size >= 128 || !nativeOwner && (!a.length || !a.slice(0, 3).some(nativeDrawable))) return;
+        const restores = [];
+        for (const key of [ "forEach", "push", "unshift" ]) {
+            const d = Object.getOwnPropertyDescriptor(a, key), orig = key === "forEach" && a[key] === renderDiscovery?.wrap ? renderDiscovery.desc.value : a[key];
+            if (typeof orig !== "function" || d && (!d.configurable || !("value" in d))) continue;
+            const wrap = key === "forEach" ? function(callback, receiver) {
+                return Reflect.apply(orig, this, [ function(n, i, array) {
+                    observeRendered(n);
+                    return Reflect.apply(callback, receiver, [ n, i, array ]);
+                } ]);
+            } : function(...nodes) {
+                const result = Reflect.apply(orig, this, nodes);
+                for (const n of nodes) {
+                    observeRendered(n);
+                    meteorCandidate(n, this);
+                    hudCandidate(n);
+                }
+                return result;
+            };
+            Object.defineProperty(a, key, {
+                configurable: true,
+                writable: true,
+                enumerable: d?.enumerable ?? false,
+                value: wrap
+            });
+            restores.push(() => {
+                if (a[key] === wrap) {
+                    if (d) Object.defineProperty(a, key, d); else delete a[key];
+                }
+            });
+        }
+        renderArrays.set(a, restores);
+        for (const n of a) observeRendered(n);
+    };
+    const stopRenderDiscovery = () => {
+        if (!renderDiscovery) return;
+        if (Array.prototype.forEach === renderDiscovery.wrap) Object.defineProperty(Array.prototype, "forEach", renderDiscovery.desc);
+        clearTimeout(renderDiscovery.timer);
+        renderDiscovery = null;
+        log("NATIVE RENDER DISCOVERY RESTORED", {
+            arrays: renderArrays.size,
+            cap: 128
+        });
+    };
+    const restoreRenderArrays = () => {
+        for (const restores of renderArrays.values()) for (const restore of restores.reverse()) restore();
+        renderArrays.clear();
+        renderSeen = new WeakSet;
+    };
+    const startRenderDiscovery = reason => {
+        stopRenderDiscovery();
+        const desc = Object.getOwnPropertyDescriptor(Array.prototype, "forEach"), orig = desc.value;
+        const wrap = function(callback, receiver) {
+            try {
+                observeRenderArray(this);
+            } catch (_) {}
+            return Reflect.apply(orig, this, [ callback, receiver ]);
+        };
+        Object.defineProperty(Array.prototype, "forEach", {
+            ...desc,
+            value: wrap
+        });
+        renderDiscovery = {
+            desc: desc,
+            wrap: wrap,
+            timer: setTimeout(stopRenderDiscovery, 12e3)
+        };
+        log("NATIVE RENDER DISCOVERY", {
+            reason: reason,
+            durationMs: 12e3,
+            cap: 128,
+            surface: "native drawable child-array traversal; no Canvas hook"
+        });
     };
     const applyLocal = async () => {
         const r = S.renderer;
@@ -1013,7 +1105,7 @@
             rect: rect
         };
     }, nearestTick = () => nearestV40();
-    const hudKinds = path => /\/inv[0-6]\.png$/.test(path) ? "slots" : /\/(?:wood|brick|metal|scrap)\.png$/.test(path) ? "materials" : /\/ammo[0-4]\.png$/.test(path) ? "ammo" : null;
+    const hudKinds = path => /\/inv[0-6]\.png$/.test(path) ? "slots" : /\/(?:wood|brick|metal|scrap|gear)\.png$/.test(path) ? "materials" : /\/ammo[0-4]\.png$/.test(path) ? "ammo" : null;
     const hudWalk = (root, max = 100) => {
         const out = [], seen = new Set, stack = [ root ];
         while (stack.length && out.length < max) {
@@ -1047,12 +1139,12 @@
     };
     const hudInspect = n => {
         const path = hudPath(n), kind = hudKinds(path);
+        if (path && n?.["À"]?.["ÁÄ"]) (S.hudNativeImages || (S.hudNativeImages = new Map)).set(path, n["À"]["ÁÄ"]);
         if (!kind || S.hudSourceNodes?.has(n) || (S.hudInspectionCount || 0) >= 80) return;
-        S.hudInspectionCount = (S.hudInspectionCount || 0) + 1;
         if (!S.hudSourceNodes) S.hudSourceNodes = new WeakSet;
         let anchor = kind === "slots" ? n : null, p = n.parent;
-        for (let depth = 0; !anchor && p && depth < 5; depth++, p = p.parent) {
-            const nodes = hudWalk(p, 180);
+        for (let depth = 0; !anchor && p && depth < 8; depth++, p = p.parent) {
+            const nodes = hudWalk(p, 800);
             if (nodes.some(x => hudKinds(hudPath(x)) === "slots")) anchor = p;
         }
         if (!anchor) {
@@ -1061,6 +1153,7 @@
             }
             return;
         }
+        S.hudInspectionCount = (S.hudInspectionCount || 0) + 1;
         let unit = n;
         for (let p = n.parent, depth = 0; p && depth < 3; depth++, p = p.parent) {
             const nodes = hudWalk(p, 80), icons = nodes.filter(x => hudKinds(hudPath(x)) === kind);
@@ -1092,13 +1185,14 @@
         S.hudStatus = {
             captured: true,
             counts: Object.fromEntries(Object.entries(S.hudTemplates).map(([k, v]) => [ k, v.length ])),
-            replica: "native constructors/geometry; visual proof pending"
+            replica: "captured native assets/geometry/draw methods; visual proof pending"
         };
         log("NATIVE HUD WIDGET", {
             kind: kind,
             path: path,
             rootType: unit.type,
             rootKeys: Object.keys(unit).slice(0, 70),
+            nativeDraw: String(n["Eââ"] || "").slice(0, 1400),
             constructor: typeof sourceCtor === "function" ? String(sourceCtor).slice(0, 1800) : null,
             nodes: nodes.map(x => ({
                 type: x.type,
@@ -1148,7 +1242,6 @@
     };
     const ownMaterialWarnings = () => {
         if (!S.renderer || !S.hudTemplates) return;
-        const mats = matState(S.renderer);
         for (const rec of S.hudTemplates.materials) {
             const i = [ "wood", "brick", "metal" ].findIndex(k => rec.path.endsWith("/" + k + ".png"));
             if (i < 0 || !rec.root?.add || S.hudWarnNodes?.has(rec.root)) continue;
@@ -1185,10 +1278,20 @@
         const clone = n => {
             if (++count > 80 || seen.has(n)) throw Error("native HUD widget cycle/limit");
             const C = n.constructor;
-            if (typeof C !== "function" || C === Object || C === W.Object) throw Error("native HUD constructor unavailable");
+            if (typeof C !== "function") throw Error("native HUD constructor unavailable");
             let args;
             if (n["À"]) args = [ n["À"], 0, 0, n.width, n.height, n.opacity ]; else if (n.type === "text" || typeof n.text === "string") args = [ n.text, 0, 0, n.fillStyle || n["Äe"] || "#fff", n.fontFamily || "Arial", n.fontSize || 16, n.fontWeight || "bold", n.opacity, n.textAlign || "center" ]; else if (n.type === "arc") args = [ 0, 0, n["éã"], n["Äe"], n.endAngle || Math.PI * 2, n.startAngle || 0, n.lineWidth ]; else if (n.width !== undefined && n.height !== undefined) args = [ 0, 0, n.width, n.height, n["Äe"] || n.fillStyle, n.opacity ]; else args = [];
-            const c = Reflect.construct(C, args);
+            const plain = C === Object || C === W.Object || C.name === "Object";
+            const c = plain ? Object.create(Object.getPrototypeOf(n)) : Reflect.construct(C, args);
+            if (plain) {
+                c["âè"] = [];
+                c["ÉE"] = [];
+                c["ë"] = {
+                    "É": 0,
+                    "Ä": 0
+                };
+                for (const k of Object.keys(n)) if (typeof n[k] === "function") c[k] = n[k];
+            }
             c.__brioHudClone = true;
             seen.set(n, c);
             for (const [k, v] of Object.entries(n)) {
@@ -1202,7 +1305,23 @@
                 c["ë"]["É"] = n["ë"]["É"];
                 c["ë"]["Ä"] = n["ë"]["Ä"];
             }
-            if ("text" in n) c.text = n.text;
+            if ("text" in n) {
+                c.text = n.text;
+                if (plain) {
+                    c.type = "brioHudText";
+                    c["Eââ"] = function(ctx, scale) {
+                        drawHudText(ctx, this.text, 0, 0, scale, this.__brioLow, this.__brioFont || 8);
+                    };
+                    c["éa"] = function(ctx, scale, alpha = 1) {
+                        ctx.save();
+                        ctx.translate(this["ë"].É / scale, this["ë"].Ä / scale);
+                        ctx.globalAlpha *= alpha;
+                        this["Eââ"](ctx, scale);
+                        ctx.restore();
+                    };
+                    c.__brioFont = Number(n.fontSize) || Math.max(8, Number(n.height) || 14);
+                }
+            }
             pairs.push({
                 source: n,
                 node: c,
@@ -1221,6 +1340,37 @@
             record: rec
         };
     };
+    const ensureNativeSlotArt = unit => {
+        if (unit.pairs.some(p => p.path && !hudKinds(p.path))) return;
+        const background = unit.pairs.find(p => /\/inv[0-6]\.png$/.test(p.path));
+        if (!background || typeof unit.root.add !== "function") return;
+        const source = background.source, art = Object.create(Object.getPrototypeOf(background.node));
+        for (const [key, value] of Object.entries(background.node)) if (![ "parent", "ë", "âè", "ÉE", "canvas" ].includes(key)) art[key] = value;
+        art.__brioHudClone = true;
+        art["ë"] = {
+            "É": 0,
+            "Ä": 0
+        };
+        art["âè"] = [];
+        art["ÉE"] = [];
+        art.width = Math.abs(Number(source.width)) * .7;
+        art.height = Math.abs(Number(source.height)) * .7;
+        art.A = 0;
+        art.opacity = 1;
+        unit.root.add(art);
+        unit.pairs.push({
+            source: source,
+            node: art,
+            path: "brio-item-template"
+        });
+        if (!S.emptySlotArtLogged) {
+            S.emptySlotArtLogged = true;
+            log("NATIVE EMPTY SLOT ART", {
+                mode: "native background drawable/image protocol; item art at native consumable 70% ratio",
+                note: "Weapon-specific native geometry needs live/source confirmation; empty lobby slots must still populate."
+            });
+        }
+    };
     const nativeInvFor = r => {
         if (!S.hudTemplates?.slots?.length) return null;
         if (!S.nativeInvClones) S.nativeInvClones = new Map;
@@ -1233,7 +1383,9 @@
         for (const [kind, raw] of Object.entries(S.hudTemplates)) {
             const sorted = raw.slice().sort((a, b) => a.x - b.x || a.y - b.y), templates = kind === "slots" ? sorted.slice(-5) : sorted, units = [];
             for (const rec of templates) try {
-                units.push(cloneNativeWidget(rec));
+                const unit = cloneNativeWidget(rec);
+                if (kind === "slots") ensureNativeSlotArt(unit);
+                units.push(unit);
             } catch (e) {
                 if (!rec.unavailable) {
                     rec.unavailable = true;
@@ -1283,25 +1435,29 @@
             row.units.forEach((u, i) => {
                 const b = hudBounds(u.record);
                 let value;
-                const material = [ "wood", "brick", "metal", "scrap" ].findIndex(k => u.record.path.endsWith("/" + k + ".png")), ammoIndex = +(u.record.path.match(/ammo([0-4])/) || [])[1];
+                const material = [ "wood", "brick", "metal", "scrap" ].findIndex(k => u.record.path.endsWith("/" + k + ".png") || k === "scrap" && u.record.path.endsWith("/gear.png")), ammoIndex = +(u.record.path.match(/ammo([0-4])/) || [])[1];
                 if (row.kind === "materials") value = m[material];
                 if (row.kind === "ammo") value = ammo[ammoIndex];
                 for (const pair of u.pairs) {
-                    if (value !== undefined && (pair.source.type === "text" || typeof pair.source.text === "string") && /^\d+$/.test(String(pair.source.text))) pair.node.text = String(value);
+                    if (row.kind !== "slots" && (pair.source.type === "text" || typeof pair.source.text === "string") && /^\d+$/.test(String(pair.source.text))) {
+                        pair.node.text = Number.isFinite(value) ? String(value) : "?";
+                        pair.node.__brioLow = Number.isFinite(value) && (row.kind === "materials" ? ex.lowMatsWarning && material < 3 && value < 30 : row.kind === "ammo" && ex.lowAmmoWarning && value < 20);
+                        if (pair.node.__brioLow && "fillStyle" in pair.node && pair.source.fillStyle !== "#000") pair.node.fillStyle = warningColor(true); else if ("fillStyle" in pair.source) pair.node.fillStyle = pair.source.fillStyle;
+                    }
                     if (row.kind === "slots" && /\/inv[0-6]\.png$/.test(pair.path)) {
                         const rarity = Number(slots[i]?.["äã"]);
                         if (Number.isFinite(rarity) && rarity >= 0 && rarity <= 6) {
                             const path = "/buildart/inv" + rarity + ".png";
                             pair.node["À"] = {
                                 src: path,
-                                "ÁÄ": invImage(path)
+                                "ÁÄ": S.hudNativeImages?.get(path) || invImage(path)
                             };
                         }
                     }
-                    if (row.kind === "slots" && pair.path && !/\/inv[0-6]\.png$/.test(pair.path)) {
+                    if (row.kind === "slots" && pair.path && !hudKinds(pair.path)) {
                         const path = itemPath(slots[i]?.type);
                         if (path) {
-                            const im = invImage(path);
+                            const im = S.hudNativeImages?.get(path) || invImage(path);
                             pair.node["À"] = {
                                 src: path,
                                 "ÁÄ": im
@@ -1340,6 +1496,7 @@
         } catch (_) {}
         S.nativeInvClones?.clear();
         S.hudTemplates = null;
+        S.hudNativeImages?.clear();
         S.hudSourceNodes = new WeakSet;
         S.hudRejected = new WeakSet;
         S.hudInspectionCount = 0;
@@ -1349,6 +1506,7 @@
         S.hudVersion = 0;
         S.hudPending = new WeakSet;
         S.hudInspectError = false;
+        S.emptySlotArtLogged = false;
         S.sceneStartError = false;
         S.sceneSkipped = 0;
     };
@@ -1357,15 +1515,7 @@
         medium: 1.25,
         large: 1.625,
         xl: 2.0625
-    }, invScale = () => INV_SCALE[extrasState().inventorySize] || 1.25, NATIVE_INV_BG = {
-        feesh: 1,
-        flexsplash: 3,
-        rpg: 2,
-        silencedpistol: 0,
-        aug: 3,
-        flaregun: 6,
-        scar: 2
-    }, invImage = p => {
+    }, invScale = () => INV_SCALE[extrasState().inventorySize] || 1.25, invImage = p => {
         let im = S.invAssets.get(p);
         if (im) return im;
         im = new Image;
@@ -1389,28 +1539,28 @@
     }, itemPath = type => {
         const raw = String(type || "").toLowerCase().trim();
         if (!raw || raw === "empty" || raw === "pickaxe") return null;
-        return `/buildart/${raw.replace(/[^a-z0-9]/g, "")}.png`;
+        return S.hudAssetPaths?.get(raw) || `/buildart/${raw.replace(/[^a-z0-9]/g, "")}.png`;
     }, matState = r => {
         const a = Array.isArray(r?.["ÊÃÄ"]) ? r["ÊÃÄ"] : Array.isArray(r?.["Äâã"]) ? r["Äâã"] : [];
-        return [ a[0] ?? 0, a[1] ?? 0, a[2] ?? 0, a[3] ?? 0 ];
+        return [ a[0], a[1], a[2], a[3] ];
     }, drawImg = (ctx, p, x, y, w, h, s) => {
         if (!p) return;
-        const im = invImage(p);
+        const im = S.hudNativeImages?.get(p) || invImage(p);
         if (im.complete && im.naturalWidth) try {
             ctx.drawImage(im, x / s, y / s, w / s, h / s);
         } catch (_) {}
-    }, drawTxt = (ctx, v, x, y, s) => {
+    }, warningColor = low => low && Math.sin(performance.now() / 140) >= 0 ? "#ff2020" : "#fff", drawHudText = (ctx, v, x, y, s, low = false, size = 8) => {
         ctx.save();
-        ctx.font = `${Math.max(5, 8 / s)}px Arial Black`;
+        ctx.font = `${Math.max(3, size / s)}px "Arial Black"`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.lineWidth = Math.max(.5, 2 / s);
         ctx.strokeStyle = "#000";
-        ctx.fillStyle = "#fff";
+        ctx.fillStyle = warningColor(low);
         ctx.strokeText(String(v), x / s, y / s);
         ctx.fillText(String(v), x / s, y / s);
         ctx.restore();
-    }, drawInv = (ctx, scale, r) => {
+    }, drawTxt = (ctx, v, x, y, s, low = false) => drawHudText(ctx, v, x, y, s, low), drawInv = (ctx, scale, r) => {
         const drawn = drawNativeInv(ctx, scale, r) || new Set;
         const ex = extrasState(), rows = [];
         if (ex.inventorySlots) rows.push("slots");
@@ -1425,7 +1575,7 @@
             if (row === "slots") {
                 const slots = Array.isArray(r["Åé"]) ? r["Åé"].slice(1, 6) : [], sz = 18, g = 2, x0 = -(sz * 5 + g * 4) / 2;
                 for (let i = 0; i < 5; i++) {
-                    const sl = slots[i], x = x0 + i * (sz + g), key = String(sl?.type || "").toLowerCase().replace(/[^a-z0-9]/g, ""), raw = Number(sl?.["äã"]), bg = NATIVE_INV_BG[key] ?? (Number.isFinite(raw) && raw >= 0 && raw <= 6 ? raw : 0);
+                    const sl = slots[i], x = x0 + i * (sz + g), key = String(sl?.type || "").toLowerCase().replace(/[^a-z0-9]/g, ""), raw = Number(sl?.["äã"]), bg = Number.isFinite(raw) && raw >= 0 && raw <= 6 ? raw : 0;
                     drawImg(ctx, `/buildart/inv${bg}.png`, x, yy, sz, sz, scale);
                     drawImg(ctx, itemPath(sl?.type), x + 1, yy + 1, sz - 2, sz - 2, scale);
                 }
@@ -1436,7 +1586,7 @@
                 vals.forEach(([p, v], i) => {
                     const x = x0 + i * cell;
                     drawImg(ctx, p, x, yy, 14, 14, scale);
-                    drawTxt(ctx, v, x + 21, yy + 7, scale);
+                    drawTxt(ctx, v ?? "?", x + 21, yy + 7, scale, ex.lowMatsWarning && i < 3 && Number.isFinite(v) && v < 30);
                 });
             } else {
                 const a = Array.isArray(r["åæ"]) ? r["åæ"].slice(0, 5) : [], cell = 27, x0 = -(cell * 5) / 2;
@@ -1445,7 +1595,7 @@
                 for (let i = 0; i < 5; i++) {
                     const x = x0 + i * cell;
                     drawImg(ctx, `/buildart/ammo${i}.png`, x, yy, 14, 14, scale);
-                    drawTxt(ctx, a[i] ?? 0, x + 20, yy + 7, scale);
+                    drawTxt(ctx, a[i] ?? "?", x + 20, yy + 7, scale, ex.lowAmmoWarning && Number.isFinite(a[i]) && a[i] < 20);
                 }
             }
             yy += 21;
@@ -1495,15 +1645,22 @@
         }
     };
     const restoreInvTrace = () => {};
-    const BOT_CLUSTER = [ "EÆÅ", "Éaê", "ÆÉÆ", "Áae", "áaá", "Éäæ", "ée", "ËÈä", "aAE", "áâÃ", "ËE", "ÈÆ" ], botPhase = () => {
+    const automaticPhase = () => {
+        const r = S.renderer;
+        if (r && S.botPhase !== "match" && Number.isFinite(r["ÀËá"]) && r["ÀËá"] >= 0 && Number.isFinite(r["âëä"]) && r["âëä"] > 0) botPhase("native glidingTicks/maxGlidingTicks");
+    };
+    const BOT_CLUSTER = [ "EÆÅ", "Éaê", "ÆÉÆ", "Áae", "áaá", "Éäæ", "ée", "ËÈä", "aAE", "áâÃ", "ËE", "ÈÆ" ], botPhase = reason => {
         if (S.botPhase === "match") return;
         S.botPhase = "match";
         S.botPhaseAt = performance.now();
         log("BOT PHASE", {
             phase: "match",
+            automatic: true,
+            evidence: reason,
             tracked: S.botWatch.size
         });
     }, botSample = () => {
+        automaticPhase();
         const now = performance.now(), me = worldPos(S.renderer);
         for (const r of collectPlayers().filter(x => !isLocal(x))) {
             if (!S.botLogged.has(r.id)) {
@@ -1585,7 +1742,7 @@
             botSample();
             botAuditTick();
         }, 500);
-        log("BOT WATCH", "START · phase-separated stable ID tracking; press MATCH START at transition");
+        log("BOT WATCH", "START · automatic native gliding-state phase detection");
     }, botStop = () => {
         if (!S.botTimer) return;
         clearInterval(S.botTimer);
@@ -1698,17 +1855,24 @@
         if (S.meteorAutoTimer) clearInterval(S.meteorAutoTimer);
         S.meteorAutoTimer = 0;
     }, meteorCandidate = (node, array = []) => {
-        const path = norm(node?.icon?.["À"]?.src || node?.icon?.["À"]?.["ÁÄ"]?.src || "");
-        if (extrasState().permanentMeteor && path === "/buildart/ping-meteor-icon.png" && !S.meteorSeen?.has(node) && !S.meteorPending?.has(node)) {
+        const path = norm(node?.icon?.["À"]?.src || node?.icon?.["À"]?.["ÁÄ"]?.src || node?.["À"]?.src || node?.["À"]?.["ÁÄ"]?.src || "");
+        if (path === "/buildart/ping-meteor-icon.png" && node.parent?.icon === node) node = node.parent;
+        if (extrasState().permanentMeteor && [ "/buildart/ping-meteor-icon.png", "/buildart/ping-meteor.png" ].includes(path) && !S.meteorSeen?.has(node) && !S.meteorPending?.has(node)) {
             (S.meteorPending || (S.meteorPending = new WeakSet)).add(node);
             holdMeteor(node, array);
         }
     }, meteorScan = () => {
         if (!S.renderer || !extrasState().permanentMeteor && !extrasState().lowMatsWarning && (!extrasState().transparentRoofs || S.roofSaved.size === 21)) return;
-        const seen = new Set, stack = [ ...sceneRoots() ];
+        if (!S.sceneQueue || (S.sceneQueueAt || 0) >= S.sceneQueue.length) {
+            S.sceneQueue = [ ...sceneRoots() ];
+            S.sceneQueueAt = 0;
+            S.sceneQueueSeen = new WeakSet;
+        }
+        const seen = S.sceneQueueSeen, stack = S.sceneQueue;
         let visits = 0;
-        while (stack.length && visits++ < 3e3) {
-            const x = stack.pop();
+        while (S.sceneQueueAt < stack.length && visits < 3e3) {
+            visits++;
+            const x = stack[S.sceneQueueAt++];
             if (!x || typeof x !== "object" || seen.has(x)) continue;
             seen.add(x);
             try {
@@ -1724,7 +1888,7 @@
         }
         S.sceneScan = {
             visits: visits,
-            limitReached: stack.length > 0,
+            limitReached: S.sceneQueueAt < stack.length,
             roots: S.sceneRoots?.size || 0,
             observers: S.meteorObservers?.size || 0,
             skipped: S.sceneSkipped || 0
@@ -1770,7 +1934,7 @@
         try {
             if (e.playerNames && r["ÃÊ"]) r["ÃÊ"].opacity = 1;
             if ((e.healthBars || e.numericHealthShield) && r["Eâ"]?.add) {
-                for (const [o, y] of [ [ r["æÄ"], -100 ], [ r["AÃå"], -110 ] ]) if (o) {
+                for (const [o, y] of [ [ r["æÄ"], -100 ], [ r["AÃå"], -114 ] ]) if (o) {
                     if (o.parent !== r["Eâ"]) r["Eâ"].add(o);
                     o.opacity = 1;
                     if (o["ë"]) o["ë"]["Ä"] = y;
@@ -1831,6 +1995,7 @@
             if (e.lootInvisible && [ "gun", "ammo" ].includes(o.type)) blankLoot(o);
         }, ms);
     }, handleAdded = (x, a) => {
+        if (x?.__brioHudClone || String(x?.type || "").startsWith("brio")) return;
         try {
             meteorCandidate(x, a);
             sceneObserve(x?.parent);
@@ -1898,6 +2063,7 @@
         }, 0);
         patchArray(a);
         attachLocalTrack(r);
+        S.phaseTimer = setInterval(automaticPhase, 250);
         featurePlayer(r);
         log("LOCAL RENDERER", {
             id: r.id,
@@ -1962,6 +2128,11 @@
         return tagged;
     }, arm = () => {
         S.runEpoch = (S.runEpoch || 0) + 1;
+        stopRenderDiscovery();
+        restoreRenderArrays();
+        clearInterval(S.phaseTimer);
+        S.phaseTimer = 0;
+        S.botPhase = "lobby";
         restoreResourceMaps();
         restoreCosmetics();
         restoreEmote();
@@ -2033,6 +2204,7 @@
             S.botTimer = 0;
         }
         S.localName = tagName();
+        startRenderDiscovery("Play");
         const chosen = extrasState(), flags = Object.fromEntries(REQUIRED_TESTS.map(id => [ id, !!chosen[id] ]));
         log("TEST SETTINGS AT PLAY", {
             requiredOn: flags,
@@ -2093,6 +2265,11 @@
             nativeHud: S.hudStatus || {
                 captured: false
             },
+            nativeRenderArrays: renderArrays.size,
+            automaticPhase: {
+                signal: "native glidingTicks/maxGlidingTicks",
+                phase: S.botPhase
+            },
             meteorNativeHolds: reconMarkers.map(x => ({
                 inNativeParent: (x.parent["âè"] || []).includes(x.node),
                 removeAttempts: x.attempts,
@@ -2134,7 +2311,7 @@
     const term = D.createElement("div");
     term.className = "brioTerm";
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v43</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="phase">MATCH START</button><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v44</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     let mini = false, drag = null;
@@ -2144,7 +2321,7 @@
             mini = !mini;
             term.classList.toggle("min", mini);
             e.target.textContent = mini ? "+" : "—";
-        } else if (a === "phase") botPhase(); else if (a === "verify") verify(); else if (a === "copy") {
+        } else if (a === "verify") verify(); else if (a === "copy") {
             if (S.botTimer) botStop();
             reconContainers();
             const x = "BRIO " + S.v + "\n" + S.log.join("\n") + "\n\n" + J(verify());
@@ -2183,6 +2360,10 @@
     S.destroy = () => {
         S.destroyed = true;
         S.runEpoch = (S.runEpoch || 0) + 1;
+        stopRenderDiscovery();
+        restoreRenderArrays();
+        clearInterval(S.phaseTimer);
+        S.phaseTimer = 0;
         restoreResourceMaps();
         restoreCosmetics();
         if (S.logFlush) clearTimeout(S.logFlush);
@@ -2563,6 +2744,7 @@
             n.parent?.remove?.(n);
         } catch (_) {}
         featureNodes.clear();
+        S.shieldHeights = new WeakSet;
         while (featureRestore.length) try {
             featureRestore.pop()();
         } catch (_) {}
@@ -2595,6 +2777,31 @@
         if (!r?.Eâ) return;
         const e = exFast();
         if (!isLocal(r)) {
+            const shield = r["AÃå"], hp = r["æÄ"];
+            if (shield && hp && !S.shieldHeights?.has(shield)) {
+                const d = Object.getOwnPropertyDescriptor(shield, "height");
+                if (!d || d.configurable) {
+                    let native = shield.height;
+                    Object.defineProperty(shield, "height", {
+                        configurable: true,
+                        enumerable: d?.enumerable ?? true,
+                        get: () => exFast().healthBars || exFast().numericHealthShield ? hp.height : native,
+                        set: v => {
+                            native = v;
+                        }
+                    });
+                    (S.shieldHeights || (S.shieldHeights = new WeakSet)).add(shield);
+                    featureRestore.push(() => {
+                        if (d) {
+                            Object.defineProperty(shield, "height", d);
+                            if ("value" in d && d.writable) shield.height = native;
+                        } else {
+                            delete shield.height;
+                            shield.height = native;
+                        }
+                    });
+                }
+            }
             if (e.numericHealthShield) for (const [key, field] of [ [ "æÄ", "åÈ" ], [ "AÃå", "Â$" ] ]) {
                 const bar = r[key];
                 if (bar?.add) attachFeature(r, "number:" + key, bar, (ctx, s) => {
@@ -2678,6 +2885,8 @@
                 log("NATIVE HUD CAPTURE STATUS", {
                     ...status,
                     ownWarningBindings: S.hudWarnNodes?.size || 0,
+                    renderedArrays: renderArrays.size,
+                    discoveryActive: !!renderDiscovery,
                     approximationFallback: !status.captured,
                     note: "Exact native appearance is pending; missing/private HUD roots require the captured constructor/source route."
                 });
@@ -2783,8 +2992,8 @@
             magazine: r["áAæ"],
             features: Object.fromEntries([ ...featureNodes.values() ].flatMap(m => [ ...m.keys() ]).reduce((m, k) => m.set(k, (m.get(k) || 0) + 1), new Map)),
             indicators: indicatorStats,
-            knownHumansThisLog: [ ...humanLabels ],
-            note: "Human labels tied to V39 IDs only; names are not a classifier"
+            knownHumansThisLog: [ "current local renderer only" ],
+            note: "Prior remote names/IDs are not current labels or classifiers"
         });
         for (const x of players.slice(0, 3)) log("REMOTE HUD SAMPLE", {
             id: x.id,
@@ -2794,6 +3003,7 @@
             materials: matState(x),
             slot: x["ÈÆ"],
             magazine: x["áAæ"],
+            ammo: x["åæ"],
             inventory: Array.isArray(x["Åé"]) ? x["Åé"].map(v => v ? {
                 type: v.type,
                 rarity: v["äã"]
@@ -2805,6 +3015,23 @@
         sourceUrl: "",
         captures: 0
     }, reconGroups = [ [ "meteor / permanentMeteor", /createWaypoint|ping-meteor-icon|ping-meteor/g ], [ "screenChests / screenAirdrops / screenFishing", /ammocrate|grenadecrate|legendarychest|bubbles|airdrop/g ], [ "HUD challenges / customCrosshair", /Minimap|crosshair|reticle|inventory|healthbar|shieldbar/g ], [ "storm modifiers / invisibleStorm", /movingIcon|circle|safezone|storm/g ], [ "foliage challenges / transparentFoliage", /darktree|cherryblossom|tree0|grass0|bush/g ], [ "loot highlighting / cleanLoot", /flareglow|glow|rarity|gunType/g ], [ "buildMaterialLabels / deployableLabels / deployableRadius", /campfirebuild|boostpadbuild|shieldbuild|spellfield/g ], [ "health / ammo / mats warnings / numericHealthShield", /fullHealth|weaponSlots|selectedWeapon|shield|mats|ammo/g ], [ "player indicators / highContrastPlayers", /playerCount|setID|playerNames|name/g ] ];
+    const nativeAssetAudit = src => {
+        const paths = S.hudAssetPaths = new Map;
+        for (const m of src.matchAll(/["']([^"']{1,60})["']\s*:\s*["']((?:\.?\/)?buildart\/[^"']+\.png)["']/g)) if (paths.size < 2400) paths.set(m[1], norm(m[2]));
+        log("NATIVE HUD ASSET MAP", {
+            count: paths.size,
+            assets: [ ...paths ].filter(([k, v]) => /inv|ammo|wood|brick|metal|gear|scrap/.test(k)).slice(0, 80)
+        });
+        for (const term of [ "ÁæÆ", "inventoryammo", '"inv"', '"lobby"', "Å.À$", "ãÂÆ=", "Å.áÉâ", '"setID"', '"circle"', '"droid"', '"wander"', '"seed"', '"loot"' ]) {
+            let at = src.indexOf(term, term === "inventoryammo" ? 23e4 : 0);
+            if (at >= 0) log("V44 NATIVE SOURCE", {
+                term: term,
+                at: at,
+                excerpt: src.slice(Math.max(0, at - 800), at + 8e3),
+                note: "Read-only candidate; no source evaluation/protocol mutation."
+            });
+        }
+    };
     const reconSource = async () => {
         try {
             const urls = [ ...D.scripts ].map(x => x.src).filter(x => {
@@ -2831,6 +3058,7 @@
             reconNow.source = true;
             reconNow.sourceUrl = url;
             sourceSchemaAudit(src);
+            nativeAssetAudit(src);
             botSourceAudit(src);
             registrationAudit(src);
             for (const term of [ 'Å.ÃEÅ("gun"', 'Å.ÃEÅ("object"', 'Å.ÃEÅ("spellfield"', 'Å.æÊÈ("circle"', "äèä=", "crosshair", "minimap" ]) {
@@ -3043,6 +3271,8 @@
         S.meteorSeen = new WeakSet;
         S.meteorPending = new WeakSet;
         S.sceneRoots?.clear();
+        S.sceneQueue = [];
+        S.sceneQueueAt = 0;
         restoreMarkerCapture();
         while (reconRestore.length) try {
             reconRestore.pop()();
@@ -3052,10 +3282,11 @@
         reconMarkers.length = 0;
     };
     const holdMeteor = (node, array) => {
+        const epoch = S.runEpoch;
         queueMicrotask(() => {
             try {
                 S.meteorPending?.delete(node);
-                if (S.destroyed || !extrasState().permanentMeteor || S.meteorSeen?.has(node)) return;
+                if (S.destroyed || epoch !== S.runEpoch || !extrasState().permanentMeteor || S.meteorSeen?.has(node)) return;
                 const parent = node.parent;
                 if (!parent || typeof parent.remove !== "function") {
                     log("METEOR NATIVE CAPTURE", {
@@ -3122,6 +3353,27 @@
                         }
                     });
                 }
+                const expiredDesc = Object.getOwnPropertyDescriptor(node, "Äã");
+                if (!expiredDesc || expiredDesc.configurable) {
+                    let expired = node["Äã"];
+                    Object.defineProperty(node, "Äã", {
+                        configurable: true,
+                        enumerable: expiredDesc?.enumerable ?? true,
+                        get: () => extrasState().permanentMeteor ? false : expired,
+                        set: v => {
+                            expired = v;
+                        }
+                    });
+                    reconRestore.push(() => {
+                        if (expiredDesc) {
+                            Object.defineProperty(node, "Äã", expiredDesc);
+                            if ("value" in expiredDesc && expiredDesc.writable) node["Äã"] = expired;
+                        } else {
+                            delete node["Äã"];
+                            node["Äã"] = expired;
+                        }
+                    });
+                }
                 const destroyDesc = Object.getOwnPropertyDescriptor(node, "ÊÈA"), destroy = node["ÊÈA"];
                 if (typeof destroy === "function" && (!destroyDesc || destroyDesc.configurable || destroyDesc.writable)) {
                     const dw = function(...a) {
@@ -3180,7 +3432,7 @@
             inventoryScales: INV_SCALE,
             activeTests: REQUIRED_TESTS.map(id => EXTRA.modifiers.find(x => x[0] === id)?.[1] || id),
             inventoryArt: "native invN slot backgrounds from captured HUD traces",
-            lobbyProbe: "MATCH START separates lobby and match samples",
+            lobbyProbe: "Native gliding state separates lobby and match samples automatically",
             meteor: "automatic native waypoint capture · testing; retention visually verified in V40"
         });
     });

@@ -1,9 +1,7 @@
 # BRIO Unlocker
 
-Current release: **V43** — local visual customization and practice modifiers for Build Royale.
+Current release: **V44**. Complete plain DevTools Console script: [dist/brio-v44.min.js](dist/brio-v44.min.js). Open it, **Copy raw file** or **Raw → select all/copy**, then paste the complete script on Build Royale home. Ordinary Play is sufficient; there is no MATCH START action.
 
-Open [dist/brio-v43.min.js](dist/brio-v43.min.js), choose **Copy raw file** (or **Raw → select all/copy**), and paste the complete plain JavaScript into Chrome DevTools Console on Build Royale home. Wait for BRIO v43 / READY. Follow the [V43 test procedure](docs/v43-test-procedure.md); live visual verification is pending.
+Current readable source: [src/brio.js](src/brio.js). [Live test](docs/v44-test-procedure.md), [findings](docs/v44-findings.md), [all-feature status](docs/v44-status.md), [release path map](docs/releases.md). Native asset/HUD acquisition, warnings, equal shield height and dual meteor retention changed; live visual confirmation remains pending. Contents/bots remain unresolved, not impossible.
 
-Read [AGENTS.md](AGENTS.md), current sections of [project knowledge](docs/project_knowledge.md) and [site knowledge](docs/site_knowledge.md), and [V43 findings](docs/v43-findings.md) before continuing. See [release paths](docs/releases.md) for standardized V40–V43 archives. Complete raw logs and historical source appendices remain preserved.
-
-Editable source: `src/brio.js`. Install with `npm ci`, build with `npm run build`, verify both source and actual payload with `npm test`. Runtime payload has no external bootstrap/dependency. Archives refuse overwrite with changed bytes.
+Local visual customization only; native network/ownership remain native. Source and direct payload pass ten integrated mock scenarios; mocks do not prove live game pixels. Run `npm ci`, `npm run build`, `npm test`. Current dist only; immutable historical bytes under versions/. Complete logs under logs/ and both knowledge histories under docs/ are preserved.
