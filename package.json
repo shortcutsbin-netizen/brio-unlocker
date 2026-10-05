@@ -1,10 +1,10 @@
 {
   "name": "brio-unlocker",
-  "version": "42.0.0",
+  "version": "43.0.0",
   "private": true,
   "scripts": {
     "build": "node tools/build.cjs",
-    "test": "node tests/regression.cjs src/brio.js && node tests/regression.cjs dist/brio-v42.min.js"
+    "test": "node tests/regression.cjs src/brio.js && node tests/regression.cjs dist/brio-v43.min.js"
   },
   "devDependencies": { "jsdom": "^27.0.0", "terser": "^5.44.0" }
 }

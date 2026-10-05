@@ -1,12 +1,12 @@
 (() => {
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v42";
-    for (const k of [ K, "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
+    const W = window, D = document, K = "__brio_unlocker_v43";
+    for (const k of [ K, "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
         W[k]?.destroy?.();
     } catch (_) {}
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "42",
+        v: "43",
         log: [],
         errors: [],
         renderer: null,
@@ -174,7 +174,7 @@
     };
     const STATUS = {
         green: new Set([ "playersInvisible", "lootInvisible", "buildsInvisible", "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventorySlots", "inventoryMaterials", "inventoryAmmo", "inventorySize", "permanentMeteor" ]),
-        yellow: new Set([ "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "nearestPlayer", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "noChestsVisible", "noFoliage", "transparentFoliage", "monochrome", "highlightLoot", "cleanLoot", "highContrastPlayers", "buildMaterialLabels", "deployableLabels", "deployableRadius" ])
+        yellow: new Set([ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "nearestPlayer", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "noChestsVisible", "noFoliage", "transparentFoliage", "monochrome", "highlightLoot", "cleanLoot", "highContrastPlayers", "buildMaterialLabels", "deployableLabels", "deployableRadius" ])
     }, statusOf = id => STATUS.yellow.has(id) ? "yellow" : STATUS.green.has(id) ? "green" : "red";
     const style = D.createElement("style");
     style.textContent = `#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
@@ -348,9 +348,9 @@
     };
     const EXTRA = {
         challenges: [ [ "playersInvisible", "All players invisible", "remote players only" ], [ "lootInvisible", "Loot invisible", "includes pickup visuals when complete" ], [ "buildsInvisible", "Builds invisible", "walls + special deployables + placement preview" ], [ "noMinimap", "No minimap", "planned" ], [ "noCrosshair", "No crosshair", "planned" ], [ "noInventoryHud", "No inventory/item bar", "planned" ], [ "invisibleStorm", "Invisible storm", "hide zone on minimap + full map" ], [ "noChestsVisible", "Chests invisible", "chests + ammo/grenade crates · test" ], [ "noFoliage", "Foliage invisible", "identified native entities · test" ], [ "noHealthShieldHud", "No health/shield HUD", "planned" ], [ "monochrome", "Monochrome vision", "game canvas grayscale · test" ], [ "flashlightMode", "Flashlight mode", "configurable radius; mouse/player follow" ] ],
-        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "highlightLoot", "Highlight loot", "native yellow pickup ring · test" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · test" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "normal + legendary + ammo/grenade crates · active" ], [ "screenAirdrops", "Screen airdrops", "contents + object identity · active" ], [ "screenFishing", "Screen fishing spots", "contents; NONE is a valid result · active" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · test" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "native yellow silhouette ring · test" ], [ "cleanLoot", "Remove loot glow/effects", "identified glow resource only · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "buildMaterialLabels", "Build material labels", "wood/brick/metal from native sprite · test" ], [ "deployableLabels", "Deployable labels", "campfire/boostpad/shield/drill · test" ], [ "deployableRadius", "Deployable effect-radius display", "current native spellfield radius · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP ≤30; local ring + label · test" ], [ "lowAmmoWarning", "Low-ammo visual warning", "magazine + ammo-type mapping recon" ], [ "lowMatsWarning", "Low-material warning", "wood+brick+metal total <30 · test" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "native attachment; native art trace pending", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / special", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + counts", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
+        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "highlightLoot", "Highlight loot", "native yellow pickup ring · test" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · test" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "normal + legendary + ammo/grenade crates · active" ], [ "screenAirdrops", "Screen airdrops", "contents + object identity · active" ], [ "screenFishing", "Screen fishing spots", "contents; NONE is a valid result · active" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · test" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "native yellow silhouette ring · test" ], [ "cleanLoot", "Remove loot glow/effects", "identified glow resource only · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "buildMaterialLabels", "Build material labels", "wood/brick/metal from native sprite · test" ], [ "deployableLabels", "Deployable labels", "campfire/boostpad/shield/drill · test" ], [ "deployableRadius", "Deployable effect-radius display", "current native spellfield radius · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP ≤30; red glowing/flashing player outline" ], [ "lowAmmoWarning", "Low-ammo visual warning", "magazine + ammo-type mapping recon" ], [ "lowMatsWarning", "Low-material warning", "own HUD: each wood/brick/metal count <30; red flashing outline" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "native widget replica; capture/layout testing", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / special", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + counts", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
     };
-    const REQUIRED_TESTS = [ "transparentRoofs", "healthBars", "nearestPlayer", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "identifyBots" ];
+    const REQUIRED_TESTS = [ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "healthBars", "nearestPlayer", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "identifyBots" ];
     const renderExtras = () => {
         const a = extras.querySelector(".brioTabs"), p = extras.querySelector(".brioPage"), s = extrasState();
         if (![ "small", "medium", "large", "xl" ].includes(s.inventorySize)) {
@@ -516,7 +516,7 @@
         if (!h) return;
         try {
             if (h.desc) Object.defineProperty(h.target, "À", h.desc); else h.target["À"] = h.base;
-            if(h.desc && "value" in h.desc && h.desc.writable)h.target["À"]=h.base;
+            if (h.desc && "value" in h.desc && h.desc.writable) h.target["À"] = h.base;
         } catch (_) {}
         S.emoteEffect = null;
     }, emoteSlot = v => {
@@ -581,7 +581,14 @@
         S.srcDesc = d;
         S.srcTimer = setTimeout(restoreSrc, 72e4);
     };
-    const restoreResourceMaps=()=>{for(const map of[S.roofSaved,S.buildSaved,S.lootSaved]){for(const {w,old}of map.values())try{w['ÁÄ']=old}catch(_){}map.clear()}};
+    const restoreResourceMaps = () => {
+        for (const map of [ S.roofSaved, S.buildSaved, S.lootSaved ]) {
+            for (const {w: w, old: old} of map.values()) try {
+                w["ÁÄ"] = old;
+            } catch (_) {}
+            map.clear();
+        }
+    };
     const cosmeticLock = (target, key, chooseValue) => {
         if (!target) return;
         const d = Object.getOwnPropertyDescriptor(target, key);
@@ -634,6 +641,7 @@
                 for (const x of args) try {
                     meteorCandidate(x, this["âè"] || []);
                     captureRoof(x);
+                    hudCandidate(x);
                 } catch (e) {
                     if (S.errors.length < 100) S.errors.push("scene add: " + String(e));
                 }
@@ -663,8 +671,12 @@
         if (!S.windowSceneChecked) {
             S.windowSceneChecked = true;
             for (const key of Object.getOwnPropertyNames(W).slice(0, 1200)) {
-                const d = Object.getOwnPropertyDescriptor(W, key), v = d?.value;
-                if (v && typeof v === "object" && !(v instanceof Node) && Array.isArray(v["âè"]) && typeof v.add === "function") roots.add(v);
+                try {
+                    const d = Object.getOwnPropertyDescriptor(W, key), v = d?.value;
+                    if (v && typeof v === "object" && !(v instanceof Node) && Array.isArray(v["âè"]) && typeof v.add === "function") roots.add(v);
+                } catch (_) {
+                    S.sceneSkipped = (S.sceneSkipped || 0) + 1;
+                }
             }
         }
         return roots;
@@ -710,7 +722,7 @@
                 cosmeticLock(r["ä"], "À", v => held(r) === "pickaxe" ? pi : v);
             }
             const hide = R.body.mode === "invisible";
-            for (const [p, k] of [ [ "áË", "l" ], [ "ÄÂ", "r" ], [ "ÄãÀ", "f" ], [ "èÅ", "s" ] ]) if (r[p] && S.native.limbs[k] !== undefined) if(hide)cosmeticLock(r[p],"opacity",()=>0);
+            for (const [p, k] of [ [ "áË", "l" ], [ "ÄÂ", "r" ], [ "ÄãÀ", "f" ], [ "èÅ", "s" ] ]) if (r[p] && S.native.limbs[k] !== undefined) if (hide) cosmeticLock(r[p], "opacity", () => 0);
             if (R.trail.mode === "item") cosmeticLock(r, "Ëé", () => R.trail.id + "-");
             if (R.trail.mode === "invisible" || e.allTrailsInvisible) cosmeticLock(r, "åëÅ", () => NaN);
             if (R.wrap.mode === "item") cosmeticLock(r, "ÆÃÅ", () => R.wrap.id);
@@ -725,7 +737,7 @@
             }
             S.emoteResolved = em.map((x, i) => R.emotes[i].mode === "item" ? x : null);
             installEmote(r);
-            if(S.emoteEffect)S.emoteEffect.current=mapEmote(S.emoteEffect.base);
+            if (S.emoteEffect) S.emoteEffect.current = mapEmote(S.emoteEffect.base);
             log("LOCAL READY", {
                 capturedName: r["Ée"],
                 expected: S.localName,
@@ -808,24 +820,57 @@
         if (S.transparent.has(old)) return S.transparent.get(old);
         const p = new Promise(resolve => {
             const make = () => {
-                const width=old.naturalWidth||old.width,height=old.naturalHeight||old.height;
-                if(!(width>0&&height>0)){resolve(null);return}
-                const c=D.createElement('canvas');c.width=width;c.height=height;
-                const im=new Image;im['ÀA']=2;
-                im.onload=()=>{im['ÀA']=1;im['ÁÅe']=im.width/2;im['âÅÉ']=im.height/2;resolve(im)};
-                im.onerror=()=>resolve(null);im.src=c.toDataURL('image/png');
+                const width = old.naturalWidth || old.width, height = old.naturalHeight || old.height;
+                if (!(width > 0 && height > 0)) {
+                    resolve(null);
+                    return;
+                }
+                const c = D.createElement("canvas");
+                c.width = width;
+                c.height = height;
+                const im = new Image;
+                im["ÀA"] = 2;
+                im.onload = () => {
+                    im["ÀA"] = 1;
+                    im["ÁÅe"] = im.width / 2;
+                    im["âÅÉ"] = im.height / 2;
+                    resolve(im);
+                };
+                im.onerror = () => resolve(null);
+                im.src = c.toDataURL("image/png");
             };
-            if(old instanceof HTMLImageElement&&!old.naturalWidth&&(!old.complete||old['ÀA']===2)){
-                let timeout;const done=()=>{clearTimeout(timeout);old.removeEventListener('load',loaded);old.removeEventListener('error',failed)};
-                const loaded=()=>{done();make()},failed=()=>{done();resolve(null)};
-                old.addEventListener('load',loaded,{once:true});old.addEventListener('error',failed,{once:true});timeout=setTimeout(failed,5000);
-            }else make();
+            if (old instanceof HTMLImageElement && !old.naturalWidth && (!old.complete || old["ÀA"] === 2)) {
+                let timeout;
+                const done = () => {
+                    clearTimeout(timeout);
+                    old.removeEventListener("load", loaded);
+                    old.removeEventListener("error", failed);
+                };
+                const loaded = () => {
+                    done();
+                    make();
+                }, failed = () => {
+                    done();
+                    resolve(null);
+                };
+                old.addEventListener("load", loaded, {
+                    once: true
+                });
+                old.addEventListener("error", failed, {
+                    once: true
+                });
+                timeout = setTimeout(failed, 5e3);
+            } else make();
         });
-        S.transparent.set(old,p);p.then(im=>{if(!im)S.transparent.delete(old)});return p;
+        S.transparent.set(old, p);
+        p.then(im => {
+            if (!im) S.transparent.delete(old);
+        });
+        return p;
     }, blankWrapper = async (w, map, key) => {
         if (!w?.["ÁÄ"] || map.has(key)) return;
-        const epoch=S.runEpoch,old = w["ÁÄ"], im = await transparentImage(old);
-        if(S.destroyed||epoch!==S.runEpoch)return;
+        const epoch = S.runEpoch, old = w["ÁÄ"], im = await transparentImage(old);
+        if (S.destroyed || epoch !== S.runEpoch) return;
         if (im) {
             map.set(key, {
                 w: w,
@@ -968,6 +1013,345 @@
             rect: rect
         };
     }, nearestTick = () => nearestV40();
+    const hudKinds = path => /\/inv[0-6]\.png$/.test(path) ? "slots" : /\/(?:wood|brick|metal|scrap)\.png$/.test(path) ? "materials" : /\/ammo[0-4]\.png$/.test(path) ? "ammo" : null;
+    const hudWalk = (root, max = 100) => {
+        const out = [], seen = new Set, stack = [ root ];
+        while (stack.length && out.length < max) {
+            const n = stack.pop();
+            if (!n || seen.has(n) || typeof n !== "object") continue;
+            seen.add(n);
+            out.push(n);
+            for (const k of [ "âè", "ÉE" ]) for (const c of n[k] || []) if (!String(c?.type || "").startsWith("brio")) stack.push(c);
+        }
+        return out;
+    };
+    const hudPath = n => norm(n?.["À"]?.src || n?.["À"]?.["ÁÄ"]?.src || "");
+    const hudCandidate = n => {
+        if (n?.__brioHudClone || S.hudRejected?.has(n) || !hudKinds(hudPath(n))) return;
+        if (!S.hudPending) S.hudPending = new WeakSet;
+        if (S.hudPending.has(n) || S.hudSourceNodes?.has(n)) return;
+        S.hudPending.add(n);
+        const epoch = S.runEpoch;
+        setTimeout(() => {
+            S.hudPending.delete(n);
+            if (S.destroyed || epoch !== S.runEpoch) return;
+            try {
+                hudInspect(n);
+            } catch (e) {
+                if (!S.hudInspectError) {
+                    S.hudInspectError = true;
+                    log("NATIVE HUD INSPECTION ERROR", String(e));
+                }
+            }
+        }, 250);
+    };
+    const hudInspect = n => {
+        const path = hudPath(n), kind = hudKinds(path);
+        if (!kind || S.hudSourceNodes?.has(n) || (S.hudInspectionCount || 0) >= 80) return;
+        S.hudInspectionCount = (S.hudInspectionCount || 0) + 1;
+        if (!S.hudSourceNodes) S.hudSourceNodes = new WeakSet;
+        let anchor = kind === "slots" ? n : null, p = n.parent;
+        for (let depth = 0; !anchor && p && depth < 5; depth++, p = p.parent) {
+            const nodes = hudWalk(p, 180);
+            if (nodes.some(x => hudKinds(hudPath(x)) === "slots")) anchor = p;
+        }
+        if (!anchor) {
+            if (n.parent) {
+                (S.hudRejected || (S.hudRejected = new WeakSet)).add(n);
+            }
+            return;
+        }
+        let unit = n;
+        for (let p = n.parent, depth = 0; p && depth < 3; depth++, p = p.parent) {
+            const nodes = hudWalk(p, 80), icons = nodes.filter(x => hudKinds(hudPath(x)) === kind);
+            if (icons.length !== 1) break;
+            unit = p;
+            if (nodes.some(x => x.type === "text" || typeof x.text === "string")) break;
+        }
+        const nodes = hudWalk(unit), sourceCtor = unit.constructor;
+        if (!S.hudTemplates) S.hudTemplates = {
+            slots: [],
+            materials: [],
+            ammo: []
+        };
+        if (S.hudTemplates[kind].length >= (kind === "slots" ? 6 : kind === "materials" ? 4 : 5)) return;
+        const record = {
+            root: unit,
+            icon: n,
+            path: path,
+            nodes: nodes,
+            kind: kind,
+            x: Number(unit["ë"]?.["É"]) || 0,
+            y: Number(unit["ë"]?.["Ä"]) || 0,
+            width: Math.abs(Number(n.width)) || 0,
+            height: Math.abs(Number(n.height)) || 0
+        };
+        S.hudSourceNodes.add(n);
+        S.hudTemplates[kind].push(record);
+        S.hudVersion = (S.hudVersion || 0) + 1;
+        S.hudStatus = {
+            captured: true,
+            counts: Object.fromEntries(Object.entries(S.hudTemplates).map(([k, v]) => [ k, v.length ])),
+            replica: "native constructors/geometry; visual proof pending"
+        };
+        log("NATIVE HUD WIDGET", {
+            kind: kind,
+            path: path,
+            rootType: unit.type,
+            rootKeys: Object.keys(unit).slice(0, 70),
+            constructor: typeof sourceCtor === "function" ? String(sourceCtor).slice(0, 1800) : null,
+            nodes: nodes.map(x => ({
+                type: x.type,
+                path: hudPath(x),
+                position: x["ë"],
+                width: x.width,
+                height: x.height,
+                text: x.text,
+                fields: Object.fromEntries(Object.entries(x).filter(([k, v]) => [ "string", "number", "boolean" ].includes(typeof v) && ![ "src" ].includes(k)).slice(0, 40))
+            })),
+            note: "Native widget candidates. Requires rendered HUD ancestry/geometry validation."
+        });
+        ownMaterialWarnings();
+    };
+    const hudBounds = record => {
+        let left = Infinity, right = -Infinity, top = Infinity, bottom = -Infinity;
+        for (const n of record.nodes) {
+            if (!n["À"] && !(n.type === "text" || typeof n.text === "string")) continue;
+            let x = 0, y = 0, p = n, depth = 0;
+            while (p && p !== record.root && depth++ < 10) {
+                x += Number(p["ë"]?.["É"]) || 0;
+                y += Number(p["ë"]?.["Ä"]) || 0;
+                p = p.parent;
+            }
+            const w = Math.abs(Number(n.width)) || String(n.text || "").length * 12 || 30, h = Math.abs(Number(n.height)) || Number(n.fontSize) || 18;
+            left = Math.min(left, x - w / 2);
+            right = Math.max(right, x + w / 2);
+            top = Math.min(top, y - h / 2);
+            bottom = Math.max(bottom, y + h / 2);
+        }
+        if (!Number.isFinite(left)) return {
+            left: -15,
+            right: 15,
+            top: -15,
+            bottom: 15,
+            width: 30,
+            height: 30
+        };
+        return {
+            left: left,
+            right: right,
+            top: top,
+            bottom: bottom,
+            width: right - left,
+            height: bottom - top
+        };
+    };
+    const ownMaterialWarnings = () => {
+        if (!S.renderer || !S.hudTemplates) return;
+        const mats = matState(S.renderer);
+        for (const rec of S.hudTemplates.materials) {
+            const i = [ "wood", "brick", "metal" ].findIndex(k => rec.path.endsWith("/" + k + ".png"));
+            if (i < 0 || !rec.root?.add || S.hudWarnNodes?.has(rec.root)) continue;
+            if (!S.hudWarnNodes) S.hudWarnNodes = new Map;
+            const bounds = hudBounds(rec), draw = (ctx, s) => {
+                const raw = Array.isArray(S.renderer?.["ÊÃÄ"]) ? S.renderer["ÊÃÄ"] : S.renderer?.["Äâã"], value = raw?.[i];
+                if (!exFast().lowMatsWarning || !Number.isFinite(value) || value >= 30) return;
+                ctx.save();
+                try {
+                    ctx.globalAlpha *= .25 + .75 * (.5 + .5 * Math.sin(performance.now() / 140));
+                    ctx.shadowColor = "#ff2020";
+                    ctx.shadowBlur = 12 / s;
+                    ctx.strokeStyle = "#ff2020";
+                    ctx.lineWidth = 3 / s;
+                    ctx.strokeRect((bounds.left - 3) / s, (bounds.top - 3) / s, (bounds.width + 6) / s, (bounds.height + 6) / s);
+                } finally {
+                    ctx.restore();
+                }
+            };
+            const overlay = nativeNode(draw);
+            rec.root.add(overlay);
+            S.hudWarnNodes.set(rec.root, overlay);
+            log("OWN MATERIAL WARNING BINDING", {
+                material: [ "wood", "brick", "metal" ][i],
+                threshold: "<30",
+                bounds: bounds,
+                scope: "own native HUD only"
+            });
+        }
+    };
+    const cloneNativeWidget = rec => {
+        let count = 0;
+        const pairs = [], seen = new Map;
+        const clone = n => {
+            if (++count > 80 || seen.has(n)) throw Error("native HUD widget cycle/limit");
+            const C = n.constructor;
+            if (typeof C !== "function" || C === Object || C === W.Object) throw Error("native HUD constructor unavailable");
+            let args;
+            if (n["À"]) args = [ n["À"], 0, 0, n.width, n.height, n.opacity ]; else if (n.type === "text" || typeof n.text === "string") args = [ n.text, 0, 0, n.fillStyle || n["Äe"] || "#fff", n.fontFamily || "Arial", n.fontSize || 16, n.fontWeight || "bold", n.opacity, n.textAlign || "center" ]; else if (n.type === "arc") args = [ 0, 0, n["éã"], n["Äe"], n.endAngle || Math.PI * 2, n.startAngle || 0, n.lineWidth ]; else if (n.width !== undefined && n.height !== undefined) args = [ 0, 0, n.width, n.height, n["Äe"] || n.fillStyle, n.opacity ]; else args = [];
+            const c = Reflect.construct(C, args);
+            c.__brioHudClone = true;
+            seen.set(n, c);
+            for (const [k, v] of Object.entries(n)) {
+                if ([ "parent", "canvas", "aãÁ", "text", "ë", "âè", "ÉE" ].includes(k) || typeof v === "function") continue;
+                if (v == null || [ "number", "string", "boolean" ].includes(typeof v)) try {
+                    c[k] = v;
+                } catch (_) {}
+            }
+            if (n["À"]) c["À"] = n["À"];
+            if (c["ë"] && n["ë"]) {
+                c["ë"]["É"] = n["ë"]["É"];
+                c["ë"]["Ä"] = n["ë"]["Ä"];
+            }
+            if ("text" in n) c.text = n.text;
+            pairs.push({
+                source: n,
+                node: c,
+                path: hudPath(n)
+            });
+            for (const key of [ "âè", "ÉE" ]) for (const child of n[key] || []) if (!String(child?.type || "").startsWith("brio")) {
+                const copy = clone(child), method = key === "ÉE" && typeof c["âá"] === "function" ? "âá" : "add";
+                if (typeof c[method] !== "function") throw Error("native HUD child attachment unavailable");
+                c[method](copy);
+            }
+            return c;
+        };
+        return {
+            root: clone(rec.root),
+            pairs: pairs,
+            record: rec
+        };
+    };
+    const nativeInvFor = r => {
+        if (!S.hudTemplates?.slots?.length) return null;
+        if (!S.nativeInvClones) S.nativeInvClones = new Map;
+        let cached = S.nativeInvClones.get(r);
+        if (cached?.version === S.hudVersion) return cached;
+        if (cached) for (const row of cached.rows) for (const unit of row.units) try {
+            unit.root["ÊÈA"]?.();
+        } catch (_) {}
+        const rows = [];
+        for (const [kind, raw] of Object.entries(S.hudTemplates)) {
+            const sorted = raw.slice().sort((a, b) => a.x - b.x || a.y - b.y), templates = kind === "slots" ? sorted.slice(-5) : sorted, units = [];
+            for (const rec of templates) try {
+                units.push(cloneNativeWidget(rec));
+            } catch (e) {
+                if (!rec.unavailable) {
+                    rec.unavailable = true;
+                    log("NATIVE HUD REPLICA UNAVAILABLE", {
+                        kind: kind,
+                        path: rec.path,
+                        reason: String(e)
+                    });
+                }
+            }
+            if (units.length) rows.push({
+                kind: kind,
+                units: units
+            });
+        }
+        cached = {
+            version: S.hudVersion,
+            rows: rows
+        };
+        S.nativeInvClones.set(r, cached);
+        return cached;
+    };
+    const drawNativeInv = (ctx, s, r) => {
+        const cache = nativeInvFor(r);
+        if (!cache?.rows.length) return new Set;
+        const drawn = new Set;
+        const ex = extrasState(), m = matState(r), ammo = Array.isArray(r["åæ"]) ? r["åæ"] : [], slots = Array.isArray(r["Åé"]) ? r["Åé"].slice(1, 6) : [];
+        let y = 0;
+        for (const row of cache.rows) {
+            if (!ex[{
+                slots: "inventorySlots",
+                materials: "inventoryMaterials",
+                ammo: "inventoryAmmo"
+            }[row.kind]]) continue;
+            const required = {
+                slots: 5,
+                materials: 4,
+                ammo: 5
+            }[row.kind];
+            if (row.units.length !== required) {
+                y += 21;
+                continue;
+            }
+            drawn.add(row.kind);
+            const widths = row.units.map(u => hudBounds(u.record).width), factor = Math.min(18 / Math.max(...widths, 1), 18 / Math.max(...row.units.map(u => hudBounds(u.record).height), 1)), gap = 2 / factor, total = widths.reduce((a, b) => a + b, 0) + gap * (widths.length - 1);
+            let x = -total / 2, maxHeight = 0;
+            row.units.forEach((u, i) => {
+                const b = hudBounds(u.record);
+                let value;
+                const material = [ "wood", "brick", "metal", "scrap" ].findIndex(k => u.record.path.endsWith("/" + k + ".png")), ammoIndex = +(u.record.path.match(/ammo([0-4])/) || [])[1];
+                if (row.kind === "materials") value = m[material];
+                if (row.kind === "ammo") value = ammo[ammoIndex];
+                for (const pair of u.pairs) {
+                    if (value !== undefined && (pair.source.type === "text" || typeof pair.source.text === "string") && /^\d+$/.test(String(pair.source.text))) pair.node.text = String(value);
+                    if (row.kind === "slots" && /\/inv[0-6]\.png$/.test(pair.path)) {
+                        const rarity = Number(slots[i]?.["äã"]);
+                        if (Number.isFinite(rarity) && rarity >= 0 && rarity <= 6) {
+                            const path = "/buildart/inv" + rarity + ".png";
+                            pair.node["À"] = {
+                                src: path,
+                                "ÁÄ": invImage(path)
+                            };
+                        }
+                    }
+                    if (row.kind === "slots" && pair.path && !/\/inv[0-6]\.png$/.test(pair.path)) {
+                        const path = itemPath(slots[i]?.type);
+                        if (path) {
+                            const im = invImage(path);
+                            pair.node["À"] = {
+                                src: path,
+                                "ÁÄ": im
+                            };
+                            pair.node.opacity = 1;
+                        } else pair.node.opacity = 0;
+                    }
+                }
+                ctx.save();
+                ctx.translate(x * factor / s, y / s);
+                ctx.scale(factor, factor);
+                ctx.translate(-b.left / s, -b.top / s);
+                const n = u.root;
+                if (n["ë"]) {
+                    n["ë"]["É"] = 0;
+                    n["ë"]["Ä"] = 0;
+                }
+                n.A = 0;
+                n.opacity = 1;
+                if (typeof n["éa"] === "function") n["éa"](ctx, s, 1); else if (typeof n["Eââ"] === "function") n["Eââ"](ctx, s);
+                ctx.restore();
+                x += b.width + gap;
+                maxHeight = Math.max(maxHeight, b.height * factor);
+            });
+            y += 21;
+        }
+        return drawn;
+    };
+    const resetNativeHud = () => {
+        for (const n of S.hudWarnNodes?.values() || []) try {
+            n.parent?.remove?.(n);
+        } catch (_) {}
+        S.hudWarnNodes?.clear();
+        for (const c of S.nativeInvClones?.values() || []) for (const row of c.rows) for (const u of row.units) try {
+            u.root["ÊÈA"]?.();
+        } catch (_) {}
+        S.nativeInvClones?.clear();
+        S.hudTemplates = null;
+        S.hudSourceNodes = new WeakSet;
+        S.hudRejected = new WeakSet;
+        S.hudInspectionCount = 0;
+        S.hudStatus = {
+            captured: false
+        };
+        S.hudVersion = 0;
+        S.hudPending = new WeakSet;
+        S.hudInspectError = false;
+        S.sceneStartError = false;
+        S.sceneSkipped = 0;
+    };
     const INV_SCALE = {
         small: .9375,
         medium: 1.25,
@@ -985,6 +1369,20 @@
         let im = S.invAssets.get(p);
         if (im) return im;
         im = new Image;
+        im["ÀA"] = 2;
+        im.onload = () => {
+            im["ÀA"] = 1;
+            im["ÁÅe"] = im.width / 2;
+            im["âÅÉ"] = im.height / 2;
+        };
+        im.onerror = () => {
+            if (!im.__brioFailed) {
+                im.__brioFailed = true;
+                log("HUD ASSET FAILED", {
+                    path: p
+                });
+            }
+        };
         im.src = p;
         S.invAssets.set(p, im);
         return im;
@@ -1013,12 +1411,17 @@
         ctx.fillText(String(v), x / s, y / s);
         ctx.restore();
     }, drawInv = (ctx, scale, r) => {
+        const drawn = drawNativeInv(ctx, scale, r) || new Set;
         const ex = extrasState(), rows = [];
         if (ex.inventorySlots) rows.push("slots");
         if (ex.inventoryMaterials) rows.push("mats");
         if (ex.inventoryAmmo) rows.push("ammo");
         let yy = 0;
         for (const row of rows) {
+            if (drawn.has(row)) {
+                yy += 21;
+                continue;
+            }
             if (row === "slots") {
                 const slots = Array.isArray(r["Åé"]) ? r["Åé"].slice(1, 6) : [], sz = 18, g = 2, x0 = -(sz * 5 + g * 4) / 2;
                 for (let i = 0; i < 5; i++) {
@@ -1301,39 +1704,63 @@
             holdMeteor(node, array);
         }
     }, meteorScan = () => {
-        if (!S.renderer || !extrasState().permanentMeteor && (!extrasState().transparentRoofs||S.roofSaved.size===21)) return;
+        if (!S.renderer || !extrasState().permanentMeteor && !extrasState().lowMatsWarning && (!extrasState().transparentRoofs || S.roofSaved.size === 21)) return;
         const seen = new Set, stack = [ ...sceneRoots() ];
         let visits = 0;
         while (stack.length && visits++ < 3e3) {
             const x = stack.pop();
             if (!x || typeof x !== "object" || seen.has(x)) continue;
             seen.add(x);
-            sceneObserve(x);
-            meteorCandidate(x);
-            captureRoof(x);
-            for (const key of [ "âè", "ÉE" ]) if (Array.isArray(x[key])) for (const c of x[key]) stack.push(c);
-            if (Array.isArray(x)) for (const c of x) stack.push(c);
+            try {
+                sceneObserve(x);
+                meteorCandidate(x);
+                captureRoof(x);
+                for (const key of [ "âè", "ÉE" ]) if (Array.isArray(x[key])) for (const c of x[key]) stack.push(c);
+                if (Array.isArray(x)) for (const c of x) stack.push(c);
+                hudCandidate(x);
+            } catch (_) {
+                S.sceneSkipped = (S.sceneSkipped || 0) + 1;
+            }
         }
         S.sceneScan = {
             visits: visits,
             limitReached: stack.length > 0,
             roots: S.sceneRoots?.size || 0,
-            observers: S.meteorObservers?.size || 0
+            observers: S.meteorObservers?.size || 0,
+            skipped: S.sceneSkipped || 0
         };
         if (!S.sceneScanLogged) {
             S.sceneScanLogged = true;
             log("SCENE CAPTURE", S.sceneScan);
         }
-    }, meteorAutoStart = () => {
+    }, meteorAutoStart = reason => {
         meteorAutoStop();
-        if (!extrasState().permanentMeteor && !extrasState().transparentRoofs) return;
-        meteorScan();
-        S.meteorAutoTimer = setInterval(meteorScan, 1e3);
+        if (S.destroyed || !S.renderer || !extrasState().permanentMeteor && !extrasState().transparentRoofs && !extrasState().lowMatsWarning) return;
+        log("METEOR AUTOMATIC START", {
+            reason: reason || "local capture",
+            epoch: S.runEpoch
+        });
+        const tick = () => {
+            try {
+                meteorScan();
+            } catch (e) {
+                if (!S.sceneStartError) {
+                    S.sceneStartError = true;
+                    S.errors.push("scene scan: " + String(e));
+                    log("SCENE CAPTURE ERROR", {
+                        error: String(e),
+                        stack: String(e.stack || "").slice(0, 1600)
+                    });
+                }
+            }
+        };
+        S.meteorAutoTimer = setInterval(tick, 1e3);
+        tick();
         log("METEOR AUTOMATIC", {
             enabled: !!extrasState().permanentMeteor,
             ownContainerObservers: S.meteorObservers?.size || 0,
             scanLimit: 3e3,
-            note: "Own native add/front-add methods; bounded reachable scene scan. No manual arm."
+            note: "Timer armed before guarded scan; scoped native containers; no manual arm."
         });
     };
     const applyRemote = async r => {
@@ -1384,13 +1811,21 @@
     }, queueRemote = r => {
         if (!r || isLocal(r) || S.remoteQueued.has(r)) return;
         S.remoteQueued.add(r);
+        const auditEpoch = S.runEpoch;
+        setTimeout(() => {
+            if (!S.destroyed && S.runEpoch === auditEpoch) replicaStateAudit(r);
+        }, 2e3);
         for (const ms of [ 0, 250, 1200, 3e3 ]) setTimeout(() => applyRemote(r), ms);
     }, queueWorld = o => {
         if (!o || S.worldQueued.has(o)) return;
         S.worldQueued.add(o);
-        const epoch=S.runEpoch;
+        const auditEpoch = S.runEpoch;
+        setTimeout(() => {
+            if (!S.destroyed && S.runEpoch === auditEpoch) replicaStateAudit(o);
+        }, 1200);
+        const epoch = S.runEpoch;
         for (const ms of [ 0, 250, 1200 ]) setTimeout(() => {
-            if(S.destroyed||S.runEpoch!==epoch)return;
+            if (S.destroyed || S.runEpoch !== epoch) return;
             const e = extrasState();
             if (e.buildsInvisible && isBuild(o)) blankBuild(o);
             if (e.lootInvisible && [ "gun", "ammo" ].includes(o.type)) blankLoot(o);
@@ -1403,6 +1838,7 @@
                 if (!S.renderer && localNameMatch(x)) onLocal(x, a); else if (S.renderer && !isLocal(x)) queueRemote(x);
             }
             captureRoof(x);
+            hudCandidate(x);
             if (S.capture) sceneObserve(x);
             if (isWorld(x)) {
                 reconAdded(x);
@@ -1452,9 +1888,14 @@
         S.renderer = r;
         S.rendererArray = a;
         S.native = nativeSnap(r);
-        queueMicrotask(() => {
-            if (S.renderer === r && !S.destroyed) meteorAutoStart();
-        });
+        const localAuditEpoch = S.runEpoch;
+        setTimeout(() => {
+            if (!S.destroyed && S.runEpoch === localAuditEpoch) replicaStateAudit(r);
+        }, 2e3);
+        const epoch = S.runEpoch;
+        setTimeout(() => {
+            if (S.renderer === r && !S.destroyed && epoch === S.runEpoch) meteorAutoStart("capture timer");
+        }, 0);
         patchArray(a);
         attachLocalTrack(r);
         featurePlayer(r);
@@ -1525,10 +1966,13 @@
         restoreCosmetics();
         restoreEmote();
         restoreSrc();
+        S.replicaAuditCount = 0;
+        replicaAuditSeen = new WeakSet;
         S.playVisuals = state();
         S.resolvedVisuals = null;
         S.windowSceneChecked = false;
         S.sceneScanLogged = false;
+        resetNativeHud();
         resetFeatures();
         if (S.featureTimer) {
             clearInterval(S.featureTimer);
@@ -1646,6 +2090,9 @@
             },
             indicatorStats: indicatorStats,
             featureEntities: featureNodes.size,
+            nativeHud: S.hudStatus || {
+                captured: false
+            },
             meteorNativeHolds: reconMarkers.map(x => ({
                 inNativeParent: (x.parent["âè"] || []).includes(x.node),
                 removeAttempts: x.attempts,
@@ -1667,7 +2114,8 @@
                 observer: (S.meteorObservers?.size || 0) > 0,
                 observerCount: S.meteorObservers?.size || 0,
                 scan: !!S.meteorAutoTimer,
-                coverage: S.sceneScan || null
+                coverage: S.sceneScan || null,
+                startError: !!S.sceneStartError
             },
             meteorNativeDraw: !!S.meteorSource,
             autoContainers: reconContainersSeen.size,
@@ -1686,7 +2134,7 @@
     const term = D.createElement("div");
     term.className = "brioTerm";
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v42</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="phase">MATCH START</button><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v43</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="phase">MATCH START</button><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     let mini = false, drag = null;
@@ -1738,6 +2186,7 @@
         restoreResourceMaps();
         restoreCosmetics();
         if (S.logFlush) clearTimeout(S.logFlush);
+        resetNativeHud();
         resetFeatures();
         if (S.featureTimer) clearInterval(S.featureTimer);
         restoreMarkerHolds();
@@ -1876,6 +2325,130 @@
             hits: hits,
             constructors: constructors,
             note: "No hits would not prove that server-only bot state is unavailable; follow constructor/replicated fields before closing route."
+        });
+    };
+    const schemaFields = new Map;
+    const sourceSchemaAudit = src => {
+        const anchor = src.indexOf('="isPreview"'), start = Math.max(0, anchor - 1600), end = anchor < 0 ? 0 : Math.min(src.length, anchor + 18e3), region = src.slice(start, end), pairs = [];
+        for (const m of region.matchAll(/([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)\s*=\s*["']([^"'\n]{1,70})["']/g)) {
+            if (pairs.length >= 240) break;
+            schemaFields.set(m[2], m[3]);
+            pairs.push({
+                field: m[2],
+                meaning: m[3],
+                at: start + m.index
+            });
+        }
+        log("DECODED FIELD SCHEMA", {
+            found: anchor >= 0,
+            start: start,
+            end: end,
+            pairs: pairs,
+            botCandidates: pairs.filter(x => /bot|npc|(?:^|_)ai(?:$|_)|computerplayer/i.test(x.meaning)),
+            contentsCandidates: pairs.filter(x => /contents|loot|seed|chest|drop|fish|weaponSlots|rarity|resources|object/i.test(x.meaning)),
+            note: "Dictionary assignments only, not cosmetic names. isPreview is not a bot discriminator. No-hit does not establish server absence."
+        });
+        for (const kind of [ "player", "chest", "object" ]) {
+            const token = '.ÃEÅ("' + kind + '"', at = src.indexOf(token);
+            if (at < 0) continue;
+            let pos = at + token.length, callbacks = 0;
+            while (callbacks < 4) {
+                const f = src.indexOf("function(", pos);
+                if (f < 0 || f - pos > 500) break;
+                const open = src.indexOf("{", f);
+                let depth = 0, quote = "", escape = false, close = -1;
+                for (let i = open; i < Math.min(src.length, open + 12e4); i++) {
+                    const c = src[i];
+                    if (quote) {
+                        if (escape) escape = false; else if (c === "\\") escape = true; else if (c === quote) quote = "";
+                        continue;
+                    }
+                    if (c === '"' || c === "'" || c === "`") {
+                        quote = c;
+                        continue;
+                    }
+                    if (c === "{") depth++;
+                    if (c === "}" && ! --depth) {
+                        close = i + 1;
+                        break;
+                    }
+                }
+                if (close < 0) break;
+                const body = src.slice(f, close), phase = [ "create", "frame", "update", "remove" ][callbacks++], mappings = [];
+                for (const m of body.matchAll(/([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)\s*=\s*([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)/g)) {
+                    if (mappings.length >= 180) break;
+                    mappings.push({
+                        target: m[2],
+                        targetMeaning: schemaFields.get(m[2]) || null,
+                        source: m[4],
+                        sourceMeaning: schemaFields.get(m[4]) || null,
+                        at: f + m.index
+                    });
+                }
+                log("NATIVE CALLBACK AUDIT", {
+                    kind: kind,
+                    phase: phase,
+                    start: f,
+                    end: close,
+                    characters: body.length,
+                    mappings: mappings,
+                    head: body.slice(0, 6500),
+                    tail: body.length > 6500 ? body.slice(-1800) : "",
+                    note: "Balanced callback candidate, not complete protocol exhaustion. Examine decoded create/update payload fields; source is never evaluated."
+                });
+                pos = close;
+            }
+        }
+        for (const term of [ "inv0", "inv1", "ammo0", "wood.png", "isPreview", "lootSeed", "contents", "botNames", "isBot", "createWaypoint" ]) {
+            let at = src.indexOf(term, term === "isPreview" ? 0 : 18e4), n = 0;
+            while (at >= 0 && n++ < 3) {
+                log("TARGETED NATIVE REFERENCE", {
+                    term: term,
+                    at: at,
+                    excerpt: src.slice(Math.max(0, at - 700), at + 1400)
+                });
+                at = src.indexOf(term, at + term.length);
+            }
+        }
+    };
+    let replicaAuditSeen = new WeakSet;
+    const replicaStateAudit = o => {
+        if (!o || replicaAuditSeen.has(o) || S.replicaAuditCount >= 80) return;
+        const kind = isPlayer(o) ? "player" : reconKind(o);
+        if (!kind) return;
+        replicaAuditSeen.add(o);
+        S.replicaAuditCount = (S.replicaAuditCount || 0) + 1;
+        const entries = [], seen = new Set;
+        function walk(v, path, depth) {
+            if (!v || typeof v !== "object" || seen.has(v) || depth > 2 || seen.size >= 60 || v instanceof Node || ArrayBuffer.isView(v)) return;
+            seen.add(v);
+            for (const key of Object.getOwnPropertyNames(v).slice(0, 160)) {
+                if ([ "parent", "ÁÄ", "â", "Eâ", "head", "Ëå", "ÄA", "canvas" ].includes(key)) continue;
+                let x;
+                try {
+                    x = v[key];
+                } catch (_) {
+                    continue;
+                }
+                const label = schemaFields.get(key) || key;
+                if (x == null || [ "number", "boolean", "string" ].includes(typeof x)) {
+                    if (typeof x !== "string" || x.length <= 150) entries.push({
+                        path: path + key,
+                        meaning: label,
+                        value: x
+                    });
+                } else if (Array.isArray(x) && x.length <= 8) for (let i = 0; i < x.length; i++) walk(x[i], path + key + "[" + i + "].", depth + 1); else if (x && typeof x === "object" && [ "new", "Âä", "áÆ", "ëa", "E_", "Åé" ].includes(key)) walk(x, path + key + ".", depth + 1);
+                if (entries.length >= 240) return;
+            }
+        }
+        walk(o, "", 0);
+        log("NATIVE REPLICA SCHEMA SAMPLE", {
+            id: o.id,
+            kind: kind,
+            phase: S.botPhase,
+            knownHuman: isLocal(o) ? "local user this run" : null,
+            fields: entries,
+            note: "Read-only settled native/replica fields. No classifier; no opened/NONE inference."
         });
     };
     const registrationAudit = src => {
@@ -2024,30 +2597,30 @@
         if (!isLocal(r)) {
             if (e.numericHealthShield) for (const [key, field] of [ [ "æÄ", "åÈ" ], [ "AÃå", "Â$" ] ]) {
                 const bar = r[key];
-                if (bar?.add) attachFeature(r, "number:" + key, bar, (ctx,s) => {
+                if (bar?.add) attachFeature(r, "number:" + key, bar, (ctx, s) => {
                     if (!exFast().numericHealthShield) return;
-                    const val = r[field], w = Math.abs(Number(bar.width))/s, h = Math.abs(Number(bar.height))/s;
-                    if (!Number.isFinite(val) || !(w > 2/s && h > 2/s)) return;
+                    const val = r[field], w = Math.abs(Number(bar.width)) / s, h = Math.abs(Number(bar.height)) / s;
+                    if (!Number.isFinite(val) || !(w > 2 / s && h > 2 / s)) return;
                     const text = String(Math.round(val));
                     ctx.save();
                     try {
                         ctx.beginPath();
-                        ctx.rect(-w / 2 + 1/s, -h / 2 + 1/s, w - 2/s, h - 2/s);
+                        ctx.rect(-w / 2 + 1 / s, -h / 2 + 1 / s, w - 2 / s, h - 2 / s);
                         ctx.clip();
                         ctx.textAlign = "center";
                         ctx.textBaseline = "middle";
-                        ctx.fillStyle = "#fff";
-                        ctx.strokeStyle = "#000";
-                        ctx.lineWidth = 2/s;
+                        ctx.fillStyle = "#000";
+                        ctx.strokeStyle = "#fff";
+                        ctx.lineWidth = 2 / s;
                         ctx.lineJoin = "round";
-                        let size = Math.min(10/s, h - 2/s);
+                        let size = Math.min(10 / s, h - 2 / s);
                         ctx.font = "bold " + size + "px Arial";
                         const tw = ctx.measureText(text).width;
-                        if (tw > w - 4/s) {
-                            size *= (w - 4/s) / tw;
+                        if (tw > w - 4 / s) {
+                            size *= (w - 4 / s) / tw;
                             ctx.font = "bold " + size + "px Arial";
                         }
-                        if (size >= 3/s) {
+                        if (size >= 3 / s) {
                             ctx.strokeText(text, 0, 0);
                             ctx.fillText(text, 0, 0);
                         }
@@ -2060,17 +2633,14 @@
                 if (exFast().highContrastPlayers) featureRing(ctx, 55, s, "#ffea00");
             });
         }
-        if (isLocal(r) && (e.lowHealthWarning || e.lowMatsWarning)) attachFeature(r, "warning", r.Eâ, (ctx, s) => {
-            const z = exFast(), rows = [];
-            if (z.lowHealthWarning && Number.isFinite(r["åÈ"]) && r["åÈ"] <= 30) {
-                featureRing(ctx, 65, s, "#ff3030");
-                rows.push("LOW HEALTH " + Math.round(r["åÈ"]));
-            }
-            if (z.lowMatsWarning && [ "ÊÃÄ", "Äâã" ].some(k => Array.isArray(r[k]))) {
-                const total = matState(r).slice(0, 3).reduce((a, b) => a + (Number(b) || 0), 0);
-                if (total < 30) rows.push("LOW MATS " + total);
-            }
-            rows.forEach((x, i) => featureText(ctx, x, 0, 110 + i * 18, s, "#ff6666"));
+        if (isLocal(r) && e.lowHealthWarning) attachFeature(r, "warning", r.Eâ, (ctx, s) => {
+            if (!exFast().lowHealthWarning || !Number.isFinite(r["åÈ"]) || r["åÈ"] > 30) return;
+            ctx.save();
+            ctx.shadowColor = "#ff2020";
+            ctx.shadowBlur = 12 / s;
+            ctx.globalAlpha *= .25 + .75 * (.5 + .5 * Math.sin(performance.now() / 140));
+            featureRing(ctx, 65, s, "#ff2020");
+            ctx.restore();
         });
     }, featureWorld = o => {
         const e = exFast();
@@ -2100,11 +2670,31 @@
         });
     }, featureTick = () => {
         try {
+            if (S.renderer && performance.now() - (S.hudLastReport || -Infinity) > 15e3) {
+                S.hudLastReport = performance.now();
+                const status = S.hudStatus || {
+                    captured: false
+                };
+                log("NATIVE HUD CAPTURE STATUS", {
+                    ...status,
+                    ownWarningBindings: S.hudWarnNodes?.size || 0,
+                    approximationFallback: !status.captured,
+                    note: "Exact native appearance is pending; missing/private HUD roots require the captured constructor/source route."
+                });
+            }
+            if (S.renderer && !S.meteorAutoTimer && (extrasState().permanentMeteor || extrasState().lowMatsWarning)) meteorAutoStart("feature watchdog");
             featureEx.value = extrasState();
             featureEx.at = performance.now();
+            ownMaterialWarnings();
             const e = featureEx.value;
             for (const r of collectPlayers()) featurePlayer(r);
             const world = collectWorld(), live = new Set([ ...collectPlayers(), ...world ]);
+            for (const [r, c] of S.nativeInvClones || []) if (!live.has(r)) {
+                for (const row of c.rows) for (const u of row.units) try {
+                    u.root["ÊÈA"]?.();
+                } catch (_) {}
+                S.nativeInvClones.delete(r);
+            }
             for (const o of world) featureWorld(o);
             for (const [o, m] of featureNodes) if (!live.has(o)) {
                 for (const n of m.values()) try {
@@ -2240,6 +2830,7 @@
             const src = raw.replace(/\\x([\da-f]{2})|\\u([\da-f]{4})|\\([0-7]{1,3})/gi, (_, a, b, c) => String.fromCharCode(parseInt(a || b || c, c ? 8 : 16)));
             reconNow.source = true;
             reconNow.sourceUrl = url;
+            sourceSchemaAudit(src);
             botSourceAudit(src);
             registrationAudit(src);
             for (const term of [ 'Å.ÃEÅ("gun"', 'Å.ÃEÅ("object"', 'Å.ÃEÅ("spellfield"', 'Å.æÊÈ("circle"', "äèä=", "crosshair", "minimap" ]) {
@@ -2522,7 +3113,10 @@
                         }
                     });
                     reconRestore.push(() => {
-                        if (d) {Object.defineProperty(target, "opacity", d);if("value"in d&&d.writable)target.opacity=v;} else {
+                        if (d) {
+                            Object.defineProperty(target, "opacity", d);
+                            if ("value" in d && d.writable) target.opacity = v;
+                        } else {
                             delete target.opacity;
                             target.opacity = v;
                         }
@@ -2584,7 +3178,7 @@
             version: S.v,
             nameRule: "prepend uL# at Play; dynamic local capture",
             inventoryScales: INV_SCALE,
-            activeTests: REQUIRED_TESTS.map(id=>EXTRA.modifiers.find(x=>x[0]===id)?.[1]||id),
+            activeTests: REQUIRED_TESTS.map(id => EXTRA.modifiers.find(x => x[0] === id)?.[1] || id),
             inventoryArt: "native invN slot backgrounds from captured HUD traces",
             lobbyProbe: "MATCH START separates lobby and match samples",
             meteor: "automatic native waypoint capture · testing; retention visually verified in V40"

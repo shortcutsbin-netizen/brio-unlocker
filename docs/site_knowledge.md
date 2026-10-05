@@ -1,3 +1,19 @@
+# Current site update — V43, 2026-10-05
+
+V42 source log still records `/js/uOfrVi.js`, 764701 characters; offsets/obfuscated fields are deployment-specific. Direct source access from this execution environment was unavailable, so source reasoning uses preserved log evidence and V43's bounded same-origin runtime inspection. No logged/fixture draw is pixel proof.
+
+V42's meteor timer/observers/hold never initialized; no startup/scene entry exists. V43 initializes through an epoch timer, logs before discovery, arms timer before guarded scanning, isolates throwing scene/window fields, and repairs missing timer through watchdog. The unguarded V42 path fails in a hostile-property fixture, but the site's exact thrown property remains unknown. Scans keep 3000-node/1000ms and 96-container limits; disconnected map roots remain unproven. Proven V40 native retention is retained; new acquisition awaits live feedback.
+
+Native source dictionary evidence: `AÀ=isPreview`, `Åé=weaponSlots`, `ÈÆ=selectedWeapon`, `äã=rarity`, `áé=mats`, `áAæ=wAmmo`, `åæ=ammo`, `E_=locker`, `Â$=shield`. These are semantics, not AI/contents evidence. V43 audits actual dictionary assignments, separates create/frame/update/remove callback candidates, and samples settled native/replica own fields under decoded names (including newly arriving players). No outgoing hooks or classifier. Chest/drop/fishing pre-open selection/seed/table/payload and private/raw receive routes are not excluded. No impossibility conclusion or UI removal.
+
+Own material warnings bind only captured native HUD wood/brick/metal display geometry and finite raw local counts<30; no fourth-material assumption, summed warning or remote outlines. Glowing/flashing health outline remains local HP≤30. Numeric bars now black/white, native scaled fit/clip. Arrow colors/white-black meter text/shaft rotation and freshness suppression unchanged.
+
+Remote inventory native replicas capture widget constructors, child resources/geometry/style, and clone through existing native constructors; remote material/ammo count, item art/rarity bindings are applied. Native load bookkeeping is set on replica art. Already-generated replica widgets are excluded from discovery; inactive-player clones clean up. Five-item attachment/size/row toggles remain. Source logging exposes unsupported constructors/missing private HUD roots; unavailable rows retain old fallback with explicit status. Exact native selection/count-caption/closed-over-font binding still needs source/live evidence where unresolved. Do not claim pixel identity yet.
+
+Latest detailed evidence: `docs/v43-findings.md`; next run: `docs/v43-test-procedure.md`. This update supersedes earlier pending/style directions; old field/source/history evidence follows.
+
+---
+
 # Current site update — V42, 2026-10-05
 
 This update supersedes the pending-V41 status in the preserved snapshot below. The deployed bundle recorded in the V41 run is still `/js/uOfrVi.js`, 764701 characters; obfuscated fields remain deployment-specific. V41 observed a native meteorite, airdrop and fishing bubbles, but acquired no meteor map hold and captured zero roofs. V40 marker parent evidence lists native `add`, front-add and remove methods as own properties. A prototype-only add search is insufficient for that observed shape.

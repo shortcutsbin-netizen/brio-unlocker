@@ -1,3 +1,19 @@
+# Current project update — V43, 2026-10-05
+
+Latest analyzed run: `logs/v42-log.txt`, visual observations and own-HUD material-warning clarification in `logs/v42-2026-10-05-observations.md`. Current editable source `src/brio.js`; complete plain Console payload `dist/brio-v43.min.js`; archive `versions/brio-v43.min.js`. V40/V41 renamed into standardized version archives; old duplicate dist V42 removed with identical V42 archive retained. See `docs/releases.md`. Complete logs and literal historical appendices remain unchanged. Current root AGENTS.md replaces accumulated stale access/pending-V41 instructions; Git preserves earlier instructions.
+
+V42 recorded 21 roof captures, 10 cosmetic adapters, valid MATCH START, 64 native kinds, 28 container baselines/16 changes/27 removals, 10 audited/11 tracked players. User says meteor retention failed; no startup/scan/timer/hold was recorded. Numbers remain hard to read and inventories differ from native HUD. See `docs/v43-findings.md` for precise evidence and limitations.
+
+V43: guarded observable meteor initialization and recovery; black numbers/white outlines; glowing/flashing local low-health ring; only-own-HUD independent wood/brick/metal warnings below 30; native inventory widget constructor/geometry capture and cloning, with explicit incomplete fallback; decoded source dictionary/callback and settled semantic replica probes. Inventory tracking/sizing remains established; native artwork is a changed yellow test surface, not proven exact. Existing cosmetic/UI/invisibility/indicator modes remain. No outgoing/protocol/ownership change or source-string execution. Own-HUD warnings require native widget capture, which is reported.
+
+Eight source/full-payload integrated scenarios include constructor-like native HUD/count binding and 29/30/31 own-only thresholds, throwing scene-property startup recovery, decoded source mappings, and previous seven preservation scenarios. Live pixels/map/private HUD-root reachability remain pending. Next run: all fifteen blue flags and three action types in `docs/v43-test-procedure.md`, then full log plus observations. Do not ask to rerun unchanged successful surfaces without a relevant dependency change.
+
+Interim contents/bots: still unresolved, not verified impossible. `AÀ` maps to isPreview, not AI; Robot source terms were cosmetics. Source dictionary/indirection and separate create/update/native replica payload routes were not exhausted. V43 opens those more precise surfaces; do not remove Screen contents options or fabricate NONE/heuristics. The local user alone is current human ground truth unless user supplies current labels. Read findings before selecting next probe.
+
+This current update supersedes older pending-release/access/style/test directions below. Preserve the user's built-feature invariant and user-authorized style changes, exact historical V41 bytes, retired-route evidence and full raw logs.
+
+---
+
 # Current project update — V42, 2026-10-05
 
 This update supersedes the pending-V41 and next-thread access directions in the preserved 2026-10-05 handoff below. V41 has been run; latest full log is `logs/v41-log.txt`, accompanied by `logs/v41-2026-10-05-observations.md`. Read `docs/v42-findings.md` for exact evidence and limitations and `docs/v42-test-procedure.md` for the next run. No V42 live visual pass is established.
