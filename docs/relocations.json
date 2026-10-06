@@ -1,0 +1,429 @@
+{
+  "release": 49,
+  "note": "Historical file bytes remain at relocated paths. Knowledge retains original bytes as suffix; previous analysis-tool bytes additionally archived. Current authoring files evolve normally, with full Git history and exact v48 source archive.",
+  "files": [
+    {
+      "from": "THIRD_PARTY_NOTICES.md",
+      "to": "docs/licenses/THIRD_PARTY_NOTICES.md",
+      "originalGitBlob": "b7fcfc3102b9b1ac5472d4bb3cc0310adb1e96bc",
+      "bytes": 1202,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "dist/brio-v48.min.js",
+      "to": "dist/archived/brio-v48.min.js",
+      "originalGitBlob": "e2a4b4b39e25c5a22396ed7cc973f14e459da57d",
+      "bytes": 247770,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/engine.js",
+      "to": "docs/game-sources/engine.js",
+      "originalGitBlob": "34a265c9368d54ada540d9daaef64f7522119643",
+      "bytes": 838390,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/msgpack.js",
+      "to": "docs/game-sources/msgpack.js",
+      "originalGitBlob": "e6f975f560f71442da1a1b1d1cce6f1325e65086",
+      "bytes": 51128,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/project_knowledge.md",
+      "to": "docs/knowledge/project_knowledge.md",
+      "originalGitBlob": "92fad9b5e30347bb87a85c9c9d5d833f762786fb",
+      "bytes": 1264619,
+      "preservation": "Complete original bytes retained as historical suffix"
+    },
+    {
+      "from": "docs/scheme.js",
+      "to": "docs/game-sources/scheme.js",
+      "originalGitBlob": "0d4b8327cb5ab3fa3cba7118f2c45e39e7f53f46",
+      "bytes": 36,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/site_knowledge.md",
+      "to": "docs/knowledge/site_knowledge.md",
+      "originalGitBlob": "e73737abcdfde5d3a7b88d0a70d0adad651f5483",
+      "bytes": 119084,
+      "preservation": "Complete original bytes retained as historical suffix"
+    },
+    {
+      "from": "docs/v42-findings.md",
+      "to": "docs/findings/v42-findings.md",
+      "originalGitBlob": "9879256576652393ecf69b571bc070f0ee3f79ab",
+      "bytes": 6061,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v42-test-procedure.md",
+      "to": "docs/test-procedures/v42-test-procedure.md",
+      "originalGitBlob": "408dc172715545b8b2cbfb8b0f0c98518f6adbff",
+      "bytes": 2116,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v43-findings.md",
+      "to": "docs/findings/v43-findings.md",
+      "originalGitBlob": "fa842e830cb1faac721f844762a976e5cb307f72",
+      "bytes": 6465,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v43-test-procedure.md",
+      "to": "docs/test-procedures/v43-test-procedure.md",
+      "originalGitBlob": "eb95db47b018a8adb8488b0fff56d29069ad6980",
+      "bytes": 2632,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v44-findings.md",
+      "to": "docs/findings/v44-findings.md",
+      "originalGitBlob": "3985251375b14a2cca5712984ad9b67c4f66a50e",
+      "bytes": 7023,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v44-status.md",
+      "to": "docs/status/v44-status.md",
+      "originalGitBlob": "37eb3c7a26b2aa6c425c5f8e0db29455d29d2451",
+      "bytes": 3887,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v44-test-procedure.md",
+      "to": "docs/test-procedures/v44-test-procedure.md",
+      "originalGitBlob": "ffc3c34200311345586e41766368afae55bd0642",
+      "bytes": 2437,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v45-engine-analysis.json",
+      "to": "docs/analysis/engine/v45-engine-analysis.json",
+      "originalGitBlob": "a0898f36c5d6ae6c2d87c7c6726a30422cd57a18",
+      "bytes": 26802,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v45-findings.md",
+      "to": "docs/findings/v45-findings.md",
+      "originalGitBlob": "ea4c6f1aee465236cb8b47029098e7fa14e1cfbd",
+      "bytes": 10698,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v45-status.md",
+      "to": "docs/status/v45-status.md",
+      "originalGitBlob": "dc1eeb6e3b1592cf5d5a2f5c1bada31673d3233b",
+      "bytes": 3603,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v45-test-procedure.md",
+      "to": "docs/test-procedures/v45-test-procedure.md",
+      "originalGitBlob": "8115d56b2b7648dea343dfae6012ac302c071ed8",
+      "bytes": 2680,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v46-engine-analysis.json",
+      "to": "docs/analysis/engine/v46-engine-analysis.json",
+      "originalGitBlob": "a0898f36c5d6ae6c2d87c7c6726a30422cd57a18",
+      "bytes": 26802,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v46-findings.md",
+      "to": "docs/findings/v46-findings.md",
+      "originalGitBlob": "07abfa911627929c6b0d29f5f7a29d66c64913f5",
+      "bytes": 6930,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v46-status.md",
+      "to": "docs/status/v46-status.md",
+      "originalGitBlob": "5c9f4d2e964410b80f04d3dc41ad45a923780d36",
+      "bytes": 4153,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v46-test-procedure.md",
+      "to": "docs/test-procedures/v46-test-procedure.md",
+      "originalGitBlob": "8aa219a2b002b373393491a8d0b93f2a6552dc8a",
+      "bytes": 4603,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v46-v45-analysis.json",
+      "to": "docs/analysis/runs/v46-v45-analysis.json",
+      "originalGitBlob": "e65a8aa6e20e37d5804c4994c44a925b3c7a48fe",
+      "bytes": 4189,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v47-engine-analysis.json",
+      "to": "docs/analysis/engine/v47-engine-analysis.json",
+      "originalGitBlob": "a0898f36c5d6ae6c2d87c7c6726a30422cd57a18",
+      "bytes": 26802,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v47-findings.md",
+      "to": "docs/findings/v47-findings.md",
+      "originalGitBlob": "b21350ee3b96a86c71c900aad69f38293107b39d",
+      "bytes": 6162,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v47-status.md",
+      "to": "docs/status/v47-status.md",
+      "originalGitBlob": "c424230c6c8092390ad086727297d6326067c363",
+      "bytes": 3097,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v47-test-procedure.md",
+      "to": "docs/test-procedures/v47-test-procedure.md",
+      "originalGitBlob": "6473ed97cd38dab088a1e86aee2d82cac90e59a1",
+      "bytes": 3666,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v47-v46-analysis.json",
+      "to": "docs/analysis/runs/v47-v46-analysis.json",
+      "originalGitBlob": "e6a7f9fdb118f22ebc5b209d98091326cbdd4f3a",
+      "bytes": 26556,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v48-engine-analysis.json",
+      "to": "docs/analysis/engine/v48-engine-analysis.json",
+      "originalGitBlob": "c1cc3ef6ad0d99e564013485b32023690b7d74af",
+      "bytes": 34586,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v48-findings.md",
+      "to": "docs/findings/v48-findings.md",
+      "originalGitBlob": "4755aea31e97f87761d191b4e1a34663b23af727",
+      "bytes": 4472,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v48-status.md",
+      "to": "docs/status/v48-status.md",
+      "originalGitBlob": "1eee08d1836f42d5f2c624dd8691d096aed5224f",
+      "bytes": 2956,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v48-test-procedure.md",
+      "to": "docs/test-procedures/v48-test-procedure.md",
+      "originalGitBlob": "8d9a0c3921113ef6eca71eb1851f9f1b2852b651",
+      "bytes": 4074,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "docs/v48-v47-analysis.json",
+      "to": "docs/analysis/runs/v48-v47-analysis.json",
+      "originalGitBlob": "765f9e4fa2c24556148345269cf32fcbdcfe836f",
+      "bytes": 16785,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v40-log.txt",
+      "to": "logs/runs/v40-log.txt",
+      "originalGitBlob": "e82cd8ffd1f60e2ee35fedc86c3943206e799a32",
+      "bytes": 298085,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v41-2026-10-05-observations.md",
+      "to": "logs/observations/v41-2026-10-05-observations.md",
+      "originalGitBlob": "d3f6ff66e294a4f247163a66b6447ad4ea689c7e",
+      "bytes": 974,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v41-log.txt",
+      "to": "logs/runs/v41-log.txt",
+      "originalGitBlob": "4cba0bb7f684cd117b54145e96fa7c98d8563ae3",
+      "bytes": 400080,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v42-2026-10-05-observations.md",
+      "to": "logs/observations/v42-2026-10-05-observations.md",
+      "originalGitBlob": "877799f21cb861abe1ce9404b3fb58c0b5f7846d",
+      "bytes": 1032,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v42-log.txt",
+      "to": "logs/runs/v42-log.txt",
+      "originalGitBlob": "cbd2202940a1c05e9ee71011af0e598116425fb0",
+      "bytes": 402760,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v43-2026-10-05-observations.md",
+      "to": "logs/observations/v43-2026-10-05-observations.md",
+      "originalGitBlob": "3d1790813525afa0d43d7958e624bba9a26b1332",
+      "bytes": 1125,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v43-log.txt",
+      "to": "logs/runs/v43-log.txt",
+      "originalGitBlob": "979a8b3ee5c00920a2cccc774cb3b2bf89a64dc7",
+      "bytes": 812161,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v44-2026-10-05-observations.md",
+      "to": "logs/observations/v44-2026-10-05-observations.md",
+      "originalGitBlob": "3247ee0f6fe559cfd8f5a33acefb8083804651bc",
+      "bytes": 1317,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v44-log.txt",
+      "to": "logs/runs/v44-log.txt",
+      "originalGitBlob": "92a6245973fb4d68e535128fa74d4f78f101b42c",
+      "bytes": 798834,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v45-2026-10-06-observations.md",
+      "to": "logs/observations/v45-2026-10-06-observations.md",
+      "originalGitBlob": "92ac6d903685721c056e8ebe11b98c9f0b55330b",
+      "bytes": 1533,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v45-log.txt",
+      "to": "logs/runs/v45-log.txt",
+      "originalGitBlob": "904fbb61c8a131d1c4e6d19b9f81652059cd3d9a",
+      "bytes": 2961380,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v46-2026-10-06-observations.md",
+      "to": "logs/observations/v46-2026-10-06-observations.md",
+      "originalGitBlob": "23c1b1e3744d44df7acb6cacd30157c36dd46358",
+      "bytes": 1534,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v46-log.txt",
+      "to": "logs/runs/v46-log.txt",
+      "originalGitBlob": "83ba1c7c4c05a7828004f043684a19cc9e401a1e",
+      "bytes": 7532752,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v47-2026-10-06-observations.md",
+      "to": "logs/observations/v47-2026-10-06-observations.md",
+      "originalGitBlob": "d6127cf79403350bd9b9c0e46f92a08ca1553adb",
+      "bytes": 1432,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v47-log.txt",
+      "to": "logs/runs/v47-log.txt",
+      "originalGitBlob": "2982ae782b7cfbcbfdbf6a2fa6046666714c8b61",
+      "bytes": 5141313,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "logs/v48-log.txt",
+      "to": "logs/runs/v48-log.txt",
+      "originalGitBlob": "4cd9538ea9e76fa70f26411db88dfddb2d13c058",
+      "bytes": 4667213,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "tools/analyze-engine.cjs",
+      "to": "tools/analysis/analyze-engine.cjs",
+      "originalGitBlob": "6c5b1bc28a4a244ceba50ff72a4059e5b10c9e6c",
+      "bytes": 5055,
+      "preservation": "Original archived; current analyzer defaults updated",
+      "originalArchive": "tools/analysis/archive/v48/analyze-engine.cjs"
+    },
+    {
+      "from": "tools/analyze-log.cjs",
+      "to": "tools/analysis/analyze-log.cjs",
+      "originalGitBlob": "469469e6f75fcf0a681025378fe63f0d9bd7b289",
+      "bytes": 3385,
+      "preservation": "Original archived; current analyzer defaults updated",
+      "originalArchive": "tools/analysis/archive/v48/analyze-log.cjs"
+    },
+    {
+      "from": "versions/brio-v40.min.js",
+      "to": "versions/v40/brio-v40.min.js",
+      "originalGitBlob": "37f37c49ea0317c7cb4b296587eb0bc15e6d3da4",
+      "bytes": 71518,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "versions/brio-v41.min.js",
+      "to": "versions/v41/brio-v41.min.js",
+      "originalGitBlob": "c776e4518673cdcd61e6bb8cbb92c715a1f1b23d",
+      "bytes": 71175,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "versions/brio-v42.min.js",
+      "to": "versions/v42/brio-v42.min.js",
+      "originalGitBlob": "e015454099e40fb998182b8aacbcb843827e2231",
+      "bytes": 72958,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "versions/brio-v43.min.js",
+      "to": "versions/v43/brio-v43.min.js",
+      "originalGitBlob": "6c15122401d9bb0af2fe0bc5b9b42d09cd89e77f",
+      "bytes": 86485,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "versions/brio-v44.min.js",
+      "to": "versions/v44/brio-v44.min.js",
+      "originalGitBlob": "084e53087c04726e01fc85da6a42399080b31b39",
+      "bytes": 93167,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "versions/brio-v45.min.js",
+      "to": "versions/v45/brio-v45.min.js",
+      "originalGitBlob": "ce9fb1820ba0e53c678827accf29ec4fb05848b7",
+      "bytes": 234250,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "versions/brio-v46.min.js",
+      "to": "versions/v46/brio-v46.min.js",
+      "originalGitBlob": "16837eb22aa1bdc70004e6cfad7c0da9fcfce89a",
+      "bytes": 245292,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "versions/brio-v47.min.js",
+      "to": "versions/v47/brio-v47.min.js",
+      "originalGitBlob": "2e492596f7a0b1b4865d4681c9920c59fc193d0b",
+      "bytes": 244267,
+      "preservation": "Exact original bytes"
+    },
+    {
+      "from": "versions/brio-v48.min.js",
+      "to": "versions/v48/brio-v48.min.js",
+      "originalGitBlob": "e2a4b4b39e25c5a22396ed7cc973f14e459da57d",
+      "bytes": 247770,
+      "preservation": "Exact original bytes"
+    }
+  ]
+}
+

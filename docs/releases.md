@@ -1,3 +1,11 @@
+# V49 release update - 2026-10-06
+
+Current src/brio.js; direct comment-free dist/brio-v49.min.js; identical immutable versions/v49/brio-v49.min.js. Prior files relocated by purpose/version with exact original bytes and blob hashes, including dist/archived/brio-v48.min.js. See docs/relocations.json and docs/README.md; older textual paths below remain historical.
+
+V49 corrects inclusive boundaries, inline thresholds, local-only HP circles, flare exemption, selected native border alignment and native rarity glow/particles. Custom values remain preserved/proven; grappler default5. Current handoff under findings/status/test-procedures/analysis. Earlier entries retained unchanged.
+
+---
+
 # V48 release update - 2026-10-06
 
 Current source src/brio.js; direct comment-free dist/brio-v48.min.js; identical immutable versions/brio-v48.min.js. versions/brio-v47.min.js and older archives/logs/reference preserved exactly. Current handoff: v48 findings/status/procedure, exact v47 log and reproducible analysis. Shared configurable thresholds/scraps/grappler, clone-only slot-count removal, proven modifiers removed from recurring flags. Earlier entries remain historical.

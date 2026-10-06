@@ -1,9 +1,9 @@
 # BRIO Unlocker
 
-Current release: **V48**. [Complete plain Console payload](dist/brio-v48.min.js): **Copy raw file** (or Raw → select all/copy), paste on Build Royale home, then normal Play. No manual arm. Zero minified comments; extensive readable-source annotations.
+Current release **V49**: [complete plain Console payload](dist/brio-v49.min.js). Use **Copy raw file**, paste on Build Royale home, then ordinary Play. No manual arm. Zero minified comments; extensively annotated readable source.
 
-[Source](src/brio.js) · [Focused procedure](docs/v48-test-procedure.md) · [Findings](docs/v48-findings.md) · [All-feature status](docs/v48-status.md) · [V47 analysis](docs/v48-v47-analysis.json) · [Native reference](docs/engine.js) · [Static analysis](docs/v48-engine-analysis.json) · [Release paths](docs/releases.md).
+[Source](src/brio.js) · [Focused procedure](docs/test-procedures/v49-test-procedure.md) · [Findings](docs/findings/v49-findings.md) · [Feature status](docs/status/v49-status.md) · [Repository guide](docs/README.md) · [Release history](docs/releases.md) · [Parser notice](docs/licenses/THIRD_PARTY_NOTICES.md).
 
-V48 adds one row of shared per-type warning thresholds, scraps/grappler charge warnings, and removes only redundant remote slot ammo counts. Inventory presentation and immediate monochrome startup are proven; confirmed modifiers leave recurring tests. Contents/bots unresolved; desired screening is always-visible pre-open contents above detected objects.
+V49 puts thresholds inline under warnings, uses inclusive boundaries, defaults grappler to5, keeps HP circles local-only, exempts flare guns, follows raised native slots and hides the native rarity glow/particle branch. Custom setting values/persistence are proven. Container contents/bot classification remain unresolved.
 
-Local visuals; native protocol/ownership preserved.29integrated scenarios pass for source/payload: npm ci, npm run build, npm test. Focused surface9flags, proven inventory rows as display dependencies. Fixtures are not live visual proof. Old logs/engine/release bytes preserved. [Parser license](THIRD_PARTY_NOTICES.md).
+npm ci, npm run build, npm test:32integrated scenarios against readable source and actual payload; mocks are not live visual proof. Native authority/network/ownership preserved. Every historical file remains at its mapped location.
