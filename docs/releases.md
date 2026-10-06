@@ -1,3 +1,9 @@
+# V47 release update — 2026-10-06
+
+Current source src/brio.js; direct comment-free dist/brio-v47.min.js; identical immutable versions/brio-v47.min.js. V46 dist duplicate removed; versions/brio-v46.min.js preserved exactly, along with all older archives/logs/reference bytes. V47 findings/status/test procedure and reproducible v46 analysis are the current handoff. Earlier entries below are historical.
+
+---
+
 # V46 release update — 2026-10-06
 
 Current source src/brio.js; complete direct comment-free payload dist/brio-v46.min.js; identical immutable archive versions/brio-v46.min.js. The old dist/brio-v45.min.js duplicate is removed with versions/brio-v45.min.js preserved byte-for-byte. All user logs, raw engine reference, older releases and v45 evidence documents remain unchanged. V46 findings/status/test procedure and reproducible input analysis provide the handoff. Earlier entries below are historical.

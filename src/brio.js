@@ -1,7 +1,24 @@
+/* BRIO v47 maintenance map
+ * A. Home UI/settings/custom cache; B. native resources/cosmetic adapters;
+ * C. player/world discovery; D. HUD acquisition and remote inventory presentation;
+ * E. arrows/warnings; F. ordinary-Play epoch lifecycle; G. passive source/payload evidence;
+ * H. local feature drawables/monochrome; I. scoped scene/meteor retention; J. startup/destroy.
+ * Search the stable "BRIO: helperName" anchors for targeted edits. Tests live in tests/regression.cjs.
+ * Do not edit the vendored Acorn parser below: it parses source DATA and has an external MIT notice.
+ * Native key guide: ë.{É,Ä}=position; âè/ÉE=child arrays; À.{src,ÁÄ}=image resource;
+ * éa/Eââ=native draw entry points; Åé=weapon slots incl pickaxe index0; ÈÆ=selected slot;
+ * áAæ=loaded ammo by slot-1; åæ=reserve ammo by type; ÊÃÄ=material counts;
+ * åÈ/Â$=health/shield; Àâ=world subtype; ÀËá/âëä=local gliding ticks/max ticks.
+ * Protocol x/y/z=create/update/remove. Observe native decode return; never encode/send/mutate packets.
+ * Preserve v45 display-size/X conventions separately from v46 gun-slot capture and meteor cleanup.
+ * Saved choices/custom cache persist; native references/hooks/nodes reset at normal Play.
+ * Any async/deferred capture must check runEpoch before mutation and again after awaits.
+ * Source comments are authoring aids only: tools/build.cjs enforces ZERO comments in dist/archive.
+ */
 (() => {
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v46";
-    for (const k of [ K, "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
+    const W = window, D = document, K = "__brio_unlocker_v47";
+    for (const k of [ K, "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
         W[k]?.destroy?.();
     } catch (_) {}
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -10,7 +27,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "46",
+        v: "47",
         log: [],
         errors: [],
         renderer: null,
@@ -74,25 +91,40 @@
         passiveLocal: null
     };
     W[K] = S;
-    const q = s => D.querySelector(s), t = x => (x ?? "").toString().replace(/\s+/g, " ").trim(), read = (k, d) => {
+    const q = s => D.querySelector(s), t = x => (x ?? "").toString().replace(/\s+/g, " ").trim(), /* BRIO: read
+     * Read persisted JSON defensively. Missing/corrupt settings use the supplied default; runtime state is never stored here.
+     */
+    read = (k, d) => {
         try {
             return JSON.parse(localStorage.getItem(k) || "") || d;
         } catch (_) {
             return d;
         }
-    }, write = (k, v) => {
+    }, /* BRIO: write
+     * Persist user choices only. Storage errors go to diagnostics rather than interrupting native Play.
+     */
+    write = (k, v) => {
         try {
             localStorage.setItem(k, JSON.stringify(v));
         } catch (e) {
             S.errors.push(String(e));
         }
-    }, state = () => read("br_local_visuals", {}), saveState = s => write("br_local_visuals", s), extrasState = () => read("brio_extras_state", {}), saveExtras = s => write("brio_extras_state", s), norm = u => {
+    }, /* BRIO: state
+     * Read cosmetic selections. Keep this namespace separate from the native locker and from Extras.
+     */
+    state = () => read("br_local_visuals", {}), saveState = s => write("br_local_visuals", s), /* BRIO: extrasState
+     * Read current Extras while discarding user-retired options. Old saved true values must never reactivate removed features.
+     */
+    extrasState = () => { const value = read("brio_extras_state", {}); for (const key of ["buildMaterialLabels", "deployableLabels", "deployableRadius", "highlightLoot", "noFoliage"]) delete value[key]; return value; }, saveExtras = s => write("brio_extras_state", s), norm = u => {
         try {
             return new URL(String(u || ""), location.href).pathname.toLowerCase();
         } catch (_) {
             return String(u || "").split(/[?#]/)[0].toLowerCase();
         }
-    }, clean = x => {
+    }, /* BRIO: clean
+     * Sanitize terminal diagnostics, preserving complete source through its separate reconstructable chunk path.
+     */
+    clean = x => {
         if (typeof x === "string") return x.startsWith("data:image/") ? `[data-url ${x.length} chars]` : x.length > 12e3 ? x.slice(0, 11997) + "..." : x;
         if (Array.isArray(x)) return x.map(clean);
         if (x && typeof x === "object") {
@@ -107,7 +139,10 @@
         } catch (_) {
             return String(x);
         }
-    }, log = (m, o) => {
+    }, /* BRIO: log
+     * Append the complete diagnostic history; only the terminal preview is bounded. COPY RESULTS must keep all epochs.
+     */
+    log = (m, o) => {
         const z = `[${(new Date).toISOString().slice(11, 23)}] ${m}${o === undefined ? "" : " " + J(o)}`;
         S.log.push(z);
         if (S.out) {
@@ -121,7 +156,10 @@
         }
     };
     const ROOFS = [ "/buildart/barnroof.png", "/buildart/cabinroof.png", "/buildart/castlebottomleftroof.png", "/buildart/castlebottomrightroof.png", "/buildart/castlecenterroof.png", "/buildart/castletopleftroof.png", "/buildart/castletoprightroof.png", "/buildart/gymroof.png", "/buildart/house0roof.png", "/buildart/house1roof.png", "/buildart/house2roof.png", "/buildart/house3roof.png", "/buildart/house4roof.png", "/buildart/house5roof.png", "/buildart/japanroof.png", "/buildart/jungle_shack_roof.png", "/buildart/museumroof.png", "/buildart/observatoryroof.png", "/buildart/pavilionroof.png", "/buildart/potatopalaceroof.png", "/buildart/shackroof.png" ], ROOFSET = new Set(ROOFS), BUILDRE = /(?:wood|brick|metal)[0-2]\.png$|campfire|boostpad|shieldbuild|shieldbubble/i;
-    const mkBlank = (w, h) => {
+    const /* BRIO: mkBlank
+     * Create transparent, native-sized resources for invisible modes. Never change native image dimensions/bookkeeping.
+     */
+    mkBlank = (w, h) => {
         const c = D.createElement("canvas");
         c.width = w;
         c.height = h;
@@ -132,12 +170,18 @@
         pickaxe: mkBlank(300, 300),
         glider: mkBlank(700, 700)
     };
-    const catalog = () => W["Åèa"] && typeof W["Åèa"] === "object" ? W["Åèa"] : {}, syncSet = () => new Set(Array.isArray(W["åÆÆ"]) ? W["åÆÆ"].map(String) : []), items = typ => Object.entries(catalog()).filter(([id, v]) => v?.type === typ && !(typ === "skin" && (id === "player" || id === "skin1" || t(v?.name).toLowerCase() === "default"))).map(([id, v]) => ({
+    const /* BRIO: catalog
+     * Use the reached native cosmetic catalog, not a fabricated ownership list. SYNC is allowed-set membership only.
+     */
+    catalog = () => W["Åèa"] && typeof W["Åèa"] === "object" ? W["Åèa"] : {}, syncSet = () => new Set(Array.isArray(W["åÆÆ"]) ? W["åÆÆ"].map(String) : []), items = typ => Object.entries(catalog()).filter(([id, v]) => v?.type === typ && !(typ === "skin" && (id === "player" || id === "skin1" || t(v?.name).toLowerCase() === "default"))).map(([id, v]) => ({
         id: id,
         name: v.name || id,
         sync: syncSet().has(id)
     })).sort((a, b) => a.name.localeCompare(b.name));
-    const openDB = () => new Promise((ok, no) => {
+    const /* BRIO: openDB
+     * Open the category-scoped custom asset cache. Never clear user uploads at a match boundary.
+     */
+    openDB = () => new Promise((ok, no) => {
         const r = indexedDB.open("brio_unlocker", 1);
         r.onupgradeneeded = () => {
             if (!r.result.objectStoreNames.contains("customAssets")) r.result.createObjectStore("customAssets", {
@@ -146,7 +190,10 @@
         };
         r.onsuccess = () => ok(r.result);
         r.onerror = () => no(r.error);
-    }), loadCustom = async () => {
+    }), /* BRIO: loadCustom
+     * Restore custom assets and historic IDs before rendering selection UI; tolerate unavailable browser storage.
+     */
+    loadCustom = async () => {
         for (const k in S.custom) S.custom[k] = [];
         try {
             const d = await openDB(), r = d.transaction("customAssets").objectStore("customAssets").getAll(), a = await new Promise((ok, no) => {
@@ -166,7 +213,10 @@
             S.errors.push(String(e));
             log("CUSTOM CACHE ERROR", String(e));
         }
-    }, putCustom = async x => {
+    }, /* BRIO: putCustom
+     * Persist uploaded artwork transactionally. These durable records outlive Play, cleanup and reinjection.
+     */
+    putCustom = async x => {
         const d = await openDB();
         await new Promise((ok, no) => {
             const tr = d.transaction("customAssets", "readwrite");
@@ -177,13 +227,16 @@
         d.close();
     };
     const STATUS = {
-        green: new Set([ "playersInvisible", "lootInvisible", "buildsInvisible", "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventorySlots", "inventoryMaterials", "inventoryAmmo", "inventorySize", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "nearestPlayer", "nearestChest", "nearestAirdrop" ]),
-        yellow: new Set([ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "nearestPlayerName", "lowMatsWarning", "lowAmmoWarning", "noChestsVisible", "noFoliage", "transparentFoliage", "monochrome", "highlightLoot", "cleanLoot", "highContrastPlayers", "buildMaterialLabels", "deployableLabels", "deployableRadius" ])
+        green: new Set([ "playersInvisible", "lootInvisible", "buildsInvisible", "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventorySlots", "inventoryMaterials", "inventoryAmmo", "inventorySize", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "nearestPlayer", "nearestChest", "nearestAirdrop", "nearestPlayerName", "noChestsVisible", "monochrome" ]),
+        yellow: new Set([ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "lowMatsWarning", "lowAmmoWarning", "transparentFoliage", "cleanLoot", "highContrastPlayers" ])
     }, statusOf = id => STATUS.yellow.has(id) ? "yellow" : STATUS.green.has(id) ? "green" : "red";
     const style = D.createElement("style");
-    style.textContent = `#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
+    style.textContent = `[data-brio-mono-page] canvas:not(#playerPreview):not([data-brio-mono]){filter:grayscale(1)!important}#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
     D.documentElement.appendChild(style);
-    const patchButtons = () => {
+    const /* BRIO: patchButtons
+     * Modify the actual native Locker/Shop nodes and preserve original markup/styles for destroy.
+     */
+    patchButtons = () => {
         for (const [id, label, ico] of [ [ "loggedInLocker", "(un)Locker", "/buildart/icon-locker.png" ], [ "loggedInShop", "Extras", "/buildart/icon-shop.png" ] ]) {
             const e = D.getElementById(id);
             if (!e) continue;
@@ -228,7 +281,10 @@
         } : s[kcat()] || {
             mode: "native"
         };
-    }, setSel = x => {
+    }, /* BRIO: setSel
+     * Change one selected cosmetic/category/emote slot. Rendering and saved preferences share this entry point.
+     */
+    setSel = x => {
         const s = state();
         s.enabled = true;
         if (tab === "emote") {
@@ -268,7 +324,10 @@
             });
         }
         return c;
-    }, renderGrid = () => {
+    }, /* BRIO: renderGrid
+     * Build native/random/bundled/invisible/custom choices from the supported category and search.
+     */
+    renderGrid = () => {
         const g = locker.querySelector(".brioGrid"), sr = t(locker.querySelector('input[type="text"]').value).toLowerCase(), k = kcat(), s = sel(), allowInvisible = [ "body", "head", "pickaxe", "trail", "glider" ].includes(k), allowCustom = [ "body", "head", "pickaxe" ].includes(k), match = x => !sr || String(x).toLowerCase().includes(sr);
         g.textContent = "";
         for (const m of [ "native", "random", ...allowInvisible ? [ "invisible" ] : [] ]) if (match(m)) g.appendChild(card(m));
@@ -277,7 +336,10 @@
         for (const c of g.children) if (c.dataset.mode === s.mode && (!c.dataset.id || c.dataset.id === s.id)) c.classList.add("sel");
         locker.querySelector(".brioStatus").textContent = `${labels[tab]}${tab === "skin" ? " / " + sub : ""}${tab === "emote" ? " / Slot " + (slot + 1) : ""}: ${s.name || s.id || s.mode || "Native"}`;
         locker.querySelector("[data-upload]").style.display = allowCustom ? "inline-block" : "none";
-    }, renderLocker = () => {
+    }, /* BRIO: renderLocker
+     * Render category/subcategory/emote-slot controls without creating a duplicate native selection UI.
+     */
+    renderLocker = () => {
         const a = locker.querySelector(".brioTabs"), b = locker.querySelector(".brioSubs"), sl = locker.querySelector(".brioSlots");
         a.textContent = b.textContent = sl.textContent = "";
         for (const x of [ "skin", "pickaxe", "wrap", "trail", "glider", "emote" ]) {
@@ -351,11 +413,14 @@
         e.target.value = "";
     };
     const EXTRA = {
-        challenges: [ [ "playersInvisible", "All players invisible", "remote players only" ], [ "lootInvisible", "Loot invisible", "includes pickup visuals when complete" ], [ "buildsInvisible", "Builds invisible", "walls + special deployables + placement preview" ], [ "noMinimap", "No minimap", "planned" ], [ "noCrosshair", "No crosshair", "planned" ], [ "noInventoryHud", "No inventory/item bar", "planned" ], [ "invisibleStorm", "Invisible storm", "hide zone on minimap + full map" ], [ "noChestsVisible", "Chests invisible", "chests + ammo/grenade crates · test" ], [ "noFoliage", "Foliage invisible", "identified native entities · test" ], [ "noHealthShieldHud", "No health/shield HUD", "planned" ], [ "monochrome", "Monochrome vision", "game canvas grayscale · test" ], [ "flashlightMode", "Flashlight mode", "configurable radius; mouse/player follow" ] ],
-        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "highlightLoot", "Highlight loot", "native yellow pickup ring · test" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · test" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "normal + legendary + ammo/grenade crates · active" ], [ "screenAirdrops", "Screen airdrops", "contents + object identity · active" ], [ "screenFishing", "Screen fishing spots", "contents; NONE is a valid result · active" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · test" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "native yellow silhouette ring · test" ], [ "cleanLoot", "Remove loot glow/effects", "identified glow resource only · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "buildMaterialLabels", "Build material labels", "wood/brick/metal from native sprite · test" ], [ "deployableLabels", "Deployable labels", "campfire/boostpad/shield/drill · test" ], [ "deployableRadius", "Deployable effect-radius display", "current native spellfield radius · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP ≤30; red glowing/flashing player outline" ], [ "lowAmmoWarning", "Low-ammo visual warning", "every gun slot: loaded + reserve <20; remote ammo values flash red · test" ], [ "lowMatsWarning", "Low-material warning", "own material outline + remote values <30 flash red · test" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "captured native assets/geometry; appearance testing", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / special", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + counts", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
+        challenges: [ [ "playersInvisible", "All players invisible", "remote players only" ], [ "lootInvisible", "Loot invisible", "includes pickup visuals when complete" ], [ "buildsInvisible", "Builds invisible", "walls + special deployables + placement preview" ], [ "noMinimap", "No minimap", "planned" ], [ "noCrosshair", "No crosshair", "planned" ], [ "noInventoryHud", "No inventory/item bar", "planned" ], [ "invisibleStorm", "Invisible storm", "hide zone on minimap + full map" ], [ "noChestsVisible", "Chests invisible", "chests + ammo/grenade crates · test" ], [ "noHealthShieldHud", "No health/shield HUD", "planned" ], [ "monochrome", "Monochrome vision", "game canvas grayscale · test" ], [ "flashlightMode", "Flashlight mode", "configurable radius; mouse/player follow" ] ],
+        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · test" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "contents unresolved; passive recon: normal/legendary + crates" ], [ "screenAirdrops", "Screen airdrops", "contents unresolved; passive recon" ], [ "screenFishing", "Screen fishing spots", "contents unresolved; no inferred NONE" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · test" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "cleanLoot", "Remove loot glow/effects", "identified glow resource only · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP ≤30; red glowing/flashing player outline" ], [ "lowAmmoWarning", "Low-ammo visual warning", "every gun slot: loaded + reserve <20; remote ammo values flash red · test" ], [ "lowMatsWarning", "Low-material warning", "own material outline + remote values <30 flash red · test" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "captured native assets/geometry; appearance testing", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / special", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + counts", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
     };
-    const REQUIRED_TESTS = [ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "healthBars", "nearestPlayer", "nearestPlayerName", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "lowAmmoWarning", "identifyBots", "highlightLoot", "cleanLoot", "highContrastPlayers", "transparentFoliage", "buildMaterialLabels", "deployableLabels", "deployableRadius" ];
-    const renderExtras = () => {
+    const REQUIRED_TESTS = [ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "healthBars", "nearestPlayer", "nearestPlayerName", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "lowAmmoWarning", "identifyBots", "cleanLoot", "transparentFoliage" ];
+    const /* BRIO: renderExtras
+     * Render status and blue test flags from the same option registry used by the written live procedure.
+     */
+    renderExtras = () => {
         const a = extras.querySelector(".brioTabs"), p = extras.querySelector(".brioPage"), s = extrasState();
         if (![ "small", "medium", "large", "xl" ].includes(s.inventorySize)) {
             s.inventorySize = "medium";
@@ -414,6 +479,7 @@
                     const z = extrasState();
                     z[id] = c.checked;
                     saveExtras(z);
+                    if (id === "monochrome") syncMonochrome(c.checked);
                 };
                 r.append(l, b, c);
             }
@@ -421,7 +487,10 @@
         }
     };
     extras.querySelector("[data-close]").onclick = () => extras.style.display = "none";
-    const intercept = e => {
+    const /* BRIO: intercept
+     * Intercept only the two native home buttons used for BRIO UI; ordinary Play remains native.
+     */
+    intercept = e => {
         const b = e.target?.closest?.("#loggedInLocker,#loggedInShop");
         if (!b) return;
         e.preventDefault();
@@ -498,7 +567,10 @@
         S.resources.set(ck, p);
         p.catch(() => S.resources.delete(ck));
         return p;
-    }, held = r => r?.["Åé"]?.[r?.["ÈÆ"]]?.type || null, nativeSnap = r => ({
+    }, held = r => r?.["Åé"]?.[r?.["ÈÆ"]]?.type || null, /* BRIO: nativeSnap
+     * Remember renderer cosmetics before local adapters so cleanup can restore native resources/descriptors.
+     */
+    nativeSnap = r => ({
         body: r["Ëå"]?.["À"],
         head: r.head?.["À"],
         headBackup: r["Äâè"],
@@ -783,7 +855,10 @@
             surface: "native drawable child-array traversal; no Canvas hook"
         });
     };
-    const applyLocal = async () => {
+    const /* BRIO: applyLocal
+     * Apply selected local cosmetics after resource loading. Preserve native authority and current renderer identity.
+     */
+    applyLocal = async () => {
         const r = S.renderer;
         if (!r || !S.native) return;
         const epoch = S.runEpoch, s = S.playVisuals || state(), e = extrasState(), R = S.resolvedVisuals || (S.resolvedVisuals = {
@@ -869,7 +944,10 @@
         if (n === want) return true;
         if (!n.startsWith("uL#") || !want.startsWith("uL#")) return false;
         return n === want.slice(0, n.length) || want === n.slice(0, want.length);
-    }, resourceSlots = o => {
+    }, /* BRIO: resourceSlots
+     * Enumerate reached local drawable resource wrappers. Do not fetch/evaluate native engine strings as code.
+     */
+    resourceSlots = o => {
         const out = [], seen = new Set, walk = (v, d) => {
             if (!v || typeof v !== "object" || d > 4 || seen.has(v) || v === W || v === D || v instanceof Node) return;
             seen.add(v);
@@ -902,14 +980,20 @@
             u.push(x);
         }
         return u;
-    }, isWorld = o => !!(o && typeof o === "object" && o.id != null && [ "object", "buildable", "spellfield", "gun", "ammo", "chest", "airdrop" ].includes(String(o.type))), collectPlayers = () => {
+    }, isWorld = o => !!(o && typeof o === "object" && o.id != null && [ "object", "buildable", "spellfield", "gun", "ammo", "chest", "airdrop" ].includes(String(o.type))), /* BRIO: collectPlayers
+     * Collect players from reached active native arrays. Avoid stale/culled fallback players and bot guesses.
+     */
+    collectPlayers = () => {
         const out = [], seen = new Set;
         for (const a of [ S.rendererArray, ...S.arrayHooks.keys() ]) if (Array.isArray(a)) for (const x of a) if (isPlayer(x) && !seen.has(x)) {
             seen.add(x);
             out.push(x);
         }
         return out;
-    }, collectWorld = () => {
+    }, /* BRIO: collectWorld
+     * Collect reached active world objects only; private/disconnected engine registries are not assumed reachable.
+     */
+    collectWorld = () => {
         const out = [], seen = new Set;
         for (const a of [ S.rendererArray, ...S.arrayHooks.keys() ]) if (Array.isArray(a)) for (const x of a) if (isWorld(x) && !seen.has(x)) {
             seen.add(x);
@@ -1120,7 +1204,10 @@
         };
     }, nearestTick = () => nearestV40();
     const hudKinds = path => /\/inv[0-6]\.png$/.test(path) ? "slots" : /\/(?:wood|brick|metal|scrap|gear)\.png$/.test(path) ? "materials" : /\/(?:ammo|stack)[0-4]\.png$/.test(path) ? "ammo" : null;
-    const hudWalk = (root, max = 100) => {
+    const /* BRIO: hudWalk
+     * Traverse a small native widget subtree. Exclude BRIO clones and enforce the per-widget node cap.
+     */
+    hudWalk = (root, max = 100) => {
         const out = [], seen = new Set, stack = [ root ];
         while (stack.length && out.length < max) {
             const n = stack.pop();
@@ -1131,7 +1218,10 @@
         }
         return out;
     };
-    const hudPath = n => norm(n?.["À"]?.src || n?.["À"]?.["ÁÄ"]?.src || "");
+    const /* BRIO: hudPath
+     * Identify native artwork by normalized resource path, independently of obfuscated constructor names.
+     */
+    hudPath = n => norm(n?.["À"]?.src || n?.["À"]?.["ÁÄ"]?.src || "");
     const hudCandidate = n => {
         if (n?.__brioHudClone || S.hudRejected?.has(n) || !hudKinds(hudPath(n))) return;
         if (!S.hudPending) S.hudPending = new WeakSet;
@@ -1151,8 +1241,14 @@
             }
         }, 250);
     };
-    const slotCaption = root => hudWalk(root, 32).find(n => (n.type === "text" || typeof n.text === "string") && /^[1-6]$/.test(String(n.text)) && Number(n["ë"]?.["Ä"]) > 0);
-    const slotUnit = holder => {
+    const /* BRIO: slotCaption
+     * Validate the native numbered caption below a slot. It is capture evidence, not slot-sizing geometry.
+     */
+    slotCaption = root => hudWalk(root, 32).find(n => (n.type === "text" || typeof n.text === "string") && /^[1-6]$/.test(String(n.text)) && Number(n["ë"]?.["Ä"]) > 0);
+    const /* BRIO: slotUnit
+     * Recognize both filled image roots and empty rectangle roots. Selected art may move inside persistent holders.
+     */
+    slotUnit = holder => {
         const candidates = [holder, ...(holder?.["âè"] || []), ...(holder?.["ÉE"] || [])];
         let group = null;
         for (const root of candidates) {
@@ -1164,7 +1260,10 @@
         }
         return group;
     };
-    const captureSlotRow = icon => {
+    const /* BRIO: captureSlotRow
+     * Capture five weapon slots from ordered native holders, excluding the leftmost pickaxe in a six-holder row. Reserve scoped HUD arrays for later replacements.
+     */
+    captureSlotRow = icon => {
         let unit = icon;
         for (let depth = 0; unit && depth < 4 && !slotUnit(unit); depth++) unit = unit.parent;
         if (!unit) return false;
@@ -1206,7 +1305,10 @@
         ownMaterialWarnings();
         return true;
     };
-    const hudInspect = n => {
+    const /* BRIO: hudInspect
+     * Reject pickup particles/player decorations before acquiring material/ammo HUD templates. Candidate roots may contain their own counts.
+     */
+    hudInspect = n => {
         const path = hudPath(n), kind = hudKinds(path);
         if (path && n?.["À"]?.["ÁÄ"]) (S.hudNativeImages || (S.hudNativeImages = new Map)).set(path, n["À"]["ÁÄ"]);
         if (!kind || S.hudSourceNodes?.has(n)) return;
@@ -1292,7 +1394,10 @@
         }); }
         ownMaterialWarnings();
     };
-    const hudBounds = record => {
+    const /* BRIO: hudBounds
+     * Compute general widget extents for material/ammo replicas. Weapon display sizing uses inventoryBounds instead.
+     */
+    hudBounds = record => {
         let left = Infinity, right = -Infinity, top = Infinity, bottom = -Infinity;
         for (const n of record.nodes) {
             if (!n["À"] && !(n.type === "text" || typeof n.text === "string") && !(n === record.root && Number(n.width) > 0 && Number(n.height) > 0)) continue;
@@ -1325,7 +1430,10 @@
             height: bottom - top
         };
     };
-    const ownMaterialWarnings = () => {
+    const /* BRIO: ownMaterialWarnings
+     * Attach warning overlays to native material cells and gun slot roots. These own-HUD bounds are independent of remote replica presentation.
+     */
+    ownMaterialWarnings = () => {
         if (!S.renderer || !S.hudTemplates) return;
         for (const [root, node] of S.hudWarnNodes || []) if (!root.parent) { try { root.remove?.(node); } catch (_) {} S.hudWarnNodes.delete(root); }
         for (const rec of [...S.hudTemplates.materials, ...S.hudTemplates.slots]) {
@@ -1364,7 +1472,10 @@
             });
         }
     };
-    const cloneNativeWidget = rec => {
+    const /* BRIO: cloneNativeWidget
+     * Clone bounded native drawable trees through constructors or plain-object factories. Preserve draw methods, resources and styles; never attach clones to discovery.
+     */
+    cloneNativeWidget = rec => {
         let count = 0;
         const pairs = [], seen = new Map;
         const clone = n => {
@@ -1420,7 +1531,10 @@
             record: rec
         };
     };
-    const ensureNativeSlotArt = unit => {
+    const /* BRIO: ensureNativeSlotArt
+     * Supply drawable item art when an empty native rectangle has no image child. Do not change the native source widget.
+     */
+    ensureNativeSlotArt = unit => {
         if (unit.pairs.some(p => isSlotArtwork(p.path))) return;
         const background = unit.pairs.find(p => /\/inv[0-6]\.png$/.test(p.path)) || (S.hudSlotSprite ? {source: S.hudSlotSprite, node: S.hudSlotSprite} : null);
         if (!background || typeof unit.root.add !== "function") return;
@@ -1451,7 +1565,10 @@
             });
         }
     };
-    const nativeInvFor = r => {
+    const /* BRIO: nativeInvFor
+     * Cache remote native clones by HUD version. Rebuild after template replacement; destroy superseded clones.
+     */
+    nativeInvFor = r => {
         if (!S.hudTemplates?.slots?.length) return null;
         if (!S.nativeInvClones) S.nativeInvClones = new Map;
         let cached = S.nativeInvClones.get(r);
@@ -1488,7 +1605,14 @@
         S.nativeInvClones.set(r, cached);
         return cached;
     };
-    const drawNativeInv = (ctx, s, r) => {
+    const /* BRIO: inventoryBounds
+     * V45 presentation contract: fit the weapon background into an 18px cell, not caption/artwork extents. Own ammo-warning geometry remains slotBounds.
+     */
+    inventoryBounds = rec => rec.kind === "slots" ? rec.slotBounds || hudBounds(rec) : hudBounds(rec);
+    const /* BRIO: drawNativeInv
+     * Render complete captured rows with native icons and live remote counts. Empty X is drawn after restoring the small native scale, keeping the V45 displayed stroke.
+     */
+    drawNativeInv = (ctx, s, r) => {
         const cache = nativeInvFor(r);
         if (!cache?.rows.length) return new Set;
         const drawn = new Set;
@@ -1510,10 +1634,10 @@
                 continue;
             }
             drawn.add(row.kind);
-            const widths = row.units.map(u => hudBounds(u.record).width), factor = Math.min(18 / Math.max(...widths, 1), 18 / Math.max(...row.units.map(u => hudBounds(u.record).height), 1)), gap = 2 / factor, total = widths.reduce((a, b) => a + b, 0) + gap * (widths.length - 1);
+            const widths = row.units.map(u => inventoryBounds(u.record).width), factor = Math.min(18 / Math.max(...widths, 1), 18 / Math.max(...row.units.map(u => inventoryBounds(u.record).height), 1)), gap = 2 / factor, total = widths.reduce((a, b) => a + b, 0) + gap * (widths.length - 1);
             let x = -total / 2, maxHeight = 0;
             row.units.forEach((u, i) => {
-                const b = hudBounds(u.record);
+                const b = inventoryBounds(u.record);
                 let value;
                 const material = [ "wood", "brick", "metal", "scrap" ].findIndex(k => u.record.path.endsWith("/" + k + ".png") || k === "scrap" && u.record.path.endsWith("/gear.png")), ammoIndex = +(u.record.path.match(/(?:ammo|stack)([0-4])/) || [])[1];
                 if (row.kind === "materials") value = m[material];
@@ -1570,8 +1694,8 @@
                 n.A = 0;
                 n.opacity = Number.isFinite(u.record.root.opacity) && u.record.root.opacity > 0 ? u.record.root.opacity : 1;
                 if (typeof n["éa"] === "function") n["éa"](ctx, s, 1); else if (typeof n["Eââ"] === "function") n["Eââ"](ctx, s);
-                if (slots[i]?.type === "empty" && row.kind === "slots") drawEmptyX(ctx, b.left, b.top, b.width, b.height, s);
                 ctx.restore();
+                if (slots[i]?.type === "empty" && row.kind === "slots") drawEmptyX(ctx, x * factor, y, b.width * factor, b.height * factor, s);
                 x += b.width + gap;
                 maxHeight = Math.max(maxHeight, b.height * factor);
             });
@@ -1579,7 +1703,10 @@
         }
         return drawn;
     };
-    const resetNativeHud = () => {
+    const /* BRIO: resetNativeHud
+     * Remove own overlays/remote clones and clear templates, captured art styles and per-match logs. Saved inventory size is untouched.
+     */
+    resetNativeHud = () => {
         for (const n of S.hudWarnNodes?.values() || []) try {
             n.parent?.remove?.(n);
         } catch (_) {}
@@ -1609,7 +1736,10 @@
     };
     const isSlotArtwork = path => !!path && path !== "/" && !hudKinds(path) && !/\/(?:ammo|inventoryammo)[0-4]\.png$|\/disabled\.png$/.test(path);
     const GUN_TYPES = new Set(["scar","bolt","lmg","shotgun","heavy","smg","ump","rifle","ar-15","scoped ar","deagle","rpg","famas","tommy gun","drum","musket","heavy sniper","ak47","akƧ","combat","silencedpistol","aug","burst shotgun","grenade launcher","mgl","grenade pistol","vector","revolver","charge rifle","grenade sniper","sawedoff","signal flare","spas","grappler","crossbow","minigun"]);
-    const nativeSlotAmmo = (r, index, rec) => {
+    const /* BRIO: nativeSlotAmmo
+     * Known finite gun ammo only: loaded plus matching reserve, except grappler/flare loaded only. A live emblem overrides AST mapping; unknowns never warn.
+     */
+    nativeSlotAmmo = (r, index, rec) => {
         const type = String(r?.["Åé"]?.[index]?.type || "").toLowerCase();
         if (!GUN_TYPES.has(type)) return undefined;
         const loaded = r?.["áAæ"]?.[index - 1];
@@ -1622,7 +1752,10 @@
         const reserve = r?.["åæ"]?.[ammoIndex];
         return Number.isFinite(reserve) && reserve >= 0 ? loaded + reserve : undefined;
     };
-    const slotArtStyle = type => {
+    const /* BRIO: slotArtStyle
+     * Prefer captured native item geometry; otherwise use source-mapped gun/consumable ratios and rotations.
+     */
+    slotArtStyle = type => {
         const raw = String(type || "").toLowerCase(), captured = S.hudArtStyles?.get(itemPath(type));
         if (captured) return captured;
         const gun = GUN_TYPES.has(raw), style = {ratio: gun ? 1.04 : .7, angle: gun ? Math.PI / 4 : 0, size: 1};
@@ -1638,7 +1771,10 @@
         ctx.save(); ctx.translate((x - size * .02) / s, y / s); ctx.rotate(style.angle);
         drawImg(ctx, path, -wh / 2, -wh / 2, wh, wh, s); ctx.restore();
     };
-    const drawEmptyX = (ctx, x, y, w, h, s) => {
+    const /* BRIO: drawEmptyX
+     * V45 red-X primitive: 1.2px stroke and 2px corner inset in display coordinates. Never call under the native widget downscale.
+     */
+    drawEmptyX = (ctx, x, y, w, h, s) => {
         ctx.save(); ctx.strokeStyle = "#ff2020"; ctx.lineWidth = 1.2 / s;
         ctx.beginPath(); ctx.moveTo((x + 2) / s, (y + 2) / s); ctx.lineTo((x + w - 2) / s, (y + h - 2) / s);
         ctx.moveTo((x + w - 2) / s, (y + 2) / s); ctx.lineTo((x + 2) / s, (y + h - 2) / s); ctx.stroke(); ctx.restore();
@@ -1648,7 +1784,13 @@
         medium: 1.25,
         large: 1.625,
         xl: 2.0625
-    }, invScale = () => INV_SCALE[extrasState().inventorySize] || 1.25, invImage = p => {
+    }, /* BRIO: invScale
+     * Preserve the V45 Small/Medium/Large/XL multipliers. Changing capture geometry must not alter the user-selected scale.
+     */
+    invScale = () => INV_SCALE[extrasState().inventorySize] || 1.25, /* BRIO: invImage
+     * Load local replica artwork with native ready/half-size bookkeeping and retryable failure behavior.
+     */
+    invImage = p => {
         let im = S.invAssets.get(p);
         if (im) return im;
         im = new Image;
@@ -1669,7 +1811,10 @@
         im.src = p;
         S.invAssets.set(p, im);
         return im;
-    }, itemPath = type => {
+    }, /* BRIO: itemPath
+     * Resolve exact native side-view inventory assets. Held top-view weapon art is not an equivalent substitute.
+     */
+    itemPath = type => {
         const raw = String(type || "").toLowerCase().trim();
         if (!raw || raw === "empty" || raw === "pickaxe") return null;
         const path = S.hudAssetPaths?.get(raw) || `/buildart/${raw.replace(/[^a-z0-9]/g, "")}.png`;
@@ -1684,7 +1829,10 @@
         if (im.complete && im.naturalWidth) try {
             ctx.drawImage(im, x / s, y / s, w / s, h / s);
         } catch (_) {}
-    }, warningColor = low => low && Math.sin(performance.now() / 140) >= 0 ? "#ff2020" : "#fff", drawHudText = (ctx, v, x, y, s, low = false, size = 8) => {
+    }, /* BRIO: warningColor
+     * Flash remote numeric warnings independently of own slot/cell borders; exact threshold values remain non-warning.
+     */
+    warningColor = low => low && Math.sin(performance.now() / 140) >= 0 ? "#ff2020" : "#fff", drawHudText = (ctx, v, x, y, s, low = false, size = 8) => {
         ctx.save();
         ctx.font = `${Math.max(3, size / s)}px "Arial Black"`;
         ctx.textAlign = "center";
@@ -1695,7 +1843,10 @@
         ctx.strokeText(String(v), x / s, y / s);
         ctx.fillText(String(v), x / s, y / s);
         ctx.restore();
-    }, drawTxt = (ctx, v, x, y, s, low = false) => drawHudText(ctx, v, x, y, s, low), drawInv = (ctx, scale, r) => {
+    }, drawTxt = (ctx, v, x, y, s, low = false) => drawHudText(ctx, v, x, y, s, low), /* BRIO: drawInv
+     * Fallback V45 compact row layout for incomplete native capture. Complete rows use native clones, never a mixed partial row.
+     */
+    drawInv = (ctx, scale, r) => {
         const drawn = drawNativeInv(ctx, scale, r) || new Set;
         const ex = extrasState(), rows = [];
         if (ex.inventorySlots) rows.push("slots");
@@ -1771,7 +1922,10 @@
             } catch (_) {}
             this.parent = null;
         }
-    }), attachInv = r => {
+    }), /* BRIO: attachInv
+     * Attach one inventory drawable to a reached remote player and retain it for generation-safe cleanup.
+     */
+    attachInv = r => {
         if (!r || isLocal(r) || S.invNodes.has(r) || !r["Eâ"]?.add) return;
         const n = makeInv(r);
         try {
@@ -1782,11 +1936,17 @@
         }
     };
     const restoreInvTrace = () => {};
-    const automaticPhase = () => {
+    const /* BRIO: automaticPhase
+     * Use current local native glide state as one phase signal. Circle waiting/moving supplements it; rendering never waits for phase.
+     */
+    automaticPhase = () => {
         const r = S.renderer;
         if (r && S.botPhase !== "match" && Number.isFinite(r["ÀËá"]) && r["ÀËá"] >= 0 && Number.isFinite(r["âëä"]) && r["âëä"] > 0) botPhase("native glidingTicks/maxGlidingTicks");
     };
-    const BOT_CLUSTER = [ "EÆÅ", "Éaê", "ÆÉÆ", "Áae", "áaá", "Éäæ", "ée", "ËÈä", "aAE", "áâÃ", "ËE", "ÈÆ" ], botPhase = reason => {
+    const BOT_CLUSTER = [ "EÆÅ", "Éaê", "ÆÉÆ", "Áae", "áaá", "Éäæ", "ée", "ËÈä", "aAE", "áâÃ", "ËE", "ÈÆ" ], /* BRIO: botPhase
+     * Record a session transition only. This does not label any remote player as a bot or establish human identity.
+     */
+    botPhase = reason => {
         if (S.botPhase === "match") return;
         S.botPhase = "match";
         S.botPhaseAt = performance.now();
@@ -1796,7 +1956,10 @@
             evidence: reason,
             tracked: S.botWatch.size
         });
-    }, botSample = () => {
+    }, /* BRIO: botSample
+     * Capture bounded unlabelled player metadata; names, IDs, distances and isPreview are invalid classifiers.
+     */
+    botSample = () => {
         automaticPhase();
         const now = performance.now(), me = worldPos(S.renderer);
         for (const r of collectPlayers().filter(x => !isLocal(x))) {
@@ -1866,7 +2029,10 @@
                 e.lastVals[k] = v;
             }
         }
-    }, botStart = () => {
+    }, /* BRIO: botStart
+     * Arm automatic metadata observation from ordinary Play; no manual MATCH START or bot-classification button.
+     */
+    botStart = () => {
         if (S.botTimer) return;
         S.botWatch = new Map;
         S.botLogged = new Set;
@@ -1879,7 +2045,10 @@
             botAuditTick();
         }, 500);
         log("BOT WATCH", "START · automatic native gliding-state phase detection");
-    }, botStop = () => {
+    }, /* BRIO: botStop
+     * Stop bounded bot metadata sampling; export remains complete and no guessed classifier is introduced.
+     */
+    botStop = () => {
         if (!S.botTimer) return;
         clearInterval(S.botTimer);
         S.botTimer = 0;
@@ -1910,7 +2079,10 @@
     })[0] || null, airdropPred = o => resourceSlots(o).some(x => /airdrop|supply|parachute/.test(x.path)) || /air.?drop|supply/i.test([ o?.type, o?.["Àâ"], o?.["ÄæÅ"], o?.["ÆåÃ"] ].join(" ")), fishingPred = o => resourceSlots(o).some(x => /\/buildart\/bubbles[01]\.png$/.test(x.path)) || /fish(?:ing)?spot|fishing/i.test([ o?.type, o?.["Àâ"], o?.["ÄæÅ"], o?.["ÆåÃ"] ].join(" ")), airdropObj = () => nearestBy(airdropPred), chestObj = () => nearestBy(o => o.type === "chest"), fishingObj = () => nearestBy(fishingPred), targetOnScreen = o => {
         const p = worldPos(o), sp = projectWorld(p);
         return !!(sp && sp.x >= sp.rect.left && sp.x <= sp.rect.right && sp.y >= sp.rect.top && sp.y <= sp.rect.bottom);
-    }, indicatorTick = () => indicatorsV40();
+    }, /* BRIO: indicatorTick
+     * Update the three nearest off-screen target arrows using active objects and the current native projection.
+     */
+    indicatorTick = () => indicatorsV40();
     const shallowState = o => {
         const out = {};
         for (const k of Object.keys(o || {}).slice(0, 90)) {
@@ -1924,7 +2096,10 @@
         }
         return out;
     };
-    const passiveTick = () => {
+    const /* BRIO: passiveTick
+     * Observe current local/world metadata with novelty limits. Container disappearance and nearby loot are correlation only.
+     */
+    passiveTick = () => {
         try {
             const r = S.renderer;
             if (r) {
@@ -1990,7 +2165,10 @@
         S.meteorObservers?.clear();
         if (S.meteorAutoTimer) clearInterval(S.meteorAutoTimer);
         S.meteorAutoTimer = 0;
-    }, meteorCandidate = (node, array = []) => {
+    }, /* BRIO: meteorCandidate
+     * Accept source-identified native meteor sprites/waypoints and reject weakly retired nodes from prior matches.
+     */
+    meteorCandidate = (node, array = []) => {
         if (S.retiredMarkers?.has(node)) return;
         const path = norm(node?.icon?.["À"]?.src || node?.icon?.["À"]?.["ÁÄ"]?.src || node?.["À"]?.src || node?.["À"]?.["ÁÄ"]?.src || "");
         if (path === "/buildart/ping-meteor-icon.png" && node.parent?.icon === node) node = node.parent;
@@ -1998,7 +2176,10 @@
             (S.meteorPending || (S.meteorPending = new WeakSet)).add(node);
             holdMeteor(node, array);
         }
-    }, meteorScan = () => {
+    }, /* BRIO: meteorScan
+     * Resume the bounded breadth-first scan across reached roots, isolating hostile getters/proxies per node.
+     */
+    meteorScan = () => {
         if (!S.renderer || !extrasState().permanentMeteor && !extrasState().lowMatsWarning && (!extrasState().transparentRoofs || S.roofSaved.size === 21)) return;
         if (!S.sceneQueue || (S.sceneQueueAt || 0) >= S.sceneQueue.length) {
             S.sceneQueue = [ ...sceneRoots() ];
@@ -2034,7 +2215,10 @@
             S.sceneScanLogged = true;
             log("SCENE CAPTURE", S.sceneScan);
         }
-    }, meteorAutoStart = reason => {
+    }, /* BRIO: meteorAutoStart
+     * Start scoped native container/scene discovery with watchdog coverage. Keep the 3000-node/second and observer/array caps.
+     */
+    meteorAutoStart = reason => {
         meteorAutoStop();
         if (S.destroyed || !S.renderer || !extrasState().permanentMeteor && !extrasState().transparentRoofs && !extrasState().lowMatsWarning && !extrasState().lowAmmoWarning) return;
         log("METEOR AUTOMATIC START", {
@@ -2064,7 +2248,10 @@
             note: "Timer armed before guarded scan; scoped native containers; no manual arm."
         });
     };
-    const applyRemote = async r => {
+    const /* BRIO: applyRemote
+     * Await cosmetic resources only for the current run. Recheck epoch after awaits before attaching or writing local visuals.
+     */
+    applyRemote = async r => {
         if (!r || isLocal(r)) return;
         const epoch = S.runEpoch;
         rememberRemote(r);
@@ -2112,7 +2299,10 @@
         } catch (x) {
             S.errors.push(String(x));
         }
-    }, queueRemote = r => {
+    }, /* BRIO: queueRemote
+     * Keep remote capture retryable but generation-bound. Delayed work from a previous Play must not recreate old overlays.
+     */
+    queueRemote = r => {
         if (!r || isLocal(r) || S.remoteQueued.has(r)) return;
         S.remoteQueued.add(r);
         const auditEpoch = S.runEpoch;
@@ -2120,7 +2310,10 @@
             if (!S.destroyed && S.runEpoch === auditEpoch) replicaStateAudit(r);
         }, 2e3);
         for (const ms of [ 0, 250, 1200, 3e3 ]) setTimeout(() => {if (!S.destroyed && S.runEpoch === auditEpoch) applyRemote(r);}, ms);
-    }, queueWorld = o => {
+    }, /* BRIO: queueWorld
+     * Queue reached world customization without global polling or stale-generation attachments.
+     */
+    queueWorld = o => {
         if (!o || S.worldQueued.has(o)) return;
         S.worldQueued.add(o);
         const auditEpoch = S.runEpoch;
@@ -2134,7 +2327,10 @@
             if (e.buildsInvisible && isBuild(o)) blankBuild(o);
             if (e.lootInvisible && [ "gun", "ammo" ].includes(o.type)) blankLoot(o);
         }, ms);
-    }, handleAdded = (x, a) => {
+    }, /* BRIO: handleAdded
+     * Dispatch reached native objects to local/remote/world/HUD/meteor capture. Ignore BRIO-owned drawables.
+     */
+    handleAdded = (x, a) => {
         if (x?.__brioHudClone || String(x?.type || "").startsWith("brio")) return;
         try {
             meteorCandidate(x, a);
@@ -2156,7 +2352,10 @@
             if (S.errors.length < 100) S.errors.push("native capture: " + String(e));
         }
     };
-    const patchArray = a => {
+    const /* BRIO: patchArray
+     * Observe only reached native arrays after bounded broad discovery; delegate native push/unshift unchanged.
+     */
+    patchArray = a => {
         if (!Array.isArray(a) || S.arrayHooks.has(a)) return;
         const dp = Object.getOwnPropertyDescriptor(a, "push"), du = Object.getOwnPropertyDescriptor(a, "unshift"), p = function(...xs) {
             const n = Reflect.apply(NP, this, xs);
@@ -2182,13 +2381,19 @@
             du: du
         });
         for (const x of a) handleAdded(x, a);
-    }, restoreArrays = () => {
+    }, /* BRIO: restoreArrays
+     * Restore each original own descriptor rather than leaving per-array wrappers across matches.
+     */
+    restoreArrays = () => {
         for (const [a, h] of S.arrayHooks) try {
             h.dp ? Object.defineProperty(a, "push", h.dp) : delete a.push;
             h.du ? Object.defineProperty(a, "unshift", h.du) : delete a.unshift;
         } catch (_) {}
         S.arrayHooks.clear();
-    }, onLocal = (r, a) => {
+    }, /* BRIO: onLocal
+     * Capture the current named local renderer once, start narrow timers and apply selected visuals without changing Play packets.
+     */
+    onLocal = (r, a) => {
         if (S.renderer) return;
         S.renderer = r;
         S.rendererArray = a;
@@ -2246,7 +2451,10 @@
         const g = goals();
         if (g.renderer && g.roofs) stopCapture("goals-met");
     };
-    const tagName = () => {
+    const /* BRIO: tagName
+     * Apply a single dynamic uL# prefix within maxLength so capture can find the current local player without a hardcoded identity.
+     */
+    tagName = () => {
         const b = q("#nameBox");
         if (!b) return "uL#";
         let raw = String(b.value || "");
@@ -2266,7 +2474,10 @@
         }
         S.localName = tagged;
         return tagged;
-    }, arm = () => {
+    }, /* BRIO: arm
+     * The ordinary-Play lifecycle boundary. Restore all old hooks/resources, detach old game nodes, clear runtime collections, increment epoch and rearm selected settings.
+     */
+    arm = () => {
         S.runEpoch = (S.runEpoch || 0) + 1;
         if (S.renderer) deepReport();
         deepStop();
@@ -2287,6 +2498,7 @@
         S.sceneScanLogged = false;
         resetNativeHud();
         resetFeatures();
+        syncMonochrome(!!extrasState().monochrome);
         if (S.featureTimer) {
             clearInterval(S.featureTimer);
             S.featureTimer = 0;
@@ -2390,7 +2602,10 @@
             taggedName: S.localName,
             extras: extrasState()
         });
-    }, bindPlay = () => {
+    }, /* BRIO: bindPlay
+     * Bind existing native Play capture events. Pointer/mouse preparation tags the name; click arms the run before native handlers.
+     */
+    bindPlay = () => {
         const e = q("#ready") || q("#play") || q("#playButton") || q("#loggedInPlay");
         if (!e) return log("PLAY BIND FAILED");
         S.play = e;
@@ -2401,7 +2616,10 @@
         S.playHandlers = [ [ "pointerdown", prep ], [ "mousedown", prep ], [ "click", go ] ];
         log("PLAY BOUND", e.id);
     };
-    const verify = () => {
+    const /* BRIO: verify
+     * Report current capture/hooks/settings/errors without creating gameplay actions or treating missing evidence as a pass.
+     */
+    verify = () => {
         const o = {
             botAudit: {
                 players: botAuditSeen.size,
@@ -2459,7 +2677,7 @@
     const term = D.createElement("div");
     term.className = "brioTerm";
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v46</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v47</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     let mini = false, drag = null;
@@ -2506,6 +2724,11 @@
         term.style.top = Math.max(0, Math.min(innerHeight - term.offsetHeight, e.clientY - drag.y)) + "px";
     };
     term.querySelector(".head").onpointerup = () => drag = null;
+    /* BRIO: destroy
+     * Full injection teardown, unlike a match rearm: also restore home nodes,
+     * remove styles/modals/terminal and delete the version key. Increment the
+     * epoch first so pending promises cannot write into restored native state.
+     */
     S.destroy = () => {
         S.destroyed = true;
         S.runEpoch = (S.runEpoch || 0) + 1;
@@ -2562,7 +2785,10 @@
     };
     const botAuditSeen = new Map;
     let botAuditUntil = 0, botAuditSource = null;
-    const botAuditReset = () => {
+    const /* BRIO: botAuditReset
+     * Reset a short per-match audit; prior match human labels or reused IDs cannot carry into the new run.
+     */
+    botAuditReset = () => {
         botAuditSeen.clear();
         botAuditUntil = performance.now() + 45e3;
         log("BOT AUDIT PLAN", {
@@ -2572,7 +2798,10 @@
             maxSnapshotsPerPlayer: 2,
             note: "No bot classifier. Prior selected-field route is inconclusive; absence of a marker is not impossibility."
         });
-    }, botMeta = r => {
+    }, /* BRIO: botMeta
+     * Read bounded renderer metadata for source corroboration. This audit is not an authoritative bot detector.
+     */
+    botMeta = r => {
         const out = {}, seen = new Set, skip = new Set([ "parent", "owner", "game", "stage", "Eâ", "â", "aá", "head", "Ëå", "Äâè", "ÉãÂ", "ä", "áË", "ÄÂ", "ÄãÀ", "èÅ", "ÃÊ", "æÄ", "AÃå", "ÄÊâ", "ÂÅ", "ÁÄ" ]);
         function walk(v, p, d) {
             if (!v || typeof v !== "object" || seen.has(v) || v instanceof Node || v instanceof HTMLImageElement || d > 2 || seen.size > 100 || ArrayBuffer.isView(v)) return;
@@ -2659,8 +2888,19 @@
         });
     };
     // All probes below observe native results. They neither decode independently nor alter packets.
-    const deep = {restore: null, timer: 0, until: 0, packets: 0, records: 0, bytes: 0, schemas: new Set, identities: new Map, subtypes: new Map, replicas: new Map, truncations: 0, errors: 0, engines: new WeakSet, engineRestores: [], source: null, lanes: {}, suppressed: {}, incomingState: new Map, environmentSeen: new WeakSet, localId: null, circleState: null};
-    const probeSnapshot = value => {
+    const deep = {restore: null, timer: 0, until: 0, packets: 0, records: 0, bytes: 0, schemas: new Set, identities: new Map, subtypes: new Map, replicas: new Map, truncations: 0, errors: 0, engines: new WeakSet, engineRestores: [], source: null, lanes: {}, suppressed: {}, incomingState: new Map, environmentSeen: new WeakSet, epoch: 0, errorStages: {}, localId: null, circleState: null};
+    const /* BRIO: deepError
+     * Keep bounded stage-specific observation failures while returning native results unchanged. Registry exclusions are evidence gaps, not gameplay errors.
+     */
+    deepError = (stage, error) => {
+        deep.errors++;
+        deep.errorStages[stage] = (deep.errorStages[stage] || 0) + 1;
+        if (deep.errorStages[stage] <= 2) log("PROBE OBSERVATION ERROR", {stage, epoch: deep.epoch, error: String(error)});
+    };
+    const /* BRIO: probeSnapshot
+     * Snapshot data descriptors only, redact sensitive fields and mark accessors/cycles/truncation. Never invoke getters to obtain evidence.
+     */
+    probeSnapshot = value => {
         const seen = new WeakSet; let entries = 0, truncated = false;
         const walk = (v, depth) => {
             if (++entries > 1400 || depth > 8) { truncated = true; return "[CAP]"; }
@@ -2687,7 +2927,10 @@
         return {data, entries, truncated};
     };
     const DEEP_LANES = {schema: 350, player: 350, container: 700, replica: 300, environment: 100};
-    const deepRecord = (label, obj, lane = label.startsWith("INCOMING SCHEMA") ? "schema" : label.startsWith("ENVIRONMENT") ? "environment" : obj.kind === "player" ? "player" : label.startsWith("DEEP TARGET") ? "replica" : "container") => {
+    const /* BRIO: deepRecord
+     * Enforce total and reserved-lane budgets before committing record bytes. One busy lane cannot consume another lane's records.
+     */
+    deepRecord = (label, obj, lane = label.startsWith("INCOMING SCHEMA") ? "schema" : label.startsWith("ENVIRONMENT") ? "environment" : obj.kind === "player" ? "player" : label.startsWith("DEEP TARGET") ? "replica" : "container") => {
         if (deep.records >= 1800 || deep.bytes >= 8e6 || (deep.lanes[lane] || 0) >= DEEP_LANES[lane]) {deep.suppressed[lane] = (deep.suppressed[lane] || 0) + 1; return false;}
         const snap = probeSnapshot(obj), bytes = JSON.stringify(snap).length;
         if (deep.bytes + bytes > 8e6) {deep.suppressed.bytes = (deep.suppressed.bytes || 0) + 1; return false;}
@@ -2695,7 +2938,10 @@
         deep.bytes += bytes; deep.records++; deep.lanes[lane] = (deep.lanes[lane] || 0) + 1;
         log(label, snap); return true;
     };
-    const environmentProbe = env => {
+    const /* BRIO: environmentProbe
+     * Record a manifest and small target chunks separately from large terrain arrays so later fields remain observable.
+     */
+    environmentProbe = env => {
         if (!env || typeof env !== "object") return;
         const props = Object.getOwnPropertyDescriptors(env), fields = Object.keys(props);
         deepRecord("ENVIRONMENT MANIFEST", {fields: fields.map(key => ({key, meaning: schemaFields.get(key) || key, length: Array.isArray(props[key].value) ? props[key].value.length : undefined, accessor: !("value" in props[key])}))});
@@ -2709,9 +2955,15 @@
             }
         }
     };
-    const incomingDelta = (p, kind, id, type) => {
+    const /* BRIO: incomingDelta
+     * Deduplicate exact field snapshots. Bound ordinary player/geometry/landing changes; novel container fields remain eligible within record limits.
+     */
+    incomingDelta = (p, kind, id, type) => {
         const identity = kind + ":" + id;
-        let state = deep.incomingState.get(identity);
+        let /* BRIO: state
+     * Read cosmetic selections. Keep this namespace separate from the native locker and from Extras.
+     */
+    state = deep.incomingState.get(identity);
         if (!state) {
             if (deep.incomingState.size >= 600) return {packet: p, first: true};
             state = {values: new Map, changes: new Map}; deep.incomingState.set(identity, state);
@@ -2724,15 +2976,18 @@
             const seen = state.values.has(key), changes = state.changes.get(key) || 0;
             state.values.set(key, fingerprint);
             // Preserve first values of every field; routine player state must not starve containers.
-            if (kind === "player" && seen && changes >= 3) {capped.push(key); continue;}
+            if (seen && changes >= 3 && (kind === "player" || ["health", "fullHealth", "width", "height", "landProgress", "landed"].includes(schemaFields.get(key) || key))) {capped.push(key); continue;}
             state.changes.set(key, changes + 1); packet[key] = snap.data; fields.push(key);
         }
-        if (capped.length) deep.suppressed.playerFieldChanges = (deep.suppressed.playerFieldChanges || 0) + capped.length;
+        if (capped.length) deep.suppressed.routineFieldChanges = (deep.suppressed.routineFieldChanges || 0) + capped.length;
         const packed = Object.getOwnPropertyDescriptor(p, "a")?.value;
         if (Array.isArray(packed) && packed.length > 4) {packet.packedExtension = packed.slice(4); fields.push("packedExtension");}
         return {packet, fields};
     };
-    const incomingProbe = result => {
+    const /* BRIO: incomingProbe
+     * Observe the original native decode result before remapping. Retain only target identities; terrain/loot IDs must not consume the 600 target-ID budget.
+     */
+    incomingProbe = result => {
         if (S.destroyed || performance.now() > deep.until) return;
         const packets = Array.isArray(result) ? result : [result];
         for (const p of packets) {
@@ -2743,9 +2998,10 @@
             let kind = own("b") ?? (type === "x" ? packed?.[1] : undefined);
             let subtype = own("t") != null ? own("type") : undefined;
             const targetObject = subtype => ["airdrop","bubbles","ammocrate","grenadecrate","meteorite"].includes(subtype);
-            if (type === "x" && id != null && typeof kind === "string" && deep.identities.size < 600 && (kind !== "object" || targetObject(subtype))) {deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
+            const targetKind = k => k === "player" || k === "chest" || k === "airdrop" || k === "object" && targetObject(subtype);
+            if (type === "x" && id != null && targetKind(kind) && (deep.identities.has(id) || deep.identities.size < 600)) {deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
             kind ||= deep.identities.get(id); subtype ||= deep.subtypes.get(id);
-            if (type === "x" && id != null && (deep.identities.has(id) || deep.identities.size < 600) && deep.identities.get(id) !== kind && typeof kind === "string" && (kind !== "object" || targetObject(subtype))) {deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
+            if (type === "x" && id != null && (deep.identities.has(id) || deep.identities.size < 600) && deep.identities.get(id) !== kind && targetKind(kind)) {deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
             const signature = String(type) + ":" + String(kind || "") + ":" + String(subtype || "") + ":" + Object.keys(desc).sort().join(",");
             if (!deep.schemas.has(signature) && deep.schemas.size < 350) {
                 deep.schemas.add(signature); deepRecord("INCOMING SCHEMA FIRST", {type, kind, subtype, id, packet: p, scope: "native msgpack.decode return before native field remap; no mutation"});
@@ -2772,7 +3028,7 @@
             if (relevant) {
                 if (type === "y") {
                     const delta = incomingDelta(p, kind, id, type);
-                    if (delta.fields?.length || delta.first) deepRecord("INCOMING TARGET PAYLOAD", {type, kind, subtype, id, ...delta, phase: S.botPhase, scope: "changed field values; first 3 routine player changes per field; no movement repetition"});
+                    if (delta.fields?.length || delta.first) deepRecord("INCOMING TARGET PAYLOAD", {type, kind, subtype, id, ...delta, phase: S.botPhase, scope: "changed field values; bounded routine fields; novel/unknown container fields retained"});
                 } else {
                     deepRecord("INCOMING TARGET PAYLOAD", {type, kind, subtype, id, packet: p, phase: S.botPhase});
                     if (type === "x") incomingDelta(p, kind, id, type);
@@ -2780,7 +3036,10 @@
             }
         }
     };
-    const deepEngineProbe = engine => {
+    const /* BRIO: deepEngineProbe
+     * Wrap only reached native registry callbacks, delegate once with original receiver/arguments/return, and retain exact restoration descriptors.
+     */
+    deepEngineProbe = engine => {
         if (!engine || deep.engines.has(engine)) return;
         const handlers = Object.getOwnPropertyDescriptor(engine, "áÉâ")?.value;
         const registry = Object.getOwnPropertyDescriptor(engine, "ÁÂ")?.value;
@@ -2795,7 +3054,7 @@
                     try {if (performance.now() <= deep.until) {
                         const delta = key === "ëåä" ? incomingDelta(args[1] || {}, kind, args[0]?.id, "y") : {packet: args[1], fields: ["create/remove"]};
                         if (delta.fields?.length) deepRecord("NATIVE CALLBACK PAYLOAD", {kind, callback: key, id: args[0]?.id, payload: delta.packet, stage: "before native callback"});
-                    }} catch (_) {deep.errors++;}
+                    }} catch (error) {deepError("native callback", error);}
                     return Reflect.apply(original, this, args);
                 };
                 Object.defineProperty(callbacks, key, {...d, value: wrapper});
@@ -2804,7 +3063,10 @@
         }
         log("NATIVE ENGINE PROBE", {captured: true, callbacks: deep.engineRestores.length});
     };
-    const deepTick = () => {
+    const /* BRIO: deepTick
+     * Install the scoped decode observer, inspect target replicas, and attempt bounded reached-window registry discovery. Do not independently decode or send.
+     */
+    deepTick = () => {
         if (S.destroyed || performance.now() > deep.until) {deepStop("time cap"); return;}
         if (!deep.restore) {
             let codec; try { codec = typeof msgpack !== "undefined" ? msgpack : Object.getOwnPropertyDescriptor(W, "msgpack")?.value; } catch (_) {}
@@ -2812,7 +3074,7 @@
             if (d && typeof d.value === "function" && (d.configurable || d.writable)) {
                 const original = d.value, wrapper = function(...args) {
                     const result = Reflect.apply(original, this, args);
-                    try {incomingProbe(result);} catch (_) {deep.errors++;}
+                    try {incomingProbe(result);} catch (error) {deepError("incoming result", error);}
                     return result;
                 };
                 Object.defineProperty(codec, "decode", {...d, value: wrapper});
@@ -2852,32 +3114,44 @@
                 if (!v || typeof v !== "object" || v instanceof Node || v === S || v === W) continue;
                 deepEngineProbe(v);
                 for (const d of Object.values(Object.getOwnPropertyDescriptors(v)).slice(0, 60)) if (d.value && typeof d.value === "object") deepEngineProbe(d.value);
-            } catch (_) {deep.errors++;}
+            } catch (error) {deepError("window registry discovery", error);}
         }
     };
-    const deepReport = () => log("V46 PROBE COVERAGE", {
+    const /* BRIO: deepReport
+     * Report the probe's own epoch, not an already-incremented next Play. Include missing hooks, lanes, suppression and stage-specific errors.
+     */
+    deepReport = () => log("V47 PROBE COVERAGE", {
         incomingInstalled: !!deep.restore, incomingObservedThisRun: !!deep.installedEver, incomingPackets: deep.packets, incomingSchemas: deep.schemas.size, nativeEngineCaptured: deep.engineRestores.length > 0,
-        targetedEntities: deep.replicas.size, records: deep.records, approximateBytes: deep.bytes, truncations: deep.truncations, errors: deep.errors,
-        lanes: deep.lanes, laneCaps: DEEP_LANES, suppressed: deep.suppressed, incomingTargetIds: deep.identities.size, circleState: deep.circleState, epoch: S.runEpoch,
+        targetedEntities: deep.replicas.size, records: deep.records, approximateBytes: deep.bytes, truncations: deep.truncations, errors: deep.errors, errorStages: deep.errorStages,
+        lanes: deep.lanes, laneCaps: DEEP_LANES, suppressed: deep.suppressed, incomingTargetIds: deep.identities.size, circleState: deep.circleState, epoch: deep.epoch,
         caps: {packets: 80000, records: 1800, bytes: 8000000, entities: 200, durationMs: 900000},
         limitsReached: {packets: deep.packets >= 80000, records: deep.records >= 1800, bytes: deep.bytes >= 8e6, entities: deep.replicas.size >= 200}, source: deep.source,
         conclusion: "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
     });
-    const deepStop = reason => {
+    const /* BRIO: deepStop
+     * Restore decoder/callback observers and stop timers on time cap, next Play or destroy.
+     */
+    deepStop = reason => {
         clearInterval(deep.timer); deep.timer = 0;
         if (deep.restore) {deep.restore(); deep.restore = null;}
         while (deep.engineRestores.length) deep.engineRestores.pop()();
         if (reason) log("DEEP PROBES RESTORED", {reason});
     };
-    const deepStart = () => {
+    const /* BRIO: deepStart
+     * Reset all per-match evidence maps/counters under the new epoch. Cached raw source identity remains reusable.
+     */
+    deepStart = () => {
         deepStop(); deep.until = performance.now() + 900000; deep.packets = deep.records = deep.bytes = deep.truncations = deep.errors = 0;
-        deep.installedEver = false; deep.lanes = {}; deep.suppressed = {}; deep.incomingState.clear(); deep.environmentSeen = new WeakSet; deep.localId = null; deep.circleState = null; deep.schemas.clear(); deep.identities.clear(); deep.subtypes.clear(); deep.replicas.clear(); deep.windowScanned = false; deep.engines = new WeakSet;
-        log("V46 DEEP PROBE PLAN", {readOnly: true, source: "complete raw bundle + AST", targets: "all observed container kinds and players; environment target chunks", laneCaps: DEEP_LANES, updatePolicy: "changed fields only; reserve container/late-target capacity", noManualArm: true, noClassifier: true});
-        const tick = () => { try { deepTick(); } catch (e) { deep.errors++; if (deep.errors < 3) log("DEEP PROBE ERROR", String(e)); } };
+        deep.epoch = S.runEpoch; deep.errorStages = {}; deep.installedEver = false; deep.lanes = {}; deep.suppressed = {}; deep.incomingState.clear(); deep.environmentSeen = new WeakSet; deep.localId = null; deep.circleState = null; deep.schemas.clear(); deep.identities.clear(); deep.subtypes.clear(); deep.replicas.clear(); deep.windowScanned = false; deep.engines = new WeakSet;
+        log("V47 DEEP PROBE PLAN", {readOnly: true, source: "complete raw bundle + AST", targets: "all observed container kinds and players; environment target chunks", laneCaps: DEEP_LANES, updatePolicy: "changed fields only; reserve container/late-target capacity", noManualArm: true, noClassifier: true});
+        const tick = () => { try { deepTick(); } catch (e) { deepError("target tick", e); } };
         tick(); deep.timer = setInterval(tick, 1000);
     };
     // Interpret only scalar AST arithmetic/aliases/branches; never call or execute source code.
-    const numericSourceConstants = (ast, cutoff) => {
+    const /* BRIO: numericSourceConstants
+     * Interpret only scalar AST literals/arithmetic/aliases/branches. No calls, eval, source execution or unknown-expression guessing.
+     */
+    numericSourceConstants = (ast, cutoff) => {
         const values = new Map;
         const readNumber = node => {
             if (!node) return undefined;
@@ -2915,7 +3189,10 @@
         (fn?.body.body || ast.body).forEach(execute);
         return values;
     };
-    const completeSourceAudit = async (raw, url) => {
+    const /* BRIO: completeSourceAudit
+     * Export reconstructable raw chunks and parse the native source as data. Source capture has its own 2M-character cap and SHA identity.
+     */
+    completeSourceAudit = async (raw, url) => {
         const size = 9000, count = Math.ceil(raw.length / size);
         if (raw.length > 2e6) {deep.source = {url, characters: raw.length, captured: false, reason: "2M source cap"}; deepReport(); return;}
         // JSON lines reconstruct exact raw source; no escape decoding or evaluation.
@@ -2961,7 +3238,10 @@
     };
 
     const schemaFields = new Map;
-    const sourceSchemaAudit = src => {
+    const /* BRIO: sourceSchemaAudit
+     * Map obfuscated native fields to source meanings without treating dictionary presence as a classifier/content list.
+     */
+    sourceSchemaAudit = src => {
         const anchor = src.indexOf('="isPreview"'), start = Math.max(0, anchor - 1600), end = anchor < 0 ? 0 : Math.min(src.length, anchor + 18e3), region = src.slice(start, end), pairs = [];
         for (const m of region.matchAll(/([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)\s*=\s*["']([^"'\n]{1,70})["']/g)) {
             if (pairs.length >= 240) break;
@@ -3045,7 +3325,10 @@
         }
     };
     let replicaAuditSeen = new WeakSet;
-    const replicaStateAudit = o => {
+    const /* BRIO: replicaStateAudit
+     * Bound reached object/prototype inspection; source/live fields are evidence, not exact appearance or server completeness proof.
+     */
+    replicaStateAudit = o => {
         if (!o || replicaAuditSeen.has(o) || S.replicaAuditCount >= 80) return;
         const kind = isPlayer(o) ? "player" : reconKind(o);
         if (!kind) return;
@@ -3115,18 +3398,50 @@
             }
         }
     };
+    const monoCanvases = new Map;
+    const /* BRIO: resetMonochrome
+     * Restore original canvas inline filters and remove the transient root selector on disable/cleanup.
+     */
+    resetMonochrome = () => {
+        D.documentElement.removeAttribute("data-brio-mono-page");
+        for (const [canvas, old] of monoCanvases) {
+            canvas.style.filter = old;
+            canvas.removeAttribute("data-brio-mono");
+        }
+        monoCanvases.clear();
+    };
+    const /* BRIO: syncMonochrome
+     * Apply at Play/toggle immediately. Root CSS covers new unmarked canvases until this helper composes their original filter; no MutationObserver or render hook.
+     */
+    syncMonochrome = enabled => {
+        if (!enabled) { resetMonochrome(); return; }
+        D.documentElement.setAttribute("data-brio-mono-page", "");
+        for (const canvas of D.querySelectorAll("canvas:not(#playerPreview)")) {
+            if (monoCanvases.has(canvas)) continue;
+            const old = canvas.style.filter;
+            monoCanvases.set(canvas, old);
+            canvas.style.filter = (old && old !== "none" ? old + " " : "") + "grayscale(1)";
+            canvas.setAttribute("data-brio-mono", "");
+        }
+    };
     const featureNodes = new Map, featureRestore = [], featureEx = {
         value: extrasState(),
         at: -Infinity
     }, indicatorStats = {}, humanLabels = new Map;
-    const exFast = () => {
+    const /* BRIO: exFast
+     * Cache Extras briefly for drawable callbacks; do not repeatedly parse storage for each node within a frame.
+     */
+    exFast = () => {
         const n = performance.now();
         if (n - featureEx.at > 500) {
             featureEx.value = extrasState();
             featureEx.at = n;
         }
         return featureEx.value;
-    }, nativeNode = (draw, y = 0) => ({
+    }, /* BRIO: nativeNode
+     * Create a BRIO-owned drawable compatible with reached native containers, clearly marked to avoid recursive discovery.
+     */
+    nativeNode = (draw, y = 0) => ({
         "ë": {
             "É": 0,
             "Ä": y
@@ -3161,7 +3476,10 @@
             this.parent?.remove?.(this);
             this.parent = null;
         }
-    }), attachFeature = (o, key, parent, draw, y = 0) => {
+    }), /* BRIO: attachFeature
+     * Attach one local visual node per entity/key and retain ownership for removal at culling/cleanup.
+     */
+    attachFeature = (o, key, parent, draw, y = 0) => {
         if (!parent?.add) return;
         let m = featureNodes.get(o);
         if (!m) {
@@ -3172,17 +3490,6 @@
         const n = nativeNode(draw, y);
         parent.add(n);
         m.set(key, n);
-    }, featureText = (ctx, text, x, y, s, color = "#fff") => {
-        ctx.save();
-        ctx.font = "bold " + 13 / s + "px Arial";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.lineWidth = 3 / s;
-        ctx.strokeStyle = "#000";
-        ctx.fillStyle = color;
-        ctx.strokeText(String(text), x / s, y / s);
-        ctx.fillText(String(text), x / s, y / s);
-        ctx.restore();
     }, featureRing = (ctx, r, s, color) => {
         ctx.save();
         ctx.beginPath();
@@ -3191,7 +3498,11 @@
         ctx.lineWidth = 3 / s;
         ctx.stroke();
         ctx.restore();
-    }, resetFeatures = () => {
+    }, /* BRIO: resetFeatures
+     * Remove attached feature nodes, undo descriptor/opacity/monochrome adapters and reset only per-match feature caches.
+     */
+    resetFeatures = () => {
+        resetMonochrome();
         for (const m of featureNodes.values()) for (const n of m.values()) try {
             n.parent?.remove?.(n);
         } catch (_) {}
@@ -3202,7 +3513,10 @@
         } catch (_) {}
         featureEx.at = -Infinity;
         for (const k of Object.keys(indicatorStats)) delete indicatorStats[k];
-    }, lockOpacity = (node, key, value) => {
+    }, /* BRIO: lockOpacity
+     * Use a local opacity adapter with restoration. Keep native geometry and preserve original descriptor semantics.
+     */
+    lockOpacity = (node, key, value) => {
         if (!node || featureRestore.some(x => x.node === node)) return;
         const d = Object.getOwnPropertyDescriptor(node, "opacity");
         if (d && !d.configurable) return;
@@ -3225,7 +3539,10 @@
         };
         restore.node = node;
         featureRestore.push(restore);
-    }, featurePlayer = r => {
+    }, /* BRIO: featurePlayer
+     * Preserve proven bars/numbers/names/invisibility and low-health outline. High contrast remains optional/deferred, outside the required test surface.
+     */
+    featurePlayer = r => {
         if (!r?.Eâ) return;
         const e = exFast();
         if (!isLocal(r)) {
@@ -3301,33 +3618,23 @@
             featureRing(ctx, 65, s, "#ff2020");
             ctx.restore();
         });
-    }, featureWorld = o => {
+    }, /* BRIO: featureWorld
+     * Only retained world modifiers: chest/crate hiding, transparent canopy and known loot-glow removal. Retired labels/radius/highlight/opaque foliage have no callbacks.
+     */
+    featureWorld = o => {
         const e = exFast();
-        if (![ "noChestsVisible", "noFoliage", "transparentFoliage", "cleanLoot", "highlightLoot", "buildMaterialLabels", "deployableLabels", "deployableRadius" ].some(k => e[k])) return;
+        if (![ "noChestsVisible", "transparentFoliage", "cleanLoot" ].some(k => e[k])) return;
         const tag = String(o["Àâ"] || ""), rs = resourceSlots(o), root = o["â"];
         if (e.noChestsVisible && (o.type === "chest" || [ "ammocrate", "grenadecrate" ].includes(tag))) lockOpacity(root, "noChestsVisible", 0);
         const foliage = /^(?:tree\d*|jungletree|cherryblossom|bush\d*|grass\d*)$/i.test(tag);
         if (foliage) {
-            if (e.noFoliage) lockOpacity(root, "noFoliage", 0); else if (e.transparentFoliage) lockOpacity(o["ÄA"] || root, "transparentFoliage", .25);
+            if (e.transparentFoliage) lockOpacity(o["ÄA"] || root, "transparentFoliage", .25);
         }
         if (e.cleanLoot && [ "gun", "ammo" ].includes(o.type)) for (const x of rs) if (/(?:flareglow|glow|sparkle)/i.test(x.path)) for (const v of Object.values(o)) if (v && v["À"] === x.w) lockOpacity(v, "cleanLoot", 0);
-        if (e.highlightLoot && [ "gun", "ammo" ].includes(o.type)) attachFeature(o, "loot", root, (ctx, s) => {
-            if (exFast().highlightLoot) featureRing(ctx, 32, s, "#ffe600");
-        });
-        const special = String(o["ÆåÃ"] || ""), material = rs.map(x => x.path.match(/\/(wood|brick|metal)[0-2]\.png$/)?.[1]).find(Boolean);
-        if (e.buildMaterialLabels && material || e.deployableLabels && /^(?:campfire|boostpad|shield|drill)build$/.test(special)) attachFeature(o, "buildLabel", root, (ctx, s) => {
-            const z = exFast(), a = [];
-            if (z.buildMaterialLabels && material) a.push(material.toUpperCase());
-            if (z.deployableLabels && special) a.push(special.replace(/build$/, "").toUpperCase());
-            if (a.length) featureText(ctx, a.join(" · "), 0, -45, s);
-        });
-        if (e.deployableRadius && o.type === "spellfield" && [ "campfireheal", "shield", "drillslow" ].includes(o["Ée"])) attachFeature(o, "radius", root, (ctx, s) => {
-            if (exFast().deployableRadius && Number.isFinite(o["éã"]) && o["éã"] > 0) {
-                featureRing(ctx, o["éã"], s, "#4edbff");
-                featureText(ctx, o["Ée"] + " r=" + Math.round(o["éã"]), 0, -o["éã"] - 15, s, "#4edbff");
-            }
-        });
-    }, featureTick = () => {
+    }, /* BRIO: featureTick
+     * Maintain reached visuals and bounded HUD coverage/slot state. Monochrome startup does not depend on this two-second timer.
+     */
+    featureTick = () => {
         try {
             if (S.renderer && performance.now() - (S.hudLastReport || -Infinity) > 15e3) {
                 S.hudLastReport = performance.now();
@@ -3366,17 +3673,7 @@
                 } catch (_) {}
                 featureNodes.delete(o);
             }
-            for (const c of D.querySelectorAll("canvas")) if (c.id !== "playerPreview") {
-                if (e.monochrome && !c.hasAttribute("data-brio-mono")) {
-                    const old = c.style.filter;
-                    c.setAttribute("data-brio-mono", "");
-                    c.style.filter = (old && old !== "none" ? old + " " : "") + "grayscale(1)";
-                    featureRestore.push(() => {
-                        c.style.filter = old;
-                        c.removeAttribute("data-brio-mono");
-                    });
-                }
-            }
+            syncMonochrome(!!e.monochrome);
         } catch (e) {
             log("FEATURE ERROR", String(e));
         }
@@ -3470,7 +3767,7 @@
         source: false,
         sourceUrl: "",
         captures: 0
-    }, reconGroups = [ [ "meteor / permanentMeteor", /createWaypoint|ping-meteor-icon|ping-meteor/g ], [ "screenChests / screenAirdrops / screenFishing", /ammocrate|grenadecrate|legendarychest|bubbles|airdrop/g ], [ "HUD challenges / customCrosshair", /Minimap|crosshair|reticle|inventory|healthbar|shieldbar/g ], [ "storm modifiers / invisibleStorm", /movingIcon|circle|safezone|storm/g ], [ "foliage challenges / transparentFoliage", /darktree|cherryblossom|tree0|grass0|bush/g ], [ "loot highlighting / cleanLoot", /flareglow|glow|rarity|gunType/g ], [ "buildMaterialLabels / deployableLabels / deployableRadius", /campfirebuild|boostpadbuild|shieldbuild|spellfield/g ], [ "health / ammo / mats warnings / numericHealthShield", /fullHealth|weaponSlots|selectedWeapon|shield|mats|ammo/g ], [ "player indicators / highContrastPlayers", /playerCount|setID|playerNames|name/g ] ];
+    }, reconGroups = [ [ "meteor / permanentMeteor", /createWaypoint|ping-meteor-icon|ping-meteor/g ], [ "screenChests / screenAirdrops / screenFishing", /ammocrate|grenadecrate|legendarychest|bubbles|airdrop/g ], [ "HUD challenges / customCrosshair", /Minimap|crosshair|reticle|inventory|healthbar|shieldbar/g ], [ "storm modifiers / invisibleStorm", /movingIcon|circle|safezone|storm/g ], [ "transparentFoliage", /darktree|cherryblossom|tree0|grass0|bush/g ], [ "cleanLoot", /flareglow|glow|rarity|gunType/g ], [ "health / ammo / mats warnings / numericHealthShield", /fullHealth|weaponSlots|selectedWeapon|shield|mats|ammo/g ], [ "player indicators / highContrastPlayers", /playerCount|setID|playerNames|name/g ] ];
     const nativeAssetAudit = src => {
         const paths = S.hudAssetPaths || (S.hudAssetPaths = new Map);
         for (const m of src.matchAll(/["']([^"']{1,60})["']\s*:\s*["']((?:\.?\/)?buildart\/[^"']+\.png)["']/g)) if (paths.size < 2400) { paths.set(m[1], norm(m[2])); paths.set(m[1].toLowerCase(), norm(m[2])); }
@@ -3480,7 +3777,7 @@
         });
         for (const term of [ "ÁæÆ", "inventoryammo", '"inv"', '"lobby"', "Å.À$", "ãÂÆ=", "Å.áÉâ", '"setID"', '"circle"', '"droid"', '"wander"', '"seed"', '"loot"' ]) {
             let at = src.indexOf(term, term === "inventoryammo" ? 23e4 : 0);
-            if (at >= 0) log("V46 NATIVE SOURCE", {
+            if (at >= 0) log("V47 NATIVE SOURCE", {
                 term: term,
                 at: at,
                 excerpt: src.slice(Math.max(0, at - 800), at + 8e3),
@@ -3488,7 +3785,10 @@
             });
         }
     };
-    const reconSource = async () => {
+    const /* BRIO: reconSource
+     * Collect bounded targeted source excerpts for remaining roadmap routes; no removed feature needs an active test flag.
+     */
+    reconSource = async () => {
         try {
             const urls = [ ...D.scripts ].map(x => x.src).filter(x => {
                 try {
@@ -3663,7 +3963,10 @@
         }
         walk(o, "$", 0);
         return Object.fromEntries(Object.entries(out).filter(([k]) => !/^\$\.(?:â|ÄA|æÄ|aAå|áãá|eÅé|new|Âä|áÆ|ëa|Åaá)(?:\.|$)/.test(k) && !/^\$\.(?:æëÃ|ÀÁ|cos)$/.test(k)));
-    }, reconContainers = () => {
+    }, /* BRIO: reconContainers
+     * Observe first/changed/removed container lifecycle metadata. Never infer NONE or contents from nearby drops or culling.
+     */
+    reconContainers = () => {
         try {
             const world = collectWorld(), live = new Set(world.map(o => o.id));
             for (const o of world) {
@@ -3723,7 +4026,10 @@
         if (Array.prototype.unshift === h.u) Array.prototype.unshift = h.ou;
         clearTimeout(h.timer);
         S.markerCapture = null;
-    }, restoreMarkerHolds = () => {
+    }, /* BRIO: restoreMarkerHolds
+     * Restore retention descriptors before detaching retained old nodes; weakly retire their identities to prevent stale recapture.
+     */
+    restoreMarkerHolds = () => {
         meteorAutoStop();
         S.meteorSeen = new WeakSet;
         S.meteorPending = new WeakSet;
@@ -3745,7 +4051,10 @@
         if (oldMarkers.length) log("OLD MATCH METEORS REMOVED", {count: oldMarkers.length, epoch: S.runEpoch});
         reconMarkers.length = 0;
     };
-    const holdMeteor = (node, array) => {
+    const /* BRIO: holdMeteor
+     * Hold fresh native marker expiry/removal only in its captured epoch. Next Play cleanup detaches it before new discovery.
+     */
+    holdMeteor = (node, array) => {
         const epoch = S.runEpoch;
         queueMicrotask(() => {
             try {
