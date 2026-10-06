@@ -1,4 +1,10 @@
-/* BRIO v47 maintenance map
+/* BRIO v48 maintenance map
+ * V48 evidence map: V47 inventory appearance + monochrome startup confirmed by user; meteor,
+ * indicators, cosmetics/invisibility and chest hiding retain prior explicit proof. No recurring flags.
+ * New/shared warning thresholds (including scraps/grappler) and slot-count removal need a scoped live check.
+ * Contents must eventually be visible above every detected container, independent of proximity.
+ * Current client/source/packet evidence has no authoritative loot list; no fake label/popup/NONE/classifier.
+ * See docs/v48-status.md for proven/changed/unresolved/planned distinctions and test dependencies.
  * A. Home UI/settings/custom cache; B. native resources/cosmetic adapters;
  * C. player/world discovery; D. HUD acquisition and remote inventory presentation;
  * E. arrows/warnings; F. ordinary-Play epoch lifecycle; G. passive source/payload evidence;
@@ -17,8 +23,8 @@
  */
 (() => {
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v47";
-    for (const k of [ K, "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
+    const W = window, D = document, K = "__brio_unlocker_v48";
+    for (const k of [ K, "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
         W[k]?.destroy?.();
     } catch (_) {}
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -27,7 +33,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "47",
+        v: "48",
         log: [],
         errors: [],
         renderer: null,
@@ -91,6 +97,35 @@
         passiveLocal: null
     };
     W[K] = S;
+    /* BRIO: warningThresholds (V48; new boundaries/charge rendering live-pending)
+     * Shared configuration for own HUD, remote numbers and player health outlines.
+     * Native reserve order: light/medium/heavy/shells/rockets; virtual index5 holds the grappler threshold.
+     * Grappler charges are wAmmo[slot-1] (áAæ), NOT reserve ammo, confirmed in the native HUD constructor.
+     * Materials mats[0..3] (ÊÃÄ): fourth native key gear uses buildart/scrap.png.
+     * Defaults are strictly UNDER, as requested. Grappler1 is provisional: the user omitted its default.
+     */
+    const WARNING_DEFAULTS = {health:20, ammo:[30,30,10,15,5,1], materials:[30,30,30,1]};
+    const /* BRIO: normalizeWarningThresholds
+     * Migrate missing/invalid persisted settings, preserving valid independent values. Never alter game state.
+     * Blank/null/negative/NaN/objects must not coerce to zero; zero intentionally disables a single type.
+     * Safe nonnegative integers up to one million are supported by both storage and UI.
+     */
+    normalizeWarningThresholds = stored => {
+        const valid = (v, fallback) => Number.isSafeInteger(v) && v >= 0 && v <= 1000000 ? v : fallback;
+        return {health:valid(stored?.health, WARNING_DEFAULTS.health),
+            ammo:WARNING_DEFAULTS.ammo.map((v,i) => valid(stored?.ammo?.[i],v)),
+            materials:WARNING_DEFAULTS.materials.map((v,i) => valid(stored?.materials?.[i],v))};
+    };
+    const /* BRIO: belowWarning
+     * One strict comparison for every rendering path. Equality/unknown/negative state/disabled modifiers never warn.
+     * The same thresholds apply to displayed remote reserves and local loaded+reserve slot totals.
+     */
+    belowWarning = (e, kind, index, value) => !!e[{health:"lowHealthWarning",ammo:"lowAmmoWarning",materials:"lowMatsWarning"}[kind]] &&
+        Number.isFinite(value) && value >= 0 && value < (kind === "health" ? e.warningThresholds.health : e.warningThresholds[kind][index]);
+    const /* BRIO: materialIndex
+     * Native gear and captured scrap icon are both mats[3]; unknown resource paths never receive a guessed index.
+     */
+    materialIndex = path => ["wood","brick","metal","scrap"].findIndex(k => path?.endsWith("/"+k+".png") || k === "scrap" && path?.endsWith("/gear.png"));
     const q = s => D.querySelector(s), t = x => (x ?? "").toString().replace(/\s+/g, " ").trim(), /* BRIO: read
      * Read persisted JSON defensively. Missing/corrupt settings use the supplied default; runtime state is never stored here.
      */
@@ -115,7 +150,13 @@
     state = () => read("br_local_visuals", {}), saveState = s => write("br_local_visuals", s), /* BRIO: extrasState
      * Read current Extras while discarding user-retired options. Old saved true values must never reactivate removed features.
      */
-    extrasState = () => { const value = read("brio_extras_state", {}); for (const key of ["buildMaterialLabels", "deployableLabels", "deployableRadius", "highlightLoot", "noFoliage"]) delete value[key]; return value; }, saveExtras = s => write("brio_extras_state", s), norm = u => {
+    extrasState = () => {
+        const stored = read("brio_extras_state", {}), value = stored && typeof stored === "object" && !Array.isArray(stored) ? stored : {};
+        for (const key of ["buildMaterialLabels", "deployableLabels", "deployableRadius", "highlightLoot", "noFoliage"]) delete value[key];
+        // V48 choices persist across Play/reinjection. No per-match references belong in this settings record.
+        value.warningThresholds = normalizeWarningThresholds(value.warningThresholds);
+        return value;
+    }, saveExtras = s => write("brio_extras_state", s), norm = u => {
         try {
             return new URL(String(u || ""), location.href).pathname.toLowerCase();
         } catch (_) {
@@ -228,10 +269,10 @@
     };
     const STATUS = {
         green: new Set([ "playersInvisible", "lootInvisible", "buildsInvisible", "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventorySlots", "inventoryMaterials", "inventoryAmmo", "inventorySize", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "nearestPlayer", "nearestChest", "nearestAirdrop", "nearestPlayerName", "noChestsVisible", "monochrome" ]),
-        yellow: new Set([ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "lowMatsWarning", "lowAmmoWarning", "transparentFoliage", "cleanLoot", "highContrastPlayers" ])
+        yellow: new Set([ "lowHealthWarning", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "lowMatsWarning", "lowAmmoWarning", "transparentFoliage", "cleanLoot", "highContrastPlayers" ])
     }, statusOf = id => STATUS.yellow.has(id) ? "yellow" : STATUS.green.has(id) ? "green" : "red";
     const style = D.createElement("style");
-    style.textContent = `[data-brio-mono-page] canvas:not(#playerPreview):not([data-brio-mono]){filter:grayscale(1)!important}#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
+    style.textContent = `[data-brio-mono-page] canvas:not(#playerPreview):not([data-brio-mono]){filter:grayscale(1)!important}#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioThresholds{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;padding:10px;border-bottom:1px solid #555}.brioThresholds fieldset{display:flex;flex:0 0 auto;gap:7px;border:1px solid #777;margin:0;padding:5px;min-width:0}.brioThresholds fieldset:disabled{opacity:.4}.brioThresholds label{display:flex;flex-direction:column;gap:3px;font-size:11px;white-space:nowrap}.brioThresholds input{width:56px;box-sizing:border-box;background:#111;color:#fff;border:1px solid #777;padding:4px}.brioThresholds input:disabled{cursor:not-allowed}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
     D.documentElement.appendChild(style);
     const /* BRIO: patchButtons
      * Modify the actual native Locker/Shop nodes and preserve original markup/styles for destroy.
@@ -413,10 +454,53 @@
         e.target.value = "";
     };
     const EXTRA = {
-        challenges: [ [ "playersInvisible", "All players invisible", "remote players only" ], [ "lootInvisible", "Loot invisible", "includes pickup visuals when complete" ], [ "buildsInvisible", "Builds invisible", "walls + special deployables + placement preview" ], [ "noMinimap", "No minimap", "planned" ], [ "noCrosshair", "No crosshair", "planned" ], [ "noInventoryHud", "No inventory/item bar", "planned" ], [ "invisibleStorm", "Invisible storm", "hide zone on minimap + full map" ], [ "noChestsVisible", "Chests invisible", "chests + ammo/grenade crates · test" ], [ "noHealthShieldHud", "No health/shield HUD", "planned" ], [ "monochrome", "Monochrome vision", "game canvas grayscale · test" ], [ "flashlightMode", "Flashlight mode", "configurable radius; mouse/player follow" ] ],
-        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · test" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "contents unresolved; passive recon: normal/legendary + crates" ], [ "screenAirdrops", "Screen airdrops", "contents unresolved; passive recon" ], [ "screenFishing", "Screen fishing spots", "contents unresolved; no inferred NONE" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · test" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "cleanLoot", "Remove loot glow/effects", "identified glow resource only · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP ≤30; red glowing/flashing player outline" ], [ "lowAmmoWarning", "Low-ammo visual warning", "every gun slot: loaded + reserve <20; remote ammo values flash red · test" ], [ "lowMatsWarning", "Low-material warning", "own material outline + remote values <30 flash red · test" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "captured native assets/geometry; appearance testing", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / special", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + counts", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
+        challenges: [ [ "playersInvisible", "All players invisible", "remote players only" ], [ "lootInvisible", "Loot invisible", "includes pickup visuals when complete" ], [ "buildsInvisible", "Builds invisible", "walls + special deployables + placement preview" ], [ "noMinimap", "No minimap", "planned" ], [ "noCrosshair", "No crosshair", "planned" ], [ "noInventoryHud", "No inventory/item bar", "planned" ], [ "invisibleStorm", "Invisible storm", "hide zone on minimap + full map" ], [ "noChestsVisible", "Chests invisible", "chests + ammo/grenade crates · proven" ], [ "noHealthShieldHud", "No health/shield HUD", "planned" ], [ "monochrome", "Monochrome vision", "game canvas grayscale · proven" ], [ "flashlightMode", "Flashlight mode", "configurable radius; mouse/player follow" ] ],
+        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "always-visible contents above detected containers: unresolved" ], [ "screenAirdrops", "Screen airdrops", "always-visible contents above detected airdrops: unresolved" ], [ "screenFishing", "Screen fishing spots", "always-visible contents above detected fishing spots: unresolved" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "cleanLoot", "Remove loot glow/effects", "identified glow resource only · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP below your threshold; local + remote outline · test" ], [ "lowAmmoWarning", "Low-ammo visual warning", "per-type thresholds; every gun slot + grappler charges · test" ], [ "lowMatsWarning", "Low-material warning", "per-material thresholds including scraps · test" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "native appearance proven; slot ammo numbers removed", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / scraps · appearance proven", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + separate counts · appearance proven", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
     };
-    const REQUIRED_TESTS = [ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "healthBars", "nearestPlayer", "nearestPlayerName", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "lowAmmoWarning", "identifyBots", "cleanLoot", "transparentFoliage" ];
+    // V48: proven modifiers stay selectable without blue flags or recurring live chores.
+    // Keep only changed warnings and unresolved contents/bot/foliage/glow routes in the primary test surface.
+    const REQUIRED_TESTS = ["screenChests","screenAirdrops","screenFishing","lowHealthWarning","lowMatsWarning","lowAmmoWarning","identifyBots","cleanLoot","transparentFoliage"];
+    const /* BRIO: renderWarningThresholds (V48)
+     * Eleven labeled inputs in ONE horizontal nonwrapping row; narrow screens scroll horizontally.
+     * Explicit indices preserve requested display order (shells before heavy) despite native reserve order.
+     * Fieldset.disabled supplies actual keyboard/form disabling; opacity greys the corresponding group.
+     */
+    renderWarningThresholds = (p, settings) => {
+        const row = D.createElement("div"); row.className = "brioThresholds";
+        row.setAttribute("aria-label", "Warning thresholds: warn strictly below these values");
+        for (const [kind,modifier,title,items] of [
+            ["health","lowHealthWarning","Health",[["HP",0]]],
+            ["ammo","lowAmmoWarning","Ammo / charges",[["Light",0],["Medium",1],["Shells",3],["Heavy",2],["Rockets",4],["Grappler",5]]],
+            ["materials","lowMatsWarning","Materials",[["Wood",0],["Brick",1],["Metal",2],["Scraps",3]]]
+        ]) {
+            const group = D.createElement("fieldset"), legend = D.createElement("legend");
+            group.dataset.warningModifier = modifier; group.disabled = !settings[modifier];
+            legend.textContent = title + " · under"; group.appendChild(legend);
+            for (const [name,index] of items) {
+                const label = D.createElement("label"), input = D.createElement("input");
+                label.appendChild(D.createTextNode(name)); input.type = "number";
+                input.min = "0"; input.max = "1000000"; input.step = "1";
+                input.dataset.warningKind = kind; input.dataset.warningIndex = index;
+                input.setAttribute("aria-label", "Low " + name + " warning threshold");
+                const current = () => {const t = extrasState().warningThresholds; return kind === "health" ? t.health : t[kind][index];};
+                input.value = String(kind === "health" ? settings.warningThresholds.health : settings.warningThresholds[kind][index]);
+                // Keep the last good value while blank/invalid input is being edited; normalize on blur/change.
+                // Invalidate only BRIO's settings cache so native/remote draw decisions update immediately.
+                input.oninput = () => {
+                    if (input.value.trim() === "" || !input.checkValidity()) return;
+                    const value = Number(input.value);
+                    if (!Number.isSafeInteger(value) || value < 0 || value > 1000000) return;
+                    const z = extrasState();
+                    if (kind === "health") z.warningThresholds.health = value; else z.warningThresholds[kind][index] = value;
+                    saveExtras(z); featureEx.at = -Infinity;
+                };
+                input.onchange = input.onblur = () => {input.oninput(); input.value = String(current());};
+                label.appendChild(input); group.appendChild(label);
+            }
+            row.appendChild(group);
+        }
+        p.appendChild(row);
+    };
     const /* BRIO: renderExtras
      * Render status and blue test flags from the same option registry used by the written live procedure.
      */
@@ -437,6 +521,7 @@
             };
             a.appendChild(z);
         }
+        if (extraTab === "modifiers") renderWarningThresholds(p, s);
         for (const [id, name, note, child, kind] of EXTRA[extraTab]) {
             if (!id) {
                 const g = D.createElement("div");
@@ -479,6 +564,9 @@
                     const z = extrasState();
                     z[id] = c.checked;
                     saveExtras(z);
+                    featureEx.at = -Infinity;
+                    const group = p.querySelector(`[data-warning-modifier="${id}"]`);
+                    if (group) group.disabled = !c.checked;
                     if (id === "monochrome") syncMonochrome(c.checked);
                 };
                 r.append(l, b, c);
@@ -1371,7 +1459,7 @@
         S.hudStatus = {
             captured: true,
             counts: Object.fromEntries(Object.entries(S.hudTemplates).map(([k, v]) => [ k, v.length ])),
-            replica: "captured native assets/geometry/draw methods; visual proof pending"
+            replica: "V47 inventory appearance proven by user; captured native rows with documented fallback"
         };
         if ((S.hudWidgetLogs || 0) < 32) { S.hudWidgetLogs = (S.hudWidgetLogs || 0) + 1; log("NATIVE HUD WIDGET", {
             kind: kind,
@@ -1431,13 +1519,13 @@
         };
     };
     const /* BRIO: ownMaterialWarnings
-     * Attach warning overlays to native material cells and gun slot roots. These own-HUD bounds are independent of remote replica presentation.
+     * V46 native cell/slot bindings preserved; V48 fourth-material and shared thresholds require live proof.\n     * All five slots include unequipped guns and grapplers. These own-HUD bounds never change remote replica sizing.\n     * On root replacement, remove the old BRIO overlay before rebinding; match reset owns complete removal.
      */
     ownMaterialWarnings = () => {
         if (!S.renderer || !S.hudTemplates) return;
         for (const [root, node] of S.hudWarnNodes || []) if (!root.parent) { try { root.remove?.(node); } catch (_) {} S.hudWarnNodes.delete(root); }
         for (const rec of [...S.hudTemplates.materials, ...S.hudTemplates.slots]) {
-            const ammo = rec.kind === "slots", i = ammo ? rec.slotIndex : [ "wood", "brick", "metal" ].findIndex(k => rec.path.endsWith("/" + k + ".png"));
+            const ammo = rec.kind === "slots", i = ammo ? rec.slotIndex : materialIndex(rec.path);
             if (i < 0 || !rec.root?.add) continue;
             const existing = S.hudWarnNodes?.get(rec.root);
             if (existing?.__brioHudRecord === rec) continue;
@@ -1445,8 +1533,9 @@
             if (!S.hudWarnNodes) S.hudWarnNodes = new Map;
             const bounds = ammo ? rec.slotBounds : hudBounds(rec), draw = (ctx, s) => {
                 if (ammo && (!rec.root.parent || !rec.holder.parent)) return;
-                const value = ammo ? nativeSlotAmmo(S.renderer, i, rec) : matState(S.renderer)?.[i], threshold = ammo ? 20 : 30;
-                if (!exFast()[ammo ? "lowAmmoWarning" : "lowMatsWarning"] || !Number.isFinite(value) || value >= threshold) return;
+                // V48 keeps the proven slot/cell bounds and changes only the threshold decision.
+                const e = exFast(), low = ammo ? nativeSlotLow(e, S.renderer, i, rec) : belowWarning(e, "materials", i, matState(S.renderer)?.[i]);
+                if (!low) return;
                 ctx.save();
                 try {
                     ctx.globalAlpha *= .25 + .75 * (.5 + .5 * Math.sin(performance.now() / 140));
@@ -1463,13 +1552,21 @@
             overlay.__brioHudRecord = rec;
             rec.root.add(overlay);
             S.hudWarnNodes.set(rec.root, overlay);
+            // V48 log analysis found 1255 repeated gun bindings in two V47 matches.
+            // Rebinding remains correct when native roots rebuild; diagnostics retain novel geometry only.
+            // Cap64 signatures per Play, separate from snapshot budgets; no renderer objects are stored.
+            const signature = JSON.stringify([ammo ? "slot" : "material",i,bounds]);
+            if (!S.hudWarningSignatures) S.hudWarningSignatures = new Set;
+            if (!S.hudWarningSignatures.has(signature) && S.hudWarningSignatures.size < 64) {
+            S.hudWarningSignatures.add(signature);
             log(ammo ? "OWN GUN SLOT WARNING BINDING" : "OWN MATERIAL WARNING BINDING", {
                 slotIndex: ammo ? i : undefined,
-                material: ammo ? "gun slot" : [ "wood", "brick", "metal" ][i],
-                threshold: ammo ? "<20" : "<30",
+                material: ammo ? "gun slot" : [ "wood", "brick", "metal", "scraps" ][i],
+                threshold: ammo ? "per ammo type from warningThresholds" : "<" + extrasState().warningThresholds.materials[i],
                 bounds: bounds,
                 scope: ammo ? "all native gun slots; loaded + reserve total; independent of selection" : "own native material HUD"
             });
+            }
         }
     };
     const /* BRIO: cloneNativeWidget
@@ -1610,7 +1707,7 @@
      */
     inventoryBounds = rec => rec.kind === "slots" ? rec.slotBounds || hudBounds(rec) : hudBounds(rec);
     const /* BRIO: drawNativeInv
-     * Render complete captured rows with native icons and live remote counts. Empty X is drawn after restoring the small native scale, keeping the V45 displayed stroke.
+     * V47 user-proven presentation: preserve complete native rows,18px slot backgrounds,size multipliers and V45 X.\n     * V48 only removes redundant slot-ammo text and applies shared numeric/charge warning decisions.\n     * Empty X stays outside the native downscale; source nodes/assets are never edited by remote rendering.
      */
     drawNativeInv = (ctx, s, r) => {
         const cache = nativeInvFor(r);
@@ -1639,19 +1736,24 @@
             row.units.forEach((u, i) => {
                 const b = inventoryBounds(u.record);
                 let value;
-                const material = [ "wood", "brick", "metal", "scrap" ].findIndex(k => u.record.path.endsWith("/" + k + ".png") || k === "scrap" && u.record.path.endsWith("/gear.png")), ammoIndex = +(u.record.path.match(/(?:ammo|stack)([0-4])/) || [])[1];
+                const material = materialIndex(u.record.path), ammoIndex = +(u.record.path.match(/(?:ammo|stack)([0-4])/) || [])[1];
                 if (row.kind === "materials") value = m[material];
                 if (row.kind === "ammo") value = ammo[ammoIndex];
                 for (const pair of u.pairs) {
                     if (row.kind !== "slots" && (pair.source.type === "text" || typeof pair.source.text === "string") && /^\d+$/.test(String(pair.source.text))) {
                         pair.node.text = Number.isFinite(value) ? String(value) : "?";
-                        pair.node.__brioLow = Number.isFinite(value) && (row.kind === "materials" ? ex.lowMatsWarning && material < 3 && value < 30 : row.kind === "ammo" && ex.lowAmmoWarning && value < 20);
+                        pair.node.__brioLow = belowWarning(ex, row.kind, row.kind === "materials" ? material : ammoIndex, value);
                         if (pair.node.__brioLow && "fillStyle" in pair.node && pair.source.fillStyle !== "#000") pair.node.fillStyle = warningColor(true); else if ("fillStyle" in pair.source) pair.node.fillStyle = pair.source.fillStyle;
                     }
                     if (row.kind === "slots" && (pair.source.align === "left" || pair.source.textAlign === "left") && "text" in pair.source) {
-                        const type = String(slots[i]?.type || "").toLowerCase(), magazine = r["áAæ"]?.[i], ai = S.ammoTypeMap?.get(type), reserve = ammo[ai];
-                        const value = GUN_TYPES.has(type) && !["signal flare","grappler"].includes(type) ? Number.isFinite(magazine) && Number.isFinite(reserve) ? magazine + reserve : undefined : magazine;
-                        pair.node.text = Number.isFinite(value) && value >= 0 ? String(value) : "?";
+                        // V48 removes ONLY clone slot-ammo text: native left-aligned fill/stroke count copies.
+                        // Native sources and centered slot captions remain unchanged, as do emblems/art/fonts/size/X.
+                        // Some native draw methods ignore their own opacity; suppress these clone methods explicitly.
+                        pair.node.opacity = 0;
+                        if (!pair.node.__brioSlotAmmoHidden) {
+                            pair.node.__brioSlotAmmoHidden = true;
+                            for (const method of ["éa","Eââ"]) if (typeof pair.node[method] === "function") pair.node[method] = () => {};
+                        }
                     }
                     if (row.kind === "slots" && hudKinds(pair.path) === "ammo") {
                         const ai = S.ammoTypeMap?.get(String(slots[i]?.type || "").toLowerCase());
@@ -1696,6 +1798,10 @@
                 if (typeof n["éa"] === "function") n["éa"](ctx, s, 1); else if (typeof n["Eââ"] === "function") n["Eââ"](ctx, s);
                 ctx.restore();
                 if (slots[i]?.type === "empty" && row.kind === "slots") drawEmptyX(ctx, x * factor, y, b.width * factor, b.height * factor, s);
+                // V48 grappler exception: no separate reserve cell exists; warn on its unchanged remote slot.
+                // No charge number is added back. New outline is conditional on the low-ammo modifier.
+                if (row.kind === "slots" && String(slots[i]?.type || "").toLowerCase() === "grappler" && nativeSlotLow(ex,r,i+1))
+                    drawRemoteChargeWarning(ctx,x*factor,y,b.width*factor,b.height*factor,s);
                 x += b.width + gap;
                 maxHeight = Math.max(maxHeight, b.height * factor);
             });
@@ -1727,7 +1833,7 @@
             captured: false
         };
         S.hudVersion = 0;
-        S.hudSlotLogs = 0; S.hudSlotSprite = null; S.slotWarningLast = null; S.slotWarningLogs = 0;
+        S.hudWarningSignatures = new Set; S.hudSlotLogs = 0; S.hudSlotSprite = null; S.slotWarningLast = null; S.slotWarningLogs = 0;
         S.hudPending = new WeakSet;
         S.hudInspectError = false;
         S.emptySlotArtLogged = false;
@@ -1736,6 +1842,38 @@
     };
     const isSlotArtwork = path => !!path && path !== "/" && !hudKinds(path) && !/\/(?:ammo|inventoryammo)[0-4]\.png$|\/disabled\.png$/.test(path);
     const GUN_TYPES = new Set(["scar","bolt","lmg","shotgun","heavy","smg","ump","rifle","ar-15","scoped ar","deagle","rpg","famas","tommy gun","drum","musket","heavy sniper","ak47","akƧ","combat","silencedpistol","aug","burst shotgun","grenade launcher","mgl","grenade pistol","vector","revolver","charge rifle","grenade sniper","sawedoff","signal flare","spas","grappler","crossbow","minigun"]);
+    const /* BRIO: nativeSlotAmmoIndex (V48)
+     * Grappler uses virtual type5; there is no sixth reserve/ammo row. Native flare is also loaded-only.
+     * Other guns use the source map, overridden by a reached live own-slot ammo emblem when available.
+     * Unknown mappings never receive an arbitrary default threshold.
+     */
+    nativeSlotAmmoIndex = (r,index,rec) => {
+        const type = String(r?.["Åé"]?.[index]?.type || "").toLowerCase();
+        if (!GUN_TYPES.has(type)) return undefined;
+        if (type === "grappler" || type === "signal flare") return 5;
+        const emblem = rec?.nodes?.find(n => /\/ammo[0-4]\.png$/.test(hudPath(n)));
+        const i = emblem ? +(hudPath(emblem).match(/ammo([0-4])/)[1]) : S.ammoTypeMap?.get(type);
+        return Number.isInteger(i) && i >= 0 && i < 5 ? i : undefined;
+    };
+    const /* BRIO: nativeSlotLow
+     * Own slots compare displayed loaded+reserve; grappler/flare compare only loaded charges.
+     * Remote displayed reserve numbers use the same per-type setting; no hidden magazine is added to that row.
+     * Independent of selection. Empty slots, consumables, unknown/negative counts never warn.
+     */
+    nativeSlotLow = (e,r,index,rec) => belowWarning(e,"ammo",nativeSlotAmmoIndex(r,index,rec),nativeSlotAmmo(r,index,rec));
+    const /* BRIO: drawRemoteChargeWarning
+     * V48 charge-only exception: remote grappler lacks a separate ammo row, so outline its slot.
+     * Pure drawing over finalized background bounds; no new per-match nodes/state or geometry changes.
+     * Existing native/fallback inventory cleanup remains sufficient. Live appearance is pending.
+     */
+    drawRemoteChargeWarning = (ctx,x,y,width,height,scale) => {
+        ctx.save();
+        try {
+            ctx.globalAlpha *= .25 + .75 * (.5 + .5 * Math.sin(performance.now()/140));
+            ctx.strokeStyle = ctx.shadowColor = "#ff2020"; ctx.shadowBlur = 8/scale; ctx.lineWidth = 1.2/scale;
+            ctx.strokeRect((x-1)/scale,(y-1)/scale,(width+2)/scale,(height+2)/scale);
+        } finally {ctx.restore();}
+    };
     const /* BRIO: nativeSlotAmmo
      * Known finite gun ammo only: loaded plus matching reserve, except grappler/flare loaded only. A live emblem overrides AST mapping; unknowns never warn.
      */
@@ -1745,10 +1883,7 @@
         const loaded = r?.["áAæ"]?.[index - 1];
         if (!Number.isFinite(loaded) || loaded < 0) return undefined;
         if (type === "grappler" || type === "signal flare") return loaded;
-        let ammoIndex = S.ammoTypeMap?.get(type);
-        // The live slot emblem is authoritative when constant obfuscation prevents mapping.
-        const emblem = rec?.nodes.find(n => /\/ammo[0-4]\.png$/.test(hudPath(n)));
-        if (emblem) ammoIndex = +(hudPath(emblem).match(/ammo([0-4])/)[1]);
+        const ammoIndex = nativeSlotAmmoIndex(r,index,rec);
         const reserve = r?.["åæ"]?.[ammoIndex];
         return Number.isFinite(reserve) && reserve >= 0 ? loaded + reserve : undefined;
     };
@@ -1866,6 +2001,8 @@
                     const path = itemPath(sl?.type);
                     if (path) drawSlotArt(ctx, path, sl?.type, x + sz / 2, yy + sz / 2, sz, scale);
                     else if (sl?.type === "empty") drawEmptyX(ctx, x, yy, sz, sz, scale);
+                    // Fallback uses the same charge-only slot outline, without inventing a sixth reserve count.
+                    if (String(sl?.type || "").toLowerCase() === "grappler" && nativeSlotLow(ex,r,i+1)) drawRemoteChargeWarning(ctx,x,yy,sz,sz,scale);
                 }
             } else if (row === "mats") {
                 const m = matState(r), vals = [ [ "/buildart/wood.png", m[0] ], [ "/buildart/brick.png", m[1] ], [ "/buildart/metal.png", m[2] ], [ "/buildart/scrap.png", m[3] ] ], cell = 29, x0 = -(cell * 4) / 2;
@@ -1874,7 +2011,7 @@
                 vals.forEach(([p, v], i) => {
                     const x = x0 + i * cell;
                     drawImg(ctx, p, x, yy, 14, 14, scale);
-                    drawTxt(ctx, v ?? "?", x + 21, yy + 7, scale, ex.lowMatsWarning && i < 3 && Number.isFinite(v) && v < 30);
+                    drawTxt(ctx, v ?? "?", x + 21, yy + 7, scale, belowWarning(ex,"materials",i,v));
                 });
             } else {
                 const a = Array.isArray(r["åæ"]) ? r["åæ"].slice(0, 5) : [], cell = 27, x0 = -(cell * 5) / 2;
@@ -1883,7 +2020,7 @@
                 for (let i = 0; i < 5; i++) {
                     const x = x0 + i * cell;
                     drawImg(ctx, S.hudAssetPaths?.get("stack" + i) || `/buildart/stack${i}.png`, x, yy, 14, 14, scale);
-                    drawTxt(ctx, a[i] ?? "?", x + 20, yy + 7, scale, ex.lowAmmoWarning && Number.isFinite(a[i]) && a[i] < 20);
+                    drawTxt(ctx, a[i] ?? "?", x + 20, yy + 7, scale, belowWarning(ex,"ammo",i,a[i]));
                 }
             }
             yy += 21;
@@ -2677,7 +2814,7 @@
     const term = D.createElement("div");
     term.className = "brioTerm";
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v47</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v48</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     let mini = false, drag = null;
@@ -3120,7 +3257,7 @@
     const /* BRIO: deepReport
      * Report the probe's own epoch, not an already-incremented next Play. Include missing hooks, lanes, suppression and stage-specific errors.
      */
-    deepReport = () => log("V47 PROBE COVERAGE", {
+    deepReport = () => log("V48 PROBE COVERAGE", {
         incomingInstalled: !!deep.restore, incomingObservedThisRun: !!deep.installedEver, incomingPackets: deep.packets, incomingSchemas: deep.schemas.size, nativeEngineCaptured: deep.engineRestores.length > 0,
         targetedEntities: deep.replicas.size, records: deep.records, approximateBytes: deep.bytes, truncations: deep.truncations, errors: deep.errors, errorStages: deep.errorStages,
         lanes: deep.lanes, laneCaps: DEEP_LANES, suppressed: deep.suppressed, incomingTargetIds: deep.identities.size, circleState: deep.circleState, epoch: deep.epoch,
@@ -3143,7 +3280,7 @@
     deepStart = () => {
         deepStop(); deep.until = performance.now() + 900000; deep.packets = deep.records = deep.bytes = deep.truncations = deep.errors = 0;
         deep.epoch = S.runEpoch; deep.errorStages = {}; deep.installedEver = false; deep.lanes = {}; deep.suppressed = {}; deep.incomingState.clear(); deep.environmentSeen = new WeakSet; deep.localId = null; deep.circleState = null; deep.schemas.clear(); deep.identities.clear(); deep.subtypes.clear(); deep.replicas.clear(); deep.windowScanned = false; deep.engines = new WeakSet;
-        log("V47 DEEP PROBE PLAN", {readOnly: true, source: "complete raw bundle + AST", targets: "all observed container kinds and players; environment target chunks", laneCaps: DEEP_LANES, updatePolicy: "changed fields only; reserve container/late-target capacity", noManualArm: true, noClassifier: true});
+        log("V48 DEEP PROBE PLAN", {readOnly: true, source: "complete raw bundle + AST", targets: "all observed container kinds and players; environment target chunks", laneCaps: DEEP_LANES, updatePolicy: "changed fields only; reserve container/late-target capacity", noManualArm: true, noClassifier: true});
         const tick = () => { try { deepTick(); } catch (e) { deepError("target tick", e); } };
         tick(); deep.timer = setInterval(tick, 1000);
     };
@@ -3609,8 +3746,10 @@
                 if (exFast().highContrastPlayers) featureRing(ctx, 55, s, "#ffea00");
             });
         }
-        if (isLocal(r) && e.lowHealthWarning) attachFeature(r, "warning", r.Eâ, (ctx, s) => {
-            if (!exFast().lowHealthWarning || !Number.isFinite(r["åÈ"]) || r["åÈ"] > 30) return;
+        // V48 applies the existing separate outline to local + visible remote HP with one strict threshold.
+        // Proven health/shield number and bar appearance is unchanged.
+        if (e.lowHealthWarning) attachFeature(r, "warning", r.Eâ, (ctx, s) => {
+            if (!belowWarning(exFast(),"health",0,r["åÈ"])) return;
             ctx.save();
             ctx.shadowColor = "#ff2020";
             ctx.shadowBlur = 12 / s;
@@ -3647,16 +3786,16 @@
                     renderedArrays: renderArrays.size,
                     discoveryActive: !!renderDiscovery,
                     approximationFallback: !status.counts || status.counts.slots < 5 || status.counts.materials < 4 || status.counts.ammo < 5,
-                    note: "Exact native appearance is pending; missing/private HUD roots require the captured constructor/source route."
+                    note: "V47 inventory appearance proven; capture coverage and fallback remain explicit. V48 warning boundaries/charges need live verification."
                 });
             }
             if (S.renderer && !S.meteorAutoTimer && (extrasState().permanentMeteor || extrasState().lowMatsWarning || extrasState().lowAmmoWarning)) meteorAutoStart("feature watchdog");
             featureEx.value = extrasState();
             featureEx.at = performance.now();
             ownMaterialWarnings();
-            const slotState = (S.hudTemplates?.slots || []).map(rec => ({slot: rec.slotIndex, type: S.renderer?.["Åé"]?.[rec.slotIndex]?.type, ammo: nativeSlotAmmo(S.renderer, rec.slotIndex, rec) ?? null, selected: S.renderer?.["ÈÆ"] === rec.slotIndex, low: Number.isFinite(nativeSlotAmmo(S.renderer, rec.slotIndex, rec)) && nativeSlotAmmo(S.renderer, rec.slotIndex, rec) < 20}));
+            const slotState = (S.hudTemplates?.slots || []).map(rec => ({slot: rec.slotIndex, type: S.renderer?.["Åé"]?.[rec.slotIndex]?.type, ammo: nativeSlotAmmo(S.renderer, rec.slotIndex, rec) ?? null, selected: S.renderer?.["ÈÆ"] === rec.slotIndex, ammoType: nativeSlotAmmoIndex(S.renderer, rec.slotIndex, rec) ?? null, threshold: featureEx.value.warningThresholds.ammo[nativeSlotAmmoIndex(S.renderer, rec.slotIndex, rec)] ?? null, low: nativeSlotLow(featureEx.value, S.renderer, rec.slotIndex, rec)}));
             const slotSignature = J(slotState);
-            if (slotSignature !== S.slotWarningLast && (S.slotWarningLogs || 0) < 40) {S.slotWarningLast = slotSignature; S.slotWarningLogs = (S.slotWarningLogs || 0) + 1; log("GUN SLOT WARNING STATE", {epoch: S.runEpoch, slots: slotState, threshold: "native loaded+reserve total <20; unknown/non-guns excluded"});}
+            if (slotSignature !== S.slotWarningLast && (S.slotWarningLogs || 0) < 40) {S.slotWarningLast = slotSignature; S.slotWarningLogs = (S.slotWarningLogs || 0) + 1; log("GUN SLOT WARNING STATE", {epoch: S.runEpoch, slots: slotState, threshold: "strict per-type saved thresholds; native loaded+reserve, grappler/flare charges only; unknown/non-guns excluded"});}
             const e = featureEx.value;
             for (const r of collectPlayers()) featurePlayer(r);
             const world = collectWorld(), live = new Set([ ...collectPlayers(), ...world ]);
@@ -3777,7 +3916,7 @@
         });
         for (const term of [ "ÁæÆ", "inventoryammo", '"inv"', '"lobby"', "Å.À$", "ãÂÆ=", "Å.áÉâ", '"setID"', '"circle"', '"droid"', '"wander"', '"seed"', '"loot"' ]) {
             let at = src.indexOf(term, term === "inventoryammo" ? 23e4 : 0);
-            if (at >= 0) log("V47 NATIVE SOURCE", {
+            if (at >= 0) log("V48 NATIVE SOURCE", {
                 term: term,
                 at: at,
                 excerpt: src.slice(Math.max(0, at - 800), at + 8e3),
@@ -3862,7 +4001,7 @@
                     enabled: !!extrasState()[x[0]],
                     probe: "native runtime state + bounded source/asset candidates; feasibility unresolved unless green"
                 })),
-                screening: "unresolved; repeated before/after task retired, not scrapped",
+                screening: "always-visible pre-open contents above every detected container requested; authoritative contents unresolved; native proximity labels are not screening",
                 cssSurfaces: [ "monochrome", "flashlightMode", "customCrosshair" ],
                 note: "No hits does not establish impossibility"
             });

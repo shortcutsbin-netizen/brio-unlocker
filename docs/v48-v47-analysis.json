@@ -1,0 +1,689 @@
+{
+  "input": "logs/v47-log.txt",
+  "version": "47",
+  "bytes": 5141313,
+  "characters": 4766320,
+  "sha256": "1a75af4e1ac0285e5eaee51fd17226886aa02bbf2bd80081cc106daaa1d03c3d",
+  "eventCounts": {
+    "BOT AUDIT PLAN": 2,
+    "BOT CANDIDATE": 34,
+    "BOT METADATA AUDIT": 26,
+    "BOT METADATA SETTLED": 17,
+    "BOT PHASE": 2,
+    "BOT SOURCE AUDIT": 1,
+    "BOT WATCH STOP": 1,
+    "COSMETIC SELECTIONS": 2,
+    "CUSTOM CACHE": 1,
+    "DECODED FIELD SCHEMA": 1,
+    "DEEP CALLBACK STRUCTURE": 24,
+    "DEEP CONTAINER NEARBY": 45,
+    "DEEP FIELD DICTIONARY": 1,
+    "DEEP SEMANTIC REFERENCES": 18,
+    "DEEP SOURCE STRUCTURE": 1,
+    "DEEP TARGET CHANGE": 475,
+    "DEEP TARGET DISAPPEARED": 177,
+    "DEEP TARGET INITIAL": 116,
+    "ENVIRONMENT MANIFEST": 2,
+    "ENVIRONMENT TARGET CHUNK": 2,
+    "FULL NATIVE SOURCE CHUNK": 85,
+    "GLOBAL HOOK RESTORED": 2,
+    "GUN SLOT WARNING STATE": 80,
+    "HUD DOM CANDIDATES": 3,
+    "INCOMING DECODE PROBE": 2,
+    "INCOMING SCHEMA FIRST": 689,
+    "INCOMING TARGET PAYLOAD": 1172,
+    "INDICATOR STATE": 426,
+    "INVENTORY ASSET RESOLUTION": 26,
+    "LOCAL HUD STATE": 42,
+    "LOCAL READY": 2,
+    "LOCAL RENDERER": 2,
+    "MATCH STATE RESET": 2,
+    "METEOR AUTOMATIC": 2,
+    "METEOR AUTOMATIC START": 2,
+    "METEOR NATIVE HOLD INSTALLED": 4,
+    "METEOR NATIVE REMOVE BLOCKED": 2,
+    "NATIVE AMMO TYPE MAP": 1,
+    "NATIVE CALLBACK AUDIT": 12,
+    "NATIVE EMPTY SLOT ART": 2,
+    "NATIVE HUD ASSET MAP": 1,
+    "NATIVE HUD CAPTURE STATUS": 47,
+    "NATIVE HUD WIDGET": 1,
+    "NATIVE REGISTRATION AUDIT": 4,
+    "NATIVE REGISTRATION REFERENCE": 23,
+    "NATIVE RENDER DISCOVERY": 2,
+    "NATIVE RENDER DISCOVERY RESTORED": 2,
+    "NATIVE REPLICA SCHEMA SAMPLE": 160,
+    "NATIVE SESSION STATE": 25,
+    "NATIVE WEAPON SLOT": 48,
+    "OLD MATCH METEORS REMOVED": 1,
+    "OWN GUN SLOT WARNING BINDING": 1255,
+    "OWN MATERIAL WARNING BINDING": 6,
+    "PASSIVE BUILDABLE": 1,
+    "PASSIVE CONTAINER BASE": 86,
+    "PASSIVE CONTAINER CHANGE": 34,
+    "PASSIVE CONTAINER REMOVED": 86,
+    "PASSIVE LOCAL FIELDS": 2,
+    "PASSIVE NATIVE OBJECT": 143,
+    "PASSIVE RUNTIME COVERAGE": 61,
+    "PASSIVE SOURCE SURFACE": 8,
+    "PREMATCH ARMED": 2,
+    "PROBE OBSERVATION ERROR": 2,
+    "READY": 1,
+    "RECON COVERAGE": 1,
+    "REMOTE HUD SAMPLE": 44,
+    "SCENE CAPTURE": 2,
+    "SOURCE CALLBACK CHUNK": 29,
+    "SOURCE LOADED": 1,
+    "TARGETED FEATURE SOURCE": 4,
+    "TARGETED NATIVE REFERENCE": 2,
+    "TEST SETTINGS AT PLAY": 2,
+    "V39 HUMAN GROUND TRUTH": 1,
+    "V47 DEEP PROBE PLAN": 2,
+    "V47 NATIVE SOURCE": 11,
+    "V47 PROBE COVERAGE": 4,
+    "VERIFY": 1,
+    "WAYPOINT HANDLER SOURCE": 1
+  },
+  "incomingPayloadKinds": {
+    "x:player:": 71,
+    "setID:player:": 4,
+    "y:player:": 364,
+    "z:player:": 93,
+    "x:object:grenadecrate": 75,
+    "x:chest:": 70,
+    "x:object:ammocrate": 64,
+    "z:object:grenadecrate": 77,
+    "z:chest:": 94,
+    "z:object:ammocrate": 72,
+    "x:object:airdrop": 5,
+    "y:object:airdrop": 5,
+    "z:object:airdrop": 11,
+    "x:object:meteorite": 3,
+    "y:object:meteorite": 5,
+    "z:object:meteorite": 3,
+    "x:object:bubbles": 69,
+    "z:object:bubbles": 87
+  },
+  "containerChestTypes": {
+    "default": 66,
+    "legendary": 4
+  },
+  "payloadProperties": {
+    "player:": [
+      "ammo",
+      "building",
+      "canBuild",
+      "chosenBuild",
+      "chosenVariant",
+      "close",
+      "closeR",
+      "cookingNade",
+      "diving",
+      "effects",
+      "elims",
+      "emote",
+      "flashed",
+      "frt",
+      "gh",
+      "gliderSkin",
+      "glidingTicks",
+      "grapple",
+      "hLost",
+      "hair",
+      "health",
+      "house",
+      "i",
+      "id",
+      "jump",
+      "knocked",
+      "la",
+      "layer",
+      "locker",
+      "mats",
+      "maxGlidingTicks",
+      "name",
+      "needResource",
+      "p",
+      "pickaxeSkin",
+      "rs",
+      "rt",
+      "s",
+      "sLost",
+      "score",
+      "selectedWeapon",
+      "shield",
+      "shot",
+      "specs",
+      "spread",
+      "sprinting",
+      "steadying",
+      "t",
+      "team",
+      "teleported",
+      "v",
+      "wAmmo",
+      "weaponSlots"
+    ],
+    "object:grenadecrate": [
+      "fullHealth",
+      "health",
+      "height",
+      "i",
+      "p",
+      "t",
+      "type",
+      "width"
+    ],
+    "chest:": [
+      "chestType",
+      "i",
+      "p",
+      "t"
+    ],
+    "object:ammocrate": [
+      "fullHealth",
+      "health",
+      "height",
+      "i",
+      "p",
+      "t",
+      "type",
+      "width"
+    ],
+    "object:airdrop": [
+      "fullHealth",
+      "health",
+      "height",
+      "i",
+      "landProgress",
+      "landed",
+      "p",
+      "t",
+      "type",
+      "width"
+    ],
+    "object:meteorite": [
+      "fullHealth",
+      "hasWeapon",
+      "health",
+      "height",
+      "i",
+      "landProgress",
+      "landed",
+      "p",
+      "t",
+      "type",
+      "width"
+    ],
+    "object:bubbles": [
+      "fullHealth",
+      "health",
+      "height",
+      "i",
+      "p",
+      "t",
+      "type",
+      "width"
+    ]
+  },
+  "runs": [
+    {
+      "epoch": 1,
+      "reset": {
+        "epoch": 1,
+        "meteorMarkers": 0,
+        "remoteRefs": 0,
+        "inventoryNodes": 0,
+        "trackNodes": 0,
+        "featureNodes": 0,
+        "savedSelectionsPreserved": true
+      },
+      "settings": {
+        "requiredOn": {
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "inventoryAmmo": true,
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "healthBars": true,
+          "nearestPlayer": true,
+          "nearestPlayerName": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "permanentMeteor": true,
+          "numericHealthShield": true,
+          "lowHealthWarning": true,
+          "lowMatsWarning": true,
+          "lowAmmoWarning": true,
+          "identifyBots": true,
+          "cleanLoot": true,
+          "transparentFoliage": true
+        },
+        "missing": [],
+        "allSelected": {
+          "playersInvisible": false,
+          "lootInvisible": false,
+          "buildsInvisible": false,
+          "transparentRoofs": true,
+          "healthBars": true,
+          "playerNames": true,
+          "allGlidersInvisible": true,
+          "allTrailsInvisible": true,
+          "nearestPlayer": true,
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "inventoryAmmo": true,
+          "permanentMeteor": true,
+          "inventorySize": "xl",
+          "identifyBots": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "numericHealthShield": true,
+          "lowHealthWarning": true,
+          "lowMatsWarning": true,
+          "playerIds": true,
+          "lowAmmoWarning": true,
+          "nearestPlayerName": true,
+          "highContrastPlayers": false,
+          "cleanLoot": true,
+          "transparentFoliage": true,
+          "monochrome": false,
+          "noChestsVisible": false
+        }
+      },
+      "coverage": {
+        "incomingInstalled": true,
+        "incomingObservedThisRun": true,
+        "incomingPackets": 29102,
+        "incomingSchemas": 350,
+        "nativeEngineCaptured": false,
+        "targetedEntities": 79,
+        "records": 1375,
+        "approximateBytes": 937412,
+        "truncations": 92,
+        "errors": 4,
+        "errorStages": {
+          "window registry discovery": 4
+        },
+        "lanes": {
+          "schema": 350,
+          "environment": 2,
+          "player": 350,
+          "replica": 300,
+          "container": 373
+        },
+        "laneCaps": {
+          "schema": 350,
+          "player": 350,
+          "container": 700,
+          "replica": 300,
+          "environment": 100
+        },
+        "suppressed": {
+          "routineFieldChanges": 7016,
+          "player": 64,
+          "replica": 175
+        },
+        "incomingTargetIds": 81,
+        "circleState": "moving",
+        "epoch": 1,
+        "caps": {
+          "packets": 80000,
+          "records": 1800,
+          "bytes": 8000000,
+          "entities": 200,
+          "durationMs": 900000
+        },
+        "limitsReached": {
+          "packets": false,
+          "records": false,
+          "bytes": false,
+          "entities": false
+        },
+        "source": {
+          "url": "https://buildroyale.io/js/uOfrVi.js",
+          "characters": 764701,
+          "chunks": 85,
+          "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+          "captured": true,
+          "astParsed": true
+        },
+        "conclusion": "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
+      },
+      "payloads": 602
+    },
+    {
+      "epoch": 2,
+      "reset": {
+        "epoch": 2,
+        "meteorMarkers": 0,
+        "remoteRefs": 0,
+        "inventoryNodes": 0,
+        "trackNodes": 0,
+        "featureNodes": 0,
+        "savedSelectionsPreserved": true
+      },
+      "settings": {
+        "requiredOn": {
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "inventoryAmmo": true,
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "healthBars": true,
+          "nearestPlayer": true,
+          "nearestPlayerName": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "permanentMeteor": true,
+          "numericHealthShield": true,
+          "lowHealthWarning": true,
+          "lowMatsWarning": true,
+          "lowAmmoWarning": true,
+          "identifyBots": true,
+          "cleanLoot": true,
+          "transparentFoliage": true
+        },
+        "missing": [],
+        "allSelected": {
+          "playersInvisible": false,
+          "lootInvisible": false,
+          "buildsInvisible": false,
+          "transparentRoofs": true,
+          "healthBars": true,
+          "playerNames": true,
+          "allGlidersInvisible": true,
+          "allTrailsInvisible": true,
+          "nearestPlayer": true,
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "inventoryAmmo": true,
+          "permanentMeteor": true,
+          "inventorySize": "xl",
+          "identifyBots": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "numericHealthShield": true,
+          "lowHealthWarning": true,
+          "lowMatsWarning": true,
+          "playerIds": true,
+          "lowAmmoWarning": true,
+          "nearestPlayerName": true,
+          "highContrastPlayers": false,
+          "cleanLoot": true,
+          "transparentFoliage": true,
+          "monochrome": true,
+          "noChestsVisible": false
+        }
+      },
+      "coverage": {
+        "incomingInstalled": true,
+        "incomingObservedThisRun": true,
+        "incomingPackets": 20712,
+        "incomingSchemas": 339,
+        "nativeEngineCaptured": false,
+        "targetedEntities": 76,
+        "records": 1303,
+        "approximateBytes": 828543,
+        "truncations": 66,
+        "errors": 0,
+        "errorStages": {},
+        "lanes": {
+          "schema": 339,
+          "environment": 2,
+          "player": 350,
+          "replica": 300,
+          "container": 312
+        },
+        "laneCaps": {
+          "schema": 350,
+          "player": 350,
+          "container": 700,
+          "replica": 300,
+          "environment": 100
+        },
+        "suppressed": {
+          "routineFieldChanges": 4474,
+          "replica": 146,
+          "player": 41
+        },
+        "incomingTargetIds": 83,
+        "circleState": "waiting",
+        "epoch": 2,
+        "caps": {
+          "packets": 80000,
+          "records": 1800,
+          "bytes": 8000000,
+          "entities": 200,
+          "durationMs": 900000
+        },
+        "limitsReached": {
+          "packets": false,
+          "records": false,
+          "bytes": false,
+          "entities": false
+        },
+        "source": {
+          "url": "https://buildroyale.io/js/uOfrVi.js",
+          "characters": 764701,
+          "chunks": 85,
+          "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+          "captured": true,
+          "astParsed": true
+        },
+        "conclusion": "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
+      },
+      "payloads": 570
+    }
+  ],
+  "coverage": {
+    "incomingInstalled": true,
+    "incomingObservedThisRun": true,
+    "incomingPackets": 20712,
+    "incomingSchemas": 339,
+    "nativeEngineCaptured": false,
+    "targetedEntities": 76,
+    "records": 1303,
+    "approximateBytes": 828543,
+    "truncations": 66,
+    "errors": 0,
+    "errorStages": {},
+    "lanes": {
+      "schema": 339,
+      "environment": 2,
+      "player": 350,
+      "replica": 300,
+      "container": 312
+    },
+    "laneCaps": {
+      "schema": 350,
+      "player": 350,
+      "container": 700,
+      "replica": 300,
+      "environment": 100
+    },
+    "suppressed": {
+      "routineFieldChanges": 4474,
+      "replica": 146,
+      "player": 41
+    },
+    "incomingTargetIds": 83,
+    "circleState": "waiting",
+    "epoch": 2,
+    "caps": {
+      "packets": 80000,
+      "records": 1800,
+      "bytes": 8000000,
+      "entities": 200,
+      "durationMs": 900000
+    },
+    "limitsReached": {
+      "packets": false,
+      "records": false,
+      "bytes": false,
+      "entities": false
+    },
+    "source": {
+      "url": "https://buildroyale.io/js/uOfrVi.js",
+      "characters": 764701,
+      "chunks": 85,
+      "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+      "captured": true,
+      "astParsed": true
+    },
+    "conclusion": "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
+  },
+  "hudStatus": {
+    "captured": true,
+    "counts": {
+      "slots": 5,
+      "materials": 4,
+      "ammo": 1
+    },
+    "replica": "native slot holders and material/stack templates; visual comparison required",
+    "ownWarningBindings": 8,
+    "renderedArrays": 160,
+    "discoveryActive": false,
+    "approximationFallback": true,
+    "note": "Exact native appearance is pending; missing/private HUD roots require the captured constructor/source route."
+  },
+  "phaseTransitions": [
+    {
+      "phase": "match",
+      "automatic": true,
+      "evidence": "native circle state=moving",
+      "tracked": 14
+    },
+    {
+      "phase": "match",
+      "automatic": true,
+      "evidence": "native circle state=moving",
+      "tracked": 5
+    }
+  ],
+  "sessionTransitions": [
+    {
+      "epoch": 1,
+      "state": "lobby"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "lobby"
+    },
+    {
+      "epoch": 2,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "waiting"
+    },
+    {
+      "epoch": 2,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "waiting"
+    },
+    {
+      "epoch": 2,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "waiting"
+    },
+    {
+      "epoch": 2,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "waiting"
+    }
+  ],
+  "removedMeteors": [
+    {
+      "count": 2,
+      "epoch": 2
+    }
+  ],
+  "runtimeSource": {
+    "chunks": 85,
+    "complete": true,
+    "characters": 764701,
+    "bytes": 838390,
+    "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+    "matchesReference": true
+  },
+  "limits": "Counts summarize recorded JSON events only. Group by chronological Play resets: v46 historical rearm coverage reports the next epoch before resetting its probe. User observations are separate. Capped or missing records and unencountered targets cannot establish impossibility."
+}

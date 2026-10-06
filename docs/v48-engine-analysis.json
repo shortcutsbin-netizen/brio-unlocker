@@ -1,0 +1,1446 @@
+{
+  "source": "docs/engine.js",
+  "characters": 764701,
+  "bytes": 838390,
+  "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "parsedNodes": 156450,
+  "dictionaryFields": 198,
+  "warningEvidence": {
+    "materialOrder": [
+      {
+        "start": 205889,
+        "excerpt": "[\"\\x77\\157\\x6F\\u0064\",\"\\u0062\\x72\\151\\x63\\153\",\"\\155\\x65\\164\\141\\154\",\"\\x67\\145\\x61\\x72\"]"
+      }
+    ],
+    "scrapAsset": "buildart/scrap.png",
+    "chargeHud": [
+      {
+        "start": 474841,
+        "excerpt": "_);if(å.áAæ[Ã-Ââ]>=0X0){let ÀæÂ=(á.åæ[äèä[ä.type]]+å.áAæ[Ã-ÅÀ])[Ê[215]]();if((ä.type===\"\\x73\\151\\147\\x6E\\x61\\x6C\\x20\\x66\\154\\x61\\162\\x65\")||(ä.type===\"\\147\\x72\\x61\\160\\x70\\154\\145\\x72\")){ÀæÂ=å.áAæ[Ã-1][Ê[215]]();}var ãä=new Å.strokeText(ÀæÂ,(-Åê/Eê)+(â$/03),(Åê/èäÉ)-(â$/É$),\"\\43\\60\\x30\\60\",\"\\x41\\u0072\\x69\\x61\\154\\40\\x42\\u006C\\141\\143\\153\",â$-07,\"\",01,\"\\154\\145\\146\\164\");ãä.lineWidth=ÁÉÅ;ãä.add(new Å.text(ÀæÂ,aÂ,0x0,\"\\43\\106\\106F\",\"\\101\\162\\x69\\x61\\x6c\\u0020\\102l\\x61\\143\\x6b\",â$-0"
+      }
+    ],
+    "ammoKinds": [
+      [
+        {
+          "type": "aug",
+          "value": 1
+        },
+        {
+          "type": "drum",
+          "value": 3
+        },
+        {
+          "type": "scoped ar",
+          "value": 1
+        },
+        {
+          "type": "combat",
+          "value": "aâ"
+        },
+        {
+          "type": "revolver",
+          "value": "ÉÉ"
+        },
+        {
+          "type": "scar",
+          "value": "ÅÀ"
+        },
+        {
+          "type": "crossbow",
+          "value": 2
+        },
+        {
+          "type": "tryagainfeesh",
+          "value": "ÃÂË"
+        },
+        {
+          "type": "famas",
+          "value": 1
+        },
+        {
+          "type": "heavy",
+          "value": 3
+        },
+        {
+          "type": "lmg",
+          "value": "åE"
+        },
+        {
+          "type": "grenade sniper",
+          "value": "äæA"
+        },
+        {
+          "type": "feesh",
+          "value": 5
+        },
+        {
+          "type": "candycane",
+          "value": "ÃãE"
+        },
+        {
+          "type": "molotov",
+          "value": 5
+        },
+        {
+          "type": "giantsnowball",
+          "value": "Êãá"
+        },
+        {
+          "type": "burst shotgun",
+          "value": 3
+        },
+        {
+          "type": "medkit",
+          "value": "Êãá"
+        },
+        {
+          "type": "ar-15",
+          "value": "Äá"
+        },
+        {
+          "type": "flex",
+          "value": 5
+        },
+        {
+          "type": "bandages",
+          "value": "aáá"
+        },
+        {
+          "type": "minigun",
+          "value": "ÃÈ"
+        },
+        {
+          "type": "ak47",
+          "value": 1
+        },
+        {
+          "type": "smg",
+          "value": 0
+        },
+        {
+          "type": "sawedoff",
+          "value": "aâ"
+        },
+        {
+          "type": "mgl",
+          "value": "äæA"
+        },
+        {
+          "type": "gravitynade",
+          "value": "ÂA"
+        },
+        {
+          "type": "icicle",
+          "value": "ÂÃæ"
+        },
+        {
+          "type": "spas",
+          "value": "ÀãÉ"
+        },
+        {
+          "type": "heavy sniper",
+          "value": "éÉ"
+        },
+        {
+          "type": "thatfeesh",
+          "value": 5
+        },
+        {
+          "type": "musket",
+          "value": 3
+        },
+        {
+          "type": "mini",
+          "value": "ÃãE"
+        },
+        {
+          "type": "smokegrenade",
+          "value": 5
+        },
+        {
+          "type": "flexsplash",
+          "value": 5
+        },
+        {
+          "type": "signal flare",
+          "value": "aÃA"
+        },
+        {
+          "type": "vector",
+          "value": 0
+        },
+        {
+          "type": "bolt",
+          "value": "ÉÉ"
+        },
+        {
+          "type": "grappler",
+          "value": 5
+        },
+        {
+          "type": "grenade pistol",
+          "value": 4
+        },
+        {
+          "type": "landmine",
+          "value": "ÆË$"
+        },
+        {
+          "type": "rifle",
+          "value": "ÅÃ"
+        },
+        {
+          "type": "ump",
+          "value": "ÃÈ"
+        },
+        {
+          "type": "tommy gun",
+          "value": 1
+        },
+        {
+          "type": "alezfeesh",
+          "value": 5
+        },
+        {
+          "type": "bluefeesh",
+          "value": 5
+        },
+        {
+          "type": "shotgun",
+          "value": 3
+        },
+        {
+          "type": "mirv",
+          "value": "Áè"
+        },
+        {
+          "type": "flashbang",
+          "value": "ÄÅÉ"
+        },
+        {
+          "type": "rpg",
+          "value": "æãÄ"
+        },
+        {
+          "type": "charge rifle",
+          "value": "åE"
+        },
+        {
+          "type": "silencedpistol",
+          "value": "ÃÈ"
+        },
+        {
+          "type": "deagle",
+          "value": "á$"
+        },
+        {
+          "type": "pot",
+          "value": "ÆË$"
+        },
+        {
+          "type": "grenade",
+          "value": "ÄÅÉ"
+        },
+        {
+          "type": "invgravitynade",
+          "value": 5
+        },
+        {
+          "type": "grenade launcher",
+          "value": "ÊÁæ"
+        },
+        {
+          "type": "snowball",
+          "value": "aáá"
+        }
+      ]
+    ],
+    "remappingCalls": [
+      {
+        "start": 365937,
+        "excerpt": "0X2);Å.áÀ.EA=5.3;Å.áÀ.èáæ=Å.áÀ.ãá;if(msgpack!==ÄEã){var ÆÄA=ãè.éèé(msgpack.decode(new Uint8Array(ÁáÈ.data)));for(var Ã=0;Ã<ÆÄA.length;Ã++){var å=ÆÄA[Ã];if(èâA!==Å.áÉâ[å.t])Å.áÉâ[å.t](å);else {console.log(\"\\x4"
+      },
+      {
+        "start": 366252,
+        "excerpt": "141\\x63\\153\\x65\\164\\40\\x74\\171\\160\\145\");console.log(ÆÄA);å=ãè.éèé(msgpack.decode(å));if(Å.áÉâ[å.t]!==Æe$){try{Å.áÉâ[å.t](å);}catch(ãE){console.log(\"\\x50\\u0061\\143k\\145\\x74\\40\\x66\\x75\\x"
+      },
+      {
+        "start": 519672,
+        "excerpt": ".stringify(E_))));};è.Eâ$=function(){if(!ÅA())return;try{E_=ãè.éèé(JSON.parse(localStorage[\"\\154\\157\\x63\\x6B\\x65\\162\\x32\"]));}catch(ãE){}if(Eá$===E_.Eã)E_.Eã=[\"\\x65\\155\\157\\164\\145\\63\\61\",\"\\x65\\x6d\\x6f\\x74\\x65\\x33\\62\",\"\\x65\\"
+      },
+      {
+        "start": 560568,
+        "excerpt": "&&(èÉ.status!=0X130)))return;var ÊáÀ=èÉ.responseText;var éå=ãè.éèé(JSON.parse(ÊáÀ)).éå;var ÃÂè=[];var ÈËE=[];var ääá=[];for(var Ã=ÃÈ;éå.length>Ã;Ã++){var À_=éå[Ã];var ÊÄE=false;for(va"
+      },
+      {
+        "start": 578714,
+        "excerpt": "áââ=true;}};var èæÂ=function(ÁáÈ){if(åÂÅ!==msgpack){var ÆÄA=ãè.éèé(msgpack.decode(new Uint8Array(ÁáÈ.data)));for(var Ã=aÂ;Ã<ÆÄA.length;Ã++){var å=ÆÄA[Ã];(undefined!==äÀÆ[å.t])?(äÀÆ[å.t](å)):(console.log(\"\\105"
+      },
+      {
+        "start": 599849,
+        "excerpt": "nterval(äÈ);äÈ=null;}return;}var ÊáÀ=èÉ.responseText;var éå=ãè.éèé(JSON.parse(ÊáÀ)).éå;var äËæ=[];var åãA=[];for(var Ã=ãÊ;Ã<éå.length;Ã++){var ÂáÉ=null;for(var a_=åÀ;a_<éå.length;a_++"
+      }
+    ],
+    "requestedSources": [
+      {
+        "file": "scheme.js",
+        "location": "Sources > buildroyale.io > js",
+        "reason": "Resolve external ãè.éèé remapping applied immediately after msgpack.decode; inspect whether packed fields/indirection are being missed."
+      },
+      {
+        "file": "msgpack.js",
+        "location": "Sources > buildroyale.io > js",
+        "reason": "Confirm actual decoder/extension behavior and nested decode route. Native original decode remains unchanged; do not independently decode or send."
+      }
+    ]
+  },
+  "callbacks": [
+    {
+      "kind": "player",
+      "phase": "create",
+      "start": 444034,
+      "end": 451564,
+      "characters": 7530,
+      "parameter": "å",
+      "fields": [
+        {
+          "field": "éA",
+          "meaning": "hair"
+        },
+        {
+          "field": "E_",
+          "meaning": "locker"
+        },
+        {
+          "field": "aâÈ",
+          "meaning": "pickaxeSkin"
+        },
+        {
+          "field": "Ãè",
+          "meaning": "infected"
+        },
+        {
+          "field": "èèÁ",
+          "meaning": "zombie"
+        },
+        {
+          "field": "eÁâ",
+          "meaning": "knocked"
+        },
+        {
+          "field": "eÄÀ",
+          "meaning": "cookingNade"
+        },
+        {
+          "field": "ÀËá",
+          "meaning": "glidingTicks"
+        },
+        {
+          "field": "âëä",
+          "meaning": "maxGlidingTicks"
+        },
+        {
+          "field": "aéÄ",
+          "meaning": "gliderSkin"
+        },
+        {
+          "field": "Eå",
+          "meaning": "grapple"
+        },
+        {
+          "field": "åÈ",
+          "meaning": "health"
+        },
+        {
+          "field": "Â$",
+          "meaning": "shield"
+        },
+        {
+          "field": "ÈÆ",
+          "meaning": "selectedWeapon"
+        },
+        {
+          "field": "Ée",
+          "meaning": "name"
+        },
+        {
+          "field": "áAæ",
+          "meaning": "wAmmo"
+        },
+        {
+          "field": "åæ",
+          "meaning": "ammo"
+        },
+        {
+          "field": "ËE",
+          "meaning": "house"
+        },
+        {
+          "field": "Åé",
+          "meaning": "weaponSlots"
+        },
+        {
+          "field": "ée",
+          "meaning": "steadying"
+        },
+        {
+          "field": "éËË",
+          "meaning": "frt"
+        },
+        {
+          "field": "áâÃ",
+          "meaning": "sprinting"
+        },
+        {
+          "field": "áÉË",
+          "meaning": "effects"
+        },
+        {
+          "field": "èÂ",
+          "meaning": "building"
+        },
+        {
+          "field": "âåâ",
+          "meaning": "canBuild"
+        },
+        {
+          "field": "Ãä",
+          "meaning": "chosenBuild"
+        },
+        {
+          "field": "èèá",
+          "meaning": "chosenVariant"
+        },
+        {
+          "field": "áé",
+          "meaning": "mats"
+        },
+        {
+          "field": "v",
+          "meaning": "v"
+        },
+        {
+          "field": "ÃÈã",
+          "meaning": "footSin"
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "player",
+      "phase": "frame",
+      "start": 451565,
+      "end": 463818,
+      "characters": 12253,
+      "fields": [
+        {
+          "field": "remove",
+          "meaning": null
+        },
+        {
+          "field": "add",
+          "meaning": null
+        },
+        {
+          "field": "ÄËá",
+          "meaning": null
+        },
+        {
+          "field": "opacity",
+          "meaning": null
+        },
+        {
+          "field": "length",
+          "meaning": null
+        },
+        {
+          "field": "ÃÊ",
+          "meaning": null
+        },
+        {
+          "field": "width",
+          "meaning": null
+        },
+        {
+          "field": "åÈ",
+          "meaning": "health"
+        },
+        {
+          "field": "Â$",
+          "meaning": "shield"
+        },
+        {
+          "field": "eÁâ",
+          "meaning": "knocked"
+        },
+        {
+          "field": "Äe",
+          "meaning": null
+        },
+        {
+          "field": "text",
+          "meaning": "text"
+        },
+        {
+          "field": "Ée",
+          "meaning": "name"
+        },
+        {
+          "field": "áåË",
+          "meaning": null
+        },
+        {
+          "field": "É",
+          "meaning": "x"
+        },
+        {
+          "field": "ë",
+          "meaning": "position"
+        },
+        {
+          "field": "â",
+          "meaning": null
+        },
+        {
+          "field": "Ä",
+          "meaning": "y"
+        },
+        {
+          "field": "EA",
+          "meaning": null
+        },
+        {
+          "field": 1,
+          "meaning": null
+        },
+        {
+          "field": 2,
+          "meaning": null
+        },
+        {
+          "field": 3,
+          "meaning": null
+        },
+        {
+          "field": "âÆ_",
+          "meaning": null
+        },
+        {
+          "field": "EéÆ",
+          "meaning": null
+        },
+        {
+          "field": "parent",
+          "meaning": null
+        },
+        {
+          "field": "splice",
+          "meaning": null
+        },
+        {
+          "field": "height",
+          "meaning": null
+        },
+        {
+          "field": "ÊÈA",
+          "meaning": null
+        },
+        {
+          "field": "A",
+          "meaning": "rotation"
+        },
+        {
+          "field": "angle",
+          "meaning": null
+        },
+        {
+          "field": "ÊåË",
+          "meaning": null
+        },
+        {
+          "field": "id",
+          "meaning": null
+        },
+        {
+          "field": "èëã",
+          "meaning": null
+        },
+        {
+          "field": "type",
+          "meaning": null
+        },
+        {
+          "field": "âè",
+          "meaning": null
+        },
+        {
+          "field": "size",
+          "meaning": "size"
+        },
+        {
+          "field": "t",
+          "meaning": "t"
+        },
+        {
+          "field": "eeè",
+          "meaning": null
+        },
+        {
+          "field": "ÀeÉ",
+          "meaning": null
+        },
+        {
+          "field": "áËé",
+          "meaning": null
+        },
+        {
+          "field": "Èââ",
+          "meaning": null
+        },
+        {
+          "field": "ãá",
+          "meaning": null
+        },
+        {
+          "field": "aÀá",
+          "meaning": null
+        },
+        {
+          "field": "áÁã",
+          "meaning": null
+        },
+        {
+          "field": "aÊ_",
+          "meaning": null
+        },
+        {
+          "field": "ÂeÃ",
+          "meaning": null
+        },
+        {
+          "field": "âáÀ",
+          "meaning": null
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "player",
+      "phase": "update",
+      "start": 463819,
+      "end": 497350,
+      "characters": 33531,
+      "parameter": "å",
+      "fields": [
+        {
+          "field": "ÈÆ",
+          "meaning": "selectedWeapon"
+        },
+        {
+          "field": "èÂ",
+          "meaning": "building"
+        },
+        {
+          "field": "ËÀÉ",
+          "meaning": "gh"
+        },
+        {
+          "field": "ËE",
+          "meaning": "house"
+        },
+        {
+          "field": "ÀËá",
+          "meaning": "glidingTicks"
+        },
+        {
+          "field": "âëä",
+          "meaning": "maxGlidingTicks"
+        },
+        {
+          "field": "æÁÉ",
+          "meaning": "elims"
+        },
+        {
+          "field": "ée",
+          "meaning": "steadying"
+        },
+        {
+          "field": "Ãè",
+          "meaning": "infected"
+        },
+        {
+          "field": "èèÁ",
+          "meaning": "zombie"
+        },
+        {
+          "field": "áÊÀ",
+          "meaning": "chargedRifle"
+        },
+        {
+          "field": "ÃÈÁ",
+          "meaning": "chargingRifle"
+        },
+        {
+          "field": "ÃAæ",
+          "meaning": "shot"
+        },
+        {
+          "field": "ââ",
+          "meaning": "team"
+        },
+        {
+          "field": "áâÃ",
+          "meaning": "sprinting"
+        },
+        {
+          "field": "eÄÀ",
+          "meaning": "cookingNade"
+        },
+        {
+          "field": "EãÊ",
+          "meaning": "teleported"
+        },
+        {
+          "field": "Âë_",
+          "meaning": "specs"
+        },
+        {
+          "field": "åÈ",
+          "meaning": "health"
+        },
+        {
+          "field": "aæâ",
+          "meaning": "flashed"
+        },
+        {
+          "field": "Â$",
+          "meaning": "shield"
+        },
+        {
+          "field": "eÁâ",
+          "meaning": "knocked"
+        },
+        {
+          "field": "ãéá",
+          "meaning": "hLost"
+        },
+        {
+          "field": "eÂå",
+          "meaning": "sLost"
+        },
+        {
+          "field": "aÆÈ",
+          "meaning": "jump"
+        },
+        {
+          "field": "ÉâÁ",
+          "meaning": "la"
+        },
+        {
+          "field": "áÉË",
+          "meaning": "effects"
+        },
+        {
+          "field": "Ãä",
+          "meaning": "chosenBuild"
+        },
+        {
+          "field": "èèá",
+          "meaning": "chosenVariant"
+        },
+        {
+          "field": "áé",
+          "meaning": "mats"
+        },
+        {
+          "field": "âåâ",
+          "meaning": "canBuild"
+        },
+        {
+          "field": "aeÉ",
+          "meaning": "rs"
+        },
+        {
+          "field": "éËË",
+          "meaning": "frt"
+        },
+        {
+          "field": "áäe",
+          "meaning": "rt"
+        },
+        {
+          "field": "v",
+          "meaning": "v"
+        },
+        {
+          "field": "Åé",
+          "meaning": "weaponSlots"
+        },
+        {
+          "field": "áAæ",
+          "meaning": "wAmmo"
+        },
+        {
+          "field": "åæ",
+          "meaning": "ammo"
+        },
+        {
+          "field": "eæa",
+          "meaning": "stamina"
+        },
+        {
+          "field": "ËÂ",
+          "meaning": "spread"
+        },
+        {
+          "field": "aÆ_",
+          "meaning": "closeR"
+        },
+        {
+          "field": "ÀÉÄ",
+          "meaning": "needResource"
+        },
+        {
+          "field": "aã$",
+          "meaning": "diving"
+        },
+        {
+          "field": "Eå",
+          "meaning": "grapple"
+        },
+        {
+          "field": "aê",
+          "meaning": "emote"
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "player",
+      "phase": "remove",
+      "start": 497351,
+      "end": 498784,
+      "characters": 1433,
+      "parameter": "å",
+      "fields": [
+        {
+          "field": "ãéá",
+          "meaning": "hLost"
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "chest",
+      "phase": "create",
+      "start": 499894,
+      "end": 500415,
+      "characters": 521,
+      "parameter": "å",
+      "fields": [
+        {
+          "field": "èáä",
+          "meaning": "chestType"
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "chest",
+      "phase": "frame",
+      "start": 500416,
+      "end": 500719,
+      "characters": 303,
+      "fields": [
+        {
+          "field": "EA",
+          "meaning": null
+        },
+        {
+          "field": "opacity",
+          "meaning": null
+        },
+        {
+          "field": "size",
+          "meaning": "size"
+        },
+        {
+          "field": "length",
+          "meaning": null
+        },
+        {
+          "field": "id",
+          "meaning": null
+        },
+        {
+          "field": "parent",
+          "meaning": null
+        },
+        {
+          "field": "â",
+          "meaning": null
+        },
+        {
+          "field": "remove",
+          "meaning": null
+        },
+        {
+          "field": "splice",
+          "meaning": null
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "chest",
+      "phase": "update",
+      "start": 500720,
+      "end": 500735,
+      "characters": 15,
+      "parameter": "å",
+      "fields": [],
+      "contentsTerms": false
+    },
+    {
+      "kind": "chest",
+      "phase": "remove",
+      "start": 500736,
+      "end": 500769,
+      "characters": 33,
+      "fields": [],
+      "contentsTerms": false
+    },
+    {
+      "kind": "gun",
+      "phase": "create",
+      "start": 685240,
+      "end": 688427,
+      "characters": 3187,
+      "parameter": "å",
+      "fields": [
+        {
+          "field": "äã",
+          "meaning": "rarity"
+        },
+        {
+          "field": "Ëá",
+          "meaning": "gunType"
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "gun",
+      "phase": "frame",
+      "start": 688428,
+      "end": 689545,
+      "characters": 1117,
+      "fields": [
+        {
+          "field": "EA",
+          "meaning": null
+        },
+        {
+          "field": "width",
+          "meaning": null
+        },
+        {
+          "field": "height",
+          "meaning": null
+        },
+        {
+          "field": "size",
+          "meaning": "size"
+        },
+        {
+          "field": "opacity",
+          "meaning": null
+        },
+        {
+          "field": "length",
+          "meaning": null
+        },
+        {
+          "field": "id",
+          "meaning": null
+        },
+        {
+          "field": "parent",
+          "meaning": null
+        },
+        {
+          "field": "â",
+          "meaning": null
+        },
+        {
+          "field": "remove",
+          "meaning": null
+        },
+        {
+          "field": "splice",
+          "meaning": null
+        },
+        {
+          "field": "Äe",
+          "meaning": null
+        },
+        {
+          "field": "add",
+          "meaning": null
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "gun",
+      "phase": "update",
+      "start": 689546,
+      "end": 689561,
+      "characters": 15,
+      "parameter": "å",
+      "fields": [],
+      "contentsTerms": false
+    },
+    {
+      "kind": "gun",
+      "phase": "remove",
+      "start": 689562,
+      "end": 689597,
+      "characters": 35,
+      "fields": [],
+      "contentsTerms": false
+    },
+    {
+      "kind": "ammo",
+      "phase": "create",
+      "start": 690251,
+      "end": 690768,
+      "characters": 517,
+      "parameter": "å",
+      "fields": [
+        {
+          "field": "äã",
+          "meaning": "rarity"
+        },
+        {
+          "field": "æá_",
+          "meaning": "mat"
+        },
+        {
+          "field": "åæ",
+          "meaning": "ammo"
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "ammo",
+      "phase": "frame",
+      "start": 690769,
+      "end": 691159,
+      "characters": 390,
+      "fields": [
+        {
+          "field": "EA",
+          "meaning": null
+        },
+        {
+          "field": "width",
+          "meaning": null
+        },
+        {
+          "field": "height",
+          "meaning": null
+        },
+        {
+          "field": "size",
+          "meaning": "size"
+        },
+        {
+          "field": "opacity",
+          "meaning": null
+        },
+        {
+          "field": "length",
+          "meaning": null
+        },
+        {
+          "field": "id",
+          "meaning": null
+        },
+        {
+          "field": "parent",
+          "meaning": null
+        },
+        {
+          "field": "â",
+          "meaning": null
+        },
+        {
+          "field": "remove",
+          "meaning": null
+        },
+        {
+          "field": "splice",
+          "meaning": null
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "ammo",
+      "phase": "update",
+      "start": 691160,
+      "end": 691175,
+      "characters": 15,
+      "parameter": "å",
+      "fields": [],
+      "contentsTerms": false
+    },
+    {
+      "kind": "ammo",
+      "phase": "remove",
+      "start": 691176,
+      "end": 691211,
+      "characters": 35,
+      "fields": [],
+      "contentsTerms": false
+    },
+    {
+      "kind": "object",
+      "phase": "create",
+      "start": 693763,
+      "end": 703080,
+      "characters": 9317,
+      "parameter": "å",
+      "fields": [
+        {
+          "field": "type",
+          "meaning": null
+        },
+        {
+          "field": "width",
+          "meaning": null
+        },
+        {
+          "field": "height",
+          "meaning": null
+        },
+        {
+          "field": "åÈ",
+          "meaning": "health"
+        },
+        {
+          "field": "ËÆ",
+          "meaning": "fullHealth"
+        },
+        {
+          "field": "ÄæÅ",
+          "meaning": "wallType"
+        },
+        {
+          "field": "ËÉE",
+          "meaning": "hasWeapon"
+        },
+        {
+          "field": "Êeä",
+          "meaning": "landProgress"
+        },
+        {
+          "field": "ÊÂã",
+          "meaning": "landed"
+        },
+        {
+          "field": "EÅ",
+          "meaning": "buildIndex"
+        },
+        {
+          "field": "ÆåÃ",
+          "meaning": "subType"
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "object",
+      "phase": "frame",
+      "start": 703081,
+      "end": 707547,
+      "characters": 4466,
+      "fields": [
+        {
+          "field": "opacity",
+          "meaning": null
+        },
+        {
+          "field": "remove",
+          "meaning": null
+        },
+        {
+          "field": "ë",
+          "meaning": "position"
+        },
+        {
+          "field": "â",
+          "meaning": null
+        },
+        {
+          "field": "É",
+          "meaning": "x"
+        },
+        {
+          "field": "Ä",
+          "meaning": "y"
+        },
+        {
+          "field": "âá",
+          "meaning": null
+        },
+        {
+          "field": "size",
+          "meaning": "size"
+        },
+        {
+          "field": "A",
+          "meaning": "rotation"
+        },
+        {
+          "field": "EA",
+          "meaning": null
+        },
+        {
+          "field": "âè",
+          "meaning": null
+        },
+        {
+          "field": "width",
+          "meaning": null
+        },
+        {
+          "field": "height",
+          "meaning": null
+        },
+        {
+          "field": "length",
+          "meaning": null
+        },
+        {
+          "field": "splice",
+          "meaning": null
+        },
+        {
+          "field": "canvas",
+          "meaning": null
+        },
+        {
+          "field": "ÊÈA",
+          "meaning": null
+        },
+        {
+          "field": "parent",
+          "meaning": null
+        },
+        {
+          "field": "indexOf",
+          "meaning": null
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "object",
+      "phase": "update",
+      "start": 707548,
+      "end": 709291,
+      "characters": 1743,
+      "parameter": "å",
+      "fields": [
+        {
+          "field": "ËÉE",
+          "meaning": "hasWeapon"
+        },
+        {
+          "field": "Êeä",
+          "meaning": "landProgress"
+        },
+        {
+          "field": "ÊÂã",
+          "meaning": "landed"
+        },
+        {
+          "field": "åÈ",
+          "meaning": "health"
+        }
+      ],
+      "contentsTerms": false
+    },
+    {
+      "kind": "object",
+      "phase": "remove",
+      "start": 709292,
+      "end": 710669,
+      "characters": 1377,
+      "parameter": "å",
+      "fields": [
+        {
+          "field": "åÈ",
+          "meaning": "health"
+        }
+      ],
+      "contentsTerms": false
+    }
+  ],
+  "references": [
+    {
+      "field": "Aá_",
+      "meaning": "droid",
+      "references": [
+        {
+          "start": 232153,
+          "excerpt": "154\\141\\171\\145\\162\";Éæ.ãÅé=\"\\156\\61\";Éæ.ËâÄ=\"\\156\\u0032\";Éæ.ÂåA=\"k\\x6e\\157\\x63\\x6B\";Éæ.Ãè=\"\\151\\156f\\145\\143\\164e\\144\";Éæ.Aá_=\"\\144\\162\\x6fi\\144\";Éæ.ÅèÁ=\"\\x70\\x6c\\x61\\143\\x65\";Éæ.åÃÂ=\"\\145\\x6C\\151\\x6d\\x69\\u006E\\x61\\x74\\151\\x6f\\156\\163\";Éæ.ÊAÃ=\"\\144\\u0061\\x6d\\141\\147\\x65\\124\\157\\105\\156\\145\\x6d\\151\\145\\16"
+        },
+        {
+          "start": 748657,
+          "excerpt": "EAÄ.text=å.ÆEA;}if(undefined!==å.ËÄÊ){ãAå.text=å.ËÄÊ;ãAå.opacity=0x1;ãAå.fillStyle=\"#\\105\\x45\\105\\x45\\x30\\x30\";}else if(å.Aá_!==æãÊ){ãAå.text=å.Aá_;ãAå.opacity=ÅÀ;ãAå.fillStyle=\"\\x23\\x45\\x45\\60\\x30\\60\\x30\";}else {ãAå.opacity=0;}});Å.æÊÈ(\"f\\145\\x65\\x64\",function(å){(å.ãÅé==\"\")&&(å.ãÅé=\"\\74\\165n\\x6E\\141\\x6"
+        },
+        {
+          "start": 748679,
+          "excerpt": "efined!==å.ËÄÊ){ãAå.text=å.ËÄÊ;ãAå.opacity=0x1;ãAå.fillStyle=\"#\\105\\x45\\105\\x45\\x30\\x30\";}else if(å.Aá_!==æãÊ){ãAå.text=å.Aá_;ãAå.opacity=ÅÀ;ãAå.fillStyle=\"\\x23\\x45\\x45\\60\\x30\\60\\x30\";}else {ãAå.opacity=0;}});Å.æÊÈ(\"f\\145\\x65\\x64\",function(å){(å.ãÅé==\"\")&&(å.ãÅé=\"\\74\\165n\\x6E\\141\\x6d\\x65\\x64\\x3e\");(\"\"==å"
+        }
+      ]
+    },
+    {
+      "field": "éèã",
+      "meaning": "wander",
+      "references": [
+        {
+          "start": 235745,
+          "excerpt": "151\\155\\145\\x64\";Éæ.åÉÃ=\"r\\x65\\u0066\\x6c\\x65\\x63\\x74\\x69\\157\\156\\120\\157\\151\\x6E\\164\\x73\";Éæ.ÂaÆ=\"\\146\\151\\x6e\\x61\\x6C\";Éæ.éèã=\"\\167\\x61\\x6E\\144\\145r\";Éæ.ÆEA=\"\\x70\\x6c\\x61\\x79\\u0065\\x72\\x73\";Éæ.Aáã=\"\\167\\141\\u0079\\x70\\x6Fi\\x6e\\x74\\x54\\x79\\x70\\x65\";Éæ.ÀÆê=\"\\157\\167\\x6e\\145\\162\";Éæ.èÆÂ=\"\\157\\x77\\x6E\\x65\\162"
+        }
+      ]
+    },
+    {
+      "field": "èáä",
+      "meaning": "chestType",
+      "references": [
+        {
+          "start": 236401,
+          "excerpt": ".Äâæ=\"\\x72\\x61\\171\\x73\";Éæ.ÂÉê=\"\\150\\151\\164\\163\";Éæ.from=\"\\146\\162\\157\\155\";Éæ.ëÆÂ=\"\\164\\x6f\";Éæ.äÉ=\"\\144\\151\\x73\\x74\";Éæ.èáä=\"\\x63\\150\\145\\163\\164\\124\\x79\\x70\\145\";Éæ.ÀËá=\"\\147\\154\\151d\\x69\\x6e\\x67Ti\\143\\x6B\\163\";Éæ.âëä=\"\\155\\141x\\x47\\x6C\\151\\144\\x69\\x6e\\x67\\u0054\\x69\\x63\\153\\163\";Éæ.Åa=\"\\154\\x61\\x79\\14"
+        },
+        {
+          "start": 408510,
+          "excerpt": "\"rays spin-animation\" src=\"buildart/sun-rays.png\">\n\t\t</div>\n\t\t<img draggable=\"false\" class=\"chest\" src=\"buildart/chest${Ë_.èáä}.png\">\n\n\t\t<div class=\"rewards-wrapper\">\n\t\t\t<div class=\"rewards-container\"></div>\n\t\t\t<span class=\"close\">CLOSE</span>\n\t\t</div>\n\n\t</div>\n\n\t<div class=\"boom\"></div>\n\n\t</div>`;this.it"
+        },
+        {
+          "start": 408725,
+          "excerpt": "n class=\"close\">CLOSE</span>\n\t\t</div>\n\n\t</div>\n\n\t<div class=\"boom\"></div>\n\n\t</div>`;this.items=Ë_.items;this.ëÃâ=Ë_.ëÃâ;this.èáä=Ë_.èáä;let eä=document[Ê[240]](\"\\x64\\x69\\166\");eä[Ê[317]]=ãÀá;this.æÀè=eä.children[ãÊ];this.ëâæ=this.æÀè.querySelector(\"\\x2E\\143\\154\\157\\x73\\x65\");this.eÊè=this.æÀè.querySelector("
+        },
+        {
+          "start": 408734,
+          "excerpt": "close\">CLOSE</span>\n\t\t</div>\n\n\t</div>\n\n\t<div class=\"boom\"></div>\n\n\t</div>`;this.items=Ë_.items;this.ëÃâ=Ë_.ëÃâ;this.èáä=Ë_.èáä;let eä=document[Ê[240]](\"\\x64\\x69\\166\");eä[Ê[317]]=ãÀá;this.æÀè=eä.children[ãÊ];this.ëâæ=this.æÀè.querySelector(\"\\x2E\\143\\154\\157\\x73\\x65\");this.eÊè=this.æÀè.querySelector(\"\\56\\14"
+        },
+        {
+          "start": 499945,
+          "excerpt": "size;},function(á){});};function ÀAÅ(Å,äe){Å.ÃEÅ(\"\\x63h\\x65\\163\\164\",function(á,å){á.Äã=false;á.ÀÁ=0X0;á.cos=0x0;switch(å.èáä){case \"\\154\\145\\x67\\x65\\156\\x64\\141\\162\\x79\":á.â=new Å.À(Á[\"l\\145\\x67\\145\\156\\144\\141\\162\\171\\143\\x68\\145\\x73\\164\"],ËÊ,00,150,0x64);á.Åaá=new Å.À(Á[\"l\\x65g\\145\\156\\144\\141\\162\\171"
+        }
+      ]
+    }
+  ],
+  "inventoryAssets": [
+    [
+      "scar",
+      "buildart/scar.png"
+    ],
+    [
+      "stack1",
+      "buildart/stack1.png"
+    ],
+    [
+      "bolt",
+      "buildart/bolt.png"
+    ],
+    [
+      "wood",
+      "buildart/wood.png"
+    ],
+    [
+      "topheavy sniper",
+      "buildart/topheavysniper.png"
+    ],
+    [
+      "gear",
+      "buildart/scrap.png"
+    ],
+    [
+      "stack3",
+      "buildart/stack3.png"
+    ],
+    [
+      "inventoryammo2",
+      "buildart/ammo2.png"
+    ],
+    [
+      "inventoryammo1",
+      "buildart/ammo1.png"
+    ],
+    [
+      "inventoryammo3",
+      "buildart/ammo3.png"
+    ],
+    [
+      "metal",
+      "buildart/metal.png"
+    ],
+    [
+      "inventoryammo0",
+      "buildart/ammo0.png"
+    ],
+    [
+      "stack0",
+      "buildart/stack0.png"
+    ],
+    [
+      "brick",
+      "buildart/brick.png"
+    ],
+    [
+      "stack4",
+      "buildart/stack4.png"
+    ],
+    [
+      "heavy sniper",
+      "buildart/heavysniper.png"
+    ],
+    [
+      "topscar",
+      "buildart/topscar.png"
+    ],
+    [
+      "stack2",
+      "buildart/stack2.png"
+    ],
+    [
+      "topbolt",
+      "buildart/topbolt.png"
+    ],
+    [
+      "inventoryammo4",
+      "buildart/ammo4.png"
+    ]
+  ],
+  "decoderCalls": [
+    {
+      "start": 365944,
+      "excerpt": "áåÀ=Math.min(Math.max(Å.áåÀ,0.1),0X2);Å.áÀ.EA=5.3;Å.áÀ.èáæ=Å.áÀ.ãá;if(msgpack!==ÄEã){var ÆÄA=ãè.éèé(msgpack.decode(new Uint8Array(ÁáÈ.data)));for(var Ã=0;Ã<ÆÄA.length;Ã++){var å=ÆÄA[Ã];if(èâA!==Å.áÉâ[å.t])Å.áÉâ[å.t](å);else {console.log(\"\\x45\\156\\x63\\157\\165\\x6E\\x74\\x65\\x72\\145\\144\\40\\151\\163\\163\\x75\\145\\72\\x20\\x75\\x6E\\153\\156\\x6f\\167\\x6E\\40\\160\\141\\x63\\153\\x65\\164\\40\\x74\\171\\160\\145\");c"
+    },
+    {
+      "start": 366259,
+      "excerpt": "5\\x6E\\153\\156\\x6f\\167\\x6E\\40\\160\\141\\x63\\153\\x65\\164\\40\\x74\\171\\160\\145\");console.log(ÆÄA);å=ãè.éèé(msgpack.decode(å));if(Å.áÉâ[å.t]!==Æe$){try{Å.áÉâ[å.t](å);}catch(ãE){console.log(\"\\x50\\u0061\\143k\\145\\x74\\40\\x66\\x75\\x6e\\x63\\x74\\151\\157\\x6E\\x20\\145\\x72\\x72\\157\\x72\");console.log(ãE);}}}}}for(var Ã=ÃÈ;Å.âè.length>Ã;Ã++){Å.âè[Ã].æëÃ++;(1<Å.âè[Ã].æëÃ)&&(Å.âè[Ã].new.ë.É"
+    },
+    {
+      "start": 578721,
+      "excerpt": "145\\x6E\\145\\x32\")===0x1)EÀè(éãÃ);áââ=true;}};var èæÂ=function(ÁáÈ){if(åÂÅ!==msgpack){var ÆÄA=ãè.éèé(msgpack.decode(new Uint8Array(ÁáÈ.data)));for(var Ã=aÂ;Ã<ÆÄA.length;Ã++){var å=ÆÄA[Ã];(undefined!==äÀÆ[å.t])?(äÀÆ[å.t](å)):(console.log(\"\\105\\156\\x63\\x6f\\165\\x6E\\164\\x65\\162\\145\\144\\x20\\x69\\x73\\x73\\x75\\x65\\x3a\\x20\\165\\x6E\\153\\x6e\\157\\x77\\x6E\\x20\\160\\x61\\x63\\x6b\\145\\164\\40\\164\\x79\\160\\145\")"
+    }
+  ],
+  "limits": "Static client source only; does not establish complete incoming server schema or pre-open selection timing."
+}

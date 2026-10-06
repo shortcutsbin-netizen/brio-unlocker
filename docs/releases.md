@@ -1,3 +1,9 @@
+# V48 release update - 2026-10-06
+
+Current source src/brio.js; direct comment-free dist/brio-v48.min.js; identical immutable versions/brio-v48.min.js. versions/brio-v47.min.js and older archives/logs/reference preserved exactly. Current handoff: v48 findings/status/procedure, exact v47 log and reproducible analysis. Shared configurable thresholds/scraps/grappler, clone-only slot-count removal, proven modifiers removed from recurring flags. Earlier entries remain historical.
+
+---
+
 # V47 release update — 2026-10-06
 
 Current source src/brio.js; direct comment-free dist/brio-v47.min.js; identical immutable versions/brio-v47.min.js. V46 dist duplicate removed; versions/brio-v46.min.js preserved exactly, along with all older archives/logs/reference bytes. V47 findings/status/test procedure and reproducible v46 analysis are the current handoff. Earlier entries below are historical.
