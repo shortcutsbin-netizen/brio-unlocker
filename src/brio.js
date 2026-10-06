@@ -1,7 +1,7 @@
 (() => {
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v45";
-    for (const k of [ K, "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
+    const W = window, D = document, K = "__brio_unlocker_v46";
+    for (const k of [ K, "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
         W[k]?.destroy?.();
     } catch (_) {}
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -10,7 +10,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "45",
+        v: "46",
         log: [],
         errors: [],
         renderer: null,
@@ -352,9 +352,9 @@
     };
     const EXTRA = {
         challenges: [ [ "playersInvisible", "All players invisible", "remote players only" ], [ "lootInvisible", "Loot invisible", "includes pickup visuals when complete" ], [ "buildsInvisible", "Builds invisible", "walls + special deployables + placement preview" ], [ "noMinimap", "No minimap", "planned" ], [ "noCrosshair", "No crosshair", "planned" ], [ "noInventoryHud", "No inventory/item bar", "planned" ], [ "invisibleStorm", "Invisible storm", "hide zone on minimap + full map" ], [ "noChestsVisible", "Chests invisible", "chests + ammo/grenade crates · test" ], [ "noFoliage", "Foliage invisible", "identified native entities · test" ], [ "noHealthShieldHud", "No health/shield HUD", "planned" ], [ "monochrome", "Monochrome vision", "game canvas grayscale · test" ], [ "flashlightMode", "Flashlight mode", "configurable radius; mouse/player follow" ] ],
-        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "highlightLoot", "Highlight loot", "native yellow pickup ring · test" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · test" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "normal + legendary + ammo/grenade crates · active" ], [ "screenAirdrops", "Screen airdrops", "contents + object identity · active" ], [ "screenFishing", "Screen fishing spots", "contents; NONE is a valid result · active" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · test" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "native yellow silhouette ring · test" ], [ "cleanLoot", "Remove loot glow/effects", "identified glow resource only · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "buildMaterialLabels", "Build material labels", "wood/brick/metal from native sprite · test" ], [ "deployableLabels", "Deployable labels", "campfire/boostpad/shield/drill · test" ], [ "deployableRadius", "Deployable effect-radius display", "current native spellfield radius · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP ≤30; red glowing/flashing player outline" ], [ "lowAmmoWarning", "Low-ammo visual warning", "own ammo display border + remote values <20 flash red · test" ], [ "lowMatsWarning", "Low-material warning", "own material outline + remote values <30 flash red · test" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "captured native assets/geometry; appearance testing", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / special", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + counts", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
+        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "highlightLoot", "Highlight loot", "native yellow pickup ring · test" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · test" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "normal + legendary + ammo/grenade crates · active" ], [ "screenAirdrops", "Screen airdrops", "contents + object identity · active" ], [ "screenFishing", "Screen fishing spots", "contents; NONE is a valid result · active" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · test" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "native yellow silhouette ring · test" ], [ "cleanLoot", "Remove loot glow/effects", "identified glow resource only · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "buildMaterialLabels", "Build material labels", "wood/brick/metal from native sprite · test" ], [ "deployableLabels", "Deployable labels", "campfire/boostpad/shield/drill · test" ], [ "deployableRadius", "Deployable effect-radius display", "current native spellfield radius · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP ≤30; red glowing/flashing player outline" ], [ "lowAmmoWarning", "Low-ammo visual warning", "every gun slot: loaded + reserve <20; remote ammo values flash red · test" ], [ "lowMatsWarning", "Low-material warning", "own material outline + remote values <30 flash red · test" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "captured native assets/geometry; appearance testing", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / special", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + counts", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
     };
-    const REQUIRED_TESTS = [ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "healthBars", "nearestPlayer", "nearestPlayerName", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "lowAmmoWarning", "identifyBots" ];
+    const REQUIRED_TESTS = [ "inventorySlots", "inventoryMaterials", "inventoryAmmo", "screenChests", "screenAirdrops", "screenFishing", "healthBars", "nearestPlayer", "nearestPlayerName", "nearestChest", "nearestAirdrop", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "lowMatsWarning", "lowAmmoWarning", "identifyBots", "highlightLoot", "cleanLoot", "highContrastPlayers", "transparentFoliage", "buildMaterialLabels", "deployableLabels", "deployableRadius" ];
     const renderExtras = () => {
         const a = extras.querySelector(".brioTabs"), p = extras.querySelector(".brioPage"), s = extrasState();
         if (![ "small", "medium", "large", "xl" ].includes(s.inventorySize)) {
@@ -1080,8 +1080,8 @@
     }, ensureArrow = (key, color) => {
         if (S[key]) return S[key];
         const u = D.createElement("div");
-        u.style = "position:fixed;z-index:2147483644;pointer-events:none;width:144px;height:72px;display:none;transform-origin:50% 50%;filter:drop-shadow(0 2px 3px #000)";
-        u.innerHTML = '<div class="shape" style="position:absolute;inset:0;clip-path:polygon(0 20%,68% 20%,68% 0,100% 50%,68% 100%,68% 80%,0 80%)"></div><span class="d" style="position:absolute;left:5px;top:20px;width:88px;height:32px;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;color:#fff;font:900 16px Arial;-webkit-text-stroke:1px #000;paint-order:stroke fill;text-shadow:1px 0 #000,-1px 0 #000,0 1px #000,0 -1px #000;box-sizing:border-box"></span>';
+        u.style = "position:fixed;z-index:2147483644;pointer-events:none;width:176px;height:84px;display:none;transform-origin:50% 50%;filter:drop-shadow(0 2px 3px #000)";
+        u.innerHTML = '<div class="shape" style="position:absolute;inset:0;clip-path:polygon(0 20%,68% 20%,68% 0,100% 50%,68% 100%,68% 80%,0 80%)"></div><span class="d" style="position:absolute;left:5px;top:23px;width:110px;height:38px;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;color:#fff;font:900 16px Arial;-webkit-text-stroke:1px #000;paint-order:stroke fill;text-shadow:1px 0 #000,-1px 0 #000,0 1px #000,0 -1px #000;box-sizing:border-box"></span>';
         u.querySelector(".shape").style.background = color;
         D.documentElement.appendChild(u);
         S[key] = u;
@@ -1103,8 +1103,8 @@
         }) + "m";
         d.replaceChildren();
         const distance = D.createElement("span"); distance.textContent = distanceText; d.appendChild(distance);
-        d.style.flexDirection = "column"; d.style.lineHeight = "14px";
-        if (label) { const name = D.createElement("span"); name.className = "playerName"; name.textContent = String(label); name.style = "display:block;max-width:86px;overflow:hidden;text-overflow:ellipsis;font-size:10px;line-height:12px"; d.appendChild(name); }
+        d.style.flexDirection = "column"; d.style.lineHeight = "18px";
+        if (label) { const name = D.createElement("span"); name.className = "playerName"; name.textContent = String(label); name.style = "display:block;max-width:108px;overflow:hidden;text-overflow:ellipsis;font-size:16px;line-height:18px"; d.appendChild(name); }
         d.style.transform = ang > 90 || ang < -90 ? "rotate(180deg)" : "none";
         d.style.fontSize = Math.max(8, Math.min(16, 120 / Math.max(1, distanceText.length))) + "px";
     }, projectWorld = p => {
@@ -1151,6 +1151,61 @@
             }
         }, 250);
     };
+    const slotCaption = root => hudWalk(root, 32).find(n => (n.type === "text" || typeof n.text === "string") && /^[1-6]$/.test(String(n.text)) && Number(n["ë"]?.["Ä"]) > 0);
+    const slotUnit = holder => {
+        const candidates = [holder, ...(holder?.["âè"] || []), ...(holder?.["ÉE"] || [])];
+        let group = null;
+        for (const root of candidates) {
+            if (!root || String(root.type || "").startsWith("brio")) continue;
+            const cap = slotCaption(root), icons = hudWalk(root, 40).filter(n => hudKinds(hudPath(n)) === "slots");
+            const square = Number(root.width) > 0 && Number(root.height) > 0 && Math.abs(root.width - root.height) < 2;
+            if (cap && square && Number(cap["ë"]?.["Ä"]) >= root.height * .5) return root;
+            if (cap && !root.width && icons.length === 1) group ||= root;
+        }
+        return group;
+    };
+    const captureSlotRow = icon => {
+        let unit = icon;
+        for (let depth = 0; unit && depth < 4 && !slotUnit(unit); depth++) unit = unit.parent;
+        if (!unit) return false;
+        unit = slotUnit(unit);
+        let row = unit.parent, holders = [];
+        for (let depth = 0; row && depth < 3; depth++, row = row.parent) {
+            holders = [...(row["âè"] || []), ...(row["ÉE"] || [])].map(holder => ({holder, root: slotUnit(holder)})).filter(x => x.root);
+            if ((holders.length === 5 || holders.length === 6) && holders.some(x => x.root === unit)) break;
+            holders = [];
+        }
+        if (!holders.length) return false;
+        if (icon["À"]) S.hudSlotSprite = icon;
+        (S.hudSourceNodes || (S.hudSourceNodes = new WeakSet)).add(icon);
+        for (const k of ["âè", "ÉE"]) if (Array.isArray(row[k])) observeRenderArray(row[k], true, true);
+        for (const {holder} of holders) for (const k of ["âè", "ÉE"]) if (Array.isArray(holder[k])) observeRenderArray(holder[k], true, true);
+        holders.sort((a,b) => Number(a.holder["ë"]?.["É"] || 0) - Number(b.holder["ë"]?.["É"] || 0));
+        if (new Set(holders.map(x => Number(x.holder["ë"]?.["É"] || 0))).size !== holders.length) return false;
+        if (!S.hudTemplates) S.hudTemplates = {slots: [], materials: [], ammo: []};
+        for (let rank = 0; rank < holders.length; rank++) {
+            const {holder, root} = holders[rank], slotIndex = holders.length === 6 ? rank : rank + 1;
+            if (slotIndex === 0) continue; // Native pickaxe holder is leftmost in the six-slot row.
+            const nodes = hudWalk(root, 80), background = nodes.find(n => hudKinds(hudPath(n)) === "slots") || root;
+            if (background["À"]) S.hudSlotSprite = background;
+            S.hudSourceNodes.add(background);
+            const previous = S.hudTemplates.slots.findIndex(r => r.slotIndex === slotIndex);
+            if (previous >= 0 && S.hudTemplates.slots[previous].root === root) continue;
+            const w = Math.abs(Number(background.width)), h = Math.abs(Number(background.height));
+            if (!(w > 0 && h > 0) || !root.add) continue;
+            const record = {root, icon: background, nodes, kind: "slots", path: hudPath(background), slotIndex,
+                x: Number(holder["ë"]?.["É"]) || 0, y: Number(holder["ë"]?.["Ä"]) || 0, width: w, height: h,
+                slotBounds: {left: -w/2, top: -h/2, width: w, height: h}, holder};
+            const artwork = nodes.find(n => n !== background && isSlotArtwork(hudPath(n)) && n["À"]);
+            if (artwork) (S.hudArtStyles || (S.hudArtStyles = new Map)).set(hudPath(artwork), {ratio: artwork.width/w, angle: Number(artwork.A)||0, size: Number(artwork.size)||1});
+            if (previous >= 0) S.hudTemplates.slots[previous] = record; else S.hudTemplates.slots.push(record);
+            S.hudVersion = (S.hudVersion || 0) + 1;
+            if ((S.hudSlotLogs || 0) < 24) {S.hudSlotLogs = (S.hudSlotLogs || 0) + 1; log("NATIVE WEAPON SLOT", {slotIndex, rootType: root.type, path: record.path, bounds: record.slotBounds, holderPosition: holder["ë"], method: "ordered native holders; includes empty rectangles"});}
+        }
+        S.hudStatus = {captured: true, counts: Object.fromEntries(Object.entries(S.hudTemplates).map(([k,v]) => [k,v.length])), replica: "native slot holders and material/stack templates; visual comparison required"};
+        ownMaterialWarnings();
+        return true;
+    };
     const hudInspect = n => {
         const path = hudPath(n), kind = hudKinds(path);
         if (path && n?.["À"]?.["ÁÄ"]) (S.hudNativeImages || (S.hudNativeImages = new Map)).set(path, n["À"]["ÁÄ"]);
@@ -1162,8 +1217,9 @@
             if (ancestry.type === "particle" || String(ancestry.type || "").startsWith("brio")) return;
             for (const r of collectPlayers()) if (ancestry === r["â"] || ancestry === r["Eâ"]) return;
         }
+        if (kind === "slots") { captureSlotRow(n); return; }
         if (kind !== "slots") {
-            let p = n.parent, validated = false;
+            let p = n, validated = false;
             for (let depth = 0; p && depth < 3; depth++, p = p.parent) {
                 const nodes = hudWalk(p, 80), icons = nodes.filter(x => hudKinds(hudPath(x)) === kind);
                 if (icons.length !== 1) break;
@@ -1272,15 +1328,16 @@
     const ownMaterialWarnings = () => {
         if (!S.renderer || !S.hudTemplates) return;
         for (const [root, node] of S.hudWarnNodes || []) if (!root.parent) { try { root.remove?.(node); } catch (_) {} S.hudWarnNodes.delete(root); }
-        for (const rec of [...S.hudTemplates.materials, ...S.hudTemplates.ammo]) {
-            const ammo = rec.kind === "ammo", i = ammo ? +(rec.path.match(/(?:ammo|stack)([0-4])/) || [])[1] : [ "wood", "brick", "metal" ].findIndex(k => rec.path.endsWith("/" + k + ".png"));
+        for (const rec of [...S.hudTemplates.materials, ...S.hudTemplates.slots]) {
+            const ammo = rec.kind === "slots", i = ammo ? rec.slotIndex : [ "wood", "brick", "metal" ].findIndex(k => rec.path.endsWith("/" + k + ".png"));
             if (i < 0 || !rec.root?.add) continue;
             const existing = S.hudWarnNodes?.get(rec.root);
             if (existing?.__brioHudRecord === rec) continue;
             if (existing) {rec.root.remove?.(existing); S.hudWarnNodes.delete(rec.root);}
             if (!S.hudWarnNodes) S.hudWarnNodes = new Map;
-            const bounds = hudBounds(rec), draw = (ctx, s) => {
-                const raw = ammo ? S.renderer?.["åæ"] : matState(S.renderer), currentIndex = ammo ? +(hudPath(rec.icon).match(/(?:ammo|stack)([0-4])/) || [])[1] : i, value = raw?.[currentIndex], threshold = ammo ? 20 : 30;
+            const bounds = ammo ? rec.slotBounds : hudBounds(rec), draw = (ctx, s) => {
+                if (ammo && (!rec.root.parent || !rec.holder.parent)) return;
+                const value = ammo ? nativeSlotAmmo(S.renderer, i, rec) : matState(S.renderer)?.[i], threshold = ammo ? 20 : 30;
                 if (!exFast()[ammo ? "lowAmmoWarning" : "lowMatsWarning"] || !Number.isFinite(value) || value >= threshold) return;
                 ctx.save();
                 try {
@@ -1298,11 +1355,12 @@
             overlay.__brioHudRecord = rec;
             rec.root.add(overlay);
             S.hudWarnNodes.set(rec.root, overlay);
-            log(ammo ? "OWN AMMO WARNING BINDING" : "OWN MATERIAL WARNING BINDING", {
-                material: ammo ? "ammo" + i : [ "wood", "brick", "metal" ][i],
+            log(ammo ? "OWN GUN SLOT WARNING BINDING" : "OWN MATERIAL WARNING BINDING", {
+                slotIndex: ammo ? i : undefined,
+                material: ammo ? "gun slot" : [ "wood", "brick", "metal" ][i],
                 threshold: ammo ? "<20" : "<30",
                 bounds: bounds,
-                scope: "own native HUD only"
+                scope: ammo ? "all native gun slots; loaded + reserve total; independent of selection" : "own native material HUD"
             });
         }
     };
@@ -1364,7 +1422,7 @@
     };
     const ensureNativeSlotArt = unit => {
         if (unit.pairs.some(p => isSlotArtwork(p.path))) return;
-        const background = unit.pairs.find(p => /\/inv[0-6]\.png$/.test(p.path));
+        const background = unit.pairs.find(p => /\/inv[0-6]\.png$/.test(p.path)) || (S.hudSlotSprite ? {source: S.hudSlotSprite, node: S.hudSlotSprite} : null);
         if (!background || typeof unit.root.add !== "function") return;
         const source = background.source, art = Object.create(Object.getPrototypeOf(background.node));
         for (const [key, value] of Object.entries(background.node)) if (![ "parent", "ë", "âè", "ÉE", "canvas" ].includes(key)) art[key] = value;
@@ -1403,7 +1461,7 @@
         } catch (_) {}
         const rows = [];
         for (const [kind, raw] of Object.entries(S.hudTemplates)) {
-            const sorted = raw.slice().sort((a, b) => a.x - b.x || a.y - b.y), templates = kind === "slots" ? sorted.slice(-5) : sorted, units = [];
+            const sorted = raw.slice().sort((a, b) => kind === "slots" ? a.slotIndex - b.slotIndex : a.x - b.x || a.y - b.y), templates = kind === "slots" ? sorted.slice(-5) : sorted, units = [];
             for (const rec of templates) try {
                 const unit = cloneNativeWidget(rec);
                 if (kind === "slots") ensureNativeSlotArt(unit);
@@ -1542,6 +1600,7 @@
             captured: false
         };
         S.hudVersion = 0;
+        S.hudSlotLogs = 0; S.hudSlotSprite = null; S.slotWarningLast = null; S.slotWarningLogs = 0;
         S.hudPending = new WeakSet;
         S.hudInspectError = false;
         S.emptySlotArtLogged = false;
@@ -1550,6 +1609,19 @@
     };
     const isSlotArtwork = path => !!path && path !== "/" && !hudKinds(path) && !/\/(?:ammo|inventoryammo)[0-4]\.png$|\/disabled\.png$/.test(path);
     const GUN_TYPES = new Set(["scar","bolt","lmg","shotgun","heavy","smg","ump","rifle","ar-15","scoped ar","deagle","rpg","famas","tommy gun","drum","musket","heavy sniper","ak47","akƧ","combat","silencedpistol","aug","burst shotgun","grenade launcher","mgl","grenade pistol","vector","revolver","charge rifle","grenade sniper","sawedoff","signal flare","spas","grappler","crossbow","minigun"]);
+    const nativeSlotAmmo = (r, index, rec) => {
+        const type = String(r?.["Åé"]?.[index]?.type || "").toLowerCase();
+        if (!GUN_TYPES.has(type)) return undefined;
+        const loaded = r?.["áAæ"]?.[index - 1];
+        if (!Number.isFinite(loaded) || loaded < 0) return undefined;
+        if (type === "grappler" || type === "signal flare") return loaded;
+        let ammoIndex = S.ammoTypeMap?.get(type);
+        // The live slot emblem is authoritative when constant obfuscation prevents mapping.
+        const emblem = rec?.nodes.find(n => /\/ammo[0-4]\.png$/.test(hudPath(n)));
+        if (emblem) ammoIndex = +(hudPath(emblem).match(/ammo([0-4])/)[1]);
+        const reserve = r?.["åæ"]?.[ammoIndex];
+        return Number.isFinite(reserve) && reserve >= 0 ? loaded + reserve : undefined;
+    };
     const slotArtStyle = type => {
         const raw = String(type || "").toLowerCase(), captured = S.hudArtStyles?.get(itemPath(type));
         if (captured) return captured;
@@ -1798,7 +1870,6 @@
         if (S.botTimer) return;
         S.botWatch = new Map;
         S.botLogged = new Set;
-        S.botPhase = "lobby";
         S.botPhaseAt = performance.now();
         botSample();
         botAuditReset();
@@ -1920,6 +1991,7 @@
         if (S.meteorAutoTimer) clearInterval(S.meteorAutoTimer);
         S.meteorAutoTimer = 0;
     }, meteorCandidate = (node, array = []) => {
+        if (S.retiredMarkers?.has(node)) return;
         const path = norm(node?.icon?.["À"]?.src || node?.icon?.["À"]?.["ÁÄ"]?.src || node?.["À"]?.src || node?.["À"]?.["ÁÄ"]?.src || "");
         if (path === "/buildart/ping-meteor-icon.png" && node.parent?.icon === node) node = node.parent;
         if (extrasState().permanentMeteor && [ "/buildart/ping-meteor-icon.png", "/buildart/ping-meteor.png" ].includes(path) && !S.meteorSeen?.has(node) && !S.meteorPending?.has(node)) {
@@ -1994,6 +2066,7 @@
     };
     const applyRemote = async r => {
         if (!r || isLocal(r)) return;
+        const epoch = S.runEpoch;
         rememberRemote(r);
         const e = extrasState();
         try {
@@ -2016,6 +2089,7 @@
                     mode: "invisible",
                     data: BLANK.pickaxe
                 }) ]);
+                if (S.destroyed || epoch !== S.runEpoch) return;
                 if (r["Ëå"]) r["Ëå"]["À"] = bo;
                 if (r.head) r.head["À"] = he;
                 r["Äâè"] = he;
@@ -2028,6 +2102,7 @@
                     mode: "invisible",
                     data: BLANK.glider
                 });
+                if (S.destroyed || epoch !== S.runEpoch) return;
                 r["äÀÊ"] = gl;
                 if (r["ÂÅ"]) r["ÂÅ"]["À"] = gl;
             }
@@ -2044,7 +2119,7 @@
         setTimeout(() => {
             if (!S.destroyed && S.runEpoch === auditEpoch) replicaStateAudit(r);
         }, 2e3);
-        for (const ms of [ 0, 250, 1200, 3e3 ]) setTimeout(() => applyRemote(r), ms);
+        for (const ms of [ 0, 250, 1200, 3e3 ]) setTimeout(() => {if (!S.destroyed && S.runEpoch === auditEpoch) applyRemote(r);}, ms);
     }, queueWorld = o => {
         if (!o || S.worldQueued.has(o)) return;
         S.worldQueued.add(o);
@@ -2193,12 +2268,13 @@
         return tagged;
     }, arm = () => {
         S.runEpoch = (S.runEpoch || 0) + 1;
+        if (S.renderer) deepReport();
         deepStop();
         stopRenderDiscovery();
         restoreRenderArrays();
         clearInterval(S.phaseTimer);
         S.phaseTimer = 0;
-        S.botPhase = "lobby";
+        S.botPhase = "lobby"; S.botPhaseAt = 0; S.emoteResolved = [];
         restoreResourceMaps();
         restoreCosmetics();
         restoreEmote();
@@ -2219,7 +2295,11 @@
         reconNow.last = null;
         reconNow.stateLogs = 0;
         reconContainersSeen.clear();
-        reconRemoved.clear();
+        reconRemoved.clear(); reconCoverage.clear(); reconObjects = new WeakSet;
+        reconNow.captures = 0;
+        S.botWatch.clear(); S.botLogged.clear(); botAuditSeen.clear(); botAuditUntil = 0;
+        S.manualCopy = false;
+        for (const key of ["nearestUi", "chestUi", "airdropUi"]) if (S[key]) S[key].style.display = "none";
         stopCapture("rearm");
         restoreArrays();
         S.renderer = S.native = S.rendererArray = null;
@@ -2270,6 +2350,7 @@
             S.botTimer = 0;
         }
         S.localName = tagName();
+        log("MATCH STATE RESET", {epoch: S.runEpoch, meteorMarkers: reconMarkers.length, remoteRefs: S.remoteRefs.size, inventoryNodes: S.invNodes.size, trackNodes: S.trackNodes.size, featureNodes: featureNodes.size, savedSelectionsPreserved: true});
         deepStart();
         startRenderDiscovery("Play");
         const chosen = extrasState(), flags = Object.fromEntries(REQUIRED_TESTS.map(id => [ id, !!chosen[id] ]));
@@ -2334,7 +2415,7 @@
             },
             nativeRenderArrays: renderArrays.size,
             automaticPhase: {
-                signal: "native glidingTicks/maxGlidingTicks",
+                signal: "native local gliding state or decoded circle waiting/moving",
                 phase: S.botPhase
             },
             meteorNativeHolds: reconMarkers.map(x => ({
@@ -2378,7 +2459,7 @@
     const term = D.createElement("div");
     term.className = "brioTerm";
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v45</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v46</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     let mini = false, drag = null;
@@ -2578,7 +2659,7 @@
         });
     };
     // All probes below observe native results. They neither decode independently nor alter packets.
-    const deep = {restore: null, timer: 0, until: 0, packets: 0, records: 0, bytes: 0, schemas: new Set, identities: new Map, subtypes: new Map, replicas: new Map, truncations: 0, errors: 0, engines: new WeakSet, engineRestores: [], source: null};
+    const deep = {restore: null, timer: 0, until: 0, packets: 0, records: 0, bytes: 0, schemas: new Set, identities: new Map, subtypes: new Map, replicas: new Map, truncations: 0, errors: 0, engines: new WeakSet, engineRestores: [], source: null, lanes: {}, suppressed: {}, incomingState: new Map, environmentSeen: new WeakSet, localId: null, circleState: null};
     const probeSnapshot = value => {
         const seen = new WeakSet; let entries = 0, truncated = false;
         const walk = (v, depth) => {
@@ -2605,11 +2686,51 @@
         const data = walk(value, 0);
         return {data, entries, truncated};
     };
-    const deepRecord = (label, obj) => {
-        if (deep.records >= 1800 || deep.bytes >= 8e6) return false;
-        const snap = probeSnapshot(obj); if (snap.truncated) deep.truncations++;
-        const bytes = JSON.stringify(snap).length; deep.bytes += bytes; deep.records++;
+    const DEEP_LANES = {schema: 350, player: 350, container: 700, replica: 300, environment: 100};
+    const deepRecord = (label, obj, lane = label.startsWith("INCOMING SCHEMA") ? "schema" : label.startsWith("ENVIRONMENT") ? "environment" : obj.kind === "player" ? "player" : label.startsWith("DEEP TARGET") ? "replica" : "container") => {
+        if (deep.records >= 1800 || deep.bytes >= 8e6 || (deep.lanes[lane] || 0) >= DEEP_LANES[lane]) {deep.suppressed[lane] = (deep.suppressed[lane] || 0) + 1; return false;}
+        const snap = probeSnapshot(obj), bytes = JSON.stringify(snap).length;
+        if (deep.bytes + bytes > 8e6) {deep.suppressed.bytes = (deep.suppressed.bytes || 0) + 1; return false;}
+        if (snap.truncated) deep.truncations++;
+        deep.bytes += bytes; deep.records++; deep.lanes[lane] = (deep.lanes[lane] || 0) + 1;
         log(label, snap); return true;
+    };
+    const environmentProbe = env => {
+        if (!env || typeof env !== "object") return;
+        const props = Object.getOwnPropertyDescriptors(env), fields = Object.keys(props);
+        deepRecord("ENVIRONMENT MANIFEST", {fields: fields.map(key => ({key, meaning: schemaFields.get(key) || key, length: Array.isArray(props[key].value) ? props[key].value.length : undefined, accessor: !("value" in props[key])}))});
+        for (const key of fields) {
+            const value = props[key].value, meaning = schemaFields.get(key) || key;
+            if (/chest|object|loot|seed|content|fish|drop|resourceNames/i.test(meaning)) {
+                if (Array.isArray(value)) {
+                    const count = Math.ceil(value.length / 24);
+                    for (let chunk = 0; chunk < count; chunk++) if (!deepRecord("ENVIRONMENT TARGET CHUNK", {key, meaning, index: chunk, count, total: value.length, entries: value.slice(chunk*24,(chunk+1)*24)})) break;
+                } else deepRecord("ENVIRONMENT TARGET FIELD", {key, meaning, value});
+            }
+        }
+    };
+    const incomingDelta = (p, kind, id, type) => {
+        const identity = kind + ":" + id;
+        let state = deep.incomingState.get(identity);
+        if (!state) {
+            if (deep.incomingState.size >= 600) return {packet: p, first: true};
+            state = {values: new Map, changes: new Map}; deep.incomingState.set(identity, state);
+        }
+        const packet = {}, fields = [], capped = [];
+        for (const [key, desc] of Object.entries(Object.getOwnPropertyDescriptors(p))) {
+            if (["a","p","t","type","i","id","Ã","x","y","É","Ä","b","n"].includes(key)) continue;
+            const value = "value" in desc ? desc.value : "[ACCESSOR; NOT INVOKED]", snap = probeSnapshot(value), fingerprint = JSON.stringify(snap.data);
+            if (state.values.get(key) === fingerprint) continue;
+            const seen = state.values.has(key), changes = state.changes.get(key) || 0;
+            state.values.set(key, fingerprint);
+            // Preserve first values of every field; routine player state must not starve containers.
+            if (kind === "player" && seen && changes >= 3) {capped.push(key); continue;}
+            state.changes.set(key, changes + 1); packet[key] = snap.data; fields.push(key);
+        }
+        if (capped.length) deep.suppressed.playerFieldChanges = (deep.suppressed.playerFieldChanges || 0) + capped.length;
+        const packed = Object.getOwnPropertyDescriptor(p, "a")?.value;
+        if (Array.isArray(packed) && packed.length > 4) {packet.packedExtension = packed.slice(4); fields.push("packedExtension");}
+        return {packet, fields};
     };
     const incomingProbe = result => {
         if (S.destroyed || performance.now() > deep.until) return;
@@ -2624,15 +2745,39 @@
             const targetObject = subtype => ["airdrop","bubbles","ammocrate","grenadecrate","meteorite"].includes(subtype);
             if (type === "x" && id != null && typeof kind === "string" && deep.identities.size < 600 && (kind !== "object" || targetObject(subtype))) {deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
             kind ||= deep.identities.get(id); subtype ||= deep.subtypes.get(id);
+            if (type === "x" && id != null && (deep.identities.has(id) || deep.identities.size < 600) && deep.identities.get(id) !== kind && typeof kind === "string" && (kind !== "object" || targetObject(subtype))) {deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
             const signature = String(type) + ":" + String(kind || "") + ":" + String(subtype || "") + ":" + Object.keys(desc).sort().join(",");
             if (!deep.schemas.has(signature) && deep.schemas.size < 350) {
                 deep.schemas.add(signature); deepRecord("INCOMING SCHEMA FIRST", {type, kind, subtype, id, packet: p, scope: "native msgpack.decode return before native field remap; no mutation"});
             }
+            if (type === "setID" && id != null) deep.localId = id;
+            if (type === "circle") {
+                const circleState = own("state");
+                if (circleState !== undefined && circleState !== deep.circleState) {
+                    log("NATIVE SESSION STATE", {previous: deep.circleState, state: circleState, epoch: S.runEpoch, packet: probeSnapshot(p)});
+                    if (["waiting", "moving"].includes(circleState)) botPhase("native circle state=" + circleState);
+                    if (circleState === "lobby" && deep.circleState && deep.circleState !== "lobby") {
+                        restoreMarkerHolds();
+                        for (const key of ["nearestUi","chestUi","airdropUi"]) if (S[key]) S[key].style.display = "none";
+                    }
+                    deep.circleState = circleState;
+                }
+            }
+            if (kind === "player" && id === (deep.localId ?? S.renderer?.id) && Number.isFinite(own("glidingTicks")) && own("glidingTicks") >= 0 && own("maxGlidingTicks") > 0) botPhase("native incoming local gliding state");
+            if (type === "e") {
+                const env = own("envs") ?? own("È$");
+                if (env && typeof env === "object" && !deep.environmentSeen.has(env)) {deep.environmentSeen.add(env); environmentProbe(env);}
+            }
             const relevant = kind === "player" || kind === "chest" || kind === "object" && targetObject(subtype) || kind === "airdrop";
-            // Movement-only updates are already represented by a schema sample. Preserve every
-            // nonmovement candidate field and creation/removal payload while capacity remains.
-            const extra = Object.keys(desc).filter(k => !["t","type","a","p","i","id","Ã","x","y","É","Ä","b","n"].includes(k));
-            if (relevant && (type !== "y" || extra.length || (Array.isArray(update) && update.length > 4))) deepRecord("INCOMING TARGET PAYLOAD", {type, kind, subtype, id, packet: p, phase: S.botPhase});
+            if (relevant) {
+                if (type === "y") {
+                    const delta = incomingDelta(p, kind, id, type);
+                    if (delta.fields?.length || delta.first) deepRecord("INCOMING TARGET PAYLOAD", {type, kind, subtype, id, ...delta, phase: S.botPhase, scope: "changed field values; first 3 routine player changes per field; no movement repetition"});
+                } else {
+                    deepRecord("INCOMING TARGET PAYLOAD", {type, kind, subtype, id, packet: p, phase: S.botPhase});
+                    if (type === "x") incomingDelta(p, kind, id, type);
+                }
+            }
         }
     };
     const deepEngineProbe = engine => {
@@ -2647,7 +2792,10 @@
             for (const key of ["èæå","ëåä","remove"]) {
                 const d = Object.getOwnPropertyDescriptor(callbacks, key); if (!d || !d.configurable || typeof d.value !== "function") continue;
                 const original = d.value, wrapper = function(...args) {
-                    try {deepRecord("NATIVE CALLBACK PAYLOAD", {kind, callback: key, id: args[0]?.id, payload: args[1], stage: "before native callback"});} catch (_) {deep.errors++;}
+                    try {if (performance.now() <= deep.until) {
+                        const delta = key === "ëåä" ? incomingDelta(args[1] || {}, kind, args[0]?.id, "y") : {packet: args[1], fields: ["create/remove"]};
+                        if (delta.fields?.length) deepRecord("NATIVE CALLBACK PAYLOAD", {kind, callback: key, id: args[0]?.id, payload: delta.packet, stage: "before native callback"});
+                    }} catch (_) {deep.errors++;}
                     return Reflect.apply(original, this, args);
                 };
                 Object.defineProperty(callbacks, key, {...d, value: wrapper});
@@ -2677,6 +2825,7 @@
         const localPosition = worldPos(S.renderer);
         for (const o of [...collectPlayers(), ...collectWorld()]) {
             const kind = isPlayer(o) ? "player" : reconKind(o); if (!kind) continue;
+            if (o.id != null && deep.identities.size < 600) {deep.identities.set(o.id, kind === "player" ? "player" : o.type); if (o["Àâ"]) deep.subtypes.set(o.id, o["Àâ"]);}
             const key = kind + ":" + o.id; live.add(key);
             let rec = deep.replicas.get(key); if (!rec && deep.replicas.size >= 200) continue;
             const snapshot = probeSnapshot(o), signature = JSON.stringify(snapshot.data);
@@ -2706,9 +2855,10 @@
             } catch (_) {deep.errors++;}
         }
     };
-    const deepReport = () => log("V45 PROBE COVERAGE", {
+    const deepReport = () => log("V46 PROBE COVERAGE", {
         incomingInstalled: !!deep.restore, incomingObservedThisRun: !!deep.installedEver, incomingPackets: deep.packets, incomingSchemas: deep.schemas.size, nativeEngineCaptured: deep.engineRestores.length > 0,
         targetedEntities: deep.replicas.size, records: deep.records, approximateBytes: deep.bytes, truncations: deep.truncations, errors: deep.errors,
+        lanes: deep.lanes, laneCaps: DEEP_LANES, suppressed: deep.suppressed, incomingTargetIds: deep.identities.size, circleState: deep.circleState, epoch: S.runEpoch,
         caps: {packets: 80000, records: 1800, bytes: 8000000, entities: 200, durationMs: 900000},
         limitsReached: {packets: deep.packets >= 80000, records: deep.records >= 1800, bytes: deep.bytes >= 8e6, entities: deep.replicas.size >= 200}, source: deep.source,
         conclusion: "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
@@ -2721,10 +2871,49 @@
     };
     const deepStart = () => {
         deepStop(); deep.until = performance.now() + 900000; deep.packets = deep.records = deep.bytes = deep.truncations = deep.errors = 0;
-        deep.installedEver = false; deep.schemas.clear(); deep.identities.clear(); deep.subtypes.clear(); deep.replicas.clear(); deep.windowScanned = false; deep.engines = new WeakSet;
-        log("V45 DEEP PROBE PLAN", {readOnly: true, source: "complete raw bundle + AST", targets: "all observed container kinds and players", noManualArm: true, noClassifier: true});
+        deep.installedEver = false; deep.lanes = {}; deep.suppressed = {}; deep.incomingState.clear(); deep.environmentSeen = new WeakSet; deep.localId = null; deep.circleState = null; deep.schemas.clear(); deep.identities.clear(); deep.subtypes.clear(); deep.replicas.clear(); deep.windowScanned = false; deep.engines = new WeakSet;
+        log("V46 DEEP PROBE PLAN", {readOnly: true, source: "complete raw bundle + AST", targets: "all observed container kinds and players; environment target chunks", laneCaps: DEEP_LANES, updatePolicy: "changed fields only; reserve container/late-target capacity", noManualArm: true, noClassifier: true});
         const tick = () => { try { deepTick(); } catch (e) { deep.errors++; if (deep.errors < 3) log("DEEP PROBE ERROR", String(e)); } };
         tick(); deep.timer = setInterval(tick, 1000);
+    };
+    // Interpret only scalar AST arithmetic/aliases/branches; never call or execute source code.
+    const numericSourceConstants = (ast, cutoff) => {
+        const values = new Map;
+        const readNumber = node => {
+            if (!node) return undefined;
+            if (node.type === "Literal" && ["number","boolean"].includes(typeof node.value)) return node.value;
+            if (node.type === "Identifier") return values.get(node.name);
+            if (node.type === "UnaryExpression") {const v = readNumber(node.argument); if (v === undefined) return; if (node.operator === "-") return -v; if (node.operator === "+") return +v; if (node.operator === "!") return !v; if (node.operator === "~") return ~v;}
+            if (node.type === "BinaryExpression") {
+                const a = readNumber(node.left), b = readNumber(node.right); if (a === undefined || b === undefined) return;
+                switch (node.operator) {
+                    case "+": return a+b; case "-": return a-b; case "*": return a*b; case "/": return a/b; case "%": return a%b;
+                    case "<<": return a<<b; case ">>": return a>>b; case ">>>": return a>>>b; case "&": return a&b; case "|": return a|b; case "^": return a^b;
+                    case "===": case "==": return a===b; case "!==": case "!=": return a!==b;
+                    case "<": return a<b; case ">": return a>b; case "<=": return a<=b; case ">=": return a>=b;
+                }
+            }
+            return undefined;
+        };
+        const invalidate = node => {
+            if (!node || typeof node !== "object") return;
+            if (node.type === "AssignmentExpression" && node.left?.type === "Identifier") values.delete(node.left.name);
+            if (node.type === "UpdateExpression" && node.argument?.type === "Identifier") values.delete(node.argument.name);
+            for (const v of Object.values(node)) if (Array.isArray(v)) v.forEach(invalidate); else if (v && typeof v === "object") invalidate(v);
+        };
+        const execute = node => {
+            if (!node || node.start >= cutoff) return;
+            if (node.type === "VariableDeclaration") for (const d of node.declarations) {if (d.id.type !== "Identifier") continue; const v = readNumber(d.init); if (v !== undefined) values.set(d.id.name,v); else values.delete(d.id.name);}
+            else if (node.type === "ExpressionStatement") execute(node.expression);
+            else if (node.type === "AssignmentExpression" && node.left.type === "Identifier") {const v = node.operator === "=" ? readNumber(node.right) : undefined; if (v !== undefined) values.set(node.left.name,v); else values.delete(node.left.name);}
+            else if (node.type === "IfStatement") {const test = readNumber(node.test); if (test !== undefined) execute(test ? node.consequent : node.alternate); else {invalidate(node.consequent); invalidate(node.alternate);}}
+            else if (node.type === "BlockStatement") node.body.forEach(execute);
+            else if (node.type === "SequenceExpression") node.expressions.forEach(execute);
+            else if (!["FunctionDeclaration","EmptyStatement"].includes(node.type)) invalidate(node);
+        };
+        const fn = ast.body.find(n => n.type === "ExpressionStatement" && n.expression?.type === "CallExpression" && n.expression.callee?.type === "FunctionExpression")?.expression.callee;
+        (fn?.body.body || ast.body).forEach(execute);
+        return values;
     };
     const completeSourceAudit = async (raw, url) => {
         const size = 9000, count = Math.ceil(raw.length / size);
@@ -2736,7 +2925,7 @@
             const ast = parseNative(raw, {ecmaVersion: "latest", sourceType: "script", allowReturnOutsideFunction: true}), strings = [], members = new Map, assets = new Map, numericObjects = [], constants = new Map, objectNames = new WeakMap, dictionaries = new Map, registrations = [];
             const walk = node => {
                 if (!node || typeof node !== "object") return;
-                if (node.type === "VariableDeclarator" && node.id?.type === "Identifier" && typeof node.init?.value === "number") constants.set(node.id.name, node.init.value);
+
                 if (node.type === "VariableDeclarator" && node.init?.type === "ObjectExpression") objectNames.set(node.init, node.id?.name);
                 if (node.type === "ObjectExpression") numericObjects.push(node);
                 if (node.type === "CallExpression" && node.callee?.type === "MemberExpression" && (node.callee.property?.name || node.callee.property?.value) === "ÃEÅ" && ["player","chest","object","gun","ammo","spellfield","airdrop"].includes(node.arguments[0]?.value)) registrations.push(node);
@@ -2759,8 +2948,9 @@
             }
             for (const object of numericObjects) {
                 if (objectNames.get(object) !== "äèä") continue;
-                const pairs = object.properties.filter(x => GUN_TYPES.has(String(x.key?.value || x.key?.name || "").toLowerCase())).map(x => [String(x.key.value || x.key.name).toLowerCase(), typeof x.value?.value === "number" ? x.value.value : constants.get(x.value?.name)]).filter(x => Number.isInteger(x[1]) && x[1] >= 0 && x[1] < 5);
-                if (pairs.length > (S.ammoTypeMap?.size || 3)) {S.ammoTypeMap = new Map(pairs); log("NATIVE AMMO TYPE MAP", {at: object.start, entries: pairs, note: "AST numeric object candidate; compared with native slot emblems during capture"});}
+                const resolved = numericSourceConstants(ast, object.start);
+                const pairs = object.properties.filter(x => GUN_TYPES.has(String(x.key?.value || x.key?.name || "").toLowerCase())).map(x => [String(x.key.value || x.key.name).toLowerCase(), typeof x.value?.value === "number" ? x.value.value : resolved.get(x.value?.name)]).filter(x => Number.isInteger(x[1]) && x[1] >= 0 && x[1] < 5);
+                if (pairs.length > (S.ammoTypeMap?.size || 3)) {S.ammoTypeMap = new Map(pairs); log("NATIVE AMMO TYPE MAP", {at: object.start, entries: pairs, note: "AST scalar arithmetic/alias/branch resolution; live slot emblem takes precedence; unknowns remain unknown"});}
             }
             const meanings = [...schemaFields].filter(([k,v]) => /droid|wander|bot|npc|ai|chest|content|loot|seed|fish|drop|object|ammo|weapon/i.test(v));
             for (const [key, meaning] of meanings) log("DEEP SEMANTIC REFERENCES", {field: key, meaning, total: members.get(key)?.length || 0, references: (members.get(key) || []).slice(0, 120).map(at => ({at, excerpt: raw.slice(Math.max(0, at - 180), at + 450)})), capped: (members.get(key)?.length || 0) > 120});
@@ -3157,6 +3347,9 @@
             featureEx.value = extrasState();
             featureEx.at = performance.now();
             ownMaterialWarnings();
+            const slotState = (S.hudTemplates?.slots || []).map(rec => ({slot: rec.slotIndex, type: S.renderer?.["Åé"]?.[rec.slotIndex]?.type, ammo: nativeSlotAmmo(S.renderer, rec.slotIndex, rec) ?? null, selected: S.renderer?.["ÈÆ"] === rec.slotIndex, low: Number.isFinite(nativeSlotAmmo(S.renderer, rec.slotIndex, rec)) && nativeSlotAmmo(S.renderer, rec.slotIndex, rec) < 20}));
+            const slotSignature = J(slotState);
+            if (slotSignature !== S.slotWarningLast && (S.slotWarningLogs || 0) < 40) {S.slotWarningLast = slotSignature; S.slotWarningLogs = (S.slotWarningLogs || 0) + 1; log("GUN SLOT WARNING STATE", {epoch: S.runEpoch, slots: slotState, threshold: "native loaded+reserve total <20; unknown/non-guns excluded"});}
             const e = featureEx.value;
             for (const r of collectPlayers()) featurePlayer(r);
             const world = collectWorld(), live = new Set([ ...collectPlayers(), ...world ]);
@@ -3272,7 +3465,8 @@
             } : null) : null
         });
     };
-    const reconCoverage = new Map, reconObjects = new WeakSet, reconContainersSeen = new Map, reconRemoved = new Set, reconMarkers = [], reconRestore = [], reconNow = {
+    const reconCoverage = new Map; let reconObjects = new WeakSet;
+    const reconContainersSeen = new Map, reconRemoved = new Set, reconMarkers = [], reconRestore = [], reconNow = {
         source: false,
         sourceUrl: "",
         captures: 0
@@ -3286,7 +3480,7 @@
         });
         for (const term of [ "ÁæÆ", "inventoryammo", '"inv"', '"lobby"', "Å.À$", "ãÂÆ=", "Å.áÉâ", '"setID"', '"circle"', '"droid"', '"wander"', '"seed"', '"loot"' ]) {
             let at = src.indexOf(term, term === "inventoryammo" ? 23e4 : 0);
-            if (at >= 0) log("V45 NATIVE SOURCE", {
+            if (at >= 0) log("V46 NATIVE SOURCE", {
                 term: term,
                 at: at,
                 excerpt: src.slice(Math.max(0, at - 800), at + 8e3),
@@ -3535,13 +3729,20 @@
         S.meteorPending = new WeakSet;
         S.sceneRoots?.clear();
         S.sceneQueue = [];
-        S.sceneQueueAt = 0;
+        S.sceneQueueAt = 0; S.sceneQueueSeen = new WeakSet; S.sceneScan = null;
         restoreMarkerCapture();
+        const oldMarkers = reconMarkers.slice();
         while (reconRestore.length) try {
             reconRestore.pop()();
         } catch (e) {
             S.errors.push("marker restore: " + String(e));
         }
+        for (const {node, parent} of oldMarkers) {
+            (S.retiredMarkers || (S.retiredMarkers = new WeakSet)).add(node);
+            if (node.icon) S.retiredMarkers.add(node.icon);
+            try { parent.remove?.(node); if (node.parent && node.parent !== parent) node.parent.remove?.(node); } catch (e) {S.errors.push("marker detach: " + String(e));}
+        }
+        if (oldMarkers.length) log("OLD MATCH METEORS REMOVED", {count: oldMarkers.length, epoch: S.runEpoch});
         reconMarkers.length = 0;
     };
     const holdMeteor = (node, array) => {
@@ -3569,7 +3770,7 @@
                 };
                 reconMarkers.push(record);
                 const desc = Object.getOwnPropertyDescriptor(parent, "remove"), orig = parent.remove, wrap = function(child, ...a) {
-                    if (child === node && extrasState().permanentMeteor) {
+                    if (child === node && S.runEpoch === epoch && extrasState().permanentMeteor) {
                         record.attempts++;
                         if (record.attempts <= 3) log("METEOR NATIVE REMOVE BLOCKED", {
                             attempt: record.attempts
@@ -3599,7 +3800,7 @@
                         configurable: true,
                         enumerable: d?.enumerable ?? true,
                         get() {
-                            return extrasState().permanentMeteor ? 1 : v;
+                            return S.runEpoch === epoch && extrasState().permanentMeteor ? 1 : v;
                         },
                         set(x) {
                             v = x;
@@ -3622,7 +3823,7 @@
                     Object.defineProperty(node, "Äã", {
                         configurable: true,
                         enumerable: expiredDesc?.enumerable ?? true,
-                        get: () => extrasState().permanentMeteor ? false : expired,
+                        get: () => S.runEpoch === epoch && extrasState().permanentMeteor ? false : expired,
                         set: v => {
                             expired = v;
                         }
@@ -3640,7 +3841,7 @@
                 const destroyDesc = Object.getOwnPropertyDescriptor(node, "ÊÈA"), destroy = node["ÊÈA"];
                 if (typeof destroy === "function" && (!destroyDesc || destroyDesc.configurable || destroyDesc.writable)) {
                     const dw = function(...a) {
-                        if (extrasState().permanentMeteor) {
+                        if (S.runEpoch === epoch && extrasState().permanentMeteor) {
                             record.destroyAttempts++;
                             return;
                         }
@@ -3695,7 +3896,7 @@
             inventoryScales: INV_SCALE,
             activeTests: REQUIRED_TESTS.map(id => EXTRA.modifiers.find(x => x[0] === id)?.[1] || id),
             inventoryArt: "native invN slot backgrounds from captured HUD traces",
-            lobbyProbe: "Native gliding state separates lobby and match samples automatically",
+            lobbyProbe: "Native local gliding state or decoded circle waiting/moving separates lobby and match automatically",
             meteor: "automatic native waypoint capture · testing; retention visually verified in V40"
         });
     });
