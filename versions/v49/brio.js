@@ -1,44 +1,40 @@
-/* BRIO v50 maintenance map — 2026-10-06
- * V49 user proves warnings (including selected-slot lift), transparent foliage and loot effect suppression.
- * Meteor, monochrome, indicators, cosmetics and chest hiding retain proof; no recurring tests for them.
- * V50 changes warning controls/reset only, remote inventory captions/size, tiered loot/build masking,
- * remote held-item/trail hiding and independent/composite HUD challenges. Those new visuals are live-pending.
- * Standalone cleanLoot is retired from UI, retained internally as the proven Mask rarity effect adapter.
+/* BRIO v49 maintenance map
+ * V49 evidence map: V47 inventory appearance + monochrome startup confirmed by user; meteor,
+ * indicators, cosmetics/invisibility and chest hiding retain prior explicit proof. No recurring flags.
+ * V48 user confirms custom thresholds; V49 inclusive boundaries/inline placement/local-only health/flare
+ * exemption/live native slot motion/loot particles changed. Proven inventory/count display stays unchanged.
  * Contents must eventually be visible above every detected container, independent of proximity.
  * Current client/source/packet evidence has no authoritative loot list; no fake label/popup/NONE/classifier.
- * See docs/status/v50-status.md and docs/audits/v50-source-map.md for proof state and block/helper locations.
+ * See docs/status/v49-status.md for proven/changed/unresolved/planned distinctions and test dependencies.
  * A. Home UI/settings/custom cache; B. native resources/cosmetic adapters;
  * C. player/world discovery; D. HUD acquisition and remote inventory presentation;
  * E. arrows/warnings; F. ordinary-Play epoch lifecycle; G. passive source/payload evidence;
  * H. local feature drawables/monochrome; I. scoped scene/meteor retention; J. startup/destroy.
- * Search stable "BRIO: helperName" and nested "BRIO block/branch" anchors for targeted edits.
- * tests/regression.cjs retains established dependencies; tests/challenges.cjs exercises new reversible paths.
+ * Search the stable "BRIO: helperName" anchors for targeted edits. Tests live in tests/regression.cjs.
  * Do not edit the vendored Acorn parser below: it parses source DATA and has an external MIT notice.
  * Native key guide: ë.{É,Ä}=position; âè/ÉE=child arrays; À.{src,ÁÄ}=image resource;
  * éa/Eââ=native draw entry points; Åé=weapon slots incl pickaxe index0; ÈÆ=selected slot;
  * áAæ=loaded ammo by slot-1; åæ=reserve ammo by type; ÊÃÄ=material counts;
  * åÈ/Â$=health/shield; Àâ=world subtype; ÀËá/âëä=local gliding ticks/max ticks.
  * Protocol x/y/z=create/update/remove. Observe native decode return; never encode/send/mutate packets.
- * Preserve V45 X primitive/native artwork; V50 intentionally enlarges remote slots/materials to the ammo strip.
- * Good flippin luck derives effective challenge values without erasing saved modifiers/tiers; visual-only
- * monochrome/flashlight are excluded. Detached trail particles have no owner, so this challenge hides all trails.
+ * Preserve v45 display-size/X conventions separately from v46 gun-slot capture and meteor cleanup.
  * Saved choices/custom cache persist; native references/hooks/nodes reset at normal Play.
  * Any async/deferred capture must check runEpoch before mutation and again after awaits.
  * Source comments are authoring aids only: tools/build.cjs enforces ZERO comments in dist/archive.
  */
-(() => { /* BRIO block: startup — Own this injection; destroy prior releases before creating UI or native adapters. Saved choices survive; per-Play game state does not. */
+(() => {
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v50";
-    for (const k of [ K, "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
+    const W = window, D = document, K = "__brio_unlocker_v49";
+    for (const k of [ K, "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try {
         W[k]?.destroy?.();
-    } catch (_) { /* BRIO fallback: startup — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+    } catch (_) {}
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
-    const parseNative = (() => { /* BRIO block: parseNative — Load the unchanged audited Acorn parser locally. It parses fetched source as DATA and exposes only parse; the supplied engine is never evaluated. */  const exports = {}, module = {exports};
+    const parseNative = (() => { const exports = {}, module = {exports};
 (function(e,t){typeof exports==="object"&&typeof module!=="undefined"?t(exports):typeof define==="function"&&define.amd?define(["exports"],t):(e=typeof globalThis!=="undefined"?globalThis:e||self,t(e.acorn={}))})(this,function(e){"use strict";var t=[509,0,227,0,150,4,294,9,1368,2,2,1,6,3,41,2,5,0,166,1,574,3,9,9,7,9,32,4,318,1,31,4,33,15,71,10,50,3,123,2,54,14,32,10,3,1,11,3,46,10,8,0,46,9,7,2,37,13,2,9,6,1,45,0,13,2,49,13,9,3,2,11,83,11,7,0,3,0,158,11,6,9,7,3,56,1,2,6,3,1,3,2,10,0,11,1,3,6,4,4,68,8,2,0,3,0,2,3,2,4,2,0,15,1,83,17,10,9,5,0,82,19,13,9,214,6,3,8,28,1,83,16,16,9,82,12,9,9,7,19,58,14,5,9,243,14,166,9,71,5,2,1,3,3,2,0,2,1,13,9,120,6,3,6,4,0,29,9,41,6,2,3,9,0,10,10,47,15,199,7,137,9,54,7,2,7,17,9,57,21,2,13,123,5,4,0,2,1,2,6,2,0,9,9,49,4,2,1,2,4,9,9,55,9,7,0,259,3,10,1,2,0,49,6,4,4,14,10,5350,0,7,14,11465,27,2343,9,87,9,39,4,60,6,26,9,535,9,470,0,2,54,8,3,82,0,12,1,19628,1,4178,9,519,45,3,22,481,1,61,4,4,5,9,7,3,6,31,3,149,2,12,2,9,1,3,0,33,1,1357,49,513,54,5,49,9,0,15,0,23,4,2,14,1361,6,2,16,3,6,2,1,2,4,101,0,161,6,10,9,357,0,62,13,499,13,245,1,2,9,233,0,3,0,8,1,6,0,475,6,110,6,6,9,4759,9,787719,239];var i=[0,11,2,25,2,18,2,1,2,14,3,13,35,122,70,52,268,28,4,48,48,31,14,29,6,37,11,29,3,35,5,7,2,4,43,157,19,35,5,35,5,39,9,51,13,10,2,14,2,6,2,1,2,10,2,14,2,6,2,1,4,51,13,310,10,21,11,7,25,5,2,41,2,13,65,5,3,0,2,43,2,1,4,0,3,22,11,22,10,30,66,18,2,1,11,21,11,25,7,25,39,55,7,1,65,0,16,3,2,2,2,28,43,28,4,28,36,7,2,27,28,53,11,21,11,18,14,17,111,72,56,50,14,50,14,35,39,27,10,22,251,41,7,1,17,5,18,21,18,28,11,0,9,21,43,17,47,20,28,22,13,52,58,1,3,0,14,44,33,24,27,35,30,0,3,0,9,34,4,0,13,47,15,3,22,0,2,0,36,17,2,24,20,1,64,6,2,0,2,3,2,14,2,9,8,46,39,7,3,1,3,21,2,6,2,1,2,4,4,0,19,0,13,4,31,9,2,0,3,0,2,37,2,0,26,0,2,0,45,52,19,3,21,2,31,47,21,1,2,0,185,46,42,3,37,47,21,0,60,42,14,0,72,26,38,6,186,43,117,63,32,7,3,0,3,7,2,1,2,23,16,0,2,0,95,7,3,38,17,0,2,0,29,0,11,39,8,0,22,0,12,45,20,0,19,72,18,0,182,32,32,8,2,36,18,0,50,29,113,6,2,1,2,37,22,0,26,5,2,1,2,31,15,0,24,43,22,0,239,18,16,0,2,12,2,33,125,0,80,921,103,111,6,206,13,310,2314,96,16,1071,18,5,26,3994,6,582,6842,29,1763,568,8,30,18,78,18,29,19,47,17,3,32,20,6,18,433,44,212,63,33,24,3,24,45,74,6,0,67,12,65,1,2,0,15,4,10,7386,37,33,96,114,14,913,15,50,7710,3,2,6,2,1,2,296,10,0,30,2,3,0,15,4,8,395,2309,106,6,12,4,8,8,9,5991,84,2,70,2,1,3,0,3,1,3,3,2,11,2,0,2,6,2,64,2,3,3,7,2,6,2,27,2,3,2,4,2,0,4,6,2,340,2,24,2,24,2,30,2,24,2,30,2,24,2,30,2,24,2,30,2,24,2,7,1845,129,15,6,55,50,49,61,147,44,11,6,17,0,322,29,19,43,485,27,229,29,3,0,208,30,2,2,2,1,2,6,3,4,10,1,225,6,2,3,2,1,2,14,2,196,60,67,8,0,1205,3,2,26,2,1,2,0,3,0,2,9,2,3,2,0,2,0,7,0,5,0,2,0,2,0,2,2,2,1,2,0,3,0,2,0,2,0,2,0,2,0,2,1,2,0,3,3,2,6,2,3,2,3,2,0,2,9,2,16,6,2,2,4,2,16,4421,42719,33,4382,2,5773,3,7472,16,621,2467,541,1507,4938,6,8489,39815,11327];var s="‌‍·̀-ͯ·҃-֑҇-ׇֽֿׁׂׅׄ-׉ؐ-ًؚ-٩ٰۖ-ۜ۟-۪ۤۧۨ-ۭ۰-۹ܑܰ-݊ަ-ް߀-߉߫-߽߳ࠖ-࠙ࠛ-ࠣࠥ-ࠧࠩ-࡙࠭-࡛ࢗ-࢟࣊-ࣣ࣡-ःऺ-़ा-ॏ॑-ॗॢॣ०-९ঁ-ঃ়া-ৄেৈো-্ৗৢৣ০-৯৾ਁ-ਃ਼ਾ-ੂੇੈੋ-੍ੑ੦-ੱੵઁ-ઃ઼ા-ૅે-ૉો-્ૢૣ૦-૯ૺ-૿ଁ-ଃ଼ା-ୄେୈୋ-୍୓-ୗୢୣ୦-୯ஂா-ூெ-ைொ-்ௗ௦-௯ఀ-ఄ఼ా-ౄె-ైొ-్ౕౖౢౣ౦-౯ಁ-ಃ಼ಾ-ೄೆ-ೈೊ-್ೕೖೢೣ೦-೯ೳഀ-ഃ഻഼ാ-ൄെ-ൈൊ-്ൗൢൣ൦-൯ඁ-ඃ්ා-ුූෘ-ෟ෦-෯ෲෳัิ-ฺ็-๎๐-๙ັິ-ຼ່-໎໐-໙༘༙༠-༩༹༵༷༾༿ཱ-྄྆྇ྍ-ྗྙ-ྼ࿆ါ-ှ၀-၉ၖ-ၙၞ-ၠၢ-ၤၧ-ၭၱ-ၴႂ-ႍႏ-ႝ፝-፟፩-፱ᜒ-᜕ᜲ-᜴ᝒᝓᝲᝳ឴-៓៝០-៩᠋-᠍᠏-᠙ᢩᤠ-ᤫᤰ-᤻᥆-᥏᧐-᧚ᨗ-ᨛᩕ-ᩞ᩠-᩿᩼-᪉᪐-᪙᪰-᪽ᪿ-᫰ᬀ-ᬄ᬴-᭄᭐-᭙᭫-᭳ᮀ-ᮂᮡ-ᮭ᮰-᮹᯦-᯳ᰤ-᰷᱀-᱉᱐-᱙᳐-᳔᳒-᳨᳭᳴᳷-᳹᷀-᷿‌‍‿⁀⁔⃐-⃥⃜⃡-⃰⳯-⵿⳱ⷠ-〪ⷿ-゙゚〯・꘠-꘩꙯ꙴ-꙽ꚞꚟ꛰꛱ꠂ꠆ꠋꠣ-ꠧ꠬ꢀꢁꢴ-ꣅ꣐-꣙꣠-꣱ꣿ-꤉ꤦ-꤭ꥇ-꥓ꦀ-ꦃ꦳-꧀꧐-꧙ꧥ꧰-꧹ꨩ-ꨶꩃꩌꩍ꩐-꩙ꩻ-ꩽꪰꪲ-ꪴꪷꪸꪾ꪿꫁ꫫ-ꫯꫵ꫶ꯣ-ꯪ꯬꯭꯰-꯹ﬞ︀-️︠-︯︳︴﹍-﹏０-９＿･";var r="ªµºÀ-ÖØ-öø-ˁˆ-ˑˠ-ˤˬˮͰ-ʹͶͷͺ-ͽͿΆΈ-ΊΌΎ-ΡΣ-ϵϷ-ҁҊ-ԯԱ-Ֆ՘ՙՠ-ֈ֋֌א-תׯ-ײؠ-يٮٯٱ-ۓەۥۦۮۯۺ-ۼۿܐܒ-ܯݍ-ޥޱߊ-ߪߴߵߺࠀ-ࠕࠚࠤࠨࡀ-ࡘࡠ-ࡪࡰ-ࢇࢉ-࢏ࢠ-ࣉऄ-हऽॐक़-ॡॱ-ঀঅ-ঌএঐও-নপ-রলশ-হঽৎড়ঢ়য়-ৡৰৱৼਅ-ਊਏਐਓ-ਨਪ-ਰਲਲ਼ਵਸ਼ਸਹਖ਼-ੜਫ਼ੲ-ੴઅ-ઍએ-ઑઓ-નપ-રલળવ-હઽૐૠૡૹଅ-ଌଏଐଓ-ନପ-ରଲଳଵ-ହଽଡ଼ଢ଼ୟ-ୡୱஃஅ-ஊஎ-ஐஒ-கஙசஜஞடணதந-பம-ஹௐఅ-ఌఎ-ఐఒ-నప-హఽౘ-ౚ౜ౝౠౡಀಅ-ಌಎ-ಐಒ-ನಪ-ಳವ-ಹಽ೜-ೞೠೡೱೲഄ-ഌഎ-ഐഒ-ഺഽൎൔ-ൖൟ-ൡൺ-ൿඅ-ඖක-නඳ-රලව-ෆก-ะาำเ-ๆກຂຄຆ-ຊຌ-ຣລວ-ະາຳຽເ-ໄໆໜ-ໟༀཀ-ཇཉ-ཬྈ-ྌက-ဪဿၐ-ၕၚ-ၝၡၥၦၮ-ၰၵ-ႁႎႠ-ჅჇჍა-ჺჼ-ቈቊ-ቍቐ-ቖቘቚ-ቝበ-ኈኊ-ኍነ-ኰኲ-ኵኸ-ኾዀዂ-ዅወ-ዖዘ-ጐጒ-ጕጘ-ፚᎀ-ᎏᎠ-Ᏽᏸ-ᏽᐁ-ᙬᙯ-ᙿᚁ-ᚚᚠ-ᛪᛮ-ᛸᜀ-ᜑᜟ-ᜱᝀ-ᝑᝠ-ᝬᝮ-ᝰក-ឳៗៜᠠ-ᡸᢀ-ᢨᢪᢰ-ᣵᤀ-ᤞᥐ-ᥭᥰ-ᥴᦀ-ᦫᦰ-ᧉᨀ-ᨖᨠ-ᩔᪧᬅ-ᬳᭅ-ᭌᮃ-ᮠᮮᮯᮺ-ᯥᰀ-ᰣᱍ-ᱏᱚ-ᱽᲀ-ᲊᲐ-ᲺᲽ-Ჿᳩ-ᳬᳮ-ᳳᳵᳶᳺᴀ-ᶿḀ-ἕἘ-Ἕἠ-ὅὈ-Ὅὐ-ὗὙὛὝὟ-ώᾀ-ᾴᾶ-ᾼιῂ-ῄῆ-ῌῐ-ΐῖ-Ίῠ-Ῥῲ-ῴῶ-ῼⁱⁿ₏-₟ℂℇℊ-ℓℕ℘-ℝℤΩℨK-ℹℼ-ℿⅅ-ⅉⅎⅠ-ↈⰀ-ⳤⳫ-ⳮⳲⳳⴀ-ⴥⴧⴭⴰ-ⵧⵯⶀ-ⶖⶠ-ⶦⶨ-ⶮⶰ-ⶶⶸ-ⶾⷀ-ⷆⷈ-ⷎⷐ-ⷖⷘ-ⷞ々-〇〡-〩〱-〵〸-〼ぁ-ゖ゛-ゟァ-ヺー-ヿㄅ-ㄯㄱ-ㆎㆠ-ㆿㇰ-ㇿ㐀-䶿一-ꒌꓐ-ꓽꔀ-ꘌꘐ-ꘟꘪꘫꙀ-ꙮꙿ-ꚝꚠ-ꛯꜗ-ꜟꜢ-ꞈꞋ-꟝꟢꟱-ꠁꠃ-ꠅꠇ-ꠊꠌ-ꠢꡀ-ꡳꢂ-ꢳꣲ-ꣷꣻꣽꣾꤊ-ꤥꤰ-ꥆꥠ-ꥼꦄ-ꦲꧏꧠ-ꧤꧦ-ꧯꧺ-ꧾꨀ-ꨨꩀ-ꩂꩄ-ꩋꩠ-ꩶꩺꩾ-ꪯꪱꪵꪶꪹ-ꪽꫀꫂꫛ-ꫝꫠ-ꫪꫲ-ꫴꬁ-ꬆꬉ-ꬎꬑ-ꬖꬠ-ꬦꬨ-ꬮꬰ-ꭚꭜ-ꭩ꭬꭭ꭰ-ꯢ가-힣ힰ-ퟆퟋ-ퟻ豈-舘並-龎ﬀ-ﬆﬓ-ﬗיִײַ-ﬨשׁ-זּטּ-לּמּנּסּףּפּצּ-ﮱﯓ-ﴽﵐ-ﶏﶒ-ﷇﷰ-ﷻﹰ-ﹴﹶ-ﻼＡ-Ｚａ-ｚｦ-ﾾￂ-ￇￊ-ￏￒ-ￗￚ-ￜ";var a={3:"abstract boolean byte char class double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile",5:"class enum extends super const export import",6:"enum",strict:"implements interface let package private protected public static yield",strictBind:"eval arguments"};var n="break case catch continue debugger default do else finally for function if return switch throw try var while with null true false instanceof typeof void delete new in this";var o={5:n,"5module":n+" export import",6:n+" const class extends export import super"};var h=/^in(stanceof)?$/;var p=new RegExp("["+r+"]");var u=new RegExp("["+r+s+"]");function l(e,t){var i=65536;for(var s=0;s<t.length;s+=2){i+=t[s];if(i>e){return false}i+=t[s+1];if(i>=e){return true}}return false}function c(e,t){if(e<65){return e===36}if(e<91){return true}if(e<97){return e===95}if(e<123){return true}if(e<=65535){return e>=170&&p.test(String.fromCharCode(e))}if(t===false){return false}return l(e,i)}function f(e,s){if(e<48){return e===36}if(e<58){return true}if(e<65){return false}if(e<91){return true}if(e<97){return e===95}if(e<123){return true}if(e<=65535){return e>=170&&u.test(String.fromCharCode(e))}if(s===false){return false}return l(e,i)||l(e,t)}var d=function e(t,i){if(i===void 0)i={};this.label=t;this.keyword=i.keyword;this.beforeExpr=!!i.beforeExpr;this.startsExpr=!!i.startsExpr;this.isLoop=!!i.isLoop;this.isAssign=!!i.isAssign;this.prefix=!!i.prefix;this.postfix=!!i.postfix;this.binop=i.binop||null;this.updateContext=null};function m(e,t){return new d(e,{beforeExpr:true,binop:t})}var v={beforeExpr:true},g={startsExpr:true};var x={};function y(e,t){if(t===void 0)t={};t.keyword=e;return x[e]=new d(e,t)}var b={num:new d("num",g),regexp:new d("regexp",g),string:new d("string",g),name:new d("name",g),privateId:new d("privateId",g),eof:new d("eof"),bracketL:new d("[",{beforeExpr:true,startsExpr:true}),bracketR:new d("]"),braceL:new d("{",{beforeExpr:true,startsExpr:true}),braceR:new d("}"),parenL:new d("(",{beforeExpr:true,startsExpr:true}),parenR:new d(")"),comma:new d(",",v),semi:new d(";",v),colon:new d(":",v),dot:new d("."),question:new d("?",v),questionDot:new d("?."),arrow:new d("=>",v),template:new d("template"),invalidTemplate:new d("invalidTemplate"),ellipsis:new d("...",v),backQuote:new d("`",g),dollarBraceL:new d("${",{beforeExpr:true,startsExpr:true}),eq:new d("=",{beforeExpr:true,isAssign:true}),assign:new d("_=",{beforeExpr:true,isAssign:true}),incDec:new d("++/--",{prefix:true,postfix:true,startsExpr:true}),prefix:new d("!/~",{beforeExpr:true,prefix:true,startsExpr:true}),logicalOR:m("||",1),logicalAND:m("&&",2),bitwiseOR:m("|",3),bitwiseXOR:m("^",4),bitwiseAND:m("&",5),equality:m("==/!=/===/!==",6),relational:m("</>/<=/>=",7),bitShift:m("<</>>/>>>",8),plusMin:new d("+/-",{beforeExpr:true,binop:9,prefix:true,startsExpr:true}),modulo:m("%",10),star:m("*",10),slash:m("/",10),starstar:new d("**",{beforeExpr:true}),coalesce:m("??",1),_break:y("break"),_case:y("case",v),_catch:y("catch"),_continue:y("continue"),_debugger:y("debugger"),_default:y("default",v),_do:y("do",{isLoop:true,beforeExpr:true}),_else:y("else",v),_finally:y("finally"),_for:y("for",{isLoop:true}),_function:y("function",g),_if:y("if"),_return:y("return",v),_switch:y("switch"),_throw:y("throw",v),_try:y("try"),_var:y("var"),_const:y("const"),_while:y("while",{isLoop:true}),_with:y("with"),_new:y("new",{beforeExpr:true,startsExpr:true}),_this:y("this",g),_super:y("super",g),_class:y("class",g),_extends:y("extends",v),_export:y("export"),_import:y("import",g),_null:y("null",g),_true:y("true",g),_false:y("false",g),_in:y("in",{beforeExpr:true,binop:7}),_instanceof:y("instanceof",{beforeExpr:true,binop:7}),_typeof:y("typeof",{beforeExpr:true,prefix:true,startsExpr:true}),_void:y("void",{beforeExpr:true,prefix:true,startsExpr:true}),_delete:y("delete",{beforeExpr:true,prefix:true,startsExpr:true})};var k=/\r\n?|\n|\u2028|\u2029/;var _=new RegExp(k.source,"g");function w(e){return e===10||e===13||e===8232||e===8233}function S(e,t,i){if(i===void 0)i=e.length;for(var s=t;s<i;s++){var r=e.charCodeAt(s);if(w(r)){return s<i-1&&r===13&&e.charCodeAt(s+1)===10?s+2:s+1}}return-1}var C=/[\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]/;var E=/(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g;var A=Object.prototype;var I=A.hasOwnProperty;var P=A.toString;var V=Object.hasOwn||function(e,t){return I.call(e,t)};var N=Array.isArray||function(e){return P.call(e)==="[object Array]"};var T=Object.create(null);function L(e){return T[e]||(T[e]=new RegExp("^(?:"+e.replace(/ /g,"|")+")$"))}function R(e){if(e<=65535){return String.fromCharCode(e)}e-=65536;return String.fromCharCode((e>>10)+55296,(e&1023)+56320)}var D=/(?:[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])/;var O=function e(t,i){this.line=t;this.column=i};O.prototype.offset=function e(t){return new O(this.line,this.column+t)};var B=function e(t,i,s){this.start=i;this.end=s;if(t.sourceFile!==null){this.source=t.sourceFile}};function M(e,t){for(var i=1,s=0;;){var r=S(e,s,t);if(r<0){return new O(i,t-s)}++i;s=r}}var F={ecmaVersion:null,sourceType:"script",strict:false,onInsertedSemicolon:null,onTrailingComma:null,allowReserved:null,allowReturnOutsideFunction:false,allowImportExportEverywhere:false,allowAwaitOutsideFunction:null,allowSuperOutsideMethod:null,allowHashBang:false,checkPrivateFields:true,locations:false,startLocation:null,onToken:null,onComment:null,ranges:false,program:null,sourceFile:null,directSourceFile:null,preserveParens:false};var U=false;function q(e){var t={};for(var i in F){t[i]=e&&V(e,i)?e[i]:F[i]}if(t.ecmaVersion==="latest"){t.ecmaVersion=1e8}else if(t.ecmaVersion==null){if(!U&&typeof console==="object"&&console.warn){U=true;console.warn("Since Acorn 8.0.0, options.ecmaVersion is required.\nDefaulting to 2020, but this will stop working in the future.")}t.ecmaVersion=11}else if(t.ecmaVersion>=2015){t.ecmaVersion-=2009}if(t.allowReserved==null){t.allowReserved=t.ecmaVersion<5}if(!e||e.allowHashBang==null){t.allowHashBang=t.ecmaVersion>=14}if(N(t.onToken)){var s=t.onToken;t.onToken=function(e){return s.push(e)}}if(N(t.onComment)){t.onComment=j(t,t.onComment)}if(t.sourceType==="commonjs"&&t.allowAwaitOutsideFunction){throw new Error("Cannot use allowAwaitOutsideFunction with sourceType: commonjs")}return t}function j(e,t){return function(i,s,r,a,n,o){var h={type:i?"Block":"Line",value:s,start:r,end:a};if(e.locations){h.loc=new B(this,n,o)}if(e.ranges){h.range=[r,a]}t.push(h)}}var G=1,H=2,W=4,z=8,K=16,Q=32,Y=64,X=128,Z=256,$=512,J=1024,ee=G|H|Z;function te(e,t){return H|(e?W:0)|(t?z:0)}var ie=0,se=1,re=2,ae=3,ne=4,oe=5;var he=function e(t,i,s){this.options=t=q(t);this.sourceFile=t.sourceFile;this.keywords=L(o[t.ecmaVersion>=6?6:t.sourceType==="module"?"5module":5]);var r="";if(t.allowReserved!==true){r=a[t.ecmaVersion>=6?6:t.ecmaVersion===5?5:3];if(t.sourceType==="module"){r+=" await"}}this.reservedWords=L(r);var n=(r?r+" ":"")+a.strict;this.reservedWordsStrict=L(n);this.reservedWordsStrictBind=L(n+" "+a.strictBind);this.input=String(i);this.containsEsc=false;this.pos=s||0;this.curLine=1;if(t.startLocation){this.lineStart=this.pos-t.startLocation.column;this.curLine=t.startLocation.line}else if(s){this.lineStart=this.input.lastIndexOf("\n",s-1)+1;if(this.options.locations){this.curLine=this.input.slice(0,this.lineStart).split(k).length}}else{this.lineStart=0}this.type=b.eof;this.value=null;this.start=this.end=this.pos;this.startLoc=this.endLoc=this.curPosition();this.lastTokEndLoc=this.lastTokStartLoc=null;this.lastTokStart=this.lastTokEnd=this.pos;this.context=this.initialContext();this.exprAllowed=true;this.inModule=t.sourceType==="module";this.strict=this.inModule||t.strict===true||this.strictDirective(this.pos);this.potentialArrowAt=-1;this.potentialArrowInForAwait=false;this.yieldPos=this.awaitPos=this.awaitIdentPos=0;this.labels=[];this.undefinedExports=Object.create(null);if(this.pos===0&&t.allowHashBang&&this.input.slice(0,2)==="#!"){this.skipLineComment(2)}this.scopeStack=[];this.enterScope(this.options.sourceType==="commonjs"?H:G);this.regexpState=null;this.privateNameStack=[]};var pe={inFunction:{configurable:true},inGenerator:{configurable:true},inAsync:{configurable:true},canAwait:{configurable:true},allowReturn:{configurable:true},allowSuper:{configurable:true},allowDirectSuper:{configurable:true},treatFunctionsAsVar:{configurable:true},allowNewDotTarget:{configurable:true},allowUsing:{configurable:true},inClassStaticBlock:{configurable:true}};he.prototype.parse=function e(){var t=this;var i=this.options.program||this.startNode();this.nextToken();return this.catchStackOverflow(function(){return t.parseTopLevel(i)})};pe.inFunction.get=function(){return(this.currentVarScope().flags&H)>0};pe.inGenerator.get=function(){return(this.currentVarScope().flags&z)>0};pe.inAsync.get=function(){return(this.currentVarScope().flags&W)>0};pe.canAwait.get=function(){for(var e=this.scopeStack.length-1;e>=0;e--){var t=this.scopeStack[e];var i=t.flags;if(i&(Z|$)){return false}if(i&H){return(i&W)>0}}return this.inModule&&this.options.ecmaVersion>=13||this.options.allowAwaitOutsideFunction};pe.allowReturn.get=function(){if(this.inFunction){return true}if(this.options.allowReturnOutsideFunction&&this.currentVarScope().flags&G){return true}return false};pe.allowSuper.get=function(){var e=this.currentThisScope();var t=e.flags;return(t&Y)>0||this.options.allowSuperOutsideMethod};pe.allowDirectSuper.get=function(){return(this.currentThisScope().flags&X)>0};pe.treatFunctionsAsVar.get=function(){return this.treatFunctionsAsVarInScope(this.currentScope())};pe.allowNewDotTarget.get=function(){for(var e=this.scopeStack.length-1;e>=0;e--){var t=this.scopeStack[e];var i=t.flags;if(i&(Z|$)||i&H&&!(i&K)){return true}}return false};pe.allowUsing.get=function(){var e=this.currentScope();var t=e.flags;if(t&J){return false}if(!this.inModule&&t&G){return false}return true};pe.inClassStaticBlock.get=function(){return(this.currentVarScope().flags&Z)>0};he.extend=function e(){var t=[],i=arguments.length;while(i--)t[i]=arguments[i];var s=this;for(var r=0;r<t.length;r++){s=t[r](s)}return s};he.parse=function e(t,i){return new this(i,t).parse()};he.parseExpressionAt=function e(t,i,s){var r=new this(s,t,i);r.nextToken();return r.parseExpression()};he.tokenizer=function e(t,i){return new this(i,t)};Object.defineProperties(he.prototype,pe);var ue=he.prototype;var le=/^(?:'((?:\\[^]|[^'\\])*?)'|"((?:\\[^]|[^"\\])*?)")/;ue.strictDirective=function(e){if(this.options.ecmaVersion<5){return false}for(;;){E.lastIndex=e;e+=E.exec(this.input)[0].length;var t=le.exec(this.input.slice(e));if(!t){return false}if((t[1]||t[2])==="use strict"){E.lastIndex=e+t[0].length;var i=E.exec(this.input),s=i.index+i[0].length;var r=this.input.charAt(s);return r===";"||r==="}"||k.test(i[0])&&!(/[(`.[+\-/*%<>=,?^&]/.test(r)||r==="!"&&this.input.charAt(s+1)==="="||r==="i"&&ce(this,s))}e+=t[0].length;E.lastIndex=e;e+=E.exec(this.input)[0].length;if(this.input[e]===";"){e++}}};function ce(e,t){var i=t+1,s=Math.min(e.input.length,t+11);while(i<s){var r=e.fullCharCodeAt(i);if(!f(r,true)){break}i+=r<=65535?1:2}return i===t+2&&e.input.slice(t,i)==="in"||i===t+10&&e.input.slice(t,i)==="instanceof"}ue.eat=function(e){if(this.type===e){this.next();return true}else{return false}};ue.isContextual=function(e){return this.type===b.name&&this.value===e&&!this.containsEsc};ue.eatContextual=function(e){if(!this.isContextual(e)){return false}this.next();return true};ue.catchStackOverflow=function(e){try{return e()}catch(e){if(e instanceof Error&&(/\bstack\b.*\b(exceeded|overflow)\b/i.test(e.message)||/\btoo much recursion\b/i.test(e.message))){this.raise(this.start,"Not enough stack space to parse input")}else{throw e}}};ue.expectContextual=function(e){if(!this.eatContextual(e)){this.unexpected()}};ue.canInsertSemicolon=function(){return this.type===b.eof||this.type===b.braceR||k.test(this.input.slice(this.lastTokEnd,this.start))};ue.insertSemicolon=function(){if(this.canInsertSemicolon()){if(this.options.onInsertedSemicolon){this.options.onInsertedSemicolon(this.lastTokEnd,this.lastTokEndLoc)}return true}};ue.semicolon=function(){if(!this.eat(b.semi)&&!this.insertSemicolon()){this.unexpected()}};ue.afterTrailingComma=function(e,t){if(this.type===e){if(this.options.onTrailingComma){this.options.onTrailingComma(this.lastTokStart,this.lastTokStartLoc)}if(!t){this.next()}return true}};ue.expect=function(e){this.eat(e)||this.unexpected()};ue.unexpected=function(e){this.raise(e!=null?e:this.start,"Unexpected token")};var fe=function e(){this.shorthandAssign=this.trailingComma=this.parenthesizedAssign=this.parenthesizedBind=this.doubleProto=-1};ue.checkPatternErrors=function(e,t){if(!e){return}if(e.trailingComma>-1){this.raiseRecoverable(e.trailingComma,"Comma is not permitted after the rest element")}var i=t?e.parenthesizedAssign:e.parenthesizedBind;if(i>-1){this.raiseRecoverable(i,t?"Assigning to rvalue":"Parenthesized pattern")}};ue.checkExpressionErrors=function(e,t){if(!e){return false}var i=e.shorthandAssign;var s=e.doubleProto;if(!t){return i>=0||s>=0}if(i>=0){this.raise(i,"Shorthand property assignments are valid only in destructuring patterns")}if(s>=0){this.raiseRecoverable(s,"Redefinition of __proto__ property")}};ue.checkYieldAwaitInDefaultParams=function(){if(this.yieldPos&&(!this.awaitPos||this.yieldPos<this.awaitPos)){this.raise(this.yieldPos,"Yield expression cannot be a default value")}if(this.awaitPos){this.raise(this.awaitPos,"Await expression cannot be a default value")}};ue.isSimpleAssignTarget=function(e){if(e.type==="ParenthesizedExpression"){return this.isSimpleAssignTarget(e.expression)}return e.type==="Identifier"||e.type==="MemberExpression"};var de=he.prototype;de.parseTopLevel=function(e){var t=Object.create(null);if(!e.body){e.body=[]}while(this.type!==b.eof){var i=this.parseStatement(null,true,t);e.body.push(i)}if(this.inModule){for(var s=0,r=Object.keys(this.undefinedExports);s<r.length;s+=1){var a=r[s];this.raiseRecoverable(this.undefinedExports[a].start,"Export '"+a+"' is not defined")}}this.adaptDirectivePrologue(e.body);this.next();e.sourceType=this.options.sourceType==="commonjs"?"script":this.options.sourceType;return this.finishNode(e,"Program")};var me={kind:"loop"},ve={kind:"switch"};de.isLet=function(e){if(this.options.ecmaVersion<6||!this.isContextual("let")){return false}E.lastIndex=this.pos;var t=E.exec(this.input);var i=this.pos+t[0].length,s=this.fullCharCodeAt(i);if(s===91||s===92){return true}if(e){return false}if(s===123){return true}if(c(s)){var r=i;do{i+=s<=65535?1:2}while(f(s=this.fullCharCodeAt(i)));if(s===92){return true}var a=this.input.slice(r,i);if(!h.test(a)){return true}}return false};de.isAsyncFunction=function(){if(this.options.ecmaVersion<8||!this.isContextual("async")){return false}E.lastIndex=this.pos;var e=E.exec(this.input);var t=this.pos+e[0].length,i;return!k.test(this.input.slice(this.pos,t))&&this.input.slice(t,t+8)==="function"&&(t+8===this.input.length||!(f(i=this.fullCharCodeAt(t+8))||i===92))};de.isUsingKeyword=function(e,t){if(this.options.ecmaVersion<17||!this.isContextual(e?"await":"using")){return false}E.lastIndex=this.pos;var i=E.exec(this.input);var s=this.pos+i[0].length;if(k.test(this.input.slice(this.pos,s))){return false}if(e){var r=s+5,a;if(this.input.slice(s,r)!=="using"||r===this.input.length||f(a=this.fullCharCodeAt(r))||a===92){return false}E.lastIndex=r;var n=E.exec(this.input);s=r+n[0].length;if(n&&k.test(this.input.slice(r,s))){return false}}var o=this.fullCharCodeAt(s);if(!c(o)&&o!==92){return false}var p=s;do{s+=o<=65535?1:2}while(f(o=this.fullCharCodeAt(s)));if(o===92){return true}var u=this.input.slice(p,s);if(h.test(u)){return false}if(t&&!e&&u==="of"){E.lastIndex=s;var l=E.exec(this.input);s=s+l[0].length;if(this.input.charCodeAt(s)!==61||(o=this.input.charCodeAt(s+1))===61||o===62){return false}}return true};de.isAwaitUsing=function(e){return this.isUsingKeyword(true,e)};de.isUsing=function(e){return this.isUsingKeyword(false,e)};de.parseStatement=function(e,t,i){var s=this.type,r=this.startNode(),a;if(this.isLet(e)){s=b._var;a="let"}switch(s){case b._break:case b._continue:return this.parseBreakContinueStatement(r,s.keyword);case b._debugger:return this.parseDebuggerStatement(r);case b._do:return this.parseDoStatement(r);case b._for:return this.parseForStatement(r);case b._function:if(e&&(this.strict||e!=="if"&&e!=="label")&&this.options.ecmaVersion>=6){this.unexpected()}return this.parseFunctionStatement(r,false,!e);case b._class:if(e){this.unexpected()}return this.parseClass(r,true);case b._if:return this.parseIfStatement(r);case b._return:return this.parseReturnStatement(r);case b._switch:return this.parseSwitchStatement(r);case b._throw:return this.parseThrowStatement(r);case b._try:return this.parseTryStatement(r);case b._const:case b._var:a=a||this.value;if(e&&a!=="var"){this.unexpected()}return this.parseVarStatement(r,a);case b._while:return this.parseWhileStatement(r);case b._with:return this.parseWithStatement(r);case b.braceL:return this.parseBlock(true,r);case b.semi:return this.parseEmptyStatement(r);case b._export:case b._import:if(this.options.ecmaVersion>10&&s===b._import){E.lastIndex=this.pos;var n=E.exec(this.input);var o=this.pos+n[0].length,h=this.input.charCodeAt(o);if(h===40||h===46){return this.parseExpressionStatement(r,this.parseExpression())}}if(!this.options.allowImportExportEverywhere){if(!t){this.raise(this.start,"'import' and 'export' may only appear at the top level")}if(!this.inModule){this.raise(this.start,"'import' and 'export' may appear only with 'sourceType: module'")}}return s===b._import?this.parseImport(r):this.parseExport(r,i);default:if(this.isAsyncFunction()){if(e){this.unexpected()}this.next();return this.parseFunctionStatement(r,true,!e)}var p=this.isAwaitUsing(false)?"await using":this.isUsing(false)?"using":null;if(p){if(!this.allowUsing){this.raise(this.start,"Using declaration cannot appear in the top level when source type is `script` or in the bare case statement")}if(e){this.raise(this.start,"Using declaration is not allowed in single-statement positions")}if(p==="await using"){if(!this.canAwait){this.raise(this.start,"Await using cannot appear outside of async function")}this.next()}this.next();this.parseVar(r,false,p);this.semicolon();return this.finishNode(r,"VariableDeclaration")}var u=this.value,l=this.parseExpression();if(s===b.name&&l.type==="Identifier"&&this.eat(b.colon)){return this.parseLabeledStatement(r,u,l,e)}else{return this.parseExpressionStatement(r,l)}}};de.parseBreakContinueStatement=function(e,t){var i=t==="break";this.next();if(this.eat(b.semi)||this.insertSemicolon()){e.label=null}else if(this.type!==b.name){this.unexpected()}else{e.label=this.parseIdent();this.semicolon()}var s=0;for(;s<this.labels.length;++s){var r=this.labels[s];if(e.label==null||r.name===e.label.name){if(r.kind!=null&&(i||r.kind==="loop")){break}if(e.label&&i){break}}}if(s===this.labels.length){this.raise(e.start,"Unsyntactic "+t)}return this.finishNode(e,i?"BreakStatement":"ContinueStatement")};de.parseDebuggerStatement=function(e){this.next();this.semicolon();return this.finishNode(e,"DebuggerStatement")};de.parseDoStatement=function(e){this.next();this.labels.push(me);e.body=this.parseStatement("do");this.labels.pop();this.expect(b._while);e.test=this.parseParenExpression();if(this.options.ecmaVersion>=6){this.eat(b.semi)}else{this.semicolon()}return this.finishNode(e,"DoWhileStatement")};de.parseForStatement=function(e){this.next();var t=this.options.ecmaVersion>=9&&this.canAwait&&this.eatContextual("await")?this.lastTokStart:-1;this.labels.push(me);this.enterScope(0);this.expect(b.parenL);if(this.type===b.semi){if(t>-1){this.unexpected(t)}return this.parseFor(e,null)}var i=this.isLet();if(this.type===b._var||this.type===b._const||i){var s=this.startNode(),r=i?"let":this.value;this.next();this.parseVar(s,true,r);this.finishNode(s,"VariableDeclaration");return this.parseForAfterInit(e,s,t)}var a=this.isContextual("let"),n=false;var o=this.isUsing(true)?"using":this.isAwaitUsing(true)?"await using":null;if(o){var h=this.startNode();this.next();if(o==="await using"){if(!this.canAwait){this.raise(this.start,"Await using cannot appear outside of async function")}this.next()}this.parseVar(h,true,o);this.finishNode(h,"VariableDeclaration");return this.parseForAfterInit(e,h,t)}var p=this.containsEsc;var u=new fe;var l=this.start;var c=t>-1?this.parseExprSubscripts(u,"await"):this.parseExpression(true,u);if(this.type===b._in||(n=this.options.ecmaVersion>=6&&this.isContextual("of"))){if(t>-1){if(this.type===b._in){this.unexpected(t)}e.await=true}else if(n&&this.options.ecmaVersion>=8){if(c.start===l&&!p&&c.type==="Identifier"&&c.name==="async"){this.unexpected()}else if(this.options.ecmaVersion>=9){e.await=false}}if(a&&n){this.raise(c.start,"The left-hand side of a for-of loop may not start with 'let'.")}this.toAssignable(c,false,u);this.checkLValPattern(c);return this.parseForIn(e,c)}else{this.checkExpressionErrors(u,true)}if(t>-1){this.unexpected(t)}return this.parseFor(e,c)};de.parseForAfterInit=function(e,t,i){if((this.type===b._in||this.options.ecmaVersion>=6&&this.isContextual("of"))&&t.declarations.length===1){if(this.type===b._in){if((t.kind==="using"||t.kind==="await using")&&!t.declarations[0].init){this.raise(this.start,"Using declaration is not allowed in for-in loops")}if(this.options.ecmaVersion>=9&&i>-1){this.unexpected(i)}}else if(this.options.ecmaVersion>=9){e.await=i>-1}return this.parseForIn(e,t)}if(i>-1){this.unexpected(i)}return this.parseFor(e,t)};de.parseFunctionStatement=function(e,t,i){this.next();return this.parseFunction(e,xe|(i?0:ye),false,t)};de.parseIfStatement=function(e){this.next();e.test=this.parseParenExpression();e.consequent=this.parseStatement("if");e.alternate=this.eat(b._else)?this.parseStatement("if"):null;return this.finishNode(e,"IfStatement")};de.parseReturnStatement=function(e){if(!this.allowReturn){this.raise(this.start,"'return' outside of function")}this.next();if(this.eat(b.semi)||this.insertSemicolon()){e.argument=null}else{e.argument=this.parseExpression();this.semicolon()}return this.finishNode(e,"ReturnStatement")};de.parseSwitchStatement=function(e){this.next();e.discriminant=this.parseParenExpression();e.cases=[];this.expect(b.braceL);this.labels.push(ve);this.enterScope(J);var t;for(var i=false;this.type!==b.braceR;){if(this.type===b._case||this.type===b._default){var s=this.type===b._case;if(t){this.finishNode(t,"SwitchCase")}e.cases.push(t=this.startNode());t.consequent=[];this.next();if(s){t.test=this.parseExpression()}else{if(i){this.raiseRecoverable(this.lastTokStart,"Multiple default clauses")}i=true;t.test=null}this.expect(b.colon)}else{if(!t){this.unexpected()}t.consequent.push(this.parseStatement(null))}}this.exitScope();if(t){this.finishNode(t,"SwitchCase")}this.next();this.labels.pop();return this.finishNode(e,"SwitchStatement")};de.parseThrowStatement=function(e){this.next();if(k.test(this.input.slice(this.lastTokEnd,this.start))){this.raise(this.lastTokEnd,"Illegal newline after throw")}e.argument=this.parseExpression();this.semicolon();return this.finishNode(e,"ThrowStatement")};var ge=[];de.parseCatchClauseParam=function(){var e=this.parseBindingAtom();var t=e.type==="Identifier";this.enterScope(t?Q:0);this.checkLValPattern(e,t?ne:re);this.expect(b.parenR);return e};de.parseTryStatement=function(e){this.next();e.block=this.parseBlock();e.handler=null;if(this.type===b._catch){var t=this.startNode();this.next();if(this.eat(b.parenL)){t.param=this.parseCatchClauseParam()}else{if(this.options.ecmaVersion<10){this.unexpected()}t.param=null;this.enterScope(0)}t.body=this.parseBlock(false);this.exitScope();e.handler=this.finishNode(t,"CatchClause")}e.finalizer=this.eat(b._finally)?this.parseBlock():null;if(!e.handler&&!e.finalizer){this.raise(e.start,"Missing catch or finally clause")}return this.finishNode(e,"TryStatement")};de.parseVarStatement=function(e,t,i){this.next();this.parseVar(e,false,t,i);this.semicolon();return this.finishNode(e,"VariableDeclaration")};de.parseWhileStatement=function(e){this.next();e.test=this.parseParenExpression();this.labels.push(me);e.body=this.parseStatement("while");this.labels.pop();return this.finishNode(e,"WhileStatement")};de.parseWithStatement=function(e){if(this.strict){this.raise(this.start,"'with' in strict mode")}this.next();e.object=this.parseParenExpression();e.body=this.parseStatement("with");return this.finishNode(e,"WithStatement")};de.parseEmptyStatement=function(e){this.next();return this.finishNode(e,"EmptyStatement")};de.parseLabeledStatement=function(e,t,i,s){for(var r=0,a=this.labels;r<a.length;r+=1){var n=a[r];if(n.name===t){this.raise(i.start,"Label '"+t+"' is already declared")}}var o=this.type.isLoop?"loop":this.type===b._switch?"switch":null;for(var h=this.labels.length-1;h>=0;h--){var p=this.labels[h];if(p.statementStart===e.start){p.statementStart=this.start;p.kind=o}else{break}}this.labels.push({name:t,kind:o,statementStart:this.start});e.body=this.parseStatement(s?s.indexOf("label")===-1?s+"label":s:"label");this.labels.pop();e.label=i;return this.finishNode(e,"LabeledStatement")};de.parseExpressionStatement=function(e,t){e.expression=t;this.semicolon();return this.finishNode(e,"ExpressionStatement")};de.parseBlock=function(e,t,i){if(e===void 0)e=true;if(t===void 0)t=this.startNode();t.body=[];this.expect(b.braceL);if(e){this.enterScope(0)}while(this.type!==b.braceR){var s=this.parseStatement(null);t.body.push(s)}if(i){this.strict=false}this.next();if(e){this.exitScope()}return this.finishNode(t,"BlockStatement")};de.parseFor=function(e,t){e.init=t;this.expect(b.semi);e.test=this.type===b.semi?null:this.parseExpression();this.expect(b.semi);e.update=this.type===b.parenR?null:this.parseExpression();this.expect(b.parenR);e.body=this.parseStatement("for");this.exitScope();this.labels.pop();return this.finishNode(e,"ForStatement")};de.parseForIn=function(e,t){var i=this.type===b._in;this.next();if(t.type==="VariableDeclaration"&&t.declarations[0].init!=null&&(!i||this.options.ecmaVersion<8||this.strict||t.kind!=="var"||t.declarations[0].id.type!=="Identifier")){this.raise(t.start,(i?"for-in":"for-of")+" loop variable declaration may not have an initializer")}e.left=t;e.right=i?this.parseExpression():this.parseMaybeAssign();this.expect(b.parenR);e.body=this.parseStatement("for");this.exitScope();this.labels.pop();return this.finishNode(e,i?"ForInStatement":"ForOfStatement")};de.parseVar=function(e,t,i,s){e.declarations=[];e.kind=i;for(;;){var r=this.startNode();this.parseVarId(r,i);if(this.eat(b.eq)){r.init=this.parseMaybeAssign(t)}else if(!s&&i==="const"&&!(this.type===b._in||this.options.ecmaVersion>=6&&this.isContextual("of"))){this.unexpected()}else if(!s&&(i==="using"||i==="await using")&&this.options.ecmaVersion>=17&&this.type!==b._in&&!this.isContextual("of")){this.raise(this.lastTokEnd,"Missing initializer in "+i+" declaration")}else if(!s&&r.id.type!=="Identifier"&&!(t&&(this.type===b._in||this.isContextual("of")))){this.raise(this.lastTokEnd,"Complex binding patterns require an initialization value")}else{r.init=null}e.declarations.push(this.finishNode(r,"VariableDeclarator"));if(!this.eat(b.comma)){break}}return e};de.parseVarId=function(e,t){e.id=t==="using"||t==="await using"?this.parseIdent():this.parseBindingAtom();this.checkLValPattern(e.id,t==="var"?se:re,false)};var xe=1,ye=2,be=4;de.parseFunction=function(e,t,i,s,r){this.initFunction(e);if(this.options.ecmaVersion>=9||this.options.ecmaVersion>=6&&!s){if(this.type===b.star&&t&ye){this.unexpected()}e.generator=this.eat(b.star)}if(this.options.ecmaVersion>=8){e.async=!!s}if(t&xe){e.id=t&be&&this.type!==b.name?null:this.parseIdent();if(e.id&&!(t&ye)){this.checkLValSimple(e.id,this.strict||e.generator||e.async?this.treatFunctionsAsVar?se:re:ae)}}var a=this.yieldPos,n=this.awaitPos,o=this.awaitIdentPos;this.yieldPos=0;this.awaitPos=0;this.awaitIdentPos=0;this.enterScope(te(e.async,e.generator));if(!(t&xe)){e.id=this.type===b.name?this.parseIdent():null}this.parseFunctionParams(e);this.parseFunctionBody(e,i,false,r);this.yieldPos=a;this.awaitPos=n;this.awaitIdentPos=o;return this.finishNode(e,t&xe?"FunctionDeclaration":"FunctionExpression")};de.parseFunctionParams=function(e){this.expect(b.parenL);e.params=this.parseBindingList(b.parenR,false,this.options.ecmaVersion>=8);this.checkYieldAwaitInDefaultParams()};de.parseClass=function(e,t){this.next();var i=this.strict;this.strict=true;this.parseClassId(e,t);this.parseClassSuper(e);var s=this.enterClassBody();var r=this.startNode();var a=false;r.body=[];this.expect(b.braceL);while(this.type!==b.braceR){var n=this.parseClassElement(e.superClass!==null);if(n){r.body.push(n);if(n.type==="MethodDefinition"&&n.kind==="constructor"){if(a){this.raiseRecoverable(n.start,"Duplicate constructor in the same class")}a=true}else if(n.key&&n.key.type==="PrivateIdentifier"&&ke(s,n)){this.raiseRecoverable(n.key.start,"Identifier '#"+n.key.name+"' has already been declared")}}}this.strict=i;this.next();e.body=this.finishNode(r,"ClassBody");this.exitClassBody();return this.finishNode(e,t?"ClassDeclaration":"ClassExpression")};de.parseClassElement=function(e){if(this.eat(b.semi)){return null}var t=this.options.ecmaVersion;var i=this.startNode();var s="";var r=false;var a=false;var n="method";var o=false;if(this.eatContextual("static")){if(t>=13&&this.eat(b.braceL)){this.parseClassStaticBlock(i);return i}if(this.isClassElementNameStart()||this.type===b.star){o=true}else{s="static"}}i.static=o;if(!s&&t>=8&&this.eatContextual("async")){if((this.isClassElementNameStart()||this.type===b.star)&&!this.canInsertSemicolon()){a=true}else{s="async"}}if(!s&&(t>=9||!a)&&this.eat(b.star)){r=true}if(!s&&!a&&!r){var h=this.value;if(this.eatContextual("get")||this.eatContextual("set")){if(this.isClassElementNameStart()){n=h}else{s=h}}}if(s){i.computed=false;i.key=this.startNodeAt(this.lastTokStart,this.lastTokStartLoc);i.key.name=s;this.finishNode(i.key,"Identifier")}else{this.parseClassElementName(i)}if(t<13||this.type===b.parenL||n!=="method"||r||a){var p=!i.static&&_e(i,"constructor");var u=p&&e;if(p&&n!=="method"){this.raise(i.key.start,"Constructor can't have get/set modifier")}i.kind=p?"constructor":n;this.parseClassMethod(i,r,a,u)}else{this.parseClassField(i)}return i};de.isClassElementNameStart=function(){return this.type===b.name||this.type===b.privateId||this.type===b.num||this.type===b.string||this.type===b.bracketL||this.type.keyword};de.parseClassElementName=function(e){if(this.type===b.privateId){if(this.value==="constructor"){this.raise(this.start,"Classes can't have an element named '#constructor'")}e.computed=false;e.key=this.parsePrivateIdent()}else{this.parsePropertyName(e)}};de.parseClassMethod=function(e,t,i,s){var r=e.key;if(e.kind==="constructor"){if(t){this.raise(r.start,"Constructor can't be a generator")}if(i){this.raise(r.start,"Constructor can't be an async method")}}else if(e.static&&_e(e,"prototype")){this.raise(r.start,"Classes may not have a static property named prototype")}var a=e.value=this.parseMethod(t,i,s);if(e.kind==="get"&&a.params.length!==0){this.raiseRecoverable(a.start,"getter should have no params")}if(e.kind==="set"&&a.params.length!==1){this.raiseRecoverable(a.start,"setter should have exactly one param")}if(e.kind==="set"&&a.params[0].type==="RestElement"){this.raiseRecoverable(a.params[0].start,"Setter cannot use rest params")}return this.finishNode(e,"MethodDefinition")};de.parseClassField=function(e){if(_e(e,"constructor")){this.raise(e.key.start,"Classes can't have a field named 'constructor'")}else if(e.static&&_e(e,"prototype")){this.raise(e.key.start,"Classes can't have a static field named 'prototype'")}if(this.eat(b.eq)){this.enterScope($|Y);e.value=this.parseMaybeAssign();this.exitScope()}else{e.value=null}this.semicolon();return this.finishNode(e,"PropertyDefinition")};de.parseClassStaticBlock=function(e){e.body=[];var t=this.labels;this.labels=[];this.enterScope(Z|Y);while(this.type!==b.braceR){var i=this.parseStatement(null);e.body.push(i)}this.next();this.exitScope();this.labels=t;return this.finishNode(e,"StaticBlock")};de.parseClassId=function(e,t){if(this.type===b.name){e.id=this.parseIdent();if(t){this.checkLValSimple(e.id,re,false)}}else{if(t===true){this.unexpected()}e.id=null}};de.parseClassSuper=function(e){e.superClass=this.eat(b._extends)?this.parseExprSubscripts(null,false):null};de.enterClassBody=function(){var e={declared:Object.create(null),used:[]};this.privateNameStack.push(e);return e.declared};de.exitClassBody=function(){var e=this.privateNameStack.pop();var t=e.declared;var i=e.used;if(!this.options.checkPrivateFields){return}var s=this.privateNameStack.length;var r=s===0?null:this.privateNameStack[s-1];for(var a=0;a<i.length;++a){var n=i[a];if(!V(t,n.name)){if(r){r.used.push(n)}else{this.raiseRecoverable(n.start,"Private field '#"+n.name+"' must be declared in an enclosing class")}}}};function ke(e,t){var i=t.key.name;var s=e[i];var r="true";if(t.type==="MethodDefinition"&&(t.kind==="get"||t.kind==="set")){r=(t.static?"s":"i")+t.kind}if(s==="iget"&&r==="iset"||s==="iset"&&r==="iget"||s==="sget"&&r==="sset"||s==="sset"&&r==="sget"){e[i]="true";return false}else if(!s){e[i]=r;return false}else{return true}}function _e(e,t){var i=e.computed;var s=e.key;return!i&&(s.type==="Identifier"&&s.name===t||s.type==="Literal"&&s.value===t)}de.parseExportAllDeclaration=function(e,t){if(this.options.ecmaVersion>=11){if(this.eatContextual("as")){e.exported=this.parseModuleExportName();this.checkExport(t,e.exported,this.lastTokStart)}else{e.exported=null}}this.expectContextual("from");if(this.type!==b.string){this.unexpected()}e.source=this.parseExprAtom();if(this.options.ecmaVersion>=16){e.attributes=this.parseWithClause()}this.semicolon();return this.finishNode(e,"ExportAllDeclaration")};de.parseExport=function(e,t){this.next();if(this.eat(b.star)){return this.parseExportAllDeclaration(e,t)}if(this.eat(b._default)){this.checkExport(t,"default",this.lastTokStart);e.declaration=this.parseExportDefaultDeclaration();return this.finishNode(e,"ExportDefaultDeclaration")}if(this.shouldParseExportStatement()){e.declaration=this.parseExportDeclaration(e);if(e.declaration.type==="VariableDeclaration"){this.checkVariableExport(t,e.declaration.declarations)}else{this.checkExport(t,e.declaration.id,e.declaration.id.start)}e.specifiers=[];e.source=null;if(this.options.ecmaVersion>=16){e.attributes=[]}}else{e.declaration=null;e.specifiers=this.parseExportSpecifiers(t);if(this.eatContextual("from")){if(this.type!==b.string){this.unexpected()}e.source=this.parseExprAtom();if(this.options.ecmaVersion>=16){e.attributes=this.parseWithClause()}}else{for(var i=0,s=e.specifiers;i<s.length;i+=1){var r=s[i];this.checkUnreserved(r.local);this.checkLocalExport(r.local);if(r.local.type==="Literal"){this.raise(r.local.start,"A string literal cannot be used as an exported binding without `from`.")}}e.source=null;if(this.options.ecmaVersion>=16){e.attributes=[]}}this.semicolon()}return this.finishNode(e,"ExportNamedDeclaration")};de.parseExportDeclaration=function(e){return this.parseStatement(null)};de.parseExportDefaultDeclaration=function(){var e;if(this.type===b._function||(e=this.isAsyncFunction())){var t=this.startNode();this.next();if(e){this.next()}return this.parseFunction(t,xe|be,false,e)}else if(this.type===b._class){var i=this.startNode();return this.parseClass(i,"nullableID")}else{var s=this.parseMaybeAssign();this.semicolon();return s}};de.checkExport=function(e,t,i){if(!e){return}if(typeof t!=="string"){t=t.type==="Identifier"?t.name:t.value}if(V(e,t)){this.raiseRecoverable(i,"Duplicate export '"+t+"'")}e[t]=true};de.checkPatternExport=function(e,t){var i=t.type;if(i==="Identifier"){this.checkExport(e,t,t.start)}else if(i==="ObjectPattern"){for(var s=0,r=t.properties;s<r.length;s+=1){var a=r[s];this.checkPatternExport(e,a)}}else if(i==="ArrayPattern"){for(var n=0,o=t.elements;n<o.length;n+=1){var h=o[n];if(h){this.checkPatternExport(e,h)}}}else if(i==="Property"){this.checkPatternExport(e,t.value)}else if(i==="AssignmentPattern"){this.checkPatternExport(e,t.left)}else if(i==="RestElement"){this.checkPatternExport(e,t.argument)}};de.checkVariableExport=function(e,t){if(!e){return}for(var i=0,s=t;i<s.length;i+=1){var r=s[i];this.checkPatternExport(e,r.id)}};de.shouldParseExportStatement=function(){return this.type.keyword==="var"||this.type.keyword==="const"||this.type.keyword==="class"||this.type.keyword==="function"||this.isLet()||this.isAsyncFunction()};de.parseExportSpecifier=function(e){var t=this.startNode();t.local=this.parseModuleExportName();t.exported=this.eatContextual("as")?this.parseModuleExportName():t.local;this.checkExport(e,t.exported,t.exported.start);return this.finishNode(t,"ExportSpecifier")};de.parseExportSpecifiers=function(e){var t=[],i=true;this.expect(b.braceL);while(!this.eat(b.braceR)){if(!i){this.expect(b.comma);if(this.afterTrailingComma(b.braceR)){break}}else{i=false}t.push(this.parseExportSpecifier(e))}return t};de.parseImport=function(e){this.next();if(this.type===b.string){e.specifiers=ge;e.source=this.parseExprAtom()}else{e.specifiers=this.parseImportSpecifiers();this.expectContextual("from");e.source=this.type===b.string?this.parseExprAtom():this.unexpected()}if(this.options.ecmaVersion>=16){e.attributes=this.parseWithClause()}this.semicolon();return this.finishNode(e,"ImportDeclaration")};de.parseImportSpecifier=function(){var e=this.startNode();e.imported=this.parseModuleExportName();if(this.eatContextual("as")){e.local=this.parseIdent()}else{this.checkUnreserved(e.imported);e.local=e.imported}this.checkLValSimple(e.local,re);return this.finishNode(e,"ImportSpecifier")};de.parseImportDefaultSpecifier=function(){var e=this.startNode();e.local=this.parseIdent();this.checkLValSimple(e.local,re);return this.finishNode(e,"ImportDefaultSpecifier")};de.parseImportNamespaceSpecifier=function(){var e=this.startNode();this.next();this.expectContextual("as");e.local=this.parseIdent();this.checkLValSimple(e.local,re);return this.finishNode(e,"ImportNamespaceSpecifier")};de.parseImportSpecifiers=function(){var e=[],t=true;if(this.type===b.name){e.push(this.parseImportDefaultSpecifier());if(!this.eat(b.comma)){return e}}if(this.type===b.star){e.push(this.parseImportNamespaceSpecifier());return e}this.expect(b.braceL);while(!this.eat(b.braceR)){if(!t){this.expect(b.comma);if(this.afterTrailingComma(b.braceR)){break}}else{t=false}e.push(this.parseImportSpecifier())}return e};de.parseWithClause=function(){var e=[];if(!this.eat(b._with)){return e}this.expect(b.braceL);var t={};var i=true;while(!this.eat(b.braceR)){if(!i){this.expect(b.comma);if(this.afterTrailingComma(b.braceR)){break}}else{i=false}var s=this.parseImportAttribute();var r=s.key.type==="Identifier"?s.key.name:s.key.value;if(V(t,r)){this.raiseRecoverable(s.key.start,"Duplicate attribute key '"+r+"'")}t[r]=true;e.push(s)}return e};de.parseImportAttribute=function(){var e=this.startNode();e.key=this.type===b.string?this.parseExprAtom():this.parseIdent(this.options.allowReserved!=="never");this.expect(b.colon);if(this.type!==b.string){this.unexpected()}e.value=this.parseExprAtom();return this.finishNode(e,"ImportAttribute")};de.parseModuleExportName=function(){if(this.options.ecmaVersion>=13&&this.type===b.string){var e=this.parseLiteral(this.value);if(D.test(e.value)){this.raise(e.start,"An export name cannot include a lone surrogate.")}return e}return this.parseIdent(true)};de.adaptDirectivePrologue=function(e){for(var t=0;t<e.length&&this.isDirectiveCandidate(e[t]);++t){e[t].directive=e[t].expression.raw.slice(1,-1)}};de.isDirectiveCandidate=function(e){return this.options.ecmaVersion>=5&&e.type==="ExpressionStatement"&&e.expression.type==="Literal"&&typeof e.expression.value==="string"&&(this.input[e.start]==='"'||this.input[e.start]==="'")};var we=he.prototype;we.toAssignable=function(e,t,i){if(this.options.ecmaVersion>=6&&e){switch(e.type){case"Identifier":if(this.inAsync&&e.name==="await"){this.raise(e.start,"Cannot use 'await' as identifier inside an async function")}break;case"ObjectPattern":case"ArrayPattern":case"AssignmentPattern":case"RestElement":break;case"ObjectExpression":e.type="ObjectPattern";if(i){this.checkPatternErrors(i,true)}for(var s=0,r=e.properties;s<r.length;s+=1){var a=r[s];this.toAssignable(a,t);if(a.type==="RestElement"&&(a.argument.type==="ArrayPattern"||a.argument.type==="ObjectPattern")){this.raise(a.argument.start,"Unexpected token")}}break;case"Property":if(e.kind!=="init"){this.raise(e.key.start,"Object pattern can't contain getter or setter")}this.toAssignable(e.value,t);break;case"ArrayExpression":e.type="ArrayPattern";if(i){this.checkPatternErrors(i,true)}this.toAssignableList(e.elements,t);break;case"SpreadElement":e.type="RestElement";this.toAssignable(e.argument,t);if(e.argument.type==="AssignmentPattern"){this.raise(e.argument.start,"Rest elements cannot have a default value")}break;case"AssignmentExpression":if(e.operator!=="="){this.raise(e.left.end,"Only '=' operator can be used for specifying default value.")}e.type="AssignmentPattern";delete e.operator;this.toAssignable(e.left,t);break;case"ParenthesizedExpression":this.toAssignable(e.expression,t,i);break;case"ChainExpression":this.raiseRecoverable(e.start,"Optional chaining cannot appear in left-hand side");break;case"MemberExpression":if(!t){break}default:this.raise(e.start,"Assigning to rvalue")}}else if(i){this.checkPatternErrors(i,true)}return e};we.toAssignableList=function(e,t){var i=e.length;for(var s=0;s<i;s++){var r=e[s];if(r){this.toAssignable(r,t)}}if(i){var a=e[i-1];if(this.options.ecmaVersion===6&&t&&a&&a.type==="RestElement"&&a.argument.type!=="Identifier"){this.unexpected(a.argument.start)}}return e};we.parseSpread=function(e){var t=this.startNode();this.next();t.argument=this.parseMaybeAssign(false,e);return this.finishNode(t,"SpreadElement")};we.parseRestBinding=function(){var e=this.startNode();this.next();if(this.options.ecmaVersion===6&&this.type!==b.name){this.unexpected()}e.argument=this.parseBindingAtom();return this.finishNode(e,"RestElement")};we.parseBindingAtom=function(){if(this.options.ecmaVersion>=6){switch(this.type){case b.bracketL:var e=this.startNode();this.next();e.elements=this.parseBindingList(b.bracketR,true,true);return this.finishNode(e,"ArrayPattern");case b.braceL:return this.parseObj(true)}}return this.parseIdent()};we.parseBindingList=function(e,t,i,s){var r=[],a=true;while(!this.eat(e)){if(a){a=false}else{this.expect(b.comma)}if(t&&this.type===b.comma){r.push(null)}else if(i&&this.afterTrailingComma(e)){break}else if(this.type===b.ellipsis){var n=this.parseRestBinding();this.parseBindingListItem(n);r.push(n);if(this.type===b.comma){this.raiseRecoverable(this.start,"Comma is not permitted after the rest element")}this.expect(e);break}else{r.push(this.parseAssignableListItem(s))}}return r};we.parseAssignableListItem=function(e){var t=this.parseMaybeDefault(this.start,this.startLoc);this.parseBindingListItem(t);return t};we.parseBindingListItem=function(e){return e};we.parseMaybeDefault=function(e,t,i){i=i||this.parseBindingAtom();if(this.options.ecmaVersion<6||!this.eat(b.eq)){return i}var s=this.startNodeAt(e,t);s.left=i;s.right=this.parseMaybeAssign();return this.finishNode(s,"AssignmentPattern")};we.checkLValSimple=function(e,t,i){if(t===void 0)t=ie;var s=t!==ie;switch(e.type){case"Identifier":if(this.strict&&this.reservedWordsStrictBind.test(e.name)){this.raiseRecoverable(e.start,(s?"Binding ":"Assigning to ")+e.name+" in strict mode")}if(s){if(t===re&&e.name==="let"){this.raiseRecoverable(e.start,"let is disallowed as a lexically bound name")}if(i){if(V(i,e.name)){this.raiseRecoverable(e.start,"Argument name clash")}i[e.name]=true}if(t!==oe){this.declareName(e.name,t,e.start)}}break;case"ChainExpression":this.raiseRecoverable(e.start,"Optional chaining cannot appear in left-hand side");break;case"MemberExpression":if(s){this.raiseRecoverable(e.start,"Binding member expression")}break;case"ParenthesizedExpression":if(s){this.raiseRecoverable(e.start,"Binding parenthesized expression")}return this.checkLValSimple(e.expression,t,i);default:this.raise(e.start,(s?"Binding":"Assigning to")+" rvalue")}};we.checkLValPattern=function(e,t,i){if(t===void 0)t=ie;switch(e.type){case"ObjectPattern":for(var s=0,r=e.properties;s<r.length;s+=1){var a=r[s];this.checkLValInnerPattern(a,t,i)}break;case"ArrayPattern":for(var n=0,o=e.elements;n<o.length;n+=1){var h=o[n];if(h){this.checkLValInnerPattern(h,t,i)}}break;default:this.checkLValSimple(e,t,i)}};we.checkLValInnerPattern=function(e,t,i){if(t===void 0)t=ie;switch(e.type){case"Property":this.checkLValInnerPattern(e.value,t,i);break;case"AssignmentPattern":this.checkLValPattern(e.left,t,i);break;case"RestElement":this.checkLValPattern(e.argument,t,i);break;default:this.checkLValPattern(e,t,i)}};var Se=function e(t,i,s,r,a){this.token=t;this.isExpr=!!i;this.preserveSpace=!!s;this.override=r;this.generator=!!a};var Ce={b_stat:new Se("{",false),b_expr:new Se("{",true),b_tmpl:new Se("${",false),p_stat:new Se("(",false),p_expr:new Se("(",true),q_tmpl:new Se("`",true,true,function(e){return e.tryReadTemplateToken()}),f_stat:new Se("function",false),f_expr:new Se("function",true),f_expr_gen:new Se("function",true,false,null,true),f_gen:new Se("function",false,false,null,true)};var Ee=he.prototype;Ee.initialContext=function(){return[Ce.b_stat]};Ee.curContext=function(){return this.context[this.context.length-1]};Ee.braceIsBlock=function(e){var t=this.curContext();if(t===Ce.f_expr||t===Ce.f_stat){return true}if(e===b.colon&&(t===Ce.b_stat||t===Ce.b_expr)){return!t.isExpr}if(e===b._return||e===b.name&&this.exprAllowed){return k.test(this.input.slice(this.lastTokEnd,this.start))}if(e===b._else||e===b.semi||e===b.eof||e===b.parenR||e===b.arrow){return true}if(e===b.braceL){return t===Ce.b_stat}if(e===b._var||e===b._const||e===b.name){return false}return!this.exprAllowed};Ee.inGeneratorContext=function(){for(var e=this.context.length-1;e>=1;e--){var t=this.context[e];if(t.token==="function"){return t.generator}}return false};Ee.updateContext=function(e){var t,i=this.type;if(i.keyword&&e===b.dot){this.exprAllowed=false}else if(t=i.updateContext){t.call(this,e)}else{this.exprAllowed=i.beforeExpr}};Ee.overrideContext=function(e){if(this.curContext()!==e){this.context[this.context.length-1]=e}};b.parenR.updateContext=b.braceR.updateContext=function(){if(this.context.length===1){this.exprAllowed=true;return}var e=this.context.pop();if(e===Ce.b_stat&&this.curContext().token==="function"){e=this.context.pop()}this.exprAllowed=!e.isExpr};b.braceL.updateContext=function(e){this.context.push(this.braceIsBlock(e)?Ce.b_stat:Ce.b_expr);this.exprAllowed=true};b.dollarBraceL.updateContext=function(){this.context.push(Ce.b_tmpl);this.exprAllowed=true};b.parenL.updateContext=function(e){var t=e===b._if||e===b._for||e===b._with||e===b._while;this.context.push(t?Ce.p_stat:Ce.p_expr);this.exprAllowed=true};b.incDec.updateContext=function(){};b._function.updateContext=b._class.updateContext=function(e){if(e.beforeExpr&&e!==b._else&&!(e===b.semi&&this.curContext()!==Ce.p_stat)&&!(e===b._return&&k.test(this.input.slice(this.lastTokEnd,this.start)))&&!((e===b.colon||e===b.braceL)&&this.curContext()===Ce.b_stat)){this.context.push(Ce.f_expr)}else{this.context.push(Ce.f_stat)}this.exprAllowed=false};b.colon.updateContext=function(){if(this.curContext().token==="function"){this.context.pop()}this.exprAllowed=true};b.backQuote.updateContext=function(){if(this.curContext()===Ce.q_tmpl){this.context.pop()}else{this.context.push(Ce.q_tmpl)}this.exprAllowed=false};b.star.updateContext=function(e){if(e===b._function){var t=this.context.length-1;if(this.context[t]===Ce.f_expr){this.context[t]=Ce.f_expr_gen}else{this.context[t]=Ce.f_gen}}this.exprAllowed=true};b.name.updateContext=function(e){var t=false;if(this.options.ecmaVersion>=6&&e!==b.dot){if(this.value==="of"&&!this.exprAllowed||this.value==="yield"&&this.inGeneratorContext()){t=true}}this.exprAllowed=t};var Ae=he.prototype;Ae.checkPropClash=function(e,t,i){if(this.options.ecmaVersion>=9&&e.type==="SpreadElement"){return}if(this.options.ecmaVersion>=6&&(e.computed||e.method||e.shorthand)){return}var s=e.key;var r;switch(s.type){case"Identifier":r=s.name;break;case"Literal":r=String(s.value);break;default:return}var a=e.kind;if(this.options.ecmaVersion>=6){if(r==="__proto__"&&a==="init"){if(t.proto){if(i){if(i.doubleProto<0){i.doubleProto=s.start}}else{this.raiseRecoverable(s.start,"Redefinition of __proto__ property")}}t.proto=true}return}r="$"+r;var n=t[r];if(n){var o;if(a==="init"){o=this.strict&&n.init||n.get||n.set}else{o=n.init||n[a]}if(o){this.raiseRecoverable(s.start,"Redefinition of property")}}else{n=t[r]={init:false,get:false,set:false}}n[a]=true};Ae.parseExpression=function(e,t){var i=this;return this.catchStackOverflow(function(){var s=i.start,r=i.startLoc;var a=i.parseMaybeAssign(e,t);if(i.type===b.comma){var n=i.startNodeAt(s,r);n.expressions=[a];while(i.eat(b.comma)){n.expressions.push(i.parseMaybeAssign(e,t))}return i.finishNode(n,"SequenceExpression")}return a})};Ae.parseMaybeAssign=function(e,t,i){if(this.isContextual("yield")){if(this.inGenerator){return this.parseYield(e)}else{this.exprAllowed=false}}var s=false,r=-1,a=-1,n=-1;if(t){r=t.parenthesizedAssign;a=t.trailingComma;n=t.doubleProto;t.parenthesizedAssign=t.trailingComma=-1}else{t=new fe;s=true}var o=this.start,h=this.startLoc;if(this.type===b.parenL||this.type===b.name){this.potentialArrowAt=this.start;this.potentialArrowInForAwait=e==="await"}var p=this.parseMaybeConditional(e,t);if(i){p=i.call(this,p,o,h)}if(this.type.isAssign){var u=this.startNodeAt(o,h);u.operator=this.value;if(this.type===b.eq){p=this.toAssignable(p,false,t)}if(!s){t.parenthesizedAssign=t.trailingComma=-1;if(t.shorthandAssign>=p.start){t.shorthandAssign=-1}if(t.doubleProto>=p.start){t.doubleProto=-1}}if(this.type===b.eq){this.checkLValPattern(p)}else{this.checkLValSimple(p)}u.left=p;this.next();u.right=this.parseMaybeAssign(e);if(n>-1){t.doubleProto=n}return this.finishNode(u,"AssignmentExpression")}else{if(s){this.checkExpressionErrors(t,true)}}if(r>-1){t.parenthesizedAssign=r}if(a>-1){t.trailingComma=a}return p};Ae.parseMaybeConditional=function(e,t){var i=this.start,s=this.startLoc;var r=this.parseExprOps(e,t);if(this.checkExpressionErrors(t)){return r}if(!(r.type==="ArrowFunctionExpression"&&r.start===i)&&this.eat(b.question)){var a=this.startNodeAt(i,s);a.test=r;a.consequent=this.parseMaybeAssign();this.expect(b.colon);a.alternate=this.parseMaybeAssign(e);return this.finishNode(a,"ConditionalExpression")}return r};Ae.parseExprOps=function(e,t){var i=this.start,s=this.startLoc;var r=this.parseMaybeUnary(t,false,false,e);if(this.checkExpressionErrors(t)){return r}return r.start===i&&r.type==="ArrowFunctionExpression"?r:this.parseExprOp(r,i,s,-1,e)};Ae.parseExprOp=function(e,t,i,s,r){var a=this.type.binop;if(a!=null&&(!r||this.type!==b._in)){if(a>s){var n=this.type===b.logicalOR||this.type===b.logicalAND;var o=this.type===b.coalesce;if(o){a=b.logicalAND.binop}var h=this.value;this.next();var p=this.start,u=this.startLoc;var l=this.parseExprOp(this.parseMaybeUnary(null,false,false,r),p,u,a,r);var c=this.buildBinary(t,i,e,l,h,n||o);if(n&&this.type===b.coalesce||o&&(this.type===b.logicalOR||this.type===b.logicalAND)){this.raiseRecoverable(this.start,"Logical expressions and coalesce expressions cannot be mixed. Wrap either by parentheses")}return this.parseExprOp(c,t,i,s,r)}}return e};Ae.buildBinary=function(e,t,i,s,r,a){if(s.type==="PrivateIdentifier"){this.raise(s.start,"Private identifier can only be left side of binary expression")}var n=this.startNodeAt(e,t);n.left=i;n.operator=r;n.right=s;return this.finishNode(n,a?"LogicalExpression":"BinaryExpression")};Ae.parseMaybeUnary=function(e,t,i,s){var r=this.start,a=this.startLoc,n;if(this.isContextual("await")&&this.canAwait){n=this.parseAwait(s);t=true}else if(this.type.prefix){var o=this.startNode(),h=this.type===b.incDec;o.operator=this.value;o.prefix=true;this.next();o.argument=this.parseMaybeUnary(null,true,h,s);this.checkExpressionErrors(e,true);if(h){this.checkLValSimple(o.argument)}else if(this.strict&&o.operator==="delete"&&Ie(o.argument)){this.raiseRecoverable(o.start,"Deleting local variable in strict mode")}else if(o.operator==="delete"&&Pe(o.argument)){this.raiseRecoverable(o.start,"Private fields can not be deleted")}else{t=true}n=this.finishNode(o,h?"UpdateExpression":"UnaryExpression")}else if(!t&&this.type===b.privateId){if((s||this.privateNameStack.length===0)&&this.options.checkPrivateFields){this.unexpected()}n=this.parsePrivateIdent();if(this.type!==b._in){this.unexpected()}}else{n=this.parseExprSubscripts(e,s);if(this.checkExpressionErrors(e)){return n}while(this.type.postfix&&!this.canInsertSemicolon()){var p=this.startNodeAt(r,a);p.operator=this.value;p.prefix=false;p.argument=n;this.checkLValSimple(n);this.next();n=this.finishNode(p,"UpdateExpression")}}if(!i&&!(n.type==="ArrowFunctionExpression"&&n.start===r)&&this.eat(b.starstar)){if(t){this.unexpected(this.lastTokStart)}else{return this.buildBinary(r,a,n,this.parseMaybeUnary(null,false,false,s),"**",false)}}else{return n}};function Ie(e){return e.type==="Identifier"||e.type==="ParenthesizedExpression"&&Ie(e.expression)}function Pe(e){return e.type==="MemberExpression"&&e.property.type==="PrivateIdentifier"||e.type==="ChainExpression"&&Pe(e.expression)||e.type==="ParenthesizedExpression"&&Pe(e.expression)}Ae.parseExprSubscripts=function(e,t){var i=this.start,s=this.startLoc;var r=-1,a=-1;if(e){r=e.doubleProto;a=e.shorthandAssign;e.doubleProto=e.shorthandAssign=-1}var n=this.parseExprAtom(e,t);if(n.type==="ArrowFunctionExpression"&&this.input.slice(this.lastTokStart,this.lastTokEnd)!==")"){return n}var o=this.parseSubscripts(n,i,s,false,t);if(e){if(o.end>n.end){this.checkExpressionErrors(e,true);if(e.parenthesizedAssign>=o.start){e.parenthesizedAssign=-1}if(e.parenthesizedBind>=o.start){e.parenthesizedBind=-1}if(e.trailingComma>=o.start){e.trailingComma=-1}}if(r>-1){e.doubleProto=r}if(a>-1){e.shorthandAssign=a}}return o};Ae.parseSubscripts=function(e,t,i,s,r){var a=this.options.ecmaVersion>=8&&e.type==="Identifier"&&e.name==="async"&&this.lastTokEnd===e.end&&!this.canInsertSemicolon()&&e.end-e.start===5&&this.potentialArrowAt===e.start;var n=false;while(true){var o=this.parseSubscript(e,t,i,s,a,n,r);if(o.optional){n=true}if(o.end===e.end||o.type==="ArrowFunctionExpression"){if(n){var h=this.startNodeAt(t,i);h.expression=o;o=this.finishNode(h,"ChainExpression")}return o}e=o;a=false}};Ae.shouldParseAsyncArrow=function(){return!this.canInsertSemicolon()&&this.eat(b.arrow)};Ae.parseSubscriptAsyncArrow=function(e,t,i,s){return this.parseArrowExpression(this.startNodeAt(e,t),i,true,s)};Ae.parseSubscript=function(e,t,i,s,r,a,n){var o=this.options.ecmaVersion>=11;var h=o&&this.eat(b.questionDot);if(s&&h){this.raise(this.lastTokStart,"Optional chaining cannot appear in the callee of new expressions")}var p=this.eat(b.bracketL);if(p||h&&this.type!==b.parenL&&this.type!==b.backQuote||this.eat(b.dot)){var u=this.startNodeAt(t,i);u.object=e;if(p){u.property=this.parseExpression();this.expect(b.bracketR)}else if(this.type===b.privateId&&e.type!=="Super"){u.property=this.parsePrivateIdent()}else{u.property=this.parseIdent(this.options.allowReserved!=="never")}u.computed=!!p;if(o){u.optional=h}e=this.finishNode(u,"MemberExpression")}else if(!s&&this.eat(b.parenL)){var l=new fe,c=this.yieldPos,f=this.awaitPos,d=this.awaitIdentPos;this.yieldPos=0;this.awaitPos=0;this.awaitIdentPos=0;var m=this.parseExprList(b.parenR,this.options.ecmaVersion>=8,false,l);if(r&&!h&&this.shouldParseAsyncArrow()){this.checkPatternErrors(l,false);this.checkYieldAwaitInDefaultParams();if(this.awaitIdentPos>0){this.raise(this.awaitIdentPos,"Cannot use 'await' as identifier inside an async function")}this.yieldPos=c;this.awaitPos=f;this.awaitIdentPos=d;return this.parseSubscriptAsyncArrow(t,i,m,n)}this.checkExpressionErrors(l,true);this.yieldPos=c||this.yieldPos;this.awaitPos=f||this.awaitPos;this.awaitIdentPos=d||this.awaitIdentPos;var v=this.startNodeAt(t,i);v.callee=e;v.arguments=m;if(o){v.optional=h}e=this.finishNode(v,"CallExpression")}else if(this.type===b.backQuote){if(h||a){this.raise(this.start,"Optional chaining cannot appear in the tag of tagged template expressions")}var g=this.startNodeAt(t,i);g.tag=e;g.quasi=this.parseTemplate({isTagged:true});e=this.finishNode(g,"TaggedTemplateExpression")}return e};Ae.parseExprAtom=function(e,t,i){if(this.type===b.slash){this.readRegexp()}var s,r=this.potentialArrowAt===this.start;switch(this.type){case b._super:if(!this.allowSuper){this.raise(this.start,"'super' keyword outside a method")}s=this.startNode();this.next();if(this.type===b.parenL&&!this.allowDirectSuper){this.raise(s.start,"super() call outside constructor of a subclass")}if(this.type!==b.dot&&this.type!==b.bracketL&&this.type!==b.parenL){this.unexpected()}return this.finishNode(s,"Super");case b._this:s=this.startNode();this.next();return this.finishNode(s,"ThisExpression");case b.name:var a=this.start,n=this.startLoc,o=this.containsEsc;var h=this.parseIdent(false);if(this.options.ecmaVersion>=8&&!o&&h.name==="async"&&!this.canInsertSemicolon()&&this.eat(b._function)){this.overrideContext(Ce.f_expr);return this.parseFunction(this.startNodeAt(a,n),0,false,true,t)}if(r&&!this.canInsertSemicolon()){if(this.eat(b.arrow)){return this.parseArrowExpression(this.startNodeAt(a,n),[h],false,t)}if(this.options.ecmaVersion>=8&&h.name==="async"&&this.type===b.name&&!o&&(!this.potentialArrowInForAwait||this.value!=="of"||this.containsEsc)){h=this.parseIdent(false);if(this.canInsertSemicolon()||!this.eat(b.arrow)){this.unexpected()}return this.parseArrowExpression(this.startNodeAt(a,n),[h],true,t)}}return h;case b.regexp:var p=this.value;s=this.parseLiteral(p.value);s.regex={pattern:p.pattern,flags:p.flags};return s;case b.num:case b.string:return this.parseLiteral(this.value);case b._null:case b._true:case b._false:s=this.startNode();s.value=this.type===b._null?null:this.type===b._true;s.raw=this.type.keyword;this.next();return this.finishNode(s,"Literal");case b.parenL:var u=this.start,l=this.parseParenAndDistinguishExpression(r,t);if(e){if(e.parenthesizedAssign<0&&!this.isSimpleAssignTarget(l)){e.parenthesizedAssign=u}if(e.parenthesizedBind<0){e.parenthesizedBind=u}}return l;case b.bracketL:s=this.startNode();this.next();s.elements=this.parseExprList(b.bracketR,true,true,e);return this.finishNode(s,"ArrayExpression");case b.braceL:this.overrideContext(Ce.b_expr);return this.parseObj(false,e);case b._function:s=this.startNode();this.next();return this.parseFunction(s,0);case b._class:return this.parseClass(this.startNode(),false);case b._new:return this.parseNew();case b.backQuote:return this.parseTemplate();case b._import:if(this.options.ecmaVersion>=11){return this.parseExprImport(i)}else{return this.unexpected()}default:return this.parseExprAtomDefault()}};Ae.parseExprAtomDefault=function(){this.unexpected()};Ae.parseExprImport=function(e){var t=this.startNode();if(this.containsEsc){this.raiseRecoverable(this.start,"Escape sequence in keyword import")}this.next();if(this.type===b.parenL&&!e){return this.parseDynamicImport(t)}else if(this.type===b.dot){var i=this.startNodeAt(t.start,t.loc&&t.loc.start);i.name="import";t.meta=this.finishNode(i,"Identifier");return this.parseImportMeta(t)}else{this.unexpected()}};Ae.parseDynamicImport=function(e){this.next();e.source=this.parseMaybeAssign();if(this.options.ecmaVersion>=16){if(!this.eat(b.parenR)){this.expect(b.comma);if(!this.afterTrailingComma(b.parenR)){e.options=this.parseMaybeAssign();if(!this.eat(b.parenR)){this.expect(b.comma);if(!this.afterTrailingComma(b.parenR)){this.unexpected()}}}else{e.options=null}}else{e.options=null}}else{if(!this.eat(b.parenR)){var t=this.start;if(this.eat(b.comma)&&this.eat(b.parenR)){this.raiseRecoverable(t,"Trailing comma is not allowed in import()")}else{this.unexpected(t)}}}return this.finishNode(e,"ImportExpression")};Ae.parseImportMeta=function(e){this.next();var t=this.containsEsc;e.property=this.parseIdent(true);if(e.property.name!=="meta"){this.raiseRecoverable(e.property.start,"The only valid meta property for import is 'import.meta'")}if(t){this.raiseRecoverable(e.start,"'import.meta' must not contain escaped characters")}if(this.options.sourceType!=="module"&&!this.options.allowImportExportEverywhere){this.raiseRecoverable(e.start,"Cannot use 'import.meta' outside a module")}return this.finishNode(e,"MetaProperty")};Ae.parseLiteral=function(e){var t=this.startNode();t.value=e;t.raw=this.input.slice(this.start,this.end);if(t.raw.charCodeAt(t.raw.length-1)===110){t.bigint=t.value!=null?t.value.toString():t.raw.slice(0,-1).replace(/_/g,"")}this.next();return this.finishNode(t,"Literal")};Ae.parseParenExpression=function(){this.expect(b.parenL);var e=this.parseExpression();this.expect(b.parenR);return e};Ae.shouldParseArrow=function(e){return!this.canInsertSemicolon()};Ae.parseParenAndDistinguishExpression=function(e,t){var i=this.start,s=this.startLoc,r,a=this.options.ecmaVersion>=8;if(this.options.ecmaVersion>=6){this.next();var n=this.start,o=this.startLoc;var h=[],p=true,u=false;var l=new fe,c=this.yieldPos,f=this.awaitPos,d;this.yieldPos=0;this.awaitPos=0;while(this.type!==b.parenR){p?p=false:this.expect(b.comma);if(a&&this.afterTrailingComma(b.parenR,true)){u=true;break}else if(this.type===b.ellipsis){d=this.start;h.push(this.parseParenItem(this.parseRestBinding()));if(this.type===b.comma){this.raiseRecoverable(this.start,"Comma is not permitted after the rest element")}break}else{h.push(this.parseMaybeAssign(false,l,this.parseParenItem))}}var m=this.lastTokEnd,v=this.lastTokEndLoc;this.expect(b.parenR);if(e&&this.shouldParseArrow(h)&&this.eat(b.arrow)){this.checkPatternErrors(l,false);this.checkYieldAwaitInDefaultParams();this.yieldPos=c;this.awaitPos=f;return this.parseParenArrowList(i,s,h,t)}if(!h.length||u){this.unexpected(this.lastTokStart)}if(d){this.unexpected(d)}this.checkExpressionErrors(l,true);this.yieldPos=c||this.yieldPos;this.awaitPos=f||this.awaitPos;if(h.length>1){r=this.startNodeAt(n,o);r.expressions=h;this.finishNodeAt(r,"SequenceExpression",m,v)}else{r=h[0]}}else{r=this.parseParenExpression()}if(this.options.preserveParens){var g=this.startNodeAt(i,s);g.expression=r;return this.finishNode(g,"ParenthesizedExpression")}else{return r}};Ae.parseParenItem=function(e){return e};Ae.parseParenArrowList=function(e,t,i,s){return this.parseArrowExpression(this.startNodeAt(e,t),i,false,s)};var Ve=[];Ae.parseNew=function(){if(this.containsEsc){this.raiseRecoverable(this.start,"Escape sequence in keyword new")}var e=this.startNode();this.next();if(this.options.ecmaVersion>=6&&this.type===b.dot){var t=this.startNodeAt(e.start,e.loc&&e.loc.start);t.name="new";e.meta=this.finishNode(t,"Identifier");this.next();var i=this.containsEsc;e.property=this.parseIdent(true);if(e.property.name!=="target"){this.raiseRecoverable(e.property.start,"The only valid meta property for new is 'new.target'")}if(i){this.raiseRecoverable(e.start,"'new.target' must not contain escaped characters")}if(!this.allowNewDotTarget){this.raiseRecoverable(e.start,"'new.target' can only be used in functions and class static block")}return this.finishNode(e,"MetaProperty")}var s=this.start,r=this.startLoc;e.callee=this.parseSubscripts(this.parseExprAtom(null,false,true),s,r,true,false);if(e.callee.type==="Super"){this.raiseRecoverable(s,"Invalid use of 'super'")}if(this.eat(b.parenL)){e.arguments=this.parseExprList(b.parenR,this.options.ecmaVersion>=8,false)}else{e.arguments=Ve}return this.finishNode(e,"NewExpression")};Ae.parseTemplateElement=function(e){var t=e.isTagged;var i=this.startNode();if(this.type===b.invalidTemplate){if(!t){this.raiseRecoverable(this.start,"Bad escape sequence in untagged template literal")}i.value={raw:this.value.replace(/\r\n?/g,"\n"),cooked:null}}else{i.value={raw:this.input.slice(this.start,this.end).replace(/\r\n?/g,"\n"),cooked:this.value}}this.next();i.tail=this.type===b.backQuote;return this.finishNode(i,"TemplateElement")};Ae.parseTemplate=function(e){if(e===void 0)e={};var t=e.isTagged;if(t===void 0)t=false;var i=this.startNode();this.next();i.expressions=[];var s=this.parseTemplateElement({isTagged:t});i.quasis=[s];while(!s.tail){if(this.type===b.eof){this.raise(this.pos,"Unterminated template literal")}this.expect(b.dollarBraceL);i.expressions.push(this.parseExpression());this.expect(b.braceR);i.quasis.push(s=this.parseTemplateElement({isTagged:t}))}this.next();return this.finishNode(i,"TemplateLiteral")};Ae.isAsyncProp=function(e){return!e.computed&&e.key.type==="Identifier"&&e.key.name==="async"&&(this.type===b.name||this.type===b.num||this.type===b.string||this.type===b.bracketL||this.type.keyword||this.options.ecmaVersion>=9&&this.type===b.star)&&!k.test(this.input.slice(this.lastTokEnd,this.start))};Ae.parseObj=function(e,t){var i=this.startNode(),s=true,r={};i.properties=[];this.next();while(!this.eat(b.braceR)){if(!s){this.expect(b.comma);if(this.options.ecmaVersion>=5&&this.afterTrailingComma(b.braceR)){break}}else{s=false}var a=this.parseProperty(e,t);if(!e){this.checkPropClash(a,r,t)}i.properties.push(a)}return this.finishNode(i,e?"ObjectPattern":"ObjectExpression")};Ae.parseProperty=function(e,t){var i=this.startNode(),s,r,a,n;if(this.options.ecmaVersion>=9&&this.eat(b.ellipsis)){if(e){i.argument=this.parseIdent(false);if(this.type===b.comma){this.raiseRecoverable(this.start,"Comma is not permitted after the rest element")}return this.finishNode(i,"RestElement")}i.argument=this.parseMaybeAssign(false,t);if(this.type===b.comma&&t&&t.trailingComma<0){t.trailingComma=this.start}return this.finishNode(i,"SpreadElement")}if(this.options.ecmaVersion>=6){i.method=false;i.shorthand=false;if(e||t){a=this.start;n=this.startLoc}if(!e){s=this.eat(b.star)}}var o=this.containsEsc;this.parsePropertyName(i);if(!e&&!o&&this.options.ecmaVersion>=8&&!s&&this.isAsyncProp(i)){r=true;s=this.options.ecmaVersion>=9&&this.eat(b.star);this.parsePropertyName(i)}else{r=false}this.parsePropertyValue(i,e,s,r,a,n,t,o);return this.finishNode(i,"Property")};Ae.parseGetterSetter=function(e){var t=e.key.name;this.parsePropertyName(e);e.value=this.parseMethod(false);e.kind=t;var i=e.kind==="get"?0:1;if(e.value.params.length!==i){var s=e.value.start;if(e.kind==="get"){this.raiseRecoverable(s,"getter should have no params")}else{this.raiseRecoverable(s,"setter should have exactly one param")}}else{if(e.kind==="set"&&e.value.params[0].type==="RestElement"){this.raiseRecoverable(e.value.params[0].start,"Setter cannot use rest params")}}};Ae.parsePropertyValue=function(e,t,i,s,r,a,n,o){if((i||s)&&this.type===b.colon){this.unexpected()}if(this.eat(b.colon)){e.value=t?this.parseMaybeDefault(this.start,this.startLoc):this.parseMaybeAssign(false,n);e.kind="init"}else if(this.options.ecmaVersion>=6&&this.type===b.parenL){if(t){this.unexpected()}e.method=true;e.value=this.parseMethod(i,s);e.kind="init"}else if(!t&&!o&&this.options.ecmaVersion>=5&&!e.computed&&e.key.type==="Identifier"&&(e.key.name==="get"||e.key.name==="set")&&(this.type!==b.comma&&this.type!==b.braceR&&this.type!==b.eq)){if(i||s){this.unexpected()}this.parseGetterSetter(e)}else if(this.options.ecmaVersion>=6&&!e.computed&&e.key.type==="Identifier"){if(i||s){this.unexpected()}this.checkUnreserved(e.key);if(e.key.name==="await"&&!this.awaitIdentPos){this.awaitIdentPos=r}if(t){e.value=this.parseMaybeDefault(r,a,this.copyNode(e.key))}else if(this.type===b.eq&&n){if(n.shorthandAssign<0){n.shorthandAssign=this.start}e.value=this.parseMaybeDefault(r,a,this.copyNode(e.key))}else{e.value=this.copyNode(e.key)}e.kind="init";e.shorthand=true}else{this.unexpected()}};Ae.parsePropertyName=function(e){if(this.options.ecmaVersion>=6){if(this.eat(b.bracketL)){e.computed=true;e.key=this.parseMaybeAssign();this.expect(b.bracketR);return e.key}else{e.computed=false}}return e.key=this.type===b.num||this.type===b.string?this.parseExprAtom():this.parseIdent(this.options.allowReserved!=="never")};Ae.initFunction=function(e){e.id=null;if(this.options.ecmaVersion>=6){e.generator=e.expression=false}if(this.options.ecmaVersion>=8){e.async=false}};Ae.parseMethod=function(e,t,i){var s=this.startNode(),r=this.yieldPos,a=this.awaitPos,n=this.awaitIdentPos;this.initFunction(s);if(this.options.ecmaVersion>=6){s.generator=e}if(this.options.ecmaVersion>=8){s.async=!!t}this.yieldPos=0;this.awaitPos=0;this.awaitIdentPos=0;this.enterScope(te(t,s.generator)|Y|(i?X:0));this.expect(b.parenL);s.params=this.parseBindingList(b.parenR,false,this.options.ecmaVersion>=8);this.checkYieldAwaitInDefaultParams();this.parseFunctionBody(s,false,true,false);this.yieldPos=r;this.awaitPos=a;this.awaitIdentPos=n;return this.finishNode(s,"FunctionExpression")};Ae.parseArrowExpression=function(e,t,i,s){var r=this.yieldPos,a=this.awaitPos,n=this.awaitIdentPos;this.enterScope(te(i,false)|K);this.initFunction(e);if(this.options.ecmaVersion>=8){e.async=!!i}this.yieldPos=0;this.awaitPos=0;this.awaitIdentPos=0;e.params=this.toAssignableList(t,true);this.parseFunctionBody(e,true,false,s);this.yieldPos=r;this.awaitPos=a;this.awaitIdentPos=n;return this.finishNode(e,"ArrowFunctionExpression")};Ae.parseFunctionBody=function(e,t,i,s){var r=t&&this.type!==b.braceL;var a=this.strict,n=false;if(r){e.body=this.parseMaybeAssign(s);e.expression=true;this.checkParams(e,false)}else{var o=this.options.ecmaVersion>=7&&!this.isSimpleParamList(e.params);if(!a||o){n=this.strictDirective(this.end);if(n&&o){this.raiseRecoverable(e.start,"Illegal 'use strict' directive in function with non-simple parameter list")}}var h=this.labels;this.labels=[];if(n){this.strict=true}this.checkParams(e,!a&&!n&&!t&&!i&&this.isSimpleParamList(e.params));if(this.strict&&e.id){this.checkLValSimple(e.id,oe)}e.body=this.parseBlock(false,undefined,n&&!a);e.expression=false;this.adaptDirectivePrologue(e.body.body);this.labels=h}this.exitScope()};Ae.isSimpleParamList=function(e){for(var t=0,i=e;t<i.length;t+=1){var s=i[t];if(s.type!=="Identifier"){return false}}return true};Ae.checkParams=function(e,t){var i=Object.create(null);for(var s=0,r=e.params;s<r.length;s+=1){var a=r[s];this.checkLValInnerPattern(a,se,t?null:i)}};Ae.parseExprList=function(e,t,i,s){var r=[],a=true;while(!this.eat(e)){if(!a){this.expect(b.comma);if(t&&this.afterTrailingComma(e)){break}}else{a=false}var n=void 0;if(i&&this.type===b.comma){n=null}else if(this.type===b.ellipsis){n=this.parseSpread(s);if(s&&this.type===b.comma&&s.trailingComma<0){s.trailingComma=this.start}}else{n=this.parseMaybeAssign(false,s)}r.push(n)}return r};Ae.checkUnreserved=function(e){var t=e.start;var i=e.end;var s=e.name;if(this.inGenerator&&s==="yield"){this.raiseRecoverable(t,"Cannot use 'yield' as identifier inside a generator")}if(this.inAsync&&s==="await"){this.raiseRecoverable(t,"Cannot use 'await' as identifier inside an async function")}if(!(this.currentThisScope().flags&ee)&&s==="arguments"){this.raiseRecoverable(t,"Cannot use 'arguments' in class field initializer")}if(this.inClassStaticBlock&&(s==="arguments"||s==="await")){this.raise(t,"Cannot use "+s+" in class static initialization block")}if(this.keywords.test(s)){this.raise(t,"Unexpected keyword '"+s+"'")}if(this.options.ecmaVersion<6&&this.input.slice(t,i).indexOf("\\")!==-1){return}var r=this.strict?this.reservedWordsStrict:this.reservedWords;if(r.test(s)){if(!this.inAsync&&s==="await"){this.raiseRecoverable(t,"Cannot use keyword 'await' outside an async function")}this.raiseRecoverable(t,"The keyword '"+s+"' is reserved")}};Ae.parseIdent=function(e){var t=this.parseIdentNode();this.next(!!e);this.finishNode(t,"Identifier");if(!e){this.checkUnreserved(t);if(t.name==="await"&&!this.awaitIdentPos){this.awaitIdentPos=t.start}}return t};Ae.parseIdentNode=function(){var e=this.startNode();if(this.type===b.name){e.name=this.value}else if(this.type.keyword){e.name=this.type.keyword;if((e.name==="class"||e.name==="function")&&(this.lastTokEnd!==this.lastTokStart+1||this.input.charCodeAt(this.lastTokStart)!==46)){this.context.pop()}this.type=b.name}else{this.unexpected()}return e};Ae.parsePrivateIdent=function(){var e=this.startNode();if(this.type===b.privateId){e.name=this.value}else{this.unexpected()}this.next();this.finishNode(e,"PrivateIdentifier");if(this.options.checkPrivateFields){if(this.privateNameStack.length===0){this.raise(e.start,"Private field '#"+e.name+"' must be declared in an enclosing class")}else{this.privateNameStack[this.privateNameStack.length-1].used.push(e)}}return e};Ae.parseYield=function(e){if(!this.yieldPos){this.yieldPos=this.start}var t=this.startNode();this.next();if(this.type===b.semi||this.canInsertSemicolon()||this.type!==b.star&&!this.type.startsExpr){t.delegate=false;t.argument=null}else{t.delegate=this.eat(b.star);t.argument=this.parseMaybeAssign(e)}return this.finishNode(t,"YieldExpression")};Ae.parseAwait=function(e){if(!this.awaitPos){this.awaitPos=this.start}var t=this.startNode();this.next();t.argument=this.parseMaybeUnary(null,true,false,e);return this.finishNode(t,"AwaitExpression")};var Ne=he.prototype;Ne.raise=function(e,t){var i=M(this.input,e);t+=" ("+i.line+":"+i.column+")";if(this.sourceFile){t+=" in "+this.sourceFile}var s=new SyntaxError(t);s.pos=e;s.loc=i;s.raisedAt=this.pos;throw s};Ne.raiseRecoverable=Ne.raise;Ne.curPosition=function(){if(this.options.locations){return new O(this.curLine,this.pos-this.lineStart)}};var Te=he.prototype;var Le=function e(t){this.flags=t;this.var=[];this.lexical=[];this.functions=[]};Te.enterScope=function(e){this.scopeStack.push(new Le(e))};Te.exitScope=function(){this.scopeStack.pop()};Te.treatFunctionsAsVarInScope=function(e){return e.flags&H||!this.inModule&&e.flags&G};Te.declareName=function(e,t,i){var s=false;if(t===re){var r=this.currentScope();s=r.lexical.indexOf(e)>-1||r.functions.indexOf(e)>-1||r.var.indexOf(e)>-1;r.lexical.push(e);if(this.inModule&&r.flags&G){delete this.undefinedExports[e]}}else if(t===ne){var a=this.currentScope();a.lexical.push(e)}else if(t===ae){var n=this.currentScope();if(this.treatFunctionsAsVar){s=n.lexical.indexOf(e)>-1}else{s=n.lexical.indexOf(e)>-1||n.var.indexOf(e)>-1}n.functions.push(e)}else{for(var o=this.scopeStack.length-1;o>=0;--o){var h=this.scopeStack[o];if(h.lexical.indexOf(e)>-1&&!(h.flags&Q&&h.lexical[0]===e)||!this.treatFunctionsAsVarInScope(h)&&h.functions.indexOf(e)>-1){s=true;break}h.var.push(e);if(this.inModule&&h.flags&G){delete this.undefinedExports[e]}if(h.flags&ee){break}}}if(s){this.raiseRecoverable(i,"Identifier '"+e+"' has already been declared")}};Te.checkLocalExport=function(e){if(this.scopeStack[0].lexical.indexOf(e.name)===-1&&this.scopeStack[0].var.indexOf(e.name)===-1){this.undefinedExports[e.name]=e}};Te.currentScope=function(){return this.scopeStack[this.scopeStack.length-1]};Te.currentVarScope=function(){for(var e=this.scopeStack.length-1;;e--){var t=this.scopeStack[e];if(t.flags&(ee|$|Z)){return t}}};Te.currentThisScope=function(){for(var e=this.scopeStack.length-1;;e--){var t=this.scopeStack[e];if(t.flags&(ee|$|Z)&&!(t.flags&K)){return t}}};var Re=function e(t,i,s){this.type="";this.start=i;this.end=0;if(t.options.locations){this.loc=new B(t,s)}if(t.options.directSourceFile){this.sourceFile=t.options.directSourceFile}if(t.options.ranges){this.range=[i,0]}};var De=he.prototype;De.startNode=function(){return new Re(this,this.start,this.startLoc)};De.startNodeAt=function(e,t){return new Re(this,e,t)};function Oe(e,t,i,s){e.type=t;e.end=i;if(this.options.locations){e.loc.end=s}if(this.options.ranges){e.range[1]=i}return e}De.finishNode=function(e,t){return Oe.call(this,e,t,this.lastTokEnd,this.lastTokEndLoc)};De.finishNodeAt=function(e,t,i,s){return Oe.call(this,e,t,i,s)};De.copyNode=function(e){var t=new Re(this,e.start,this.startLoc);for(var i in e){t[i]=e[i]}return t};var Be="Berf Beria_Erfe Gara Garay Gukh Gurung_Khema Hrkt Katakana_Or_Hiragana Kawi Kirat_Rai Krai Nag_Mundari Nagm Ol_Onal Onao Sidetic Sidt Sunu Sunuwar Tai_Yo Tayo Todhri Todr Tolong_Siki Tols Tulu_Tigalari Tutg Unknown Zzzz";var Me="ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS";var Fe=Me+" Extended_Pictographic";var Ue=Fe;var qe=Ue+" EBase EComp EMod EPres ExtPict";var je=qe;var Ge=je;var He={9:Me,10:Fe,11:Ue,12:qe,13:je,14:Ge};var We="Basic_Emoji Emoji_Keycap_Sequence RGI_Emoji_Modifier_Sequence RGI_Emoji_Flag_Sequence RGI_Emoji_Tag_Sequence RGI_Emoji_ZWJ_Sequence RGI_Emoji";var ze={9:"",10:"",11:"",12:"",13:"",14:We};var Ke="Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu";var Qe="Adlam Adlm Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb";var Ye=Qe+" Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd";var Xe=Ye+" Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho";var Ze=Xe+" Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi";var $e=Ze+" Cypro_Minoan Cpmn Old_Uyghur Ougr Tangsa Tnsa Toto Vithkuqi Vith";var Je=$e+" "+Be;var et={9:Qe,10:Ye,11:Xe,12:Ze,13:$e,14:Je};var tt={};function it(e){var t=tt[e]={binary:L(He[e]+" "+Ke),binaryOfStrings:L(ze[e]),nonBinary:{General_Category:L(Ke),Script:L(et[e])}};t.nonBinary.Script_Extensions=t.nonBinary.Script;t.nonBinary.gc=t.nonBinary.General_Category;t.nonBinary.sc=t.nonBinary.Script;t.nonBinary.scx=t.nonBinary.Script_Extensions}for(var st=0,rt=[9,10,11,12,13,14];st<rt.length;st+=1){var at=rt[st];it(at)}var nt=he.prototype;var ot=function e(t,i){this.parent=t;this.base=i||this};ot.prototype.separatedFrom=function e(t){for(var i=this;i;i=i.parent){for(var s=t;s;s=s.parent){if(i.base===s.base&&i!==s){return true}}}return false};ot.prototype.sibling=function e(){return new ot(this.parent,this.base)};var ht=function e(t){this.parser=t;this.validFlags="gim"+(t.options.ecmaVersion>=6?"uy":"")+(t.options.ecmaVersion>=9?"s":"")+(t.options.ecmaVersion>=13?"d":"")+(t.options.ecmaVersion>=15?"v":"");this.unicodeProperties=tt[t.options.ecmaVersion>=14?14:t.options.ecmaVersion];this.source="";this.flags="";this.start=0;this.switchU=false;this.switchV=false;this.switchN=false;this.pos=0;this.lastIntValue=0;this.lastStringValue="";this.lastAssertionIsQuantifiable=false;this.numCapturingParens=0;this.maxBackReference=0;this.groupNames=Object.create(null);this.backReferenceNames=[];this.branchID=null};ht.prototype.reset=function e(t,i,s){var r=s.indexOf("v")!==-1;var a=s.indexOf("u")!==-1;this.start=t|0;this.source=i+"";this.flags=s;if(r&&this.parser.options.ecmaVersion>=15){this.switchU=true;this.switchV=true;this.switchN=true}else{this.switchU=a&&this.parser.options.ecmaVersion>=6;this.switchV=false;this.switchN=a&&this.parser.options.ecmaVersion>=9}};ht.prototype.raise=function e(t){this.parser.raiseRecoverable(this.start,"Invalid regular expression: /"+this.source+"/: "+t)};ht.prototype.at=function e(t,i){if(i===void 0)i=false;var s=this.source;var r=s.length;if(t>=r){return-1}var a=s.charCodeAt(t);if(!(i||this.switchU)||a<=55295||a>=57344||t+1>=r){return a}var n=s.charCodeAt(t+1);return n>=56320&&n<=57343?(a<<10)+n-56613888:a};ht.prototype.nextIndex=function e(t,i){if(i===void 0)i=false;var s=this.source;var r=s.length;if(t>=r){return r}var a=s.charCodeAt(t),n;if(!(i||this.switchU)||a<=55295||a>=57344||t+1>=r||(n=s.charCodeAt(t+1))<56320||n>57343){return t+1}return t+2};ht.prototype.current=function e(t){if(t===void 0)t=false;return this.at(this.pos,t)};ht.prototype.lookahead=function e(t){if(t===void 0)t=false;return this.at(this.nextIndex(this.pos,t),t)};ht.prototype.advance=function e(t){if(t===void 0)t=false;this.pos=this.nextIndex(this.pos,t)};ht.prototype.eat=function e(t,i){if(i===void 0)i=false;if(this.current(i)===t){this.advance(i);return true}return false};ht.prototype.eatChars=function e(t,i){if(i===void 0)i=false;var s=this.pos;for(var r=0,a=t;r<a.length;r+=1){var n=a[r];var o=this.at(s,i);if(o===-1||o!==n){return false}s=this.nextIndex(s,i)}this.pos=s;return true};nt.validateRegExpFlags=function(e){var t=e.validFlags;var i=e.flags;var s=false;var r=false;for(var a=0;a<i.length;a++){var n=i.charAt(a);if(t.indexOf(n)===-1){this.raise(e.start,"Invalid regular expression flag")}if(i.indexOf(n,a+1)>-1){this.raise(e.start,"Duplicate regular expression flag")}if(n==="u"){s=true}if(n==="v"){r=true}}if(this.options.ecmaVersion>=15&&s&&r){this.raise(e.start,"Invalid regular expression flag")}};function pt(e){for(var t in e){return true}return false}nt.validateRegExpPattern=function(e){this.regexp_pattern(e);if(!e.switchN&&this.options.ecmaVersion>=9&&pt(e.groupNames)){e.switchN=true;this.regexp_pattern(e)}};nt.regexp_pattern=function(e){e.pos=0;e.lastIntValue=0;e.lastStringValue="";e.lastAssertionIsQuantifiable=false;e.numCapturingParens=0;e.maxBackReference=0;e.groupNames=Object.create(null);e.backReferenceNames.length=0;e.branchID=null;this.regexp_disjunction(e);if(e.pos!==e.source.length){if(e.eat(41)){e.raise("Unmatched ')'")}if(e.eat(93)||e.eat(125)){e.raise("Lone quantifier brackets")}}if(e.maxBackReference>e.numCapturingParens){e.raise("Invalid escape")}for(var t=0,i=e.backReferenceNames;t<i.length;t+=1){var s=i[t];if(!e.groupNames[s]){e.raise("Invalid named capture referenced")}}};nt.regexp_disjunction=function(e){var t=this.options.ecmaVersion>=16;if(t){e.branchID=new ot(e.branchID,null)}this.regexp_alternative(e);while(e.eat(124)){if(t){e.branchID=e.branchID.sibling()}this.regexp_alternative(e)}if(t){e.branchID=e.branchID.parent}if(this.regexp_eatQuantifier(e,true)){e.raise("Nothing to repeat")}if(e.eat(123)){e.raise("Lone quantifier brackets")}};nt.regexp_alternative=function(e){while(e.pos<e.source.length&&this.regexp_eatTerm(e)){}};nt.regexp_eatTerm=function(e){if(this.regexp_eatAssertion(e)){if(e.lastAssertionIsQuantifiable&&this.regexp_eatQuantifier(e)){if(e.switchU){e.raise("Invalid quantifier")}}return true}if(e.switchU?this.regexp_eatAtom(e):this.regexp_eatExtendedAtom(e)){this.regexp_eatQuantifier(e);return true}return false};nt.regexp_eatAssertion=function(e){var t=e.pos;e.lastAssertionIsQuantifiable=false;if(e.eat(94)||e.eat(36)){return true}if(e.eat(92)){if(e.eat(66)||e.eat(98)){return true}e.pos=t}if(e.eat(40)&&e.eat(63)){var i=false;if(this.options.ecmaVersion>=9){i=e.eat(60)}if(e.eat(61)||e.eat(33)){this.regexp_disjunction(e);if(!e.eat(41)){e.raise("Unterminated group")}e.lastAssertionIsQuantifiable=!i;return true}}e.pos=t;return false};nt.regexp_eatQuantifier=function(e,t){if(t===void 0)t=false;if(this.regexp_eatQuantifierPrefix(e,t)){e.eat(63);return true}return false};nt.regexp_eatQuantifierPrefix=function(e,t){return e.eat(42)||e.eat(43)||e.eat(63)||this.regexp_eatBracedQuantifier(e,t)};nt.regexp_eatBracedQuantifier=function(e,t){var i=e.pos;if(e.eat(123)){var s=0,r=-1;if(this.regexp_eatDecimalDigits(e)){s=e.lastIntValue;if(e.eat(44)&&this.regexp_eatDecimalDigits(e)){r=e.lastIntValue}if(e.eat(125)){if(r!==-1&&r<s&&!t){e.raise("numbers out of order in {} quantifier")}return true}}if(e.switchU&&!t){e.raise("Incomplete quantifier")}e.pos=i}return false};nt.regexp_eatAtom=function(e){return this.regexp_eatPatternCharacters(e)||e.eat(46)||this.regexp_eatReverseSolidusAtomEscape(e)||this.regexp_eatCharacterClass(e)||this.regexp_eatUncapturingGroup(e)||this.regexp_eatCapturingGroup(e)};nt.regexp_eatReverseSolidusAtomEscape=function(e){var t=e.pos;if(e.eat(92)){if(this.regexp_eatAtomEscape(e)){return true}e.pos=t}return false};nt.regexp_eatUncapturingGroup=function(e){var t=e.pos;if(e.eat(40)){if(e.eat(63)){if(this.options.ecmaVersion>=16){var i=this.regexp_eatModifiers(e);var s=e.eat(45);if(i||s){for(var r=0;r<i.length;r++){var a=i.charAt(r);if(i.indexOf(a,r+1)>-1){e.raise("Duplicate regular expression modifiers")}}if(s){var n=this.regexp_eatModifiers(e);if(!i&&!n&&e.current()===58){e.raise("Invalid regular expression modifiers")}for(var o=0;o<n.length;o++){var h=n.charAt(o);if(n.indexOf(h,o+1)>-1||i.indexOf(h)>-1){e.raise("Duplicate regular expression modifiers")}}}}}if(e.eat(58)){this.regexp_disjunction(e);if(e.eat(41)){return true}e.raise("Unterminated group")}}e.pos=t}return false};nt.regexp_eatCapturingGroup=function(e){if(e.eat(40)){if(this.options.ecmaVersion>=9){this.regexp_groupSpecifier(e)}else if(e.current()===63){e.raise("Invalid group")}this.regexp_disjunction(e);if(e.eat(41)){e.numCapturingParens+=1;return true}e.raise("Unterminated group")}return false};nt.regexp_eatModifiers=function(e){var t="";var i=0;while((i=e.current())!==-1&&ut(i)){t+=R(i);e.advance()}return t};function ut(e){return e===105||e===109||e===115}nt.regexp_eatExtendedAtom=function(e){return e.eat(46)||this.regexp_eatReverseSolidusAtomEscape(e)||this.regexp_eatCharacterClass(e)||this.regexp_eatUncapturingGroup(e)||this.regexp_eatCapturingGroup(e)||this.regexp_eatInvalidBracedQuantifier(e)||this.regexp_eatExtendedPatternCharacter(e)};nt.regexp_eatInvalidBracedQuantifier=function(e){if(this.regexp_eatBracedQuantifier(e,true)){e.raise("Nothing to repeat")}return false};nt.regexp_eatSyntaxCharacter=function(e){var t=e.current();if(lt(t)){e.lastIntValue=t;e.advance();return true}return false};function lt(e){return e===36||e>=40&&e<=43||e===46||e===63||e>=91&&e<=94||e>=123&&e<=125}nt.regexp_eatPatternCharacters=function(e){var t=e.pos;var i=0;while((i=e.current())!==-1&&!lt(i)){e.advance()}return e.pos!==t};nt.regexp_eatExtendedPatternCharacter=function(e){var t=e.current();if(t!==-1&&t!==36&&!(t>=40&&t<=43)&&t!==46&&t!==63&&t!==91&&t!==94&&t!==124){e.advance();return true}return false};nt.regexp_groupSpecifier=function(e){if(e.eat(63)){if(!this.regexp_eatGroupName(e)){e.raise("Invalid group")}var t=this.options.ecmaVersion>=16;var i=e.groupNames[e.lastStringValue];if(i){if(t){for(var s=0,r=i;s<r.length;s+=1){var a=r[s];if(!a.separatedFrom(e.branchID)){e.raise("Duplicate capture group name")}}}else{e.raise("Duplicate capture group name")}}if(t){(i||(e.groupNames[e.lastStringValue]=[])).push(e.branchID)}else{e.groupNames[e.lastStringValue]=true}}};nt.regexp_eatGroupName=function(e){e.lastStringValue="";if(e.eat(60)){if(this.regexp_eatRegExpIdentifierName(e)&&e.eat(62)){return true}e.raise("Invalid capture group name")}return false};nt.regexp_eatRegExpIdentifierName=function(e){e.lastStringValue="";if(this.regexp_eatRegExpIdentifierStart(e)){e.lastStringValue+=R(e.lastIntValue);while(this.regexp_eatRegExpIdentifierPart(e)){e.lastStringValue+=R(e.lastIntValue)}return true}return false};nt.regexp_eatRegExpIdentifierStart=function(e){var t=e.pos;var i=this.options.ecmaVersion>=11;var s=e.current(i);e.advance(i);if(s===92&&this.regexp_eatRegExpUnicodeEscapeSequence(e,i)){s=e.lastIntValue}if(ct(s)){e.lastIntValue=s;return true}e.pos=t;return false};function ct(e){return c(e,true)||e===36||e===95}nt.regexp_eatRegExpIdentifierPart=function(e){var t=e.pos;var i=this.options.ecmaVersion>=11;var s=e.current(i);e.advance(i);if(s===92&&this.regexp_eatRegExpUnicodeEscapeSequence(e,i)){s=e.lastIntValue}if(ft(s)){e.lastIntValue=s;return true}e.pos=t;return false};function ft(e){return f(e,true)||e===36||e===95||e===8204||e===8205}nt.regexp_eatAtomEscape=function(e){if(this.regexp_eatBackReference(e)||this.regexp_eatCharacterClassEscape(e)||this.regexp_eatCharacterEscape(e)||e.switchN&&this.regexp_eatKGroupName(e)){return true}if(e.switchU){if(e.current()===99){e.raise("Invalid unicode escape")}e.raise("Invalid escape")}return false};nt.regexp_eatBackReference=function(e){var t=e.pos;if(this.regexp_eatDecimalEscape(e)){var i=e.lastIntValue;if(e.switchU){if(i>e.maxBackReference){e.maxBackReference=i}return true}if(i<=e.numCapturingParens){return true}e.pos=t}return false};nt.regexp_eatKGroupName=function(e){if(e.eat(107)){if(this.regexp_eatGroupName(e)){e.backReferenceNames.push(e.lastStringValue);return true}e.raise("Invalid named reference")}return false};nt.regexp_eatCharacterEscape=function(e){return this.regexp_eatControlEscape(e)||this.regexp_eatCControlLetter(e)||this.regexp_eatZero(e)||this.regexp_eatHexEscapeSequence(e)||this.regexp_eatRegExpUnicodeEscapeSequence(e,false)||!e.switchU&&this.regexp_eatLegacyOctalEscapeSequence(e)||this.regexp_eatIdentityEscape(e)};nt.regexp_eatCControlLetter=function(e){var t=e.pos;if(e.eat(99)){if(this.regexp_eatControlLetter(e)){return true}e.pos=t}return false};nt.regexp_eatZero=function(e){if(e.current()===48&&!Ct(e.lookahead())){e.lastIntValue=0;e.advance();return true}return false};nt.regexp_eatControlEscape=function(e){var t=e.current();if(t===116){e.lastIntValue=9;e.advance();return true}if(t===110){e.lastIntValue=10;e.advance();return true}if(t===118){e.lastIntValue=11;e.advance();return true}if(t===102){e.lastIntValue=12;e.advance();return true}if(t===114){e.lastIntValue=13;e.advance();return true}return false};nt.regexp_eatControlLetter=function(e){var t=e.current();if(dt(t)){e.lastIntValue=t%32;e.advance();return true}return false};function dt(e){return e>=65&&e<=90||e>=97&&e<=122}nt.regexp_eatRegExpUnicodeEscapeSequence=function(e,t){if(t===void 0)t=false;var i=e.pos;var s=t||e.switchU;if(e.eat(117)){if(this.regexp_eatFixedHexDigits(e,4)){var r=e.lastIntValue;if(s&&r>=55296&&r<=56319){var a=e.pos;if(e.eat(92)&&e.eat(117)&&this.regexp_eatFixedHexDigits(e,4)){var n=e.lastIntValue;if(n>=56320&&n<=57343){e.lastIntValue=(r-55296)*1024+(n-56320)+65536;return true}}e.pos=a;e.lastIntValue=r}return true}if(s&&e.eat(123)&&this.regexp_eatHexDigits(e)&&e.eat(125)&&mt(e.lastIntValue)){return true}if(s){e.raise("Invalid unicode escape")}e.pos=i}return false};function mt(e){return e>=0&&e<=1114111}nt.regexp_eatIdentityEscape=function(e){if(e.switchU){if(this.regexp_eatSyntaxCharacter(e)){return true}if(e.eat(47)){e.lastIntValue=47;return true}return false}var t=e.current();if(t!==99&&(!e.switchN||t!==107)){e.lastIntValue=t;e.advance();return true}return false};nt.regexp_eatDecimalEscape=function(e){e.lastIntValue=0;var t=e.current();if(t>=49&&t<=57){do{e.lastIntValue=10*e.lastIntValue+(t-48);e.advance()}while((t=e.current())>=48&&t<=57);return true}return false};var vt=0;var gt=1;var xt=2;nt.regexp_eatCharacterClassEscape=function(e){var t=e.current();if(yt(t)){e.lastIntValue=-1;e.advance();return gt}var i=false;if(e.switchU&&this.options.ecmaVersion>=9&&((i=t===80)||t===112)){e.lastIntValue=-1;e.advance();var s;if(e.eat(123)&&(s=this.regexp_eatUnicodePropertyValueExpression(e))&&e.eat(125)){if(i&&s===xt){e.raise("Invalid property name")}return s}e.raise("Invalid property name")}return vt};function yt(e){return e===100||e===68||e===115||e===83||e===119||e===87}nt.regexp_eatUnicodePropertyValueExpression=function(e){var t=e.pos;if(this.regexp_eatUnicodePropertyName(e)&&e.eat(61)){var i=e.lastStringValue;if(this.regexp_eatUnicodePropertyValue(e)){var s=e.lastStringValue;this.regexp_validateUnicodePropertyNameAndValue(e,i,s);return gt}}e.pos=t;if(this.regexp_eatLoneUnicodePropertyNameOrValue(e)){var r=e.lastStringValue;return this.regexp_validateUnicodePropertyNameOrValue(e,r)}return vt};nt.regexp_validateUnicodePropertyNameAndValue=function(e,t,i){if(!V(e.unicodeProperties.nonBinary,t)){e.raise("Invalid property name")}if(!e.unicodeProperties.nonBinary[t].test(i)){e.raise("Invalid property value")}};nt.regexp_validateUnicodePropertyNameOrValue=function(e,t){if(e.unicodeProperties.binary.test(t)){return gt}if(e.switchV&&e.unicodeProperties.binaryOfStrings.test(t)){return xt}e.raise("Invalid property name")};nt.regexp_eatUnicodePropertyName=function(e){var t=0;e.lastStringValue="";while(bt(t=e.current())){e.lastStringValue+=R(t);e.advance()}return e.lastStringValue!==""};function bt(e){return dt(e)||e===95}nt.regexp_eatUnicodePropertyValue=function(e){var t=0;e.lastStringValue="";while(kt(t=e.current())){e.lastStringValue+=R(t);e.advance()}return e.lastStringValue!==""};function kt(e){return bt(e)||Ct(e)}nt.regexp_eatLoneUnicodePropertyNameOrValue=function(e){return this.regexp_eatUnicodePropertyValue(e)};nt.regexp_eatCharacterClass=function(e){if(e.eat(91)){var t=e.eat(94);var i=this.regexp_classContents(e);if(!e.eat(93)){e.raise("Unterminated character class")}if(t&&i===xt){e.raise("Negated character class may contain strings")}return true}return false};nt.regexp_classContents=function(e){if(e.current()===93){return gt}if(e.switchV){return this.regexp_classSetExpression(e)}this.regexp_nonEmptyClassRanges(e);return gt};nt.regexp_nonEmptyClassRanges=function(e){while(this.regexp_eatClassAtom(e)){var t=e.lastIntValue;if(e.eat(45)&&this.regexp_eatClassAtom(e)){var i=e.lastIntValue;if(e.switchU&&(t===-1||i===-1)){e.raise("Invalid character class")}if(t!==-1&&i!==-1&&t>i){e.raise("Range out of order in character class")}}}};nt.regexp_eatClassAtom=function(e){var t=e.pos;if(e.eat(92)){if(this.regexp_eatClassEscape(e)){return true}if(e.switchU){var i=e.current();if(i===99||It(i)){e.raise("Invalid class escape")}e.raise("Invalid escape")}e.pos=t}var s=e.current();if(s!==93){e.lastIntValue=s;e.advance();return true}return false};nt.regexp_eatClassEscape=function(e){var t=e.pos;if(e.eat(98)){e.lastIntValue=8;return true}if(e.switchU&&e.eat(45)){e.lastIntValue=45;return true}if(!e.switchU&&e.eat(99)){if(this.regexp_eatClassControlLetter(e)){return true}e.pos=t}return this.regexp_eatCharacterClassEscape(e)||this.regexp_eatCharacterEscape(e)};nt.regexp_classSetExpression=function(e){var t=gt,i;if(this.regexp_eatClassSetRange(e));else if(i=this.regexp_eatClassSetOperand(e)){if(i===xt){t=xt}var s=e.pos;while(e.eatChars([38,38])){if(e.current()!==38&&(i=this.regexp_eatClassSetOperand(e))){if(i!==xt){t=gt}continue}e.raise("Invalid character in character class")}if(s!==e.pos){return t}while(e.eatChars([45,45])){if(this.regexp_eatClassSetOperand(e)){continue}e.raise("Invalid character in character class")}if(s!==e.pos){return t}}else{e.raise("Invalid character in character class")}for(;;){if(this.regexp_eatClassSetRange(e)){continue}i=this.regexp_eatClassSetOperand(e);if(!i){return t}if(i===xt){t=xt}}};nt.regexp_eatClassSetRange=function(e){var t=e.pos;if(this.regexp_eatClassSetCharacter(e)){var i=e.lastIntValue;if(e.eat(45)&&this.regexp_eatClassSetCharacter(e)){var s=e.lastIntValue;if(i!==-1&&s!==-1&&i>s){e.raise("Range out of order in character class")}return true}e.pos=t}return false};nt.regexp_eatClassSetOperand=function(e){if(this.regexp_eatClassSetCharacter(e)){return gt}return this.regexp_eatClassStringDisjunction(e)||this.regexp_eatNestedClass(e)};nt.regexp_eatNestedClass=function(e){var t=e.pos;if(e.eat(91)){var i=e.eat(94);var s=this.regexp_classContents(e);if(e.eat(93)){if(i&&s===xt){e.raise("Negated character class may contain strings")}return s}e.pos=t}if(e.eat(92)){var r=this.regexp_eatCharacterClassEscape(e);if(r){return r}e.pos=t}return null};nt.regexp_eatClassStringDisjunction=function(e){var t=e.pos;if(e.eatChars([92,113])){if(e.eat(123)){var i=this.regexp_classStringDisjunctionContents(e);if(e.eat(125)){return i}}else{e.raise("Invalid escape")}e.pos=t}return null};nt.regexp_classStringDisjunctionContents=function(e){var t=this.regexp_classString(e);while(e.eat(124)){if(this.regexp_classString(e)===xt){t=xt}}return t};nt.regexp_classString=function(e){var t=0;while(this.regexp_eatClassSetCharacter(e)){t++}return t===1?gt:xt};nt.regexp_eatClassSetCharacter=function(e){var t=e.pos;if(e.eat(92)){if(this.regexp_eatCharacterEscape(e)||this.regexp_eatClassSetReservedPunctuator(e)){return true}if(e.eat(98)){e.lastIntValue=8;return true}e.pos=t;return false}var i=e.current();if(i<0||i===e.lookahead()&&_t(i)){return false}if(wt(i)){return false}e.advance();e.lastIntValue=i;return true};function _t(e){return e===33||e>=35&&e<=38||e>=42&&e<=44||e===46||e>=58&&e<=64||e===94||e===96||e===126}function wt(e){return e===40||e===41||e===45||e===47||e>=91&&e<=93||e>=123&&e<=125}nt.regexp_eatClassSetReservedPunctuator=function(e){var t=e.current();if(St(t)){e.lastIntValue=t;e.advance();return true}return false};function St(e){return e===33||e===35||e===37||e===38||e===44||e===45||e>=58&&e<=62||e===64||e===96||e===126}nt.regexp_eatClassControlLetter=function(e){var t=e.current();if(Ct(t)||t===95){e.lastIntValue=t%32;e.advance();return true}return false};nt.regexp_eatHexEscapeSequence=function(e){var t=e.pos;if(e.eat(120)){if(this.regexp_eatFixedHexDigits(e,2)){return true}if(e.switchU){e.raise("Invalid escape")}e.pos=t}return false};nt.regexp_eatDecimalDigits=function(e){var t=e.pos;var i=0;e.lastIntValue=0;while(Ct(i=e.current())){e.lastIntValue=10*e.lastIntValue+(i-48);e.advance()}return e.pos!==t};function Ct(e){return e>=48&&e<=57}nt.regexp_eatHexDigits=function(e){var t=e.pos;var i=0;e.lastIntValue=0;while(Et(i=e.current())){e.lastIntValue=16*e.lastIntValue+At(i);e.advance()}return e.pos!==t};function Et(e){return e>=48&&e<=57||e>=65&&e<=70||e>=97&&e<=102}function At(e){if(e>=65&&e<=70){return 10+(e-65)}if(e>=97&&e<=102){return 10+(e-97)}return e-48}nt.regexp_eatLegacyOctalEscapeSequence=function(e){if(this.regexp_eatOctalDigit(e)){var t=e.lastIntValue;if(this.regexp_eatOctalDigit(e)){var i=e.lastIntValue;if(t<=3&&this.regexp_eatOctalDigit(e)){e.lastIntValue=t*64+i*8+e.lastIntValue}else{e.lastIntValue=t*8+i}}else{e.lastIntValue=t}return true}return false};nt.regexp_eatOctalDigit=function(e){var t=e.current();if(It(t)){e.lastIntValue=t-48;e.advance();return true}e.lastIntValue=0;return false};function It(e){return e>=48&&e<=55}nt.regexp_eatFixedHexDigits=function(e,t){var i=e.pos;e.lastIntValue=0;for(var s=0;s<t;++s){var r=e.current();if(!Et(r)){e.pos=i;return false}e.lastIntValue=16*e.lastIntValue+At(r);e.advance()}return true};var Pt=function e(t){this.type=t.type;this.value=t.value;this.start=t.start;this.end=t.end;if(t.options.locations){this.loc=new B(t,t.startLoc,t.endLoc)}if(t.options.ranges){this.range=[t.start,t.end]}};var Vt=he.prototype;Vt.next=function(e){if(!e&&this.type.keyword&&this.containsEsc){this.raiseRecoverable(this.start,"Escape sequence in keyword "+this.type.keyword)}if(this.options.onToken){this.options.onToken(new Pt(this))}this.lastTokEnd=this.end;this.lastTokStart=this.start;this.lastTokEndLoc=this.endLoc;this.lastTokStartLoc=this.startLoc;this.nextToken()};Vt.getToken=function(){this.next();return new Pt(this)};if(typeof Symbol!=="undefined"){Vt[Symbol.iterator]=function(){var e=this;return{next:function(){var t=e.getToken();return{done:t.type===b.eof,value:t}}}}}Vt.nextToken=function(){var e=this.curContext();if(!e||!e.preserveSpace){this.skipSpace()}this.start=this.pos;if(this.options.locations){this.startLoc=this.curPosition()}if(this.pos>=this.input.length){return this.finishToken(b.eof)}if(e.override){return e.override(this)}else{this.readToken(this.fullCharCodeAtPos())}};Vt.readToken=function(e){if(c(e,this.options.ecmaVersion>=6)||e===92){return this.readWord()}return this.getTokenFromCode(e)};Vt.fullCharCodeAt=function(e){var t=this.input.charCodeAt(e);if(t<=55295||t>=56320){return t}var i=this.input.charCodeAt(e+1);return i<=56319||i>=57344?t:(t<<10)+i-56613888};Vt.fullCharCodeAtPos=function(){return this.fullCharCodeAt(this.pos)};Vt.skipBlockComment=function(){var e=this.options.onComment&&this.curPosition();var t=this.pos,i=this.input.indexOf("*/",this.pos+=2);if(i===-1){this.raise(this.pos-2,"Unterminated comment")}this.pos=i+2;if(this.options.locations){for(var s=void 0,r=t;(s=S(this.input,r,this.pos))>-1;){++this.curLine;r=this.lineStart=s}}if(this.options.onComment){this.options.onComment(true,this.input.slice(t+2,i),t,this.pos,e,this.curPosition())}};Vt.skipLineComment=function(e){var t=this.pos;var i=this.options.onComment&&this.curPosition();var s=this.input.charCodeAt(this.pos+=e);while(this.pos<this.input.length&&!w(s)){s=this.input.charCodeAt(++this.pos)}if(this.options.onComment){this.options.onComment(false,this.input.slice(t+e,this.pos),t,this.pos,i,this.curPosition())}};Vt.skipSpace=function(){e:while(this.pos<this.input.length){var e=this.input.charCodeAt(this.pos);switch(e){case 32:case 160:++this.pos;break;case 13:if(this.input.charCodeAt(this.pos+1)===10){++this.pos}case 10:case 8232:case 8233:++this.pos;if(this.options.locations){++this.curLine;this.lineStart=this.pos}break;case 47:switch(this.input.charCodeAt(this.pos+1)){case 42:this.skipBlockComment();break;case 47:this.skipLineComment(2);break;default:break e}break;default:if(e>8&&e<14||e>=5760&&C.test(String.fromCharCode(e))){++this.pos}else{break e}}}};Vt.finishToken=function(e,t){this.end=this.pos;if(this.options.locations){this.endLoc=this.curPosition()}var i=this.type;this.type=e;this.value=t;this.updateContext(i)};Vt.readToken_dot=function(){var e=this.input.charCodeAt(this.pos+1);if(e>=48&&e<=57){return this.readNumber(true)}var t=this.input.charCodeAt(this.pos+2);if(this.options.ecmaVersion>=6&&e===46&&t===46){this.pos+=3;return this.finishToken(b.ellipsis)}else{++this.pos;return this.finishToken(b.dot)}};Vt.readToken_slash=function(){var e=this.input.charCodeAt(this.pos+1);if(this.exprAllowed){++this.pos;return this.readRegexp()}if(e===61){return this.finishOp(b.assign,2)}return this.finishOp(b.slash,1)};Vt.readToken_mult_modulo_exp=function(e){var t=this.input.charCodeAt(this.pos+1);var i=1;var s=e===42?b.star:b.modulo;if(this.options.ecmaVersion>=7&&e===42&&t===42){++i;s=b.starstar;t=this.input.charCodeAt(this.pos+2)}if(t===61){return this.finishOp(b.assign,i+1)}return this.finishOp(s,i)};Vt.readToken_pipe_amp=function(e){var t=this.input.charCodeAt(this.pos+1);if(t===e){if(this.options.ecmaVersion>=12){var i=this.input.charCodeAt(this.pos+2);if(i===61){return this.finishOp(b.assign,3)}}return this.finishOp(e===124?b.logicalOR:b.logicalAND,2)}if(t===61){return this.finishOp(b.assign,2)}return this.finishOp(e===124?b.bitwiseOR:b.bitwiseAND,1)};Vt.readToken_caret=function(){var e=this.input.charCodeAt(this.pos+1);if(e===61){return this.finishOp(b.assign,2)}return this.finishOp(b.bitwiseXOR,1)};Vt.readToken_plus_min=function(e){var t=this.input.charCodeAt(this.pos+1);if(t===e){if(t===45&&!this.inModule&&this.input.charCodeAt(this.pos+2)===62&&(this.lastTokEnd===0||k.test(this.input.slice(this.lastTokEnd,this.pos)))){this.skipLineComment(3);this.skipSpace();return this.nextToken()}return this.finishOp(b.incDec,2)}if(t===61){return this.finishOp(b.assign,2)}return this.finishOp(b.plusMin,1)};Vt.readToken_lt_gt=function(e){var t=this.input.charCodeAt(this.pos+1);var i=1;if(t===e){i=e===62&&this.input.charCodeAt(this.pos+2)===62?3:2;if(this.input.charCodeAt(this.pos+i)===61){return this.finishOp(b.assign,i+1)}return this.finishOp(b.bitShift,i)}if(t===33&&e===60&&!this.inModule&&this.input.charCodeAt(this.pos+2)===45&&this.input.charCodeAt(this.pos+3)===45){this.skipLineComment(4);this.skipSpace();return this.nextToken()}if(t===61){i=2}return this.finishOp(b.relational,i)};Vt.readToken_eq_excl=function(e){var t=this.input.charCodeAt(this.pos+1);if(t===61){return this.finishOp(b.equality,this.input.charCodeAt(this.pos+2)===61?3:2)}if(e===61&&t===62&&this.options.ecmaVersion>=6){this.pos+=2;return this.finishToken(b.arrow)}return this.finishOp(e===61?b.eq:b.prefix,1)};Vt.readToken_question=function(){var e=this.options.ecmaVersion;if(e>=11){var t=this.input.charCodeAt(this.pos+1);if(t===46){var i=this.input.charCodeAt(this.pos+2);if(i<48||i>57){return this.finishOp(b.questionDot,2)}}if(t===63){if(e>=12){var s=this.input.charCodeAt(this.pos+2);if(s===61){return this.finishOp(b.assign,3)}}return this.finishOp(b.coalesce,2)}}return this.finishOp(b.question,1)};Vt.readToken_numberSign=function(){var e=this.options.ecmaVersion;var t=35;if(e>=13){++this.pos;t=this.fullCharCodeAtPos();if(c(t,true)||t===92){return this.finishToken(b.privateId,this.readWord1())}}this.raise(this.pos,"Unexpected character '"+R(t)+"'")};Vt.getTokenFromCode=function(e){switch(e){case 46:return this.readToken_dot();case 40:++this.pos;return this.finishToken(b.parenL);case 41:++this.pos;return this.finishToken(b.parenR);case 59:++this.pos;return this.finishToken(b.semi);case 44:++this.pos;return this.finishToken(b.comma);case 91:++this.pos;return this.finishToken(b.bracketL);case 93:++this.pos;return this.finishToken(b.bracketR);case 123:++this.pos;return this.finishToken(b.braceL);case 125:++this.pos;return this.finishToken(b.braceR);case 58:++this.pos;return this.finishToken(b.colon);case 96:if(this.options.ecmaVersion<6){break}++this.pos;return this.finishToken(b.backQuote);case 48:var t=this.input.charCodeAt(this.pos+1);if(t===120||t===88){return this.readRadixNumber(16)}if(this.options.ecmaVersion>=6){if(t===111||t===79){return this.readRadixNumber(8)}if(t===98||t===66){return this.readRadixNumber(2)}}case 49:case 50:case 51:case 52:case 53:case 54:case 55:case 56:case 57:return this.readNumber(false);case 34:case 39:return this.readString(e);case 47:return this.readToken_slash();case 37:case 42:return this.readToken_mult_modulo_exp(e);case 124:case 38:return this.readToken_pipe_amp(e);case 94:return this.readToken_caret();case 43:case 45:return this.readToken_plus_min(e);case 60:case 62:return this.readToken_lt_gt(e);case 61:case 33:return this.readToken_eq_excl(e);case 63:return this.readToken_question();case 126:return this.finishOp(b.prefix,1);case 35:return this.readToken_numberSign()}this.raise(this.pos,"Unexpected character '"+R(e)+"'")};Vt.finishOp=function(e,t){var i=this.input.slice(this.pos,this.pos+t);this.pos+=t;return this.finishToken(e,i)};Vt.readRegexp=function(){var e,t,i=this.pos;for(;;){if(this.pos>=this.input.length){this.raise(i,"Unterminated regular expression")}var s=this.input.charAt(this.pos);if(k.test(s)){this.raise(i,"Unterminated regular expression")}if(!e){if(s==="["){t=true}else if(s==="]"&&t){t=false}else if(s==="/"&&!t){break}e=s==="\\"}else{e=false}++this.pos}var r=this.input.slice(i,this.pos);++this.pos;var a=this.pos;var n=this.readWord1();if(this.containsEsc){this.unexpected(a)}var o=this.regexpState||(this.regexpState=new ht(this));o.reset(i,r,n);this.validateRegExpFlags(o);this.validateRegExpPattern(o);var h=null;try{h=new RegExp(r,n)}catch(e){}return this.finishToken(b.regexp,{pattern:r,flags:n,value:h})};Vt.readInt=function(e,t,i){var s=this.options.ecmaVersion>=12&&t===undefined;var r=i&&this.input.charCodeAt(this.pos)===48;var a=this.pos,n=0,o=0;for(var h=0,p=t==null?Infinity:t;h<p;++h,++this.pos){var u=this.input.charCodeAt(this.pos),l=void 0;if(s&&u===95){if(r){this.raiseRecoverable(this.pos,"Numeric separator is not allowed in legacy octal numeric literals")}if(o===95){this.raiseRecoverable(this.pos,"Numeric separator must be exactly one underscore")}if(h===0){this.raiseRecoverable(this.pos,"Numeric separator is not allowed at the first of digits")}o=u;continue}if(u>=97){l=u-97+10}else if(u>=65){l=u-65+10}else if(u>=48&&u<=57){l=u-48}else{l=Infinity}if(l>=e){break}o=u;n=n*e+l}if(s&&o===95){this.raiseRecoverable(this.pos-1,"Numeric separator is not allowed at the last of digits")}if(this.pos===a||t!=null&&this.pos-a!==t){return null}return n};function Nt(e,t){if(t){return parseInt(e,8)}return parseFloat(e.replace(/_/g,""))}function Tt(e){if(typeof BigInt!=="function"){return null}return BigInt(e.replace(/_/g,""))}Vt.readRadixNumber=function(e){var t=this.pos;this.pos+=2;var i=this.readInt(e);if(i==null){this.raise(this.start+2,"Expected number in radix "+e)}if(this.options.ecmaVersion>=11&&this.input.charCodeAt(this.pos)===110){i=Tt(this.input.slice(t,this.pos));++this.pos}else if(c(this.fullCharCodeAtPos())){this.raise(this.pos,"Identifier directly after number")}return this.finishToken(b.num,i)};Vt.readNumber=function(e){var t=this.pos;if(!e&&this.readInt(10,undefined,true)===null){this.raise(t,"Invalid number")}var i=this.pos-t>=2&&this.input.charCodeAt(t)===48;if(i&&this.strict){this.raise(t,"Invalid number")}var s=this.input.charCodeAt(this.pos);if(!i&&!e&&this.options.ecmaVersion>=11&&s===110){var r=Tt(this.input.slice(t,this.pos));++this.pos;if(c(this.fullCharCodeAtPos())){this.raise(this.pos,"Identifier directly after number")}return this.finishToken(b.num,r)}if(i&&/[89]/.test(this.input.slice(t,this.pos))){i=false}if(s===46&&!i){++this.pos;this.readInt(10);s=this.input.charCodeAt(this.pos)}if((s===69||s===101)&&!i){s=this.input.charCodeAt(++this.pos);if(s===43||s===45){++this.pos}if(this.readInt(10)===null){this.raise(t,"Invalid number")}}if(c(this.fullCharCodeAtPos())){this.raise(this.pos,"Identifier directly after number")}var a=Nt(this.input.slice(t,this.pos),i);return this.finishToken(b.num,a)};Vt.readCodePoint=function(){var e=this.input.charCodeAt(this.pos),t;if(e===123){if(this.options.ecmaVersion<6){this.unexpected()}var i=++this.pos;t=this.readHexChar(this.input.indexOf("}",this.pos)-this.pos);++this.pos;if(t>1114111){this.invalidStringToken(i,"Code point out of bounds")}}else{t=this.readHexChar(4)}return t};Vt.readString=function(e){var t="",i=++this.pos;for(;;){if(this.pos>=this.input.length){this.raise(this.start,"Unterminated string constant")}var s=this.input.charCodeAt(this.pos);if(s===e){break}if(s===92){t+=this.input.slice(i,this.pos);t+=this.readEscapedChar(false);i=this.pos}else if(s===8232||s===8233){if(this.options.ecmaVersion<10){this.raise(this.start,"Unterminated string constant")}++this.pos;if(this.options.locations){this.curLine++;this.lineStart=this.pos}}else{if(w(s)){this.raise(this.start,"Unterminated string constant")}++this.pos}}t+=this.input.slice(i,this.pos++);return this.finishToken(b.string,t)};var Lt={};Vt.tryReadTemplateToken=function(){this.inTemplateElement=true;try{this.readTmplToken()}catch(e){if(e===Lt){this.readInvalidTemplateToken()}else{throw e}}this.inTemplateElement=false};Vt.invalidStringToken=function(e,t){if(this.inTemplateElement&&this.options.ecmaVersion>=9){throw Lt}else{this.raise(e,t)}};Vt.readTmplToken=function(){var e="",t=this.pos;for(;;){if(this.pos>=this.input.length){this.raise(this.start,"Unterminated template")}var i=this.input.charCodeAt(this.pos);if(i===96||i===36&&this.input.charCodeAt(this.pos+1)===123){if(this.pos===this.start&&(this.type===b.template||this.type===b.invalidTemplate)){if(i===36){this.pos+=2;return this.finishToken(b.dollarBraceL)}else{++this.pos;return this.finishToken(b.backQuote)}}e+=this.input.slice(t,this.pos);return this.finishToken(b.template,e)}if(i===92){e+=this.input.slice(t,this.pos);e+=this.readEscapedChar(true);t=this.pos}else if(w(i)){e+=this.input.slice(t,this.pos);++this.pos;switch(i){case 13:if(this.input.charCodeAt(this.pos)===10){++this.pos}case 10:e+="\n";break;default:e+=String.fromCharCode(i);break}if(this.options.locations){++this.curLine;this.lineStart=this.pos}t=this.pos}else{++this.pos}}};Vt.readInvalidTemplateToken=function(){for(;this.pos<this.input.length;this.pos++){switch(this.input[this.pos]){case"\\":++this.pos;break;case"$":if(this.input[this.pos+1]!=="{"){break}case"`":return this.finishToken(b.invalidTemplate,this.input.slice(this.start,this.pos));case"\r":if(this.input[this.pos+1]==="\n"){++this.pos}case"\n":case"\u2028":case"\u2029":++this.curLine;this.lineStart=this.pos+1;break}}this.raise(this.start,"Unterminated template")};Vt.readEscapedChar=function(e){var t=this.input.charCodeAt(++this.pos);++this.pos;switch(t){case 110:return"\n";case 114:return"\r";case 120:return String.fromCharCode(this.readHexChar(2));case 117:return R(this.readCodePoint());case 116:return"\t";case 98:return"\b";case 118:return"\v";case 102:return"\f";case 13:if(this.input.charCodeAt(this.pos)===10){++this.pos}case 10:if(this.options.locations){this.lineStart=this.pos;++this.curLine}return"";case 56:case 57:if(this.strict){this.invalidStringToken(this.pos-1,"Invalid escape sequence")}if(e){var i=this.pos-1;this.invalidStringToken(i,"Invalid escape sequence in template string")}default:if(t>=48&&t<=55){var s=this.input.substr(this.pos-1,3).match(/^[0-7]+/)[0];var r=parseInt(s,8);if(r>255){s=s.slice(0,-1);r=parseInt(s,8)}this.pos+=s.length-1;t=this.input.charCodeAt(this.pos);if((s!=="0"||t===56||t===57)&&(this.strict||e)){this.invalidStringToken(this.pos-1-s.length,e?"Octal literal in template string":"Octal literal in strict mode")}return String.fromCharCode(r)}if(w(t)){if(this.options.locations){this.lineStart=this.pos;++this.curLine}return""}return String.fromCharCode(t)}};Vt.readHexChar=function(e){var t=this.pos;var i=this.readInt(16,e);if(i===null){this.invalidStringToken(t,"Bad character escape sequence")}return i};Vt.readWord1=function(){this.containsEsc=false;var e="",t=true,i=this.pos;var s=this.options.ecmaVersion>=6;while(this.pos<this.input.length){var r=this.fullCharCodeAtPos();if(f(r,s)){this.pos+=r<=65535?1:2}else if(r===92){this.containsEsc=true;e+=this.input.slice(i,this.pos);var a=this.pos;if(this.input.charCodeAt(++this.pos)!==117){this.invalidStringToken(this.pos,"Expecting Unicode escape sequence \\uXXXX")}++this.pos;var n=this.readCodePoint();if(!(t?c:f)(n,s)){this.invalidStringToken(a,"Invalid Unicode escape")}e+=R(n);i=this.pos}else{break}t=false}return e+this.input.slice(i,this.pos)};Vt.readWord=function(){var e=this.readWord1();var t=b.name;if(this.keywords.test(e)){t=x[e]}return this.finishToken(t,e)};var Rt="8.19.0";he.acorn={Parser:he,version:Rt,defaultOptions:F,Position:O,SourceLocation:B,getLineInfo:M,Node:Re,TokenType:d,tokTypes:b,keywordTypes:x,TokContext:Se,tokContexts:Ce,isIdentifierChar:f,isIdentifierStart:c,Token:Pt,isNewLine:w,lineBreak:k,lineBreakG:_,nonASCIIwhitespace:C};function Dt(e,t){return he.parse(e,t)}function Ot(e,t,i){return he.parseExpressionAt(e,t,i)}function Bt(e,t){return he.tokenizer(e,t)}e.Node=Re;e.Parser=he;e.Position=O;e.SourceLocation=B;e.TokContext=Se;e.Token=Pt;e.TokenType=d;e.defaultOptions=F;e.getLineInfo=M;e.isIdentifierChar=f;e.isIdentifierStart=c;e.isNewLine=w;e.keywordTypes=x;e.lineBreak=k;e.lineBreakG=_;e.nonASCIIwhitespace=C;e.parse=Dt;e.parseExpressionAt=Ot;e.tokContexts=Ce;e.tokTypes=b;e.tokenizer=Bt;e.version=Rt});
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "50",
+        v: "49",
         log: [],
         errors: [],
         renderer: null,
@@ -102,7 +98,7 @@
         passiveLocal: null
     };
     W[K] = S;
-    /* BRIO: warningThresholds (V49 decision semantics; V49 user-proven, V50 controls/reset live-pending)
+    /* BRIO: warningThresholds (V49; custom values proven, revised inclusive boundary live-pending)
      * Shared thresholds for own HUD and remote resource counts; health ring is local-only.
      * Native reserve order: light/medium/heavy/shells/rockets; virtual index5 holds the grappler threshold.
      * Grappler charges are wAmmo[slot-1] (áAæ), NOT reserve ammo, confirmed in the native HUD constructor.
@@ -116,110 +112,86 @@
      * Blank/null/negative/NaN/objects must not coerce to zero; V49 zero warns for a known empty count.
      * Safe nonnegative integers up to one million are supported by both storage and UI.
      */
-    normalizeWarningThresholds = stored => { /* BRIO block: normalizeWarningThresholds — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
-        const valid = /* BRIO expr: valid — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ (v, fallback) => Number.isSafeInteger(v) && v >= 0 && v <= 1000000 ? v : fallback;
+    normalizeWarningThresholds = stored => {
+        const valid = (v, fallback) => Number.isSafeInteger(v) && v >= 0 && v <= 1000000 ? v : fallback;
         return {health:valid(stored?.health, WARNING_DEFAULTS.health),
-            ammo:WARNING_DEFAULTS.ammo.map(/* BRIO expr: normalizeWarningThresholds / WARNING_DEFAULTS.ammo.map callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ (v,i) => valid(stored?.ammo?.[i],v)),
-            materials:WARNING_DEFAULTS.materials.map(/* BRIO expr: normalizeWarningThresholds / WARNING_DEFAULTS.materials.map callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ (v,i) => valid(stored?.materials?.[i],v))};
+            ammo:WARNING_DEFAULTS.ammo.map((v,i) => valid(stored?.ammo?.[i],v)),
+            materials:WARNING_DEFAULTS.materials.map((v,i) => valid(stored?.materials?.[i],v))};
     };
     const /* BRIO: belowWarning
      * V49 inclusive comparison: equality warns, as now explicitly requested. Unknown/negative/disabled never warn.
      * The same thresholds apply to displayed remote reserves and local loaded+reserve slot totals.
      */
-    belowWarning = /* BRIO expr: belowWarning — Use proven inclusive thresholds; unknown/negative values and disabled warnings never produce an alert. */ (e, kind, index, value) => !!e[{health:"lowHealthWarning",ammo:"lowAmmoWarning",materials:"lowMatsWarning"}[kind]] &&
+    belowWarning = (e, kind, index, value) => !!e[{health:"lowHealthWarning",ammo:"lowAmmoWarning",materials:"lowMatsWarning"}[kind]] &&
         Number.isFinite(value) && value >= 0 && value <= (kind === "health" ? e.warningThresholds.health : e.warningThresholds[kind][index]);
     const /* BRIO: materialIndex
      * Native gear and captured scrap icon are both mats[3]; unknown resource paths never receive a guessed index.
      */
-    materialIndex = /* BRIO expr: materialIndex — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ path => ["wood","brick","metal","scrap"].findIndex(/* BRIO expr: materialIndex / ["wood","brick","metal","scrap"].findIndex callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ k => path?.endsWith("/"+k+".png") || k === "scrap" && path?.endsWith("/gear.png"));
-    const q = /* BRIO expr: q — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ s => D.querySelector(s), t = /* BRIO expr: t — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ x => (x ?? "").toString().replace(/\s+/g, " ").trim(), /* BRIO: read
+    materialIndex = path => ["wood","brick","metal","scrap"].findIndex(k => path?.endsWith("/"+k+".png") || k === "scrap" && path?.endsWith("/gear.png"));
+    const q = s => D.querySelector(s), t = x => (x ?? "").toString().replace(/\s+/g, " ").trim(), /* BRIO: read
      * Read persisted JSON defensively. Missing/corrupt settings use the supplied default; runtime state is never stored here.
      */
-    read = (k, d) => { /* BRIO block: read — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
-        try { /* BRIO guarded: read — Keep the existing exception boundary for read. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    read = (k, d) => {
+        try {
             return JSON.parse(localStorage.getItem(k) || "") || d;
-        } catch (_) { /* BRIO fallback: read — Handle failure in read through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (_) {
             return d;
         }
     }, /* BRIO: write
      * Persist user choices only. Storage errors go to diagnostics rather than interrupting native Play.
      */
-    write = (k, v) => { /* BRIO block: write — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
-        try { /* BRIO guarded: write — Keep the existing exception boundary for write. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    write = (k, v) => {
+        try {
             localStorage.setItem(k, JSON.stringify(v));
-        } catch (e) { /* BRIO fallback: write — Handle failure in write through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             S.errors.push(String(e));
         }
     }, /* BRIO: state
      * Read cosmetic selections. Keep this namespace separate from the native locker and from Extras.
      */
-    state = /* BRIO expr: state — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ () => read("br_local_visuals", {}), saveState = /* BRIO expr: saveState — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ s => write("br_local_visuals", s), /* BRIO: extrasState
+    state = () => read("br_local_visuals", {}), saveState = s => write("br_local_visuals", s), /* BRIO: extrasState
      * Read current Extras while discarding user-retired options. Old saved true values must never reactivate removed features.
      */
-    storedExtras = () => { /* BRIO block: storedExtras — Normalize saved user preferences without persisting challenge-derived overrides. */
+    extrasState = () => {
         const stored = read("brio_extras_state", {}), value = stored && typeof stored === "object" && !Array.isArray(stored) ? stored : {};
-        for (const key of ["buildMaterialLabels", "deployableLabels", "deployableRadius", "highlightLoot", "noFoliage", "cleanLoot", "playerIds"]) delete value[key];
+        for (const key of ["buildMaterialLabels", "deployableLabels", "deployableRadius", "highlightLoot", "noFoliage"]) delete value[key];
         // V48 choices persist across Play/reinjection. No per-match references belong in this settings record.
         value.warningThresholds = normalizeWarningThresholds(value.warningThresholds);
-        // V50 migrations preserve the previous challenges' actual semantics: art-only loot, completely hidden builds.
-        if (!LOOT_TIERS.some(/* BRIO expr: storedExtras / LOOT_TIERS.some callback — Normalize saved user preferences without persisting challenge-derived overrides. */ ([id]) => id === value.lootMaskTier)) value.lootMaskTier = "item";
-        if (!BUILD_TIERS.some(/* BRIO expr: storedExtras / BUILD_TIERS.some callback — Normalize saved user preferences without persisting challenge-derived overrides. */ ([id]) => id === value.buildMaskTier)) value.buildMaskTier = "all";
         return value;
-    }, /* BRIO: extrasState (V50; effective settings, never persisted)
-     * Derive the composite from the option registry so every future gameplay challenge joins automatically.
-     * Visual-only rows declare their exception explicitly. All modifier switches, including future ones, are forced off.
-     * User preferences and threshold values remain in storedExtras; disabling the composite restores them.
-     * Internal mask flags retain the proven V49 cleanLoot adapter without exposing the retired modifier.
-     */
-    extrasState = () => { /* BRIO block: extrasState — Derive effective challenge values while retaining the separately saved preferences. */
-        const value = storedExtras();
-        if (value.goodFlippinLuck) { /* BRIO branch: extrasState — Accept value.goodFlippinLuck. Derive effective challenge values while retaining the separately saved preferences. */
-            for (const [id,,,,kind] of EXTRA.challenges) if (id && id !== "goodFlippinLuck" && kind !== "visual") value[id] = true;
-            for (const [id] of EXTRA.modifiers) if (id) value[id] = false;
-            value.lootMaskTier = "all"; value.buildMaskTier = "all";
-        }
-        value.maskLootArt = !!value.lootInvisible && value.lootMaskTier !== "rarity";
-        value.cleanLoot = !!value.lootInvisible && value.lootMaskTier !== "item";
-        value.maskLootPopup = !!value.lootInvisible && ["locations","all"].includes(value.lootMaskTier);
-        value.maskLootOutline = !!value.lootInvisible && value.lootMaskTier === "locations";
-        return value;
-    }, /* BRIO: saveExtras
-     * Save raw user selections only; derived forced-off flags must never erase independent preferences.
-     */
-    saveExtras = /* BRIO expr: saveExtras — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ s => write("brio_extras_state", s), norm = u => { /* BRIO block: norm — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-        try { /* BRIO guarded: norm — Keep the existing exception boundary for norm. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, saveExtras = s => write("brio_extras_state", s), norm = u => {
+        try {
             return new URL(String(u || ""), location.href).pathname.toLowerCase();
-        } catch (_) { /* BRIO fallback: norm — Handle failure in norm through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (_) {
             return String(u || "").split(/[?#]/)[0].toLowerCase();
         }
     }, /* BRIO: clean
      * Sanitize terminal diagnostics, preserving complete source through its separate reconstructable chunk path.
      */
-    clean = x => { /* BRIO block: clean — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    clean = x => {
         if (typeof x === "string") return x.startsWith("data:image/") ? `[data-url ${x.length} chars]` : x.length > 12e3 ? x.slice(0, 11997) + "..." : x;
         if (Array.isArray(x)) return x.map(clean);
-        if (x && typeof x === "object") { /* BRIO branch: clean — Accept x && typeof x === "object". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (x && typeof x === "object") {
             const o = {};
             for (const [k, v] of Object.entries(x)) o[k] = clean(v);
             return o;
         }
         return x;
-    }, J = x => { /* BRIO block: J — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-        try { /* BRIO guarded: J — Keep the existing exception boundary for J. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, J = x => {
+        try {
             return JSON.stringify(clean(x));
-        } catch (_) { /* BRIO fallback: J — Handle failure in J through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (_) {
             return String(x);
         }
     }, /* BRIO: log
      * Append the complete diagnostic history; only the terminal preview is bounded. COPY RESULTS must keep all epochs.
      */
-    log = (m, o) => { /* BRIO block: log — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    log = (m, o) => {
         const z = `[${(new Date).toISOString().slice(11, 23)}] ${m}${o === undefined ? "" : " " + J(o)}`;
         S.log.push(z);
-        if (S.out) { /* BRIO branch: log — Accept S.out. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            if (!S.logFlush) S.logFlush = setTimeout(() => { /* BRIO block: log — setTimeout callback. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (S.out) {
+            if (!S.logFlush) S.logFlush = setTimeout(() => {
                 S.logFlush = 0;
-                if (S.out && !S.manualCopy) { /* BRIO branch: log — Accept S.out && !S.manualCopy. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                if (S.out && !S.manualCopy) {
                     S.out.value = S.log.slice(-80).join("\n").slice(-64000);
                     S.out.scrollTop = S.out.scrollHeight;
                 }
@@ -230,7 +202,7 @@
     const /* BRIO: mkBlank
      * Create transparent, native-sized resources for invisible modes. Never change native image dimensions/bookkeeping.
      */
-    mkBlank = (w, h) => { /* BRIO block: mkBlank — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    mkBlank = (w, h) => {
         const c = D.createElement("canvas");
         c.width = w;
         c.height = h;
@@ -244,71 +216,71 @@
     const /* BRIO: catalog
      * Use the reached native cosmetic catalog, not a fabricated ownership list. SYNC is allowed-set membership only.
      */
-    catalog = /* BRIO expr: catalog — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ () => W["Åèa"] && typeof W["Åèa"] === "object" ? W["Åèa"] : {}, syncSet = /* BRIO expr: syncSet — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => new Set(Array.isArray(W["åÆÆ"]) ? W["åÆÆ"].map(String) : []), items = /* BRIO expr: items — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ typ => Object.entries(catalog()).filter(/* BRIO expr: items / Object.entries(catalog()).filter callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ ([id, v]) => v?.type === typ && !(typ === "skin" && (id === "player" || id === "skin1" || t(v?.name).toLowerCase() === "default"))).map(/* BRIO expr: items / Object.entries(catalog()).filter(([id, v]) => v?.type === typ && !(typ === "skin" && (id === "player" || id == callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ ([id, v]) => ({
+    catalog = () => W["Åèa"] && typeof W["Åèa"] === "object" ? W["Åèa"] : {}, syncSet = () => new Set(Array.isArray(W["åÆÆ"]) ? W["åÆÆ"].map(String) : []), items = typ => Object.entries(catalog()).filter(([id, v]) => v?.type === typ && !(typ === "skin" && (id === "player" || id === "skin1" || t(v?.name).toLowerCase() === "default"))).map(([id, v]) => ({
         id: id,
         name: v.name || id,
         sync: syncSet().has(id)
-    })).sort(/* BRIO expr: items / Object.entries(catalog()).filter(([id, v]) => v?.type === typ && !(typ === "skin" && (id === "player" || id == callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ (a, b) => a.name.localeCompare(b.name));
+    })).sort((a, b) => a.name.localeCompare(b.name));
     const /* BRIO: openDB
      * Open the category-scoped custom asset cache. Never clear user uploads at a match boundary.
      */
-    openDB = /* BRIO expr: openDB — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ () => new Promise((ok, no) => { /* BRIO block: openDB — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    openDB = () => new Promise((ok, no) => {
         const r = indexedDB.open("brio_unlocker", 1);
-        r.onupgradeneeded = () => { /* BRIO block: r.onupgradeneeded — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        r.onupgradeneeded = () => {
             if (!r.result.objectStoreNames.contains("customAssets")) r.result.createObjectStore("customAssets", {
                 keyPath: "key"
             });
         };
-        r.onsuccess = /* BRIO expr: r.onsuccess — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => ok(r.result);
-        r.onerror = /* BRIO expr: r.onerror — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => no(r.error);
+        r.onsuccess = () => ok(r.result);
+        r.onerror = () => no(r.error);
     }), /* BRIO: loadCustom
      * Restore custom assets and historic IDs before rendering selection UI; tolerate unavailable browser storage.
      */
-    loadCustom = async () => { /* BRIO block: loadCustom — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    loadCustom = async () => {
         for (const k in S.custom) S.custom[k] = [];
-        try { /* BRIO guarded: loadCustom — Keep the existing exception boundary for loadCustom. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
-            const d = await openDB(), r = d.transaction("customAssets").objectStore("customAssets").getAll(), a = await new Promise((ok, no) => { /* BRIO block: loadCustom — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
-                r.onsuccess = /* BRIO expr: r.onsuccess — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => ok(r.result || []);
-                r.onerror = /* BRIO expr: r.onerror — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => no(r.error);
+        try {
+            const d = await openDB(), r = d.transaction("customAssets").objectStore("customAssets").getAll(), a = await new Promise((ok, no) => {
+                r.onsuccess = () => ok(r.result || []);
+                r.onerror = () => no(r.error);
             });
             d.close();
-            for (const x of a) if (S.custom[x.category]) { /* BRIO branch: loadCustom — Accept S.custom[x.category]. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+            for (const x of a) if (S.custom[x.category]) {
                 x.n = x.n || +(String(x.id || "").match(/\d+/) || [ 1 ])[0] || 1;
                 x.id = x.id || `custom${x.n}`;
                 x.name = x.name || x.id;
                 S.custom[x.category].push(x);
             }
-            for (const k in S.custom) S.custom[k].sort(/* BRIO expr: loadCustom / S.custom[k].sort callback — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ (a, b) => (a.n || 0) - (b.n || 0));
-            log("CUSTOM CACHE", Object.fromEntries(Object.entries(S.custom).map(/* BRIO expr: loadCustom / Object.entries(S.custom).map callback — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ ([k, v]) => [ k, v.length ])));
-        } catch (e) { /* BRIO fallback: loadCustom — Handle failure in loadCustom through its existing fallback/report path; optional native fields may be unavailable. */
+            for (const k in S.custom) S.custom[k].sort((a, b) => (a.n || 0) - (b.n || 0));
+            log("CUSTOM CACHE", Object.fromEntries(Object.entries(S.custom).map(([k, v]) => [ k, v.length ])));
+        } catch (e) {
             S.errors.push(String(e));
             log("CUSTOM CACHE ERROR", String(e));
         }
     }, /* BRIO: putCustom
      * Persist uploaded artwork transactionally. These durable records outlive Play, cleanup and reinjection.
      */
-    putCustom = async x => { /* BRIO block: putCustom — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    putCustom = async x => {
         const d = await openDB();
-        await new Promise((ok, no) => { /* BRIO block: putCustom — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+        await new Promise((ok, no) => {
             const tr = d.transaction("customAssets", "readwrite");
             tr.objectStore("customAssets").put(x);
             tr.oncomplete = ok;
-            tr.onerror = /* BRIO expr: tr.onerror — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => no(tr.error);
+            tr.onerror = () => no(tr.error);
         });
         d.close();
     };
     const STATUS = {
-        green: new Set([ "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventoryAmmo", "inventorySize", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "nearestPlayer", "nearestChest", "nearestAirdrop", "nearestPlayerName", "noChestsVisible", "monochrome", "lowMatsWarning", "lowAmmoWarning", "transparentFoliage" ]),
-        yellow: new Set([ "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "highContrastPlayers", "playersInvisible", "lootInvisible", "buildsInvisible", "noMinimap", "noCrosshair", "noInventoryHud", "invisibleStorm", "noHealthShieldHud", "goodFlippinLuck", "inventorySlots", "inventoryMaterials" ])
-    }, statusOf = /* BRIO expr: statusOf — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ id => STATUS.yellow.has(id) ? "yellow" : STATUS.green.has(id) ? "green" : "red";
+        green: new Set([ "playersInvisible", "lootInvisible", "buildsInvisible", "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventorySlots", "inventoryMaterials", "inventoryAmmo", "inventorySize", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "nearestPlayer", "nearestChest", "nearestAirdrop", "nearestPlayerName", "noChestsVisible", "monochrome" ]),
+        yellow: new Set([ "lowHealthWarning", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "lowMatsWarning", "lowAmmoWarning", "transparentFoliage", "cleanLoot", "highContrastPlayers" ])
+    }, statusOf = id => STATUS.yellow.has(id) ? "yellow" : STATUS.green.has(id) ? "green" : "red";
     const style = D.createElement("style");
-    style.textContent = `[data-brio-mono-page] canvas:not(#playerPreview):not([data-brio-mono]){filter:grayscale(1)!important}#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioThresholds{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;padding:6px 10px 10px 34px;border-bottom:1px solid #555}.brioThresholds fieldset{display:flex;align-items:center;flex:0 0 auto;gap:8px;border:0;margin:0;padding:2px 0;min-width:0}.brioThresholds fieldset:disabled{opacity:.4}.brioThresholds fieldset label{display:flex;flex:0 0 auto;flex-direction:row;align-items:center;gap:4px;font-size:11px;white-space:nowrap}.brioThresholds input{width:56px;box-sizing:border-box;background:#111;color:#fff;border:1px solid #777;padding:4px}.brioThresholds input:disabled{cursor:not-allowed}.brioThresholds button{white-space:nowrap}.brioTier{display:flex;align-items:center;gap:12px;padding:6px 10px 10px 34px;border-bottom:1px solid #333}.brioModal :disabled{cursor:not-allowed}.brioOpt.locked{opacity:.55}.brioLockNote{padding:8px;color:#ffd21c}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
+    style.textContent = `[data-brio-mono-page] canvas:not(#playerPreview):not([data-brio-mono]){filter:grayscale(1)!important}#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioThresholds{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;padding:6px 10px 10px 34px;border-bottom:1px solid #555}.brioThresholds fieldset{display:flex;flex:0 0 auto;gap:7px;border:1px solid #777;margin:0;padding:5px;min-width:0}.brioThresholds fieldset:disabled{opacity:.4}.brioThresholds fieldset label{display:flex;flex:0 0 auto;flex-direction:column;gap:3px;font-size:11px;white-space:nowrap}.brioThresholds input{width:56px;box-sizing:border-box;background:#111;color:#fff;border:1px solid #777;padding:4px}.brioThresholds input:disabled{cursor:not-allowed}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
     D.documentElement.appendChild(style);
     const /* BRIO: patchButtons
      * Modify the actual native Locker/Shop nodes and preserve original markup/styles for destroy.
      */
-    patchButtons = () => { /* BRIO block: patchButtons — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
-        for (const [id, label, ico] of [ [ "loggedInLocker", "(un)Locker", "/buildart/icon-locker.png" ], [ "loggedInShop", "Extras", "/buildart/icon-shop.png" ] ]) { /* BRIO loop: patchButtons — Iterate [ [ "loggedInLocker", "(un)Locker", "/buildart/icon-locker.png" ], [ "loggedInShop", "Extr. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    patchButtons = () => {
+        for (const [id, label, ico] of [ [ "loggedInLocker", "(un)Locker", "/buildart/icon-locker.png" ], [ "loggedInShop", "Extras", "/buildart/icon-shop.png" ] ]) {
             const e = D.getElementById(id);
             if (!e) continue;
             if (!S.bak[id]) S.bak[id] = {
@@ -317,14 +289,14 @@
                 style: e.getAttribute("style") || ""
             };
             let i = e.querySelector(":scope>.bi");
-            if (!i) { /* BRIO branch: patchButtons — Accept !i. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+            if (!i) {
                 i = D.createElement("span");
                 i.className = "bi";
                 e.prepend(i);
             }
             i.style.backgroundImage = `url(${ico})`;
             let p = e.querySelector(":scope>p");
-            if (!p) { /* BRIO branch: patchButtons — Accept !p. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+            if (!p) {
                 p = D.createElement("p");
                 e.appendChild(p);
             }
@@ -345,7 +317,7 @@
         trail: "Trails",
         glider: "Gliders",
         emote: "Emotes"
-    }, kcat = /* BRIO expr: kcat — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => tab === "skin" ? sub : tab, sel = () => { /* BRIO block: sel — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    }, kcat = () => tab === "skin" ? sub : tab, sel = () => {
         const s = state();
         return tab === "emote" ? (Array.isArray(s.emotes) ? s.emotes[slot] : null) || {
             mode: "native"
@@ -355,10 +327,10 @@
     }, /* BRIO: setSel
      * Change one selected cosmetic/category/emote slot. Rendering and saved preferences share this entry point.
      */
-    setSel = x => { /* BRIO block: setSel — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    setSel = x => {
         const s = state();
         s.enabled = true;
-        if (tab === "emote") { /* BRIO branch: setSel — Accept tab === "emote". Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+        if (tab === "emote") {
             const a = Array.isArray(s.emotes) ? s.emotes.slice(0, 4) : [];
             while (a.length < 4) a.push({
                 mode: "native"
@@ -368,29 +340,29 @@
         } else s[kcat()] = x;
         saveState(s);
         renderGrid();
-    }, preview = /* BRIO expr: preview — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ (k, id) => k === "body" ? `/cosmetics/body/${id}.png?2` : k === "head" ? `/cosmetics/head/${id}.png?2` : k === "pickaxe" ? `/cosmetics/pickaxe/${id}.png?2` : k === "wrap" ? `/cosmetics/combos/${id}.png?2` : k === "trail" ? `/cosmetics/trails/${id}.png?2` : k === "glider" ? `/cosmetics/glider/${id}.png?2` : `/cosmetics/emotes/${id}.png?2`, card = (mode, x) => { /* BRIO block: card — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, preview = (k, id) => k === "body" ? `/cosmetics/body/${id}.png?2` : k === "head" ? `/cosmetics/head/${id}.png?2` : k === "pickaxe" ? `/cosmetics/pickaxe/${id}.png?2` : k === "wrap" ? `/cosmetics/combos/${id}.png?2` : k === "trail" ? `/cosmetics/trails/${id}.png?2` : k === "glider" ? `/cosmetics/glider/${id}.png?2` : `/cosmetics/emotes/${id}.png?2`, card = (mode, x) => {
         const k = kcat(), c = D.createElement("div");
         c.className = "brioCard" + (mode === "item" || mode === "custom" ? "" : " sp");
         c.dataset.mode = mode;
         if (x?.id) c.dataset.id = x.id;
-        if (mode === "item") { /* BRIO branch: card — Accept mode === "item". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (mode === "item") {
             c.innerHTML = `${x.sync ? '<span class="sync">SYNC</span>' : ""}<img loading="lazy" src="${preview(k, x.id)}"><div class="n">${x.name}</div>`;
-            c.querySelector("img").onerror = /* BRIO expr: c.querySelector("img").onerror — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ () => c.remove();
-            c.onclick = /* BRIO expr: c.onclick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => setSel({
+            c.querySelector("img").onerror = () => c.remove();
+            c.onclick = () => setSel({
                 mode: "item",
                 id: x.id,
                 name: x.name
             });
-        } else if (mode === "custom") { /* BRIO branch: card — Accept mode === "custom". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        } else if (mode === "custom") {
             c.innerHTML = `<img src="${x.data}"><div class="n">${x.name}</div>`;
-            c.onclick = /* BRIO expr: c.onclick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => setSel({
+            c.onclick = () => setSel({
                 mode: "custom",
                 id: x.id,
                 name: x.name
             });
-        } else { /* BRIO branch: card — Alternative for mode === "custom". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        } else {
             c.textContent = mode[0].toUpperCase() + mode.slice(1);
-            c.onclick = /* BRIO expr: c.onclick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => setSel({
+            c.onclick = () => setSel({
                 mode: mode
             });
         }
@@ -398,8 +370,8 @@
     }, /* BRIO: renderGrid
      * Build native/random/bundled/invisible/custom choices from the supported category and search.
      */
-    renderGrid = () => { /* BRIO block: renderGrid — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
-        const g = locker.querySelector(".brioGrid"), sr = t(locker.querySelector('input[type="text"]').value).toLowerCase(), k = kcat(), s = sel(), allowInvisible = [ "body", "head", "pickaxe", "trail", "glider" ].includes(k), allowCustom = [ "body", "head", "pickaxe" ].includes(k), match = /* BRIO expr: match — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ x => !sr || String(x).toLowerCase().includes(sr);
+    renderGrid = () => {
+        const g = locker.querySelector(".brioGrid"), sr = t(locker.querySelector('input[type="text"]').value).toLowerCase(), k = kcat(), s = sel(), allowInvisible = [ "body", "head", "pickaxe", "trail", "glider" ].includes(k), allowCustom = [ "body", "head", "pickaxe" ].includes(k), match = x => !sr || String(x).toLowerCase().includes(sr);
         g.textContent = "";
         for (const m of [ "native", "random", ...allowInvisible ? [ "invisible" ] : [] ]) if (match(m)) g.appendChild(card(m));
         if (allowCustom) for (const x of S.custom[k]) if (match(x.name)) g.appendChild(card("custom", x));
@@ -410,36 +382,36 @@
     }, /* BRIO: renderLocker
      * Render category/subcategory/emote-slot controls without creating a duplicate native selection UI.
      */
-    renderLocker = () => { /* BRIO block: renderLocker — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    renderLocker = () => {
         const a = locker.querySelector(".brioTabs"), b = locker.querySelector(".brioSubs"), sl = locker.querySelector(".brioSlots");
         a.textContent = b.textContent = sl.textContent = "";
-        for (const x of [ "skin", "pickaxe", "wrap", "trail", "glider", "emote" ]) { /* BRIO loop: renderLocker — Iterate [ "skin", "pickaxe", "wrap", "trail", "glider", "emote" ]. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+        for (const x of [ "skin", "pickaxe", "wrap", "trail", "glider", "emote" ]) {
             const z = D.createElement("button");
             z.textContent = labels[x];
             z.className = x === tab ? "on" : "";
-            z.onclick = () => { /* BRIO block: z.onclick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            z.onclick = () => {
                 tab = x;
                 renderLocker();
             };
             a.appendChild(z);
         }
         b.style.display = tab === "skin" ? "flex" : "none";
-        if (tab === "skin") for (const x of [ "body", "head" ]) { /* BRIO loop: renderLocker — Iterate [ "body", "head" ]. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+        if (tab === "skin") for (const x of [ "body", "head" ]) {
             const z = D.createElement("button");
             z.textContent = x[0].toUpperCase() + x.slice(1);
             z.className = x === sub ? "on" : "";
-            z.onclick = () => { /* BRIO block: z.onclick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            z.onclick = () => {
                 sub = x;
                 renderLocker();
             };
             b.appendChild(z);
         }
         sl.style.display = tab === "emote" ? "flex" : "none";
-        if (tab === "emote") for (let i = 0; i < 4; i++) { /* BRIO loop: renderLocker — Iterate i < 4. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+        if (tab === "emote") for (let i = 0; i < 4; i++) {
             const z = D.createElement("button");
             z.textContent = `Slot ${i + 1}`;
             z.className = i === slot ? "on" : "";
-            z.onclick = () => { /* BRIO block: z.onclick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            z.onclick = () => {
                 slot = i;
                 renderLocker();
             };
@@ -447,14 +419,14 @@
         }
         renderGrid();
     };
-    locker.querySelector("[data-close]").onclick = /* BRIO expr: locker.querySelector("[data-close]").onclick — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ () => locker.style.display = "none";
+    locker.querySelector("[data-close]").onclick = () => locker.style.display = "none";
     locker.querySelector('input[type="text"]').oninput = renderGrid;
-    locker.querySelector("[data-upload]").onclick = /* BRIO expr: locker.querySelector("[data-upload]").onclick — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ () => locker.querySelector('input[type="file"]').click();
-    locker.querySelector('input[type="file"]').onchange = e => { /* BRIO block: locker.querySelector('input[type="file"]').onchange — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    locker.querySelector("[data-upload]").onclick = () => locker.querySelector('input[type="file"]').click();
+    locker.querySelector('input[type="file"]').onchange = e => {
         const f = e.target.files?.[0], k = kcat();
         if (!f || ![ "body", "head", "pickaxe" ].includes(k)) return;
         const im = new Image, u = URL.createObjectURL(f);
-        im.onload = async () => { /* BRIO block: im.onload — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        im.onload = async () => {
             URL.revokeObjectURL(u);
             const dims = {
                 body: [ 300, 300 ],
@@ -464,7 +436,7 @@
             c.width = dims[0];
             c.height = dims[1];
             c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
-            const n = S.custom[k].reduce(/* BRIO expr: im.onload / S.custom[k].reduce callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ (m, x) => Math.max(m, x.n || 0), 0) + 1, x = {
+            const n = S.custom[k].reduce((m, x) => Math.max(m, x.n || 0), 0) + 1, x = {
                 key: `${k}:custom${n}`,
                 category: k,
                 id: `custom${n}`,
@@ -483,224 +455,155 @@
         im.src = u;
         e.target.value = "";
     };
-    /* BRIO: challengeRegistry (V50; new tiers/composite live-pending)
-     * Boolean IDs remain stable for saved V49 selections. Tier strings are separately normalized.
-     * Fifth column "visual" explicitly excludes monochrome/flashlight from the aggregate challenge.
-     * Future gameplay challenge rows automatically join Good flippin luck; modifiers automatically lock off.
-     */
-    const LOOT_TIERS = [["item","Mask item"],["rarity","Mask rarity"],["popups","Popups only"],["locations","Locations only"],["all","All invisible"]],
-        BUILD_TIERS = [["blueprints","Blueprints only"],["all","All invisible"]];
     const EXTRA = {
-        challenges: [
-            ["playersInvisible","All players invisible","remote body, held items/builds, glider/grapple; all trail particles"],
-            ["lootInvisible","Mask loot","five information levels",false,"lootTier"],
-            ["buildsInvisible","Builds invisible","placement preview separate from placed blue base",false,"buildTier"],
-            ["noMinimap","No minimap","native map widget; counters retained"],
-            ["noCrosshair","No crosshair","native arms/center/hit marker"],
-            ["noInventoryHud","No inventory/item bar","native item/material/ammo/build widgets"],
-            ["invisibleStorm","Invisible storm","world storm + minimap/full-map shading/border"],
-            ["noChestsVisible","Chests invisible","chests + ammo/grenade crates · proven"],
-            ["noHealthShieldHud","No health/shield HUD","native own/team bars; ammo counter retained"],
-            ["monochrome","Monochrome vision","game canvas grayscale · proven",false,"visual"],
-            ["flashlightMode","Flashlight mode","planned; visual-only, excluded from combined challenge",false,"visual"],
-            ["goodFlippinLuck","Good flippin luck","all gameplay challenges, highest tiers; every modifier locked off"]
-        ],
-        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "always-visible contents above detected containers: unresolved" ], [ "screenAirdrops", "Screen airdrops", "always-visible contents above detected airdrops: unresolved" ], [ "screenFishing", "Screen fishing spots", "always-visible contents above detected fishing spots: unresolved" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "transparentFoliage", "Transparent foliage", "canopy opacity 25% · proven" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "own HP at or below threshold · proven" ], [ "lowAmmoWarning", "Low-ammo visual warning", "inclusive thresholds; grappler5, flare exempt · proven" ], [ "lowMatsWarning", "Low-material warning", "inclusive thresholds including scraps · proven" ], [ null, "Show player inventories", "three rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "larger row aligned to ammo; no counts/hotkeys", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "larger icons/counts; wood / brick / metal / scraps", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + separate counts · proven", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
+        challenges: [ [ "playersInvisible", "All players invisible", "remote players only" ], [ "lootInvisible", "Loot invisible", "includes pickup visuals when complete" ], [ "buildsInvisible", "Builds invisible", "walls + special deployables + placement preview" ], [ "noMinimap", "No minimap", "planned" ], [ "noCrosshair", "No crosshair", "planned" ], [ "noInventoryHud", "No inventory/item bar", "planned" ], [ "invisibleStorm", "Invisible storm", "hide zone on minimap + full map" ], [ "noChestsVisible", "Chests invisible", "chests + ammo/grenade crates · proven" ], [ "noHealthShieldHud", "No health/shield HUD", "planned" ], [ "monochrome", "Monochrome vision", "game canvas grayscale · proven" ], [ "flashlightMode", "Flashlight mode", "configurable radius; mouse/player follow" ] ],
+        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "always-visible contents above detected containers: unresolved" ], [ "screenAirdrops", "Screen airdrops", "always-visible contents above detected airdrops: unresolved" ], [ "screenFishing", "Screen fishing spots", "always-visible contents above detected fishing spots: unresolved" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "cleanLoot", "Remove loot glow/effects", "native rarity glow + particle branch · test" ], [ "transparentFoliage", "Transparent foliage", "identified canopy opacity 25% · test" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "HP at or below your threshold; own player only · test" ], [ "lowAmmoWarning", "Low-ammo visual warning", "at or below per-type thresholds; guns + grappler, flare exempt · test" ], [ "lowMatsWarning", "Low-material warning", "at or below per-material thresholds including scraps · test" ], [ null, "Show player inventories", "three compact rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "native appearance proven; slot ammo numbers removed", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "wood / brick / metal / scraps · appearance proven", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + separate counts · appearance proven", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
     };
-    // V50 flags distinguish normal-profile switches from challenges to cycle; no impossible all-on requirement.
-    // Warning decisions/foliage/slot-border motion are PROVEN. Only their new reset buttons get UI-check badges.
-    const REQUIRED_TESTS = ["screenChests","screenAirdrops","screenFishing","identifyBots","inventorySlots","inventoryMaterials"],
-        CHALLENGE_TESTS = ["playersInvisible","lootInvisible","buildsInvisible","noMinimap","noCrosshair","noInventoryHud","invisibleStorm","noHealthShieldHud","goodFlippinLuck"];
-    /* BRIO: nativeScanNeeded (V50)
-     * Reuse the existing3000-node/second scene scanner even when the composite disables every modifier.
-     * A modifier-only guard would strand map/popup/trail widgets created after12-second initial discovery.
-     */
-    const nativeScanNeeded = /* BRIO expr: nativeScanNeeded — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ e => !!e.permanentMeteor || !!e.transparentRoofs || !!e.lowMatsWarning || !!e.lowAmmoWarning ||
-        !!e.inventorySlots || !!e.inventoryMaterials || !!e.inventoryAmmo || !!e.allTrailsInvisible ||
-        CHALLENGE_TESTS.some(/* BRIO expr: nativeScanNeeded / CHALLENGE_TESTS.some callback — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ id => !!e[id]);
-    const /* BRIO: renderWarningThresholds (V50; controls/reset live-pending, decisions proven)
+    // V48: proven modifiers stay selectable without blue flags or recurring live chores.
+    // Keep only changed warnings and unresolved contents/bot/foliage/glow routes in the primary test surface.
+    const REQUIRED_TESTS = ["screenChests","screenAirdrops","screenFishing","lowHealthWarning","lowMatsWarning","lowAmmoWarning","identifyBots","cleanLoot","transparentFoliage"];
+    const /* BRIO: renderWarningThresholds (V49)
      * V49 inline child row directly under each warning option, like nearest-player name under its indicator.
      * Each group stays on one nonwrapping horizontal row; all11 fields remain labeled and persisted.
      * Explicit indices preserve requested display order (shells before heavy) despite native reserve order.
      * Fieldset.disabled supplies actual keyboard/form disabling; opacity greys the corresponding group.
      */
-    renderWarningThresholds = (p, settings, modifierId) => { /* BRIO block: renderWarningThresholds — Edit/reset only the matching warning group; disabled groups reject edits. V50 controls live-pending; warning decisions proven. */
+    renderWarningThresholds = (p, settings, modifierId) => {
         const row = D.createElement("div"); row.className = "brioThresholds";
         row.setAttribute("aria-label", "Warning thresholds: warn at or below these values");
         for (const [kind,modifier,title,items] of [
             ["health","lowHealthWarning","Health",[["HP",0]]],
             ["ammo","lowAmmoWarning","Ammo / charges",[["Light",0],["Medium",1],["Shells",3],["Heavy",2],["Rockets",4],["Grappler",5]]],
             ["materials","lowMatsWarning","Materials",[["Wood",0],["Brick",1],["Metal",2],["Scraps",3]]]
-        ]) { /* BRIO loop: renderWarningThresholds — Iterate [ ["health","lowHealthWarning","Health",[["HP",0]]], ["ammo","lowAmmoWarning","Ammo / char. Edit/reset only the matching warning group; disabled groups reject edits. V50 controls live-pending; warning decisions proven. */
+        ]) {
             if (modifier !== modifierId) continue;
-            const group = D.createElement("fieldset");
+            const group = D.createElement("fieldset"), legend = D.createElement("legend");
             group.dataset.warningModifier = modifier; group.disabled = !settings[modifier];
-            group.setAttribute("aria-label", title + " · at or below");
-            for (const [name,index] of items) { /* BRIO loop: renderWarningThresholds — Iterate items. Edit/reset only the matching warning group; disabled groups reject edits. V50 controls live-pending; warning decisions proven. */
+            legend.textContent = title + " · at or below"; group.appendChild(legend);
+            for (const [name,index] of items) {
                 const label = D.createElement("label"), input = D.createElement("input");
                 label.appendChild(D.createTextNode(name)); input.type = "number";
                 input.min = "0"; input.max = "1000000"; input.step = "1";
                 input.dataset.warningKind = kind; input.dataset.warningIndex = index;
                 input.setAttribute("aria-label", "Low " + name + " warning threshold");
-                const current = () => { /* BRIO block: current — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const t = storedExtras().warningThresholds; return kind === "health" ? t.health : t[kind][index];};
+                const current = () => {const t = extrasState().warningThresholds; return kind === "health" ? t.health : t[kind][index];};
                 input.value = String(kind === "health" ? settings.warningThresholds.health : settings.warningThresholds[kind][index]);
                 // Keep the last good value while blank/invalid input is being edited; normalize on blur/change.
                 // Invalidate only BRIO's settings cache so native/remote draw decisions update immediately.
-                input.oninput = () => { /* BRIO block: input.oninput — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                input.oninput = () => {
                     if (input.value.trim() === "" || !input.checkValidity()) return;
                     const value = Number(input.value);
                     if (!Number.isSafeInteger(value) || value < 0 || value > 1000000) return;
-                    const z = storedExtras();
+                    const z = extrasState();
                     if (kind === "health") z.warningThresholds.health = value; else z.warningThresholds[kind][index] = value;
                     saveExtras(z); featureEx.at = -Infinity;
                 };
-                input.onchange = input.onblur = () => { /* BRIO block: input.onblur — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ input.oninput(); input.value = String(current());};
+                input.onchange = input.onblur = () => {input.oninput(); input.value = String(current());};
                 label.appendChild(input); group.appendChild(label);
             }
-            // V50 reset only this warning group, leaving other values, selections and the enable switch untouched.
-            const reset = D.createElement("button"); reset.type = "button"; reset.textContent = "Reset to default";
-            reset.dataset.warningReset = kind;
-            reset.onclick = () => { /* BRIO block: reset.onclick — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
-                const z = storedExtras();
-                z.warningThresholds[kind] = kind === "health" ? WARNING_DEFAULTS.health : [...WARNING_DEFAULTS[kind]];
-                saveExtras(z); featureEx.at = -Infinity;
-                for (const input of group.querySelectorAll("input")) input.value = String(kind === "health" ? z.warningThresholds.health : z.warningThresholds[kind][+input.dataset.warningIndex]);
-                log("WARNING DEFAULT RESET", {kind, values:z.warningThresholds[kind]});
-            };
-            group.appendChild(reset);
-            const badge = D.createElement("small"); badge.textContent = "⚑ CHECK RESET";
-            row.append(group,badge);
+            row.appendChild(group);
         }
         p.appendChild(row);
-    };
-    /* BRIO: renderChallengeTier (V50; tier choices persist independently of checkbox)
-     * The composite displays and locks the highest tier without overwriting saved individual tier choices.
-     * Changing a tier invalidates draw-time gates immediately; native art/particles/state need no reconstruction.
-     */
-    const renderChallengeTier = (p, settings, id, locked) => { /* BRIO block: renderChallengeTier — Persist the selected tier and apply it to already reached native branches. V50 tier visuals live-pending. */
-        const row = D.createElement("div"), label = D.createElement("label"), select = D.createElement("select");
-        const loot = id === "lootInvisible", key = loot ? "lootMaskTier" : "buildMaskTier";
-        row.className = "brioTier"; label.textContent = "Level"; select.dataset.challengeTier = key;
-        for (const [value,name] of loot ? LOOT_TIERS : BUILD_TIERS) { /* BRIO loop: renderChallengeTier — Iterate loot ? LOOT_TIERS : BUILD_TIERS. Persist the selected tier and apply it to already reached native branches. V50 tier visuals live-pending. */
-            const option = D.createElement("option"); option.value = value; option.textContent = name; select.appendChild(option);
-        }
-        select.value = settings[key]; select.disabled = locked || !settings[id]; select.setAttribute("aria-label", loot ? "Mask loot level" : "Invisible builds level");
-        select.onchange = () => { /* BRIO block: select.onchange — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
-            const z = storedExtras(); z[key] = select.value; saveExtras(z); featureEx.at = -Infinity;
-            syncFeatureSettings(); log("CHALLENGE TIER", {id, tier:select.value});
-        };
-        label.appendChild(select); row.appendChild(label); p.appendChild(row);
     };
     const /* BRIO: renderExtras
      * Render status and blue test flags from the same option registry used by the written live procedure.
      */
-    renderExtras = () => { /* BRIO block: renderExtras — Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
-        const a = extras.querySelector(".brioTabs"), p = extras.querySelector(".brioPage"), s = storedExtras(), effective = extrasState();
-        if (![ "small", "medium", "large", "xl" ].includes(s.inventorySize)) { /* BRIO branch: renderExtras — Accept ![ "small", "medium", "large", "xl" ].includes(s.inventorySize). Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
+    renderExtras = () => {
+        const a = extras.querySelector(".brioTabs"), p = extras.querySelector(".brioPage"), s = extrasState();
+        if (![ "small", "medium", "large", "xl" ].includes(s.inventorySize)) {
             s.inventorySize = "medium";
             saveExtras(s);
         }
         a.textContent = p.textContent = "";
-        for (const x of [ "challenges", "modifiers" ]) { /* BRIO loop: renderExtras — Iterate [ "challenges", "modifiers" ]. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
+        for (const x of [ "challenges", "modifiers" ]) {
             const z = D.createElement("button");
             z.textContent = x[0].toUpperCase() + x.slice(1);
             z.className = x === extraTab ? "on" : "";
-            z.onclick = () => { /* BRIO block: z.onclick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            z.onclick = () => {
                 extraTab = x;
                 renderExtras();
             };
             a.appendChild(z);
         }
-        if (s.goodFlippinLuck) { /* BRIO branch: renderExtras — Accept s.goodFlippinLuck. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
-            const note = D.createElement("div"); note.className = "brioLockNote";
-            note.textContent = "Good flippin luck is active: gameplay challenges use their highest tiers; all modifiers are off. Turn it off to restore your saved choices.";
-            p.appendChild(note);
-        }
-        for (const [id, name, note, child, kind] of EXTRA[extraTab]) { /* BRIO loop: renderExtras — Iterate EXTRA[extraTab]. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
-            if (!id) { /* BRIO branch: renderExtras — Accept !id. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
+        for (const [id, name, note, child, kind] of EXTRA[extraTab]) {
+            if (!id) {
                 const g = D.createElement("div");
                 g.className = "brioGroup";
                 g.textContent = name + " · " + note;
                 p.appendChild(g);
                 continue;
             }
-            const locked = !!s.goodFlippinLuck && (extraTab === "modifiers" || id !== "goodFlippinLuck" && kind !== "visual"), st = statusOf(id), r = D.createElement("div"), l = D.createElement("label"), b = D.createElement("span");
-            r.className = `brioOpt${child ? " child" : ""} st-${st}${locked ? " locked" : ""}`; r.dataset.extraId = id;
+            const st = statusOf(id), r = D.createElement("div"), l = D.createElement("label"), b = D.createElement("span");
+            r.className = `brioOpt${child ? " child" : ""} st-${st}`;
             l.innerHTML = `${name} <small style="color:#ccc">[${note}]</small>`;
             b.className = "brioBadge";
             b.textContent = st === "green" ? "PROVEN" : st === "yellow" ? "TESTING" : "UNPROVEN";
-            if (REQUIRED_TESTS.includes(id) || CHALLENGE_TESTS.includes(id)) { /* BRIO branch: renderExtras — Accept REQUIRED_TESTS.includes(id) || CHALLENGE_TESTS.includes(id). Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
+            if (REQUIRED_TESTS.includes(id)) {
                 const flag = D.createElement("span");
-                flag.textContent = CHALLENGE_TESTS.includes(id) ? "⚑ CYCLE FOR TEST" : "⚑ ON FOR TEST";
+                flag.textContent = "⚑ ON FOR TEST";
                 flag.style = "background:#1164cf;color:white;font:bold 10px Arial;padding:4px 6px;border:1px solid #8bc7ff";
                 r.appendChild(flag);
             }
-            if (kind === "select") { /* BRIO branch: renderExtras — Accept kind === "select". Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
+            if (kind === "select") {
                 const c = D.createElement("select");
-                for (const [v, tx] of [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ], [ "xl", "XL" ] ]) { /* BRIO loop: renderExtras — Iterate [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ], [ "xl", "XL" ] ]. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
+                for (const [v, tx] of [ [ "small", "Small" ], [ "medium", "Medium" ], [ "large", "Large" ], [ "xl", "XL" ] ]) {
                     const o = D.createElement("option");
                     o.value = v;
                     o.textContent = tx;
                     c.appendChild(o);
                 }
-                c.value = s[id] || "medium"; c.disabled = locked;
-                c.onchange = () => { /* BRIO block: c.onchange — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                    const z = storedExtras();
+                c.value = s[id] || "medium";
+                c.onchange = () => {
+                    const z = extrasState();
                     z[id] = c.value;
                     saveExtras(z);
                 };
                 r.append(l, b, c);
-            } else { /* BRIO branch: renderExtras — Alternative for kind === "select". Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
+            } else {
                 const c = D.createElement("input");
                 c.type = "checkbox";
-                c.checked = !!effective[id]; c.disabled = locked;
-                c.onchange = () => { /* BRIO block: c.onchange — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                    const z = storedExtras();
+                c.checked = !!s[id];
+                c.onchange = () => {
+                    const z = extrasState();
                     z[id] = c.checked;
                     saveExtras(z);
                     featureEx.at = -Infinity;
                     const group = p.querySelector(`[data-warning-modifier="${id}"]`);
                     if (group) group.disabled = !c.checked;
-                    const tier = p.querySelector(`[data-challenge-tier="${id === "lootInvisible" ? "lootMaskTier" : id === "buildsInvisible" ? "buildMaskTier" : ""}"]`);
-                    if (tier) tier.disabled = !c.checked;
                     if (id === "monochrome") syncMonochrome(c.checked);
-                    if (id === "goodFlippinLuck") { /* BRIO branch: c.onchange — Accept id === "goodFlippinLuck". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                        syncFeatureSettings(); renderExtras();
-                    } else syncFeatureSettings();
                 };
                 r.append(l, b, c);
             }
             p.appendChild(r);
-            if (["lowHealthWarning","lowAmmoWarning","lowMatsWarning"].includes(id)) renderWarningThresholds(p,effective,id);
-            if (kind === "lootTier" || kind === "buildTier") renderChallengeTier(p,effective,id,locked);
+            if (["lowHealthWarning","lowAmmoWarning","lowMatsWarning"].includes(id)) renderWarningThresholds(p,s,id);
         }
     };
-    extras.querySelector("[data-close]").onclick = /* BRIO expr: extras.querySelector("[data-close]").onclick — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ () => extras.style.display = "none";
+    extras.querySelector("[data-close]").onclick = () => extras.style.display = "none";
     const /* BRIO: intercept
      * Intercept only the two native home buttons used for BRIO UI; ordinary Play remains native.
      */
-    intercept = e => { /* BRIO block: intercept — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    intercept = e => {
         const b = e.target?.closest?.("#loggedInLocker,#loggedInShop");
         if (!b) return;
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
-        if (b.id === "loggedInLocker") { /* BRIO branch: intercept — Accept b.id === "loggedInLocker". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (b.id === "loggedInLocker") {
             renderLocker();
             locker.style.display = "flex";
-        } else { /* BRIO branch: intercept — Alternative for b.id === "loggedInLocker". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        } else {
             renderExtras();
             extras.style.display = "flex";
         }
     };
     D.addEventListener("click", intercept, true);
-    const choose = (x, k) => { /* BRIO block: choose — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    const choose = (x, k) => {
         if (!x || x.mode === "native") return {
             mode: "native"
         };
         if (x.mode === "item") return x;
-        if (x.mode === "custom" && [ "body", "head", "pickaxe" ].includes(k)) { /* BRIO branch: choose — Accept x.mode === "custom" && [ "body", "head", "pickaxe" ].includes(k). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            const c = S.custom[k].find(/* BRIO expr: choose / S.custom[k].find callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ v => v.id === x.id);
+        if (x.mode === "custom" && [ "body", "head", "pickaxe" ].includes(k)) {
+            const c = S.custom[k].find(v => v.id === x.id);
             return c ? {
                 ...x,
                 data: c.data
@@ -717,7 +620,7 @@
             mode: "invisible",
             name: "Invisible"
         };
-        if (x.mode === "random") { /* BRIO branch: choose — Accept x.mode === "random". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (x.mode === "random") {
             const a = items(k === "body" || k === "head" ? "skin" : k), v = a[Math.floor(Math.random() * a.length)];
             return v ? {
                 mode: "item",
@@ -730,16 +633,16 @@
         return {
             mode: "native"
         };
-    }, asset = /* BRIO expr: asset — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ (k, x) => x.mode === "custom" || x.mode === "invisible" ? x.data : k === "body" ? `/cosmetics/body/${x.id}.png` : k === "head" ? `/cosmetics/head/${x.id}.png` : k === "pickaxe" ? `/cosmetics/pickaxe/${x.id}.png` : k === "glider" ? `/cosmetics/glider/${x.id}.png` : k === "emote" ? `/cosmetics/emotes/${x.id}.png` : null, loadRes = (k, x) => { /* BRIO block: loadRes — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, asset = (k, x) => x.mode === "custom" || x.mode === "invisible" ? x.data : k === "body" ? `/cosmetics/body/${x.id}.png` : k === "head" ? `/cosmetics/head/${x.id}.png` : k === "pickaxe" ? `/cosmetics/pickaxe/${x.id}.png` : k === "glider" ? `/cosmetics/glider/${x.id}.png` : k === "emote" ? `/cosmetics/emotes/${x.id}.png` : null, loadRes = (k, x) => {
         if (!x || x.mode === "native") return Promise.resolve(null);
         const u = asset(k, x);
         if (!u) return Promise.resolve(null);
         const ck = `${k}:${x.mode}:${x.id || ""}`;
         if (S.resources.has(ck)) return S.resources.get(ck);
-        const p = new Promise((ok, no) => { /* BRIO block: loadRes — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        const p = new Promise((ok, no) => {
             const im = new Image;
             im["ÀA"] = 2;
-            im.onload = () => { /* BRIO block: im.onload — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            im.onload = () => {
                 im["ÀA"] = 1;
                 im["ÁÅe"] = im.width / 2;
                 im["âÅÉ"] = im.height / 2;
@@ -750,16 +653,16 @@
                     __kind: k
                 });
             };
-            im.onerror = /* BRIO expr: im.onerror — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => no(new Error("asset load failed " + ck));
+            im.onerror = () => no(new Error("asset load failed " + ck));
             im.src = u;
         });
         S.resources.set(ck, p);
-        p.catch(/* BRIO expr: loadRes / p.catch callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => S.resources.delete(ck));
+        p.catch(() => S.resources.delete(ck));
         return p;
-    }, held = /* BRIO expr: held — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ r => r?.["Åé"]?.[r?.["ÈÆ"]]?.type || null, /* BRIO: nativeSnap
+    }, held = r => r?.["Åé"]?.[r?.["ÈÆ"]]?.type || null, /* BRIO: nativeSnap
      * Remember renderer cosmetics before local adapters so cleanup can restore native resources/descriptors.
      */
-    nativeSnap = /* BRIO expr: nativeSnap — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ r => ({
+    nativeSnap = r => ({
         body: r["Ëå"]?.["À"],
         head: r.head?.["À"],
         headBackup: r["Äâè"],
@@ -776,23 +679,23 @@
             f: r["ÄãÀ"]?.opacity,
             s: r["èÅ"]?.opacity
         }
-    }), restoreEmote = () => { /* BRIO block: restoreEmote — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    }), restoreEmote = () => {
         const h = S.emoteEffect;
         if (!h) return;
-        try { /* BRIO guarded: restoreEmote — Keep the existing exception boundary for restoreEmote. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+        try {
             if (h.desc) Object.defineProperty(h.target, "À", h.desc); else h.target["À"] = h.base;
             if (h.desc && "value" in h.desc && h.desc.writable) h.target["À"] = h.base;
-        } catch (_) { /* BRIO fallback: restoreEmote — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         S.emoteEffect = null;
-    }, emoteSlot = v => { /* BRIO block: emoteSlot — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    }, emoteSlot = v => {
         const m = v?.["ÁÄ"]?.__brioEmoteSlot;
         if (Number.isInteger(m) && m >= 0 && m < 4) return m;
-        const id = String(v?.src || v?.["ÁÄ"]?.src || "").toLowerCase().match(/emote\d+/)?.[0], native = (read("locker2", {}).emotes || []).map(/* BRIO expr: emoteSlot / (read("locker2", {}).emotes || []).map callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ x => String(x).toLowerCase());
+        const id = String(v?.src || v?.["ÁÄ"]?.src || "").toLowerCase().match(/emote\d+/)?.[0], native = (read("locker2", {}).emotes || []).map(x => String(x).toLowerCase());
         return id ? native.indexOf(id) : -1;
-    }, mapEmote = v => { /* BRIO block: mapEmote — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, mapEmote = v => {
         const i = emoteSlot(v), to = i >= 0 ? S.emoteResolved[i] : null;
         return to || v;
-    }, installEmote = r => { /* BRIO block: installEmote — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, installEmote = r => {
         restoreEmote();
         const o = r?.["ÄÊâ"];
         if (!o) return;
@@ -805,25 +708,25 @@
         Object.defineProperty(o, "À", {
             configurable: true,
             enumerable: desc?.enumerable ?? true,
-            get() { /* BRIO block: get — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            get() {
                 return h.current;
             },
-            set(v) { /* BRIO block: set — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            set(v) {
                 h.base = v;
                 h.current = mapEmote(v);
             }
         });
         S.emoteEffect = h;
-    }, restoreSrc = () => { /* BRIO block: restoreSrc — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    }, restoreSrc = () => {
         if (!S.srcDesc) return;
-        try { /* BRIO guarded: restoreSrc — Keep the existing exception boundary for restoreSrc. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+        try {
             Object.defineProperty(HTMLImageElement.prototype, "src", S.srcDesc);
-        } catch (_) { /* BRIO fallback: restoreSrc — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         S.srcDesc = null;
         clearTimeout(S.srcTimer);
-    }, installSrc = R => { /* BRIO block: installSrc — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, installSrc = R => {
         restoreSrc();
-        if (!R.emotes.some(/* BRIO expr: installSrc / R.emotes.some callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ x => x.mode === "item")) return;
+        if (!R.emotes.some(x => x.mode === "item")) return;
         const d = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, "src");
         if (!d?.set) return;
         const set = d.set;
@@ -831,13 +734,13 @@
             configurable: d.configurable,
             enumerable: d.enumerable,
             get: d.get,
-            set(v) { /* BRIO block: set — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            set(v) {
                 const m = String(v).toLowerCase().split("?")[0].match(/(?:^|\/)buildart\/emote([0-3])\.png$/);
-                if (m) { /* BRIO branch: set — Accept m. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                if (m) {
                     const i = +m[1], x = R.emotes[i];
-                    try { /* BRIO guarded: set — Keep the existing exception boundary for set. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                    try {
                         this.__brioEmoteSlot = i;
-                    } catch (_) { /* BRIO fallback: set — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+                    } catch (_) {}
                     if (x?.mode === "item") return set.call(this, asset("emote", x));
                 }
                 set.call(this, v);
@@ -846,18 +749,18 @@
         S.srcDesc = d;
         S.srcTimer = setTimeout(restoreSrc, 72e4);
     };
-    const restoreResourceMaps = () => { /* BRIO block: restoreResourceMaps — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-        for (const map of [ S.roofSaved, S.buildSaved, S.lootSaved ]) { /* BRIO loop: restoreResourceMaps — Iterate [ S.roofSaved, S.buildSaved, S.lootSaved ]. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-            for (const {w: w, old: old} of map.values()) try { /* BRIO guarded: restoreResourceMaps — Keep the existing exception boundary for restoreResourceMaps. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    const restoreResourceMaps = () => {
+        for (const map of [ S.roofSaved, S.buildSaved, S.lootSaved ]) {
+            for (const {w: w, old: old} of map.values()) try {
                 w["ÁÄ"] = old;
-            } catch (_) { /* BRIO fallback: restoreResourceMaps — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+            } catch (_) {}
             map.clear();
         }
     };
-    const cosmeticLock = (target, key, chooseValue) => { /* BRIO block: cosmeticLock — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    const cosmeticLock = (target, key, chooseValue) => {
         if (!target) return;
         const d = Object.getOwnPropertyDescriptor(target, key);
-        if (d && !d.configurable) { /* BRIO branch: cosmeticLock — Accept d && !d.configurable. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (d && !d.configurable) {
             log("COSMETIC ADAPTER UNAVAILABLE", {
                 key: key,
                 reason: "nonconfigurable native property"
@@ -865,86 +768,81 @@
             return;
         }
         let native = target[key];
-        const getNative = /* BRIO expr: getNative — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => d?.get ? Reflect.apply(d.get, target, []) : native;
+        const getNative = () => d?.get ? Reflect.apply(d.get, target, []) : native;
         Object.defineProperty(target, key, {
             configurable: true,
             enumerable: d?.enumerable ?? true,
-            get() { /* BRIO block: get — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            get() {
                 return chooseValue(getNative());
             },
-            set(v) { /* BRIO block: set — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            set(v) {
                 if (d?.set) Reflect.apply(d.set, target, [ v ]); else native = v;
             }
         });
-        (S.cosmeticAdapters || (S.cosmeticAdapters = [])).push(() => { /* BRIO block: cosmeticLock — (S.cosmeticAdapters || (S.cosmeticAdapters = [])).push callback. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            if (d) { /* BRIO branch: cosmeticLock — Accept d. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        (S.cosmeticAdapters || (S.cosmeticAdapters = [])).push(() => {
+            if (d) {
                 Object.defineProperty(target, key, d);
                 if ("value" in d && d.writable) target[key] = native;
-            } else { /* BRIO branch: cosmeticLock — Alternative for d. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            } else {
                 delete target[key];
                 target[key] = native;
             }
         });
-    }, restoreCosmetics = () => { /* BRIO block: restoreCosmetics — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
-        while (S.cosmeticAdapters?.length) try { /* BRIO guarded: restoreCosmetics — Keep the existing exception boundary for restoreCosmetics. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    }, restoreCosmetics = () => {
+        while (S.cosmeticAdapters?.length) try {
             S.cosmeticAdapters.pop()();
-        } catch (e) { /* BRIO fallback: restoreCosmetics — Handle failure in restoreCosmetics through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             S.errors.push("cosmetic restore: " + String(e));
         }
-    }, sceneObserve = node => { /* BRIO block: sceneObserve — Observe only reached native containers, reserving the96-parent budget; delegate original add/remove behavior. */
+    }, sceneObserve = node => {
         if (!node || typeof node !== "object" || !Array.isArray(node["âè"]) || typeof node.add !== "function" || typeof node.remove !== "function") return;
-        // V50 reserve the96-container budget for actual containers. Native image/text subclasses inherit add/remove
-        // too; observing every leaf exhausted the budget before late top-scene popup/trail parents arrived.
-        // Leaf assets still pass through rendered-array discovery and the bounded scene walk; BRIO clones never qualify.
-        if (node.__brioHudClone || String(node.type||"").startsWith("brio") || node["À"] || node.canvas || "text" in node) return;
         if (!S.sceneRoots) S.sceneRoots = new Set;
         if (S.sceneRoots.size < 96) S.sceneRoots.add(node);
         if (!S.meteorObservers) S.meteorObservers = new Map;
-        if (S.meteorObservers.has(node) || S.meteorObservers.size >= 96 ) return;
+        if (S.meteorObservers.has(node) || S.meteorObservers.size >= 96 || !extrasState().permanentMeteor) return;
         const restores = [];
-        for (const key of [ "add", "âá", "Åæê" ]) { /* BRIO loop: sceneObserve — Iterate [ "add", "âá", "Åæê" ]. Observe only reached native containers, reserving the96-parent budget; delegate original add/remove behavior. */
+        for (const key of [ "add", "âá", "Åæê" ]) {
             const orig = node[key], d = Object.getOwnPropertyDescriptor(node, key);
             if (typeof orig !== "function" || d && (!d.configurable && !d.writable) || d && !("value" in d)) continue;
-            const wrap = function(...args) { /* BRIO block: wrap — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            const wrap = function(...args) {
                 const result = Reflect.apply(orig, this, args);
-                for (const x of args) try { /* BRIO guarded: wrap — Keep the existing exception boundary for wrap. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                for (const x of args) try {
                     meteorCandidate(x, this["âè"] || []);
                     captureRoof(x);
                     hudCandidate(x);
-                    handleAdded(x);
-                } catch (e) { /* BRIO fallback: wrap — Handle failure in wrap through its existing fallback/report path; optional native fields may be unavailable. */
+                } catch (e) {
                     if (S.errors.length < 100) S.errors.push("scene add: " + String(e));
                 }
                 return result;
             };
-            try { /* BRIO guarded: sceneObserve — Keep the existing exception boundary for sceneObserve. Observe only reached native containers, reserving the96-parent budget; delegate original add/remove behavior. */
+            try {
                 Object.defineProperty(node, key, {
                     configurable: d?.configurable ?? true,
                     enumerable: d?.enumerable ?? true,
                     writable: true,
                     value: wrap
                 });
-                restores.push(() => { /* BRIO block: sceneObserve — restores.push callback. Observe only reached native containers, reserving the96-parent budget; delegate original add/remove behavior. */
-                    if (node[key] === wrap) { /* BRIO branch: sceneObserve — Accept node[key] === wrap. Observe only reached native containers, reserving the96-parent budget; delegate original add/remove behavior. */
+                restores.push(() => {
+                    if (node[key] === wrap) {
                         if (d) Object.defineProperty(node, key, d); else delete node[key];
                     }
                 });
-            } catch (_) { /* BRIO fallback: sceneObserve — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+            } catch (_) {}
         }
         if (restores.length) S.meteorObservers.set(node, restores);
-    }, sceneRoots = () => { /* BRIO block: sceneRoots — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, sceneRoots = () => {
         const roots = new Set([...(S.sceneRoots || []), ...(S.renderExtraRoots || [])]);
-        for (const x of [ S.renderer?.Eâ, S.renderer?.["â"], ...S.arrayHooks.keys() ]) { /* BRIO loop: sceneRoots — Iterate [ S.renderer?.Eâ, S.renderer?.["â"], ...S.arrayHooks.keys() ]. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        for (const x of [ S.renderer?.Eâ, S.renderer?.["â"], ...S.arrayHooks.keys() ]) {
             let p = x;
             for (let n = 0; p && n < 10; n++, p = p.parent) roots.add(p);
         }
-        if (!S.windowSceneChecked) { /* BRIO branch: sceneRoots — Accept !S.windowSceneChecked. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (!S.windowSceneChecked) {
             S.windowSceneChecked = true;
-            for (const key of Object.getOwnPropertyNames(W).slice(0, 1200)) { /* BRIO loop: sceneRoots — Iterate Object.getOwnPropertyNames(W).slice(0, 1200). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                try { /* BRIO guarded: sceneRoots — Keep the existing exception boundary for sceneRoots. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            for (const key of Object.getOwnPropertyNames(W).slice(0, 1200)) {
+                try {
                     const d = Object.getOwnPropertyDescriptor(W, key), v = d?.value;
                     if (v && typeof v === "object" && !(v instanceof Node) && Array.isArray(v["âè"]) && typeof v.add === "function") roots.add(v);
-                } catch (_) { /* BRIO fallback: sceneRoots — Handle failure in sceneRoots through its existing fallback/report path; optional native fields may be unavailable. */
+                } catch (_) {
                     S.sceneSkipped = (S.sceneSkipped || 0) + 1;
                 }
             }
@@ -953,36 +851,36 @@
     };
     const renderArrays = new Map;
     let renderDiscovery = null, renderSeen = new WeakSet;
-    const nativeDrawable = /* BRIO expr: nativeDrawable — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ n => !!(n && typeof n === "object" && !n.__brioHudClone && !String(n.type || "").startsWith("brio") && typeof n["éa"] === "function" && Array.isArray(n["âè"]) && n["ë"]);
-    const observeRendered = n => { /* BRIO block: observeRendered — Capture reached rendered arrays within the existing128+32 budget; exclude BRIO clones. */
+    const nativeDrawable = n => !!(n && typeof n === "object" && !n.__brioHudClone && !String(n.type || "").startsWith("brio") && typeof n["éa"] === "function" && Array.isArray(n["âè"]) && n["ë"]);
+    const observeRendered = n => {
         if (!nativeDrawable(n) || renderSeen.has(n)) return;
         renderSeen.add(n);
-        try { /* BRIO guarded: observeRendered — Keep the existing exception boundary for observeRendered. Capture reached rendered arrays within the existing128+32 budget; exclude BRIO clones. */
+        try {
             meteorCandidate(n);
             hudCandidate(n);
-            if (n.parent && !S.sceneRoots?.has(n.parent)) { /* BRIO branch: observeRendered — Accept n.parent && !S.sceneRoots?.has(n.parent). Capture reached rendered arrays within the existing128+32 budget; exclude BRIO clones. */  const extra = S.renderExtraRoots || (S.renderExtraRoots = new Set); if (extra.size < 64) extra.add(n.parent); }
+            if (n.parent && !S.sceneRoots?.has(n.parent)) { const extra = S.renderExtraRoots || (S.renderExtraRoots = new Set); if (extra.size < 64) extra.add(n.parent); }
             sceneObserve(n.parent);
             sceneObserve(n);
-            if (!n["À"] && !n.canvas && !("text" in n) && typeof n.add === "function") { /* BRIO branch: observeRendered — Accept !n["À"] && !n.canvas && !("text" in n) && typeof n.add === "function". Capture reached rendered arrays within the existing128+32 budget; exclude BRIO clones. */
+            if (!n["À"] && !n.canvas && !("text" in n) && typeof n.add === "function") {
                 observeRenderArray(n["âè"], true);
                 if (Array.isArray(n["ÉE"])) observeRenderArray(n["ÉE"], true);
             }
-        } catch (_) { /* BRIO fallback: observeRendered — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
     };
-    const observeRenderArray = (a, nativeOwner = false, hudOwner = false) => { /* BRIO block: observeRenderArray — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    const observeRenderArray = (a, nativeOwner = false, hudOwner = false) => {
         if (renderArrays.has(a) || renderArrays.size >= (hudOwner ? 160 : 128) || !nativeOwner && (!a.length || !a.slice(0, 3).some(nativeDrawable))) return;
         const restores = [];
-        for (const key of [ "forEach", "push", "unshift" ]) { /* BRIO loop: observeRenderArray — Iterate [ "forEach", "push", "unshift" ]. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+        for (const key of [ "forEach", "push", "unshift" ]) {
             const d = Object.getOwnPropertyDescriptor(a, key), orig = key === "forEach" && a[key] === renderDiscovery?.wrap ? renderDiscovery.desc.value : a[key];
             if (typeof orig !== "function" || d && (!d.configurable || !("value" in d))) continue;
-            const wrap = key === "forEach" ? function(callback, receiver) { /* BRIO block: observeRenderArray — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
-                return Reflect.apply(orig, this, [ function(n, i, array) { /* BRIO block: observeRenderArray — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+            const wrap = key === "forEach" ? function(callback, receiver) {
+                return Reflect.apply(orig, this, [ function(n, i, array) {
                     observeRendered(n);
                     return Reflect.apply(callback, receiver, [ n, i, array ]);
                 } ]);
-            } : function(...nodes) { /* BRIO block: observeRenderArray — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+            } : function(...nodes) {
                 const result = Reflect.apply(orig, this, nodes);
-                for (const n of nodes) { /* BRIO loop: observeRenderArray — Iterate nodes. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+                for (const n of nodes) {
                     observeRendered(n);
                     meteorCandidate(n, this);
                     hudCandidate(n);
@@ -995,8 +893,8 @@
                 enumerable: d?.enumerable ?? false,
                 value: wrap
             });
-            restores.push(() => { /* BRIO block: observeRenderArray — restores.push callback. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
-                if (a[key] === wrap) { /* BRIO branch: observeRenderArray — Accept a[key] === wrap. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+            restores.push(() => {
+                if (a[key] === wrap) {
                     if (d) Object.defineProperty(a, key, d); else delete a[key];
                 }
             });
@@ -1004,7 +902,7 @@
         renderArrays.set(a, restores);
         for (const n of a) observeRendered(n);
     };
-    const stopRenderDiscovery = () => { /* BRIO block: stopRenderDiscovery — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    const stopRenderDiscovery = () => {
         if (!renderDiscovery) return;
         if (Array.prototype.forEach === renderDiscovery.wrap) Object.defineProperty(Array.prototype, "forEach", renderDiscovery.desc);
         clearTimeout(renderDiscovery.timer);
@@ -1014,22 +912,22 @@
             cap: 160, generalCap: 128, reservedHudArrays: 32
         });
     };
-    const restoreRenderArrays = () => { /* BRIO block: restoreRenderArrays — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    const restoreRenderArrays = () => {
         for (const restores of renderArrays.values()) for (const restore of restores.reverse()) restore();
         renderArrays.clear();
         renderSeen = new WeakSet;
         S.renderExtraRoots?.clear();
     };
-    const startRenderDiscovery = reason => { /* BRIO block: startRenderDiscovery — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    const startRenderDiscovery = reason => {
         stopRenderDiscovery();
         const desc = Object.getOwnPropertyDescriptor(Array.prototype, "forEach"), orig = desc.value;
-        const wrap = function(callback, receiver) { /* BRIO block: wrap — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            try { /* BRIO guarded: wrap — Keep the existing exception boundary for wrap. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        const wrap = function(callback, receiver) {
+            try {
                 observeRenderArray(this);
-            } catch (_) { /* BRIO fallback: wrap — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+            } catch (_) {}
             return Reflect.apply(orig, this, [ function(n, i, a) {
                 // Discovery must inspect reached drawables even after the scoped-array cap.
-                try { /* BRIO guarded: wrap — Keep the existing exception boundary for wrap. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  observeRendered(n); } catch (_) { /* BRIO fallback: wrap — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+                try { observeRendered(n); } catch (_) {}
                 return Reflect.apply(callback, receiver, [ n, i, a ]);
             } ]);
         };
@@ -1052,7 +950,7 @@
     const /* BRIO: applyLocal
      * Apply selected local cosmetics after resource loading. Preserve native authority and current renderer identity.
      */
-    applyLocal = async () => { /* BRIO block: applyLocal — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */
+    applyLocal = async () => {
         const r = S.renderer;
         if (!r || !S.native) return;
         const epoch = S.runEpoch, s = S.playVisuals || state(), e = extrasState(), R = S.resolvedVisuals || (S.resolvedVisuals = {
@@ -1064,10 +962,10 @@
             glider: choose(s.glider, "glider"),
             emotes: Array.from({
                 length: 4
-            }, /* BRIO expr: applyLocal / Array.from callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ (_, i) => choose(Array.isArray(s.emotes) ? s.emotes[i] : null, "emote"))
+            }, (_, i) => choose(Array.isArray(s.emotes) ? s.emotes[i] : null, "emote"))
         });
         log("COSMETIC SELECTIONS", R);
-        const safe = /* BRIO expr: safe — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ (k, x) => loadRes(k, x).catch(err => { /* BRIO block: safe — loadRes(k, x).catch callback. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        const safe = (k, x) => loadRes(k, x).catch(err => {
             log("COSMETIC ASSET FAILED", {
                 category: k,
                 mode: x?.mode,
@@ -1076,63 +974,63 @@
             });
             return null;
         });
-        try { /* BRIO guarded: applyLocal — Keep the existing exception boundary for applyLocal. Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */
+        try {
             const [bo, he, pi, gl, igl, ...em] = await Promise.all([ safe("body", R.body), safe("head", R.head), safe("pickaxe", R.pickaxe), safe("glider", R.glider), e.allGlidersInvisible ? safe("glider", {
                 mode: "invisible",
                 data: BLANK.glider
-            }) : Promise.resolve(null), ...R.emotes.map(/* BRIO expr: applyLocal / R.emotes.map callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ x => safe("emote", x)) ]);
+            }) : Promise.resolve(null), ...R.emotes.map(x => safe("emote", x)) ]);
             if (S.destroyed || epoch !== S.runEpoch || r !== S.renderer) return;
             installSrc(R);
-            if (bo) cosmeticLock(r["Ëå"], "À", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ () => bo);
-            if (he) { /* BRIO branch: applyLocal — Accept he. Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */
-                cosmeticLock(r.head, "À", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ () => he);
-                cosmeticLock(r, "Äâè", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ () => he);
+            if (bo) cosmeticLock(r["Ëå"], "À", () => bo);
+            if (he) {
+                cosmeticLock(r.head, "À", () => he);
+                cosmeticLock(r, "Äâè", () => he);
             }
-            if (pi) { /* BRIO branch: applyLocal — Accept pi. Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */
-                cosmeticLock(r, "ÉãÂ", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ () => pi);
-                cosmeticLock(r["ä"], "À", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ v => held(r) === "pickaxe" ? pi : v);
+            if (pi) {
+                cosmeticLock(r, "ÉãÂ", () => pi);
+                cosmeticLock(r["ä"], "À", v => held(r) === "pickaxe" ? pi : v);
             }
             const hide = R.body.mode === "invisible";
-            for (const [p, k] of [ [ "áË", "l" ], [ "ÄÂ", "r" ], [ "ÄãÀ", "f" ], [ "èÅ", "s" ] ]) if (r[p] && S.native.limbs[k] !== undefined) if (hide) cosmeticLock(r[p], "opacity", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ () => 0);
-            if (R.trail.mode === "item") cosmeticLock(r, "Ëé", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ () => R.trail.id + "-");
-            if (R.trail.mode === "invisible" || e.allTrailsInvisible) cosmeticLock(r, "åëÅ", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ native => R.trail.mode === "invisible" || exFast().allTrailsInvisible ? NaN : native);
-            if (R.wrap.mode === "item") cosmeticLock(r, "ÆÃÅ", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ () => R.wrap.id);
+            for (const [p, k] of [ [ "áË", "l" ], [ "ÄÂ", "r" ], [ "ÄãÀ", "f" ], [ "èÅ", "s" ] ]) if (r[p] && S.native.limbs[k] !== undefined) if (hide) cosmeticLock(r[p], "opacity", () => 0);
+            if (R.trail.mode === "item") cosmeticLock(r, "Ëé", () => R.trail.id + "-");
+            if (R.trail.mode === "invisible" || e.allTrailsInvisible) cosmeticLock(r, "åëÅ", () => NaN);
+            if (R.wrap.mode === "item") cosmeticLock(r, "ÆÃÅ", () => R.wrap.id);
             const gg = igl || gl;
-            if (gg) { /* BRIO branch: applyLocal — Accept gg. Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */
-                cosmeticLock(r, "äÀÊ", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ native => exFast().allGlidersInvisible && igl ? igl : gl || native);
-                cosmeticLock(r["ÂÅ"], "À", /* BRIO expr: applyLocal / cosmeticLock callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ native => exFast().allGlidersInvisible && igl ? igl : gl || native);
-            } else { /* BRIO branch: applyLocal — Alternative for gg. Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */
+            if (gg) {
+                cosmeticLock(r, "äÀÊ", () => gg);
+                cosmeticLock(r["ÂÅ"], "À", () => gg);
+            } else {
                 r["aéÄ"] = S.native.gliderId;
                 r["äÀÊ"] = S.native.glider;
                 if (r["ÂÅ"] && S.native.gliderDisplay) r["ÂÅ"]["À"] = S.native.gliderDisplay;
             }
-            S.emoteResolved = em.map(/* BRIO expr: applyLocal / em.map callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ (x, i) => R.emotes[i].mode === "item" ? x : null);
+            S.emoteResolved = em.map((x, i) => R.emotes[i].mode === "item" ? x : null);
             installEmote(r);
             if (S.emoteEffect) S.emoteEffect.current = mapEmote(S.emoteEffect.base);
             log("LOCAL READY", {
                 capturedName: r["Ée"],
                 expected: S.localName,
                 adapters: S.cosmeticAdapters?.length || 0,
-                categories: Object.fromEntries([ ...[ "body", "head", "pickaxe", "trail", "wrap", "glider" ].map(/* BRIO expr: applyLocal / [ "body", "head", "pickaxe", "trail", "wrap", "glider" ].map callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ k => [ k, {
+                categories: Object.fromEntries([ ...[ "body", "head", "pickaxe", "trail", "wrap", "glider" ].map(k => [ k, {
                     mode: R[k].mode,
                     id: R[k].id || null
-                } ]), [ "emotes", R.emotes.map(/* BRIO expr: applyLocal / R.emotes.map callback — Apply saved local cosmetics through native-compatible adapters; native ownership/network state stays native. */ x => ({
+                } ]), [ "emotes", R.emotes.map(x => ({
                     mode: x.mode,
                     id: x.id || null
                 })) ] ])
             });
-        } catch (e2) { /* BRIO fallback: applyLocal — Handle failure in applyLocal through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e2) {
             S.errors.push(String(e2));
             log("LOCAL ERROR", String(e2));
         }
     };
-    const isPlayer = /* BRIO expr: isPlayer — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => !!(o && typeof o === "object" && o["Ëå"] && o.head && o["Eâ"] && typeof o["Ée"] === "string"), isLocal = /* BRIO expr: isLocal — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ o => o === S.renderer, worldPos = r => { /* BRIO block: worldPos — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    const isPlayer = o => !!(o && typeof o === "object" && o["Ëå"] && o.head && o["Eâ"] && typeof o["Ée"] === "string"), isLocal = o => o === S.renderer, worldPos = r => {
         const p = r?.["â"]?.["ë"], x = p?.["É"], y = p?.["Ä"];
         return Number.isFinite(x) && Number.isFinite(y) ? {
             x: x,
             y: y
         } : null;
-    }, localNameMatch = o => { /* BRIO block: localNameMatch — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    }, localNameMatch = o => {
         if (!isPlayer(o)) return false;
         const n = String(o["Ée"] || ""), want = String(S.localName || "");
         if (n === want) return true;
@@ -1141,27 +1039,27 @@
     }, /* BRIO: resourceSlots
      * Enumerate reached local drawable resource wrappers. Do not fetch/evaluate native engine strings as code.
      */
-    resourceSlots = o => { /* BRIO block: resourceSlots — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-        const out = [], seen = new Set, walk = (v, d) => { /* BRIO block: walk — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    resourceSlots = o => {
+        const out = [], seen = new Set, walk = (v, d) => {
             if (!v || typeof v !== "object" || d > 4 || seen.has(v) || v === W || v === D || v instanceof Node) return;
             seen.add(v);
-            if (v["ÁÄ"] && typeof v["ÁÄ"] === "object") { /* BRIO branch: walk — Accept v["ÁÄ"] && typeof v["ÁÄ"] === "object". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            if (v["ÁÄ"] && typeof v["ÁÄ"] === "object") {
                 const p = norm(v.src || v["ÁÄ"]?.currentSrc || v["ÁÄ"]?.src);
                 if (p && p !== "/") out.push({
                     w: v,
                     path: p
                 });
             }
-            for (const k of Object.keys(v).slice(0, 70)) { /* BRIO loop: walk — Iterate Object.keys(v).slice(0, 70). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            for (const k of Object.keys(v).slice(0, 70)) {
                 if ([ "parent", "owner", "stage", "game", "ÁÄ" ].includes(k)) continue;
                 let x;
-                try { /* BRIO guarded: walk — Keep the existing exception boundary for walk. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                try {
                     x = v[k];
-                } catch (_) { /* BRIO fallback: walk — Handle failure in walk through its existing fallback/report path; optional native fields may be unavailable. */
+                } catch (_) {
                     continue;
                 }
                 if (!x || typeof x !== "object" || x instanceof Node) continue;
-                if (Array.isArray(x)) { /* BRIO branch: walk — Accept Array.isArray(x). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                if (Array.isArray(x)) {
                     if (x.length > 24) continue;
                     for (const y of x) walk(y, d + 1);
                 } else walk(x, d + 1);
@@ -1169,17 +1067,17 @@
         };
         walk(o, 0);
         const u = [], ws = new Set;
-        for (const x of out) if (!ws.has(x.w)) { /* BRIO branch: resourceSlots — Accept !ws.has(x.w). Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+        for (const x of out) if (!ws.has(x.w)) {
             ws.add(x.w);
             u.push(x);
         }
         return u;
-    }, isWorld = /* BRIO expr: isWorld — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => !!(o && typeof o === "object" && o.id != null && [ "object", "buildable", "spellfield", "gun", "ammo", "chest", "airdrop" ].includes(String(o.type))), /* BRIO: collectPlayers
+    }, isWorld = o => !!(o && typeof o === "object" && o.id != null && [ "object", "buildable", "spellfield", "gun", "ammo", "chest", "airdrop" ].includes(String(o.type))), /* BRIO: collectPlayers
      * Collect players from reached active native arrays. Avoid stale/culled fallback players and bot guesses.
      */
-    collectPlayers = () => { /* BRIO block: collectPlayers — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    collectPlayers = () => {
         const out = [], seen = new Set;
-        for (const a of [ S.rendererArray, ...S.arrayHooks.keys() ]) if (Array.isArray(a)) for (const x of a) if (isPlayer(x) && !seen.has(x)) { /* BRIO branch: collectPlayers — Accept isPlayer(x) && !seen.has(x). Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        for (const a of [ S.rendererArray, ...S.arrayHooks.keys() ]) if (Array.isArray(a)) for (const x of a) if (isPlayer(x) && !seen.has(x)) {
             seen.add(x);
             out.push(x);
         }
@@ -1187,21 +1085,21 @@
     }, /* BRIO: collectWorld
      * Collect reached active world objects only; private/disconnected engine registries are not assumed reachable.
      */
-    collectWorld = () => { /* BRIO block: collectWorld — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    collectWorld = () => {
         const out = [], seen = new Set;
-        for (const a of [ S.rendererArray, ...S.arrayHooks.keys() ]) if (Array.isArray(a)) for (const x of a) if (isWorld(x) && !seen.has(x)) { /* BRIO branch: collectWorld — Accept isWorld(x) && !seen.has(x). Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        for (const a of [ S.rendererArray, ...S.arrayHooks.keys() ]) if (Array.isArray(a)) for (const x of a) if (isWorld(x) && !seen.has(x)) {
             seen.add(x);
             out.push(x);
         }
         return out;
     };
-    const transparentImage = old => { /* BRIO block: transparentImage — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    const transparentImage = old => {
         if (!old) return Promise.resolve(null);
         if (S.transparent.has(old)) return S.transparent.get(old);
-        const p = new Promise(resolve => { /* BRIO block: transparentImage — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            const make = () => { /* BRIO block: make — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        const p = new Promise(resolve => {
+            const make = () => {
                 const width = old.naturalWidth || old.width, height = old.naturalHeight || old.height;
-                if (!(width > 0 && height > 0)) { /* BRIO branch: make — Accept !(width > 0 && height > 0). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                if (!(width > 0 && height > 0)) {
                     resolve(null);
                     return;
                 }
@@ -1210,26 +1108,26 @@
                 c.height = height;
                 const im = new Image;
                 im["ÀA"] = 2;
-                im.onload = () => { /* BRIO block: im.onload — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                im.onload = () => {
                     im["ÀA"] = 1;
                     im["ÁÅe"] = im.width / 2;
                     im["âÅÉ"] = im.height / 2;
                     resolve(im);
                 };
-                im.onerror = /* BRIO expr: im.onerror — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => resolve(null);
+                im.onerror = () => resolve(null);
                 im.src = c.toDataURL("image/png");
             };
-            if (old instanceof HTMLImageElement && !old.naturalWidth && (!old.complete || old["ÀA"] === 2)) { /* BRIO branch: transparentImage — Accept old instanceof HTMLImageElement && !old.naturalWidth && (!old.complete || old["ÀA"] === 2). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            if (old instanceof HTMLImageElement && !old.naturalWidth && (!old.complete || old["ÀA"] === 2)) {
                 let timeout;
-                const done = () => { /* BRIO block: done — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                const done = () => {
                     clearTimeout(timeout);
                     old.removeEventListener("load", loaded);
                     old.removeEventListener("error", failed);
                 };
-                const loaded = () => { /* BRIO block: loaded — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                const loaded = () => {
                     done();
                     make();
-                }, failed = () => { /* BRIO block: failed — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                }, failed = () => {
                     done();
                     resolve(null);
                 };
@@ -1243,42 +1141,36 @@
             } else make();
         });
         S.transparent.set(old, p);
-        p.then(im => { /* BRIO block: transparentImage — p.then callback. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        p.then(im => {
             if (!im) S.transparent.delete(old);
         });
         return p;
-    }, blankWrapper = async (w, map, key) => { /* BRIO block: blankWrapper — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, blankWrapper = async (w, map, key) => {
         if (!w?.["ÁÄ"] || map.has(key)) return;
         const epoch = S.runEpoch, old = w["ÁÄ"], im = await transparentImage(old);
         if (S.destroyed || epoch !== S.runEpoch) return;
-        // Respect a modifier/composite change while native-sized transparent images were loading.
-        if (map === S.roofSaved && !extrasState().transparentRoofs) return;
-        if (im) { /* BRIO branch: blankWrapper — Accept im. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (im) {
             map.set(key, {
                 w: w,
                 old: old
             });
             w["ÁÄ"] = im;
         }
-    }, captureRoof = o => { /* BRIO block: captureRoof — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    }, captureRoof = o => {
         if (!extrasState().transparentRoofs) return;
         const w = o?.À, p = norm(w?.src || w?.["ÁÄ"]?.src || "");
-        if (ROOFSET.has(p) && !S.roofSaved.has(p)) blankWrapper(w, S.roofSaved, p).then(maybeStop).catch(/* BRIO expr: captureRoof / blankWrapper(w, S.roofSaved, p).then(maybeStop).catch callback — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ e => S.errors.push(String(e)));
-    }, isBuild = o => { /* BRIO block: isBuild — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-        const txt = [ o?.type, o?.["Àâ"], o?.["ÄæÅ"], o?.["ÆåÃ"], ...resourceSlots(o).map(/* BRIO expr: isBuild / resourceSlots(o).map callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ x => x.path) ].join(" ").toLowerCase();
-        return /wall|campfirebuild|boostpadbuild|shieldbuild|shieldbubble/.test(txt) || resourceSlots(o).some(/* BRIO expr: isBuild / resourceSlots(o).some callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ x => BUILDRE.test(x.path));
-    }, /* BRIO: blankBuild (legacy; retained for historical audit, inactive in V50)
-     * Shared transparent resources cannot implement independent tiers. New challenges use featureWorld draw gates.
-     */ blankBuild = o => { /* BRIO block: blankBuild — Historical inactive resource mechanism only; V50 tiers use draw gates instead of shared images. */
-        for (const x of resourceSlots(o)) if (x.path.startsWith("/buildart/") && (BUILDRE.test(x.path) || isBuild(o))) blankWrapper(x.w, S.buildSaved, x.path).catch(/* BRIO expr: blankBuild / blankWrapper(x.w, S.buildSaved, x.path).catch callback — Historical inactive resource mechanism only; V50 tiers use draw gates instead of shared images. */ e => S.errors.push(String(e)));
-    }, /* BRIO: blankLoot (legacy; retained for historical audit, inactive in V50)
-     * Keep the old mechanism recorded; active art/rarity/popup tiers never rewrite shared loot resources.
-     */ blankLoot = o => { /* BRIO block: blankLoot — Historical inactive resource mechanism only; retain for audit and use draw gates for active tier semantics. */
-        for (const x of resourceSlots(o)) if (x.path.startsWith("/buildart/")) blankWrapper(x.w, S.lootSaved, x.path).catch(/* BRIO expr: blankLoot / blankWrapper(x.w, S.lootSaved, x.path).catch callback — Historical inactive resource mechanism only; retain for audit and use draw gates for active tier semantics. */ e => S.errors.push(String(e)));
+        if (ROOFSET.has(p) && !S.roofSaved.has(p)) blankWrapper(w, S.roofSaved, p).then(maybeStop).catch(e => S.errors.push(String(e)));
+    }, isBuild = o => {
+        const txt = [ o?.type, o?.["Àâ"], o?.["ÄæÅ"], o?.["ÆåÃ"], ...resourceSlots(o).map(x => x.path) ].join(" ").toLowerCase();
+        return /wall|campfirebuild|boostpadbuild|shieldbuild|shieldbubble/.test(txt) || resourceSlots(o).some(x => BUILDRE.test(x.path));
+    }, blankBuild = o => {
+        for (const x of resourceSlots(o)) if (x.path.startsWith("/buildart/") && (BUILDRE.test(x.path) || isBuild(o))) blankWrapper(x.w, S.buildSaved, x.path).catch(e => S.errors.push(String(e)));
+    }, blankLoot = o => {
+        for (const x of resourceSlots(o)) if (x.path.startsWith("/buildart/")) blankWrapper(x.w, S.lootSaved, x.path).catch(e => S.errors.push(String(e)));
     };
-    const rememberRemote = r => { /* BRIO block: rememberRemote — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    const rememberRemote = r => {
         let e = S.remoteRefs.get(r.id);
-        if (!e) { /* BRIO branch: rememberRemote — Accept !e. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        if (!e) {
             e = {
                 r: r,
                 id: r.id,
@@ -1286,12 +1178,12 @@
                 screen: null
             };
             S.remoteRefs.set(r.id, e);
-        } else { /* BRIO branch: rememberRemote — Alternative for !e. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        } else {
             e.r = r;
             e.name = r["Ée"];
         }
         return e;
-    }, makeTrack = /* BRIO expr: makeTrack — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ (r, e) => ({
+    }, makeTrack = (r, e) => ({
         "ë": {
             "É": 0,
             "Ä": 0
@@ -1304,8 +1196,8 @@
         parent: null,
         "âè": [],
         "ÉE": [],
-        "Eââ"(ctx) { /* BRIO block: Eââ — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            try { /* BRIO guarded: Eââ — Keep the existing exception boundary for Eââ. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        "Eââ"(ctx) {
+            try {
                 const m = ctx.getTransform?.(), c = ctx.canvas;
                 if (m && c) e.screen = {
                     x: m.e,
@@ -1317,41 +1209,41 @@
                     at: performance.now(),
                     canvas: c
                 };
-            } catch (_) { /* BRIO fallback: Eââ — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+            } catch (_) {}
         },
-        "éa"(ctx) { /* BRIO block: éa — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        "éa"(ctx) {
             this.Eââ(ctx);
         },
-        "ÊÈA"() { /* BRIO block: ÊÈA — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            try { /* BRIO guarded: ÊÈA — Keep the existing exception boundary for ÊÈA. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        "ÊÈA"() {
+            try {
                 this.parent?.remove?.(this);
-            } catch (_) { /* BRIO fallback: ÊÈA — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+            } catch (_) {}
             this.parent = null;
         }
-    }), attachTrack = r => { /* BRIO block: attachTrack — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }), attachTrack = r => {
         if (!r || isLocal(r) || S.trackNodes.has(r) || !r["Eâ"]?.add) return;
         const e = rememberRemote(r), n = makeTrack(r, e);
-        try { /* BRIO guarded: attachTrack — Keep the existing exception boundary for attachTrack. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        try {
             r["Eâ"].add(n);
             S.trackNodes.set(r, n);
-        } catch (x) { /* BRIO fallback: attachTrack — Handle failure in attachTrack through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (x) {
             S.errors.push(String(x));
         }
-    }, attachLocalTrack = r => { /* BRIO block: attachLocalTrack — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    }, attachLocalTrack = r => {
         if (!r || !r["Eâ"]?.add || S.localTrack?.node) return;
         const e = {
             screen: null
         }, n = makeTrack(r, e);
-        try { /* BRIO guarded: attachLocalTrack — Keep the existing exception boundary for attachLocalTrack. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        try {
             r["Eâ"].add(n);
             S.localTrack = {
                 state: e,
                 node: n
             };
-        } catch (x) { /* BRIO fallback: attachLocalTrack — Handle failure in attachLocalTrack through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (x) {
             S.errors.push(String(x));
         }
-    }, screenState = e => { /* BRIO block: screenState — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    }, screenState = e => {
         const x = e?.screen;
         if (!x || performance.now() - x.at > 700 || !x.canvas) return null;
         const r = x.canvas.getBoundingClientRect?.();
@@ -1361,7 +1253,7 @@
             y: r.top + x.y * (r.height / (x.canvas.height || r.height)),
             rect: r
         };
-    }, ensureArrow = (key, color) => { /* BRIO block: ensureArrow — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, ensureArrow = (key, color) => {
         if (S[key]) return S[key];
         const u = D.createElement("div");
         u.style = "position:fixed;z-index:2147483644;pointer-events:none;width:176px;height:84px;display:none;transform-origin:50% 50%;filter:drop-shadow(0 2px 3px #000)";
@@ -1375,7 +1267,7 @@
         top: 0,
         width: innerWidth,
         height: innerHeight
-    }) => { /* BRIO block: placeArrow — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }) => {
         const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2, tx = Math.max(10, rect.width / 2 - m) / Math.max(Math.abs(dx), .001), ty = Math.max(10, rect.height / 2 - m) / Math.max(Math.abs(dy), .001), z = Math.max(0, Math.min(tx, ty)), ang = Math.atan2(dy, dx) * 180 / Math.PI;
         u.style.display = "block";
         u.style.left = cx + dx * z + "px";
@@ -1388,10 +1280,10 @@
         d.replaceChildren();
         const distance = D.createElement("span"); distance.textContent = distanceText; d.appendChild(distance);
         d.style.flexDirection = "column"; d.style.lineHeight = "18px";
-        if (label) { /* BRIO branch: placeArrow — Accept label. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  const name = D.createElement("span"); name.className = "playerName"; name.textContent = String(label); name.style = "display:block;max-width:108px;overflow:hidden;text-overflow:ellipsis;font-size:16px;line-height:18px"; d.appendChild(name); }
+        if (label) { const name = D.createElement("span"); name.className = "playerName"; name.textContent = String(label); name.style = "display:block;max-width:108px;overflow:hidden;text-overflow:ellipsis;font-size:16px;line-height:18px"; d.appendChild(name); }
         d.style.transform = ang > 90 || ang < -90 ? "rotate(180deg)" : "none";
         d.style.fontSize = Math.max(8, Math.min(16, 120 / Math.max(1, distanceText.length))) + "px";
-    }, projectWorld = p => { /* BRIO block: projectWorld — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, projectWorld = p => {
         const me = worldPos(S.renderer), raw = S.localTrack?.state?.screen;
         if (!me || !p || !raw?.canvas || performance.now() - raw.at > 700) return null;
         const rect = raw.canvas.getBoundingClientRect();
@@ -1402,14 +1294,14 @@
             y: rect.top + (raw.y + raw.b * dx + raw.d * dy) * ky,
             rect: rect
         };
-    }, nearestTick = /* BRIO expr: nearestTick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => nearestV40();
-    const hudKinds = /* BRIO expr: hudKinds — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ path => /\/inv[0-6]\.png$/.test(path) ? "slots" : /\/(?:wood|brick|metal|scrap|gear)\.png$/.test(path) ? "materials" : /\/(?:ammo|stack)[0-4]\.png$/.test(path) ? "ammo" : null;
+    }, nearestTick = () => nearestV40();
+    const hudKinds = path => /\/inv[0-6]\.png$/.test(path) ? "slots" : /\/(?:wood|brick|metal|scrap|gear)\.png$/.test(path) ? "materials" : /\/(?:ammo|stack)[0-4]\.png$/.test(path) ? "ammo" : null;
     const /* BRIO: hudWalk
      * Traverse a small native widget subtree. Exclude BRIO clones and enforce the per-widget node cap.
      */
-    hudWalk = (root, max = 100) => { /* BRIO block: hudWalk — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    hudWalk = (root, max = 100) => {
         const out = [], seen = new Set, stack = [ root ];
-        while (stack.length && out.length < max) { /* BRIO loop: hudWalk — Iterate stack.length && out.length < max. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+        while (stack.length && out.length < max) {
             const n = stack.pop();
             if (!n || seen.has(n) || typeof n !== "object") continue;
             seen.add(n);
@@ -1421,22 +1313,20 @@
     const /* BRIO: hudPath
      * Identify native artwork by normalized resource path, independently of obfuscated constructor names.
      */
-    hudPath = /* BRIO expr: hudPath — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ n => norm(n?.["À"]?.src || n?.["À"]?.["ÁÄ"]?.src || "");
+    hudPath = n => norm(n?.["À"]?.src || n?.["À"]?.["ÁÄ"]?.src || "");
     const hudCandidate = n => {
-        // V50 visual discovery also inspects native non-inventory widgets; clone/BRIO exclusion lives in the candidate.
-        nativeVisualCandidate(n);
         if (n?.__brioHudClone || S.hudRejected?.has(n) || !hudKinds(hudPath(n))) return;
         if (!S.hudPending) S.hudPending = new WeakSet;
         if (S.hudPending.has(n) || S.hudSourceNodes?.has(n)) return;
         S.hudPending.add(n);
         const epoch = S.runEpoch;
-        setTimeout(() => { /* BRIO block: hudCandidate — setTimeout callback. Validate native HUD resources/owners before storing templates; new visual widgets reuse existing discovery. */
+        setTimeout(() => {
             S.hudPending.delete(n);
             if (S.destroyed || epoch !== S.runEpoch) return;
-            try { /* BRIO guarded: hudCandidate — Keep the existing exception boundary for hudCandidate. Validate native HUD resources/owners before storing templates; new visual widgets reuse existing discovery. */
+            try {
                 hudInspect(n);
-            } catch (e) { /* BRIO fallback: hudCandidate — Handle failure in hudCandidate through its existing fallback/report path; optional native fields may be unavailable. */
-                if (!S.hudInspectError) { /* BRIO branch: hudCandidate — Accept !S.hudInspectError. Validate native HUD resources/owners before storing templates; new visual widgets reuse existing discovery. */
+            } catch (e) {
+                if (!S.hudInspectError) {
                     S.hudInspectError = true;
                     log("NATIVE HUD INSPECTION ERROR", String(e));
                 }
@@ -1446,16 +1336,16 @@
     const /* BRIO: slotCaption
      * Validate the native numbered caption below a slot. It is capture evidence, not slot-sizing geometry.
      */
-    slotCaption = /* BRIO expr: slotCaption — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ root => hudWalk(root, 32).find(/* BRIO expr: slotCaption / hudWalk(root, 32).find callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ n => (n.type === "text" || typeof n.text === "string") && /^[1-6]$/.test(String(n.text)) && Number(n["ë"]?.["Ä"]) > 0);
+    slotCaption = root => hudWalk(root, 32).find(n => (n.type === "text" || typeof n.text === "string") && /^[1-6]$/.test(String(n.text)) && Number(n["ë"]?.["Ä"]) > 0);
     const /* BRIO: slotUnit
      * Recognize both filled image roots and empty rectangle roots. Selected art may move inside persistent holders.
      */
-    slotUnit = holder => { /* BRIO block: slotUnit — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    slotUnit = holder => {
         const candidates = [holder, ...(holder?.["âè"] || []), ...(holder?.["ÉE"] || [])];
         let group = null;
-        for (const root of candidates) { /* BRIO loop: slotUnit — Iterate candidates. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+        for (const root of candidates) {
             if (!root || String(root.type || "").startsWith("brio")) continue;
-            const cap = slotCaption(root), icons = hudWalk(root, 40).filter(/* BRIO expr: slotUnit / hudWalk(root, 40).filter callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ n => hudKinds(hudPath(n)) === "slots");
+            const cap = slotCaption(root), icons = hudWalk(root, 40).filter(n => hudKinds(hudPath(n)) === "slots");
             const square = Number(root.width) > 0 && Number(root.height) > 0 && Math.abs(root.width - root.height) < 2;
             if (cap && square && Number(cap["ë"]?.["Ä"]) >= root.height * .5) return root;
             if (cap && !root.width && icons.length === 1) group ||= root;
@@ -1465,15 +1355,15 @@
     const /* BRIO: captureSlotRow
      * Capture five weapon slots from ordered native holders, excluding the leftmost pickaxe in a six-holder row. Reserve scoped HUD arrays for later replacements.
      */
-    captureSlotRow = icon => { /* BRIO block: captureSlotRow — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    captureSlotRow = icon => {
         let unit = icon;
         for (let depth = 0; unit && depth < 4 && !slotUnit(unit); depth++) unit = unit.parent;
         if (!unit) return false;
         unit = slotUnit(unit);
         let row = unit.parent, holders = [];
-        for (let depth = 0; row && depth < 3; depth++, row = row.parent) { /* BRIO loop: captureSlotRow — Iterate row && depth < 3. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
-            holders = [...(row["âè"] || []), ...(row["ÉE"] || [])].map(/* BRIO expr: captureSlotRow / [...(row["âè"] || []), ...(row["ÉE"] || [])].map callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ holder => ({holder, root: slotUnit(holder)})).filter(/* BRIO expr: captureSlotRow / [...(row["âè"] || []), ...(row["ÉE"] || [])].map(holder => ({holder, root: slotUnit(holder)})).filter callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ x => x.root);
-            if ((holders.length === 5 || holders.length === 6) && holders.some(/* BRIO expr: captureSlotRow / holders.some callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ x => x.root === unit)) break;
+        for (let depth = 0; row && depth < 3; depth++, row = row.parent) {
+            holders = [...(row["âè"] || []), ...(row["ÉE"] || [])].map(holder => ({holder, root: slotUnit(holder)})).filter(x => x.root);
+            if ((holders.length === 5 || holders.length === 6) && holders.some(x => x.root === unit)) break;
             holders = [];
         }
         if (!holders.length) return false;
@@ -1481,75 +1371,75 @@
         (S.hudSourceNodes || (S.hudSourceNodes = new WeakSet)).add(icon);
         for (const k of ["âè", "ÉE"]) if (Array.isArray(row[k])) observeRenderArray(row[k], true, true);
         for (const {holder} of holders) for (const k of ["âè", "ÉE"]) if (Array.isArray(holder[k])) observeRenderArray(holder[k], true, true);
-        holders.sort(/* BRIO expr: captureSlotRow / holders.sort callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ (a,b) => Number(a.holder["ë"]?.["É"] || 0) - Number(b.holder["ë"]?.["É"] || 0));
-        if (new Set(holders.map(/* BRIO expr: captureSlotRow / holders.map callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ x => Number(x.holder["ë"]?.["É"] || 0))).size !== holders.length) return false;
+        holders.sort((a,b) => Number(a.holder["ë"]?.["É"] || 0) - Number(b.holder["ë"]?.["É"] || 0));
+        if (new Set(holders.map(x => Number(x.holder["ë"]?.["É"] || 0))).size !== holders.length) return false;
         if (!S.hudTemplates) S.hudTemplates = {slots: [], materials: [], ammo: []};
-        for (let rank = 0; rank < holders.length; rank++) { /* BRIO loop: captureSlotRow — Iterate rank < holders.length. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+        for (let rank = 0; rank < holders.length; rank++) {
             const {holder, root} = holders[rank], slotIndex = holders.length === 6 ? rank : rank + 1;
             if (slotIndex === 0) continue; // Native pickaxe holder is leftmost in the six-slot row.
-            const nodes = hudWalk(root, 80), background = nodes.find(/* BRIO expr: captureSlotRow / nodes.find callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ n => hudKinds(hudPath(n)) === "slots") || root;
+            const nodes = hudWalk(root, 80), background = nodes.find(n => hudKinds(hudPath(n)) === "slots") || root;
             if (background["À"]) S.hudSlotSprite = background;
             S.hudSourceNodes.add(background);
-            const previous = S.hudTemplates.slots.findIndex(/* BRIO expr: captureSlotRow / S.hudTemplates.slots.findIndex callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ r => r.slotIndex === slotIndex);
+            const previous = S.hudTemplates.slots.findIndex(r => r.slotIndex === slotIndex);
             if (previous >= 0 && S.hudTemplates.slots[previous].root === root) continue;
             const w = Math.abs(Number(background.width)), h = Math.abs(Number(background.height));
             if (!(w > 0 && h > 0) || !root.add) continue;
             const record = {root, icon: background, nodes, kind: "slots", path: hudPath(background), slotIndex,
                 x: Number(holder["ë"]?.["É"]) || 0, y: Number(holder["ë"]?.["Ä"]) || 0, width: w, height: h,
                 slotBounds: {left: -w/2, top: -h/2, width: w, height: h}, holder};
-            const artwork = nodes.find(/* BRIO expr: captureSlotRow / nodes.find callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ n => n !== background && isSlotArtwork(hudPath(n)) && n["À"]);
+            const artwork = nodes.find(n => n !== background && isSlotArtwork(hudPath(n)) && n["À"]);
             if (artwork) (S.hudArtStyles || (S.hudArtStyles = new Map)).set(hudPath(artwork), {ratio: artwork.width/w, angle: Number(artwork.A)||0, size: Number(artwork.size)||1});
             if (previous >= 0) S.hudTemplates.slots[previous] = record; else S.hudTemplates.slots.push(record);
             S.hudVersion = (S.hudVersion || 0) + 1;
-            if ((S.hudSlotLogs || 0) < 24) { /* BRIO branch: captureSlotRow — Accept (S.hudSlotLogs || 0) < 24. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ S.hudSlotLogs = (S.hudSlotLogs || 0) + 1; log("NATIVE WEAPON SLOT", {slotIndex, rootType: root.type, path: record.path, bounds: record.slotBounds, holderPosition: holder["ë"], method: "ordered native holders; includes empty rectangles"});}
+            if ((S.hudSlotLogs || 0) < 24) {S.hudSlotLogs = (S.hudSlotLogs || 0) + 1; log("NATIVE WEAPON SLOT", {slotIndex, rootType: root.type, path: record.path, bounds: record.slotBounds, holderPosition: holder["ë"], method: "ordered native holders; includes empty rectangles"});}
         }
-        S.hudStatus = {captured: true, counts: Object.fromEntries(Object.entries(S.hudTemplates).map(/* BRIO expr: captureSlotRow / Object.entries(S.hudTemplates).map callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ ([k,v]) => [k,v.length])), replica: "native slot holders and material/stack templates; visual comparison required"};
+        S.hudStatus = {captured: true, counts: Object.fromEntries(Object.entries(S.hudTemplates).map(([k,v]) => [k,v.length])), replica: "native slot holders and material/stack templates; visual comparison required"};
         ownMaterialWarnings();
         return true;
     };
     const /* BRIO: hudInspect
      * Reject pickup particles/player decorations before acquiring material/ammo HUD templates. Candidate roots may contain their own counts.
      */
-    hudInspect = n => { /* BRIO block: hudInspect — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */
+    hudInspect = n => {
         const path = hudPath(n), kind = hudKinds(path);
         if (path && n?.["À"]?.["ÁÄ"]) (S.hudNativeImages || (S.hudNativeImages = new Map)).set(path, n["À"]["ÁÄ"]);
         if (!kind || S.hudSourceNodes?.has(n)) return;
         if (!S.hudSourceNodes) S.hudSourceNodes = new WeakSet;
         // Pickup particles share HUD icon resources. Resource names alone are insufficient.
         let ancestry = n;
-        for (let depth = 0; ancestry && depth < 12; depth++, ancestry = ancestry.parent) { /* BRIO loop: hudInspect — Iterate ancestry && depth < 12. Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */
+        for (let depth = 0; ancestry && depth < 12; depth++, ancestry = ancestry.parent) {
             if (ancestry.type === "particle" || String(ancestry.type || "").startsWith("brio")) return;
             for (const r of collectPlayers()) if (ancestry === r["â"] || ancestry === r["Eâ"]) return;
         }
-        if (kind === "slots") { /* BRIO branch: hudInspect — Accept kind === "slots". Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */  captureSlotRow(n); return; }
-        if (kind !== "slots") { /* BRIO branch: hudInspect — Accept kind !== "slots". Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */
+        if (kind === "slots") { captureSlotRow(n); return; }
+        if (kind !== "slots") {
             let p = n, validated = false;
-            for (let depth = 0; p && depth < 3; depth++, p = p.parent) { /* BRIO loop: hudInspect — Iterate p && depth < 3. Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */
-                const nodes = hudWalk(p, 80), icons = nodes.filter(/* BRIO expr: hudInspect / nodes.filter callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ x => hudKinds(hudPath(x)) === kind);
+            for (let depth = 0; p && depth < 3; depth++, p = p.parent) {
+                const nodes = hudWalk(p, 80), icons = nodes.filter(x => hudKinds(hudPath(x)) === kind);
                 if (icons.length !== 1) break;
-                if (kind === "ammo" && nodes.some(/* BRIO expr: hudInspect / nodes.some callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ x => hudKinds(hudPath(x)) === "slots")) return;
-                if (nodes.some(/* BRIO expr: hudInspect / nodes.some callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ x => (x.type === "text" || typeof x.text === "string") && /^\d+$/.test(String(x.text)))) { /* BRIO branch: hudInspect — Accept nodes.some(x => (x.type === "text" || typeof x.text === "string") && /^\d+$/.test(String(x.text))). Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */  validated = true; break; }
+                if (kind === "ammo" && nodes.some(x => hudKinds(hudPath(x)) === "slots")) return;
+                if (nodes.some(x => (x.type === "text" || typeof x.text === "string") && /^\d+$/.test(String(x.text)))) { validated = true; break; }
             }
             if (!validated) return; // Never blacklist a still-being-built widget.
         }
         for (let p = n.parent, depth = 0; p && depth < 3; depth++, p = p.parent) for (const k of ["âè", "ÉE"]) if (Array.isArray(p[k])) observeRenderArray(p[k], true, true);
         S.hudInspectionCount = (S.hudInspectionCount || 0) + 1;
         let unit = n;
-        for (let p = n.parent, depth = 0; p && depth < 3; depth++, p = p.parent) { /* BRIO loop: hudInspect — Iterate p && depth < 3. Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */
-            const nodes = hudWalk(p, 80), icons = nodes.filter(/* BRIO expr: hudInspect / nodes.filter callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ x => hudKinds(hudPath(x)) === kind);
+        for (let p = n.parent, depth = 0; p && depth < 3; depth++, p = p.parent) {
+            const nodes = hudWalk(p, 80), icons = nodes.filter(x => hudKinds(hudPath(x)) === kind);
             if (icons.length !== 1) break;
             unit = p;
-            if (nodes.some(/* BRIO expr: hudInspect / nodes.some callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ x => x.type === "text" || typeof x.text === "string")) break;
+            if (nodes.some(x => x.type === "text" || typeof x.text === "string")) break;
         }
         const nodes = hudWalk(unit), sourceCtor = unit.constructor;
-        if (nodes.some(/* BRIO expr: hudInspect / nodes.some callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ x => x.type === "particle" || /^\+\d+$/.test(String(x.text || "")))) return;
+        if (nodes.some(x => x.type === "particle" || /^\+\d+$/.test(String(x.text || "")))) return;
         if (!S.hudTemplates) S.hudTemplates = {
             slots: [],
             materials: [],
             ammo: []
         };
-        const ammoIndex = /* BRIO expr: ammoIndex — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ path => +(path.match(/(?:ammo|stack)([0-4])/) || [])[1];
-        const previous = S.hudTemplates[kind].findIndex(/* BRIO expr: hudInspect / S.hudTemplates[kind].findIndex callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ r => kind === "slots" ? r.x === (Number(unit["ë"]?.["É"]) || 0) : kind === "ammo" ? ammoIndex(r.path) === ammoIndex(path) : r.path === path);
+        const ammoIndex = path => +(path.match(/(?:ammo|stack)([0-4])/) || [])[1];
+        const previous = S.hudTemplates[kind].findIndex(r => kind === "slots" ? r.x === (Number(unit["ë"]?.["É"]) || 0) : kind === "ammo" ? ammoIndex(r.path) === ammoIndex(path) : r.path === path);
         if (kind === "ammo" && previous >= 0 && /\/stack/.test(S.hudTemplates.ammo[previous].path) && !/\/stack/.test(path)) return;
         if (previous < 0 && S.hudTemplates[kind].length >= (kind === "slots" ? 6 : kind === "materials" ? 4 : 5)) return;
         const record = {
@@ -1563,36 +1453,34 @@
             width: Math.abs(Number(n.width)) || 0,
             height: Math.abs(Number(n.height)) || 0
         };
-        if (kind === "slots") { /* BRIO branch: hudInspect — Accept kind === "slots". Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */
-            const art = nodes.find(/* BRIO expr: hudInspect / nodes.find callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ x => isSlotArtwork(hudPath(x)) && x["À"] && x !== n);
-            if (art && n.width) { /* BRIO branch: hudInspect — Accept art && n.width. Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */  const styles = S.hudArtStyles || (S.hudArtStyles = new Map); styles.set(hudPath(art), {ratio: art.width / n.width, angle: Number(art.A) || 0, size: Number(art.size) || 1}); }
+        if (kind === "slots") {
+            const art = nodes.find(x => isSlotArtwork(hudPath(x)) && x["À"] && x !== n);
+            if (art && n.width) { const styles = S.hudArtStyles || (S.hudArtStyles = new Map); styles.set(hudPath(art), {ratio: art.width / n.width, angle: Number(art.A) || 0, size: Number(art.size) || 1}); }
         }
         S.hudSourceNodes.add(n);
         if (previous >= 0) S.hudTemplates[kind][previous] = record; else S.hudTemplates[kind].push(record);
         S.hudVersion = (S.hudVersion || 0) + 1;
         S.hudStatus = {
             captured: true,
-            counts: Object.fromEntries(Object.entries(S.hudTemplates).map(/* BRIO expr: hudInspect / Object.entries(S.hudTemplates).map callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ ([k, v]) => [ k, v.length ])),
+            counts: Object.fromEntries(Object.entries(S.hudTemplates).map(([k, v]) => [ k, v.length ])),
             replica: "V47 inventory appearance proven by user; captured native rows with documented fallback"
         };
-        if ((S.hudWidgetLogs || 0) < 32) { /* BRIO branch: hudInspect — Accept (S.hudWidgetLogs || 0) < 32. Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */  S.hudWidgetLogs = (S.hudWidgetLogs || 0) + 1; log("NATIVE HUD WIDGET", {
+        if ((S.hudWidgetLogs || 0) < 32) { S.hudWidgetLogs = (S.hudWidgetLogs || 0) + 1; log("NATIVE HUD WIDGET", {
             kind: kind,
             path: path,
             rootType: unit.type,
             rootKeys: Object.keys(unit).slice(0, 70),
             nativeDraw: String(n["Eââ"] || "").slice(0, 1400),
             constructor: typeof sourceCtor === "function" ? String(sourceCtor).slice(0, 1800) : null,
-            nodes: nodes.map(/* BRIO expr: hudInspect / nodes.map callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ x => ({
+            nodes: nodes.map(x => ({
                 type: x.type,
                 nativeDraw: String(x["Eââ"] || "").slice(0, 2000),
                 path: hudPath(x),
                 position: x["ë"],
                 width: x.width,
                 height: x.height,
-                // V50 native rectangular widgets expose a text NODE here, whose parent points back to the widget.
-                // Summarize that node instead of serializing the cycle: v49 lost9geometry reports as [object Object].
-                text: typeof x.text === "string" ? x.text : typeof x.text?.text === "string" ? {nativeText:x.text.text,type:x.text.type} : null,
-                fields: Object.fromEntries(Object.entries(x).filter(/* BRIO expr: hudInspect / Object.entries(x).filter callback — Inspect bounded native widget geometry and serialize text as plain data to avoid circular log loss. */ ([k, v]) => [ "string", "number", "boolean" ].includes(typeof v) && ![ "src" ].includes(k)).slice(0, 40))
+                text: x.text,
+                fields: Object.fromEntries(Object.entries(x).filter(([k, v]) => [ "string", "number", "boolean" ].includes(typeof v) && ![ "src" ].includes(k)).slice(0, 40))
             })),
             note: "Native widget candidates. Requires rendered HUD ancestry/geometry validation."
         }); }
@@ -1601,12 +1489,12 @@
     const /* BRIO: hudBounds
      * Compute general widget extents for material/ammo replicas. Weapon display sizing uses inventoryBounds instead.
      */
-    hudBounds = record => { /* BRIO block: hudBounds — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    hudBounds = record => {
         let left = Infinity, right = -Infinity, top = Infinity, bottom = -Infinity;
-        for (const n of record.nodes) { /* BRIO loop: hudBounds — Iterate record.nodes. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+        for (const n of record.nodes) {
             if (!n["À"] && !(n.type === "text" || typeof n.text === "string") && !(n === record.root && Number(n.width) > 0 && Number(n.height) > 0)) continue;
             let x = 0, y = 0, p = n, depth = 0;
-            while (p && p !== record.root && depth++ < 10) { /* BRIO loop: hudBounds — Iterate p && p !== record.root && depth++ < 10. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+            while (p && p !== record.root && depth++ < 10) {
                 x += Number(p["ë"]?.["É"]) || 0;
                 y += Number(p["ë"]?.["Ä"]) || 0;
                 p = p.parent;
@@ -1641,18 +1529,18 @@
      * At most32 live HUD nodes, no world scan/global draw hook. Prefer invN artwork background;
      * rectangle is the native empty-slot fallback. Captions/item art never define border bounds.
      * Compose only the reached local transform chain. A stale/hidden/non-reachable background suppresses the box.
-     * Keep native own-slot motion separate from V50 remote presentation sizes; the V45 X primitive is unchanged.
+     * Keep remote inventory's proven18px display/size/X geometry separate and unchanged.
      */
-    liveSlotWarningBounds = rec => { /* BRIO block: liveSlotWarningBounds — Follow current live native slot transforms/child membership; raised selected-slot alignment is user-proven. */
+    liveSlotWarningBounds = rec => {
         const holder = rec.holder;
         if (!holder?.parent) return null;
-        const nodes = hudWalk(holder,32).filter(/* BRIO expr: liveSlotWarningBounds / hudWalk(holder,32).filter callback — Follow current live native slot transforms/child membership; raised selected-slot alignment is user-proven. */ n => n !== holder && n.visible !== false && !(Number.isFinite(n.opacity) && n.opacity <= 0));
-        const images = nodes.filter(/* BRIO expr: liveSlotWarningBounds / nodes.filter callback — Follow current live native slot transforms/child membership; raised selected-slot alignment is user-proven. */ n => hudKinds(hudPath(n)) === "slots" && Number(n.width)>0 && Number(n.height)>0);
+        const nodes = hudWalk(holder,32).filter(n => n !== holder && n.visible !== false && !(Number.isFinite(n.opacity) && n.opacity <= 0));
+        const images = nodes.filter(n => hudKinds(hudPath(n)) === "slots" && Number(n.width)>0 && Number(n.height)>0);
         const background = images.includes(rec.icon) ? rec.icon : images[images.length-1] ||
-            nodes.find(/* BRIO expr: liveSlotWarningBounds / nodes.find callback — Follow current live native slot transforms/child membership; raised selected-slot alignment is user-proven. */ n => n.type === "rectangle" && n.width === n.height && n.width > 0);
+            nodes.find(n => n.type === "rectangle" && n.width === n.height && n.width > 0);
         if (!background) return null;
         let a=1,b=0,c=0,d=1,x=0,y=0,n=background,depth=0;
-        while(n && n !== holder && depth++ < 8) { /* BRIO loop: liveSlotWarningBounds — Iterate n && n !== holder && depth++ < 8. Follow current live native slot transforms/child membership; raised selected-slot alignment is user-proven. */
+        while(n && n !== holder && depth++ < 8) {
             const parent=n.parent;
             if (!parent || ![...(parent["âè"]||[]),...(parent["ÉE"]||[])].includes(n)) return null;
             if (n.visible === false || Number.isFinite(n.opacity) && n.opacity <= 0) return null;
@@ -1669,35 +1557,35 @@
     const /* BRIO: ownMaterialWarnings
      * V46 native cell/slot bindings preserved; V48 fourth-material and shared thresholds require live proof.\n     * All five slots include unequipped guns and grapplers. These own-HUD bounds never change remote replica sizing.\n     * On root replacement, remove the old BRIO overlay before rebinding; match reset owns complete removal.
      */
-    ownMaterialWarnings = () => { /* BRIO block: ownMaterialWarnings — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    ownMaterialWarnings = () => {
         if (!S.renderer || !S.hudTemplates) return;
         // Current native child arrays, not leftover parent pointers, decide whether an overlay is still live.
-        for (const [owner,node] of S.hudWarnNodes || []) if (!owner.parent || ![...(owner.parent["âè"]||[]),...(owner.parent["ÉE"]||[])].includes(owner) || ![...(owner["âè"]||[]),...(owner["ÉE"]||[])].includes(node)) { /* BRIO branch: ownMaterialWarnings — Accept !owner.parent || ![...(owner.parent["âè"]||[]),...(owner.parent["ÉE"]||[])].includes(owner) || ![...(owner["âè. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
-            try { /* BRIO guarded: ownMaterialWarnings — Keep the existing exception boundary for ownMaterialWarnings. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ owner.remove?.(node);} catch(_) { /* BRIO fallback: ownMaterialWarnings — Intentionally empty: preserve the surrounding fallback/delegation contract. */ } S.hudWarnNodes.delete(owner);
+        for (const [owner,node] of S.hudWarnNodes || []) if (!owner.parent || ![...(owner.parent["âè"]||[]),...(owner.parent["ÉE"]||[])].includes(owner) || ![...(owner["âè"]||[]),...(owner["ÉE"]||[])].includes(node)) {
+            try {owner.remove?.(node);} catch(_) {} S.hudWarnNodes.delete(owner);
         }
-        for (const rec of [...S.hudTemplates.materials, ...S.hudTemplates.slots]) { /* BRIO loop: ownMaterialWarnings — Iterate [...S.hudTemplates.materials, ...S.hudTemplates.slots]. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+        for (const rec of [...S.hudTemplates.materials, ...S.hudTemplates.slots]) {
             const ammo = rec.kind === "slots", i = ammo ? rec.slotIndex : materialIndex(rec.path);
             const owner = ammo ? rec.holder : rec.root;
             if (i < 0 || !owner?.add) continue;
             const existing = S.hudWarnNodes?.get(owner);
             if (existing?.__brioHudRecord === rec) continue;
-            if (existing) { /* BRIO branch: ownMaterialWarnings — Accept existing. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ owner.remove?.(existing); S.hudWarnNodes.delete(owner);}
+            if (existing) {owner.remove?.(existing); S.hudWarnNodes.delete(owner);}
             if (!S.hudWarnNodes) S.hudWarnNodes = new Map;
-            const bounds = ammo ? rec.slotBounds : hudBounds(rec), draw = (ctx, s) => { /* BRIO block: draw — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            const bounds = ammo ? rec.slotBounds : hudBounds(rec), draw = (ctx, s) => {
                 const liveBounds = ammo ? liveSlotWarningBounds(rec) : bounds;
                 if (!liveBounds) return;
                 // V48 keeps the proven slot/cell bounds and changes only the threshold decision.
                 const e = exFast(), low = ammo ? nativeSlotLow(e, S.renderer, i, rec) : belowWarning(e, "materials", i, matState(S.renderer)?.[i]);
                 if (!low) return;
                 ctx.save();
-                try { /* BRIO guarded: draw — Keep the existing exception boundary for draw. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                try {
                     ctx.globalAlpha *= .25 + .75 * (.5 + .5 * Math.sin(performance.now() / 140));
                     ctx.shadowColor = "#ff2020";
                     ctx.shadowBlur = 12 / s;
                     ctx.strokeStyle = "#ff2020";
                     ctx.lineWidth = 3 / s;
                     ctx.strokeRect((liveBounds.left - 3) / s, (liveBounds.top - 3) / s, (liveBounds.width + 6) / s, (liveBounds.height + 6) / s);
-                } finally { /* BRIO cleanup: draw — Always finish owned cleanup after success or failure. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                } finally {
                     ctx.restore();
                 }
             };
@@ -1710,7 +1598,7 @@
             // Cap64 signatures per Play, separate from snapshot budgets; no renderer objects are stored.
             const signature = JSON.stringify([ammo ? "slot" : "material",i,bounds]);
             if (!S.hudWarningSignatures) S.hudWarningSignatures = new Set;
-            if (!S.hudWarningSignatures.has(signature) && S.hudWarningSignatures.size < 64) { /* BRIO branch: ownMaterialWarnings — Accept !S.hudWarningSignatures.has(signature) && S.hudWarningSignatures.size < 64. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+            if (!S.hudWarningSignatures.has(signature) && S.hudWarningSignatures.size < 64) {
             S.hudWarningSignatures.add(signature);
             log(ammo ? "OWN GUN SLOT WARNING BINDING" : "OWN MATERIAL WARNING BINDING", {
                 slotIndex: ammo ? i : undefined,
@@ -1725,10 +1613,10 @@
     const /* BRIO: cloneNativeWidget
      * Clone bounded native drawable trees through constructors or plain-object factories. Preserve draw methods, resources and styles; never attach clones to discovery.
      */
-    cloneNativeWidget = rec => { /* BRIO block: cloneNativeWidget — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    cloneNativeWidget = rec => {
         let count = 0;
         const pairs = [], seen = new Map;
-        const clone = n => { /* BRIO block: clone — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        const clone = n => {
             if (++count > 80 || seen.has(n)) throw Error("native HUD widget cycle/limit");
             const C = n.constructor;
             if (typeof C !== "function") throw Error("native HUD constructor unavailable");
@@ -1736,7 +1624,7 @@
             if (n["À"]) args = [ n["À"], 0, 0, n.width, n.height, n.opacity ]; else if (n.type === "text" || typeof n.text === "string") args = [ n.text, 0, 0, n.fillStyle || n["Äe"] || "#fff", n.fontFamily || "Arial", n.fontSize || 16, n.fontWeight || "bold", n.opacity, n.textAlign || "center" ]; else if (n.type === "arc") args = [ 0, 0, n["éã"], n["Äe"], n.endAngle || Math.PI * 2, n.startAngle || 0, n.lineWidth ]; else if (n.width !== undefined && n.height !== undefined) args = [ 0, 0, n.width, n.height, n["Äe"] || n.fillStyle, n.opacity ]; else args = [];
             const plain = C === Object || C === W.Object || C.name === "Object";
             const c = plain ? Object.create(Object.getPrototypeOf(n)) : Reflect.construct(C, args);
-            if (plain) { /* BRIO branch: clone — Accept plain. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            if (plain) {
                 c["âè"] = [];
                 c["ÉE"] = [];
                 c["ë"] = {
@@ -1747,18 +1635,18 @@
             }
             c.__brioHudClone = true;
             seen.set(n, c);
-            for (const [k, v] of Object.entries(n)) { /* BRIO loop: clone — Iterate Object.entries(n). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            for (const [k, v] of Object.entries(n)) {
                 if ([ "parent", "canvas", "aãÁ", "text", "ë", "âè", "ÉE" ].includes(k) || typeof v === "function") continue;
-                if (v == null || [ "number", "string", "boolean" ].includes(typeof v)) try { /* BRIO guarded: clone — Keep the existing exception boundary for clone. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                if (v == null || [ "number", "string", "boolean" ].includes(typeof v)) try {
                     c[k] = v;
-                } catch (_) { /* BRIO fallback: clone — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+                } catch (_) {}
             }
             if (n["À"]) c["À"] = n["À"];
-            if (c["ë"] && n["ë"]) { /* BRIO branch: clone — Accept c["ë"] && n["ë"]. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            if (c["ë"] && n["ë"]) {
                 c["ë"]["É"] = n["ë"]["É"];
                 c["ë"]["Ä"] = n["ë"]["Ä"];
             }
-            if (typeof n.text === "string" || typeof n.text === "number") { /* BRIO branch: clone — Accept typeof n.text === "string" || typeof n.text === "number". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            if (typeof n.text === "string" || typeof n.text === "number") {
                 c.text = n.text;
 
             }
@@ -1767,7 +1655,7 @@
                 node: c,
                 path: hudPath(n)
             });
-            for (const key of [ "âè", "ÉE" ]) for (const child of n[key] || []) if (!String(child?.type || "").startsWith("brio")) { /* BRIO branch: clone — Accept !String(child?.type || "").startsWith("brio"). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            for (const key of [ "âè", "ÉE" ]) for (const child of n[key] || []) if (!String(child?.type || "").startsWith("brio")) {
                 const copy = clone(child), method = key === "ÉE" && typeof c["âá"] === "function" ? "âá" : "add";
                 if (typeof c[method] !== "function") throw Error("native HUD child attachment unavailable");
                 c[method](copy);
@@ -1784,9 +1672,9 @@
     const /* BRIO: ensureNativeSlotArt
      * Supply drawable item art when an empty native rectangle has no image child. Do not change the native source widget.
      */
-    ensureNativeSlotArt = unit => { /* BRIO block: ensureNativeSlotArt — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
-        if (unit.pairs.some(/* BRIO expr: ensureNativeSlotArt / unit.pairs.some callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ p => isSlotArtwork(p.path))) return;
-        const background = unit.pairs.find(/* BRIO expr: ensureNativeSlotArt / unit.pairs.find callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ p => /\/inv[0-6]\.png$/.test(p.path)) || (S.hudSlotSprite ? {source: S.hudSlotSprite, node: S.hudSlotSprite} : null);
+    ensureNativeSlotArt = unit => {
+        if (unit.pairs.some(p => isSlotArtwork(p.path))) return;
+        const background = unit.pairs.find(p => /\/inv[0-6]\.png$/.test(p.path)) || (S.hudSlotSprite ? {source: S.hudSlotSprite, node: S.hudSlotSprite} : null);
         if (!background || typeof unit.root.add !== "function") return;
         const source = background.source, art = Object.create(Object.getPrototypeOf(background.node));
         for (const [key, value] of Object.entries(background.node)) if (![ "parent", "ë", "âè", "ÉE", "canvas" ].includes(key)) art[key] = value;
@@ -1807,7 +1695,7 @@
             node: art,
             path: "brio-item-template"
         });
-        if (!S.emptySlotArtLogged) { /* BRIO branch: ensureNativeSlotArt — Accept !S.emptySlotArtLogged. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+        if (!S.emptySlotArtLogged) {
             S.emptySlotArtLogged = true;
             log("NATIVE EMPTY SLOT ART", {
                 mode: "native background drawable/image protocol; item art at native consumable 70% ratio",
@@ -1818,23 +1706,23 @@
     const /* BRIO: nativeInvFor
      * Cache remote native clones by HUD version. Rebuild after template replacement; destroy superseded clones.
      */
-    nativeInvFor = r => { /* BRIO block: nativeInvFor — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    nativeInvFor = r => {
         if (!S.hudTemplates?.slots?.length) return null;
         if (!S.nativeInvClones) S.nativeInvClones = new Map;
         let cached = S.nativeInvClones.get(r);
         if (cached?.version === S.hudVersion) return cached;
-        if (cached) for (const row of cached.rows) for (const unit of row.units) try { /* BRIO guarded: nativeInvFor — Keep the existing exception boundary for nativeInvFor. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+        if (cached) for (const row of cached.rows) for (const unit of row.units) try {
             unit.root["ÊÈA"]?.();
-        } catch (_) { /* BRIO fallback: nativeInvFor — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         const rows = [];
-        for (const [kind, raw] of Object.entries(S.hudTemplates)) { /* BRIO loop: nativeInvFor — Iterate Object.entries(S.hudTemplates). Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
-            const sorted = raw.slice().sort(/* BRIO expr: nativeInvFor / raw.slice().sort callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ (a, b) => kind === "slots" ? a.slotIndex - b.slotIndex : a.x - b.x || a.y - b.y), templates = kind === "slots" ? sorted.slice(-5) : sorted, units = [];
-            for (const rec of templates) try { /* BRIO guarded: nativeInvFor — Keep the existing exception boundary for nativeInvFor. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+        for (const [kind, raw] of Object.entries(S.hudTemplates)) {
+            const sorted = raw.slice().sort((a, b) => kind === "slots" ? a.slotIndex - b.slotIndex : a.x - b.x || a.y - b.y), templates = kind === "slots" ? sorted.slice(-5) : sorted, units = [];
+            for (const rec of templates) try {
                 const unit = cloneNativeWidget(rec);
                 if (kind === "slots") ensureNativeSlotArt(unit);
                 units.push(unit);
-            } catch (e) { /* BRIO fallback: nativeInvFor — Handle failure in nativeInvFor through its existing fallback/report path; optional native fields may be unavailable. */
-                if (!rec.unavailable) { /* BRIO branch: nativeInvFor — Accept !rec.unavailable. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+            } catch (e) {
+                if (!rec.unavailable) {
                     rec.unavailable = true;
                     log("NATIVE HUD REPLICA UNAVAILABLE", {
                         kind: kind,
@@ -1856,28 +1744,19 @@
         return cached;
     };
     const /* BRIO: inventoryBounds
-     * Fit the weapon BACKGROUND rather than caption/artwork extents. V50 row metrics intentionally enlarge the prior18px cell; own warning geometry stays independent.
+     * V45 presentation contract: fit the weapon background into an 18px cell, not caption/artwork extents. Own ammo-warning geometry remains slotBounds.
      */
-    inventoryBounds = /* BRIO expr: inventoryBounds — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ rec => rec.kind === "slots" ? rec.slotBounds || hudBounds(rec) : hudBounds(rec);
-    /* BRIO: remoteRowMetrics (V50; requested size change, live-pending)
-     * One139px strip width matches the established fallback ammo strip incl2px side padding.
-     * Five square backgrounds grow proportionally to26.2px; materials25.2px vs previous18px.
-     * Ammo icon/text height, native art, external size multipliers and V45 red-X primitive stay unchanged.
-     * Fixed per-kind advances are shared by complete native clones and fallback rows to avoid overlap.
-     */
-    const REMOTE_ROW_WIDTH = 139, REMOTE_ROW_HEIGHT = {slots:26.2,materials:25.2,ammo:18},
-        remoteRowAdvance = /* BRIO expr: remoteRowAdvance — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ kind => ({slots:30,materials:29,ammo:21})[kind];
+    inventoryBounds = rec => rec.kind === "slots" ? rec.slotBounds || hudBounds(rec) : hudBounds(rec);
     const /* BRIO: drawNativeInv
-     * V47 proved art/X; V50 intentionally enlarges slots/materials while keeping external size multipliers and V45 X.
-     * V48 removes redundant slot-ammo text and applies shared numeric/charge warning decisions.\n     * Empty X stays outside the native downscale; source nodes/assets are never edited by remote rendering.
+     * V47 user-proven presentation: preserve complete native rows,18px slot backgrounds,size multipliers and V45 X.\n     * V48 only removes redundant slot-ammo text and applies shared numeric/charge warning decisions.\n     * Empty X stays outside the native downscale; source nodes/assets are never edited by remote rendering.
      */
-    drawNativeInv = (ctx, s, r) => { /* BRIO block: drawNativeInv — Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+    drawNativeInv = (ctx, s, r) => {
         const cache = nativeInvFor(r);
         if (!cache?.rows.length) return new Set;
         const drawn = new Set;
         const ex = extrasState(), m = matState(r), ammo = Array.isArray(r["åæ"]) ? r["åæ"] : [], slots = Array.isArray(r["Åé"]) ? r["Åé"].slice(1, 6) : [];
         let y = 0;
-        for (const row of cache.rows) { /* BRIO loop: drawNativeInv — Iterate cache.rows. Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+        for (const row of cache.rows) {
             if (!ex[{
                 slots: "inventorySlots",
                 materials: "inventoryMaterials",
@@ -1888,44 +1767,42 @@
                 materials: 4,
                 ammo: 5
             }[row.kind];
-            if (row.units.length !== required) { /* BRIO branch: drawNativeInv — Accept row.units.length !== required. Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
-                y += remoteRowAdvance(row.kind);
+            if (row.units.length !== required) {
+                y += 21;
                 continue;
             }
             drawn.add(row.kind);
-            const widths = row.units.map(/* BRIO expr: drawNativeInv / row.units.map callback — Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */ u => inventoryBounds(u.record).width), height = REMOTE_ROW_HEIGHT[row.kind],
-                factor = Math.min(height / Math.max(...widths,1),height / Math.max(...row.units.map(/* BRIO expr: drawNativeInv / row.units.map callback — Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */ u => inventoryBounds(u.record).height),1)),
-                gap = (REMOTE_ROW_WIDTH / factor - widths.reduce(/* BRIO expr: drawNativeInv / widths.reduce callback — Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */ (a,b) => a+b,0)) / (widths.length-1), total = REMOTE_ROW_WIDTH / factor;
+            const widths = row.units.map(u => inventoryBounds(u.record).width), factor = Math.min(18 / Math.max(...widths, 1), 18 / Math.max(...row.units.map(u => inventoryBounds(u.record).height), 1)), gap = 2 / factor, total = widths.reduce((a, b) => a + b, 0) + gap * (widths.length - 1);
             let x = -total / 2, maxHeight = 0;
-            row.units.forEach((u, i) => { /* BRIO block: drawNativeInv — row.units.forEach callback. Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+            row.units.forEach((u, i) => {
                 const b = inventoryBounds(u.record);
                 let value;
                 const material = materialIndex(u.record.path), ammoIndex = +(u.record.path.match(/(?:ammo|stack)([0-4])/) || [])[1];
                 if (row.kind === "materials") value = m[material];
                 if (row.kind === "ammo") value = ammo[ammoIndex];
-                for (const pair of u.pairs) { /* BRIO loop: drawNativeInv — Iterate u.pairs. Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
-                    if (row.kind !== "slots" && (pair.source.type === "text" || typeof pair.source.text === "string") && /^\d+$/.test(String(pair.source.text))) { /* BRIO branch: drawNativeInv — Accept row.kind !== "slots" && (pair.source.type === "text" || typeof pair.source.text === "string") && /^\d+$/.test(. Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+                for (const pair of u.pairs) {
+                    if (row.kind !== "slots" && (pair.source.type === "text" || typeof pair.source.text === "string") && /^\d+$/.test(String(pair.source.text))) {
                         pair.node.text = Number.isFinite(value) ? String(value) : "?";
                         pair.node.__brioLow = belowWarning(ex, row.kind, row.kind === "materials" ? material : ammoIndex, value);
                         if (pair.node.__brioLow && "fillStyle" in pair.node && pair.source.fillStyle !== "#000") pair.node.fillStyle = warningColor(true); else if ("fillStyle" in pair.source) pair.node.fillStyle = pair.source.fillStyle;
                     }
-                    if (row.kind === "slots" && (pair.source.type === "text" || typeof pair.source.text === "string")) {
-                        // V50 removes every clone-only text/caption, including centered native hotkeys and V48 ammo counts.
-                        // The own native HUD retains its labels; art/emblems and separate ammo counts are preserved.
+                    if (row.kind === "slots" && (pair.source.align === "left" || pair.source.textAlign === "left") && "text" in pair.source) {
+                        // V48 removes ONLY clone slot-ammo text: native left-aligned fill/stroke count copies.
+                        // Native sources and centered slot captions remain unchanged, as do emblems/art/fonts/size/X.
                         // Some native draw methods ignore their own opacity; suppress these clone methods explicitly.
                         pair.node.opacity = 0;
-                        if (!pair.node.__brioSlotAmmoHidden) { /* BRIO branch: drawNativeInv — Accept !pair.node.__brioSlotAmmoHidden. Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+                        if (!pair.node.__brioSlotAmmoHidden) {
                             pair.node.__brioSlotAmmoHidden = true;
-                            for (const method of ["éa","Eââ"]) if (typeof pair.node[method] === "function") pair.node[method] = () => { /* BRIO block: pair.node[method] — Intentionally empty: preserve the surrounding fallback/delegation contract. */ };
+                            for (const method of ["éa","Eââ"]) if (typeof pair.node[method] === "function") pair.node[method] = () => {};
                         }
                     }
-                    if (row.kind === "slots" && hudKinds(pair.path) === "ammo") { /* BRIO branch: drawNativeInv — Accept row.kind === "slots" && hudKinds(pair.path) === "ammo". Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+                    if (row.kind === "slots" && hudKinds(pair.path) === "ammo") {
                         const ai = S.ammoTypeMap?.get(String(slots[i]?.type || "").toLowerCase());
-                        if (Number.isInteger(ai)) { /* BRIO branch: drawNativeInv — Accept Number.isInteger(ai). Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */ const path = S.hudAssetPaths?.get("inventoryammo" + ai) || "/buildart/ammo" + ai + ".png"; pair.node["À"] = {src: path, "ÁÄ": S.hudNativeImages?.get(path) || invImage(path)}; pair.node.opacity = 1;} else pair.node.opacity = 0;
+                        if (Number.isInteger(ai)) {const path = S.hudAssetPaths?.get("inventoryammo" + ai) || "/buildart/ammo" + ai + ".png"; pair.node["À"] = {src: path, "ÁÄ": S.hudNativeImages?.get(path) || invImage(path)}; pair.node.opacity = 1;} else pair.node.opacity = 0;
                     }
-                    if (row.kind === "slots" && /\/inv[0-6]\.png$/.test(pair.path)) { /* BRIO branch: drawNativeInv — Accept row.kind === "slots" && /\/inv[0-6]\.png$/.test(pair.path). Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+                    if (row.kind === "slots" && /\/inv[0-6]\.png$/.test(pair.path)) {
                         const rarity = Number(slots[i]?.["äã"]);
-                        if (Number.isFinite(rarity) && rarity >= 0 && rarity <= 6) { /* BRIO branch: drawNativeInv — Accept Number.isFinite(rarity) && rarity >= 0 && rarity <= 6. Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+                        if (Number.isFinite(rarity) && rarity >= 0 && rarity <= 6) {
                             const path = "/buildart/inv" + rarity + ".png";
                             pair.node["À"] = {
                                 src: path,
@@ -1933,9 +1810,9 @@
                             };
                         }
                     }
-                    if (row.kind === "slots" && isSlotArtwork(pair.path)) { /* BRIO branch: drawNativeInv — Accept row.kind === "slots" && isSlotArtwork(pair.path). Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+                    if (row.kind === "slots" && isSlotArtwork(pair.path)) {
                         const path = itemPath(slots[i]?.type);
-                        if (path) { /* BRIO branch: drawNativeInv — Accept path. Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+                        if (path) {
                             const im = S.hudNativeImages?.get(path) || invImage(path);
                             pair.node["À"] = {
                                 src: path,
@@ -1943,8 +1820,8 @@
                             };
                             pair.node.opacity = 1;
                             const style = slotArtStyle(slots[i]?.type);
-                            const base = u.pairs.find(/* BRIO expr: drawNativeInv / u.pairs.find callback — Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */ p => /\/inv[0-6]\.png$/.test(p.path))?.source;
-                            if (base) { /* BRIO branch: drawNativeInv — Accept base. Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */  pair.node.width = base.width * style.ratio; pair.node.height = base.height * style.ratio; pair.node.A = style.angle; pair.node.size = style.size; }
+                            const base = u.pairs.find(p => /\/inv[0-6]\.png$/.test(p.path))?.source;
+                            if (base) { pair.node.width = base.width * style.ratio; pair.node.height = base.height * style.ratio; pair.node.A = style.angle; pair.node.size = style.size; }
                         } else pair.node.opacity = 0;
                     }
                 }
@@ -1953,7 +1830,7 @@
                 ctx.scale(factor, factor);
                 ctx.translate(-b.left / s, -b.top / s);
                 const n = u.root;
-                if (n["ë"]) { /* BRIO branch: drawNativeInv — Accept n["ë"]. Draw remote native clones with V50 enlarged slots/materials and no slot text; preserve native art and V45 X. */
+                if (n["ë"]) {
                     n["ë"]["É"] = 0;
                     n["ë"]["Ä"] = 0;
                 }
@@ -1962,28 +1839,28 @@
                 if (typeof n["éa"] === "function") n["éa"](ctx, s, 1); else if (typeof n["Eââ"] === "function") n["Eââ"](ctx, s);
                 ctx.restore();
                 if (slots[i]?.type === "empty" && row.kind === "slots") drawEmptyX(ctx, x * factor, y, b.width * factor, b.height * factor, s);
-                // V48 grappler exception: no separate reserve cell exists; warn on its remote slot using current row metrics.
+                // V48 grappler exception: no separate reserve cell exists; warn on its unchanged remote slot.
                 // No charge number is added back. New outline is conditional on the low-ammo modifier.
                 if (row.kind === "slots" && String(slots[i]?.type || "").toLowerCase() === "grappler" && nativeSlotLow(ex,r,i+1))
                     drawRemoteChargeWarning(ctx,x*factor,y,b.width*factor,b.height*factor,s);
                 x += b.width + gap;
                 maxHeight = Math.max(maxHeight, b.height * factor);
             });
-            y += remoteRowAdvance(row.kind);
+            y += 21;
         }
         return drawn;
     };
     const /* BRIO: resetNativeHud
      * Remove own overlays/remote clones and clear templates, captured art styles and per-match logs. Saved inventory size is untouched.
      */
-    resetNativeHud = () => { /* BRIO block: resetNativeHud — Release native templates, clone caches and warning overlays at the Play boundary. */
-        for (const n of S.hudWarnNodes?.values() || []) try { /* BRIO guarded: resetNativeHud — Keep the existing exception boundary for resetNativeHud. Release native templates, clone caches and warning overlays at the Play boundary. */
+    resetNativeHud = () => {
+        for (const n of S.hudWarnNodes?.values() || []) try {
             n.parent?.remove?.(n);
-        } catch (_) { /* BRIO fallback: resetNativeHud — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         S.hudWarnNodes?.clear();
-        for (const c of S.nativeInvClones?.values() || []) for (const row of c.rows) for (const u of row.units) try { /* BRIO guarded: resetNativeHud — Keep the existing exception boundary for resetNativeHud. Release native templates, clone caches and warning overlays at the Play boundary. */
+        for (const c of S.nativeInvClones?.values() || []) for (const row of c.rows) for (const u of row.units) try {
             u.root["ÊÈA"]?.();
-        } catch (_) { /* BRIO fallback: resetNativeHud — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         S.nativeInvClones?.clear();
         S.hudTemplates = null;
         S.hudNativeImages?.clear();
@@ -2004,19 +1881,19 @@
         S.sceneStartError = false;
         S.sceneSkipped = 0;
     };
-    const isSlotArtwork = /* BRIO expr: isSlotArtwork — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ path => !!path && path !== "/" && !hudKinds(path) && !/\/(?:ammo|inventoryammo)[0-4]\.png$|\/disabled\.png$/.test(path);
+    const isSlotArtwork = path => !!path && path !== "/" && !hudKinds(path) && !/\/(?:ammo|inventoryammo)[0-4]\.png$|\/disabled\.png$/.test(path);
     const GUN_TYPES = new Set(["scar","bolt","lmg","shotgun","heavy","smg","ump","rifle","ar-15","scoped ar","deagle","rpg","famas","tommy gun","drum","musket","heavy sniper","ak47","akƧ","combat","silencedpistol","aug","burst shotgun","grenade launcher","mgl","grenade pistol","vector","revolver","charge rifle","grenade sniper","sawedoff","signal flare","spas","grappler","crossbow","minigun"]);
     const /* BRIO: nativeSlotAmmoIndex (V48)
      * Grappler uses virtual type5; there is no sixth reserve/ammo row. Flare is single-use and exempt from every low-ammo warning.
      * Other guns use the source map, overridden by a reached live own-slot ammo emblem when available.
      * Unknown mappings never receive an arbitrary default threshold.
      */
-    nativeSlotAmmoIndex = (r,index,rec) => { /* BRIO block: nativeSlotAmmoIndex — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    nativeSlotAmmoIndex = (r,index,rec) => {
         const type = String(r?.["Åé"]?.[index]?.type || "").toLowerCase();
         if (!GUN_TYPES.has(type)) return undefined;
         if (type === "signal flare") return undefined;
         if (type === "grappler") return 5;
-        const emblem = rec?.nodes?.find(/* BRIO expr: nativeSlotAmmoIndex / rec?.nodes?.find callback — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ n => /\/ammo[0-4]\.png$/.test(hudPath(n)));
+        const emblem = rec?.nodes?.find(n => /\/ammo[0-4]\.png$/.test(hudPath(n)));
         const i = emblem ? +(hudPath(emblem).match(/ammo([0-4])/)[1]) : S.ammoTypeMap?.get(type);
         return Number.isInteger(i) && i >= 0 && i < 5 ? i : undefined;
     };
@@ -2025,24 +1902,24 @@
      * Remote displayed reserve numbers use the same per-type setting; no hidden magazine is added to that row.
      * Independent of selection. Empty slots, consumables, unknown/negative counts never warn.
      */
-    nativeSlotLow = /* BRIO expr: nativeSlotLow — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ (e,r,index,rec) => String(r?.["Åé"]?.[index]?.type || "").toLowerCase() !== "signal flare" && belowWarning(e,"ammo",nativeSlotAmmoIndex(r,index,rec),nativeSlotAmmo(r,index,rec));
+    nativeSlotLow = (e,r,index,rec) => String(r?.["Åé"]?.[index]?.type || "").toLowerCase() !== "signal flare" && belowWarning(e,"ammo",nativeSlotAmmoIndex(r,index,rec),nativeSlotAmmo(r,index,rec));
     const /* BRIO: drawRemoteChargeWarning
      * V49 charge-only exception: remote grappler lacks a separate ammo row, so outline its slot.
      * Pure drawing over finalized background bounds; no new per-match nodes/state or geometry changes.
      * Existing native/fallback inventory cleanup remains sufficient. Live appearance is pending.
      */
-    drawRemoteChargeWarning = (ctx,x,y,width,height,scale) => { /* BRIO block: drawRemoteChargeWarning — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    drawRemoteChargeWarning = (ctx,x,y,width,height,scale) => {
         ctx.save();
-        try { /* BRIO guarded: drawRemoteChargeWarning — Keep the existing exception boundary for drawRemoteChargeWarning. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+        try {
             ctx.globalAlpha *= .25 + .75 * (.5 + .5 * Math.sin(performance.now()/140));
             ctx.strokeStyle = ctx.shadowColor = "#ff2020"; ctx.shadowBlur = 8/scale; ctx.lineWidth = 1.2/scale;
             ctx.strokeRect((x-1)/scale,(y-1)/scale,(width+2)/scale,(height+2)/scale);
-        } finally { /* BRIO cleanup: drawRemoteChargeWarning — Always finish owned cleanup after success or failure. Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ ctx.restore();}
+        } finally {ctx.restore();}
     };
     const /* BRIO: nativeSlotAmmo
      * Known finite gun ammo only: loaded plus matching reserve, except grappler/flare loaded only. A live emblem overrides AST mapping; unknowns never warn.
      */
-    nativeSlotAmmo = (r, index, rec) => { /* BRIO block: nativeSlotAmmo — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    nativeSlotAmmo = (r, index, rec) => {
         const type = String(r?.["Åé"]?.[index]?.type || "").toLowerCase();
         if (!GUN_TYPES.has(type)) return undefined;
         const loaded = r?.["áAæ"]?.[index - 1];
@@ -2055,18 +1932,18 @@
     const /* BRIO: slotArtStyle
      * Prefer captured native item geometry; otherwise use source-mapped gun/consumable ratios and rotations.
      */
-    slotArtStyle = type => { /* BRIO block: slotArtStyle — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    slotArtStyle = type => {
         const raw = String(type || "").toLowerCase(), captured = S.hudArtStyles?.get(itemPath(type));
         if (captured) return captured;
         const gun = GUN_TYPES.has(raw), style = {ratio: gun ? 1.04 : .7, angle: gun ? Math.PI / 4 : 0, size: 1};
         if (raw === "deagle" || raw === "grappler") style.size = .8;
         if (raw === "revolver") style.size = .9;
         if (raw === "charge rifle" || raw === "grenade sniper" || raw === "landmine") style.size = 1.1;
-        if (/feesh$/.test(raw)) { /* BRIO branch: slotArtStyle — Accept /feesh$/.test(raw). Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ style.angle = Math.PI / 4; style.size = 1.2;}
+        if (/feesh$/.test(raw)) {style.angle = Math.PI / 4; style.size = 1.2;}
         if (["grenade","mirv","smokegrenade","flashbang","molotov","flexsplash","gravitynade","invgravitynade","candycane","icicle"].includes(raw)) style.size = 1.2;
         return style;
     };
-    const drawSlotArt = (ctx, path, type, x, y, size, s) => { /* BRIO block: drawSlotArt — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    const drawSlotArt = (ctx, path, type, x, y, size, s) => {
         const style = slotArtStyle(type), wh = size * style.ratio * style.size;
         ctx.save(); ctx.translate((x - size * .02) / s, y / s); ctx.rotate(style.angle);
         drawImg(ctx, path, -wh / 2, -wh / 2, wh, wh, s); ctx.restore();
@@ -2074,7 +1951,7 @@
     const /* BRIO: drawEmptyX
      * V45 red-X primitive: 1.2px stroke and 2px corner inset in display coordinates. Never call under the native widget downscale.
      */
-    drawEmptyX = (ctx, x, y, w, h, s) => { /* BRIO block: drawEmptyX — Retain the V45 red-X primitive explicitly requested by the user; no new geometry redesign. */
+    drawEmptyX = (ctx, x, y, w, h, s) => {
         ctx.save(); ctx.strokeStyle = "#ff2020"; ctx.lineWidth = 1.2 / s;
         ctx.beginPath(); ctx.moveTo((x + 2) / s, (y + 2) / s); ctx.lineTo((x + w - 2) / s, (y + h - 2) / s);
         ctx.moveTo((x + w - 2) / s, (y + 2) / s); ctx.lineTo((x + 2) / s, (y + h - 2) / s); ctx.stroke(); ctx.restore();
@@ -2087,21 +1964,21 @@
     }, /* BRIO: invScale
      * Preserve the V45 Small/Medium/Large/XL multipliers. Changing capture geometry must not alter the user-selected scale.
      */
-    invScale = /* BRIO expr: invScale — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ () => INV_SCALE[extrasState().inventorySize] || 1.25, /* BRIO: invImage
+    invScale = () => INV_SCALE[extrasState().inventorySize] || 1.25, /* BRIO: invImage
      * Load local replica artwork with native ready/half-size bookkeeping and retryable failure behavior.
      */
-    invImage = p => { /* BRIO block: invImage — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    invImage = p => {
         let im = S.invAssets.get(p);
         if (im) return im;
         im = new Image;
         im["ÀA"] = 2;
-        im.onload = () => { /* BRIO block: im.onload — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        im.onload = () => {
             im["ÀA"] = 1;
             im["ÁÅe"] = im.width / 2;
             im["âÅÉ"] = im.height / 2;
         };
-        im.onerror = () => { /* BRIO block: im.onerror — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            if (!im.__brioFailed) { /* BRIO branch: im.onerror — Accept !im.__brioFailed. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        im.onerror = () => {
+            if (!im.__brioFailed) {
                 im.__brioFailed = true;
                 log("HUD ASSET FAILED", {
                     path: p
@@ -2114,25 +1991,25 @@
     }, /* BRIO: itemPath
      * Resolve exact native side-view inventory assets. Held top-view weapon art is not an equivalent substitute.
      */
-    itemPath = type => { /* BRIO block: itemPath — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    itemPath = type => {
         const raw = String(type || "").toLowerCase().trim();
         if (!raw || raw === "empty" || raw === "pickaxe") return null;
         const path = S.hudAssetPaths?.get(raw) || `/buildart/${raw.replace(/[^a-z0-9]/g, "")}.png`;
-        if (!(S.hudResolvedTypes || (S.hudResolvedTypes = new Set)).has(raw)) { /* BRIO branch: itemPath — Accept !(S.hudResolvedTypes || (S.hudResolvedTypes = new Set)).has(raw). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ S.hudResolvedTypes.add(raw); log("INVENTORY ASSET RESOLUTION", {type: raw, path, nativeAlias: S.hudAssetPaths?.has(raw) || false, capturedStyle: S.hudArtStyles?.has(path) || false});}
+        if (!(S.hudResolvedTypes || (S.hudResolvedTypes = new Set)).has(raw)) {S.hudResolvedTypes.add(raw); log("INVENTORY ASSET RESOLUTION", {type: raw, path, nativeAlias: S.hudAssetPaths?.has(raw) || false, capturedStyle: S.hudArtStyles?.has(path) || false});}
         return path;
-    }, matState = r => { /* BRIO block: matState — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    }, matState = r => {
         const a = Array.isArray(r?.["ÊÃÄ"]) ? r["ÊÃÄ"] : Array.isArray(r?.["Äâã"]) ? r["Äâã"] : [];
         return [ a[0], a[1], a[2], a[3] ];
-    }, drawImg = (ctx, p, x, y, w, h, s) => { /* BRIO block: drawImg — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, drawImg = (ctx, p, x, y, w, h, s) => {
         if (!p) return;
         const im = S.hudNativeImages?.get(p) || invImage(p);
-        if (im.complete && im.naturalWidth) try { /* BRIO guarded: drawImg — Keep the existing exception boundary for drawImg. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (im.complete && im.naturalWidth) try {
             ctx.drawImage(im, x / s, y / s, w / s, h / s);
-        } catch (_) { /* BRIO fallback: drawImg — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
     }, /* BRIO: warningColor
      * Flash remote numeric warnings independently of own slot/cell borders; V49 equality now warns; unknown counts remain non-warning.
      */
-    warningColor = /* BRIO expr: warningColor — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ low => low && Math.sin(performance.now() / 140) >= 0 ? "#ff2020" : "#fff", drawHudText = (ctx, v, x, y, s, low = false, size = 8) => { /* BRIO block: drawHudText — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+    warningColor = low => low && Math.sin(performance.now() / 140) >= 0 ? "#ff2020" : "#fff", drawHudText = (ctx, v, x, y, s, low = false, size = 8) => {
         ctx.save();
         ctx.font = `${Math.max(3, size / s)}px "Arial Black"`;
         ctx.textAlign = "center";
@@ -2143,24 +2020,24 @@
         ctx.strokeText(String(v), x / s, y / s);
         ctx.fillText(String(v), x / s, y / s);
         ctx.restore();
-    }, drawTxt = /* BRIO expr: drawTxt — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ (ctx, v, x, y, s, low = false) => drawHudText(ctx, v, x, y, s, low), /* BRIO: drawInv
+    }, drawTxt = (ctx, v, x, y, s, low = false) => drawHudText(ctx, v, x, y, s, low), /* BRIO: drawInv
      * Fallback V45 compact row layout for incomplete native capture. Complete rows use native clones, never a mixed partial row.
      */
-    drawInv = (ctx, scale, r) => { /* BRIO block: drawInv — Draw bounded fallback remote inventory when validated native widgets are unavailable; avoid claiming pixel identity. */
+    drawInv = (ctx, scale, r) => {
         const drawn = drawNativeInv(ctx, scale, r) || new Set;
         const ex = extrasState(), rows = [];
         if (ex.inventorySlots) rows.push("slots");
         if (ex.inventoryMaterials) rows.push("mats");
         if (ex.inventoryAmmo) rows.push("ammo");
         let yy = 0;
-        for (const row of rows) { /* BRIO loop: drawInv — Iterate rows. Draw bounded fallback remote inventory when validated native widgets are unavailable; avoid claiming pixel identity. */
-            if (drawn.has(row === "mats" ? "materials" : row)) { /* BRIO branch: drawInv — Accept drawn.has(row === "mats" ? "materials" : row). Draw bounded fallback remote inventory when validated native widgets are unavailable; avoid claiming pixel identity. */
-                yy += remoteRowAdvance(row === "mats" ? "materials" : row);
+        for (const row of rows) {
+            if (drawn.has(row === "mats" ? "materials" : row)) {
+                yy += 21;
                 continue;
             }
-            if (row === "slots") { /* BRIO branch: drawInv — Accept row === "slots". Draw bounded fallback remote inventory when validated native widgets are unavailable; avoid claiming pixel identity. */
-                const slots = Array.isArray(r["Åé"]) ? r["Åé"].slice(1, 6) : [], sz = REMOTE_ROW_HEIGHT.slots, g = 2, x0 = -REMOTE_ROW_WIDTH / 2;
-                for (let i = 0; i < 5; i++) { /* BRIO loop: drawInv — Iterate i < 5. Draw bounded fallback remote inventory when validated native widgets are unavailable; avoid claiming pixel identity. */
+            if (row === "slots") {
+                const slots = Array.isArray(r["Åé"]) ? r["Åé"].slice(1, 6) : [], sz = 18, g = 2, x0 = -(sz * 5 + g * 4) / 2;
+                for (let i = 0; i < 5; i++) {
                     const sl = slots[i], x = x0 + i * (sz + g), key = String(sl?.type || "").toLowerCase().replace(/[^a-z0-9]/g, ""), raw = Number(sl?.["äã"]), bg = Number.isFinite(raw) && raw >= 0 && raw <= 6 ? raw : 0;
                     drawImg(ctx, `/buildart/inv${bg}.png`, x, yy, sz, sz, scale);
                     const path = itemPath(sl?.type);
@@ -2169,28 +2046,28 @@
                     // Fallback uses the same charge-only slot outline, without inventing a sixth reserve count.
                     if (String(sl?.type || "").toLowerCase() === "grappler" && nativeSlotLow(ex,r,i+1)) drawRemoteChargeWarning(ctx,x,yy,sz,sz,scale);
                 }
-            } else if (row === "mats") { /* BRIO branch: drawInv — Accept row === "mats". Draw bounded fallback remote inventory when validated native widgets are unavailable; avoid claiming pixel identity. */
-                const m = matState(r), vals = [ [ "/buildart/wood.png", m[0] ], [ "/buildart/brick.png", m[1] ], [ "/buildart/metal.png", m[2] ], [ "/buildart/scrap.png", m[3] ] ], cell = REMOTE_ROW_WIDTH / 4, x0 = -REMOTE_ROW_WIDTH / 2;
+            } else if (row === "mats") {
+                const m = matState(r), vals = [ [ "/buildart/wood.png", m[0] ], [ "/buildart/brick.png", m[1] ], [ "/buildart/metal.png", m[2] ], [ "/buildart/scrap.png", m[3] ] ], cell = 29, x0 = -(cell * 4) / 2;
                 ctx.fillStyle = "#000b";
-                ctx.fillRect(x0 / scale, (yy - 1) / scale, REMOTE_ROW_WIDTH / scale, 25.2 / scale);
-                vals.forEach(([p, v], i) => { /* BRIO block: drawInv — vals.forEach callback. Draw bounded fallback remote inventory when validated native widgets are unavailable; avoid claiming pixel identity. */
+                ctx.fillRect((x0 - 2) / scale, (yy - 1) / scale, (cell * 4 + 4) / scale, 18 / scale);
+                vals.forEach(([p, v], i) => {
                     const x = x0 + i * cell;
-                    drawImg(ctx, p, x, yy, 20, 20, scale);
-                    drawHudText(ctx, v ?? "?", x + 27, yy + 10, scale, belowWarning(ex,"materials",i,v),10);
+                    drawImg(ctx, p, x, yy, 14, 14, scale);
+                    drawTxt(ctx, v ?? "?", x + 21, yy + 7, scale, belowWarning(ex,"materials",i,v));
                 });
-            } else { /* BRIO branch: drawInv — Alternative for row === "mats". Draw bounded fallback remote inventory when validated native widgets are unavailable; avoid claiming pixel identity. */
+            } else {
                 const a = Array.isArray(r["åæ"]) ? r["åæ"].slice(0, 5) : [], cell = 27, x0 = -(cell * 5) / 2;
                 ctx.fillStyle = "#000b";
                 ctx.fillRect((x0 - 2) / scale, (yy - 1) / scale, (cell * 5 + 4) / scale, 18 / scale);
-                for (let i = 0; i < 5; i++) { /* BRIO loop: drawInv — Iterate i < 5. Draw bounded fallback remote inventory when validated native widgets are unavailable; avoid claiming pixel identity. */
+                for (let i = 0; i < 5; i++) {
                     const x = x0 + i * cell;
                     drawImg(ctx, S.hudAssetPaths?.get("stack" + i) || `/buildart/stack${i}.png`, x, yy, 14, 14, scale);
                     drawTxt(ctx, a[i] ?? "?", x + 20, yy + 7, scale, belowWarning(ex,"ammo",i,a[i]));
                 }
             }
-            yy += remoteRowAdvance(row === "mats" ? "materials" : row);
+            yy += 21;
         }
-    }, makeInv = /* BRIO expr: makeInv — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ r => ({
+    }, makeInv = r => ({
         "ë": {
             "É": 0,
             "Ä": 62
@@ -2203,14 +2080,14 @@
         parent: null,
         "âè": [],
         "ÉE": [],
-        "Eââ"(ctx, scale) { /* BRIO block: Eââ — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        "Eââ"(ctx, scale) {
             const f = invScale();
             ctx.save();
             ctx.scale(f, f);
             drawInv(ctx, scale, r);
             ctx.restore();
         },
-        "éa"(ctx, scale, alpha) { /* BRIO block: éa — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        "éa"(ctx, scale, alpha) {
             if (alpha <= 0) return;
             ctx.save();
             ctx.translate(this.ë.É / scale, this.ë.Ä / scale);
@@ -2218,37 +2095,37 @@
             this.Eââ(ctx, scale);
             ctx.restore();
         },
-        "ÊÈA"() { /* BRIO block: ÊÈA — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            try { /* BRIO guarded: ÊÈA — Keep the existing exception boundary for ÊÈA. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        "ÊÈA"() {
+            try {
                 this.parent?.remove?.(this);
-            } catch (_) { /* BRIO fallback: ÊÈA — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+            } catch (_) {}
             this.parent = null;
         }
     }), /* BRIO: attachInv
      * Attach one inventory drawable to a reached remote player and retain it for generation-safe cleanup.
      */
-    attachInv = r => { /* BRIO block: attachInv — Attach one owned remote inventory drawable, preserving native own HUD and cleanup ownership. */
+    attachInv = r => {
         if (!r || isLocal(r) || S.invNodes.has(r) || !r["Eâ"]?.add) return;
         const n = makeInv(r);
-        try { /* BRIO guarded: attachInv — Keep the existing exception boundary for attachInv. Attach one owned remote inventory drawable, preserving native own HUD and cleanup ownership. */
+        try {
             r["Eâ"].add(n);
             S.invNodes.set(r, n);
-        } catch (e) { /* BRIO fallback: attachInv — Handle failure in attachInv through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             S.errors.push(String(e));
         }
     };
-    const restoreInvTrace = () => { /* BRIO block: restoreInvTrace — Intentionally empty: preserve the surrounding fallback/delegation contract. */ };
+    const restoreInvTrace = () => {};
     const /* BRIO: automaticPhase
      * Use current local native glide state as one phase signal. Circle waiting/moving supplements it; rendering never waits for phase.
      */
-    automaticPhase = () => { /* BRIO block: automaticPhase — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    automaticPhase = () => {
         const r = S.renderer;
         if (r && S.botPhase !== "match" && Number.isFinite(r["ÀËá"]) && r["ÀËá"] >= 0 && Number.isFinite(r["âëä"]) && r["âëä"] > 0) botPhase("native glidingTicks/maxGlidingTicks");
     };
     const BOT_CLUSTER = [ "EÆÅ", "Éaê", "ÆÉÆ", "Áae", "áaá", "Éäæ", "ée", "ËÈä", "aAE", "áâÃ", "ËE", "ÈÆ" ], /* BRIO: botPhase
      * Record a session transition only. This does not label any remote player as a bot or establish human identity.
      */
-    botPhase = reason => { /* BRIO block: botPhase — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    botPhase = reason => {
         if (S.botPhase === "match") return;
         S.botPhase = "match";
         S.botPhaseAt = performance.now();
@@ -2261,21 +2138,21 @@
     }, /* BRIO: botSample
      * Capture bounded unlabelled player metadata; names, IDs, distances and isPreview are invalid classifiers.
      */
-    botSample = () => { /* BRIO block: botSample — Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */
+    botSample = () => {
         automaticPhase();
         const now = performance.now(), me = worldPos(S.renderer);
-        for (const r of collectPlayers().filter(/* BRIO expr: botSample / collectPlayers().filter callback — Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */ x => !isLocal(x))) { /* BRIO loop: botSample — Iterate collectPlayers().filter(x => !isLocal(x)). Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */
-            if (!S.botLogged.has(r.id)) { /* BRIO branch: botSample — Accept !S.botLogged.has(r.id). Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */
+        for (const r of collectPlayers().filter(x => !isLocal(x))) {
+            if (!S.botLogged.has(r.id)) {
                 S.botLogged.add(r.id);
                 log("BOT CANDIDATE", {
                     id: r.id,
                     name: r["Ée"],
                     phase: S.botPhase,
-                    cluster: Object.fromEntries(BOT_CLUSTER.map(/* BRIO expr: botSample / BOT_CLUSTER.map callback — Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */ k => [ k, r[k] ]))
+                    cluster: Object.fromEntries(BOT_CLUSTER.map(k => [ k, r[k] ]))
                 });
             }
             let e = S.botWatch.get(r.id), p = worldPos(r);
-            if (!e) { /* BRIO branch: botSample — Accept !e. Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */
+            if (!e) {
                 e = {
                     id: r.id,
                     name: r["Ée"],
@@ -2285,8 +2162,8 @@
                     lastPos: p ? {
                         ...p
                     } : null,
-                    changes: Object.fromEntries(BOT_CLUSTER.map(/* BRIO expr: botSample / BOT_CLUSTER.map callback — Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */ k => [ k, 0 ])),
-                    lastVals: Object.fromEntries(BOT_CLUSTER.map(/* BRIO expr: botSample / BOT_CLUSTER.map callback — Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */ k => [ k, r[k] ])),
+                    changes: Object.fromEntries(BOT_CLUSTER.map(k => [ k, 0 ])),
+                    lastVals: Object.fromEntries(BOT_CLUSTER.map(k => [ k, r[k] ])),
                     phases: {
                         lobby: {
                             samples: 0,
@@ -2311,7 +2188,7 @@
             e.lastAt = now;
             e.name = r["Ée"];
             f.samples++;
-            if (p && e.lastPos) { /* BRIO branch: botSample — Accept p && e.lastPos. Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */
+            if (p && e.lastPos) {
                 f.moved += Math.hypot(p.x - e.lastPos.x, p.y - e.lastPos.y);
                 e.lastPos = {
                     ...p
@@ -2319,13 +2196,13 @@
             } else if (p) e.lastPos = {
                 ...p
             };
-            if (me && p) { /* BRIO branch: botSample — Accept me && p. Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */
+            if (me && p) {
                 const d = Math.hypot(p.x - me.x, p.y - me.y);
                 f.max = Math.max(f.max, d);
                 f.min = f.min == null ? d : Math.min(f.min, d);
                 if (d > 5e3) f.far5kHits++;
             }
-            for (const k of BOT_CLUSTER) { /* BRIO loop: botSample — Iterate BOT_CLUSTER. Collect passive unresolved classifier evidence; names/IDs/isPreview never establish bot identity. */
+            for (const k of BOT_CLUSTER) {
                 const v = r[k];
                 if (e.lastVals[k] !== v) e.changes[k]++;
                 e.lastVals[k] = v;
@@ -2334,7 +2211,7 @@
     }, /* BRIO: botStart
      * Arm automatic metadata observation from ordinary Play; no manual MATCH START or bot-classification button.
      */
-    botStart = () => { /* BRIO block: botStart — Run the existing bounded passive observer while effective bot inspection is enabled. */
+    botStart = () => {
         if (S.botTimer) return;
         S.botWatch = new Map;
         S.botLogged = new Set;
@@ -2342,7 +2219,7 @@
         botSample();
         botAuditReset();
         botAuditTick();
-        S.botTimer = setInterval(() => { /* BRIO block: botStart — setInterval callback. Run the existing bounded passive observer while effective bot inspection is enabled. */
+        S.botTimer = setInterval(() => {
             botSample();
             botAuditTick();
         }, 500);
@@ -2350,19 +2227,19 @@
     }, /* BRIO: botStop
      * Stop bounded bot metadata sampling; export remains complete and no guessed classifier is introduced.
      */
-    botStop = () => { /* BRIO block: botStop — Stop passive bot observation without making an unsupported classification. */
+    botStop = () => {
         if (!S.botTimer) return;
         clearInterval(S.botTimer);
         S.botTimer = 0;
         botSample();
         log("BOT WATCH STOP", {
             phaseMarkerUsed: S.botPhase === "match",
-            players: [ ...S.botWatch.values() ].map(/* BRIO expr: botStop / [ ...S.botWatch.values() ].map callback — Stop passive bot observation without making an unsupported classification. */ e => ({
+            players: [ ...S.botWatch.values() ].map(e => ({
                 id: e.id,
                 name: e.name,
                 samples: e.samples,
                 seconds: Math.round((e.lastAt - e.first) / 100) / 10,
-                phases: Object.fromEntries(Object.entries(e.phases).map(/* BRIO expr: botStop / Object.entries(e.phases).map callback — Stop passive bot observation without making an unsupported classification. */ ([k, v]) => [ k, {
+                phases: Object.fromEntries(Object.entries(e.phases).map(([k, v]) => [ k, {
                     ...v,
                     min: v.min == null ? null : Math.round(v.min),
                     max: Math.round(v.max),
@@ -2372,26 +2249,26 @@
             }))
         });
     };
-    const nearestBy = /* BRIO expr: nearestBy — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ pred => collectWorld().filter(/* BRIO expr: nearestBy / collectWorld().filter callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => pred(o) && worldPos(o)).sort((a, b) => { /* BRIO block: nearestBy — collectWorld().filter(o => pred(o) && worldPos(o)).sort callback. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    const nearestBy = pred => collectWorld().filter(o => pred(o) && worldPos(o)).sort((a, b) => {
         const me = worldPos(S.renderer) || {
             x: 0,
             y: 0
         }, pa = worldPos(a), pb = worldPos(b);
         return Math.hypot(pa.x - me.x, pa.y - me.y) - Math.hypot(pb.x - me.x, pb.y - me.y);
-    })[0] || null, airdropPred = /* BRIO expr: airdropPred — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => resourceSlots(o).some(/* BRIO expr: airdropPred / resourceSlots(o).some callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ x => /airdrop|supply|parachute/.test(x.path)) || /air.?drop|supply/i.test([ o?.type, o?.["Àâ"], o?.["ÄæÅ"], o?.["ÆåÃ"] ].join(" ")), fishingPred = /* BRIO expr: fishingPred — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => resourceSlots(o).some(/* BRIO expr: fishingPred / resourceSlots(o).some callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ x => /\/buildart\/bubbles[01]\.png$/.test(x.path)) || /fish(?:ing)?spot|fishing/i.test([ o?.type, o?.["Àâ"], o?.["ÄæÅ"], o?.["ÆåÃ"] ].join(" ")), airdropObj = /* BRIO expr: airdropObj — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => nearestBy(airdropPred), chestObj = /* BRIO expr: chestObj — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => nearestBy(/* BRIO expr: chestObj / nearestBy callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => o.type === "chest"), fishingObj = /* BRIO expr: fishingObj — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => nearestBy(fishingPred), targetOnScreen = o => { /* BRIO block: targetOnScreen — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    })[0] || null, airdropPred = o => resourceSlots(o).some(x => /airdrop|supply|parachute/.test(x.path)) || /air.?drop|supply/i.test([ o?.type, o?.["Àâ"], o?.["ÄæÅ"], o?.["ÆåÃ"] ].join(" ")), fishingPred = o => resourceSlots(o).some(x => /\/buildart\/bubbles[01]\.png$/.test(x.path)) || /fish(?:ing)?spot|fishing/i.test([ o?.type, o?.["Àâ"], o?.["ÄæÅ"], o?.["ÆåÃ"] ].join(" ")), airdropObj = () => nearestBy(airdropPred), chestObj = () => nearestBy(o => o.type === "chest"), fishingObj = () => nearestBy(fishingPred), targetOnScreen = o => {
         const p = worldPos(o), sp = projectWorld(p);
         return !!(sp && sp.x >= sp.rect.left && sp.x <= sp.rect.right && sp.y >= sp.rect.top && sp.y <= sp.rect.bottom);
     }, /* BRIO: indicatorTick
      * Update the three nearest off-screen target arrows using active objects and the current native projection.
      */
-    indicatorTick = /* BRIO expr: indicatorTick — Update the proven offscreen arrows from current reachable targets and suppress stale/on-screen geometry. */ () => indicatorsV40();
-    const shallowState = o => { /* BRIO block: shallowState — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    indicatorTick = () => indicatorsV40();
+    const shallowState = o => {
         const out = {};
-        for (const k of Object.keys(o || {}).slice(0, 90)) { /* BRIO loop: shallowState — Iterate Object.keys(o || {}).slice(0, 90). Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+        for (const k of Object.keys(o || {}).slice(0, 90)) {
             let v;
-            try { /* BRIO guarded: shallowState — Keep the existing exception boundary for shallowState. Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+            try {
                 v = o[k];
-            } catch (_) { /* BRIO fallback: shallowState — Handle failure in shallowState through its existing fallback/report path; optional native fields may be unavailable. */
+            } catch (_) {
                 continue;
             }
             if (typeof v === "number" && Number.isFinite(v)) out[k] = Math.round(v * 100) / 100; else if (typeof v === "boolean" || typeof v === "string" && v.length < 80) out[k] = v;
@@ -2401,41 +2278,41 @@
     const /* BRIO: passiveTick
      * Observe current local/world metadata with novelty limits. Container disappearance and nearby loot are correlation only.
      */
-    passiveTick = () => { /* BRIO block: passiveTick — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-        try { /* BRIO guarded: passiveTick — Keep the existing exception boundary for passiveTick. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    passiveTick = () => {
+        try {
             const r = S.renderer;
-            if (r) { /* BRIO branch: passiveTick — Accept r. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            if (r) {
                 const now = shallowState(r);
-                if (!S.passiveLocal) { /* BRIO branch: passiveTick — Accept !S.passiveLocal. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+                if (!S.passiveLocal) {
                     S.passiveLocal = now;
                     log("PASSIVE LOCAL FIELDS", now);
-                } else { /* BRIO branch: passiveTick — Alternative for !S.passiveLocal. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+                } else {
                     const changed = {};
                     for (const k of Object.keys(now)) if (now[k] !== S.passiveLocal[k] && /health|shield|ammo|mats|score|circle|storm|build/i.test(k)) changed[k] = now[k];
                     if (Object.keys(changed).length) log("PASSIVE LOCAL CHANGE", changed);
                     S.passiveLocal = now;
                 }
             }
-            for (const e of performance.getEntriesByType("resource")) { /* BRIO loop: passiveTick — Iterate performance.getEntriesByType("resource"). Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            for (const e of performance.getEntriesByType("resource")) {
                 let p;
-                try { /* BRIO guarded: passiveTick — Keep the existing exception boundary for passiveTick. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+                try {
                     p = new URL(e.name).pathname.toLowerCase();
-                } catch (_) { /* BRIO fallback: passiveTick — Handle failure in passiveTick through its existing fallback/report path; optional native fields may be unavailable. */
+                } catch (_) {
                     continue;
                 }
                 if (!/\/(?:buildart|cosmetics)\//.test(p) || S.passiveAssets.has(p)) continue;
                 S.passiveAssets.add(p);
                 if (/(?:storm|zone|circle|crosshair|reticle|minimap|map|foliage|tree|bush|grass|chest|airdrop|fish|bubbles|glow|highlight|meteor|loot)/.test(p)) log("PASSIVE ASSET", p);
             }
-            if (S.passiveAssets.size > 2500) { /* BRIO branch: passiveTick — Accept S.passiveAssets.size > 2500. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            if (S.passiveAssets.size > 2500) {
                 clearInterval(S.passiveTimer);
                 S.passiveTimer = 0;
                 log("PASSIVE ASSET STOP", "Resource set cap reached");
             }
-        } catch (e) { /* BRIO fallback: passiveTick — Handle failure in passiveTick through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             S.errors.push("passive probe: " + String(e));
         }
-    }, passiveAdded = o => { /* BRIO block: passiveAdded — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    }, passiveAdded = o => {
         if (!o || ![ "buildable", "spellfield" ].includes(o.type)) return;
         const key = String(o.type) + ":" + String(o["Àâ"] ?? o["ÄæÅ"] ?? "");
         if (S.passiveBuilds.has(key)) return;
@@ -2445,21 +2322,21 @@
             id: o.id,
             position: worldPos(o),
             fields: shallowState(o),
-            resources: resourceSlots(o).map(/* BRIO expr: passiveAdded / resourceSlots(o).map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => x.path)
+            resources: resourceSlots(o).map(x => x.path)
         });
     };
-    const restoreRandom = () => { /* BRIO block: restoreRandom — Intentionally empty: preserve the surrounding fallback/delegation contract. */ };
-    const stopMeteorPersist = () => { /* BRIO block: stopMeteorPersist — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    const restoreRandom = () => {};
+    const stopMeteorPersist = () => {
         const p = S.meteorPersist;
         if (p?.timer) clearInterval(p.timer);
         S.meteorPersist = null;
-    }, restoreMeteor = () => { /* BRIO block: restoreMeteor — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    }, restoreMeteor = () => {
         const h = S.meteorHook;
         if (!h) return;
         if (h.proto.drawImage === h.wrap) h.proto.drawImage = h.orig;
         clearTimeout(h.timer);
         S.meteorHook = null;
-    }, meteorAutoStop = () => { /* BRIO block: meteorAutoStop — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    }, meteorAutoStop = () => {
         const h = S.meteorAuto;
         if (h && h.proto.add === h.wrap) Object.defineProperty(h.proto, "add", h.desc);
         S.meteorAuto = null;
@@ -2470,39 +2347,39 @@
     }, /* BRIO: meteorCandidate
      * Accept source-identified native meteor sprites/waypoints and reject weakly retired nodes from prior matches.
      */
-    meteorCandidate = (node, array = []) => { /* BRIO block: meteorCandidate — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    meteorCandidate = (node, array = []) => {
         if (S.retiredMarkers?.has(node)) return;
         const path = norm(node?.icon?.["À"]?.src || node?.icon?.["À"]?.["ÁÄ"]?.src || node?.["À"]?.src || node?.["À"]?.["ÁÄ"]?.src || "");
         if (path === "/buildart/ping-meteor-icon.png" && node.parent?.icon === node) node = node.parent;
-        if (extrasState().permanentMeteor && [ "/buildart/ping-meteor-icon.png", "/buildart/ping-meteor.png" ].includes(path) && !S.meteorSeen?.has(node) && !S.meteorPending?.has(node)) { /* BRIO branch: meteorCandidate — Accept extrasState().permanentMeteor && [ "/buildart/ping-meteor-icon.png", "/buildart/ping-meteor.png" ].includes(pa. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        if (extrasState().permanentMeteor && [ "/buildart/ping-meteor-icon.png", "/buildart/ping-meteor.png" ].includes(path) && !S.meteorSeen?.has(node) && !S.meteorPending?.has(node)) {
             (S.meteorPending || (S.meteorPending = new WeakSet)).add(node);
             holdMeteor(node, array);
         }
     }, /* BRIO: meteorScan
      * Resume the bounded breadth-first scan across reached roots, isolating hostile getters/proxies per node.
      */
-    meteorScan = () => { /* BRIO block: meteorScan — Walk already reached scene roots with the3000-node/second budget; preserve cursor across slices. */
-        if (!S.renderer || !nativeScanNeeded(exFast())) return;
-        if (!S.sceneQueue || (S.sceneQueueAt || 0) >= S.sceneQueue.length) { /* BRIO branch: meteorScan — Accept !S.sceneQueue || (S.sceneQueueAt || 0) >= S.sceneQueue.length. Walk already reached scene roots with the3000-node/second budget; preserve cursor across slices. */
+    meteorScan = () => {
+        if (!S.renderer || !extrasState().permanentMeteor && !extrasState().lowMatsWarning && (!extrasState().transparentRoofs || S.roofSaved.size === 21)) return;
+        if (!S.sceneQueue || (S.sceneQueueAt || 0) >= S.sceneQueue.length) {
             S.sceneQueue = [ ...sceneRoots() ];
             S.sceneQueueAt = 0;
             S.sceneQueueSeen = new WeakSet;
         }
         const seen = S.sceneQueueSeen, stack = S.sceneQueue;
         let visits = 0;
-        while (S.sceneQueueAt < stack.length && visits < 3e3) { /* BRIO loop: meteorScan — Iterate S.sceneQueueAt < stack.length && visits < 3e3. Walk already reached scene roots with the3000-node/second budget; preserve cursor across slices. */
+        while (S.sceneQueueAt < stack.length && visits < 3e3) {
             visits++;
             const x = stack[S.sceneQueueAt++];
             if (!x || typeof x !== "object" || seen.has(x)) continue;
             seen.add(x);
-            try { /* BRIO guarded: meteorScan — Keep the existing exception boundary for meteorScan. Walk already reached scene roots with the3000-node/second budget; preserve cursor across slices. */
+            try {
                 sceneObserve(x);
                 meteorCandidate(x);
                 captureRoof(x);
                 for (const key of [ "âè", "ÉE" ]) if (Array.isArray(x[key])) for (const c of x[key]) stack.push(c);
                 if (Array.isArray(x)) for (const c of x) stack.push(c);
                 hudCandidate(x);
-            } catch (_) { /* BRIO fallback: meteorScan — Handle failure in meteorScan through its existing fallback/report path; optional native fields may be unavailable. */
+            } catch (_) {
                 S.sceneSkipped = (S.sceneSkipped || 0) + 1;
             }
         }
@@ -2513,25 +2390,25 @@
             observers: S.meteorObservers?.size || 0,
             skipped: S.sceneSkipped || 0
         };
-        if (!S.sceneScanLogged) { /* BRIO branch: meteorScan — Accept !S.sceneScanLogged. Walk already reached scene roots with the3000-node/second budget; preserve cursor across slices. */
+        if (!S.sceneScanLogged) {
             S.sceneScanLogged = true;
             log("SCENE CAPTURE", S.sceneScan);
         }
     }, /* BRIO: meteorAutoStart
      * Start scoped native container/scene discovery with watchdog coverage. Keep the 3000-node/second and observer/array caps.
      */
-    meteorAutoStart = reason => { /* BRIO block: meteorAutoStart — Keep bounded native scene capture available even when the composite disables every modifier. */
+    meteorAutoStart = reason => {
         meteorAutoStop();
-        if (S.destroyed || !S.renderer || !nativeScanNeeded(exFast())) return;
+        if (S.destroyed || !S.renderer || !extrasState().permanentMeteor && !extrasState().transparentRoofs && !extrasState().lowMatsWarning && !extrasState().lowAmmoWarning) return;
         log("METEOR AUTOMATIC START", {
             reason: reason || "local capture",
             epoch: S.runEpoch
         });
-        const tick = () => { /* BRIO block: tick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            try { /* BRIO guarded: tick — Keep the existing exception boundary for tick. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        const tick = () => {
+            try {
                 meteorScan();
-            } catch (e) { /* BRIO fallback: tick — Handle failure in tick through its existing fallback/report path; optional native fields may be unavailable. */
-                if (!S.sceneStartError) { /* BRIO branch: tick — Accept !S.sceneStartError. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            } catch (e) {
+                if (!S.sceneStartError) {
                     S.sceneStartError = true;
                     S.errors.push("scene scan: " + String(e));
                     log("SCENE CAPTURE ERROR", {
@@ -2553,86 +2430,117 @@
     const /* BRIO: applyRemote
      * Await cosmetic resources only for the current run. Recheck epoch after awaits before attaching or writing local visuals.
      */
-    applyRemote = async r => { /* BRIO block: applyRemote — Apply only the current effective modifiers to a reached remote player; preserve native authority. */
+    applyRemote = async r => {
         if (!r || isLocal(r)) return;
         const epoch = S.runEpoch;
         rememberRemote(r);
         const e = extrasState();
         try {
-            // V50 remoteInformation owns reversible names/bar attachment and composite modifier exclusion.
-            remoteInformation(r);
-            // V50 replaces one-shot shared-resource edits with reversible draw gates in featurePlayer.
-            // Held weapons change resources natively; their owning physical branch stays hidden through those changes.
-            if (S.destroyed || epoch !== S.runEpoch) return;
+            if (e.playerNames && r["ÃÊ"]) r["ÃÊ"].opacity = 1;
+            if ((e.healthBars || e.numericHealthShield) && r["Eâ"]?.add) {
+                for (const [o, y] of [ [ r["æÄ"], -100 ], [ r["AÃå"], -114 ] ]) if (o) {
+                    if (o.parent !== r["Eâ"]) r["Eâ"].add(o);
+                    o.opacity = 1;
+                    if (o["ë"]) o["ë"]["Ä"] = y;
+                }
+            }
+            if (e.playersInvisible) {
+                const [bo, he, pi] = await Promise.all([ loadRes("body", {
+                    mode: "invisible",
+                    data: BLANK.body
+                }), loadRes("head", {
+                    mode: "invisible",
+                    data: BLANK.head
+                }), loadRes("pickaxe", {
+                    mode: "invisible",
+                    data: BLANK.pickaxe
+                }) ]);
+                if (S.destroyed || epoch !== S.runEpoch) return;
+                if (r["Ëå"]) r["Ëå"]["À"] = bo;
+                if (r.head) r.head["À"] = he;
+                r["Äâè"] = he;
+                r["ÉãÂ"] = pi;
+                for (const p of [ "áË", "ÄÂ", "ÄãÀ", "èÅ" ]) if (r[p]) r[p].opacity = 0;
+            }
+            if (e.playersInvisible || e.allTrailsInvisible) r["åëÅ"] = NaN;
+            if (e.playersInvisible || e.allGlidersInvisible) {
+                const gl = await loadRes("glider", {
+                    mode: "invisible",
+                    data: BLANK.glider
+                });
+                if (S.destroyed || epoch !== S.runEpoch) return;
+                r["äÀÊ"] = gl;
+                if (r["ÂÅ"]) r["ÂÅ"]["À"] = gl;
+            }
             if (e.nearestPlayer) attachTrack(r);
             featurePlayer(r);
             if (e.inventorySlots || e.inventoryMaterials || e.inventoryAmmo) attachInv(r);
-        } catch (x) { /* BRIO fallback: applyRemote — Handle failure in applyRemote through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (x) {
             S.errors.push(String(x));
         }
     }, /* BRIO: queueRemote
      * Keep remote capture retryable but generation-bound. Delayed work from a previous Play must not recreate old overlays.
      */
-    queueRemote = r => { /* BRIO block: queueRemote — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    queueRemote = r => {
         if (!r || isLocal(r) || S.remoteQueued.has(r)) return;
         S.remoteQueued.add(r);
         const auditEpoch = S.runEpoch;
-        setTimeout(() => { /* BRIO block: queueRemote — setTimeout callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        setTimeout(() => {
             if (!S.destroyed && S.runEpoch === auditEpoch) replicaStateAudit(r);
         }, 2e3);
-        for (const ms of [ 0, 250, 1200, 3e3 ]) setTimeout(() => { /* BRIO block: queueRemote — setTimeout callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ if (!S.destroyed && S.runEpoch === auditEpoch) applyRemote(r);}, ms);
+        for (const ms of [ 0, 250, 1200, 3e3 ]) setTimeout(() => {if (!S.destroyed && S.runEpoch === auditEpoch) applyRemote(r);}, ms);
     }, /* BRIO: queueWorld
      * Queue reached world customization without global polling or stale-generation attachments.
      */
-    queueWorld = o => { /* BRIO block: queueWorld — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    queueWorld = o => {
         if (!o || S.worldQueued.has(o)) return;
         S.worldQueued.add(o);
         const auditEpoch = S.runEpoch;
-        setTimeout(() => { /* BRIO block: queueWorld — setTimeout callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        setTimeout(() => {
             if (!S.destroyed && S.runEpoch === auditEpoch) replicaStateAudit(o);
         }, 1200);
         const epoch = S.runEpoch;
-        for (const ms of [ 0, 250, 1200 ]) setTimeout(() => { /* BRIO block: queueWorld — setTimeout callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        for (const ms of [ 0, 250, 1200 ]) setTimeout(() => {
             if (S.destroyed || S.runEpoch !== epoch) return;
             const e = extrasState();
-            // V50 tier predicates gate actual branches; shared transparent resource edits would leak between tiers.
-            featureWorld(o);
+            if (e.buildsInvisible && isBuild(o)) blankBuild(o);
+            if (e.lootInvisible && [ "gun", "ammo" ].includes(o.type)) blankLoot(o);
         }, ms);
     }, /* BRIO: handleAdded
      * Dispatch reached native objects to local/remote/world/HUD/meteor capture. Ignore BRIO-owned drawables.
      */
-    handleAdded = (x, a) => { /* BRIO block: handleAdded — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    handleAdded = (x, a) => {
         if (x?.__brioHudClone || String(x?.type || "").startsWith("brio")) return;
-        try { /* BRIO guarded: handleAdded — Keep the existing exception boundary for handleAdded. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        try {
             meteorCandidate(x, a);
             sceneObserve(x?.parent);
-            if (isPlayer(x)) { /* BRIO branch: handleAdded — Accept isPlayer(x). Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+            if (isPlayer(x)) {
                 if (!S.renderer && localNameMatch(x)) onLocal(x, a); else if (S.renderer && !isLocal(x)) queueRemote(x);
             }
             captureRoof(x);
             hudCandidate(x);
             if (S.capture) sceneObserve(x);
-            if (isWorld(x)) { /* BRIO branch: handleAdded — Accept isWorld(x). Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+            if (isWorld(x)) {
                 reconAdded(x);
                 passiveAdded(x);
                 featureWorld(x);
                 patchArray(a);
                 queueWorld(x);
             }
-        } catch (e) { /* BRIO fallback: handleAdded — Handle failure in handleAdded through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             if (S.errors.length < 100) S.errors.push("native capture: " + String(e));
         }
     };
     const /* BRIO: patchArray
      * Observe only reached native arrays after bounded broad discovery; delegate native push/unshift unchanged.
      */
-    patchArray = a => { /* BRIO block: patchArray — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    patchArray = a => {
         if (!Array.isArray(a) || S.arrayHooks.has(a)) return;
-        const dp = Object.getOwnPropertyDescriptor(a, "push"), du = Object.getOwnPropertyDescriptor(a, "unshift"), p = function(...xs) { /* BRIO block: p — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        const dp = Object.getOwnPropertyDescriptor(a, "push"), du = Object.getOwnPropertyDescriptor(a, "unshift"), p = function(...xs) {
             const n = Reflect.apply(NP, this, xs);
             for (const x of xs) handleAdded(x, this);
             return n;
-        }, u = function(...xs) { /* BRIO block: u — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        }, u = function(...xs) {
             const n = Reflect.apply(NU, this, xs);
             for (const x of xs) handleAdded(x, this);
             return n;
@@ -2655,26 +2563,26 @@
     }, /* BRIO: restoreArrays
      * Restore each original own descriptor rather than leaving per-array wrappers across matches.
      */
-    restoreArrays = () => { /* BRIO block: restoreArrays — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
-        for (const [a, h] of S.arrayHooks) try { /* BRIO guarded: restoreArrays — Keep the existing exception boundary for restoreArrays. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    restoreArrays = () => {
+        for (const [a, h] of S.arrayHooks) try {
             h.dp ? Object.defineProperty(a, "push", h.dp) : delete a.push;
             h.du ? Object.defineProperty(a, "unshift", h.du) : delete a.unshift;
-        } catch (_) { /* BRIO fallback: restoreArrays — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         S.arrayHooks.clear();
     }, /* BRIO: onLocal
      * Capture the current named local renderer once, start narrow timers and apply selected visuals without changing Play packets.
      */
-    onLocal = (r, a) => { /* BRIO block: onLocal — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    onLocal = (r, a) => {
         if (S.renderer) return;
         S.renderer = r;
         S.rendererArray = a;
         S.native = nativeSnap(r);
         const localAuditEpoch = S.runEpoch;
-        setTimeout(() => { /* BRIO block: onLocal — setTimeout callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        setTimeout(() => {
             if (!S.destroyed && S.runEpoch === localAuditEpoch) replicaStateAudit(r);
         }, 2e3);
         const epoch = S.runEpoch;
-        setTimeout(() => { /* BRIO block: onLocal — setTimeout callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        setTimeout(() => {
             if (S.renderer === r && !S.destroyed && epoch === S.runEpoch) meteorAutoStart("capture timer");
         }, 0);
         patchArray(a);
@@ -2688,10 +2596,10 @@
         });
         applyLocal();
         for (const x of a) if (isPlayer(x) && !isLocal(x)) queueRemote(x);
-        if (!S.passiveTimer) { /* BRIO branch: onLocal — Accept !S.passiveTimer. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        if (!S.passiveTimer) {
             passiveTick();
             reconDom("match capture");
-            S.passiveTimer = setInterval(() => { /* BRIO block: onLocal — setInterval callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+            S.passiveTimer = setInterval(() => {
                 passiveTick();
                 reconRuntime();
                 reconContainers();
@@ -2704,10 +2612,10 @@
         if (e.identifyBots) botStart();
         if ((e.nearestChest || e.nearestAirdrop) && !S.indicatorTimer) S.indicatorTimer = setInterval(indicatorTick, 500);
         maybeStop();
-    }, goals = /* BRIO expr: goals — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => ({
+    }, goals = () => ({
         renderer: !!S.renderer,
         roofs: !extrasState().transparentRoofs || S.roofSaved.size === 21
-    }), stopCapture = why => { /* BRIO block: stopCapture — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    }), stopCapture = why => {
         const c = S.capture;
         if (!c) return;
         clearTimeout(c.timer);
@@ -2718,37 +2626,37 @@
             why: why,
             goals: goals()
         });
-    }, maybeStop = () => { /* BRIO block: maybeStop — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    }, maybeStop = () => {
         const g = goals();
         if (g.renderer && g.roofs) stopCapture("goals-met");
     };
     const /* BRIO: tagName
      * Apply a single dynamic uL# prefix within maxLength so capture can find the current local player without a hardcoded identity.
      */
-    tagName = () => { /* BRIO block: tagName — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    tagName = () => {
         const b = q("#nameBox");
         if (!b) return "uL#";
         let raw = String(b.value || "");
         raw = raw.replace(/^uL#/, "");
         const max = Number(b.maxLength) > 0 ? Number(b.maxLength) : Infinity;
         const tagged = ("uL#" + raw).slice(0, max);
-        if (b.value !== tagged) { /* BRIO branch: tagName — Accept b.value !== tagged. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (b.value !== tagged) {
             b.value = tagged;
-            try { /* BRIO guarded: tagName — Keep the existing exception boundary for tagName. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            try {
                 b.dispatchEvent(new Event("input", {
                     bubbles: true
                 }));
                 b.dispatchEvent(new Event("change", {
                     bubbles: true
                 }));
-            } catch (_) { /* BRIO fallback: tagName — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+            } catch (_) {}
         }
         S.localName = tagged;
         return tagged;
     }, /* BRIO: arm
      * The ordinary-Play lifecycle boundary. Restore all old hooks/resources, detach old game nodes, clear runtime collections, increment epoch and rearm selected settings.
      */
-    arm = () => { /* BRIO block: arm — Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+    arm = () => {
         S.runEpoch = (S.runEpoch || 0) + 1;
         if (S.renderer) deepReport();
         deepStop();
@@ -2770,7 +2678,7 @@
         resetNativeHud();
         resetFeatures();
         syncMonochrome(!!extrasState().monochrome);
-        if (S.featureTimer) { /* BRIO branch: arm — Accept S.featureTimer. Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+        if (S.featureTimer) {
             clearInterval(S.featureTimer);
             S.featureTimer = 0;
         }
@@ -2797,38 +2705,38 @@
         S.passiveAssets.clear();
         S.passiveBuilds.clear();
         S.passiveLocal = null;
-        if (S.passiveTimer) { /* BRIO branch: arm — Accept S.passiveTimer. Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+        if (S.passiveTimer) {
             clearInterval(S.passiveTimer);
             S.passiveTimer = 0;
         }
-        if (S.autoContentTimer) { /* BRIO branch: arm — Accept S.autoContentTimer. Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+        if (S.autoContentTimer) {
             clearInterval(S.autoContentTimer);
             S.autoContentTimer = 0;
         }
         restoreRandom();
         restoreMeteor();
         stopMeteorPersist();
-        if (S.localTrack?.node) try { /* BRIO guarded: arm — Keep the existing exception boundary for arm. Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+        if (S.localTrack?.node) try {
             S.localTrack.node.parent?.remove?.(S.localTrack.node);
-        } catch (_) { /* BRIO fallback: arm — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         S.localTrack = null;
-        for (const n of S.trackNodes.values()) try { /* BRIO guarded: arm — Keep the existing exception boundary for arm. Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+        for (const n of S.trackNodes.values()) try {
             n.parent?.remove?.(n);
-        } catch (_) { /* BRIO fallback: arm — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         S.trackNodes.clear();
-        for (const n of S.invNodes.values()) try { /* BRIO guarded: arm — Keep the existing exception boundary for arm. Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+        for (const n of S.invNodes.values()) try {
             n.parent?.remove?.(n);
-        } catch (_) { /* BRIO fallback: arm — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         S.invNodes.clear();
-        if (S.nearestTimer) { /* BRIO branch: arm — Accept S.nearestTimer. Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+        if (S.nearestTimer) {
             clearInterval(S.nearestTimer);
             S.nearestTimer = 0;
         }
-        if (S.indicatorTimer) { /* BRIO branch: arm — Accept S.indicatorTimer. Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+        if (S.indicatorTimer) {
             clearInterval(S.indicatorTimer);
             S.indicatorTimer = 0;
         }
-        if (S.botTimer) { /* BRIO branch: arm — Accept S.botTimer. Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+        if (S.botTimer) {
             clearInterval(S.botTimer);
             S.botTimer = 0;
         }
@@ -2836,20 +2744,19 @@
         log("MATCH STATE RESET", {epoch: S.runEpoch, meteorMarkers: reconMarkers.length, remoteRefs: S.remoteRefs.size, inventoryNodes: S.invNodes.size, trackNodes: S.trackNodes.size, featureNodes: featureNodes.size, savedSelectionsPreserved: true});
         deepStart();
         startRenderDiscovery("Play");
-        const chosen = extrasState(), required = chosen.goodFlippinLuck ? CHALLENGE_TESTS : REQUIRED_TESTS, flags = Object.fromEntries(required.map(/* BRIO expr: arm / required.map callback — Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */ id => [ id, !!chosen[id] ]));
+        const chosen = extrasState(), flags = Object.fromEntries(REQUIRED_TESTS.map(id => [ id, !!chosen[id] ]));
         log("TEST SETTINGS AT PLAY", {
             requiredOn: flags,
-            missing: required.filter(/* BRIO expr: arm / required.filter callback — Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */ id => !chosen[id]),
-            profile:chosen.goodFlippinLuck ? "combined challenge" : "normal / tier comparison",
-            allSelected: chosen, savedSelections:storedExtras()
+            missing: REQUIRED_TESTS.filter(id => !chosen[id]),
+            allSelected: chosen
         });
         locker.style.display = extras.style.display = "none";
-        const op = Array.prototype.push, ou = Array.prototype.unshift, hp = function(...xs) { /* BRIO block: hp — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        const op = Array.prototype.push, ou = Array.prototype.unshift, hp = function(...xs) {
             const n = Reflect.apply(op, this, xs);
             for (const x of xs) handleAdded(x, this);
             queueMicrotask(maybeStop);
             return n;
-        }, hu = function(...xs) { /* BRIO block: hu — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        }, hu = function(...xs) {
             const n = Reflect.apply(ou, this, xs);
             for (const x of xs) handleAdded(x, this);
             queueMicrotask(maybeStop);
@@ -2857,7 +2764,7 @@
         };
         Array.prototype.push = hp;
         Array.prototype.unshift = hu;
-        const timer = setTimeout(() => { /* BRIO block: arm — setTimeout callback. Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
+        const timer = setTimeout(() => {
             if (Array.prototype.push === hp) Array.prototype.push = op;
             if (Array.prototype.unshift === hu) Array.prototype.unshift = ou;
             if (S.capture?.hp === hp) S.capture = null;
@@ -2877,11 +2784,11 @@
     }, /* BRIO: bindPlay
      * Bind existing native Play capture events. Pointer/mouse preparation tags the name; click arms the run before native handlers.
      */
-    bindPlay = () => { /* BRIO block: bindPlay — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    bindPlay = () => {
         const e = q("#ready") || q("#play") || q("#playButton") || q("#loggedInPlay");
         if (!e) return log("PLAY BIND FAILED");
         S.play = e;
-        const prep = /* BRIO expr: prep — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => tagName(), go = /* BRIO expr: go — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => arm();
+        const prep = () => tagName(), go = () => arm();
         e.addEventListener("pointerdown", prep, true);
         e.addEventListener("mousedown", prep, true);
         e.addEventListener("click", go, true);
@@ -2891,7 +2798,7 @@
     const /* BRIO: verify
      * Report current capture/hooks/settings/errors without creating gameplay actions or treating missing evidence as a pass.
      */
-    verify = () => { /* BRIO block: verify — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    verify = () => {
         const o = {
             botAudit: {
                 players: botAuditSeen.size,
@@ -2908,7 +2815,7 @@
                 signal: "native local gliding state or decoded circle waiting/moving",
                 phase: S.botPhase
             },
-            meteorNativeHolds: reconMarkers.map(/* BRIO expr: verify / reconMarkers.map callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ x => ({
+            meteorNativeHolds: reconMarkers.map(x => ({
                 inNativeParent: (x.parent["âè"] || []).includes(x.node),
                 removeAttempts: x.attempts,
                 opacityWrites: x.opacityWrites,
@@ -2949,40 +2856,36 @@
     const term = D.createElement("div");
     term.className = "brioTerm";
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
-    // V50 reopens the SAME Extras modal during play, including from the minimized terminal. Native home
-    // buttons disappear in a match; a reachable control is necessary for tier cycling/preset restoration.
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v50</b><button data-a="extras">EXTRAS</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v49</b><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     let mini = false, drag = null;
-    term.onclick = e => { /* BRIO block: term.onclick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    term.onclick = e => {
         const a = e.target?.dataset?.a;
-        if (a === "extras") { /* BRIO branch: term.onclick — V50 live-controls entry, fixture checked/live-pending: reopen existing Extras without arming a Play or changing saved selections. */
-            renderExtras(); extras.style.display = "flex";
-        } else if (a === "min") { /* BRIO branch: term.onclick — Accept a === "min". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (a === "min") {
             mini = !mini;
             term.classList.toggle("min", mini);
             e.target.textContent = mini ? "+" : "—";
-        } else if (a === "verify") { /* BRIO branch: term.onclick — Accept a === "verify". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  deepReport(); verify(); } else if (a === "copy") { /* BRIO branch: term.onclick — Accept a === "copy". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        } else if (a === "verify") { deepReport(); verify(); } else if (a === "copy") {
             S.manualCopy = false; deepReport();
             if (S.botTimer) botStop();
             reconContainers();
             const x = "BRIO " + S.v + "\n" + S.log.join("\n") + "\n\n" + J(verify());
-            Promise.resolve().then(() => { /* BRIO block: term.onclick — Promise.resolve().then callback. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            Promise.resolve().then(() => {
                 if (!navigator.clipboard?.writeText) throw Error("Clipboard API unavailable");
                 return navigator.clipboard.writeText(x);
-            }).then(/* BRIO expr: term.onclick / Promise.resolve().then(() => { if (!navigator.clipboard?.writeText) throw Error("Clipboard API unavailable");  callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => log("COPY OK", x.length)).catch(() => { /* BRIO block: term.onclick — Promise.resolve().then(() => { if (!navigator.clipboard?.writeText) throw Error("Clipboard API unavailable");  callback. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            }).then(() => log("COPY OK", x.length)).catch(() => {
                 S.manualCopy = true; S.out.value = x;
                 S.out.select();
-                try { /* BRIO guarded: term.onclick — Keep the existing exception boundary for term.onclick. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                try {
                     D.execCommand("copy");
-                } catch (_) { /* BRIO fallback: term.onclick — Handle failure in term.onclick through its existing fallback/report path; optional native fields may be unavailable. */
+                } catch (_) {
                     log("COPY MANUALLY", "Select and copy the terminal text");
                 }
             });
         }
     };
-    term.querySelector(".head").onpointerdown = e => { /* BRIO block: term.querySelector(".head").onpointerdown — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    term.querySelector(".head").onpointerdown = e => {
         if (!mini || e.target.closest("button")) return;
         const r = term.getBoundingClientRect();
         term.style.right = "auto";
@@ -2994,18 +2897,18 @@
         };
         e.currentTarget.setPointerCapture?.(e.pointerId);
     };
-    term.querySelector(".head").onpointermove = e => { /* BRIO block: term.querySelector(".head").onpointermove — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+    term.querySelector(".head").onpointermove = e => {
         if (!drag || drag.id !== e.pointerId) return;
         term.style.left = Math.max(0, Math.min(innerWidth - term.offsetWidth, e.clientX - drag.x)) + "px";
         term.style.top = Math.max(0, Math.min(innerHeight - term.offsetHeight, e.clientY - drag.y)) + "px";
     };
-    term.querySelector(".head").onpointerup = /* BRIO expr: term.querySelector(".head").onpointerup — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ () => drag = null;
+    term.querySelector(".head").onpointerup = () => drag = null;
     /* BRIO: destroy
      * Full injection teardown, unlike a match rearm: also restore home nodes,
      * remove styles/modals/terminal and delete the version key. Increment the
      * epoch first so pending promises cannot write into restored native state.
      */
-    S.destroy = () => { /* BRIO block: S.destroy — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    S.destroy = () => {
         S.destroyed = true;
         S.runEpoch = (S.runEpoch || 0) + 1;
         deepStop();
@@ -3035,19 +2938,19 @@
         if (S.indicatorTimer) clearInterval(S.indicatorTimer);
         if (S.play) for (const [type, fn] of S.playHandlers) S.play.removeEventListener(type, fn, true);
         D.removeEventListener("click", intercept, true);
-        for (const m of [ S.roofSaved, S.buildSaved, S.lootSaved ]) for (const {w: w, old: old} of m.values()) try { /* BRIO guarded: S.destroy — Keep the existing exception boundary for S.destroy. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+        for (const m of [ S.roofSaved, S.buildSaved, S.lootSaved ]) for (const {w: w, old: old} of m.values()) try {
             w["ÁÄ"] = old;
-        } catch (_) { /* BRIO fallback: S.destroy — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
-        if (S.localTrack?.node) try { /* BRIO guarded: S.destroy — Keep the existing exception boundary for S.destroy. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+        } catch (_) {}
+        if (S.localTrack?.node) try {
             S.localTrack.node.parent?.remove?.(S.localTrack.node);
-        } catch (_) { /* BRIO fallback: S.destroy — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
-        for (const n of [ ...S.trackNodes.values(), ...S.invNodes.values() ]) try { /* BRIO guarded: S.destroy — Keep the existing exception boundary for S.destroy. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+        } catch (_) {}
+        for (const n of [ ...S.trackNodes.values(), ...S.invNodes.values() ]) try {
             n.parent?.remove?.(n);
-        } catch (_) { /* BRIO fallback: S.destroy — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         for (const u of [ S.nearestUi, S.chestUi, S.airdropUi ]) u?.remove?.();
-        for (const id of [ "loggedInLocker", "loggedInShop" ]) { /* BRIO loop: S.destroy — Iterate [ "loggedInLocker", "loggedInShop" ]. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+        for (const id of [ "loggedInLocker", "loggedInShop" ]) {
             const e = D.getElementById(id), b = S.bak[id];
-            if (e && b) { /* BRIO branch: S.destroy — Accept e && b. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+            if (e && b) {
                 e.innerHTML = b.html;
                 e.className = b.cls;
                 e.setAttribute("style", b.style);
@@ -3064,7 +2967,7 @@
     const /* BRIO: botAuditReset
      * Reset a short per-match audit; prior match human labels or reused IDs cannot carry into the new run.
      */
-    botAuditReset = () => { /* BRIO block: botAuditReset — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    botAuditReset = () => {
         botAuditSeen.clear();
         botAuditUntil = performance.now() + 45e3;
         log("BOT AUDIT PLAN", {
@@ -3077,33 +2980,33 @@
     }, /* BRIO: botMeta
      * Read bounded renderer metadata for source corroboration. This audit is not an authoritative bot detector.
      */
-    botMeta = r => { /* BRIO block: botMeta — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    botMeta = r => {
         const out = {}, seen = new Set, skip = new Set([ "parent", "owner", "game", "stage", "Eâ", "â", "aá", "head", "Ëå", "Äâè", "ÉãÂ", "ä", "áË", "ÄÂ", "ÄãÀ", "èÅ", "ÃÊ", "æÄ", "AÃå", "ÄÊâ", "ÂÅ", "ÁÄ" ]);
-        function walk(v, p, d) { /* BRIO block: walk — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        function walk(v, p, d) {
             if (!v || typeof v !== "object" || seen.has(v) || v instanceof Node || v instanceof HTMLImageElement || d > 2 || seen.size > 100 || ArrayBuffer.isView(v)) return;
             seen.add(v);
-            for (const k of Object.getOwnPropertyNames(v).slice(0, 400)) { /* BRIO loop: walk — Iterate Object.getOwnPropertyNames(v).slice(0, 400). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            for (const k of Object.getOwnPropertyNames(v).slice(0, 400)) {
                 if (skip.has(k)) continue;
                 let x;
-                try { /* BRIO guarded: walk — Keep the existing exception boundary for walk. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                try {
                     x = v[k];
-                } catch (_) { /* BRIO fallback: walk — Handle failure in walk through its existing fallback/report path; optional native fields may be unavailable. */
+                } catch (_) {
                     continue;
                 }
                 const key = p + k;
-                if (x == null || [ "boolean", "number", "string" ].includes(typeof x)) { /* BRIO branch: walk — Accept x == null || [ "boolean", "number", "string" ].includes(typeof x). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                if (x == null || [ "boolean", "number", "string" ].includes(typeof x)) {
                     if (typeof x !== "string" || x.length < 180) out[key] = x;
-                } else if (Array.isArray(x) && x.length <= 32 && x.every(/* BRIO expr: walk / x.every callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ y => y == null || [ "boolean", "number", "string" ].includes(typeof y))) out[key] = x.slice(); else if (x && typeof x === "object" && !Array.isArray(x)) walk(x, key + ".", d + 1);
+                } else if (Array.isArray(x) && x.length <= 32 && x.every(y => y == null || [ "boolean", "number", "string" ].includes(typeof y))) out[key] = x.slice(); else if (x && typeof x === "object" && !Array.isArray(x)) walk(x, key + ".", d + 1);
             }
         }
         walk(r, "", 0);
         return out;
-    }, botAuditTick = () => { /* BRIO block: botAuditTick — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    }, botAuditTick = () => {
         if (performance.now() > botAuditUntil) return;
-        for (const r of collectPlayers()) { /* BRIO loop: botAuditTick — Iterate collectPlayers(). Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+        for (const r of collectPlayers()) {
             if (isLocal(r)) continue;
             let rec = botAuditSeen.get(r);
-            if (!rec) { /* BRIO branch: botAuditTick — Accept !rec. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            if (!rec) {
                 if (botAuditSeen.size >= 60) continue;
                 rec = {
                     at: performance.now(),
@@ -3121,7 +3024,7 @@
                     knownHuman: null,
                     note: "Unlabelled in this match; field meanings require source corroboration"
                 });
-            } else if (!rec.done && performance.now() - rec.at >= 2e3) { /* BRIO branch: botAuditTick — Accept !rec.done && performance.now() - rec.at >= 2e3. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            } else if (!rec.done && performance.now() - rec.at >= 2e3) {
                 rec.done = true;
                 const fields = botMeta(r), changes = {};
                 for (const k of Object.keys(fields)) if (J(fields[k]) !== J(rec.snap[k])) changes[k] = fields[k];
@@ -3133,7 +3036,7 @@
                 });
             }
         }
-    }, botSourceAudit = src => { /* BRIO block: botSourceAudit — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    }, botSourceAudit = src => {
         const re = /\b(?:bot|isbot|is_bot|npc|isai|is_ai|robot|artificialintelligence|computerplayer)\b/gi, hits = [];
         let m;
         while ((m = re.exec(src)) && hits.length < 60) hits.push({
@@ -3142,7 +3045,7 @@
             excerpt: src.slice(Math.max(0, m.index - 350), m.index + 650)
         });
         const constructors = [];
-        for (const term of [ '.ÃEÅ("player"', ".ÃEÅ('player'", "isBot", "isAI", "botType", "botDifficulty", "botName", "botNames" ]) { /* BRIO loop: botSourceAudit — Iterate [ '.ÃEÅ("player"', ".ÃEÅ('player'", "isBot", "isAI", "botType", "botDifficulty", "botName". Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+        for (const term of [ '.ÃEÅ("player"', ".ÃEÅ('player'", "isBot", "isAI", "botType", "botDifficulty", "botName", "botNames" ]) {
             const at = src.indexOf(term);
             if (at >= 0) constructors.push({
                 term: term,
@@ -3168,7 +3071,7 @@
     const /* BRIO: deepError
      * Keep bounded stage-specific observation failures while returning native results unchanged. Registry exclusions are evidence gaps, not gameplay errors.
      */
-    deepError = (stage, error) => { /* BRIO block: deepError — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    deepError = (stage, error) => {
         deep.errors++;
         deep.errorStages[stage] = (deep.errorStages[stage] || 0) + 1;
         if (deep.errorStages[stage] <= 2) log("PROBE OBSERVATION ERROR", {stage, epoch: deep.epoch, error: String(error)});
@@ -3176,23 +3079,23 @@
     const /* BRIO: probeSnapshot
      * Snapshot data descriptors only, redact sensitive fields and mark accessors/cycles/truncation. Never invoke getters to obtain evidence.
      */
-    probeSnapshot = value => { /* BRIO block: probeSnapshot — Copy bounded own data without invoking accessors; redact sensitive fields and report omissions. */
+    probeSnapshot = value => {
         const seen = new WeakSet; let entries = 0, truncated = false;
-        const walk = (v, depth) => { /* BRIO block: walk — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            if (++entries > 1400 || depth > 8) { /* BRIO branch: walk — Accept ++entries > 1400 || depth > 8. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  truncated = true; return "[CAP]"; }
-            if (typeof v === "string") { /* BRIO branch: walk — Accept typeof v === "string". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  if (v.length > 1000) { /* BRIO branch: walk — Accept v.length > 1000. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ truncated = true; return v.slice(0, 1000) + "[CAP]";} return v; }
+        const walk = (v, depth) => {
+            if (++entries > 1400 || depth > 8) { truncated = true; return "[CAP]"; }
+            if (typeof v === "string") { if (v.length > 1000) {truncated = true; return v.slice(0, 1000) + "[CAP]";} return v; }
             if (v == null || typeof v === "boolean" || typeof v === "number") return v;
             if (typeof v !== "object") return "[" + typeof v + "]";
             if (Object.getOwnPropertyDescriptor(v, "éa")?.value || (Object.getOwnPropertyDescriptor(v, "ë")?.value && Array.isArray(Object.getOwnPropertyDescriptor(v, "âè")?.value))) return "[NATIVE DRAWABLE; OMITTED]";
             if (seen.has(v)) return "[CYCLE]";
             if (v instanceof Node) return "[DOM]";
-            if (ArrayBuffer.isView(v)) { /* BRIO branch: walk — Accept ArrayBuffer.isView(v). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  truncated = true; return {binaryBytes: v.byteLength}; }
+            if (ArrayBuffer.isView(v)) { truncated = true; return {binaryBytes: v.byteLength}; }
             seen.add(v);
             const o = Array.isArray(v) ? [] : {};
-            for (const key of Reflect.ownKeys(v).slice(0, 240)) { /* BRIO loop: walk — Iterate Reflect.ownKeys(v).slice(0, 240). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            for (const key of Reflect.ownKeys(v).slice(0, 240)) {
                 if (typeof key !== "string" || key === "length" || ["parent","ÁÄ","canvas"].includes(key)) continue;
                 const desc = Object.getOwnPropertyDescriptor(v, key), meaning = schemaFields.get(key) || key;
-                if (/token|password|email|(?:^|_)ip(?:$|_)/i.test(meaning)) { /* BRIO branch: walk — Accept /token|password|email|(?:^|_)ip(?:$|_)/i.test(meaning). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o[key] = "[REDACTED]"; continue;}
+                if (/token|password|email|(?:^|_)ip(?:$|_)/i.test(meaning)) {o[key] = "[REDACTED]"; continue;}
                 o[key] = desc && "value" in desc ? walk(desc.value, depth + 1) : "[ACCESSOR; NOT INVOKED]";
                 if (entries > 1400) break;
             }
@@ -3206,10 +3109,10 @@
     const /* BRIO: deepRecord
      * Enforce total and reserved-lane budgets before committing record bytes. One busy lane cannot consume another lane's records.
      */
-    deepRecord = (label, obj, lane = label.startsWith("INCOMING SCHEMA") ? "schema" : label.startsWith("ENVIRONMENT") ? "environment" : obj.kind === "player" ? "player" : label.startsWith("DEEP TARGET") ? "replica" : "container") => { /* BRIO block: deepRecord — Bound record count and approximate text size by reserved lane; omitted/capped records do not establish absence. */
-        if (deep.records >= 1800 || deep.bytes >= 8e6 || (deep.lanes[lane] || 0) >= DEEP_LANES[lane]) { /* BRIO branch: deepRecord — Accept deep.records >= 1800 || deep.bytes >= 8e6 || (deep.lanes[lane] || 0) >= DEEP_LANES[lane]. Bound record count and approximate text size by reserved lane; omitted/capped records do not establish absence. */ deep.suppressed[lane] = (deep.suppressed[lane] || 0) + 1; return false;}
+    deepRecord = (label, obj, lane = label.startsWith("INCOMING SCHEMA") ? "schema" : label.startsWith("ENVIRONMENT") ? "environment" : obj.kind === "player" ? "player" : label.startsWith("DEEP TARGET") ? "replica" : "container") => {
+        if (deep.records >= 1800 || deep.bytes >= 8e6 || (deep.lanes[lane] || 0) >= DEEP_LANES[lane]) {deep.suppressed[lane] = (deep.suppressed[lane] || 0) + 1; return false;}
         const snap = probeSnapshot(obj), bytes = JSON.stringify(snap).length;
-        if (deep.bytes + bytes > 8e6) { /* BRIO branch: deepRecord — Accept deep.bytes + bytes > 8e6. Bound record count and approximate text size by reserved lane; omitted/capped records do not establish absence. */ deep.suppressed.bytes = (deep.suppressed.bytes || 0) + 1; return false;}
+        if (deep.bytes + bytes > 8e6) {deep.suppressed.bytes = (deep.suppressed.bytes || 0) + 1; return false;}
         if (snap.truncated) deep.truncations++;
         deep.bytes += bytes; deep.records++; deep.lanes[lane] = (deep.lanes[lane] || 0) + 1;
         log(label, snap); return true;
@@ -3217,14 +3120,14 @@
     const /* BRIO: environmentProbe
      * Record a manifest and small target chunks separately from large terrain arrays so later fields remain observable.
      */
-    environmentProbe = env => { /* BRIO block: environmentProbe — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    environmentProbe = env => {
         if (!env || typeof env !== "object") return;
         const props = Object.getOwnPropertyDescriptors(env), fields = Object.keys(props);
-        deepRecord("ENVIRONMENT MANIFEST", {fields: fields.map(/* BRIO expr: environmentProbe / fields.map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ key => ({key, meaning: schemaFields.get(key) || key, length: Array.isArray(props[key].value) ? props[key].value.length : undefined, accessor: !("value" in props[key])}))});
-        for (const key of fields) { /* BRIO loop: environmentProbe — Iterate fields. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+        deepRecord("ENVIRONMENT MANIFEST", {fields: fields.map(key => ({key, meaning: schemaFields.get(key) || key, length: Array.isArray(props[key].value) ? props[key].value.length : undefined, accessor: !("value" in props[key])}))});
+        for (const key of fields) {
             const value = props[key].value, meaning = schemaFields.get(key) || key;
-            if (/chest|object|loot|seed|content|fish|drop|resourceNames/i.test(meaning)) { /* BRIO branch: environmentProbe — Accept /chest|object|loot|seed|content|fish|drop|resourceNames/i.test(meaning). Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-                if (Array.isArray(value)) { /* BRIO branch: environmentProbe — Accept Array.isArray(value). Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            if (/chest|object|loot|seed|content|fish|drop|resourceNames/i.test(meaning)) {
+                if (Array.isArray(value)) {
                     const count = Math.ceil(value.length / 24);
                     for (let chunk = 0; chunk < count; chunk++) if (!deepRecord("ENVIRONMENT TARGET CHUNK", {key, meaning, index: chunk, count, total: value.length, entries: value.slice(chunk*24,(chunk+1)*24)})) break;
                 } else deepRecord("ENVIRONMENT TARGET FIELD", {key, meaning, value});
@@ -3234,61 +3137,61 @@
     const /* BRIO: incomingDelta
      * Deduplicate exact field snapshots. Bound ordinary player/geometry/landing changes; novel container fields remain eligible within record limits.
      */
-    incomingDelta = (p, kind, id, type) => { /* BRIO block: incomingDelta — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    incomingDelta = (p, kind, id, type) => {
         const identity = kind + ":" + id;
         let /* BRIO: state
      * Read cosmetic selections. Keep this namespace separate from the native locker and from Extras.
      */
     state = deep.incomingState.get(identity);
-        if (!state) { /* BRIO branch: incomingDelta — Accept !state. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (!state) {
             if (deep.incomingState.size >= 600) return {packet: p, first: true};
             state = {values: new Map, changes: new Map}; deep.incomingState.set(identity, state);
         }
         const packet = {}, fields = [], capped = [];
-        for (const [key, desc] of Object.entries(Object.getOwnPropertyDescriptors(p))) { /* BRIO loop: incomingDelta — Iterate Object.entries(Object.getOwnPropertyDescriptors(p)). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        for (const [key, desc] of Object.entries(Object.getOwnPropertyDescriptors(p))) {
             if (["a","p","t","type","i","id","Ã","x","y","É","Ä","b","n"].includes(key)) continue;
             const value = "value" in desc ? desc.value : "[ACCESSOR; NOT INVOKED]", snap = probeSnapshot(value), fingerprint = JSON.stringify(snap.data);
             if (state.values.get(key) === fingerprint) continue;
             const seen = state.values.has(key), changes = state.changes.get(key) || 0;
             state.values.set(key, fingerprint);
             // Preserve first values of every field; routine player state must not starve containers.
-            if (seen && changes >= 3 && (kind === "player" || ["health", "fullHealth", "width", "height", "landProgress", "landed"].includes(schemaFields.get(key) || key))) { /* BRIO branch: incomingDelta — Accept seen && changes >= 3 && (kind === "player" || ["health", "fullHealth", "width", "height", "landProgress", "lan. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ capped.push(key); continue;}
+            if (seen && changes >= 3 && (kind === "player" || ["health", "fullHealth", "width", "height", "landProgress", "landed"].includes(schemaFields.get(key) || key))) {capped.push(key); continue;}
             state.changes.set(key, changes + 1); packet[key] = snap.data; fields.push(key);
         }
         if (capped.length) deep.suppressed.routineFieldChanges = (deep.suppressed.routineFieldChanges || 0) + capped.length;
         const packed = Object.getOwnPropertyDescriptor(p, "a")?.value;
-        if (Array.isArray(packed) && packed.length > 4) { /* BRIO branch: incomingDelta — Accept Array.isArray(packed) && packed.length > 4. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ packet.packedExtension = packed.slice(4); fields.push("packedExtension");}
+        if (Array.isArray(packed) && packed.length > 4) {packet.packedExtension = packed.slice(4); fields.push("packedExtension");}
         return {packet, fields};
     };
     const /* BRIO: incomingProbe
      * Observe the original native decode result before remapping. Retain only target identities; terrain/loot IDs must not consume the 600 target-ID budget.
      */
-    incomingProbe = result => { /* BRIO block: incomingProbe — Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+    incomingProbe = result => {
         if (S.destroyed || performance.now() > deep.until) return;
         const packets = Array.isArray(result) ? result : [result];
-        for (const p of packets) { /* BRIO loop: incomingProbe — Iterate packets. Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+        for (const p of packets) {
             if (!p || typeof p !== "object" || deep.packets++ >= 80000) continue;
-            const desc = Object.getOwnPropertyDescriptors(p), own = /* BRIO expr: own — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ k => desc[k] && "value" in desc[k] ? desc[k].value : undefined;
+            const desc = Object.getOwnPropertyDescriptors(p), own = k => desc[k] && "value" in desc[k] ? desc[k].value : undefined;
             const type = own("t") ?? own("type"), packed = own("p"), update = own("a");
             const id = own("i") ?? own("id") ?? own("Ã") ?? (type === "x" ? packed?.[0] : type === "y" ? update?.[0] : undefined);
             let kind = own("b") ?? (type === "x" ? packed?.[1] : undefined);
             let subtype = own("t") != null ? own("type") : undefined;
-            const targetObject = /* BRIO expr: targetObject — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ subtype => ["airdrop","bubbles","ammocrate","grenadecrate","meteorite"].includes(subtype);
-            const targetKind = /* BRIO expr: targetKind — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ k => k === "player" || k === "chest" || k === "airdrop" || k === "object" && targetObject(subtype);
-            if (type === "x" && id != null && targetKind(kind) && (deep.identities.has(id) || deep.identities.size < 600)) { /* BRIO branch: incomingProbe — Accept type === "x" && id != null && targetKind(kind) && (deep.identities.has(id) || deep.identities.size < 600). Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */ deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
+            const targetObject = subtype => ["airdrop","bubbles","ammocrate","grenadecrate","meteorite"].includes(subtype);
+            const targetKind = k => k === "player" || k === "chest" || k === "airdrop" || k === "object" && targetObject(subtype);
+            if (type === "x" && id != null && targetKind(kind) && (deep.identities.has(id) || deep.identities.size < 600)) {deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
             kind ||= deep.identities.get(id); subtype ||= deep.subtypes.get(id);
-            if (type === "x" && id != null && (deep.identities.has(id) || deep.identities.size < 600) && deep.identities.get(id) !== kind && targetKind(kind)) { /* BRIO branch: incomingProbe — Accept type === "x" && id != null && (deep.identities.has(id) || deep.identities.size < 600) && deep.identities.get(i. Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */ deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
+            if (type === "x" && id != null && (deep.identities.has(id) || deep.identities.size < 600) && deep.identities.get(id) !== kind && targetKind(kind)) {deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
             const signature = String(type) + ":" + String(kind || "") + ":" + String(subtype || "") + ":" + Object.keys(desc).sort().join(",");
-            if (!deep.schemas.has(signature) && deep.schemas.size < 350) { /* BRIO branch: incomingProbe — Accept !deep.schemas.has(signature) && deep.schemas.size < 350. Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+            if (!deep.schemas.has(signature) && deep.schemas.size < 350) {
                 deep.schemas.add(signature); deepRecord("INCOMING SCHEMA FIRST", {type, kind, subtype, id, packet: p, scope: "native msgpack.decode return before native field remap; no mutation"});
             }
             if (type === "setID" && id != null) deep.localId = id;
-            if (type === "circle") { /* BRIO branch: incomingProbe — Accept type === "circle". Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+            if (type === "circle") {
                 const circleState = own("state");
-                if (circleState !== undefined && circleState !== deep.circleState) { /* BRIO branch: incomingProbe — Accept circleState !== undefined && circleState !== deep.circleState. Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+                if (circleState !== undefined && circleState !== deep.circleState) {
                     log("NATIVE SESSION STATE", {previous: deep.circleState, state: circleState, epoch: S.runEpoch, packet: probeSnapshot(p)});
                     if (["waiting", "moving"].includes(circleState)) botPhase("native circle state=" + circleState);
-                    if (circleState === "lobby" && deep.circleState && deep.circleState !== "lobby") { /* BRIO branch: incomingProbe — Accept circleState === "lobby" && deep.circleState && deep.circleState !== "lobby". Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+                    if (circleState === "lobby" && deep.circleState && deep.circleState !== "lobby") {
                         restoreMarkerHolds();
                         for (const key of ["nearestUi","chestUi","airdropUi"]) if (S[key]) S[key].style.display = "none";
                     }
@@ -3296,16 +3199,16 @@
                 }
             }
             if (kind === "player" && id === (deep.localId ?? S.renderer?.id) && Number.isFinite(own("glidingTicks")) && own("glidingTicks") >= 0 && own("maxGlidingTicks") > 0) botPhase("native incoming local gliding state");
-            if (type === "e") { /* BRIO branch: incomingProbe — Accept type === "e". Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+            if (type === "e") {
                 const env = own("envs") ?? own("È$");
-                if (env && typeof env === "object" && !deep.environmentSeen.has(env)) { /* BRIO branch: incomingProbe — Accept env && typeof env === "object" && !deep.environmentSeen.has(env). Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */ deep.environmentSeen.add(env); environmentProbe(env);}
+                if (env && typeof env === "object" && !deep.environmentSeen.has(env)) {deep.environmentSeen.add(env); environmentProbe(env);}
             }
             const relevant = kind === "player" || kind === "chest" || kind === "object" && targetObject(subtype) || kind === "airdrop";
-            if (relevant) { /* BRIO branch: incomingProbe — Accept relevant. Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
-                if (type === "y") { /* BRIO branch: incomingProbe — Accept type === "y". Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+            if (relevant) {
+                if (type === "y") {
                     const delta = incomingDelta(p, kind, id, type);
                     if (delta.fields?.length || delta.first) deepRecord("INCOMING TARGET PAYLOAD", {type, kind, subtype, id, ...delta, phase: S.botPhase, scope: "changed field values; bounded routine fields; novel/unknown container fields retained"});
-                } else { /* BRIO branch: incomingProbe — Alternative for type === "y". Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+                } else {
                     deepRecord("INCOMING TARGET PAYLOAD", {type, kind, subtype, id, packet: p, phase: S.botPhase});
                     if (type === "x") incomingDelta(p, kind, id, type);
                 }
@@ -3315,26 +3218,26 @@
     const /* BRIO: deepEngineProbe
      * Wrap only reached native registry callbacks, delegate once with original receiver/arguments/return, and retain exact restoration descriptors.
      */
-    deepEngineProbe = engine => { /* BRIO block: deepEngineProbe — Observe only reached native callbacks; missing/private registries remain explicit evidence gaps. */
+    deepEngineProbe = engine => {
         if (!engine || deep.engines.has(engine)) return;
         const handlers = Object.getOwnPropertyDescriptor(engine, "áÉâ")?.value;
         const registry = Object.getOwnPropertyDescriptor(engine, "ÁÂ")?.value;
         if (!handlers || typeof handlers.x !== "function" || !registry) return;
         deep.engines.add(engine);
-        for (const kind of ["player","chest","object"]) { /* BRIO loop: deepEngineProbe — Iterate ["player","chest","object"]. Observe only reached native callbacks; missing/private registries remain explicit evidence gaps. */
+        for (const kind of ["player","chest","object"]) {
             const callbacks = Object.getOwnPropertyDescriptor(registry, kind)?.value;
             if (!callbacks) continue;
-            for (const key of ["èæå","ëåä","remove"]) { /* BRIO loop: deepEngineProbe — Iterate ["èæå","ëåä","remove"]. Observe only reached native callbacks; missing/private registries remain explicit evidence gaps. */
+            for (const key of ["èæå","ëåä","remove"]) {
                 const d = Object.getOwnPropertyDescriptor(callbacks, key); if (!d || !d.configurable || typeof d.value !== "function") continue;
-                const original = d.value, wrapper = function(...args) { /* BRIO block: wrapper — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                    try { /* BRIO guarded: wrapper — Keep the existing exception boundary for wrapper. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ if (performance.now() <= deep.until) { /* BRIO branch: wrapper — Accept performance.now() <= deep.until. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                const original = d.value, wrapper = function(...args) {
+                    try {if (performance.now() <= deep.until) {
                         const delta = key === "ëåä" ? incomingDelta(args[1] || {}, kind, args[0]?.id, "y") : {packet: args[1], fields: ["create/remove"]};
                         if (delta.fields?.length) deepRecord("NATIVE CALLBACK PAYLOAD", {kind, callback: key, id: args[0]?.id, payload: delta.packet, stage: "before native callback"});
-                    }} catch (error) { /* BRIO fallback: wrapper — Handle failure in wrapper through its existing fallback/report path; optional native fields may be unavailable. */ deepError("native callback", error);}
+                    }} catch (error) {deepError("native callback", error);}
                     return Reflect.apply(original, this, args);
                 };
                 Object.defineProperty(callbacks, key, {...d, value: wrapper});
-                deep.engineRestores.push(() => { /* BRIO block: deepEngineProbe — deep.engineRestores.push callback. Observe only reached native callbacks; missing/private registries remain explicit evidence gaps. */ if (callbacks[key] === wrapper) Object.defineProperty(callbacks, key, d);});
+                deep.engineRestores.push(() => {if (callbacks[key] === wrapper) Object.defineProperty(callbacks, key, d);});
             }
         }
         log("NATIVE ENGINE PROBE", {captured: true, callbacks: deep.engineRestores.length});
@@ -3342,61 +3245,61 @@
     const /* BRIO: deepTick
      * Install the scoped decode observer, inspect target replicas, and attempt bounded reached-window registry discovery. Do not independently decode or send.
      */
-    deepTick = () => { /* BRIO block: deepTick — Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
-        if (S.destroyed || performance.now() > deep.until) { /* BRIO branch: deepTick — Accept S.destroyed || performance.now() > deep.until. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */ deepStop("time cap"); return;}
-        if (!deep.restore) { /* BRIO branch: deepTick — Accept !deep.restore. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
-            let codec; try { /* BRIO guarded: deepTick — Keep the existing exception boundary for deepTick. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */  codec = typeof msgpack !== "undefined" ? msgpack : Object.getOwnPropertyDescriptor(W, "msgpack")?.value; } catch (_) { /* BRIO fallback: deepTick — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+    deepTick = () => {
+        if (S.destroyed || performance.now() > deep.until) {deepStop("time cap"); return;}
+        if (!deep.restore) {
+            let codec; try { codec = typeof msgpack !== "undefined" ? msgpack : Object.getOwnPropertyDescriptor(W, "msgpack")?.value; } catch (_) {}
             const d = codec && Object.getOwnPropertyDescriptor(codec, "decode");
-            if (d && typeof d.value === "function" && (d.configurable || d.writable)) { /* BRIO branch: deepTick — Accept d && typeof d.value === "function" && (d.configurable || d.writable). Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
-                const original = d.value, wrapper = function(...args) { /* BRIO block: wrapper — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            if (d && typeof d.value === "function" && (d.configurable || d.writable)) {
+                const original = d.value, wrapper = function(...args) {
                     const result = Reflect.apply(original, this, args);
-                    try { /* BRIO guarded: wrapper — Keep the existing exception boundary for wrapper. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ incomingProbe(result);} catch (error) { /* BRIO fallback: wrapper — Handle failure in wrapper through its existing fallback/report path; optional native fields may be unavailable. */ deepError("incoming result", error);}
+                    try {incomingProbe(result);} catch (error) {deepError("incoming result", error);}
                     return result;
                 };
                 Object.defineProperty(codec, "decode", {...d, value: wrapper});
                 deep.installedEver = true;
-                deep.restore = () => { /* BRIO block: deep.restore — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ if (codec.decode === wrapper) Object.defineProperty(codec, "decode", d);};
+                deep.restore = () => {if (codec.decode === wrapper) Object.defineProperty(codec, "decode", d);};
                 log("INCOMING DECODE PROBE", {installed: true, method: "native result observer", outgoingUntouched: true, returnedIdentityPreserved: true});
             }
         }
         const live = new Set;
         const localPosition = worldPos(S.renderer);
-        for (const o of [...collectPlayers(), ...collectWorld()]) { /* BRIO loop: deepTick — Iterate [...collectPlayers(), ...collectWorld()]. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
+        for (const o of [...collectPlayers(), ...collectWorld()]) {
             const kind = isPlayer(o) ? "player" : reconKind(o); if (!kind) continue;
-            if (o.id != null && deep.identities.size < 600) { /* BRIO branch: deepTick — Accept o.id != null && deep.identities.size < 600. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */ deep.identities.set(o.id, kind === "player" ? "player" : o.type); if (o["Àâ"]) deep.subtypes.set(o.id, o["Àâ"]);}
+            if (o.id != null && deep.identities.size < 600) {deep.identities.set(o.id, kind === "player" ? "player" : o.type); if (o["Àâ"]) deep.subtypes.set(o.id, o["Àâ"]);}
             const key = kind + ":" + o.id; live.add(key);
             let rec = deep.replicas.get(key); if (!rec && deep.replicas.size >= 200) continue;
             const snapshot = probeSnapshot(o), signature = JSON.stringify(snapshot.data);
-            if (!rec) { /* BRIO branch: deepTick — Accept !rec. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
+            if (!rec) {
                 rec = {last: signature, absent: false, updates: 0, firstAt: performance.now()}; deep.replicas.set(key, rec);
                 const proto = []; let p = Object.getPrototypeOf(o);
-                for (let depth = 0; p && depth < 3; depth++, p = Object.getPrototypeOf(p)) proto.push(Reflect.ownKeys(p).map(k => { /* BRIO block: deepTick — Reflect.ownKeys(p).map callback. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */ const d = Object.getOwnPropertyDescriptor(p, k); return {key: String(k), meaning: schemaFields.get(k) || null, accessor: !!(d.get || d.set), type: typeof d.value, value: d.value == null || ["number","string","boolean"].includes(typeof d.value) ? d.value : "[NONSCALAR]"};}));
+                for (let depth = 0; p && depth < 3; depth++, p = Object.getPrototypeOf(p)) proto.push(Reflect.ownKeys(p).map(k => {const d = Object.getOwnPropertyDescriptor(p, k); return {key: String(k), meaning: schemaFields.get(k) || null, accessor: !!(d.get || d.set), type: typeof d.value, value: d.value == null || ["number","string","boolean"].includes(typeof d.value) ? d.value : "[NONSCALAR]"};}));
                 deepRecord("DEEP TARGET INITIAL", {kind, id: o.id, knownHuman: isLocal(o) ? "current local user" : null, snapshot, prototypeDescriptors: proto});
-            } else if (rec.last !== signature && rec.updates++ < 5) { /* BRIO branch: deepTick — Accept rec.last !== signature && rec.updates++ < 5. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
+            } else if (rec.last !== signature && rec.updates++ < 5) {
                 rec.last = signature; deepRecord("DEEP TARGET CHANGE", {kind, id: o.id, ageMs: Math.round(performance.now() - rec.firstAt), snapshot});
             }
-            if (kind !== "player" && !rec.near && localPosition) { /* BRIO branch: deepTick — Accept kind !== "player" && !rec.near && localPosition. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
+            if (kind !== "player" && !rec.near && localPosition) {
                 const position = worldPos(o), distance = position ? Math.hypot(position.x - localPosition.x, position.y - localPosition.y) : Infinity;
-                if (distance < 300) { /* BRIO branch: deepTick — Accept distance < 300. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */ rec.near = true; deepRecord("DEEP CONTAINER NEARBY", {kind, id: o.id, distance, snapshot, semantics: "passive near-object sample; opening state is not inferred"});}
+                if (distance < 300) {rec.near = true; deepRecord("DEEP CONTAINER NEARBY", {kind, id: o.id, distance, snapshot, semantics: "passive near-object sample; opening state is not inferred"});}
             }
             rec.absent = false;
         }
-        for (const [key, rec] of deep.replicas) if (!live.has(key) && !rec.absent) { /* BRIO branch: deepTick — Accept !live.has(key) && !rec.absent. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */ rec.absent = true; deepRecord("DEEP TARGET DISAPPEARED", {key, semantics: "culling/removal only; neither opened nor empty established"});}
+        for (const [key, rec] of deep.replicas) if (!live.has(key) && !rec.absent) {rec.absent = true; deepRecord("DEEP TARGET DISAPPEARED", {key, semantics: "culling/removal only; neither opened nor empty established"});}
         // One bounded own-data-only global scan per match; never invoke native getters.
-        if (!deep.windowScanned) { /* BRIO branch: deepTick — Accept !deep.windowScanned. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
+        if (!deep.windowScanned) {
             deep.windowScanned = true;
-            for (const key of Object.getOwnPropertyNames(W).slice(0, 1800)) try { /* BRIO guarded: deepTick — Keep the existing exception boundary for deepTick. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
+            for (const key of Object.getOwnPropertyNames(W).slice(0, 1800)) try {
                 const v = Object.getOwnPropertyDescriptor(W, key)?.value;
                 if (!v || typeof v !== "object" || v instanceof Node || v === S || v === W) continue;
                 deepEngineProbe(v);
                 for (const d of Object.values(Object.getOwnPropertyDescriptors(v)).slice(0, 60)) if (d.value && typeof d.value === "object") deepEngineProbe(d.value);
-            } catch (error) { /* BRIO fallback: deepTick — Handle failure in deepTick through its existing fallback/report path; optional native fields may be unavailable. */ deepError("window registry discovery", error);}
+            } catch (error) {deepError("window registry discovery", error);}
         }
     };
     const /* BRIO: deepReport
      * Report the probe's own epoch, not an already-incremented next Play. Include missing hooks, lanes, suppression and stage-specific errors.
      */
-    deepReport = /* BRIO expr: deepReport — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ () => log("V50 PROBE COVERAGE", {
+    deepReport = () => log("V49 PROBE COVERAGE", {
         incomingInstalled: !!deep.restore, incomingObservedThisRun: !!deep.installedEver, incomingPackets: deep.packets, incomingSchemas: deep.schemas.size, nativeEngineCaptured: deep.engineRestores.length > 0,
         targetedEntities: deep.replicas.size, records: deep.records, approximateBytes: deep.bytes, truncations: deep.truncations, errors: deep.errors, errorStages: deep.errorStages,
         lanes: deep.lanes, laneCaps: DEEP_LANES, suppressed: deep.suppressed, incomingTargetIds: deep.identities.size, circleState: deep.circleState, epoch: deep.epoch,
@@ -3407,34 +3310,34 @@
     const /* BRIO: deepStop
      * Restore decoder/callback observers and stop timers on time cap, next Play or destroy.
      */
-    deepStop = reason => { /* BRIO block: deepStop — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    deepStop = reason => {
         clearInterval(deep.timer); deep.timer = 0;
-        if (deep.restore) { /* BRIO branch: deepStop — Accept deep.restore. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ deep.restore(); deep.restore = null;}
+        if (deep.restore) {deep.restore(); deep.restore = null;}
         while (deep.engineRestores.length) deep.engineRestores.pop()();
         if (reason) log("DEEP PROBES RESTORED", {reason});
     };
     const /* BRIO: deepStart
      * Reset all per-match evidence maps/counters under the new epoch. Cached raw source identity remains reusable.
      */
-    deepStart = () => { /* BRIO block: deepStart — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    deepStart = () => {
         deepStop(); deep.until = performance.now() + 900000; deep.packets = deep.records = deep.bytes = deep.truncations = deep.errors = 0;
         deep.epoch = S.runEpoch; deep.errorStages = {}; deep.installedEver = false; deep.lanes = {}; deep.suppressed = {}; deep.incomingState.clear(); deep.environmentSeen = new WeakSet; deep.localId = null; deep.circleState = null; deep.schemas.clear(); deep.identities.clear(); deep.subtypes.clear(); deep.replicas.clear(); deep.windowScanned = false; deep.engines = new WeakSet;
-        log("V50 DEEP PROBE PLAN", {readOnly: true, source: "complete raw bundle + AST", targets: "all observed container kinds and players; environment target chunks", laneCaps: DEEP_LANES, updatePolicy: "changed fields only; reserve container/late-target capacity", noManualArm: true, noClassifier: true});
-        const tick = () => { /* BRIO block: tick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  try { /* BRIO guarded: tick — Keep the existing exception boundary for tick. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  deepTick(); } catch (e) { /* BRIO fallback: tick — Handle failure in tick through its existing fallback/report path; optional native fields may be unavailable. */  deepError("target tick", e); } };
+        log("V49 DEEP PROBE PLAN", {readOnly: true, source: "complete raw bundle + AST", targets: "all observed container kinds and players; environment target chunks", laneCaps: DEEP_LANES, updatePolicy: "changed fields only; reserve container/late-target capacity", noManualArm: true, noClassifier: true});
+        const tick = () => { try { deepTick(); } catch (e) { deepError("target tick", e); } };
         tick(); deep.timer = setInterval(tick, 1000);
     };
     // Interpret only scalar AST arithmetic/aliases/branches; never call or execute source code.
     const /* BRIO: numericSourceConstants
      * Interpret only scalar AST literals/arithmetic/aliases/branches. No calls, eval, source execution or unknown-expression guessing.
      */
-    numericSourceConstants = (ast, cutoff) => { /* BRIO block: numericSourceConstants — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    numericSourceConstants = (ast, cutoff) => {
         const values = new Map;
-        const readNumber = node => { /* BRIO block: readNumber — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+        const readNumber = node => {
             if (!node) return undefined;
             if (node.type === "Literal" && ["number","boolean"].includes(typeof node.value)) return node.value;
             if (node.type === "Identifier") return values.get(node.name);
-            if (node.type === "UnaryExpression") { /* BRIO branch: readNumber — Accept node.type === "UnaryExpression". Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ const v = readNumber(node.argument); if (v === undefined) return; if (node.operator === "-") return -v; if (node.operator === "+") return +v; if (node.operator === "!") return !v; if (node.operator === "~") return ~v;}
-            if (node.type === "BinaryExpression") { /* BRIO branch: readNumber — Accept node.type === "BinaryExpression". Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
+            if (node.type === "UnaryExpression") {const v = readNumber(node.argument); if (v === undefined) return; if (node.operator === "-") return -v; if (node.operator === "+") return +v; if (node.operator === "!") return !v; if (node.operator === "~") return ~v;}
+            if (node.type === "BinaryExpression") {
                 const a = readNumber(node.left), b = readNumber(node.right); if (a === undefined || b === undefined) return;
                 switch (node.operator) {
                     case "+": return a+b; case "-": return a-b; case "*": return a*b; case "/": return a/b; case "%": return a%b;
@@ -3445,38 +3348,38 @@
             }
             return undefined;
         };
-        const invalidate = node => { /* BRIO block: invalidate — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */
+        const invalidate = node => {
             if (!node || typeof node !== "object") return;
             if (node.type === "AssignmentExpression" && node.left?.type === "Identifier") values.delete(node.left.name);
             if (node.type === "UpdateExpression" && node.argument?.type === "Identifier") values.delete(node.argument.name);
             for (const v of Object.values(node)) if (Array.isArray(v)) v.forEach(invalidate); else if (v && typeof v === "object") invalidate(v);
         };
-        const execute = node => { /* BRIO block: execute — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        const execute = node => {
             if (!node || node.start >= cutoff) return;
-            if (node.type === "VariableDeclaration") for (const d of node.declarations) { /* BRIO loop: execute — Iterate node.declarations. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ if (d.id.type !== "Identifier") continue; const v = readNumber(d.init); if (v !== undefined) values.set(d.id.name,v); else values.delete(d.id.name);}
+            if (node.type === "VariableDeclaration") for (const d of node.declarations) {if (d.id.type !== "Identifier") continue; const v = readNumber(d.init); if (v !== undefined) values.set(d.id.name,v); else values.delete(d.id.name);}
             else if (node.type === "ExpressionStatement") execute(node.expression);
-            else if (node.type === "AssignmentExpression" && node.left.type === "Identifier") { /* BRIO branch: execute — Accept node.type === "AssignmentExpression" && node.left.type === "Identifier". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const v = node.operator === "=" ? readNumber(node.right) : undefined; if (v !== undefined) values.set(node.left.name,v); else values.delete(node.left.name);}
-            else if (node.type === "IfStatement") { /* BRIO branch: execute — Accept node.type === "IfStatement". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const test = readNumber(node.test); if (test !== undefined) execute(test ? node.consequent : node.alternate); else { /* BRIO branch: execute — Alternative for test !== undefined. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ invalidate(node.consequent); invalidate(node.alternate);}}
+            else if (node.type === "AssignmentExpression" && node.left.type === "Identifier") {const v = node.operator === "=" ? readNumber(node.right) : undefined; if (v !== undefined) values.set(node.left.name,v); else values.delete(node.left.name);}
+            else if (node.type === "IfStatement") {const test = readNumber(node.test); if (test !== undefined) execute(test ? node.consequent : node.alternate); else {invalidate(node.consequent); invalidate(node.alternate);}}
             else if (node.type === "BlockStatement") node.body.forEach(execute);
             else if (node.type === "SequenceExpression") node.expressions.forEach(execute);
             else if (!["FunctionDeclaration","EmptyStatement"].includes(node.type)) invalidate(node);
         };
-        const fn = ast.body.find(/* BRIO expr: numericSourceConstants / ast.body.find callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ n => n.type === "ExpressionStatement" && n.expression?.type === "CallExpression" && n.expression.callee?.type === "FunctionExpression")?.expression.callee;
+        const fn = ast.body.find(n => n.type === "ExpressionStatement" && n.expression?.type === "CallExpression" && n.expression.callee?.type === "FunctionExpression")?.expression.callee;
         (fn?.body.body || ast.body).forEach(execute);
         return values;
     };
     const /* BRIO: completeSourceAudit
      * Export reconstructable raw chunks and parse the native source as data. Source capture has its own 2M-character cap and SHA identity.
      */
-    completeSourceAudit = async (raw, url) => { /* BRIO block: completeSourceAudit — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */
+    completeSourceAudit = async (raw, url) => {
         const size = 9000, count = Math.ceil(raw.length / size);
-        if (raw.length > 2e6) { /* BRIO branch: completeSourceAudit — Accept raw.length > 2e6. Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ deep.source = {url, characters: raw.length, captured: false, reason: "2M source cap"}; deepReport(); return;}
+        if (raw.length > 2e6) {deep.source = {url, characters: raw.length, captured: false, reason: "2M source cap"}; deepReport(); return;}
         // JSON lines reconstruct exact raw source; no escape decoding or evaluation.
         for (let i = 0; i < count; i++) log("FULL NATIVE SOURCE CHUNK", {url, index: i, count, text: raw.slice(i * size, (i + 1) * size)});
-        let hash = null; try { /* BRIO guarded: completeSourceAudit — Keep the existing exception boundary for completeSourceAudit. Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ hash = Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(raw))), /* BRIO expr: completeSourceAudit / Array.from callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ b => b.toString(16).padStart(2, "0")).join("");} catch (_) { /* BRIO fallback: completeSourceAudit — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
-        try { /* BRIO guarded: completeSourceAudit — Keep the existing exception boundary for completeSourceAudit. Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */
+        let hash = null; try {hash = Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(raw))), b => b.toString(16).padStart(2, "0")).join("");} catch (_) {}
+        try {
             const ast = parseNative(raw, {ecmaVersion: "latest", sourceType: "script", allowReturnOutsideFunction: true}), strings = [], members = new Map, assets = new Map, remappers = [], numericObjects = [], constants = new Map, objectNames = new WeakMap, dictionaries = new Map, registrations = [];
-            const walk = node => { /* BRIO block: walk — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            const walk = node => {
                 if (!node || typeof node !== "object") return;
 
                 // V49 supplied scheme.js is only a deployment flag. Audit the actual INTERNAL decoder-key remapper.
@@ -3486,35 +3389,35 @@
                 if (node.type === "ObjectExpression") numericObjects.push(node);
                 if (node.type === "CallExpression" && node.callee?.type === "MemberExpression" && (node.callee.property?.name || node.callee.property?.value) === "ÃEÅ" && ["player","chest","object","gun","ammo","spellfield","airdrop"].includes(node.arguments[0]?.value)) registrations.push(node);
                 if (node.type === "Literal" && typeof node.value === "string") strings.push({value: node.value, at: node.start});
-                if (node.type === "MemberExpression") { /* BRIO branch: walk — Accept node.type === "MemberExpression". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const key = node.computed ? node.property?.value : node.property?.name; if (typeof key === "string") { /* BRIO branch: walk — Accept typeof key === "string". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const a = members.get(key) || []; a.push(node.start); members.set(key, a);}}
-                if (node.type === "Property" && typeof node.value?.value === "string" && /^(?:\.?\/)?buildart\//.test(node.value.value)) { /* BRIO branch: walk — Accept node.type === "Property" && typeof node.value?.value === "string" && /^(?:\.?\/)?buildart\//.test(node.value.v. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const key = node.key.name || node.key.value; if (typeof key === "string") { /* BRIO branch: walk — Accept typeof key === "string". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  assets.set(key, norm(node.value.value)); assets.set(key.toLowerCase(), norm(node.value.value)); }}
-                if (node.type === "AssignmentExpression" && node.left?.type === "MemberExpression" && typeof node.right?.value === "string") { /* BRIO branch: walk — Accept node.type === "AssignmentExpression" && node.left?.type === "MemberExpression" && typeof node.right?.value ===. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const key = node.left.computed ? node.left.property?.value : node.left.property?.name; if (typeof key === "string" && node.right.value.length < 100 && node.left.object?.type === "Identifier") { /* BRIO branch: walk — Accept typeof key === "string" && node.right.value.length < 100 && node.left.object?.type === "Identifier". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const owner = node.left.object.name, map = dictionaries.get(owner) || new Map; map.set(key, node.right.value); dictionaries.set(owner, map);}}
-                for (const [key, v] of Object.entries(node)) if (!['start','end','loc'].includes(key)) { /* BRIO branch: walk — Accept !['start','end','loc'].includes(key). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  if (Array.isArray(v)) { /* BRIO branch: walk — Accept Array.isArray(v). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  for (const x of v) if (x?.type) walk(x); } else if (v?.type) walk(v); }
+                if (node.type === "MemberExpression") {const key = node.computed ? node.property?.value : node.property?.name; if (typeof key === "string") {const a = members.get(key) || []; a.push(node.start); members.set(key, a);}}
+                if (node.type === "Property" && typeof node.value?.value === "string" && /^(?:\.?\/)?buildart\//.test(node.value.value)) {const key = node.key.name || node.key.value; if (typeof key === "string") { assets.set(key, norm(node.value.value)); assets.set(key.toLowerCase(), norm(node.value.value)); }}
+                if (node.type === "AssignmentExpression" && node.left?.type === "MemberExpression" && typeof node.right?.value === "string") {const key = node.left.computed ? node.left.property?.value : node.left.property?.name; if (typeof key === "string" && node.right.value.length < 100 && node.left.object?.type === "Identifier") {const owner = node.left.object.name, map = dictionaries.get(owner) || new Map; map.set(key, node.right.value); dictionaries.set(owner, map);}}
+                for (const [key, v] of Object.entries(node)) if (!['start','end','loc'].includes(key)) { if (Array.isArray(v)) { for (const x of v) if (x?.type) walk(x); } else if (v?.type) walk(v); }
             };
             walk(ast);
             for (const fn of remappers.slice(0,2)) log("SOURCE PACKET REMAPPER", {start:fn.start,end:fn.end,source:raw.slice(fn.start,Math.min(fn.end,fn.start+1800)),note:"V49 source evidence: internal recursive key rename. Unknown fields are retained, not a contents generator; no server-absence conclusion."});
             if (assets.size) S.hudAssetPaths = assets;
-            for (const [owner, map] of dictionaries) if ([...map.values()].includes("isPreview") || [...map.values()].includes("weaponSlots")) { /* BRIO branch: completeSourceAudit — Accept [...map.values()].includes("isPreview") || [...map.values()].includes("weaponSlots"). Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ for (const [k,v] of map) schemaFields.set(k,v); log("DEEP FIELD DICTIONARY", {owner, entries: [...map]});}
-            for (const call of registrations) { /* BRIO loop: completeSourceAudit — Iterate registrations. Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */
+            for (const [owner, map] of dictionaries) if ([...map.values()].includes("isPreview") || [...map.values()].includes("weaponSlots")) {for (const [k,v] of map) schemaFields.set(k,v); log("DEEP FIELD DICTIONARY", {owner, entries: [...map]});}
+            for (const call of registrations) {
                 const kind = call.arguments[0].value;
-                for (let i = 1; i < call.arguments.length && i < 5; i++) { /* BRIO loop: completeSourceAudit — Iterate i < call.arguments.length && i < 5. Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */
+                for (let i = 1; i < call.arguments.length && i < 5; i++) {
                     const fn = call.arguments[i]; if (!fn || !["FunctionExpression","ArrowFunctionExpression"].includes(fn.type)) continue;
                     const text = raw.slice(fn.start, fn.end), count = Math.ceil(text.length / 9000);
-                    log("DEEP CALLBACK STRUCTURE", {kind, phase: ["create","frame","update","remove"][i-1], start: fn.start, end: fn.end, parameters: fn.params.map(/* BRIO expr: completeSourceAudit / fn.params.map callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x=>x.name || x.type), chunks: count});
+                    log("DEEP CALLBACK STRUCTURE", {kind, phase: ["create","frame","update","remove"][i-1], start: fn.start, end: fn.end, parameters: fn.params.map(x=>x.name || x.type), chunks: count});
                     for (let chunk = 0; chunk < count; chunk++) log("SOURCE CALLBACK CHUNK", {kind, phase: ["create","frame","update","remove"][i-1], index: chunk, count, text: text.slice(chunk*9000,(chunk+1)*9000)});
                 }
             }
-            for (const object of numericObjects) { /* BRIO loop: completeSourceAudit — Iterate numericObjects. Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */
+            for (const object of numericObjects) {
                 if (objectNames.get(object) !== "äèä") continue;
                 const resolved = numericSourceConstants(ast, object.start);
-                const pairs = object.properties.filter(/* BRIO expr: completeSourceAudit / object.properties.filter callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x => GUN_TYPES.has(String(x.key?.value || x.key?.name || "").toLowerCase())).map(/* BRIO expr: completeSourceAudit / object.properties.filter(x => GUN_TYPES.has(String(x.key?.value || x.key?.name || "").toLowerCase())).map callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x => [String(x.key.value || x.key.name).toLowerCase(), typeof x.value?.value === "number" ? x.value.value : resolved.get(x.value?.name)]).filter(/* BRIO expr: completeSourceAudit / object.properties.filter(x => GUN_TYPES.has(String(x.key?.value || x.key?.name || "").toLowerCase())).map(x => callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x => Number.isInteger(x[1]) && x[1] >= 0 && x[1] < 5);
-                if (pairs.length > (S.ammoTypeMap?.size || 3)) { /* BRIO branch: completeSourceAudit — Accept pairs.length > (S.ammoTypeMap?.size || 3). Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ S.ammoTypeMap = new Map(pairs); log("NATIVE AMMO TYPE MAP", {at: object.start, entries: pairs, note: "AST scalar arithmetic/alias/branch resolution; live slot emblem takes precedence; unknowns remain unknown"});}
+                const pairs = object.properties.filter(x => GUN_TYPES.has(String(x.key?.value || x.key?.name || "").toLowerCase())).map(x => [String(x.key.value || x.key.name).toLowerCase(), typeof x.value?.value === "number" ? x.value.value : resolved.get(x.value?.name)]).filter(x => Number.isInteger(x[1]) && x[1] >= 0 && x[1] < 5);
+                if (pairs.length > (S.ammoTypeMap?.size || 3)) {S.ammoTypeMap = new Map(pairs); log("NATIVE AMMO TYPE MAP", {at: object.start, entries: pairs, note: "AST scalar arithmetic/alias/branch resolution; live slot emblem takes precedence; unknowns remain unknown"});}
             }
-            const meanings = [...schemaFields].filter(/* BRIO expr: completeSourceAudit / [...schemaFields].filter callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ ([k,v]) => /droid|wander|bot|npc|ai|chest|content|loot|seed|fish|drop|object|ammo|weapon/i.test(v));
-            for (const [key, meaning] of meanings) log("DEEP SEMANTIC REFERENCES", {field: key, meaning, total: members.get(key)?.length || 0, references: (members.get(key) || []).slice(0, 120).map(/* BRIO expr: completeSourceAudit / (members.get(key) || []).slice(0, 120).map callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ at => ({at, excerpt: raw.slice(Math.max(0, at - 180), at + 450)})), capped: (members.get(key)?.length || 0) > 120});
-            log("DEEP SOURCE STRUCTURE", {strings: strings.length, properties: members.size, assets: assets.size, schemaFields: schemaFields.size, semanticStrings: strings.filter(/* BRIO expr: completeSourceAudit / strings.filter callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x => /^(?:bot|isbot|isai|npc|droid|wander|seed|loot|contents|chest|airdrop|bubbles|ammocrate|grenadecrate|x|y|z|setID)$/i.test(x.value)), evaluation: false});
+            const meanings = [...schemaFields].filter(([k,v]) => /droid|wander|bot|npc|ai|chest|content|loot|seed|fish|drop|object|ammo|weapon/i.test(v));
+            for (const [key, meaning] of meanings) log("DEEP SEMANTIC REFERENCES", {field: key, meaning, total: members.get(key)?.length || 0, references: (members.get(key) || []).slice(0, 120).map(at => ({at, excerpt: raw.slice(Math.max(0, at - 180), at + 450)})), capped: (members.get(key)?.length || 0) > 120});
+            log("DEEP SOURCE STRUCTURE", {strings: strings.length, properties: members.size, assets: assets.size, schemaFields: schemaFields.size, semanticStrings: strings.filter(x => /^(?:bot|isbot|isai|npc|droid|wander|seed|loot|contents|chest|airdrop|bubbles|ammocrate|grenadecrate|x|y|z|setID)$/i.test(x.value)), evaluation: false});
             deep.source = {url, characters: raw.length, chunks: count, sha256: hash, captured: true, astParsed: true};
-        } catch (e) { /* BRIO fallback: completeSourceAudit — Handle failure in completeSourceAudit through its existing fallback/report path; optional native fields may be unavailable. */ deep.source = {url, characters: raw.length, chunks: count, sha256: hash, captured: true, astParsed: false, parseError: String(e)};}
+        } catch (e) {deep.source = {url, characters: raw.length, chunks: count, sha256: hash, captured: true, astParsed: false, parseError: String(e)};}
         deepReport();
     };
 
@@ -3522,9 +3425,9 @@
     const /* BRIO: sourceSchemaAudit
      * Map obfuscated native fields to source meanings without treating dictionary presence as a classifier/content list.
      */
-    sourceSchemaAudit = src => { /* BRIO block: sourceSchemaAudit — Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+    sourceSchemaAudit = src => {
         const anchor = src.indexOf('="isPreview"'), start = Math.max(0, anchor - 1600), end = anchor < 0 ? 0 : Math.min(src.length, anchor + 18e3), region = src.slice(start, end), pairs = [];
-        for (const m of region.matchAll(/([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)\s*=\s*["']([^"'\n]{1,70})["']/g)) { /* BRIO loop: sourceSchemaAudit — Iterate region.matchAll(/([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)\s*=\s*["']([^"'\n]{1,7. Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+        for (const m of region.matchAll(/([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)\s*=\s*["']([^"'\n]{1,70})["']/g)) {
             if (pairs.length >= 240) break;
             schemaFields.set(m[2], m[3]);
             pairs.push({
@@ -3538,38 +3441,38 @@
             start: start,
             end: end,
             pairs: pairs,
-            botCandidates: pairs.filter(/* BRIO expr: sourceSchemaAudit / pairs.filter callback — Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */ x => /bot|npc|(?:^|_)ai(?:$|_)|computerplayer/i.test(x.meaning)),
-            contentsCandidates: pairs.filter(/* BRIO expr: sourceSchemaAudit / pairs.filter callback — Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */ x => /contents|loot|seed|chest|drop|fish|weaponSlots|rarity|resources|object/i.test(x.meaning)),
+            botCandidates: pairs.filter(x => /bot|npc|(?:^|_)ai(?:$|_)|computerplayer/i.test(x.meaning)),
+            contentsCandidates: pairs.filter(x => /contents|loot|seed|chest|drop|fish|weaponSlots|rarity|resources|object/i.test(x.meaning)),
             note: "Dictionary assignments only, not cosmetic names. isPreview is not a bot discriminator. No-hit does not establish server absence."
         });
-        for (const kind of [ "player", "chest", "object" ]) { /* BRIO loop: sourceSchemaAudit — Iterate [ "player", "chest", "object" ]. Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+        for (const kind of [ "player", "chest", "object" ]) {
             const token = '.ÃEÅ("' + kind + '"', at = src.indexOf(token);
             if (at < 0) continue;
             let pos = at + token.length, callbacks = 0;
-            while (callbacks < 4) { /* BRIO loop: sourceSchemaAudit — Iterate callbacks < 4. Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+            while (callbacks < 4) {
                 const f = src.indexOf("function(", pos);
                 if (f < 0 || f - pos > 500) break;
                 const open = src.indexOf("{", f);
                 let depth = 0, quote = "", escape = false, close = -1;
-                for (let i = open; i < Math.min(src.length, open + 12e4); i++) { /* BRIO loop: sourceSchemaAudit — Iterate i < Math.min(src.length, open + 12e4). Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+                for (let i = open; i < Math.min(src.length, open + 12e4); i++) {
                     const c = src[i];
-                    if (quote) { /* BRIO branch: sourceSchemaAudit — Accept quote. Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+                    if (quote) {
                         if (escape) escape = false; else if (c === "\\") escape = true; else if (c === quote) quote = "";
                         continue;
                     }
-                    if (c === '"' || c === "'" || c === "`") { /* BRIO branch: sourceSchemaAudit — Accept c === '"' || c === "'" || c === "`". Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+                    if (c === '"' || c === "'" || c === "`") {
                         quote = c;
                         continue;
                     }
                     if (c === "{") depth++;
-                    if (c === "}" && ! --depth) { /* BRIO branch: sourceSchemaAudit — Accept c === "}" && ! --depth. Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+                    if (c === "}" && ! --depth) {
                         close = i + 1;
                         break;
                     }
                 }
                 if (close < 0) break;
                 const body = src.slice(f, close), phase = [ "create", "frame", "update", "remove" ][callbacks++], mappings = [];
-                for (const m of body.matchAll(/([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)\s*=\s*([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)/g)) { /* BRIO loop: sourceSchemaAudit — Iterate body.matchAll(/([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)\s*=\s*([A-Za-z_$À-ÿ][\w$. Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+                for (const m of body.matchAll(/([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)\s*=\s*([A-Za-z_$À-ÿ][\w$À-ÿ]*)\.([A-Za-z_$À-ÿ][\w$À-ÿ]*)/g)) {
                     if (mappings.length >= 180) break;
                     mappings.push({
                         target: m[2],
@@ -3593,9 +3496,9 @@
                 pos = close;
             }
         }
-        for (const term of [ "inv0", "inv1", "ammo0", "wood.png", "isPreview", "lootSeed", "contents", "botNames", "isBot", "createWaypoint" ]) { /* BRIO loop: sourceSchemaAudit — Iterate [ "inv0", "inv1", "ammo0", "wood.png", "isPreview", "lootSeed", "contents", "botNames", "i. Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+        for (const term of [ "inv0", "inv1", "ammo0", "wood.png", "isPreview", "lootSeed", "contents", "botNames", "isBot", "createWaypoint" ]) {
             let at = src.indexOf(term, term === "isPreview" ? 0 : 18e4), n = 0;
-            while (at >= 0 && n++ < 3) { /* BRIO loop: sourceSchemaAudit — Iterate at >= 0 && n++ < 3. Record source dictionary/callback meanings read-only; isPreview is not a bot classifier. */
+            while (at >= 0 && n++ < 3) {
                 log("TARGETED NATIVE REFERENCE", {
                     term: term,
                     at: at,
@@ -3609,26 +3512,26 @@
     const /* BRIO: replicaStateAudit
      * Bound reached object/prototype inspection; source/live fields are evidence, not exact appearance or server completeness proof.
      */
-    replicaStateAudit = o => { /* BRIO block: replicaStateAudit — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    replicaStateAudit = o => {
         if (!o || replicaAuditSeen.has(o) || S.replicaAuditCount >= 80) return;
         const kind = isPlayer(o) ? "player" : reconKind(o);
         if (!kind) return;
         replicaAuditSeen.add(o);
         S.replicaAuditCount = (S.replicaAuditCount || 0) + 1;
         const entries = [], seen = new Set;
-        function walk(v, path, depth) { /* BRIO block: walk — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        function walk(v, path, depth) {
             if (!v || typeof v !== "object" || seen.has(v) || depth > 2 || seen.size >= 60 || v instanceof Node || ArrayBuffer.isView(v)) return;
             seen.add(v);
-            for (const key of Object.getOwnPropertyNames(v).slice(0, 160)) { /* BRIO loop: walk — Iterate Object.getOwnPropertyNames(v).slice(0, 160). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            for (const key of Object.getOwnPropertyNames(v).slice(0, 160)) {
                 if ([ "parent", "ÁÄ", "â", "Eâ", "head", "Ëå", "ÄA", "canvas" ].includes(key)) continue;
                 let x;
-                try { /* BRIO guarded: walk — Keep the existing exception boundary for walk. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                try {
                     x = v[key];
-                } catch (_) { /* BRIO fallback: walk — Handle failure in walk through its existing fallback/report path; optional native fields may be unavailable. */
+                } catch (_) {
                     continue;
                 }
                 const label = schemaFields.get(key) || key;
-                if (x == null || [ "number", "boolean", "string" ].includes(typeof x)) { /* BRIO branch: walk — Accept x == null || [ "number", "boolean", "string" ].includes(typeof x). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                if (x == null || [ "number", "boolean", "string" ].includes(typeof x)) {
                     if (typeof x !== "string" || x.length <= 150) entries.push({
                         path: path + key,
                         meaning: label,
@@ -3648,11 +3551,11 @@
             note: "Read-only settled native/replica fields. No classifier; no opened/NONE inference."
         });
     };
-    const registrationAudit = src => { /* BRIO block: registrationAudit — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-        for (const kind of [ "player", "chest", "object", "spellfield" ]) { /* BRIO loop: registrationAudit — Iterate [ "player", "chest", "object", "spellfield" ]. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    const registrationAudit = src => {
+        for (const kind of [ "player", "chest", "object", "spellfield" ]) {
             const token = '.ÃEÅ("' + kind + '"', start = src.indexOf(token);
             if (start < 0) continue;
-            const next = src.indexOf(".ÃEÅ(", start + token.length), end = Math.min(next < 0 ? src.length : next, start + 1e5), text = src.slice(start, end), fields = [ ...text.matchAll(/([\w$À-ÿ]+)\.([\w$À-ÿ]+)\s*=\s*([\w$À-ÿ]+)\.([\w$À-ÿ]+)/g) ].slice(0, 160).map(/* BRIO expr: registrationAudit / [ ...text.matchAll(/([\w$À-ÿ]+)\.([\w$À-ÿ]+)\s*=\s*([\w$À-ÿ]+)\.([\w$À-ÿ]+)/g) ].slice(0, 160).map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ m => ({
+            const next = src.indexOf(".ÃEÅ(", start + token.length), end = Math.min(next < 0 ? src.length : next, start + 1e5), text = src.slice(start, end), fields = [ ...text.matchAll(/([\w$À-ÿ]+)\.([\w$À-ÿ]+)\s*=\s*([\w$À-ÿ]+)\.([\w$À-ÿ]+)/g) ].slice(0, 160).map(m => ({
                 target: m[1] + "." + m[2],
                 source: m[3] + "." + m[4],
                 at: start + m.index
@@ -3665,9 +3568,9 @@
                 fieldMappings: fields,
                 note: "Source candidates only; constructor/update fields need runtime attribution. No contents or bot inference."
             });
-            for (const word of [ "AÀ", "E_", "loot", "contents", "random", "isBot", "npc" ]) { /* BRIO loop: registrationAudit — Iterate [ "AÀ", "E_", "loot", "contents", "random", "isBot", "npc" ]. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            for (const word of [ "AÀ", "E_", "loot", "contents", "random", "isBot", "npc" ]) {
                 let at = text.indexOf(word), n = 0;
-                while (at >= 0 && n++ < 3) { /* BRIO loop: registrationAudit — Iterate at >= 0 && n++ < 3. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+                while (at >= 0 && n++ < 3) {
                     log("NATIVE REGISTRATION REFERENCE", {
                         kind: kind,
                         term: word,
@@ -3683,9 +3586,9 @@
     const /* BRIO: resetMonochrome
      * Restore original canvas inline filters and remove the transient root selector on disable/cleanup.
      */
-    resetMonochrome = () => { /* BRIO block: resetMonochrome — Remove only BRIO grayscale state and restore saved native canvas filters. */
+    resetMonochrome = () => {
         D.documentElement.removeAttribute("data-brio-mono-page");
-        for (const [canvas, old] of monoCanvases) { /* BRIO loop: resetMonochrome — Iterate monoCanvases. Remove only BRIO grayscale state and restore saved native canvas filters. */
+        for (const [canvas, old] of monoCanvases) {
             canvas.style.filter = old;
             canvas.removeAttribute("data-brio-mono");
         }
@@ -3694,10 +3597,10 @@
     const /* BRIO: syncMonochrome
      * Apply at Play/toggle immediately. Root CSS covers new unmarked canvases until this helper composes their original filter; no MutationObserver or render hook.
      */
-    syncMonochrome = enabled => { /* BRIO block: syncMonochrome — Maintain the user-proven page/canvas grayscale adapters and restore the prior filters when disabled. */
-        if (!enabled) { /* BRIO branch: syncMonochrome — Accept !enabled. Maintain the user-proven page/canvas grayscale adapters and restore the prior filters when disabled. */  resetMonochrome(); return; }
+    syncMonochrome = enabled => {
+        if (!enabled) { resetMonochrome(); return; }
         D.documentElement.setAttribute("data-brio-mono-page", "");
-        for (const canvas of D.querySelectorAll("canvas:not(#playerPreview)")) { /* BRIO loop: syncMonochrome — Iterate D.querySelectorAll("canvas:not(#playerPreview)"). Maintain the user-proven page/canvas grayscale adapters and restore the prior filters when disabled. */
+        for (const canvas of D.querySelectorAll("canvas:not(#playerPreview)")) {
             if (monoCanvases.has(canvas)) continue;
             const old = canvas.style.filter;
             monoCanvases.set(canvas, old);
@@ -3705,207 +3608,6 @@
             canvas.setAttribute("data-brio-mono", "");
         }
     };
-    /* BRIO: nativeDrawGates (V50; new challenge adapters, live-pending)
-     * Own-method wrappers affect only reached native drawable instances, never Canvas/RAF/protocol.
-     * Gating éa suppresses the whole branch (including future children), while native opacity, fades,
-     * lifetimes, physics and culling keep their original values. Disabled calls preserve this/args/result/errors.
-     * Native clones bypass source-widget gates; BRIO-owned nodes never become capture candidates.
-     * The4096-instance per-match cap bounds cleanup references; coverage reports every installed category.
-     */
-    const nativeDrawGates = new Map, nativeVisualCoverage = new Map, remoteInfoRecords = new Map;
-    let pickupCanvases = new WeakSet, nativeCandidateCache = new WeakMap;
-    const gateNativeDraw = (node, key, predicate, before) => { /* BRIO block: gateNativeDraw — Wrap only a reached native draw instance; restore its original method/descriptor during cleanup. V50 visual path live-pending. */
-        if (!node || node.__brioHudClone || String(node.type || "").startsWith("brio")) return;
-        let record = nativeDrawGates.get(node);
-        if (!record) { /* BRIO branch: gateNativeDraw — Accept !record. Wrap only a reached native draw instance; restore its original method/descriptor during cleanup. V50 visual path live-pending. */
-            const original = node["éa"], descriptor = Object.getOwnPropertyDescriptor(node,"éa");
-            if (typeof original !== "function" || descriptor && (!descriptor.configurable || !("value" in descriptor))) return;
-            if (nativeDrawGates.size >= 4096) { /* BRIO branch: gateNativeDraw — Accept nativeDrawGates.size >= 4096. Wrap only a reached native draw instance; restore its original method/descriptor during cleanup. V50 visual path live-pending. */
-                if (!S.visualGateCap) { /* BRIO branch: gateNativeDraw — Accept !S.visualGateCap. Wrap only a reached native draw instance; restore its original method/descriptor during cleanup. V50 visual path live-pending. */ S.visualGateCap = true; log("NATIVE VISUAL GATE CAP",{cap:4096});}
-                return;
-            }
-            record = {original, descriptor, gates:new Map};
-            const wrapper = function(...args) { /* BRIO block: wrapper — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                if (!this?.__brioHudClone) { /* BRIO branch: wrapper — Accept !this?.__brioHudClone. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                    const settings = exFast();
-                    for (const rule of record.gates.values()) { /* BRIO loop: wrapper — Iterate record.gates.values(). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                        rule.before?.(args[0]);
-                        if (rule.predicate(settings)) return;
-                    }
-                }
-                return Reflect.apply(original,this,args);
-            };
-            Object.defineProperty(node,"éa",{value:wrapper,writable:true,configurable:true,enumerable:descriptor?.enumerable ?? false});
-            record.wrapper = wrapper; nativeDrawGates.set(node,record);
-            featureRestore.push(() => { /* BRIO block: gateNativeDraw — featureRestore.push callback. Wrap only a reached native draw instance; restore its original method/descriptor during cleanup. V50 visual path live-pending. */
-                if (node["éa"] === wrapper) { /* BRIO branch: gateNativeDraw — Accept node["éa"] === wrapper. Wrap only a reached native draw instance; restore its original method/descriptor during cleanup. V50 visual path live-pending. */
-                    if (descriptor) Object.defineProperty(node,"éa",descriptor); else delete node["éa"];
-                }
-            });
-        }
-        if (!record.gates.has(key)) { /* BRIO branch: gateNativeDraw — Accept !record.gates.has(key). Wrap only a reached native draw instance; restore its original method/descriptor during cleanup. V50 visual path live-pending. */
-            record.gates.set(key,{predicate,before});
-            nativeVisualCoverage.set(key,(nativeVisualCoverage.get(key)||0)+1);
-            if (nativeVisualCoverage.get(key) === 1) log("NATIVE VISUAL BRANCH",{category:key,type:node.type||null,path:hudPath(node),mode:"scoped éa gate; native state unchanged"});
-        }
-    };
-    /* BRIO: pickupPopupHidden (V50)
-     * Native closeR/gunType updates set local ÁãÀ before rasterizing the shared popup. Restrict Mask loot to
-     * actual gun/consumable/ammo/material names; native container/vehicle prompts remain independent.
-     * The composite additionally suppresses all native pickup prompts because its containers are hidden too.
-     */
-    const PICKUP_LOOT_TYPES = new Set(["mini","pot","giantsnowball","flex","candycane","bandages","medkit","feesh","bluefeesh","alezfeesh","tryagainfeesh","thatfeesh","snowball","icicle","grenade","landmine","mirv","smokegrenade","invgravitynade","gravitynade","flashbang","molotov","flexsplash","wood","brick","metal","gear","scrap","stack0","stack1","stack2","stack3","stack4"]),
-        pickupPopupHidden = /* BRIO expr: pickupPopupHidden — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ e => !!e.goodFlippinLuck || !!e.maskLootPopup && (GUN_TYPES.has(String(S.renderer?.["ÁãÀ"]||"").toLowerCase()) || PICKUP_LOOT_TYPES.has(String(S.renderer?.["ÁãÀ"]||"").toLowerCase()));
-    /* BRIO: nativeVisualCandidate (V50; evidence from supplied engine + main.css)
-     * Gameplay HUD is drawn in native scene graphs; main.css has no gameplay HUD selectors.
-     * Match actual constructor signatures/relationships, not arbitrary screen regions or private globals.
-     * Invoked by the existing bounded scene walk and scoped rendered-array/add observers. No new broad hook.
-     * Always bind these small adapters so later toggles work without waiting for another native constructor.
-     */
-    const nativeVisualCandidate = node => { /* BRIO block: nativeVisualCandidate — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
-        if (!node || typeof node !== "object" || node.__brioHudClone || String(node.type||"").startsWith("brio")) return;
-        // Broad discovery can see diagnostic strings/numbers and incomplete parents; never use them as weak keys.
-        const nodes = [node,node.parent].filter(/* BRIO expr: nativeVisualCandidate / [node,node.parent].filter callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => n && typeof n === "object");
-        for (const root of nodes) {
-            // Bound signature scans independently of scene size: all documented HUD/storm/popup holders fit48 children.
-            // A world scene with thousands of loot nodes must never be copied once per child during render capture.
-            if (root["Ée"] === "borderScene") gateNativeDraw(root,"stormWorld",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.invisibleStorm);
-            const front = root["âè"], back = root["ÉE"], length = (front?.length||0)+(back?.length||0), now = performance.now();
-            if (length>48) continue;
-            const previous = nativeCandidateCache.get(root);
-            if (previous && previous.front===front && previous.back===back && previous.length===length && now-previous.at<1000) continue;
-            nativeCandidateCache.set(root,{front,back,length,at:now});
-            const children = [...(root["âè"]||[]),...(root["ÉE"]||[])].filter(/* BRIO expr: nativeVisualCandidate / [...(root["âè"]||[]),...(root["ÉE"]||[])].filter callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => n && !n.__brioHudClone && !String(n.type||"").startsWith("brio"));
-            const color = /* BRIO expr: color — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ n => String(n?.["Äe"] || n?.fillStyle || "").toUpperCase();
-            // Native borderScene contains only the four world storm shade rectangles. Map overlay is separate.
-            // Minimap texture is the square, custom-painted child of the waiting/player/kills counter holder.
-            if (children.some(/* BRIO expr: nativeVisualCandidate / children.some callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => /\/(?:waitingIcon|movingIcon|playersIcon)\.png$/i.test(hudPath(n)))) { /* BRIO branch: nativeVisualCandidate — Accept children.some(n => /\/(?:waitingIcon|movingIcon|playersIcon)\.png$/i.test(hudPath(n))). Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
-                for (const map of children) if (Number(map.width)>=200 && map.width===map.height && Object.hasOwn(map,"Eââ") && /aaÀ|aÀÁ|drawImage/.test(String(map["Eââ"])))
-                    gateNativeDraw(map,"minimap",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.noMinimap);
-            }
-            // The map overlay scene has four red shade rectangles + a50px outlined white/black storm square.
-            const stormBorder = children.find(/* BRIO expr: nativeVisualCandidate / children.find callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => Number(n.lineWidth)===50 && ["#FFF","#000"].includes(color(n)) && !n["À"]);
-            const shades = children.filter(/* BRIO expr: nativeVisualCandidate / children.filter callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => color(n)==="#F00" && !n["À"] && Number.isFinite(n.width) && Number.isFinite(n.height));
-            if (Array.isArray(root["Éèå"]) && stormBorder && shades.length===4) { /* BRIO branch: nativeVisualCandidate — Accept Array.isArray(root["Éèå"]) && stormBorder && shades.length===4. Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
-                for (const n of [...shades,stormBorder]) gateNativeDraw(n,"stormMap",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.invisibleStorm);
-            }
-            // Five white rectangles form the native crosshair; its red four-arm hit marker shares this root.
-            const arms = children.filter(/* BRIO expr: nativeVisualCandidate / children.filter callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => color(n)==="#FFF" && !n["À"] && !n.lineWidth && Number.isFinite(n.width) && Number.isFinite(n.height));
-            if (arms.length===5 && arms.filter(/* BRIO expr: nativeVisualCandidate / arms.filter callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => n.height===20 && n.width<20).length===2 && arms.filter(/* BRIO expr: nativeVisualCandidate / arms.filter callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => n.width===20 && n.height<20).length===2 && arms.some(/* BRIO expr: nativeVisualCandidate / arms.some callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => n.width===n.height && n.width<20))
-                gateNativeDraw(root,"crosshair",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.noCrosshair);
-            // Health/shield icons identify only the native HUD rows; keep the selected-ammo counter above them.
-            const health = children.find(/* BRIO expr: nativeVisualCandidate / children.find callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => /\/health\.png$/i.test(hudPath(n))), shield = children.find(/* BRIO expr: nativeVisualCandidate / children.find callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => /\/shield\.png$/i.test(hudPath(n)));
-            if (health && shield) { /* BRIO branch: nativeVisualCandidate — Accept health && shield. Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
-                const ys = [health["ë"]?.["Ä"],shield["ë"]?.["Ä"]];
-                for (const n of children) if (ys.includes(n["ë"]?.["Ä"]) || n["åÈ"] && n["Â$"])
-                    gateNativeDraw(n,"healthShieldHud",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.noHealthShieldHud);
-            }
-            // Native popup root has explicit art/title/fill/stroke fields. Tag its offscreen canvas from a child
-            // draw (discovery can occur after the parent's draw has already begun), then gate the cached sprite.
-            if (root.stroke && root.fill && root["ÅÉ"] && root["ä"] && root["èèÆ"]===.8) { /* BRIO branch: nativeVisualCandidate — Accept root.stroke && root.fill && root["ÅÉ"] && root["ä"] && root["èèÆ"]===.8. Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
-                for (const child of children) gateNativeDraw(child,"pickupRaster",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ () => false,ctx => { /* BRIO block: nativeVisualCandidate — gateNativeDraw callback. Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
-                    if (ctx?.canvas?.tagName === "CANVAS") pickupCanvases.add(ctx.canvas);
-                });
-            }
-        }
-        // Cached popup art is drawn in top, not in the otherwise private popup root. Weak identity survives redraws.
-        const image = node["À"]?.["ÁÄ"];
-        // The popup is rasterized once during native startup, often BEFORE injection. Its cached top-scene
-        // sprite has height120 and exactly8px canvas padding (ÁÀ$=8), with width changed by bannerWidth.
-        // This complete source-backed relationship recovers an already-created cache without guessing a screen area.
-        if (image?.tagName === "CANVAS" && node.parent?.["Ée"] === "top" && node.height===120 && node.width>=400 && node.width<=1200 && image.height===128 && image.width===node.width+8)
-            pickupCanvases.add(image);
-        if (image && pickupCanvases.has(image)) gateNativeDraw(node,"pickupPopup",pickupPopupHidden);
-        // Trail pools and one-shot landing particles use these exact native art paths. Hide the drawable branch,
-        // not its shared resource. Pools retain native opacity/lifetime; their future children are also silenced.
-        // No reliable owner is stored on detached trail particles. The player challenge therefore silences ALL
-        // trail particles (including local trails), explicitly stated in its UI; local body/held art stays visible.
-        if (/\/(?:buildart|cosmetics\/trails)\/trail\d+-[01]\.png$/i.test(hudPath(node)))
-            gateNativeDraw(node,"trailParticles",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.playersInvisible || !!e.allTrailsInvisible);
-    };
-    /* BRIO: nativeInventoryChallenge (V50)
-     * Template ownership identifies the native inventory common ancestor. Hide rows early as they arrive,
-     * then hide the smallest ancestor containing >=5slot backgrounds + material + reserve ammo icons.
-     * Reject health/map holders so a partial template cannot hide the whole game HUD. Clones bypass gates.
-     */
-    const nativeInventoryChallenge = () => { /* BRIO block: nativeInventoryChallenge — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */
-        const templates = S.hudTemplates;
-        if (!templates) return;
-        for (const rec of [...templates.slots,...templates.materials,...templates.ammo]) { /* BRIO loop: nativeInventoryChallenge — Iterate [...templates.slots,...templates.materials,...templates.ammo]. Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */
-            gateNativeDraw(rec.kind === "slots" ? rec.holder : rec.root,"inventoryHudUnit",/* BRIO expr: nativeInventoryChallenge / gateNativeDraw callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ e => !!e.noInventoryHud);
-        }
-        let root = templates.slots[0]?.holder, depth = 0;
-        while (root && depth++<6) { /* BRIO loop: nativeInventoryChallenge — Iterate root && depth++<6. Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */
-            const paths = hudWalk(root,240).filter(/* BRIO expr: nativeInventoryChallenge / hudWalk(root,240).filter callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ n => n!==root && !n.__brioHudClone).map(hudPath);
-            if (paths.some(/* BRIO expr: nativeInventoryChallenge / paths.some callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ p => /\/(?:health|shield|playersIcon|waitingIcon)\.png$/i.test(p))) break;
-            if (paths.filter(/* BRIO expr: nativeInventoryChallenge / paths.filter callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ p => /\/inv[0-6]\.png$/.test(p)).length>=5 && paths.some(/* BRIO expr: nativeInventoryChallenge / paths.some callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ p => /\/(?:wood|brick|metal|scrap)\.png$/.test(p)) && paths.some(/* BRIO expr: nativeInventoryChallenge / paths.some callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ p => /\/stack[0-4]\.png$/.test(p))) { /* BRIO branch: nativeInventoryChallenge — Accept paths.filter(p => /\/inv[0-6]\.png$/.test(p)).length>=5 && paths.some(p => /\/(?:wood|brick|metal|scrap)\.png$. Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */
-                gateNativeDraw(root,"inventoryHud",/* BRIO expr: nativeInventoryChallenge / gateNativeDraw callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ e => !!e.noInventoryHud); break;
-            }
-            root = root.parent;
-        }
-    };
-    /* BRIO: remoteInformation (V50; modifier exclusion/restore for the composite)
-     * Preserve native parents/vertical offsets before attaching optional bars. Names/bars use reversible
-     * opacity adapters; independent native name updates continue and are restored when the option is off.
-     * A previously detached bar must be detached again when assistance is disabled, rather than left visible.
-     */
-    const remoteInformation = r => { /* BRIO block: remoteInformation — Preserve native bar parents/offsets and opacity writes when optional assistance is disabled. */
-        if (isLocal(r) || !r["Eâ"]?.add) return;
-        let record = remoteInfoRecords.get(r);
-        if (!record) { /* BRIO branch: remoteInformation — Accept !record. Preserve native bar parents/offsets and opacity writes when optional assistance is disabled. */
-            record = {bars:[]}; remoteInfoRecords.set(r,record);
-            if (r["ÃÊ"]) lockOpacity(r["ÃÊ"],/* BRIO expr: remoteInformation / lockOpacity callback — Preserve native bar parents/offsets and opacity writes when optional assistance is disabled. */ e => !!e.playerNames,1);
-            for (const [bar,y] of [[r["æÄ"],-100],[r["AÃå"],-114]]) if (bar) { /* BRIO branch: remoteInformation — Accept bar. Preserve native bar parents/offsets and opacity writes when optional assistance is disabled. */
-                const saved = {bar,parent:bar.parent,y:bar["ë"]?.["Ä"],targetY:y,active:false}; record.bars.push(saved);
-                lockOpacity(bar,/* BRIO expr: remoteInformation / lockOpacity callback — Preserve native bar parents/offsets and opacity writes when optional assistance is disabled. */ e => !!e.healthBars || !!e.numericHealthShield,1);
-            }
-            featureRestore.push(/* BRIO expr: remoteInformation / featureRestore.push callback — Preserve native bar parents/offsets and opacity writes when optional assistance is disabled. */ () => restoreRemoteInformation(record));
-        }
-        const enabled = !!exFast().healthBars || !!exFast().numericHealthShield;
-        for (const saved of record.bars) { /* BRIO loop: remoteInformation — Iterate record.bars. Preserve native bar parents/offsets and opacity writes when optional assistance is disabled. */
-            if (enabled) { /* BRIO branch: remoteInformation — Accept enabled. Preserve native bar parents/offsets and opacity writes when optional assistance is disabled. */
-                if (saved.bar.parent !== r["Eâ"]) { /* BRIO branch: remoteInformation — Accept saved.bar.parent !== r["Eâ"]. Preserve native bar parents/offsets and opacity writes when optional assistance is disabled. */ saved.bar.parent?.remove?.(saved.bar); r["Eâ"].add(saved.bar);}
-                if (saved.bar["ë"]) saved.bar["ë"]["Ä"] = saved.targetY;
-                saved.active = true;
-            } else restoreRemoteInformation({bars:[saved]});
-        }
-    }, restoreRemoteInformation = record => { /* BRIO block: restoreRemoteInformation — Restore native bar attachment and vertical offsets when assistance is disabled or the run ends. */
-        for (const saved of record.bars) if (saved.active) { /* BRIO branch: restoreRemoteInformation — Accept saved.active. Restore native bar attachment and vertical offsets when assistance is disabled or the run ends. */
-            if (saved.bar.parent !== saved.parent) { /* BRIO branch: restoreRemoteInformation — Accept saved.bar.parent !== saved.parent. Restore native bar attachment and vertical offsets when assistance is disabled or the run ends. */ saved.bar.parent?.remove?.(saved.bar); saved.parent?.add?.(saved.bar);}
-            if (saved.bar["ë"]) saved.bar["ë"]["Ä"] = saved.y;
-            saved.active = false;
-        }
-    };
-    /* BRIO: syncFeatureSettings (V50)
-     * Apply toggles to already reached objects immediately. Draw gates read current settings without rebuilding
-     * native children; restore roof images that were blanked by the now-disabled modifier. No saved choices reset.
-     */
-    const syncFeatureSettings = () => { /* BRIO block: syncFeatureSettings — Apply effective changes immediately; restart saved assistance after the composite is disabled. */
-        featureEx.at = -Infinity;
-        const e = exFast();
-        if (!e.transparentRoofs) { /* BRIO branch: syncFeatureSettings — Accept !e.transparentRoofs. Apply effective changes immediately; restart saved assistance after the composite is disabled. */
-            for (const {w,old} of S.roofSaved.values()) w["ÁÄ"] = old;
-            S.roofSaved.clear();
-        }
-        for (const r of collectPlayers()) { /* BRIO loop: syncFeatureSettings — Iterate collectPlayers(). Apply effective changes immediately; restart saved assistance after the composite is disabled. */
-            featurePlayer(r);
-            if (!isLocal(r) && (e.inventorySlots || e.inventoryMaterials || e.inventoryAmmo)) attachInv(r);
-        }
-        for (const o of collectWorld()) featureWorld(o);
-        // Starting with the combined challenge creates no indicator timers. Restore them when saved assistance returns;
-        // disabled modifiers stop their own timers rather than leaving stale arrows or relying on another Play.
-        if (S.renderer) { /* BRIO branch: syncFeatureSettings — Accept S.renderer. Apply effective changes immediately; restart saved assistance after the composite is disabled. */
-            if (e.nearestPlayer && !S.nearestTimer) S.nearestTimer = setInterval(nearestTick,250);
-            if (!e.nearestPlayer && S.nearestTimer) { /* BRIO branch: syncFeatureSettings — Accept !e.nearestPlayer && S.nearestTimer. Apply effective changes immediately; restart saved assistance after the composite is disabled. */ clearInterval(S.nearestTimer); S.nearestTimer = 0;}
-            if ((e.nearestChest || e.nearestAirdrop) && !S.indicatorTimer) S.indicatorTimer = setInterval(indicatorTick,500);
-            if (!e.nearestChest && !e.nearestAirdrop && S.indicatorTimer) { /* BRIO branch: syncFeatureSettings — Accept !e.nearestChest && !e.nearestAirdrop && S.indicatorTimer. Apply effective changes immediately; restart saved assistance after the composite is disabled. */ clearInterval(S.indicatorTimer); S.indicatorTimer = 0;}
-            if (e.identifyBots && !S.botTimer) botStart();
-            if (!e.identifyBots && S.botTimer) { /* BRIO branch: syncFeatureSettings — Accept !e.identifyBots && S.botTimer. Apply effective changes immediately; restart saved assistance after the composite is disabled. */ clearInterval(S.botTimer); S.botTimer = 0;}
-        }
-        if (S.renderer && !S.meteorAutoTimer && nativeScanNeeded(e)) meteorAutoStart("visual settings changed");
-        nativeInventoryChallenge(); indicatorTick(); syncMonochrome(!!e.monochrome);
-    };
-
     const featureNodes = new Map, featureRestore = [], featureEx = {
         value: extrasState(),
         at: -Infinity
@@ -3913,9 +3615,9 @@
     const /* BRIO: exFast
      * Cache Extras briefly for drawable callbacks; do not repeatedly parse storage for each node within a frame.
      */
-    exFast = () => { /* BRIO block: exFast — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    exFast = () => {
         const n = performance.now();
-        if (n - featureEx.at > 500) { /* BRIO branch: exFast — Accept n - featureEx.at > 500. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (n - featureEx.at > 500) {
             featureEx.value = extrasState();
             featureEx.at = n;
         }
@@ -3923,7 +3625,7 @@
     }, /* BRIO: nativeNode
      * Create a BRIO-owned drawable compatible with reached native containers, clearly marked to avoid recursive discovery.
      */
-    nativeNode = /* BRIO expr: nativeNode — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ (draw, y = 0) => ({
+    nativeNode = (draw, y = 0) => ({
         "ë": {
             "É": 0,
             "Ä": y
@@ -3936,35 +3638,35 @@
         parent: null,
         "âè": [],
         "ÉE": [],
-        "Eââ"(ctx, s = 1) { /* BRIO block: Eââ — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            try { /* BRIO guarded: Eââ — Keep the existing exception boundary for Eââ. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        "Eââ"(ctx, s = 1) {
+            try {
                 draw(ctx, Number.isFinite(s) && s > 0 ? s : 1);
-            } catch (e) { /* BRIO fallback: Eââ — Handle failure in Eââ through its existing fallback/report path; optional native fields may be unavailable. */
+            } catch (e) {
                 if (S.errors.length < 100) S.errors.push("native feature: " + String(e));
             }
         },
-        "éa"(ctx, s = 1, alpha = 1) { /* BRIO block: éa — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        "éa"(ctx, s = 1, alpha = 1) {
             if (alpha <= 0) return;
             ctx.save();
-            try { /* BRIO guarded: éa — Keep the existing exception boundary for éa. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            try {
                 ctx.translate(this.ë.É / s, this.ë.Ä / s);
                 ctx.globalAlpha = alpha;
                 this.Eââ(ctx, s);
-            } finally { /* BRIO cleanup: éa — Always finish owned cleanup after success or failure. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            } finally {
                 ctx.restore();
             }
         },
-        "ÊÈA"() { /* BRIO block: ÊÈA — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        "ÊÈA"() {
             this.parent?.remove?.(this);
             this.parent = null;
         }
     }), /* BRIO: attachFeature
      * Attach one local visual node per entity/key and retain ownership for removal at culling/cleanup.
      */
-    attachFeature = (o, key, parent, draw, y = 0) => { /* BRIO block: attachFeature — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    attachFeature = (o, key, parent, draw, y = 0) => {
         if (!parent?.add) return;
         let m = featureNodes.get(o);
-        if (!m) { /* BRIO branch: attachFeature — Accept !m. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (!m) {
             m = new Map;
             featureNodes.set(o, m);
         }
@@ -3972,7 +3674,7 @@
         const n = nativeNode(draw, y);
         parent.add(n);
         m.set(key, n);
-    }, featureRing = (ctx, r, s, color) => { /* BRIO block: featureRing — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, featureRing = (ctx, r, s, color) => {
         ctx.save();
         ctx.beginPath();
         ctx.arc(0, 0, r / s, 0, Math.PI * 2);
@@ -3983,46 +3685,43 @@
     }, /* BRIO: resetFeatures
      * Remove attached feature nodes, undo descriptor/opacity/monochrome adapters and reset only per-match feature caches.
      */
-    resetFeatures = () => { /* BRIO block: resetFeatures — Restore all owned adapters/resources/nodes before discarding this Play's captured native references. */
+    resetFeatures = () => {
         resetMonochrome();
-        for (const m of featureNodes.values()) for (const n of m.values()) try { /* BRIO guarded: resetFeatures — Keep the existing exception boundary for resetFeatures. Restore all owned adapters/resources/nodes before discarding this Play's captured native references. */
+        for (const m of featureNodes.values()) for (const n of m.values()) try {
             n.parent?.remove?.(n);
-        } catch (_) { /* BRIO fallback: resetFeatures — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+        } catch (_) {}
         featureNodes.clear();
         S.shieldHeights = new WeakSet;
         S.cleanLootEvidence = new Set;
-        while (featureRestore.length) try { /* BRIO guarded: resetFeatures — Keep the existing exception boundary for resetFeatures. Restore all owned adapters/resources/nodes before discarding this Play's captured native references. */
+        while (featureRestore.length) try {
             featureRestore.pop()();
-        } catch (_) { /* BRIO fallback: resetFeatures — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
-        nativeDrawGates.clear(); nativeVisualCoverage.clear(); remoteInfoRecords.clear();
-        pickupCanvases = new WeakSet; nativeCandidateCache = new WeakMap; S.visualGateCap = false; S.challengeLastReport = -Infinity;
+        } catch (_) {}
         featureEx.at = -Infinity;
         for (const k of Object.keys(indicatorStats)) delete indicatorStats[k];
     }, /* BRIO: lockOpacity
      * Use a local opacity adapter with restoration. Keep native geometry and preserve original descriptor semantics.
      */
-    lockOpacity = (node, key, value) => { /* BRIO block: lockOpacity — Preserve native opacity writes and accessor semantics while the current effective predicate overrides rendering. */
-        if (!node || featureRestore.some(/* BRIO expr: lockOpacity / featureRestore.some callback — Preserve native opacity writes and accessor semantics while the current effective predicate overrides rendering. */ x => x.node === node)) return;
+    lockOpacity = (node, key, value) => {
+        if (!node || featureRestore.some(x => x.node === node)) return;
         const d = Object.getOwnPropertyDescriptor(node, "opacity");
         if (d && !d.configurable) return;
         let v = node.opacity;
         Object.defineProperty(node, "opacity", {
             configurable: true,
             enumerable: d?.enumerable ?? true,
-            get() { /* BRIO block: get — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                return (typeof key === "function" ? key(exFast()) : exFast()[key]) ? value : d?.get ? Reflect.apply(d.get,node,[]) : v;
+            get() {
+                return exFast()[key] ? value : v;
             },
-            set(x) { /* BRIO block: set — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            set(x) {
                 v = x;
-                if (d?.set) Reflect.apply(d.set,node,[x]);
             }
         });
-        const restore = () => { /* BRIO block: restore — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
-            if (d) { /* BRIO branch: restore — Accept d. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+        const restore = () => {
+            if (d) {
                 Object.defineProperty(node, "opacity", d);
                 // V49 restore latest native pulsing/fade writes, not the stale initial value.
-                if ("value" in d && d.writable) node.opacity = v;
-            } else { /* BRIO branch: restore — Alternative for d. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+                if ("value" in d && d.writable) node.opacity = v; else if (d.set) d.set.call(node,v);
+            } else {
                 delete node.opacity;
                 node.opacity = v;
             }
@@ -4030,59 +3729,46 @@
         restore.node = node;
         featureRestore.push(restore);
     }, /* BRIO: featurePlayer
-     * Retain proven bars/numbers/names/local low-health ring; reopen held-item/trail invisibility in V50. High contrast stays deferred/unflagged.
+     * Preserve proven bars/numbers/names/invisibility and low-health outline. High contrast remains optional/deferred, outside the required test surface.
      */
-    featurePlayer = r => { /* BRIO block: featurePlayer — Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+    featurePlayer = r => {
         if (!r?.Eâ) return;
         const e = exFast();
-        // V50 physical root includes body/head/limbs/held art/backpacks/muzzle children/glider changes.
-        // External build preview, grapple/rope and shadow are separate native branches and need their own gates.
-        if (!isLocal(r)) { /* BRIO branch: featurePlayer — Accept !isLocal(r). Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
-            for (const node of [r["ÄA"],r["Ëå"],r.head,r["aá"],r["ä"],r["ÁÆ"],r["Eå"],r["æE"],r["ÈËè"],r["ÄÊâ"]])
-                gateNativeDraw(node,"playerPhysical",/* BRIO expr: featurePlayer / gateNativeDraw callback — Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */ settings => !!settings.playersInvisible);
-            // The combined challenge also removes native remote name/status overlays, including teammate labels.
-            gateNativeDraw(r["Eâ"],"combinedPlayerInfo",/* BRIO expr: featurePlayer / gateNativeDraw callback — Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */ settings => !!settings.goodFlippinLuck);
-            remoteInformation(r);
-        }
-        gateNativeDraw(r["ÂÅ"],"glider",/* BRIO expr: featurePlayer / gateNativeDraw callback — Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */ settings => !!settings.allGlidersInvisible || !isLocal(r) && !!settings.playersInvisible);
-        // Genuine placement previews are distinct from the blue child inside every placed wall/buildable.
-        // End the preview immediately outside build mode; preserve the next genuine aiming preview.
-        gateNativeDraw(r["ÁÆ"],"buildPreview",/* BRIO expr: featurePlayer / gateNativeDraw callback — Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */ settings => !!settings.buildsInvisible && (settings.buildMaskTier === "all" || !r["èÂ"]));
-        if (!isLocal(r)) { /* BRIO branch: featurePlayer — Accept !isLocal(r). Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+        if (!isLocal(r)) {
             const shield = r["AÃå"], hp = r["æÄ"];
-            if (shield && hp && !S.shieldHeights?.has(shield)) { /* BRIO branch: featurePlayer — Accept shield && hp && !S.shieldHeights?.has(shield). Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+            if (shield && hp && !S.shieldHeights?.has(shield)) {
                 const d = Object.getOwnPropertyDescriptor(shield, "height");
-                if (!d || d.configurable) { /* BRIO branch: featurePlayer — Accept !d || d.configurable. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+                if (!d || d.configurable) {
                     let native = shield.height;
                     Object.defineProperty(shield, "height", {
                         configurable: true,
                         enumerable: d?.enumerable ?? true,
-                        get: /* BRIO expr: get — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => exFast().healthBars || exFast().numericHealthShield ? hp.height : native,
-                        set: v => { /* BRIO block: set — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                        get: () => exFast().healthBars || exFast().numericHealthShield ? hp.height : native,
+                        set: v => {
                             native = v;
                         }
                     });
                     (S.shieldHeights || (S.shieldHeights = new WeakSet)).add(shield);
-                    featureRestore.push(() => { /* BRIO block: featurePlayer — featureRestore.push callback. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
-                        if (d) { /* BRIO branch: featurePlayer — Accept d. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+                    featureRestore.push(() => {
+                        if (d) {
                             Object.defineProperty(shield, "height", d);
                             if ("value" in d && d.writable) shield.height = native;
-                        } else { /* BRIO branch: featurePlayer — Alternative for d. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+                        } else {
                             delete shield.height;
                             shield.height = native;
                         }
                     });
                 }
             }
-            if (e.numericHealthShield) for (const [key, field] of [ [ "æÄ", "åÈ" ], [ "AÃå", "Â$" ] ]) { /* BRIO loop: featurePlayer — Iterate [ [ "æÄ", "åÈ" ], [ "AÃå", "Â$" ] ]. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+            if (e.numericHealthShield) for (const [key, field] of [ [ "æÄ", "åÈ" ], [ "AÃå", "Â$" ] ]) {
                 const bar = r[key];
-                if (bar?.add) attachFeature(r, "number:" + key, bar, (ctx, s) => { /* BRIO block: featurePlayer — attachFeature callback. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+                if (bar?.add) attachFeature(r, "number:" + key, bar, (ctx, s) => {
                     if (!exFast().numericHealthShield) return;
                     const val = r[field], w = Math.abs(Number(bar.width)) / s, h = Math.abs(Number(bar.height)) / s;
                     if (!Number.isFinite(val) || !(w > 2 / s && h > 2 / s)) return;
                     const text = String(Math.round(val));
                     ctx.save();
-                    try { /* BRIO guarded: featurePlayer — Keep the existing exception boundary for featurePlayer. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+                    try {
                         ctx.beginPath();
                         ctx.rect(-w / 2 + 1 / s, -h / 2 + 1 / s, w - 2 / s, h - 2 / s);
                         ctx.clip();
@@ -4095,26 +3781,26 @@
                         let size = Math.min(10 / s, h - 2 / s);
                         ctx.font = "bold " + size + "px Arial";
                         const tw = ctx.measureText(text).width;
-                        if (tw > w - 4 / s) { /* BRIO branch: featurePlayer — Accept tw > w - 4 / s. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+                        if (tw > w - 4 / s) {
                             size *= (w - 4 / s) / tw;
                             ctx.font = "bold " + size + "px Arial";
                         }
-                        if (size >= 3 / s) { /* BRIO branch: featurePlayer — Accept size >= 3 / s. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+                        if (size >= 3 / s) {
                             ctx.strokeText(text, 0, 0);
                             ctx.fillText(text, 0, 0);
                         }
-                    } finally { /* BRIO cleanup: featurePlayer — Always finish owned cleanup after success or failure. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+                    } finally {
                         ctx.restore();
                     }
                 });
             }
-            if (e.highContrastPlayers) attachFeature(r, "player", r.Eâ, (ctx, s) => { /* BRIO block: featurePlayer — attachFeature callback. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+            if (e.highContrastPlayers) attachFeature(r, "player", r.Eâ, (ctx, s) => {
                 if (exFast().highContrastPlayers) featureRing(ctx, 55, s, "#ffea00");
             });
         }
         // V49 corrects V48 remote circles: only the current native player receives a low-health outline.
         // Proven health/shield number and bar appearance is unchanged.
-        if (isLocal(r) && e.lowHealthWarning) attachFeature(r, "warning", r.Eâ, (ctx, s) => { /* BRIO block: featurePlayer — attachFeature callback. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
+        if (isLocal(r) && e.lowHealthWarning) attachFeature(r, "warning", r.Eâ, (ctx, s) => {
             if (!isLocal(r) || !belowWarning(exFast(),"health",0,r["åÈ"])) return;
             ctx.save();
             ctx.shadowColor = "#ff2020";
@@ -4124,17 +3810,15 @@
             ctx.restore();
         });
     }, /* BRIO: featureWorld
-     * World visual registry: proven chest/canopy/effect adapters plus V50 tiered loot/build gates. Retired labels/radius/standalone highlight/glow controls have no UI callbacks.
+     * Only retained world modifiers: chest/crate hiding, transparent canopy and known loot-glow removal. Retired labels/radius/highlight/opaque foliage have no callbacks.
      */
-    featureWorld = o => { /* BRIO block: featureWorld — Apply independent art/effect/build gates without rewriting shared native resources; V50 tiers live-pending. */
+    featureWorld = o => {
         const e = exFast();
+        if (![ "noChestsVisible", "transparentFoliage", "cleanLoot" ].some(k => e[k])) return;
         const tag = String(o["Àâ"] || ""), rs = resourceSlots(o), root = o["â"];
-        // V50 hide the COMPLETE placed branch, including native blue base/special-effect children.
-        // Only explicit isPreview=true world replicas may remain in Blueprints only; no bot/distance guesses.
-        if (isBuild(o)) gateNativeDraw(root,"placedBuild",/* BRIO expr: featureWorld / gateNativeDraw callback — Apply independent art/effect/build gates without rewriting shared native resources; V50 tiers live-pending. */ settings => !!settings.buildsInvisible && (settings.buildMaskTier === "all" || o["AÀ"] !== true));
         if (e.noChestsVisible && (o.type === "chest" || [ "ammocrate", "grenadecrate" ].includes(tag))) lockOpacity(root, "noChestsVisible", 0);
         const foliage = /^(?:tree\d*|jungletree|cherryblossom|bush\d*|grass\d*)$/i.test(tag);
-        if (foliage) { /* BRIO branch: featureWorld — Accept foliage. Apply independent art/effect/build gates without rewriting shared native resources; V50 tiers live-pending. */
+        if (foliage) {
             if (e.transparentFoliage) lockOpacity(o["ÄA"] || root, "transparentFoliage", .25);
         }
         if (["gun","ammo"].includes(o.type) && e.cleanLoot) {
@@ -4143,34 +3827,22 @@
             // Hide that branch, not the item root/artwork âê; native simulation/add/removal continues untouched.
             // lockOpacity restores the latest native value on toggle-off/cleanup, including native pulsing writes.
             const effect = o["ÀÅ"];
-            if (effect && effect !== root && effect !== o["âê"] && effect.parent === root) { /* BRIO branch: featureWorld — Accept effect && effect !== root && effect !== o["âê"] && effect.parent === root. Apply independent art/effect/build gates without rewriting shared native resources; V50 tiers live-pending. */
+            if (effect && effect !== root && effect !== o["âê"] && effect.parent === root) {
                 lockOpacity(effect,"cleanLoot",0);
                 if (!S.cleanLootEvidence) S.cleanLootEvidence=new Set;
                 const key=o.type+":"+hudPath(effect);
-                if(S.cleanLootEvidence.size<12 && !S.cleanLootEvidence.has(key)) { /* BRIO branch: featureWorld — Accept S.cleanLootEvidence.size<12 && !S.cleanLootEvidence.has(key). Apply independent art/effect/build gates without rewriting shared native resources; V50 tiers live-pending. */
+                if(S.cleanLootEvidence.size<12 && !S.cleanLootEvidence.has(key)) {
                     S.cleanLootEvidence.add(key);
                     log("LOOT EFFECT BRANCH",{kind:o.type,path:hudPath(effect),children:(effect["âè"]?.length||0)+(effect["ÉE"]?.length||0),scope:"native ÀÅ rarity glow + child particles; item artwork preserved"});
                 }
             }
         }
-        if (["gun","ammo"].includes(o.type)) {
-            // V50 art/effects are independent. Gate the whole root only for the highest invisible tier.
-            gateNativeDraw(o["âê"],"lootArt",/* BRIO expr: featureWorld / gateNativeDraw callback — Apply independent art/effect/build gates without rewriting shared native resources; V50 tiers live-pending. */ settings => !!settings.maskLootArt);
-            gateNativeDraw(o["ÀÅ"],"lootRarity",/* BRIO expr: featureWorld / gateNativeDraw callback — Apply independent art/effect/build gates without rewriting shared native resources; V50 tiers live-pending. */ settings => !!settings.cleanLoot);
-            gateNativeDraw(root,"lootAll",/* BRIO expr: featureWorld / gateNativeDraw callback — Apply independent art/effect/build gates without rewriting shared native resources; V50 tiers live-pending. */ settings => !!settings.lootInvisible && settings.lootMaskTier === "all");
-            attachFeature(o,"lootLocation",root,(ctx,s) => { /* BRIO block: featureWorld — attachFeature callback. Apply independent art/effect/build gates without rewriting shared native resources; V50 tiers live-pending. */
-                if (!exFast().maskLootOutline) return;
-                // Same70-unit yellow square for every kind/rarity reveals only its native location.
-                ctx.save(); ctx.strokeStyle = "#ffd21c"; ctx.lineWidth = 3/s;
-                ctx.strokeRect(-35/s,-35/s,70/s,70/s); ctx.restore();
-            });
-        }
     }, /* BRIO: featureTick
      * Maintain reached visuals and bounded HUD coverage/slot state. Monochrome startup does not depend on this two-second timer.
      */
-    featureTick = () => { /* BRIO block: featureTick — Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */
-        try { /* BRIO guarded: featureTick — Keep the existing exception boundary for featureTick. Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */
-            if (S.renderer && performance.now() - (S.hudLastReport || -Infinity) > 15e3) { /* BRIO branch: featureTick — Accept S.renderer && performance.now() - (S.hudLastReport || -Infinity) > 15e3. Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */
+    featureTick = () => {
+        try {
+            if (S.renderer && performance.now() - (S.hudLastReport || -Infinity) > 15e3) {
                 S.hudLastReport = performance.now();
                 const status = S.hudStatus || {
                     captured: false
@@ -4181,46 +3853,39 @@
                     renderedArrays: renderArrays.size,
                     discoveryActive: !!renderDiscovery,
                     approximationFallback: !status.counts || status.counts.slots < 5 || status.counts.materials < 4 || status.counts.ammo < 5,
-                    note: "Warnings/selected native borders proven. V50 remote sizing/caption removal is the narrow changed presentation."
+                    note: "V47 inventory appearance proven; capture coverage and fallback remain explicit. V48 warning boundaries/charges need live verification."
                 });
             }
-            if (S.renderer && performance.now() - (S.challengeLastReport || -Infinity) > 15e3) { /* BRIO branch: featureTick — Accept S.renderer && performance.now() - (S.challengeLastReport || -Infinity) > 15e3. Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */
-                S.challengeLastReport = performance.now();
-                log("CHALLENGE BRANCH COVERAGE", {epoch:S.runEpoch,tiers:{loot:exFast().lootMaskTier,builds:exFast().buildMaskTier},combined:!!exFast().goodFlippinLuck,
-                    installed:Object.fromEntries(nativeVisualCoverage),adapterInstances:nativeDrawGates.size,cap:4096,
-                    limits:"Reached branches only. Missing categories require live capture; fixtures are not pixel proof."});
-            }
-            if (S.renderer && !S.meteorAutoTimer && nativeScanNeeded(exFast())) meteorAutoStart("feature watchdog");
+            if (S.renderer && !S.meteorAutoTimer && (extrasState().permanentMeteor || extrasState().lowMatsWarning || extrasState().lowAmmoWarning)) meteorAutoStart("feature watchdog");
             featureEx.value = extrasState();
             featureEx.at = performance.now();
             ownMaterialWarnings();
-            nativeInventoryChallenge();
-            const slotState = (S.hudTemplates?.slots || []).map(/* BRIO expr: featureTick / (S.hudTemplates?.slots || []).map callback — Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */ rec => ({slot: rec.slotIndex, type: S.renderer?.["Åé"]?.[rec.slotIndex]?.type, ammo: nativeSlotAmmo(S.renderer, rec.slotIndex, rec) ?? null, selected: S.renderer?.["ÈÆ"] === rec.slotIndex, ammoType: nativeSlotAmmoIndex(S.renderer, rec.slotIndex, rec) ?? null, threshold: featureEx.value.warningThresholds.ammo[nativeSlotAmmoIndex(S.renderer, rec.slotIndex, rec)] ?? null, low: nativeSlotLow(featureEx.value, S.renderer, rec.slotIndex, rec)}));
+            const slotState = (S.hudTemplates?.slots || []).map(rec => ({slot: rec.slotIndex, type: S.renderer?.["Åé"]?.[rec.slotIndex]?.type, ammo: nativeSlotAmmo(S.renderer, rec.slotIndex, rec) ?? null, selected: S.renderer?.["ÈÆ"] === rec.slotIndex, ammoType: nativeSlotAmmoIndex(S.renderer, rec.slotIndex, rec) ?? null, threshold: featureEx.value.warningThresholds.ammo[nativeSlotAmmoIndex(S.renderer, rec.slotIndex, rec)] ?? null, low: nativeSlotLow(featureEx.value, S.renderer, rec.slotIndex, rec)}));
             const slotSignature = J(slotState);
-            if (slotSignature !== S.slotWarningLast && (S.slotWarningLogs || 0) < 40) { /* BRIO branch: featureTick — Accept slotSignature !== S.slotWarningLast && (S.slotWarningLogs || 0) < 40. Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */ S.slotWarningLast = slotSignature; S.slotWarningLogs = (S.slotWarningLogs || 0) + 1; log("GUN SLOT WARNING STATE", {epoch: S.runEpoch, slots: slotState, threshold: "inclusive per-type saved thresholds; loaded+reserve, grappler charges only; flare/non-guns/unknown excluded"});}
+            if (slotSignature !== S.slotWarningLast && (S.slotWarningLogs || 0) < 40) {S.slotWarningLast = slotSignature; S.slotWarningLogs = (S.slotWarningLogs || 0) + 1; log("GUN SLOT WARNING STATE", {epoch: S.runEpoch, slots: slotState, threshold: "inclusive per-type saved thresholds; loaded+reserve, grappler charges only; flare/non-guns/unknown excluded"});}
             const e = featureEx.value;
             for (const r of collectPlayers()) featurePlayer(r);
             const world = collectWorld(), live = new Set([ ...collectPlayers(), ...world ]);
-            for (const [r, c] of S.nativeInvClones || []) if (!live.has(r)) { /* BRIO branch: featureTick — Accept !live.has(r). Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */
-                for (const row of c.rows) for (const u of row.units) try { /* BRIO guarded: featureTick — Keep the existing exception boundary for featureTick. Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */
+            for (const [r, c] of S.nativeInvClones || []) if (!live.has(r)) {
+                for (const row of c.rows) for (const u of row.units) try {
                     u.root["ÊÈA"]?.();
-                } catch (_) { /* BRIO fallback: featureTick — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+                } catch (_) {}
                 S.nativeInvClones.delete(r);
             }
             for (const o of world) featureWorld(o);
-            for (const [o, m] of featureNodes) if (!live.has(o)) { /* BRIO branch: featureTick — Accept !live.has(o). Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */
-                for (const n of m.values()) try { /* BRIO guarded: featureTick — Keep the existing exception boundary for featureTick. Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */
+            for (const [o, m] of featureNodes) if (!live.has(o)) {
+                for (const n of m.values()) try {
                     n.parent?.remove?.(n);
-                } catch (_) { /* BRIO fallback: featureTick — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
+                } catch (_) {}
                 featureNodes.delete(o);
             }
             syncMonochrome(!!e.monochrome);
-        } catch (e) { /* BRIO fallback: featureTick — Handle failure in featureTick through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             log("FEATURE ERROR", String(e));
         }
-    }, indicatorReport = (kind, target, reason, d) => { /* BRIO block: indicatorReport — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, indicatorReport = (kind, target, reason, d) => {
         const prev = indicatorStats[kind], now = performance.now(), key = reason + ":" + (target?.id ?? "");
-        if (!prev || prev.key !== key || now - prev.at > 1e4) { /* BRIO branch: indicatorReport — Accept !prev || prev.key !== key || now - prev.at > 1e4. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (!prev || prev.key !== key || now - prev.at > 1e4) {
             indicatorStats[kind] = {
                 key: key,
                 at: now,
@@ -4234,56 +3899,56 @@
                 ...indicatorStats[kind]
             });
         }
-    }, validTarget = /* BRIO expr: validTarget — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => !!(o && !o["Äã"] && worldPos(o) && o["â"]?.visible !== false && o["â"]?.opacity !== 0), showIndicator = (kind, key, target, label, color, margin) => { /* BRIO block: showIndicator — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, validTarget = o => !!(o && !o["Äã"] && worldPos(o) && o["â"]?.visible !== false && o["â"]?.opacity !== 0), showIndicator = (kind, key, target, label, color, margin) => {
         const u = ensureArrow(key, color), me = worldPos(S.renderer), p = worldPos(target), sp = projectWorld(p);
-        if (!target || !me || !p || !sp) { /* BRIO branch: showIndicator — Accept !target || !me || !p || !sp. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (!target || !me || !p || !sp) {
             u.style.display = "none";
             indicatorReport(kind, target, !target ? "no active target" : "native transform unavailable");
             return;
         }
         const box = sp.rect, on = sp.x >= box.left && sp.x <= box.left + box.width && sp.y >= box.top && sp.y <= box.top + box.height, d = Math.hypot(p.x - me.x, p.y - me.y);
-        if (on) { /* BRIO branch: showIndicator — Accept on. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        if (on) {
             u.style.display = "none";
             indicatorReport(kind, target, "target on-screen", d);
             return;
         }
         placeArrow(u, sp.x - (box.left + box.width / 2), sp.y - (box.top + box.height / 2), d, label, margin, box);
         indicatorReport(kind, target, "off-screen arrow", d);
-    }, nearestV40 = () => { /* BRIO block: nearestV40 — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-        try { /* BRIO guarded: nearestV40 — Keep the existing exception boundary for nearestV40. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, nearestV40 = () => {
+        try {
             const e = exFast();
-            if (!e.nearestPlayer) { /* BRIO branch: nearestV40 — Accept !e.nearestPlayer. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            if (!e.nearestPlayer) {
                 if (S.nearestUi) S.nearestUi.style.display = "none";
                 return;
             }
-            const active = collectPlayers().filter(/* BRIO expr: nearestV40 / collectPlayers().filter callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ r => !isLocal(r) && validTarget(r));
+            const active = collectPlayers().filter(r => !isLocal(r) && validTarget(r));
             for (const r of active) attachTrack(r);
             const me = worldPos(S.renderer);
-            active.sort((a, b) => { /* BRIO block: nearestV40 — active.sort callback. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            active.sort((a, b) => {
                 const p = worldPos(a), q = worldPos(b);
                 return me ? Math.hypot(p.x - me.x, p.y - me.y) - Math.hypot(q.x - me.x, q.y - me.y) : 0;
             });
             showIndicator("player", "nearestUi", active[0], e.nearestPlayerName ? active[0]?.["Ée"] || "" : "", "#a81020", 90);
-        } catch (e) { /* BRIO fallback: nearestV40 — Handle failure in nearestV40 through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             log("PLAYER INDICATOR ERROR", String(e));
         }
-    }, indicatorsV40 = () => { /* BRIO block: indicatorsV40 — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-        try { /* BRIO guarded: indicatorsV40 — Keep the existing exception boundary for indicatorsV40. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, indicatorsV40 = () => {
+        try {
             const e = exFast();
-            for (const [k, pred, label, key, margin, color] of [ [ "nearestChest", /* BRIO expr: indicatorsV40 — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => o.type === "chest", "", "chestUi", 165, "#ffd21c" ], [ "nearestAirdrop", /* BRIO expr: indicatorsV40 — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => o.type === "airdrop" || o["Àâ"] === "airdrop", "", "airdropUi", 240, "#f28b16" ] ]) if (e[k]) showIndicator(k, key, nearestBy(/* BRIO expr: indicatorsV40 / nearestBy callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => validTarget(o) && pred(o)), label, color, margin); else if (S[key]) S[key].style.display = "none";
-        } catch (e) { /* BRIO fallback: indicatorsV40 — Handle failure in indicatorsV40 through its existing fallback/report path; optional native fields may be unavailable. */
+            for (const [k, pred, label, key, margin, color] of [ [ "nearestChest", o => o.type === "chest", "", "chestUi", 165, "#ffd21c" ], [ "nearestAirdrop", o => o.type === "airdrop" || o["Àâ"] === "airdrop", "", "airdropUi", 240, "#f28b16" ] ]) if (e[k]) showIndicator(k, key, nearestBy(o => validTarget(o) && pred(o)), label, color, margin); else if (S[key]) S[key].style.display = "none";
+        } catch (e) {
             log("WORLD INDICATOR ERROR", String(e));
         }
-    }, runtimeV40 = () => { /* BRIO block: runtimeV40 — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+    }, runtimeV40 = () => {
         const r = S.renderer;
         if (!r) return;
-        const players = collectPlayers().filter(/* BRIO expr: runtimeV40 / collectPlayers().filter callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ x => !isLocal(x)), world = collectWorld();
+        const players = collectPlayers().filter(x => !isLocal(x)), world = collectWorld();
         log("PASSIVE RUNTIME COVERAGE", {
             activePlayers: players.length,
             worldObjects: world.length,
-            worldKinds: [ ...new Set(world.map(/* BRIO expr: runtimeV40 / world.map callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ x => x.type + ":" + (x["Àâ"] || x["Ée"] || ""))) ].slice(0, 60),
+            worldKinds: [ ...new Set(world.map(x => x.type + ":" + (x["Àâ"] || x["Ée"] || ""))) ].slice(0, 60),
             magazine: r["áAæ"],
-            features: Object.fromEntries([ ...featureNodes.values() ].flatMap(/* BRIO expr: runtimeV40 / [ ...featureNodes.values() ].flatMap callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ m => [ ...m.keys() ]).reduce(/* BRIO expr: runtimeV40 / [ ...featureNodes.values() ].flatMap(m => [ ...m.keys() ]).reduce callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ (m, k) => m.set(k, (m.get(k) || 0) + 1), new Map)),
+            features: Object.fromEntries([ ...featureNodes.values() ].flatMap(m => [ ...m.keys() ]).reduce((m, k) => m.set(k, (m.get(k) || 0) + 1), new Map)),
             indicators: indicatorStats,
             knownHumansThisLog: [ "current local renderer only" ],
             note: "Prior remote names/IDs are not current labels or classifiers"
@@ -4297,7 +3962,7 @@
             slot: x["ÈÆ"],
             magazine: x["áAæ"],
             ammo: x["åæ"],
-            inventory: Array.isArray(x["Åé"]) ? x["Åé"].map(/* BRIO expr: runtimeV40 / x["Åé"].map callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ v => v ? {
+            inventory: Array.isArray(x["Åé"]) ? x["Åé"].map(v => v ? {
                 type: v.type,
                 rarity: v["äã"]
             } : null) : null
@@ -4309,16 +3974,16 @@
         sourceUrl: "",
         captures: 0
     }, reconGroups = [ [ "meteor / permanentMeteor", /createWaypoint|ping-meteor-icon|ping-meteor/g ], [ "screenChests / screenAirdrops / screenFishing", /ammocrate|grenadecrate|legendarychest|bubbles|airdrop/g ], [ "HUD challenges / customCrosshair", /Minimap|crosshair|reticle|inventory|healthbar|shieldbar/g ], [ "storm modifiers / invisibleStorm", /movingIcon|circle|safezone|storm/g ], [ "transparentFoliage", /darktree|cherryblossom|tree0|grass0|bush/g ], [ "cleanLoot", /flareglow|glow|rarity|gunType/g ], [ "health / ammo / mats warnings / numericHealthShield", /fullHealth|weaponSlots|selectedWeapon|shield|mats|ammo/g ], [ "player indicators / highContrastPlayers", /playerCount|setID|playerNames|name/g ] ];
-    const nativeAssetAudit = src => { /* BRIO block: nativeAssetAudit — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    const nativeAssetAudit = src => {
         const paths = S.hudAssetPaths || (S.hudAssetPaths = new Map);
-        for (const m of src.matchAll(/["']([^"']{1,60})["']\s*:\s*["']((?:\.?\/)?buildart\/[^"']+\.png)["']/g)) if (paths.size < 2400) { /* BRIO branch: nativeAssetAudit — Accept paths.size < 2400. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */  paths.set(m[1], norm(m[2])); paths.set(m[1].toLowerCase(), norm(m[2])); }
+        for (const m of src.matchAll(/["']([^"']{1,60})["']\s*:\s*["']((?:\.?\/)?buildart\/[^"']+\.png)["']/g)) if (paths.size < 2400) { paths.set(m[1], norm(m[2])); paths.set(m[1].toLowerCase(), norm(m[2])); }
         log("NATIVE HUD ASSET MAP", {
             count: paths.size,
-            assets: [ ...paths ].filter(/* BRIO expr: nativeAssetAudit / [ ...paths ].filter callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ ([k, v]) => /inv|ammo|wood|brick|metal|gear|scrap/.test(k)).slice(0, 80)
+            assets: [ ...paths ].filter(([k, v]) => /inv|ammo|wood|brick|metal|gear|scrap/.test(k)).slice(0, 80)
         });
-        for (const term of [ "ÁæÆ", "inventoryammo", '"inv"', '"lobby"', "Å.À$", "ãÂÆ=", "Å.áÉâ", '"setID"', '"circle"', '"droid"', '"wander"', '"seed"', '"loot"' ]) { /* BRIO loop: nativeAssetAudit — Iterate [ "ÁæÆ", "inventoryammo", '"inv"', '"lobby"', "Å.À$", "ãÂÆ=", "Å.áÉâ", '"setID"', '"circle. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+        for (const term of [ "ÁæÆ", "inventoryammo", '"inv"', '"lobby"', "Å.À$", "ãÂÆ=", "Å.áÉâ", '"setID"', '"circle"', '"droid"', '"wander"', '"seed"', '"loot"' ]) {
             let at = src.indexOf(term, term === "inventoryammo" ? 23e4 : 0);
-            if (at >= 0) log("V50 NATIVE SOURCE", {
+            if (at >= 0) log("V49 NATIVE SOURCE", {
                 term: term,
                 at: at,
                 excerpt: src.slice(Math.max(0, at - 800), at + 8e3),
@@ -4329,37 +3994,37 @@
     const /* BRIO: reconSource
      * Collect bounded targeted source excerpts for remaining roadmap routes; no removed feature needs an active test flag.
      */
-    reconSource = async () => { /* BRIO block: reconSource — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-        try { /* BRIO guarded: reconSource — Keep the existing exception boundary for reconSource. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-            const urls = [ ...D.scripts ].map(/* BRIO expr: reconSource / [ ...D.scripts ].map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => x.src).filter(x => { /* BRIO block: reconSource — [ ...D.scripts ].map(x => x.src).filter callback. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-                try { /* BRIO guarded: reconSource — Keep the existing exception boundary for reconSource. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    reconSource = async () => {
+        try {
+            const urls = [ ...D.scripts ].map(x => x.src).filter(x => {
+                try {
                     const u = new URL(x);
                     return u.origin === location.origin && /\/js\/[^/]+\.js$/.test(u.pathname);
-                } catch (_) { /* BRIO fallback: reconSource — Handle failure in reconSource through its existing fallback/report path; optional native fields may be unavailable. */
+                } catch (_) {
                     return false;
                 }
-            }), url = urls.find(/* BRIO expr: reconSource / urls.find callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => /uOfrVi\.js/.test(x)) || urls.at(-1) || new URL("/js/uOfrVi.js", location.href).href;
-            const controller = new AbortController, timeout = setTimeout(/* BRIO expr: reconSource / setTimeout callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ () => controller.abort(), 15e3);
+            }), url = urls.find(x => /uOfrVi\.js/.test(x)) || urls.at(-1) || new URL("/js/uOfrVi.js", location.href).href;
+            const controller = new AbortController, timeout = setTimeout(() => controller.abort(), 15e3);
             let raw;
-            try { /* BRIO guarded: reconSource — Keep the existing exception boundary for reconSource. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            try {
                 const r = await fetch(url, {
                     credentials: "same-origin",
                     signal: controller.signal
                 });
                 if (!r.ok) throw Error("HTTP " + r.status);
                 raw = await r.text();
-            } finally { /* BRIO cleanup: reconSource — Always finish owned cleanup after success or failure. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            } finally {
                 clearTimeout(timeout);
             }
             await completeSourceAudit(raw, url);
-            const src = raw.replace(/\\x([\da-f]{2})|\\u([\da-f]{4})|\\([0-7]{1,3})/gi, /* BRIO expr: reconSource / raw.replace callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ (_, a, b, c) => String.fromCharCode(parseInt(a || b || c, c ? 8 : 16)));
+            const src = raw.replace(/\\x([\da-f]{2})|\\u([\da-f]{4})|\\([0-7]{1,3})/gi, (_, a, b, c) => String.fromCharCode(parseInt(a || b || c, c ? 8 : 16)));
             reconNow.source = true;
             reconNow.sourceUrl = url;
             sourceSchemaAudit(src);
             nativeAssetAudit(src);
             botSourceAudit(src);
             registrationAudit(src);
-            for (const term of [ 'Å.ÃEÅ("gun"', 'Å.ÃEÅ("object"', 'Å.ÃEÅ("spellfield"', 'Å.æÊÈ("circle"', "äèä=", "crosshair", "minimap" ]) { /* BRIO loop: reconSource — Iterate [ 'Å.ÃEÅ("gun"', 'Å.ÃEÅ("object"', 'Å.ÃEÅ("spellfield"', 'Å.æÊÈ("circle"', "äèä=", "crossh. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            for (const term of [ 'Å.ÃEÅ("gun"', 'Å.ÃEÅ("object"', 'Å.ÃEÅ("spellfield"', 'Å.æÊÈ("circle"', "äèä=", "crosshair", "minimap" ]) {
                 const at = src.indexOf(term, 23e4);
                 if (at >= 0) log("TARGETED FEATURE SOURCE", {
                     term: term,
@@ -4372,19 +4037,19 @@
                 length: raw.length,
                 note: "source excerpts are candidates; no source code executed"
             });
-            for (const [label, re] of reconGroups) { /* BRIO loop: reconSource — Iterate reconGroups. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            for (const [label, re] of reconGroups) {
                 const matches = [];
                 let m;
                 while ((m = re.exec(src)) && matches.length < 1e3) matches.push({
                     at: m.index,
                     term: m[0]
                 });
-                const runtime = matches.filter(/* BRIO expr: reconSource / matches.filter callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => x.at > 18e4), chosen = runtime.filter(/* BRIO expr: reconSource / runtime.filter callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ (x, i, a) => !i || x.at - a[i - 1].at > 1e3).slice(0, 3);
+                const runtime = matches.filter(x => x.at > 18e4), chosen = runtime.filter((x, i, a) => !i || x.at - a[i - 1].at > 1e3).slice(0, 3);
                 log("PASSIVE SOURCE SURFACE", {
                     label: label,
                     total: matches.length,
                     runtimeCandidates: runtime.length,
-                    examples: chosen.map(/* BRIO expr: reconSource / chosen.map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => ({
+                    examples: chosen.map(x => ({
                         at: x.at,
                         term: x.term,
                         excerpt: src.slice(Math.max(0, x.at - 700), x.at + 1200)
@@ -4397,7 +4062,7 @@
                 excerpt: src.slice(at - 100, at + 5500)
             });
             log("RECON COVERAGE", {
-                planned: EXTRA.challenges.concat(EXTRA.modifiers).filter(/* BRIO expr: reconSource / EXTRA.challenges.concat(EXTRA.modifiers).filter callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => x[0]).map(/* BRIO expr: reconSource / EXTRA.challenges.concat(EXTRA.modifiers).filter(x => x[0]).map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => ({
+                planned: EXTRA.challenges.concat(EXTRA.modifiers).filter(x => x[0]).map(x => ({
                     id: x[0],
                     status: statusOf(x[0]),
                     enabled: !!extrasState()[x[0]],
@@ -4407,15 +4072,15 @@
                 cssSurfaces: [ "monochrome", "flashlightMode", "customCrosshair" ],
                 note: "No hits does not establish impossibility"
             });
-        } catch (e) { /* BRIO fallback: reconSource — Handle failure in reconSource through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             log("SOURCE RECON ERROR", String(e));
         }
     };
-    const reconDom = label => { /* BRIO block: reconDom — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-        const nodes = [ ...D.querySelectorAll("[id]") ].filter(/* BRIO expr: reconDom / [ ...D.querySelectorAll("[id]") ].filter callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => /map|cross|health|shield|inventory|ammo|hud|canvas|game/i.test(x.id) && !x.closest(".brioModal,.brioTerm")).slice(0, 45);
+    const reconDom = label => {
+        const nodes = [ ...D.querySelectorAll("[id]") ].filter(x => /map|cross|health|shield|inventory|ammo|hud|canvas|game/i.test(x.id) && !x.closest(".brioModal,.brioTerm")).slice(0, 45);
         log("HUD DOM CANDIDATES", {
             label: label,
-            nodes: nodes.map(x => { /* BRIO block: reconDom — nodes.map callback. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            nodes: nodes.map(x => {
                 const r = x.getBoundingClientRect();
                 return {
                     id: x.id,
@@ -4424,7 +4089,7 @@
                     height: Math.round(r.height)
                 };
             }),
-            canvases: [ ...D.querySelectorAll("canvas") ].slice(0, 12).map(/* BRIO expr: reconDom / [ ...D.querySelectorAll("canvas") ].slice(0, 12).map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ c => ({
+            canvases: [ ...D.querySelectorAll("canvas") ].slice(0, 12).map(c => ({
                 id: c.id,
                 width: c.width,
                 height: c.height,
@@ -4432,21 +4097,21 @@
             }))
         });
     };
-    const reconAdded = o => { /* BRIO block: reconAdded — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    const reconAdded = o => {
         if (!o || reconObjects.has(o) || !isWorld(o)) return;
         reconObjects.add(o);
-        const tag = String(o["Àâ"] ?? o["Ée"] ?? o["ÄæÅ"] ?? ""), key = o.type + ":" + (tag || resourceSlots(o).map(/* BRIO expr: reconAdded / resourceSlots(o).map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => x.path).join("|")), n = reconCoverage.get(key) || 0;
+        const tag = String(o["Àâ"] ?? o["Ée"] ?? o["ÄæÅ"] ?? ""), key = o.type + ":" + (tag || resourceSlots(o).map(x => x.path).join("|")), n = reconCoverage.get(key) || 0;
         reconCoverage.set(key, n + 1);
         if (n < 1 && reconCoverage.size < 100) log("PASSIVE NATIVE OBJECT", {
             key: key,
             id: o.id,
             fields: shallowState(o),
-            resources: resourceSlots(o).map(/* BRIO expr: reconAdded / resourceSlots(o).map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => x.path),
+            resources: resourceSlots(o).map(x => x.path),
             note: "identity/state only; no contents attribution"
         });
     };
-    const reconRuntime = () => { /* BRIO block: reconRuntime — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-        try { /* BRIO guarded: reconRuntime — Keep the existing exception boundary for reconRuntime. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    const reconRuntime = () => {
+        try {
             const r = S.renderer;
             if (!r) return;
             const cur = {
@@ -4456,25 +4121,25 @@
                 slot: r["ÈÆ"],
                 materials: matState(r),
                 ammo: r["åæ"],
-                inventory: Array.isArray(r["Åé"]) ? r["Åé"].map(/* BRIO expr: reconRuntime / r["Åé"].map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => x ? {
+                inventory: Array.isArray(r["Åé"]) ? r["Åé"].map(x => x ? {
                     type: x.type,
                     rarity: x["äã"]
                 } : null) : null
             };
             const key = JSON.stringify(cur);
-            if (key !== reconNow.last) { /* BRIO branch: reconRuntime — Accept key !== reconNow.last. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            if (key !== reconNow.last) {
                 reconNow.last = key;
-                if ((reconNow.stateLogs || 0) < 25) { /* BRIO branch: reconRuntime — Accept (reconNow.stateLogs || 0) < 25. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+                if ((reconNow.stateLogs || 0) < 25) {
                     reconNow.stateLogs = (reconNow.stateLogs || 0) + 1;
                     log("LOCAL HUD STATE", cur);
                 }
             }
-        } catch (e) { /* BRIO fallback: reconRuntime — Handle failure in reconRuntime through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             log("HUD RECON ERROR", String(e));
         }
     };
-    const reconKind = o => { /* BRIO block: reconKind — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-        const p = resourceSlots(o).map(/* BRIO expr: reconKind / resourceSlots(o).map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => x.path).join(" "), v = [ o.type, o["Àâ"], o["ÄæÅ"], o["ÆåÃ"], p ].join(" ").toLowerCase();
+    const reconKind = o => {
+        const p = resourceSlots(o).map(x => x.path).join(" "), v = [ o.type, o["Àâ"], o["ÄæÅ"], o["ÆåÃ"], p ].join(" ").toLowerCase();
         if (fishingPred(o)) return "fishing";
         if (airdropPred(o)) return "airdrop";
         if (/legendarychest/.test(v)) return "legendaryChest";
@@ -4482,39 +4147,39 @@
         if (/grenadecrate|nadecrate/.test(v)) return "grenadeCrate";
         if (/ammocrate|ammobox/.test(v)) return "ammoCrate";
         return null;
-    }, reconDeep = o => { /* BRIO block: reconDeep — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    }, reconDeep = o => {
         const out = {}, seen = new Set;
-        function walk(v, p, d) { /* BRIO block: walk — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+        function walk(v, p, d) {
             if (!v || typeof v !== "object" || d > 3 || seen.has(v) || v === W || v === D || v instanceof Node || ArrayBuffer.isView(v) || seen.size > 120) return;
             seen.add(v);
-            for (const k of Object.keys(v).slice(0, 50)) { /* BRIO loop: walk — Iterate Object.keys(v).slice(0, 50). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+            for (const k of Object.keys(v).slice(0, 50)) {
                 if ([ "parent", "owner", "stage", "game", "ÁÄ" ].includes(k)) continue;
                 let x;
-                try { /* BRIO guarded: walk — Keep the existing exception boundary for walk. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                try {
                     x = v[k];
-                } catch (_) { /* BRIO fallback: walk — Handle failure in walk through its existing fallback/report path; optional native fields may be unavailable. */
+                } catch (_) {
                     continue;
                 }
                 const n = p + "." + k;
-                if ([ "string", "number", "boolean" ].includes(typeof x)) { /* BRIO branch: walk — Accept [ "string", "number", "boolean" ].includes(typeof x). Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                if ([ "string", "number", "boolean" ].includes(typeof x)) {
                     if (typeof x !== "string" || x.length < 160) out[n] = x;
-                } else if (Array.isArray(x) && x.length < 17 && x.every(/* BRIO expr: walk / x.every callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ y => [ "string", "number", "boolean" ].includes(typeof y))) out[n] = x.slice(); else if (x && typeof x === "object") walk(x, n, d + 1);
+                } else if (Array.isArray(x) && x.length < 17 && x.every(y => [ "string", "number", "boolean" ].includes(typeof y))) out[n] = x.slice(); else if (x && typeof x === "object") walk(x, n, d + 1);
                 if (Object.keys(out).length >= 150) return;
             }
         }
         walk(o, "$", 0);
-        return Object.fromEntries(Object.entries(out).filter(/* BRIO expr: reconDeep / Object.entries(out).filter callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ ([k]) => !/^\$\.(?:â|ÄA|æÄ|aAå|áãá|eÅé|new|Âä|áÆ|ëa|Åaá)(?:\.|$)/.test(k) && !/^\$\.(?:æëÃ|ÀÁ|cos)$/.test(k)));
+        return Object.fromEntries(Object.entries(out).filter(([k]) => !/^\$\.(?:â|ÄA|æÄ|aAå|áãá|eÅé|new|Âä|áÆ|ëa|Åaá)(?:\.|$)/.test(k) && !/^\$\.(?:æëÃ|ÀÁ|cos)$/.test(k)));
     }, /* BRIO: reconContainers
      * Observe first/changed/removed container lifecycle metadata. Never infer NONE or contents from nearby drops or culling.
      */
-    reconContainers = () => { /* BRIO block: reconContainers — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-        try { /* BRIO guarded: reconContainers — Keep the existing exception boundary for reconContainers. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
-            const world = collectWorld(), live = new Set(world.map(/* BRIO expr: reconContainers / world.map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ o => o.id));
-            for (const o of world) { /* BRIO loop: reconContainers — Iterate world. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+    reconContainers = () => {
+        try {
+            const world = collectWorld(), live = new Set(world.map(o => o.id));
+            for (const o of world) {
                 const kind = reconKind(o);
                 if (!kind) continue;
                 const fields = reconDeep(o), fingerprint = J(fields), old = reconContainersSeen.get(o.id);
-                if (!old && reconContainersSeen.size < 80) { /* BRIO branch: reconContainers — Accept !old && reconContainersSeen.size < 80. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+                if (!old && reconContainersSeen.size < 80) {
                     reconContainersSeen.set(o.id, {
                         kind: kind,
                         fingerprint: fingerprint,
@@ -4526,10 +4191,10 @@
                         kind: kind,
                         position: worldPos(o),
                         fields: fields,
-                        resources: resourceSlots(o).map(/* BRIO expr: reconContainers / resourceSlots(o).map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => x.path),
+                        resources: resourceSlots(o).map(x => x.path),
                         note: "automatic sample; no manual probe needed"
                     });
-                } else if (old && fingerprint !== old.fingerprint) { /* BRIO branch: reconContainers — Accept old && fingerprint !== old.fingerprint. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+                } else if (old && fingerprint !== old.fingerprint) {
                     old.fingerprint = fingerprint;
                     if (old.changes++ < 2) log("PASSIVE CONTAINER CHANGE", {
                         id: o.id,
@@ -4538,16 +4203,16 @@
                     });
                 }
             }
-            for (const [id, old] of reconContainersSeen) if (!live.has(id) && !reconRemoved.has(id)) { /* BRIO branch: reconContainers — Accept !live.has(id) && !reconRemoved.has(id). Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
+            for (const [id, old] of reconContainersSeen) if (!live.has(id) && !reconRemoved.has(id)) {
                 reconRemoved.add(id);
                 const p = old.position;
                 log("PASSIVE CONTAINER REMOVED", {
                     id: id,
                     kind: old.kind,
-                    nearbyLoot: world.filter(/* BRIO expr: reconContainers / world.filter callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ o => [ "gun", "ammo" ].includes(o.type)).map(/* BRIO expr: reconContainers / world.filter(o => [ "gun", "ammo" ].includes(o.type)).map callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ o => ({
+                    nearbyLoot: world.filter(o => [ "gun", "ammo" ].includes(o.type)).map(o => ({
                         o: o,
                         p: worldPos(o)
-                    })).filter(/* BRIO expr: reconContainers / world.filter(o => [ "gun", "ammo" ].includes(o.type)).map(o => ({ o: o, p: worldPos(o) })).filter callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => p && x.p && Math.hypot(x.p.x - p.x, x.p.y - p.y) < 500).slice(0, 20).map(/* BRIO expr: reconContainers / world.filter(o => [ "gun", "ammo" ].includes(o.type)).map(o => ({ o: o, p: worldPos(o) })).filter(x => p && x. callback — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ x => ({
+                    })).filter(x => p && x.p && Math.hypot(x.p.x - p.x, x.p.y - p.y) < 500).slice(0, 20).map(x => ({
                         id: x.o.id,
                         type: x.o.type,
                         fields: shallowState(x.o),
@@ -4556,11 +4221,11 @@
                     note: "correlation only; removal may be range/lifecycle, nearby loot may predate removal; no NONE inference"
                 });
             }
-        } catch (e) { /* BRIO fallback: reconContainers — Handle failure in reconContainers through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             log("CONTAINER RECON ERROR", String(e));
         }
     };
-    const restoreMarkerCapture = () => { /* BRIO block: restoreMarkerCapture — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    const restoreMarkerCapture = () => {
         const h = S.markerCapture;
         if (!h) return;
         if (Array.prototype.push === h.p) Array.prototype.push = h.op;
@@ -4570,7 +4235,7 @@
     }, /* BRIO: restoreMarkerHolds
      * Restore retention descriptors before detaching retained old nodes; weakly retire their identities to prevent stale recapture.
      */
-    restoreMarkerHolds = () => { /* BRIO block: restoreMarkerHolds — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+    restoreMarkerHolds = () => {
         meteorAutoStop();
         S.meteorSeen = new WeakSet;
         S.meteorPending = new WeakSet;
@@ -4579,15 +4244,15 @@
         S.sceneQueueAt = 0; S.sceneQueueSeen = new WeakSet; S.sceneScan = null;
         restoreMarkerCapture();
         const oldMarkers = reconMarkers.slice();
-        while (reconRestore.length) try { /* BRIO guarded: restoreMarkerHolds — Keep the existing exception boundary for restoreMarkerHolds. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+        while (reconRestore.length) try {
             reconRestore.pop()();
-        } catch (e) { /* BRIO fallback: restoreMarkerHolds — Handle failure in restoreMarkerHolds through its existing fallback/report path; optional native fields may be unavailable. */
+        } catch (e) {
             S.errors.push("marker restore: " + String(e));
         }
-        for (const {node, parent} of oldMarkers) { /* BRIO loop: restoreMarkerHolds — Iterate oldMarkers. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
+        for (const {node, parent} of oldMarkers) {
             (S.retiredMarkers || (S.retiredMarkers = new WeakSet)).add(node);
             if (node.icon) S.retiredMarkers.add(node.icon);
-            try { /* BRIO guarded: restoreMarkerHolds — Keep the existing exception boundary for restoreMarkerHolds. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */  parent.remove?.(node); if (node.parent && node.parent !== parent) node.parent.remove?.(node); } catch (e) { /* BRIO fallback: restoreMarkerHolds — Handle failure in restoreMarkerHolds through its existing fallback/report path; optional native fields may be unavailable. */ S.errors.push("marker detach: " + String(e));}
+            try { parent.remove?.(node); if (node.parent && node.parent !== parent) node.parent.remove?.(node); } catch (e) {S.errors.push("marker detach: " + String(e));}
         }
         if (oldMarkers.length) log("OLD MATCH METEORS REMOVED", {count: oldMarkers.length, epoch: S.runEpoch});
         reconMarkers.length = 0;
@@ -4595,14 +4260,14 @@
     const /* BRIO: holdMeteor
      * Hold fresh native marker expiry/removal only in its captured epoch. Next Play cleanup detaches it before new discovery.
      */
-    holdMeteor = (node, array) => { /* BRIO block: holdMeteor — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+    holdMeteor = (node, array) => {
         const epoch = S.runEpoch;
-        queueMicrotask(() => { /* BRIO block: holdMeteor — queueMicrotask callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
-            try { /* BRIO guarded: holdMeteor — Keep the existing exception boundary for holdMeteor. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+        queueMicrotask(() => {
+            try {
                 S.meteorPending?.delete(node);
                 if (S.destroyed || epoch !== S.runEpoch || !extrasState().permanentMeteor || S.meteorSeen?.has(node)) return;
                 const parent = node.parent;
-                if (!parent || typeof parent.remove !== "function") { /* BRIO branch: holdMeteor — Accept !parent || typeof parent.remove !== "function". Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+                if (!parent || typeof parent.remove !== "function") {
                     log("METEOR NATIVE CAPTURE", {
                         parentFound: false,
                         keys: Object.keys(node),
@@ -4619,8 +4284,8 @@
                     destroyAttempts: 0
                 };
                 reconMarkers.push(record);
-                const desc = Object.getOwnPropertyDescriptor(parent, "remove"), orig = parent.remove, wrap = function(child, ...a) { /* BRIO block: wrap — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                    if (child === node && S.runEpoch === epoch && extrasState().permanentMeteor) { /* BRIO branch: wrap — Accept child === node && S.runEpoch === epoch && extrasState().permanentMeteor. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                const desc = Object.getOwnPropertyDescriptor(parent, "remove"), orig = parent.remove, wrap = function(child, ...a) {
+                    if (child === node && S.runEpoch === epoch && extrasState().permanentMeteor) {
                         record.attempts++;
                         if (record.attempts <= 3) log("METEOR NATIVE REMOVE BLOCKED", {
                             attempt: record.attempts
@@ -4636,12 +4301,12 @@
                     writable: true,
                     value: wrap
                 });
-                reconRestore.push(() => { /* BRIO block: holdMeteor — reconRestore.push callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
-                    if (parent.remove === wrap) { /* BRIO branch: holdMeteor — Accept parent.remove === wrap. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+                reconRestore.push(() => {
+                    if (parent.remove === wrap) {
                         if (desc) Object.defineProperty(parent, "remove", desc); else delete parent.remove;
                     }
                 });
-                for (const target of [ node, node.icon ]) { /* BRIO loop: holdMeteor — Iterate [ node, node.icon ]. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+                for (const target of [ node, node.icon ]) {
                     if (!target) continue;
                     const d = Object.getOwnPropertyDescriptor(target, "opacity");
                     if (d && !d.configurable) continue;
@@ -4649,57 +4314,57 @@
                     Object.defineProperty(target, "opacity", {
                         configurable: true,
                         enumerable: d?.enumerable ?? true,
-                        get() { /* BRIO block: get — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                        get() {
                             return S.runEpoch === epoch && extrasState().permanentMeteor ? 1 : v;
                         },
-                        set(x) { /* BRIO block: set — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                        set(x) {
                             v = x;
                             record.opacityWrites++;
                         }
                     });
-                    reconRestore.push(() => { /* BRIO block: holdMeteor — reconRestore.push callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
-                        if (d) { /* BRIO branch: holdMeteor — Accept d. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+                    reconRestore.push(() => {
+                        if (d) {
                             Object.defineProperty(target, "opacity", d);
                             if ("value" in d && d.writable) target.opacity = v;
-                        } else { /* BRIO branch: holdMeteor — Alternative for d. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+                        } else {
                             delete target.opacity;
                             target.opacity = v;
                         }
                     });
                 }
                 const expiredDesc = Object.getOwnPropertyDescriptor(node, "Äã");
-                if (!expiredDesc || expiredDesc.configurable) { /* BRIO branch: holdMeteor — Accept !expiredDesc || expiredDesc.configurable. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+                if (!expiredDesc || expiredDesc.configurable) {
                     let expired = node["Äã"];
                     Object.defineProperty(node, "Äã", {
                         configurable: true,
                         enumerable: expiredDesc?.enumerable ?? true,
-                        get: /* BRIO expr: get — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ () => S.runEpoch === epoch && extrasState().permanentMeteor ? false : expired,
-                        set: v => { /* BRIO block: set — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                        get: () => S.runEpoch === epoch && extrasState().permanentMeteor ? false : expired,
+                        set: v => {
                             expired = v;
                         }
                     });
-                    reconRestore.push(() => { /* BRIO block: holdMeteor — reconRestore.push callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
-                        if (expiredDesc) { /* BRIO branch: holdMeteor — Accept expiredDesc. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+                    reconRestore.push(() => {
+                        if (expiredDesc) {
                             Object.defineProperty(node, "Äã", expiredDesc);
                             if ("value" in expiredDesc && expiredDesc.writable) node["Äã"] = expired;
-                        } else { /* BRIO branch: holdMeteor — Alternative for expiredDesc. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+                        } else {
                             delete node["Äã"];
                             node["Äã"] = expired;
                         }
                     });
                 }
                 const destroyDesc = Object.getOwnPropertyDescriptor(node, "ÊÈA"), destroy = node["ÊÈA"];
-                if (typeof destroy === "function" && (!destroyDesc || destroyDesc.configurable || destroyDesc.writable)) { /* BRIO branch: holdMeteor — Accept typeof destroy === "function" && (!destroyDesc || destroyDesc.configurable || destroyDesc.writable). Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
-                    const dw = function(...a) { /* BRIO block: dw — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-                        if (S.runEpoch === epoch && extrasState().permanentMeteor) { /* BRIO branch: dw — Accept S.runEpoch === epoch && extrasState().permanentMeteor. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
+                if (typeof destroy === "function" && (!destroyDesc || destroyDesc.configurable || destroyDesc.writable)) {
+                    const dw = function(...a) {
+                        if (S.runEpoch === epoch && extrasState().permanentMeteor) {
                             record.destroyAttempts++;
                             return;
                         }
                         return Reflect.apply(destroy, this, a);
                     };
                     node["ÊÈA"] = dw;
-                    reconRestore.push(() => { /* BRIO block: holdMeteor — reconRestore.push callback. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
-                        if (node["ÊÈA"] === dw) { /* BRIO branch: holdMeteor — Accept node["ÊÈA"] === dw. Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
+                    reconRestore.push(() => {
+                        if (node["ÊÈA"] === dw) {
                             if (destroyDesc) Object.defineProperty(node, "ÊÈA", destroyDesc); else delete node["ÊÈA"];
                         }
                     });
@@ -4713,7 +4378,7 @@
                     parentKeys: Object.keys(parent).slice(0, 25),
                     mode: "automatic capture; native retention; verify minimap and full map visually"
                 });
-            } catch (e) { /* BRIO fallback: holdMeteor — Handle failure in holdMeteor through its existing fallback/report path; optional native fields may be unavailable. */
+            } catch (e) {
                 S.errors.push("meteor hold: " + String(e));
                 log("METEOR HOLD ERROR", String(e));
             }
@@ -4737,14 +4402,14 @@
         scope: "prior match only; no name-based classifier"
     });
     reconSource();
-    loadCustom().finally(() => { /* BRIO block: startup — loadCustom().finally callback. Own the injection lifecycle; native state is restored at the next Play or destroy. */
+    loadCustom().finally(() => {
         renderLocker();
         bindPlay();
         log("READY", {
             version: S.v,
             nameRule: "prepend uL# at Play; dynamic local capture",
             inventoryScales: INV_SCALE,
-            activeTests: [...REQUIRED_TESTS,...CHALLENGE_TESTS].map(/* BRIO expr: startup / [...REQUIRED_TESTS,...CHALLENGE_TESTS].map callback — Own the injection lifecycle; native state is restored at the next Play or destroy. */ id => [...EXTRA.modifiers,...EXTRA.challenges].find(/* BRIO expr: startup / [...EXTRA.modifiers,...EXTRA.challenges].find callback — Own the injection lifecycle; native state is restored at the next Play or destroy. */ x => x[0] === id)?.[1] || id),
+            activeTests: REQUIRED_TESTS.map(id => EXTRA.modifiers.find(x => x[0] === id)?.[1] || id),
             inventoryArt: "native invN slot backgrounds from captured HUD traces",
             lobbyProbe: "Native local gliding state or decoded circle waiting/moving separates lobby and match automatically",
             meteor: "automatic native waypoint capture · testing; retention visually verified in V40"
