@@ -15,7 +15,7 @@ walk(ast);
 for (const map of dictionaryOwners.values()) if ([...map.values()].includes('weaponSlots')) for (const pair of map) schema.set(...pair);
 const property = n => n?.computed ? n.property.value : n?.property?.name;
 const callbacks = [];
-for (const n of nodes) if (n.type === 'CallExpression' && property(n.callee) === 'ÃEÅ' && ['player','chest','object','gun','ammo','airdrop'].includes(n.arguments[0]?.value)) {
+for (const n of nodes) if (n.type === 'CallExpression' && property(n.callee) === 'ÃEÅ' && typeof n.arguments[0]?.value==='string') {
   n.arguments.slice(1,5).forEach((f,i) => {
     if (!f || !['FunctionExpression','ArrowFunctionExpression'].includes(f.type)) return;
     const parameter = f.params[1]?.name;
@@ -58,6 +58,17 @@ const protocolEvidence={
  source:raw.slice(x.start,x.end).includes('ÀÅ')?raw.slice(x.start,x.end):undefined})),
  limits:'Client source plus finite logs only. Missing private registries, capped snapshots or additional modules remain evidence gaps; server pre-open loot feasibility is not decided.'
 };
-const summary={source:path,characters:raw.length,bytes:Buffer.byteLength(raw),sha256:crypto.createHash('sha256').update(raw).digest('hex'),parsedNodes:nodes.length,dictionaryFields:schema.size,warningEvidence,protocolEvidence,callbacks,references,inventoryAssets:[...assets].filter(([k])=>/^(scar|topscar|bolt|topbolt|heavy sniper|topheavy sniper|stack[0-4]|inventoryammo[0-4]|wood|brick|metal|gear)$/.test(k)),decoderCalls:nodes.filter(x=>x.type==='CallExpression'&&x.callee.object?.name==='msgpack'&&property(x.callee)==='decode').map(x=>({start:x.start,excerpt:raw.slice(x.start-100,x.end+250)})),limits:'Static client source only; does not establish complete incoming server schema or pre-open selection timing.'};
-fs.writeFileSync(process.argv[3] || 'docs/analysis/engine/v49-engine-analysis.json',JSON.stringify(summary,null,2)+'\n');
+// V50 mechanic candidates retain source coordinates and decoded dictionary meanings for later approval/audit.
+// A dictionary entry alone is weaker than a render/callback reference; emit both and label the distinction.
+const proposalMeanings=new Set(['health','shield','stamina','sprinting','steadying','spread','weaponSlots','selectedWeapon','wAmmo','ammo','rarity','building','canBuild','mat','mats','frt','rt','fullHealth','knocked','knock','team','teamPing','ping','chargeTime','chargedAmmo','charges','chargingRifle','chargedRifle','cookingNade','primed','flashed','effects','duration','ray','rays','hits','from','to','dist','owner','ownerId','circle','radius','chestType','bulletType','throwableType','glidingTicks','maxGlidingTicks']);
+const mechanics=[...schema].filter(([,meaning])=>proposalMeanings.has(meaning)).map(([field,meaning])=>{
+  const refs=nodes.filter(n=>n.type==='MemberExpression'&&property(n)===field);
+  return {field,meaning,referenceCount:refs.length,references:refs.slice(0,6).map(n=>({start:n.start,end:n.end,excerpt:raw.slice(Math.max(0,n.start-90),n.end+160)})),limit:'References establish a client route only; live availability, units, timing and stable ownership still need validation.'};
+});
+const nativeLiterals=['borderScene','top','waitingIcon','movingIcon','playersIcon','health','shield','grappler','signalflare','bluewood','canBuild','cookingNade','primed','isPreview','circle'];
+const challenges={literalReferences:nativeLiterals.map(value=>({value,references:nodes.filter(n=>n.type==='Literal'&&n.value===value).slice(0,8).map(n=>({start:n.start,end:n.end,excerpt:raw.slice(Math.max(0,n.start-80),n.end+180)}))})),playerCallbacks:callbacks.filter(c=>c.kind==='player'),lootCallbacks:callbacks.filter(c=>['gun','ammo'].includes(c.kind)),buildCallbacks:callbacks.filter(c=>c.kind==='object'),mechanics,
+  css:{file:'docs/game-sources/main.css',bytes:fs.statSync('docs/game-sources/main.css').size,sha256:crypto.createHash('sha256').update(fs.readFileSync('docs/game-sources/main.css')).digest('hex'),role:'DOM/home/menus, not canvas gameplay HUD. Native engine scene graphs supply challenge widgets.'},
+  limits:'V50 new tiers/HUD/held-art/trails are integration-fixture checked and live-pending. Additional mechanics are proposals only, not implemented or user-proven.'};
+const summary={source:path,characters:raw.length,bytes:Buffer.byteLength(raw),sha256:crypto.createHash('sha256').update(raw).digest('hex'),parsedNodes:nodes.length,dictionaryFields:schema.size,warningEvidence,protocolEvidence,challenges,callbacks,references,inventoryAssets:[...assets].filter(([k])=>/^(scar|topscar|bolt|topbolt|heavy sniper|topheavy sniper|stack[0-4]|inventoryammo[0-4]|wood|brick|metal|gear)$/.test(k)),decoderCalls:nodes.filter(x=>x.type==='CallExpression'&&x.callee.object?.name==='msgpack'&&property(x.callee)==='decode').map(x=>({start:x.start,excerpt:raw.slice(x.start-100,x.end+250)})),limits:'Static client source only; does not establish complete incoming server schema or pre-open selection timing.'};
+fs.writeFileSync(process.argv[3] || 'docs/analysis/engine/v50-engine-analysis.json',JSON.stringify(summary,null,2)+'\n');
 console.log(JSON.stringify({sha256:summary.sha256,nodes:summary.parsedNodes,fields:summary.dictionaryFields,callbacks:callbacks.length,references:references.map(x=>({meaning:x.meaning,count:x.references.length}))}));

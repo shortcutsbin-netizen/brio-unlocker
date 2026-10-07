@@ -5,12 +5,15 @@ Current links are in root README.md and AGENTS.md. Historical content remains un
 | Location | Contents |
 |---|---|
 | knowledge/ | Full project/game knowledge with current update followed by byte-preserved history |
-| game-sources/ | Exact supplied engine, MessagePack codec and deployment flag |
+| game-sources/ | Exact supplied engine, MessagePack codec, deployment flag and main CSS |
 | findings/ | Findings per release |
 | status/ | Feature proof/changed/unresolved/planned status per release |
 | test-procedures/ | Focused live procedures per release |
 | analysis/engine/ | Reproducible static source evidence |
 | analysis/runs/ | Reproducible full-log summaries |
+| analysis/source/ | Source block/function annotation audit |
+| audits/ | Stable source-helper location map and release validation |
+| proposals/ | Additional mechanics awaiting user approval |
 | licenses/ | Vendored parser notice |
 | ../logs/runs/ | Exact full run exports |
 | ../logs/observations/ | Separately labeled explicit user observations |

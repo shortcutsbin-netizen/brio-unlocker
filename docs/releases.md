@@ -1,3 +1,11 @@
+# V50 release update — 2026-10-06
+
+Current src/brio.js; direct zero-comment dist/brio-v50.min.js and identical immutable versions/v50/brio-v50.min.js (260,447 bytes, SHA2567486aaf8894ea7eaa367ddb6c5c5e28852f755c1ad678cc6a82744a3972e413d). Exact prior source preserved at versions/v49/brio.js, prior dist moved to dist/archived/brio-v49.min.js. Original user V49 log/main.css stay byte-identical. Existing historical paths/bytes are retained; relocation history unchanged.
+
+V50 inline warning resets, clone-only hotkey/caption removal, larger remote inventory/materials, five loot tiers, two build tiers, reopened held-art/trails, native HUD challenges and Good flippin luck. Effective preset values never erase saved preferences; visual-only monochrome/flashlight excluded. EXTRAS in terminal opens existing settings in match. Warning decisions/slot lift/foliage and retained features proven; new visuals live-pending.35 fixture scenarios against source/payload, every source block/function annotated, zero payload comments. Findings/status/procedure/proposals/audit maps are under their purpose folders.
+
+---
+
 # V49 release update - 2026-10-06
 
 Current src/brio.js; direct comment-free dist/brio-v49.min.js; identical immutable versions/v49/brio-v49.min.js. Prior files relocated by purpose/version with exact original bytes and blob hashes, including dist/archived/brio-v48.min.js. See docs/relocations.json and docs/README.md; older textual paths below remain historical.
