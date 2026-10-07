@@ -1,3 +1,9 @@
+# V51 repository guide update
+
+Current links: ../README.md and ../AGENTS.md. V51 decisions resolve all42 proposal IDs; V50 proposal bytes remain historical. Both current/historical direct dist payloads and archived duplicates are preserved. Readable V50/V51 source is frozen beside payloads. Reproduce native V51 evidence with node tools/analysis/analyze-v51.cjs; general engine analyzer now defaults to V51 output. No original file is removed.
+
+---
+
 # Repository guide
 
 Current links are in root README.md and AGENTS.md. Historical content remains unchanged; old textual paths resolve through [relocations.json](relocations.json).

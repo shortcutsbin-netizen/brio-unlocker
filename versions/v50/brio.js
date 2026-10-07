@@ -1,7 +1,4 @@
-/* BRIO v51 maintenance map — 2026-10-07
- * V51 implements approved solo additions; all changed V50/V51 visuals remain live-pending.
- * Hell is the composite title; saved goodFlippinLuck/noMinimap IDs remain compatible.
- * Damage rankings are unavailable; spread angle interpretation requires live calibration.
+/* BRIO v50 maintenance map — 2026-10-06
  * V49 user proves warnings (including selected-slot lift), transparent foliage and loot effect suppression.
  * Meteor, monochrome, indicators, cosmetics and chest hiding retain proof; no recurring tests for them.
  * V50 changes warning controls/reset only, remote inventory captions/size, tiered loot/build masking,
@@ -9,7 +6,7 @@
  * Standalone cleanLoot is retired from UI, retained internally as the proven Mask rarity effect adapter.
  * Contents must eventually be visible above every detected container, independent of proximity.
  * Current client/source/packet evidence has no authoritative loot list; no fake label/popup/NONE/classifier.
- * See docs/status/v51-status.md and docs/audits/v51-source-map.md for proof state and block/helper locations.
+ * See docs/status/v50-status.md and docs/audits/v50-source-map.md for proof state and block/helper locations.
  * A. Home UI/settings/custom cache; B. native resources/cosmetic adapters;
  * C. player/world discovery; D. HUD acquisition and remote inventory presentation;
  * E. arrows/warnings; F. ordinary-Play epoch lifecycle; G. passive source/payload evidence;
@@ -23,7 +20,7 @@
  * åÈ/Â$=health/shield; Àâ=world subtype; ÀËá/âëä=local gliding ticks/max ticks.
  * Protocol x/y/z=create/update/remove. Observe native decode return; never encode/send/mutate packets.
  * Preserve V45 X primitive/native artwork; V50 intentionally enlarges remote slots/materials to the ammo strip.
- * Hell derives effective challenge values without erasing saved modifiers/tiers; visual-only
+ * Good flippin luck derives effective challenge values without erasing saved modifiers/tiers; visual-only
  * monochrome/flashlight are excluded. Detached trail particles have no owner, so this challenge hides all trails.
  * Saved choices/custom cache persist; native references/hooks/nodes reset at normal Play.
  * Any async/deferred capture must check runEpoch before mutation and again after awaits.
@@ -31,8 +28,8 @@
  */
 (() => { /* BRIO block: startup — Own this injection; destroy prior releases before creating UI or native adapters. Saved choices survive; per-Play game state does not. */
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v51";
-    for (const k of [ K, "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
+    const W = window, D = document, K = "__brio_unlocker_v50";
+    for (const k of [ K, "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
         W[k]?.destroy?.();
     } catch (_) { /* BRIO fallback: startup — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -41,7 +38,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "51",
+        v: "50",
         log: [],
         errors: [],
         renderer: null,
@@ -105,238 +102,6 @@
         passiveLocal: null
     };
     W[K] = S;
-    /* BRIO: V51 approved adapters, 2026-10-07; ALL new visuals live-pending.
-     * Keep existing V50 draw gates/cleanup and passive budgets. Solo-only information.
-     * Limits:128 projectile histories x32 points x1.2s,256 named entities,100 eliminations,
-     * one500ms sampler. No network sends, source evaluation, physics or hit prediction.
-     * A native spread/100 scalar is treated provisionally as degrees of HALF spread.
-     * Client source only establishes reticle scale, not server angle semantics: log calibration.
-     * Stats damage attribution is unavailable; NEVER attach nearby-player guesses to damage.
-     */
-    const INDICATOR_COLORS={nearestPlayer:'#a81020',nearestChest:'#ffd21c',nearestAirdrop:'#f28b16',safeZoneIndicator:'#168cff',lootIndicator:'#ffd21c'};
-    const v51={timer:0,zone:null,zoneAt:0,paths:new Map,lootUis:new Map,stats:null,post:null,postStyles:new Map};
-    const weaponChoices=/* BRIO expr V51: weaponChoices — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ()=>[...GUN_TYPES].filter(/* BRIO expr V51: weaponChoices — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ type=>type!=='akƧ'&&(!S.weaponCatalog||S.weaponCatalog.has(type))).sort();
-    const indicatorColor=/* BRIO expr V51: indicatorColor — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ (e,id)=>e.indicatorColors?.[id]||INDICATOR_COLORS[id];
-    const renderIndicatorControls=(parent,settings,id,locked)=>{
-        /* V51 inline color swatch for EVERY indicator. No settings survive in a runtime reference. */
-        const row=D.createElement('div');row.className='brioTier';
-        const label=D.createElement('label'),input=D.createElement('input');label.textContent='Color ';input.type='color';input.dataset.indicatorColor=id;
-        input.value=indicatorColor(settings,id);input.disabled=locked||!settings[id];
-        input.oninput=()=>{ /* BRIO block V51: renderIndicatorControls — Persist validated indicator colors or loot choices; respect disabled/composite controls. */ const z=storedExtras();z.indicatorColors[id]=input.value;saveExtras(z);featureEx.at=-Infinity;indicatorTick();nearestTick();};
-        label.appendChild(input);row.appendChild(label);parent.appendChild(row);
-        if(id!=='lootIndicator')return;
-        const choices=D.createElement('fieldset');choices.dataset.lootChoices='';choices.disabled=locked||!settings[id];choices.style='display:flex;flex-wrap:wrap;gap:8px;flex-basis:100%;min-width:0';parent.style.flexWrap='wrap';
-        const note=D.createElement('small');note.textContent='Detected gun loot only: gold=4, red=5. Spawn eligibility is not inferred. Select any number.';choices.appendChild(note);
-        for(const type of weaponChoices()){ /* BRIO block V51: renderIndicatorControls — Persist validated indicator colors or loot choices; respect disabled/composite controls. */
-            const group=D.createElement('span');group.style='display:inline-flex;gap:4px;align-items:center';const name=D.createElement('span');name.textContent=type;group.appendChild(name);
-            for(const [rarity,title]of [[4,'Gold'],[5,'Red']]){ /* BRIO block V51: renderIndicatorControls — Persist validated indicator colors or loot choices; respect disabled/composite controls. */
-                const l=D.createElement('label'),c=D.createElement('input'),key=type+':'+rarity;c.type='checkbox';c.dataset.lootChoice=key;c.checked=settings.lootChoices.includes(key);l.textContent=title;l.style.color=rarity===4?'#fcff00':'#ff5555';
-                c.onchange=()=>{ /* BRIO block V51: renderIndicatorControls — Persist validated indicator colors or loot choices; respect disabled/composite controls. */ const z=storedExtras(),set=new Set(z.lootChoices);c.checked?set.add(key):set.delete(key);z.lootChoices=[...set];saveExtras(z);featureEx.at=-Infinity;v51Indicators();};l.appendChild(c);group.appendChild(l);
-            }
-            choices.appendChild(group);
-        }
-        parent.appendChild(choices);
-    };
-    const v51HealthColor=(hp,max)=>{
-        /* Exact boundaries requested:75 yellow,50 orange,25 red. Unknown health never implies red. */
-        if(!Number.isFinite(hp)||!Number.isFinite(max)||max<=0||hp<0)return null;
-        const ratio=hp/max;return ratio>.75?'#20da50':ratio>.5?'#ffd21c':ratio>.25?'#ff851b':'#ff3030';
-    };
-    const v51ObjectBody=/* BRIO expr V51: v51ObjectBody — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ o=>o['ÄA']||o['ÄÀè']||o['â'];
-    const v51GroundType=o=>{
-        /* Prefer native gunType/new packet fields. Asset lookup is exact, never a cosmetic substring. */
-        const name=o['Ëá']||o.new?.['Ëá']||o.gunType;if(GUN_TYPES.has(name))return name;
-        const path=hudPath(o['âê']);for(const type of weaponChoices())if(path&&path===itemPath(type))return type;
-        return null;
-    };
-    const v51AmmoIndex=o=>{
-        /* Ground ammo constructor does not retain ammo index; its stackN resource is authoritative. */
-        const path=hudPath(o['âê']),m=path.match(/\/stack([0-4])\.png$/i);return m?+m[1]:undefined;
-    };
-    const v51World=o=>{ /* BRIO block V51: v51World — Attach draw-only object health/ammo/projectile adapters; never change native health, collision or lifetime. */
-        if(!o?.['â'])return;
-        const root=o['â'];
-        if(['bullet','throwable'].includes(o.type)){
-            /* Gate actual projectile art; past-path sampling reads positions before draw and is bounded. */
-            gateNativeDraw(root,'projectile',/* BRIO expr V51: v51World — Attach draw-only object health/ammo/projectile adapters; never change native health, collision or lifetime. */ e=>!!e.invisibleProjectiles,/* BRIO expr V51: v51World — Attach draw-only object health/ammo/projectile adapters; never change native health, collision or lifetime. */ ()=>v51TrailSample(o));
-            if(o.type==='bullet'&&o['Ëé'])gateNativeDraw(o['Ëé'],'projectileNativeTrail',/* BRIO expr V51: v51World — Attach draw-only object health/ammo/projectile adapters; never change native health, collision or lifetime. */ e=>!!e.invisibleProjectiles);
-        }
-        if(['object','buildable','car','baller'].includes(o.type)&&o['AÀ']!==true){
-            /* Border follows the current native body transform/size; whole placed-build root remains gated.
-             * Vehicles join breakable objects, never get a separate toggle. Non-breakable/missing health skip. */
-            const body=v51ObjectBody(o),build=isBuild(o);attachFeature(o,'durability',body,(ctx,s)=>{ /* BRIO block V51: v51World — Attach draw-only object health/ammo/projectile adapters; never change native health, collision or lifetime. */
-                const e=exFast(),color=v51HealthColor(o['åÈ'],o['ËÆ']);if(!color||!(build?e.buildHealth:e.objectHealth)||o['Äã'])return;
-                const w=Math.abs(Number(body.width)),h=Math.abs(Number(body.height));if(!(w>0&&h>0))return;
-                ctx.save();ctx.strokeStyle=color;ctx.lineWidth=3/s;ctx.strokeRect((-w/2-2)/s,(-h/2-2)/s,(w+4)/s,(h+4)/s);ctx.restore();
-            });
-        }
-        if(o.type==='ammo')attachFeature(o,'ownedAmmo',root,(ctx,s)=>{ /* BRIO block V51: v51World — Attach draw-only object health/ammo/projectile adapters; never change native health, collision or lifetime. */
-            const e=exFast(),index=v51AmmoIndex(o);if(!e.highlightOwnedAmmo||index===undefined||e.maskLootArt||o['Äã'])return;
-            const owned=(S.renderer?.['Åé']||[]).some(/* BRIO expr V51: v51World — Attach draw-only object health/ammo/projectile adapters; never change native health, collision or lifetime. */ (slot,i)=>slot&&GUN_TYPES.has(slot.type)&&nativeSlotAmmoIndex(S.renderer,i)===index&&slot.type!=='signal flare'&&slot.type!=='grappler');
-            if(owned){ /* BRIO block V51: v51World — Attach draw-only object health/ammo/projectile adapters; never change native health, collision or lifetime. */ ctx.save();ctx.strokeStyle='#34ff75';ctx.lineWidth=3/s;ctx.strokeRect(-35/s,-35/s,70/s,70/s);ctx.restore();}
-        });
-    };
-    const v51TrailSample=o=>{
-        /* Observed histories only. Sample at most every30ms while native draws the reached projectile;
-         * existing path survives removal for1200ms. At128 histories, evict oldest instead of growing memory. */
-        if(!exFast().longerBulletTrails||o['Äã'])return;const now=performance.now(),p=worldPos(o);if(!p)return;
-        let path=v51.paths.get(o);if(!path){ /* BRIO block V51: v51TrailSample — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */ if(v51.paths.size>=128)v51.paths.delete(v51.paths.keys().next().value);path={points:[],at:-Infinity,type:o.type};v51.paths.set(o,path);}
-        if(now-path.at<30)return;path.at=now;path.points.push({...p,at:now});if(path.points.length>32)path.points.shift();
-    };
-    const v51Player=r=>{ /* BRIO block V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */
-        if(!r?.['â'])return;
-        /* Native aá/ä/áË/ÄÂ are held-art subtrees; ÁÆ preview is separate. Current replacement is rescanned.
-         * Hide weapons covers local+remote held art; player invisibility retains its established remote scope. */
-        for(const node of [r['aá'],r['ä'],r['áË'],r['ÄÂ'],r['ÁÆ']])gateNativeDraw(node,'heldWeapons',/* BRIO expr V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ e=>!!e.hideWeapons);
-        // Progress is native global HUD, recognized by v51NativeCandidate; never hide body grips/damage-direction cues.
-        for(const node of (r['Áa']||[]).slice(-64))gateNativeDraw(node,'damageNumbers',/* BRIO expr V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ e=>!!e.noDamageNumbers);
-        gateNativeDraw(r['â'],'v51PlayerChildren',/* BRIO expr V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ ()=>false,()=>{ /* BRIO block V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */
-            for(const node of [r['aá'],r['ä'],r['ÁÆ']])gateNativeDraw(node,'heldWeapons',/* BRIO expr V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ e=>!!e.hideWeapons);
-            for(const node of (r['Áa']||[]).slice(-64))gateNativeDraw(node,'damageNumbers',/* BRIO expr V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ e=>!!e.noDamageNumbers);
-        });
-        if(!isLocal(r))return;
-        attachFeature(r,'spreadCone',r['â'],(ctx,s)=>{ /* BRIO block V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */
-            const e=exFast(),slot=r['Åé']?.[r['ÈÆ']],spread=r['ËÂ'];
-            if(!e.showBulletSpread||r['èÂ']||!GUN_TYPES.has(slot?.type)||['grappler','signal flare'].includes(slot.type)||!Number.isFinite(spread)||spread<0||spread>90)return;
-            /* Player root already rotates with native aim: forward is local positiveY. Six-degree style field
-             * is interpreted as degrees, not radians; the server angle conversion is a live calibration gap.
-             * This sector has a fixed600-unit visualization length, NOT a claim about weapon range/hits. */
-            const half=spread*Math.PI/180,length=600/s;ctx.save();ctx.fillStyle='rgba(80,180,255,.12)';ctx.strokeStyle='#72caff';ctx.lineWidth=2/s;
-            ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(Math.sin(-half)*length,Math.cos(-half)*length);ctx.arc(0,0,length,Math.PI/2-half,Math.PI/2+half);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();
-        });
-        attachFeature(r,'projectileHistory',r['â'],(ctx,s)=>{ /* BRIO block V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */
-            if(!exFast().longerBulletTrails)return;const now=performance.now(),me=worldPos(r),angle=Number(r['â'].A)||0;if(!me)return;
-            ctx.save();ctx.rotate(-angle);ctx.lineWidth=2/s;
-            for(const [o,path]of v51.paths){ /* BRIO block V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */
-                while(path.points.length&&now-path.points[0].at>1200)path.points.shift();if(!path.points.length){ /* BRIO block V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ v51.paths.delete(o);continue;}
-                if(exFast().invisibleProjectiles)continue;ctx.strokeStyle=path.type==='throwable'?'#ffb060':'#ffe99a';ctx.globalAlpha=.6*Math.max(0,1-(now-path.at)/1200);ctx.beginPath();
-                path.points.forEach(/* BRIO expr V51: v51Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ (p,i)=>i?ctx.lineTo((p.x-me.x)/s,(p.y-me.y)/s):ctx.moveTo((p.x-me.x)/s,(p.y-me.y)/s));ctx.stroke();
-            }
-            ctx.restore();
-        });
-    };
-    const v51SafePoint=(zone,me)=>{
-        /* Native circle is an AXIS-ALIGNED SQUARE with center(position) and half-side(radius).
-         * Outside clamp to nearest boundary; inside choose closest edge. Current target zone is used
-         * during movement, because exact client interpolation variables remain private. */
-        if(!zone||!me||!(zone.radius>0))return null;const {x,y,radius:r}=zone;
-        const px=Math.max(x-r,Math.min(x+r,me.x)),py=Math.max(y-r,Math.min(y+r,me.y));
-        if(px!==me.x||py!==me.y)return {x:px,y:py};
-        const edges=[[me.x,y-r],[x+r,me.y],[me.x,y+r],[x-r,me.y]];edges.sort(/* BRIO expr V51: v51SafePoint — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ (a,b)=>Math.hypot(a[0]-me.x,a[1]-me.y)-Math.hypot(b[0]-me.x,b[1]-me.y));return {x:edges[0][0],y:edges[0][1]};
-    };
-    const v51Indicators=()=>{ /* BRIO block V51: v51Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */
-        const e=exFast(),me=worldPos(S.renderer);
-        if(e.safeZoneIndicator&&me&&v51.zone&&performance.now()-v51.zoneAt<900000){ /* BRIO block V51: v51Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */
-            const p=v51SafePoint(v51.zone,me),target=p?{'â':{'ë':{'É':p.x,'Ä':p.y}}}:null;showIndicator('safeZone','safeZoneUi',target,'',indicatorColor(e,'safeZoneIndicator'),110);
-        }else if(S.safeZoneUi)S.safeZoneUi.style.display='none';
-        const selected=new Set(e.lootChoices||[]),matches=e.lootIndicator&&me?collectWorld().filter(/* BRIO expr V51: v51Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */ o=>o.type==='gun'&&validTarget(o)&&selected.has(v51GroundType(o)+':'+o['äã'])&&!targetOnScreen(o)):[];
-        matches.sort((a,b)=>{ /* BRIO block V51: v51Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */ const p=worldPos(a),q=worldPos(b);return Math.hypot(p.x-me.x,p.y-me.y)-Math.hypot(q.x-me.x,q.y-me.y);});
-        /* Closest12 selected pickups have separate plain arrows+inventory artwork; cap DOM/update work.
-         * No visibility inference from unopened containers. Each arrow disappears on culling/pickup. */
-        const live=new Set(matches.slice(0,12));for(const [o,u]of v51.lootUis)if(!live.has(o)){ /* BRIO block V51: v51Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */ u.remove();v51.lootUis.delete(o);}
-        for(const o of live){ /* BRIO block V51: v51Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */
-            let u=v51.lootUis.get(o);if(!u){ /* BRIO block V51: v51Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */ u=ensureArrow('lootUi'+o.id,indicatorColor(e,'lootIndicator'));delete S['lootUi'+o.id];v51.lootUis.set(o,u);}
-            const p=worldPos(o),sp=projectWorld(p);if(!sp){ /* BRIO block V51: v51Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */ u.style.display='none';continue;}
-            u.querySelector('.shape').style.background=indicatorColor(e,'lootIndicator');u.style.width='112px';u.style.height='56px';u.querySelector('.shape').style.clipPath='polygon(10% 40%,75% 40%,75% 20%,100% 50%,75% 80%,75% 60%,10% 60%)';
-            placeArrow(u,sp.x-sp.rect.left-sp.rect.width/2,sp.y-sp.rect.top-sp.rect.height/2,Math.hypot(p.x-me.x,p.y-me.y),'',75,sp.rect);
-            const signature=v51GroundType(o)+':'+o['äã'];if(u.dataset.item===signature){ /* BRIO block V51: v51Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */ u.querySelector('.d').replaceChildren(u.__brioItemIcon);continue;}u.dataset.item=signature;const d=u.querySelector('.d');d.style.left='5px';d.style.top='6px';d.style.width='48px';d.style.height='44px';const icon=D.createElement('span');icon.style='position:relative;display:block;width:38px;height:38px';
-            const bg=D.createElement('img'),art=D.createElement('img');bg.src=S.hudAssetPaths?.get('inv'+o['äã'])||'/buildart/inv'+o['äã']+'.png';art.src=itemPath(v51GroundType(o));bg.style=art.style='position:absolute;inset:0;width:100%;height:100%;object-fit:contain';art.style.transform='rotate(45deg) scale(.78)';icon.append(bg,art);u.__brioItemIcon=icon;d.replaceChildren(icon);
-        }
-    };
-    /* BRIO: v51NativeCandidate — exact native HUD signatures from supplied engine.
-     * Full map has mapScene identity; progress roots use the complete reload/charge constructor shape.
-     * Hit marker requires its four red rectangles under the five-arm native crosshair.
-     * Countdown identifies the source timer/storm asset plus its text child and counter holder.
-     * Every adapter delegates original draws unchanged when disabled; no resource/state deletion.
-     */
-    const v51NativeCandidate=node=>{ /* BRIO block V51: v51NativeCandidate — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */
-        const roots=[node,node.parent].filter(Boolean);
-        const children=root=>{ /* BRIO: bounded native HUD signature — ignore broad scenes; inspect at most48 native children. */ const a=root['âè']||[],b=root['ÉE']||[];return a.length+b.length>48?[]:[...a,...b].filter(/* BRIO expr V51: children — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n&&!n.__brioHudClone&&!String(n.type||'').startsWith('brio'));};
-        const color=/* BRIO expr V51: color — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>String(n?.['Äe']||n?.fillStyle||'').toUpperCase();
-        for(const root of roots){ /* BRIO block V51: v51NativeCandidate — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */
-            if(root['Ée']==='mapScene')gateNativeDraw(root,'fullMap',/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noMinimap);
-            const list=children(root);
-            if(list.some(/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.type==='arc'&&n['éã']===33&&color(n)==='#FFF')&&list.some(/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.type==='text'&&n.fontSize===22)&&list.some(/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n['éã']===40&&color(n)==='#000'))gateNativeDraw(root,'reloadProgress',/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noWeaponProgress);
-            if(Array.isArray(root['Àä_'])&&root['Àä_'].length===8&&Object.hasOwn(root,'Eé_')&&Object.hasOwn(root,'Æéá')&&root['èeÊ']?.height===6&&color(root['èeÊ'])==='#1ADAE0')gateNativeDraw(root,'chargeProgress',/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noWeaponProgress);
-            const white=list.filter(/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>color(n)==='#FFF'&&!n['À']&&Number.isFinite(n.width)&&Number.isFinite(n.height));
-            if(white.length===5&&white.filter(/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.height===20&&n.width<20).length===2&&white.filter(/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.width===20&&n.height<20).length===2&&white.some(/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.width===n.height&&n.width<20))for(const marker of list){ /* BRIO block V51: v51NativeCandidate — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */
-                const red=children(marker).filter(/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>color(n)==='#F00'&&!n['À']&&Number.isFinite(n.width)&&Number.isFinite(n.height));
-                if(red.length===4)gateNativeDraw(marker,'hitConfirmation',/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noHitMarker);
-            }
-            if(/\/(?:timer|storm|waitingIcon|movingIcon)\.png$/i.test(hudPath(root))&&root.width===32&&root.height===32&&list.some(/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.type==='text')&&children(root.parent||{}).some(/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>/\/(?:playersIcon|killsIcon)\.png$/i.test(hudPath(n))))gateNativeDraw(root,'stormCountdown',/* BRIO expr V51: v51NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noStormTimer);
-        }
-    };
-    const v51PacketValue=(packet,name)=>{ /* BRIO block V51: v51PacketValue — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */
-        if(Object.hasOwn(packet,name))return packet[name];for(const [field,meaning]of schemaFields)if(meaning===name&&Object.hasOwn(packet,field))return packet[field];return undefined;
-    };
-    const v51StatsObserve=result=>{
-        /* Reuse the existing native decode observer. Separate counters are independent of deep log caps.
-         * Decoder delegates unchanged. Original object identity/packed arrays are NEVER remapped/mutated. */
-        const stats=v51.stats;if(!stats||stats.finished)return;
-        for(const p of Array.isArray(result)?result:[result]){ /* BRIO block V51: v51StatsObserve — Read original decoded packets once, using bounded local counters; never guess damage attribution. */
-            if(!p||typeof p!=='object')continue;const type=p.t??p.type,value=/* BRIO expr V51: value — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ name=>v51PacketValue(p,name);
-            if(type==='setID')stats.localId=value('i')??p.id;
-            if(type==='y'&&stats.calibrations.size<40){ /* BRIO block V51: v51StatsObserve — Read original decoded packets once, using bounded local counters; never guess damage attribution. */ const raw=value('spread'),id=p.i??p.a?.[0];if(Number.isFinite(raw)&&id===(stats.localId??S.renderer?.id)){ /* BRIO block V51: v51StatsObserve — Read original decoded packets once, using bounded local counters; never guess damage attribution. */ const weapon=S.renderer?.['Åé']?.[S.renderer?.['ÈÆ']]?.type,key=weapon+':'+raw;if(!stats.calibrations.has(key)){ /* BRIO block V51: v51StatsObserve — Read original decoded packets once, using bounded local counters; never guess damage attribution. */ stats.calibrations.add(key);log('V51 SPREAD CALIBRATION',{weapon,packetSpread:raw,nativeScalar:raw/100,halfAngleUnit:'provisional degrees; server semantics not established'});}}}
-            if(type==='circle'){ /* BRIO block V51: v51StatsObserve — Read original decoded packets once, using bounded local counters; never guess damage attribution. */
-                const c=value('circle'),position=c?.position??c?.['ë'],radius=c?.radius??c?.['éã'];
-                if(Array.isArray(position)&&position.length===2&&position.every(Number.isFinite)&&Number.isFinite(radius)&&radius>0){ /* BRIO block V51: v51StatsObserve — Read original decoded packets once, using bounded local counters; never guess damage attribution. */ v51.zone={x:position[0],y:position[1],radius,state:p.state};v51.zoneAt=performance.now();}
-            }
-            if(type==='elim'&&!value('knock')&&stats.eliminated.length<100)stats.eliminated.push(String(value('name')||'<unnamed>'));
-            if(type==='x'){ /* BRIO block V51: v51StatsObserve — Read original decoded packets once, using bounded local counters; never guess damage attribution. */
-                const kind=p.b??p.p?.[1],id=p.i??p.p?.[0];if(kind==='player'&&stats.names.size<256)stats.names.set(id,String(value('name')||'<unnamed>'));
-                if(kind==='bullet'&&value('pi')===(stats.localId??S.renderer?.id))stats.ownProjectiles++;
-            }
-            if(type==='y'||type==='z'){ /* BRIO block V51: v51StatsObserve — Read original decoded packets once, using bounded local counters; never guess damage attribution. */
-                const id=p.i??p.a?.[0];if(id===(stats.localId??S.renderer?.id))for(const [name,key]of [['hLost','hpLoss'],['sLost','shieldLoss']]){ /* BRIO block V51: v51StatsObserve — Read original decoded packets once, using bounded local counters; never guess damage attribution. */ const n=value(name);if(Number.isFinite(n)&&n>0)stats[key]+=n;}
-            }
-            if(type==='death'){ /* BRIO block V51: v51StatsObserve — Read original decoded packets once, using bounded local counters; never guess damage attribution. */
-                stats.terminal={place:value('place'),eliminations:value('eliminations'),damage:value('damageToEnemies'),walls:value('wallsBuilt'),seconds:value('timeAlive'),killer:String(value('name')||'')};stats.finished=true;
-                log('V51 POSTGAME COUNTERS',{epoch:S.runEpoch,terminal:stats.terminal,hpLoss:stats.hpLoss,shieldLoss:stats.shieldLoss,eliminated:stats.eliminated,ownProjectiles:stats.ownProjectiles,attribution:'unavailable: no authoritative attacker/victim on observed loss events'});
-            }
-        }
-    };
-    const v51Sample=()=>{ /* BRIO block V51: v51Sample — Sample bounded movement/weapon-time history; exclude teleports and finished matches. */
-        if(S.destroyed)return;const stats=v51.stats,now=performance.now(),r=S.renderer;
-        if(stats&&!stats.finished&&r&&S.botPhase==='match'){ /* BRIO block V51: v51Sample — Sample bounded movement/weapon-time history; exclude teleports and finished matches. */
-            const dt=Math.max(0,Math.min(.75,(now-stats.sampleAt)/1000)),p=worldPos(r),type=r['Åé']?.[r['ÈÆ']]?.type;
-            if(type&&(stats.weaponSeconds.has(type)||stats.weaponSeconds.size<64))stats.weaponSeconds.set(type,(stats.weaponSeconds.get(type)||0)+dt);
-            if(p&&stats.position){ /* BRIO block V51: v51Sample — Sample bounded movement/weapon-time history; exclude teleports and finished matches. */ const d=Math.hypot(p.x-stats.position.x,p.y-stats.position.y);if(d<1200)stats.distance+=d;else stats.teleports++;}
-            stats.position=p;stats.sampleAt=now;
-        }else if(stats)stats.sampleAt=now;
-        /* New held/progress/damage children can arrive between featureTick's 2s cadence; existing scan caps stay. */
-        if(r){ /* BRIO block V51: v51Sample — Sample bounded movement/weapon-time history; exclude teleports and finished matches. */ v51Player(r);v51Indicators();}
-        if(stats?.finished)v51PostGame();
-    };
-    const v51PostGame=()=>{
-        /* Exact native source: end-game content is #deathPass; win/loss both dispatch death.
-         * Only replace this visual area AFTER terminal packet+visible deathscreen. Store original display
-         * declarations on its direct native children; do not delete/pass through their state or handlers.
-         * Keep header/buttons and dedicated Battle Pass browsing untouched. Retry handles late async render. */
-        const stats=v51.stats,screen=q('#deathscreen'),host=q('#deathPass');if(!stats?.finished||!screen||!host||screen.style.display==='none'||getComputedStyle(screen).display==='none')return;
-        const browsing=screen.querySelector('.statsContainer')?.style.display==='none';if(browsing){ /* BRIO block V51: v51PostGame — Replace only the native deathPass presentation after a terminal match event; preserve Play/spectate controls. */ if(v51.post)v51.post.style.display='none';for(const [node,[value,priority]]of v51.postStyles)node.style.setProperty('display',value,priority);return;}if(v51.post)v51.post.style.display='';
-        if(!v51.post||v51.post.parentNode!==host){ /* BRIO block V51: v51PostGame — Replace only the native deathPass presentation after a terminal match event; preserve Play/spectate controls. */ v51.post=D.createElement('section');v51.post.dataset.brioPostgame='';v51.post.style='box-sizing:border-box;width:100%;max-height:56vh;overflow:auto;background:#10141c;color:#fff;padding:18px;text-align:left;font:14px Arial';host.appendChild(v51.post);}
-        for(const child of host.children)if(child!==v51.post){ /* BRIO block V51: v51PostGame — Replace only the native deathPass presentation after a terminal match event; preserve Play/spectate controls. */ if(!v51.postStyles.has(child))v51.postStyles.set(child,[child.style.getPropertyValue('display'),child.style.getPropertyPriority('display')]);child.style.setProperty('display','none','important');}
-        if(v51.post.dataset.epoch===String(S.runEpoch))return;v51.post.dataset.epoch=String(S.runEpoch);
-        const heading=D.createElement('h2');heading.textContent='Match breakdown';v51.post.appendChild(heading);
-        const table=D.createElement('table');table.style='width:100%;border-collapse:collapse';
-        const shown=/* BRIO expr V51: shown — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ x=>Number.isFinite(x)?String(Math.round(x*10)/10):'Unavailable';
-        for(const [label,value]of [['Placement',stats.terminal.place?('#'+stats.terminal.place):'Unavailable'],['Eliminations',shown(stats.terminal.eliminations)],['Damage dealt',shown(stats.terminal.damage)],['Builds placed',shown(stats.terminal.walls)],['Time alive (seconds)',shown(stats.terminal.seconds)],['Observed HP lost',shown(stats.hpLoss)],['Observed shield lost',shown(stats.shieldLoss)],['Sampled travel (meters)',shown(stats.distance/100)],['Players observed',stats.names.size],['Observed own projectiles (not shots)',stats.ownProjectiles]]){ /* BRIO block V51: v51PostGame — Replace only the native deathPass presentation after a terminal match event; preserve Play/spectate controls. */
-            const row=D.createElement('tr');for(const text of [label,value]){ /* BRIO block V51: v51PostGame — Replace only the native deathPass presentation after a terminal match event; preserve Play/spectate controls. */ const cell=D.createElement('td');cell.textContent=String(text);cell.style='padding:6px;border-bottom:1px solid #303846';row.appendChild(cell);}table.appendChild(row);
-        }
-        v51.post.appendChild(table);
-        for(const [title,values]of [['Players eliminated (native elim events)',stats.eliminated.length?stats.eliminated:['No elimination names observed']],['Time holding each item (sampled)',[...stats.weaponSeconds].sort(/* BRIO expr V51: v51PostGame — Replace only the native deathPass presentation after a terminal match event; preserve Play/spectate controls. */ (a,b)=>b[1]-a[1]).map(/* BRIO expr V51: v51PostGame — Replace only the native deathPass presentation after a terminal match event; preserve Play/spectate controls. */ ([name,seconds])=>name+': '+Math.round(seconds)+'s')]]){ /* BRIO block V51: v51PostGame — Replace only the native deathPass presentation after a terminal match event; preserve Play/spectate controls. */
-            const h=D.createElement('h3');h.textContent=title;const list=D.createElement('ul');for(const value of values){ /* BRIO block V51: v51PostGame — Replace only the native deathPass presentation after a terminal match event; preserve Play/spectate controls. */ const li=D.createElement('li');li.textContent=value;list.appendChild(li);}v51.post.append(h,list);
-        }
-        const note=D.createElement('p');note.textContent='Per-player damage dealt/received: unavailable. Native observed loss events identify no attacker/victim; proximity is not attribution. Observed counters cover this injection, with a 15-minute decoder observer and bounded sampling; travel excludes '+stats.teleports+' large position jumps.';v51.post.appendChild(note);
-    };
-    const v51Reset=(start=false)=>{ /* BRIO block V51: v51Reset — Clear per-match references and restore owned DOM changes at Play/destroy; retain saved choices. */
-        clearInterval(v51.timer);v51.timer=0;v51.zone=null;v51.zoneAt=0;v51.paths.clear();
-        for(const u of v51.lootUis.values())u.remove();v51.lootUis.clear();if(S.safeZoneUi)S.safeZoneUi.style.display='none';
-        v51.post?.remove();v51.post=null;for(const [node,[value,priority]]of v51.postStyles)node.style.setProperty('display',value,priority);v51.postStyles.clear();
-        v51.stats=start?{localId:null,names:new Map,eliminated:[],hpLoss:0,shieldLoss:0,calibrations:new Set,ownProjectiles:0,weaponSeconds:new Map,distance:0,teleports:0,position:null,sampleAt:performance.now(),finished:false}:null;
-        if(start)v51.timer=setInterval(v51Sample,500);
-    };
-
     /* BRIO: warningThresholds (V49 decision semantics; V49 user-proven, V50 controls/reset live-pending)
      * Shared thresholds for own HUD and remote resource counts; health ring is local-only.
      * Native reserve order: light/medium/heavy/shells/rockets; virtual index5 holds the grappler threshold.
@@ -345,7 +110,6 @@
      * V49 user correction: warn at OR below the value, grappler default5, flare entirely exempt.
      * Existing valid custom values persist; changing a default does not overwrite the user's saved threshold.
      */
-    const GUN_TYPES = new Set(["scar","bolt","lmg","shotgun","heavy","smg","ump","rifle","ar-15","scoped ar","deagle","rpg","famas","tommy gun","drum","musket","heavy sniper","ak47","akƧ","combat","silencedpistol","aug","burst shotgun","grenade launcher","mgl","grenade pistol","vector","revolver","charge rifle","grenade sniper","sawedoff","signal flare","spas","grappler","crossbow","minigun"]);
     const WARNING_DEFAULTS = {health:20, ammo:[30,30,10,15,5,5], materials:[30,30,30,1]};
     const /* BRIO: normalizeWarningThresholds
      * Migrate missing/invalid persisted settings, preserving valid independent values. Never alter game state.
@@ -397,8 +161,6 @@
         for (const key of ["buildMaterialLabels", "deployableLabels", "deployableRadius", "highlightLoot", "noFoliage", "cleanLoot", "playerIds"]) delete value[key];
         // V48 choices persist across Play/reinjection. No per-match references belong in this settings record.
         value.warningThresholds = normalizeWarningThresholds(value.warningThresholds);
-        value.indicatorColors=Object.fromEntries(Object.entries(INDICATOR_COLORS).map(/* BRIO expr V51: storedExtras — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ([id,color])=>[id,/^#[0-9a-f]{6}$/i.test(value.indicatorColors?.[id]||'')?value.indicatorColors[id]:color]));
-        value.lootChoices=Array.isArray(value.lootChoices)?[...new Set(value.lootChoices.filter(/* BRIO expr V51: storedExtras — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ x=>typeof x==='string'&&/:[45]$/.test(x)&&GUN_TYPES.has(x.slice(0,-2))))].slice(0,128):[];
         // V50 migrations preserve the previous challenges' actual semantics: art-only loot, completely hidden builds.
         if (!LOOT_TIERS.some(/* BRIO expr: storedExtras / LOOT_TIERS.some callback — Normalize saved user preferences without persisting challenge-derived overrides. */ ([id]) => id === value.lootMaskTier)) value.lootMaskTier = "item";
         if (!BUILD_TIERS.some(/* BRIO expr: storedExtras / BUILD_TIERS.some callback — Normalize saved user preferences without persisting challenge-derived overrides. */ ([id]) => id === value.buildMaskTier)) value.buildMaskTier = "all";
@@ -537,7 +299,7 @@
     };
     const STATUS = {
         green: new Set([ "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventoryAmmo", "inventorySize", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "nearestPlayer", "nearestChest", "nearestAirdrop", "nearestPlayerName", "noChestsVisible", "monochrome", "lowMatsWarning", "lowAmmoWarning", "transparentFoliage" ]),
-        yellow: new Set([ "showBulletSpread","buildHealth","objectHealth","safeZoneIndicator","lootIndicator","highlightOwnedAmmo","longerBulletTrails","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons","noStormTimer", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "highContrastPlayers", "playersInvisible", "lootInvisible", "buildsInvisible", "noMinimap", "noCrosshair", "noInventoryHud", "invisibleStorm", "noHealthShieldHud", "goodFlippinLuck", "inventorySlots", "inventoryMaterials" ])
+        yellow: new Set([ "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "highContrastPlayers", "playersInvisible", "lootInvisible", "buildsInvisible", "noMinimap", "noCrosshair", "noInventoryHud", "invisibleStorm", "noHealthShieldHud", "goodFlippinLuck", "inventorySlots", "inventoryMaterials" ])
     }, statusOf = /* BRIO expr: statusOf — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ id => STATUS.yellow.has(id) ? "yellow" : STATUS.green.has(id) ? "green" : "red";
     const style = D.createElement("style");
     style.textContent = `[data-brio-mono-page] canvas:not(#playerPreview):not([data-brio-mono]){filter:grayscale(1)!important}#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioThresholds{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;padding:6px 10px 10px 34px;border-bottom:1px solid #555}.brioThresholds fieldset{display:flex;align-items:center;flex:0 0 auto;gap:8px;border:0;margin:0;padding:2px 0;min-width:0}.brioThresholds fieldset:disabled{opacity:.4}.brioThresholds fieldset label{display:flex;flex:0 0 auto;flex-direction:row;align-items:center;gap:4px;font-size:11px;white-space:nowrap}.brioThresholds input{width:56px;box-sizing:border-box;background:#111;color:#fff;border:1px solid #777;padding:4px}.brioThresholds input:disabled{cursor:not-allowed}.brioThresholds button{white-space:nowrap}.brioTier{display:flex;align-items:center;gap:12px;padding:6px 10px 10px 34px;border-bottom:1px solid #333}.brioModal :disabled{cursor:not-allowed}.brioOpt.locked{opacity:.55}.brioLockNote{padding:8px;color:#ffd21c}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
@@ -733,43 +495,29 @@
             ["playersInvisible","All players invisible","remote body, held items/builds, glider/grapple; all trail particles"],
             ["lootInvisible","Mask loot","five information levels",false,"lootTier"],
             ["buildsInvisible","Builds invisible","placement preview separate from placed blue base",false,"buildTier"],
-            ["noMinimap","No map","minimap + full map; counters retained"],
+            ["noMinimap","No minimap","native map widget; counters retained"],
             ["noCrosshair","No crosshair","native arms/center/hit marker"],
             ["noInventoryHud","No inventory/item bar","native item/material/ammo/build widgets"],
             ["invisibleStorm","Invisible storm","world storm + minimap/full-map shading/border"],
             ["noChestsVisible","Chests invisible","chests + ammo/grenade crates · proven"],
-            ["noHealthShieldHud","No health/shield HUD","native own bars; ammo counter retained"],
-            ["noPickupLabels","No pickup labels","ground loot visible; native nearby pickup popup hidden"],
-            ["noHitMarker","No hit-confirmation marker","crosshair retained"],
-            ["noDamageNumbers","No floating damage numbers","native damage/healing text pools"],
-            ["noWeaponProgress","No reload/charge progress","native progress HUD retained in simulation"],
-            ["invisibleProjectiles","Invisible bullets/throwables","also silences shared detached trails; native physics/sounds retained"],
-            ["hideWeapons","Hide weapons","local + remote held art and aiming build previews"],
-            ["noStormTimer","No storm countdown","timer icon/text; player/kill counters retained"],
+            ["noHealthShieldHud","No health/shield HUD","native own/team bars; ammo counter retained"],
             ["monochrome","Monochrome vision","game canvas grayscale · proven",false,"visual"],
             ["flashlightMode","Flashlight mode","planned; visual-only, excluded from combined challenge",false,"visual"],
-            ["goodFlippinLuck","Hell","all gameplay challenges, highest tiers; every modifier locked off"]
+            ["goodFlippinLuck","Good flippin luck","all gameplay challenges, highest tiers; every modifier locked off"]
         ],
-        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "always-visible contents above detected containers: unresolved" ], [ "screenAirdrops", "Screen airdrops", "always-visible contents above detected airdrops: unresolved" ], [ "screenFishing", "Screen fishing spots", "always-visible contents above detected fishing spots: unresolved" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "transparentFoliage", "Transparent foliage", "canopy opacity 25% · proven" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ],
-            ["showBulletSpread","Show bullet spread","native spread cone; angle calibration pending"],
-            ["buildHealth","Build health outlines","green >75%; yellow >50%; orange >25%; red ≤25%"],
-            ["objectHealth","Breakable object health outlines","same bands; includes vehicles"],
-            ["safeZoneIndicator","Nearest safe-zone edge","blue by default; distance built in; target zone during movement"],
-            ["lootIndicator","Loot indicator","selected source guns in gold/red rarity; closest12 off-screen pickups"],
-            ["highlightOwnedAmmo","Highlight ammo for owned guns","native pickup ammo matches current carried gun types"],
-            ["longerBulletTrails","Longer bullet trails","1.2s observed bullet/throwable history; no trajectory prediction"], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "own HP at or below threshold · proven" ], [ "lowAmmoWarning", "Low-ammo visual warning", "inclusive thresholds; grappler5, flare exempt · proven" ], [ "lowMatsWarning", "Low-material warning", "inclusive thresholds including scraps · proven" ], [ null, "Show player inventories", "three rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "larger row aligned to ammo; no counts/hotkeys", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "larger icons/counts; wood / brick / metal / scraps", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + separate counts · proven", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
+        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "always-visible contents above detected containers: unresolved" ], [ "screenAirdrops", "Screen airdrops", "always-visible contents above detected airdrops: unresolved" ], [ "screenFishing", "Screen fishing spots", "always-visible contents above detected fishing spots: unresolved" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "transparentFoliage", "Transparent foliage", "canopy opacity 25% · proven" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ], [ "customCrosshair", "Enhanced/custom crosshair", "built-ins + upload" ], [ "lowHealthWarning", "Low-health visual warning", "own HP at or below threshold · proven" ], [ "lowAmmoWarning", "Low-ammo visual warning", "inclusive thresholds; grappler5, flare exempt · proven" ], [ "lowMatsWarning", "Low-material warning", "inclusive thresholds including scraps · proven" ], [ null, "Show player inventories", "three rows below player" ], [ "inventorySlots", "Inventory: 5 item slots", "larger row aligned to ammo; no counts/hotkeys", true ], [ "inventoryMaterials", "Inventory: build materials/counts", "larger icons/counts; wood / brick / metal / scraps", true ], [ "inventoryAmmo", "Inventory: ammo by type", "native icons + separate counts · proven", true ], [ "inventorySize", "Inventory size", "Small / Medium / Large / XL", true, "select" ] ]
     };
     // V50 flags distinguish normal-profile switches from challenges to cycle; no impossible all-on requirement.
     // Warning decisions/foliage/slot-border motion are PROVEN. Only their new reset buttons get UI-check badges.
-    const REQUIRED_TESTS = ["screenChests","screenAirdrops","screenFishing","identifyBots","inventorySlots","inventoryMaterials","nearestPlayer","nearestChest","nearestAirdrop","showBulletSpread","buildHealth","objectHealth","safeZoneIndicator","lootIndicator","highlightOwnedAmmo","longerBulletTrails"],
-        CHALLENGE_TESTS = ["playersInvisible","lootInvisible","buildsInvisible","noMinimap","noCrosshair","noInventoryHud","invisibleStorm","noHealthShieldHud","goodFlippinLuck","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons","noStormTimer"];
+    const REQUIRED_TESTS = ["screenChests","screenAirdrops","screenFishing","identifyBots","inventorySlots","inventoryMaterials"],
+        CHALLENGE_TESTS = ["playersInvisible","lootInvisible","buildsInvisible","noMinimap","noCrosshair","noInventoryHud","invisibleStorm","noHealthShieldHud","goodFlippinLuck"];
     /* BRIO: nativeScanNeeded (V50)
      * Reuse the existing3000-node/second scene scanner even when the composite disables every modifier.
      * A modifier-only guard would strand map/popup/trail widgets created after12-second initial discovery.
      */
     const nativeScanNeeded = /* BRIO expr: nativeScanNeeded — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ e => !!e.permanentMeteor || !!e.transparentRoofs || !!e.lowMatsWarning || !!e.lowAmmoWarning ||
         !!e.inventorySlots || !!e.inventoryMaterials || !!e.inventoryAmmo || !!e.allTrailsInvisible ||
-        ["showBulletSpread","buildHealth","objectHealth","safeZoneIndicator","lootIndicator","highlightOwnedAmmo","longerBulletTrails"].some(/* BRIO expr V51: nativeScanNeeded — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ id=>!!e[id]) || CHALLENGE_TESTS.some(/* BRIO expr: nativeScanNeeded / CHALLENGE_TESTS.some callback — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ id => !!e[id]);
+        CHALLENGE_TESTS.some(/* BRIO expr: nativeScanNeeded / CHALLENGE_TESTS.some callback — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ id => !!e[id]);
     const /* BRIO: renderWarningThresholds (V50; controls/reset live-pending, decisions proven)
      * V49 inline child row directly under each warning option, like nearest-player name under its indicator.
      * Each group stays on one nonwrapping horizontal row; all11 fields remain labeled and persisted.
@@ -865,7 +613,7 @@
         }
         if (s.goodFlippinLuck) { /* BRIO branch: renderExtras — Accept s.goodFlippinLuck. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
             const note = D.createElement("div"); note.className = "brioLockNote";
-            note.textContent = "Hell is active: gameplay challenges use their highest tiers; all modifiers are off. Turn it off to restore your saved choices.";
+            note.textContent = "Good flippin luck is active: gameplay challenges use their highest tiers; all modifiers are off. Turn it off to restore your saved choices.";
             p.appendChild(note);
         }
         for (const [id, name, note, child, kind] of EXTRA[extraTab]) { /* BRIO loop: renderExtras — Iterate EXTRA[extraTab]. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
@@ -913,8 +661,6 @@
                     featureEx.at = -Infinity;
                     const group = p.querySelector(`[data-warning-modifier="${id}"]`);
                     if (group) group.disabled = !c.checked;
-                    const color=p.querySelector(`[data-indicator-color="${id}"]`);if(color)color.disabled=!c.checked;
-                    if(id==='lootIndicator'){ /* BRIO block V51: renderExtras — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */ const choices=p.querySelector('[data-loot-choices]');if(choices)choices.disabled=!c.checked;}
                     const tier = p.querySelector(`[data-challenge-tier="${id === "lootInvisible" ? "lootMaskTier" : id === "buildsInvisible" ? "buildMaskTier" : ""}"]`);
                     if (tier) tier.disabled = !c.checked;
                     if (id === "monochrome") syncMonochrome(c.checked);
@@ -927,7 +673,6 @@
             p.appendChild(r);
             if (["lowHealthWarning","lowAmmoWarning","lowMatsWarning"].includes(id)) renderWarningThresholds(p,effective,id);
             if (kind === "lootTier" || kind === "buildTier") renderChallengeTier(p,effective,id,locked);
-            if(Object.hasOwn(INDICATOR_COLORS,id))renderIndicatorControls(r,effective,id,locked);
         }
     };
     extras.querySelector("[data-close]").onclick = /* BRIO expr: extras.querySelector("[data-close]").onclick — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */ () => extras.style.display = "none";
@@ -1429,7 +1174,7 @@
             u.push(x);
         }
         return u;
-    }, isWorld = /* BRIO expr: isWorld — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => !!(o && typeof o === "object" && o.id != null && [ "object", "buildable", "spellfield", "gun", "ammo", "chest", "airdrop", "car", "baller", "bullet", "throwable" ].includes(String(o.type))), /* BRIO: collectPlayers
+    }, isWorld = /* BRIO expr: isWorld — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => !!(o && typeof o === "object" && o.id != null && [ "object", "buildable", "spellfield", "gun", "ammo", "chest", "airdrop" ].includes(String(o.type))), /* BRIO: collectPlayers
      * Collect players from reached active native arrays. Avoid stale/culled fallback players and bot guesses.
      */
     collectPlayers = () => { /* BRIO block: collectPlayers — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */
@@ -1617,8 +1362,8 @@
             rect: r
         };
     }, ensureArrow = (key, color) => { /* BRIO block: ensureArrow — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-        if (S[key]) { /* BRIO block V51: ensureArrow — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */ S[key].querySelector(".shape").style.background=color;return S[key];}
-        const u = D.createElement("div");u.className="brioArrow";
+        if (S[key]) return S[key];
+        const u = D.createElement("div");
         u.style = "position:fixed;z-index:2147483644;pointer-events:none;width:176px;height:84px;display:none;transform-origin:50% 50%;filter:drop-shadow(0 2px 3px #000)";
         u.innerHTML = '<div class="shape" style="position:absolute;inset:0;clip-path:polygon(0 20%,68% 20%,68% 0,100% 50%,68% 100%,68% 80%,0 80%)"></div><span class="d" style="position:absolute;left:5px;top:23px;width:110px;height:38px;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;color:#fff;font:900 16px Arial;-webkit-text-stroke:1px #000;paint-order:stroke fill;text-shadow:1px 0 #000,-1px 0 #000,0 1px #000,0 -1px #000;box-sizing:border-box"></span>';
         u.querySelector(".shape").style.background = color;
@@ -2260,7 +2005,7 @@
         S.sceneSkipped = 0;
     };
     const isSlotArtwork = /* BRIO expr: isSlotArtwork — Use validated native resources/geometry and known values; retain cleanup ownership and current proof distinctions. */ path => !!path && path !== "/" && !hudKinds(path) && !/\/(?:ammo|inventoryammo)[0-4]\.png$|\/disabled\.png$/.test(path);
-
+    const GUN_TYPES = new Set(["scar","bolt","lmg","shotgun","heavy","smg","ump","rifle","ar-15","scoped ar","deagle","rpg","famas","tommy gun","drum","musket","heavy sniper","ak47","akƧ","combat","silencedpistol","aug","burst shotgun","grenade launcher","mgl","grenade pistol","vector","revolver","charge rifle","grenade sniper","sawedoff","signal flare","spas","grappler","crossbow","minigun"]);
     const /* BRIO: nativeSlotAmmoIndex (V48)
      * Grappler uses virtual type5; there is no sixth reserve/ammo row. Flare is single-use and exempt from every low-ammo warning.
      * Other guns use the source map, overridden by a reached live own-slot ammo emblem when available.
@@ -2639,7 +2384,7 @@
     }, /* BRIO: indicatorTick
      * Update the three nearest off-screen target arrows using active objects and the current native projection.
      */
-    indicatorTick = /* BRIO expr: indicatorTick — Update proven target arrows plus V51 safe-zone/selected-loot arrows; suppress stale/on-screen geometry. */ () => { /* BRIO block V51: indicatorTick — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */ indicatorsV40();v51Indicators();};
+    indicatorTick = /* BRIO expr: indicatorTick — Update the proven offscreen arrows from current reachable targets and suppress stale/on-screen geometry. */ () => indicatorsV40();
     const shallowState = o => { /* BRIO block: shallowState — Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
         const out = {};
         for (const k of Object.keys(o || {}).slice(0, 90)) { /* BRIO loop: shallowState — Iterate Object.keys(o || {}).slice(0, 90). Keep home UI, normalized saved choices and category-scoped custom assets consistent. */
@@ -3005,7 +2750,6 @@
      */
     arm = () => { /* BRIO block: arm — Start a fresh ordinary-Play epoch; clear transient game state and retain saved choices/custom assets. */
         S.runEpoch = (S.runEpoch || 0) + 1;
-        v51Reset(true);
         if (S.renderer) deepReport();
         deepStop();
         stopRenderDiscovery();
@@ -3207,7 +2951,7 @@
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
     // V50 reopens the SAME Extras modal during play, including from the minimized terminal. Native home
     // buttons disappear in a match; a reachable control is necessary for tier cycling/preset restoration.
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v51</b><button data-a="extras">EXTRAS</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v50</b><button data-a="extras">EXTRAS</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     let mini = false, drag = null;
@@ -3263,7 +3007,6 @@
      */
     S.destroy = () => { /* BRIO block: S.destroy — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
         S.destroyed = true;
-        v51Reset(false);
         S.runEpoch = (S.runEpoch || 0) + 1;
         deepStop();
         stopRenderDiscovery();
@@ -3607,7 +3350,6 @@
             if (d && typeof d.value === "function" && (d.configurable || d.writable)) { /* BRIO branch: deepTick — Accept d && typeof d.value === "function" && (d.configurable || d.writable). Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
                 const original = d.value, wrapper = function(...args) { /* BRIO block: wrapper — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
                     const result = Reflect.apply(original, this, args);
-                    try { /* BRIO block V51: wrapper — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */ v51StatsObserve(result);} catch(error) { /* BRIO block V51: wrapper — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */ deepError("v51 stats",error);}
                     try { /* BRIO guarded: wrapper — Keep the existing exception boundary for wrapper. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ incomingProbe(result);} catch (error) { /* BRIO fallback: wrapper — Handle failure in wrapper through its existing fallback/report path; optional native fields may be unavailable. */ deepError("incoming result", error);}
                     return result;
                 };
@@ -3654,7 +3396,7 @@
     const /* BRIO: deepReport
      * Report the probe's own epoch, not an already-incremented next Play. Include missing hooks, lanes, suppression and stage-specific errors.
      */
-    deepReport = /* BRIO expr: deepReport — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ () => log("V51 PROBE COVERAGE", {
+    deepReport = /* BRIO expr: deepReport — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ () => log("V50 PROBE COVERAGE", {
         incomingInstalled: !!deep.restore, incomingObservedThisRun: !!deep.installedEver, incomingPackets: deep.packets, incomingSchemas: deep.schemas.size, nativeEngineCaptured: deep.engineRestores.length > 0,
         targetedEntities: deep.replicas.size, records: deep.records, approximateBytes: deep.bytes, truncations: deep.truncations, errors: deep.errors, errorStages: deep.errorStages,
         lanes: deep.lanes, laneCaps: DEEP_LANES, suppressed: deep.suppressed, incomingTargetIds: deep.identities.size, circleState: deep.circleState, epoch: deep.epoch,
@@ -3742,7 +3484,7 @@
                 if (node.type === "FunctionDeclaration" && node.id?.name === "éèé") remappers.push(node);
                 if (node.type === "VariableDeclarator" && node.init?.type === "ObjectExpression") objectNames.set(node.init, node.id?.name);
                 if (node.type === "ObjectExpression") numericObjects.push(node);
-                if (node.type === "CallExpression" && node.callee?.type === "MemberExpression" && (node.callee.property?.name || node.callee.property?.value) === "ÃEÅ" && ["player","chest","object","gun","ammo","spellfield","airdrop","bullet","throwable","car","baller"].includes(node.arguments[0]?.value)) registrations.push(node);
+                if (node.type === "CallExpression" && node.callee?.type === "MemberExpression" && (node.callee.property?.name || node.callee.property?.value) === "ÃEÅ" && ["player","chest","object","gun","ammo","spellfield","airdrop"].includes(node.arguments[0]?.value)) registrations.push(node);
                 if (node.type === "Literal" && typeof node.value === "string") strings.push({value: node.value, at: node.start});
                 if (node.type === "MemberExpression") { /* BRIO branch: walk — Accept node.type === "MemberExpression". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const key = node.computed ? node.property?.value : node.property?.name; if (typeof key === "string") { /* BRIO branch: walk — Accept typeof key === "string". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const a = members.get(key) || []; a.push(node.start); members.set(key, a);}}
                 if (node.type === "Property" && typeof node.value?.value === "string" && /^(?:\.?\/)?buildart\//.test(node.value.value)) { /* BRIO branch: walk — Accept node.type === "Property" && typeof node.value?.value === "string" && /^(?:\.?\/)?buildart\//.test(node.value.v. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const key = node.key.name || node.key.value; if (typeof key === "string") { /* BRIO branch: walk — Accept typeof key === "string". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  assets.set(key, norm(node.value.value)); assets.set(key.toLowerCase(), norm(node.value.value)); }}
@@ -3751,7 +3493,7 @@
             };
             walk(ast);
             for (const fn of remappers.slice(0,2)) log("SOURCE PACKET REMAPPER", {start:fn.start,end:fn.end,source:raw.slice(fn.start,Math.min(fn.end,fn.start+1800)),note:"V49 source evidence: internal recursive key rename. Unknown fields are retained, not a contents generator; no server-absence conclusion."});
-            if (assets.size) { /* BRIO block V51: completeSourceAudit — Keep this branch bounded and reversible under the enclosing helper. V51 live-pending; regression proof is separate. */ S.hudAssetPaths = assets;S.weaponCatalog=new Set([...GUN_TYPES].filter(/* BRIO expr V51: completeSourceAudit — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ type=>assets.has(type)));log("V51 WEAPON CATALOG",{types:[...S.weaponCatalog],rarities:{gold:4,red:5},limits:"client gun artwork only; gold spawn eligibility unresolved; actual pickups matched"});}
+            if (assets.size) S.hudAssetPaths = assets;
             for (const [owner, map] of dictionaries) if ([...map.values()].includes("isPreview") || [...map.values()].includes("weaponSlots")) { /* BRIO branch: completeSourceAudit — Accept [...map.values()].includes("isPreview") || [...map.values()].includes("weaponSlots"). Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ for (const [k,v] of map) schemaFields.set(k,v); log("DEEP FIELD DICTIONARY", {owner, entries: [...map]});}
             for (const call of registrations) { /* BRIO loop: completeSourceAudit — Iterate registrations. Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */
                 const kind = call.arguments[0].value;
@@ -3765,8 +3507,8 @@
             for (const object of numericObjects) { /* BRIO loop: completeSourceAudit — Iterate numericObjects. Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */
                 if (objectNames.get(object) !== "äèä") continue;
                 const resolved = numericSourceConstants(ast, object.start);
-                const pairs = object.properties.filter(/* BRIO expr: completeSourceAudit / object.properties.filter callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x => typeof (x.key?.value || x.key?.name) === "string").map(/* BRIO expr: completeSourceAudit / object.properties.filter(x => typeof (x.key?.value || x.key?.name) === "string").map callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x => [String(x.key.value || x.key.name).toLowerCase(), typeof x.value?.value === "number" ? x.value.value : resolved.get(x.value?.name)]).filter(/* BRIO expr: completeSourceAudit / object.properties.filter(x => typeof (x.key?.value || x.key?.name) === "string").map(x => callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x => Number.isInteger(x[1]) && x[1] >= 0 && x[1] < 5);
-                if (pairs.length > (S.ammoTypeMap?.size || 3)) { /* BRIO branch: completeSourceAudit — Accept pairs.length > (S.ammoTypeMap?.size || 3). Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ S.ammoTypeMap = new Map(pairs); for(const [type,index]of pairs)if(index>=0&&index<=4&&assets.has(type))GUN_TYPES.add(type);S.weaponCatalog=new Set([...GUN_TYPES].filter(/* BRIO expr V51: completeSourceAudit — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ type=>assets.has(type)));log("V51 DYNAMIC GUN CHOICES",{types:[...S.weaponCatalog],source:"native ammo table (0..4) plus exact item assets and known gun constructors",goldEligibility:"unresolved; runtime pickups only"}); log("NATIVE AMMO TYPE MAP", {at: object.start, entries: pairs, note: "AST scalar arithmetic/alias/branch resolution; live slot emblem takes precedence; unknowns remain unknown"});}
+                const pairs = object.properties.filter(/* BRIO expr: completeSourceAudit / object.properties.filter callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x => GUN_TYPES.has(String(x.key?.value || x.key?.name || "").toLowerCase())).map(/* BRIO expr: completeSourceAudit / object.properties.filter(x => GUN_TYPES.has(String(x.key?.value || x.key?.name || "").toLowerCase())).map callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x => [String(x.key.value || x.key.name).toLowerCase(), typeof x.value?.value === "number" ? x.value.value : resolved.get(x.value?.name)]).filter(/* BRIO expr: completeSourceAudit / object.properties.filter(x => GUN_TYPES.has(String(x.key?.value || x.key?.name || "").toLowerCase())).map(x => callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ x => Number.isInteger(x[1]) && x[1] >= 0 && x[1] < 5);
+                if (pairs.length > (S.ammoTypeMap?.size || 3)) { /* BRIO branch: completeSourceAudit — Accept pairs.length > (S.ammoTypeMap?.size || 3). Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ S.ammoTypeMap = new Map(pairs); log("NATIVE AMMO TYPE MAP", {at: object.start, entries: pairs, note: "AST scalar arithmetic/alias/branch resolution; live slot emblem takes precedence; unknowns remain unknown"});}
             }
             const meanings = [...schemaFields].filter(/* BRIO expr: completeSourceAudit / [...schemaFields].filter callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ ([k,v]) => /droid|wander|bot|npc|ai|chest|content|loot|seed|fish|drop|object|ammo|weapon/i.test(v));
             for (const [key, meaning] of meanings) log("DEEP SEMANTIC REFERENCES", {field: key, meaning, total: members.get(key)?.length || 0, references: (members.get(key) || []).slice(0, 120).map(/* BRIO expr: completeSourceAudit / (members.get(key) || []).slice(0, 120).map callback — Parse and retain bounded complete raw source/AST evidence; never execute source or infer server absence. */ at => ({at, excerpt: raw.slice(Math.max(0, at - 180), at + 450)})), capped: (members.get(key)?.length || 0) > 120});
@@ -4013,7 +3755,7 @@
      * The composite additionally suppresses all native pickup prompts because its containers are hidden too.
      */
     const PICKUP_LOOT_TYPES = new Set(["mini","pot","giantsnowball","flex","candycane","bandages","medkit","feesh","bluefeesh","alezfeesh","tryagainfeesh","thatfeesh","snowball","icicle","grenade","landmine","mirv","smokegrenade","invgravitynade","gravitynade","flashbang","molotov","flexsplash","wood","brick","metal","gear","scrap","stack0","stack1","stack2","stack3","stack4"]),
-        pickupPopupHidden = /* BRIO expr: pickupPopupHidden — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ e => !!e.goodFlippinLuck || (!!e.maskLootPopup || !!e.noPickupLabels) && (GUN_TYPES.has(String(S.renderer?.["ÁãÀ"]||"").toLowerCase()) || PICKUP_LOOT_TYPES.has(String(S.renderer?.["ÁãÀ"]||"").toLowerCase()));
+        pickupPopupHidden = /* BRIO expr: pickupPopupHidden — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ e => !!e.goodFlippinLuck || !!e.maskLootPopup && (GUN_TYPES.has(String(S.renderer?.["ÁãÀ"]||"").toLowerCase()) || PICKUP_LOOT_TYPES.has(String(S.renderer?.["ÁãÀ"]||"").toLowerCase()));
     /* BRIO: nativeVisualCandidate (V50; evidence from supplied engine + main.css)
      * Gameplay HUD is drawn in native scene graphs; main.css has no gameplay HUD selectors.
      * Match actual constructor signatures/relationships, not arbitrary screen regions or private globals.
@@ -4037,7 +3779,7 @@
             const color = /* BRIO expr: color — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ n => String(n?.["Äe"] || n?.fillStyle || "").toUpperCase();
             // Native borderScene contains only the four world storm shade rectangles. Map overlay is separate.
             // Minimap texture is the square, custom-painted child of the waiting/player/kills counter holder.
-            if (children.some(/* BRIO expr: nativeVisualCandidate / children.some callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => /\/(?:waitingIcon|movingIcon|timer|storm|playersIcon)\.png$/i.test(hudPath(n)))) { /* BRIO branch: nativeVisualCandidate — Accept children.some(n => /\/(?:waitingIcon|movingIcon|timer|storm|playersIcon)\.png$/i.test(hudPath(n))). Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
+            if (children.some(/* BRIO expr: nativeVisualCandidate / children.some callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => /\/(?:waitingIcon|movingIcon|playersIcon)\.png$/i.test(hudPath(n)))) { /* BRIO branch: nativeVisualCandidate — Accept children.some(n => /\/(?:waitingIcon|movingIcon|playersIcon)\.png$/i.test(hudPath(n))). Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
                 for (const map of children) if (Number(map.width)>=200 && map.width===map.height && Object.hasOwn(map,"Eââ") && /aaÀ|aÀÁ|drawImage/.test(String(map["Eââ"])))
                     gateNativeDraw(map,"minimap",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.noMinimap);
             }
@@ -4067,7 +3809,6 @@
             }
         }
         // Cached popup art is drawn in top, not in the otherwise private popup root. Weak identity survives redraws.
-        v51NativeCandidate(node);
         const image = node["À"]?.["ÁÄ"];
         // The popup is rasterized once during native startup, often BEFORE injection. Its cached top-scene
         // sprite has height120 and exactly8px canvas padding (ÁÀ$=8), with width changed by bannerWidth.
@@ -4080,7 +3821,7 @@
         // No reliable owner is stored on detached trail particles. The player challenge therefore silences ALL
         // trail particles (including local trails), explicitly stated in its UI; local body/held art stays visible.
         if (/\/(?:buildart|cosmetics\/trails)\/trail\d+-[01]\.png$/i.test(hudPath(node)))
-            gateNativeDraw(node,"trailParticles",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.playersInvisible || !!e.allTrailsInvisible || !!e.invisibleProjectiles);
+            gateNativeDraw(node,"trailParticles",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.playersInvisible || !!e.allTrailsInvisible);
     };
     /* BRIO: nativeInventoryChallenge (V50)
      * Template ownership identifies the native inventory common ancestor. Hide rows early as they arrive,
@@ -4096,7 +3837,7 @@
         let root = templates.slots[0]?.holder, depth = 0;
         while (root && depth++<6) { /* BRIO loop: nativeInventoryChallenge — Iterate root && depth++<6. Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */
             const paths = hudWalk(root,240).filter(/* BRIO expr: nativeInventoryChallenge / hudWalk(root,240).filter callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ n => n!==root && !n.__brioHudClone).map(hudPath);
-            if (paths.some(/* BRIO expr: nativeInventoryChallenge / paths.some callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ p => /\/(?:health|shield|playersIcon|waitingIcon|timer|storm)\.png$/i.test(p))) break;
+            if (paths.some(/* BRIO expr: nativeInventoryChallenge / paths.some callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ p => /\/(?:health|shield|playersIcon|waitingIcon)\.png$/i.test(p))) break;
             if (paths.filter(/* BRIO expr: nativeInventoryChallenge / paths.filter callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ p => /\/inv[0-6]\.png$/.test(p)).length>=5 && paths.some(/* BRIO expr: nativeInventoryChallenge / paths.some callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ p => /\/(?:wood|brick|metal|scrap)\.png$/.test(p)) && paths.some(/* BRIO expr: nativeInventoryChallenge / paths.some callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ p => /\/stack[0-4]\.png$/.test(p))) { /* BRIO branch: nativeInventoryChallenge — Accept paths.filter(p => /\/inv[0-6]\.png$/.test(p)).length>=5 && paths.some(p => /\/(?:wood|brick|metal|scrap)\.png$. Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */
                 gateNativeDraw(root,"inventoryHud",/* BRIO expr: nativeInventoryChallenge / gateNativeDraw callback — Gate native inventory units/common ancestor while excluding BRIO clones and unrelated HUD widgets. V50 live-pending. */ e => !!e.noInventoryHud); break;
             }
@@ -4294,7 +4035,6 @@
     featurePlayer = r => { /* BRIO block: featurePlayer — Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
         if (!r?.Eâ) return;
         const e = exFast();
-        v51Player(r);
         // V50 physical root includes body/head/limbs/held art/backpacks/muzzle children/glider changes.
         // External build preview, grapple/rope and shadow are separate native branches and need their own gates.
         if (!isLocal(r)) { /* BRIO branch: featurePlayer — Accept !isLocal(r). Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
@@ -4388,7 +4128,6 @@
      */
     featureWorld = o => { /* BRIO block: featureWorld — Apply independent art/effect/build gates without rewriting shared native resources; V50 tiers live-pending. */
         const e = exFast();
-        v51World(o);
         const tag = String(o["Àâ"] || ""), rs = resourceSlots(o), root = o["â"];
         // V50 hide the COMPLETE placed branch, including native blue base/special-effect children.
         // Only explicit isPreview=true world replicas may remain in Blueprints only; no bot/distance guesses.
@@ -4449,7 +4188,6 @@
                 S.challengeLastReport = performance.now();
                 log("CHALLENGE BRANCH COVERAGE", {epoch:S.runEpoch,tiers:{loot:exFast().lootMaskTier,builds:exFast().buildMaskTier},combined:!!exFast().goodFlippinLuck,
                     installed:Object.fromEntries(nativeVisualCoverage),adapterInstances:nativeDrawGates.size,cap:4096,
-                    v51:{zone:v51.zone,lootArrows:v51.lootUis.size,projectileHistories:v51.paths.size,statsActive:!!v51.stats&&!v51.stats.finished,localSpread:S.renderer?.["ËÂ"],weaponChoices:S.weaponCatalog?.size||0},
                     limits:"Reached branches only. Missing categories require live capture; fixtures are not pixel proof."});
             }
             if (S.renderer && !S.meteorAutoTimer && nativeScanNeeded(exFast())) meteorAutoStart("feature watchdog");
@@ -4525,14 +4263,14 @@
                 const p = worldPos(a), q = worldPos(b);
                 return me ? Math.hypot(p.x - me.x, p.y - me.y) - Math.hypot(q.x - me.x, q.y - me.y) : 0;
             });
-            showIndicator("player", "nearestUi", active[0], e.nearestPlayerName ? active[0]?.["Ée"] || "" : "", indicatorColor(e,"nearestPlayer"), 90);
+            showIndicator("player", "nearestUi", active[0], e.nearestPlayerName ? active[0]?.["Ée"] || "" : "", "#a81020", 90);
         } catch (e) { /* BRIO fallback: nearestV40 — Handle failure in nearestV40 through its existing fallback/report path; optional native fields may be unavailable. */
             log("PLAYER INDICATOR ERROR", String(e));
         }
     }, indicatorsV40 = () => { /* BRIO block: indicatorsV40 — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
         try { /* BRIO guarded: indicatorsV40 — Keep the existing exception boundary for indicatorsV40. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
             const e = exFast();
-            for (const [k, pred, label, key, margin, color] of [ [ "nearestChest", /* BRIO expr: indicatorsV40 — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => o.type === "chest", "", "chestUi", 165, "#ffd21c" ], [ "nearestAirdrop", /* BRIO expr: indicatorsV40 — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => o.type === "airdrop" || o["Àâ"] === "airdrop", "", "airdropUi", 240, "#f28b16" ] ]) if (e[k]) showIndicator(k, key, nearestBy(/* BRIO expr: indicatorsV40 / nearestBy callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => validTarget(o) && pred(o)), label, indicatorColor(e,k)||color, margin); else if (S[key]) S[key].style.display = "none";
+            for (const [k, pred, label, key, margin, color] of [ [ "nearestChest", /* BRIO expr: indicatorsV40 — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => o.type === "chest", "", "chestUi", 165, "#ffd21c" ], [ "nearestAirdrop", /* BRIO expr: indicatorsV40 — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => o.type === "airdrop" || o["Àâ"] === "airdrop", "", "airdropUi", 240, "#f28b16" ] ]) if (e[k]) showIndicator(k, key, nearestBy(/* BRIO expr: indicatorsV40 / nearestBy callback — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ o => validTarget(o) && pred(o)), label, color, margin); else if (S[key]) S[key].style.display = "none";
         } catch (e) { /* BRIO fallback: indicatorsV40 — Handle failure in indicatorsV40 through its existing fallback/report path; optional native fields may be unavailable. */
             log("WORLD INDICATOR ERROR", String(e));
         }
@@ -4580,7 +4318,7 @@
         });
         for (const term of [ "ÁæÆ", "inventoryammo", '"inv"', '"lobby"', "Å.À$", "ãÂÆ=", "Å.áÉâ", '"setID"', '"circle"', '"droid"', '"wander"', '"seed"', '"loot"' ]) { /* BRIO loop: nativeAssetAudit — Iterate [ "ÁæÆ", "inventoryammo", '"inv"', '"lobby"', "Å.À$", "ãÂÆ=", "Å.áÉâ", '"setID"', '"circle. Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
             let at = src.indexOf(term, term === "inventoryammo" ? 23e4 : 0);
-            if (at >= 0) log("V51 NATIVE SOURCE", {
+            if (at >= 0) log("V50 NATIVE SOURCE", {
                 term: term,
                 at: at,
                 excerpt: src.slice(Math.max(0, at - 800), at + 8e3),

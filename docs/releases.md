@@ -1,3 +1,11 @@
+# V51 release update — 2026-10-07
+
+Current src/brio.js; direct dist/brio-v51.min.js; identical immutable payload plus readable source in versions/v51/. All V50 code/tests/live checklist carried forward; V50 remains untested. Approved V50 handoff published, exact V50 readable source frozen at versions/v50/brio.js. All direct/archive historical dist files preserved, including restored v49 direct duplicate.
+
+Approved solo modifiers, inline indicator colors, native post-game breakdown, No map/new independent challenges, Hell title/registry composition. Per-player damage rankings unavailable; spread angle interpretation provisional; native gold spawn eligibility not inferred.35 fixture configurations against source/payload, expanded assertions, strict every-block/function annotation, unchanged vendor/zero payload comments. Current handoff under findings/status/proposals/test-procedures/analysis/audits for V51. Ongoing public test-repo publication explicitly authorized; no file removals without permission.
+
+---
+
 # V50 release update — 2026-10-06
 
 Current src/brio.js; direct zero-comment dist/brio-v50.min.js and identical immutable versions/v50/brio-v50.min.js (260,447 bytes, SHA2567486aaf8894ea7eaa367ddb6c5c5e28852f755c1ad678cc6a82744a3972e413d). Exact prior source preserved at versions/v49/brio.js, prior dist moved to dist/archived/brio-v49.min.js. Original user V49 log/main.css stay byte-identical. Existing historical paths/bytes are retained; relocation history unchanged.

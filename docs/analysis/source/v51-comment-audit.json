@@ -1,0 +1,7769 @@
+{
+  "blocks": [
+    {
+      "owner": "startup IIFE",
+      "line": 32,
+      "documented": true
+    },
+    {
+      "owner": "startup IIFE",
+      "line": 35,
+      "documented": true
+    },
+    {
+      "owner": "startup IIFE",
+      "line": 37,
+      "documented": true
+    },
+    {
+      "owner": "parseNative",
+      "line": 39,
+      "documented": true
+    },
+    {
+      "owner": "renderIndicatorControls",
+      "line": 120,
+      "documented": true
+    },
+    {
+      "owner": "input.oninput",
+      "line": 125,
+      "documented": true
+    },
+    {
+      "owner": "renderIndicatorControls",
+      "line": 130,
+      "documented": true
+    },
+    {
+      "owner": "renderIndicatorControls",
+      "line": 132,
+      "documented": true
+    },
+    {
+      "owner": "c.onchange",
+      "line": 134,
+      "documented": true
+    },
+    {
+      "owner": "v51HealthColor",
+      "line": 140,
+      "documented": true
+    },
+    {
+      "owner": "v51GroundType",
+      "line": 146,
+      "documented": true
+    },
+    {
+      "owner": "v51AmmoIndex",
+      "line": 152,
+      "documented": true
+    },
+    {
+      "owner": "v51World",
+      "line": 156,
+      "documented": true
+    },
+    {
+      "owner": "v51World",
+      "line": 159,
+      "documented": true
+    },
+    {
+      "owner": "v51World",
+      "line": 164,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 167,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 173,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 176,
+      "documented": true
+    },
+    {
+      "owner": "v51TrailSample",
+      "line": 179,
+      "documented": true
+    },
+    {
+      "owner": "v51TrailSample",
+      "line": 183,
+      "documented": true
+    },
+    {
+      "owner": "v51Player",
+      "line": 186,
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 193,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 198,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 207,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 210,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 211,
+      "documented": true
+    },
+    {
+      "owner": "v51SafePoint",
+      "line": 218,
+      "documented": true
+    },
+    {
+      "owner": "v51Indicators",
+      "line": 227,
+      "documented": true
+    },
+    {
+      "owner": "v51Indicators",
+      "line": 229,
+      "documented": true
+    },
+    {
+      "owner": "matches.sort callback",
+      "line": 233,
+      "documented": true
+    },
+    {
+      "owner": "v51Indicators",
+      "line": 236,
+      "documented": true
+    },
+    {
+      "owner": "v51Indicators",
+      "line": 237,
+      "documented": true
+    },
+    {
+      "owner": "v51Indicators",
+      "line": 238,
+      "documented": true
+    },
+    {
+      "owner": "v51Indicators",
+      "line": 239,
+      "documented": true
+    },
+    {
+      "owner": "v51Indicators",
+      "line": 242,
+      "documented": true
+    },
+    {
+      "owner": "v51NativeCandidate",
+      "line": 252,
+      "documented": true
+    },
+    {
+      "owner": "children",
+      "line": 254,
+      "documented": true
+    },
+    {
+      "owner": "v51NativeCandidate",
+      "line": 256,
+      "documented": true
+    },
+    {
+      "owner": "v51NativeCandidate",
+      "line": 262,
+      "documented": true
+    },
+    {
+      "owner": "v51PacketValue",
+      "line": 269,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 272,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 276,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 279,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 279,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 279,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 280,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 282,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 285,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 289,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 290,
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 292,
+      "documented": true
+    },
+    {
+      "owner": "v51Sample",
+      "line": 298,
+      "documented": true
+    },
+    {
+      "owner": "v51Sample",
+      "line": 300,
+      "documented": true
+    },
+    {
+      "owner": "v51Sample",
+      "line": 303,
+      "documented": true
+    },
+    {
+      "owner": "v51Sample",
+      "line": 307,
+      "documented": true
+    },
+    {
+      "owner": "v51PostGame",
+      "line": 310,
+      "documented": true
+    },
+    {
+      "owner": "v51PostGame",
+      "line": 316,
+      "documented": true
+    },
+    {
+      "owner": "v51PostGame",
+      "line": 317,
+      "documented": true
+    },
+    {
+      "owner": "v51PostGame",
+      "line": 318,
+      "documented": true
+    },
+    {
+      "owner": "v51PostGame",
+      "line": 323,
+      "documented": true
+    },
+    {
+      "owner": "v51PostGame",
+      "line": 324,
+      "documented": true
+    },
+    {
+      "owner": "v51PostGame",
+      "line": 327,
+      "documented": true
+    },
+    {
+      "owner": "v51PostGame",
+      "line": 328,
+      "documented": true
+    },
+    {
+      "owner": "v51Reset",
+      "line": 332,
+      "documented": true
+    },
+    {
+      "owner": "normalizeWarningThresholds",
+      "line": 355,
+      "documented": true
+    },
+    {
+      "owner": "read",
+      "line": 374,
+      "documented": true
+    },
+    {
+      "owner": "read",
+      "line": 375,
+      "documented": true
+    },
+    {
+      "owner": "read",
+      "line": 377,
+      "documented": true
+    },
+    {
+      "owner": "write",
+      "line": 383,
+      "documented": true
+    },
+    {
+      "owner": "write",
+      "line": 384,
+      "documented": true
+    },
+    {
+      "owner": "write",
+      "line": 386,
+      "documented": true
+    },
+    {
+      "owner": "storedExtras",
+      "line": 395,
+      "documented": true
+    },
+    {
+      "owner": "extrasState",
+      "line": 412,
+      "documented": true
+    },
+    {
+      "owner": "extrasState",
+      "line": 414,
+      "documented": true
+    },
+    {
+      "owner": "norm",
+      "line": 427,
+      "documented": true
+    },
+    {
+      "owner": "norm",
+      "line": 428,
+      "documented": true
+    },
+    {
+      "owner": "norm",
+      "line": 430,
+      "documented": true
+    },
+    {
+      "owner": "clean",
+      "line": 436,
+      "documented": true
+    },
+    {
+      "owner": "clean",
+      "line": 439,
+      "documented": true
+    },
+    {
+      "owner": "J",
+      "line": 445,
+      "documented": true
+    },
+    {
+      "owner": "J",
+      "line": 446,
+      "documented": true
+    },
+    {
+      "owner": "J",
+      "line": 448,
+      "documented": true
+    },
+    {
+      "owner": "log",
+      "line": 454,
+      "documented": true
+    },
+    {
+      "owner": "log",
+      "line": 457,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 458,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 460,
+      "documented": true
+    },
+    {
+      "owner": "mkBlank",
+      "line": 471,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 493,
+      "documented": true
+    },
+    {
+      "owner": "r.onupgradeneeded",
+      "line": 495,
+      "documented": true
+    },
+    {
+      "owner": "loadCustom",
+      "line": 505,
+      "documented": true
+    },
+    {
+      "owner": "loadCustom",
+      "line": 507,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 508,
+      "documented": true
+    },
+    {
+      "owner": "loadCustom",
+      "line": 513,
+      "documented": true
+    },
+    {
+      "owner": "loadCustom",
+      "line": 521,
+      "documented": true
+    },
+    {
+      "owner": "putCustom",
+      "line": 528,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 530,
+      "documented": true
+    },
+    {
+      "owner": "patchButtons",
+      "line": 548,
+      "documented": true
+    },
+    {
+      "owner": "patchButtons",
+      "line": 549,
+      "documented": true
+    },
+    {
+      "owner": "patchButtons",
+      "line": 558,
+      "documented": true
+    },
+    {
+      "owner": "patchButtons",
+      "line": 565,
+      "documented": true
+    },
+    {
+      "owner": "sel",
+      "line": 586,
+      "documented": true
+    },
+    {
+      "owner": "setSel",
+      "line": 596,
+      "documented": true
+    },
+    {
+      "owner": "setSel",
+      "line": 599,
+      "documented": true
+    },
+    {
+      "owner": "card",
+      "line": 609,
+      "documented": true
+    },
+    {
+      "owner": "card",
+      "line": 614,
+      "documented": true
+    },
+    {
+      "owner": "card",
+      "line": 622,
+      "documented": true
+    },
+    {
+      "owner": "card",
+      "line": 629,
+      "documented": true
+    },
+    {
+      "owner": "renderGrid",
+      "line": 639,
+      "documented": true
+    },
+    {
+      "owner": "renderLocker",
+      "line": 651,
+      "documented": true
+    },
+    {
+      "owner": "renderLocker",
+      "line": 654,
+      "documented": true
+    },
+    {
+      "owner": "z.onclick",
+      "line": 658,
+      "documented": true
+    },
+    {
+      "owner": "renderLocker",
+      "line": 665,
+      "documented": true
+    },
+    {
+      "owner": "z.onclick",
+      "line": 669,
+      "documented": true
+    },
+    {
+      "owner": "renderLocker",
+      "line": 676,
+      "documented": true
+    },
+    {
+      "owner": "z.onclick",
+      "line": 680,
+      "documented": true
+    },
+    {
+      "owner": "locker.querySelector('input[type=\"file\"]').onchange",
+      "line": 691,
+      "documented": true
+    },
+    {
+      "owner": "im.onload",
+      "line": 695,
+      "documented": true
+    },
+    {
+      "owner": "renderWarningThresholds",
+      "line": 779,
+      "documented": true
+    },
+    {
+      "owner": "renderWarningThresholds",
+      "line": 786,
+      "documented": true
+    },
+    {
+      "owner": "renderWarningThresholds",
+      "line": 791,
+      "documented": true
+    },
+    {
+      "owner": "current",
+      "line": 797,
+      "documented": true
+    },
+    {
+      "owner": "input.oninput",
+      "line": 801,
+      "documented": true
+    },
+    {
+      "owner": "input.onblur",
+      "line": 809,
+      "documented": true
+    },
+    {
+      "owner": "reset.onclick",
+      "line": 815,
+      "documented": true
+    },
+    {
+      "owner": "renderChallengeTier",
+      "line": 832,
+      "documented": true
+    },
+    {
+      "owner": "renderChallengeTier",
+      "line": 836,
+      "documented": true
+    },
+    {
+      "owner": "select.onchange",
+      "line": 840,
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 849,
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 851,
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 856,
+      "documented": true
+    },
+    {
+      "owner": "z.onclick",
+      "line": 860,
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 866,
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 871,
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 872,
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 884,
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 890,
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 892,
+      "documented": true
+    },
+    {
+      "owner": "c.onchange",
+      "line": 899,
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 905,
+      "documented": true
+    },
+    {
+      "owner": "c.onchange",
+      "line": 909,
+      "documented": true
+    },
+    {
+      "owner": "c.onchange",
+      "line": 917,
+      "documented": true
+    },
+    {
+      "owner": "c.onchange",
+      "line": 921,
+      "documented": true
+    },
+    {
+      "owner": "intercept",
+      "line": 937,
+      "documented": true
+    },
+    {
+      "owner": "intercept",
+      "line": 943,
+      "documented": true
+    },
+    {
+      "owner": "intercept",
+      "line": 946,
+      "documented": true
+    },
+    {
+      "owner": "choose",
+      "line": 952,
+      "documented": true
+    },
+    {
+      "owner": "choose",
+      "line": 957,
+      "documented": true
+    },
+    {
+      "owner": "choose",
+      "line": 975,
+      "documented": true
+    },
+    {
+      "owner": "loadRes",
+      "line": 988,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 994,
+      "documented": true
+    },
+    {
+      "owner": "im.onload",
+      "line": 997,
+      "documented": true
+    },
+    {
+      "owner": "restoreEmote",
+      "line": 1034,
+      "documented": true
+    },
+    {
+      "owner": "restoreEmote",
+      "line": 1037,
+      "documented": true
+    },
+    {
+      "owner": "restoreEmote",
+      "line": 1040,
+      "documented": true
+    },
+    {
+      "owner": "emoteSlot",
+      "line": 1042,
+      "documented": true
+    },
+    {
+      "owner": "mapEmote",
+      "line": 1047,
+      "documented": true
+    },
+    {
+      "owner": "installEmote",
+      "line": 1050,
+      "documented": true
+    },
+    {
+      "owner": "get",
+      "line": 1063,
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 1066,
+      "documented": true
+    },
+    {
+      "owner": "restoreSrc",
+      "line": 1072,
+      "documented": true
+    },
+    {
+      "owner": "restoreSrc",
+      "line": 1074,
+      "documented": true
+    },
+    {
+      "owner": "restoreSrc",
+      "line": 1076,
+      "documented": true
+    },
+    {
+      "owner": "installSrc",
+      "line": 1079,
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 1089,
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 1091,
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 1093,
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 1095,
+      "documented": true
+    },
+    {
+      "owner": "restoreResourceMaps",
+      "line": 1104,
+      "documented": true
+    },
+    {
+      "owner": "restoreResourceMaps",
+      "line": 1105,
+      "documented": true
+    },
+    {
+      "owner": "restoreResourceMaps",
+      "line": 1106,
+      "documented": true
+    },
+    {
+      "owner": "restoreResourceMaps",
+      "line": 1108,
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock",
+      "line": 1112,
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock",
+      "line": 1115,
+      "documented": true
+    },
+    {
+      "owner": "get",
+      "line": 1127,
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 1130,
+      "documented": true
+    },
+    {
+      "owner": "(S.cosmeticAdapters || (S.cosmeticAdapters = [])).push callback",
+      "line": 1134,
+      "documented": true
+    },
+    {
+      "owner": "(S.cosmeticAdapters || (S.cosmeticAdapters = [])).push callback",
+      "line": 1135,
+      "documented": true
+    },
+    {
+      "owner": "(S.cosmeticAdapters || (S.cosmeticAdapters = [])).push callback",
+      "line": 1138,
+      "documented": true
+    },
+    {
+      "owner": "restoreCosmetics",
+      "line": 1143,
+      "documented": true
+    },
+    {
+      "owner": "restoreCosmetics",
+      "line": 1144,
+      "documented": true
+    },
+    {
+      "owner": "restoreCosmetics",
+      "line": 1146,
+      "documented": true
+    },
+    {
+      "owner": "sceneObserve",
+      "line": 1149,
+      "documented": true
+    },
+    {
+      "owner": "sceneObserve",
+      "line": 1160,
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 1163,
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 1165,
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 1170,
+      "documented": true
+    },
+    {
+      "owner": "sceneObserve",
+      "line": 1175,
+      "documented": true
+    },
+    {
+      "owner": "restores.push callback",
+      "line": 1182,
+      "documented": true
+    },
+    {
+      "owner": "restores.push callback",
+      "line": 1183,
+      "documented": true
+    },
+    {
+      "owner": "sceneObserve",
+      "line": 1187,
+      "documented": true
+    },
+    {
+      "owner": "sceneRoots",
+      "line": 1190,
+      "documented": true
+    },
+    {
+      "owner": "sceneRoots",
+      "line": 1192,
+      "documented": true
+    },
+    {
+      "owner": "sceneRoots",
+      "line": 1196,
+      "documented": true
+    },
+    {
+      "owner": "sceneRoots",
+      "line": 1198,
+      "documented": true
+    },
+    {
+      "owner": "sceneRoots",
+      "line": 1199,
+      "documented": true
+    },
+    {
+      "owner": "sceneRoots",
+      "line": 1202,
+      "documented": true
+    },
+    {
+      "owner": "observeRendered",
+      "line": 1212,
+      "documented": true
+    },
+    {
+      "owner": "observeRendered",
+      "line": 1215,
+      "documented": true
+    },
+    {
+      "owner": "observeRendered",
+      "line": 1218,
+      "documented": true
+    },
+    {
+      "owner": "observeRendered",
+      "line": 1221,
+      "documented": true
+    },
+    {
+      "owner": "observeRendered",
+      "line": 1225,
+      "documented": true
+    },
+    {
+      "owner": "observeRenderArray",
+      "line": 1227,
+      "documented": true
+    },
+    {
+      "owner": "observeRenderArray",
+      "line": 1230,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1233,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1234,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1238,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1240,
+      "documented": true
+    },
+    {
+      "owner": "restores.push callback",
+      "line": 1253,
+      "documented": true
+    },
+    {
+      "owner": "restores.push callback",
+      "line": 1254,
+      "documented": true
+    },
+    {
+      "owner": "stopRenderDiscovery",
+      "line": 1262,
+      "documented": true
+    },
+    {
+      "owner": "restoreRenderArrays",
+      "line": 1272,
+      "documented": true
+    },
+    {
+      "owner": "startRenderDiscovery",
+      "line": 1278,
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 1281,
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 1282,
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 1284,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1285,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1287,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1287,
+      "documented": true
+    },
+    {
+      "owner": "applyLocal",
+      "line": 1310,
+      "documented": true
+    },
+    {
+      "owner": "loadRes(k, x).catch callback",
+      "line": 1325,
+      "documented": true
+    },
+    {
+      "owner": "applyLocal",
+      "line": 1334,
+      "documented": true
+    },
+    {
+      "owner": "applyLocal",
+      "line": 1342,
+      "documented": true
+    },
+    {
+      "owner": "applyLocal",
+      "line": 1346,
+      "documented": true
+    },
+    {
+      "owner": "applyLocal",
+      "line": 1356,
+      "documented": true
+    },
+    {
+      "owner": "applyLocal",
+      "line": 1359,
+      "documented": true
+    },
+    {
+      "owner": "applyLocal",
+      "line": 1379,
+      "documented": true
+    },
+    {
+      "owner": "worldPos",
+      "line": 1384,
+      "documented": true
+    },
+    {
+      "owner": "localNameMatch",
+      "line": 1390,
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots",
+      "line": 1399,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 1400,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 1403,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 1410,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 1413,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 1415,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 1419,
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots",
+      "line": 1427,
+      "documented": true
+    },
+    {
+      "owner": "collectPlayers",
+      "line": 1435,
+      "documented": true
+    },
+    {
+      "owner": "collectPlayers",
+      "line": 1437,
+      "documented": true
+    },
+    {
+      "owner": "collectWorld",
+      "line": 1445,
+      "documented": true
+    },
+    {
+      "owner": "collectWorld",
+      "line": 1447,
+      "documented": true
+    },
+    {
+      "owner": "transparentImage",
+      "line": 1453,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1456,
+      "documented": true
+    },
+    {
+      "owner": "make",
+      "line": 1457,
+      "documented": true
+    },
+    {
+      "owner": "make",
+      "line": 1459,
+      "documented": true
+    },
+    {
+      "owner": "im.onload",
+      "line": 1468,
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1477,
+      "documented": true
+    },
+    {
+      "owner": "done",
+      "line": 1479,
+      "documented": true
+    },
+    {
+      "owner": "loaded",
+      "line": 1484,
+      "documented": true
+    },
+    {
+      "owner": "failed",
+      "line": 1487,
+      "documented": true
+    },
+    {
+      "owner": "p.then callback",
+      "line": 1501,
+      "documented": true
+    },
+    {
+      "owner": "blankWrapper",
+      "line": 1505,
+      "documented": true
+    },
+    {
+      "owner": "blankWrapper",
+      "line": 1511,
+      "documented": true
+    },
+    {
+      "owner": "captureRoof",
+      "line": 1518,
+      "documented": true
+    },
+    {
+      "owner": "isBuild",
+      "line": 1522,
+      "documented": true
+    },
+    {
+      "owner": "blankBuild",
+      "line": 1527,
+      "documented": true
+    },
+    {
+      "owner": "blankLoot",
+      "line": 1531,
+      "documented": true
+    },
+    {
+      "owner": "rememberRemote",
+      "line": 1534,
+      "documented": true
+    },
+    {
+      "owner": "rememberRemote",
+      "line": 1536,
+      "documented": true
+    },
+    {
+      "owner": "rememberRemote",
+      "line": 1544,
+      "documented": true
+    },
+    {
+      "owner": "Eââ",
+      "line": 1562,
+      "documented": true
+    },
+    {
+      "owner": "Eââ",
+      "line": 1563,
+      "documented": true
+    },
+    {
+      "owner": "Eââ",
+      "line": 1575,
+      "documented": true
+    },
+    {
+      "owner": "éa",
+      "line": 1577,
+      "documented": true
+    },
+    {
+      "owner": "ÊÈA",
+      "line": 1580,
+      "documented": true
+    },
+    {
+      "owner": "ÊÈA",
+      "line": 1581,
+      "documented": true
+    },
+    {
+      "owner": "ÊÈA",
+      "line": 1583,
+      "documented": true
+    },
+    {
+      "owner": "attachTrack",
+      "line": 1586,
+      "documented": true
+    },
+    {
+      "owner": "attachTrack",
+      "line": 1589,
+      "documented": true
+    },
+    {
+      "owner": "attachTrack",
+      "line": 1592,
+      "documented": true
+    },
+    {
+      "owner": "attachLocalTrack",
+      "line": 1595,
+      "documented": true
+    },
+    {
+      "owner": "attachLocalTrack",
+      "line": 1600,
+      "documented": true
+    },
+    {
+      "owner": "attachLocalTrack",
+      "line": 1606,
+      "documented": true
+    },
+    {
+      "owner": "screenState",
+      "line": 1609,
+      "documented": true
+    },
+    {
+      "owner": "ensureArrow",
+      "line": 1619,
+      "documented": true
+    },
+    {
+      "owner": "ensureArrow",
+      "line": 1620,
+      "documented": true
+    },
+    {
+      "owner": "placeArrow",
+      "line": 1633,
+      "documented": true
+    },
+    {
+      "owner": "placeArrow",
+      "line": 1646,
+      "documented": true
+    },
+    {
+      "owner": "projectWorld",
+      "line": 1649,
+      "documented": true
+    },
+    {
+      "owner": "hudWalk",
+      "line": 1665,
+      "documented": true
+    },
+    {
+      "owner": "hudWalk",
+      "line": 1667,
+      "documented": true
+    },
+    {
+      "owner": "hudCandidate",
+      "line": 1680,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 1688,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 1691,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 1693,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 1694,
+      "documented": true
+    },
+    {
+      "owner": "slotUnit",
+      "line": 1708,
+      "documented": true
+    },
+    {
+      "owner": "slotUnit",
+      "line": 1711,
+      "documented": true
+    },
+    {
+      "owner": "captureSlotRow",
+      "line": 1723,
+      "documented": true
+    },
+    {
+      "owner": "captureSlotRow",
+      "line": 1729,
+      "documented": true
+    },
+    {
+      "owner": "captureSlotRow",
+      "line": 1742,
+      "documented": true
+    },
+    {
+      "owner": "captureSlotRow",
+      "line": 1759,
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1768,
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1775,
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1779,
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1780,
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1782,
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1786,
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1793,
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1821,
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1823,
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1833,
+      "documented": true
+    },
+    {
+      "owner": "hudBounds",
+      "line": 1859,
+      "documented": true
+    },
+    {
+      "owner": "hudBounds",
+      "line": 1861,
+      "documented": true
+    },
+    {
+      "owner": "hudBounds",
+      "line": 1864,
+      "documented": true
+    },
+    {
+      "owner": "liveSlotWarningBounds",
+      "line": 1901,
+      "documented": true
+    },
+    {
+      "owner": "liveSlotWarningBounds",
+      "line": 1910,
+      "documented": true
+    },
+    {
+      "owner": "ownMaterialWarnings",
+      "line": 1927,
+      "documented": true
+    },
+    {
+      "owner": "ownMaterialWarnings",
+      "line": 1930,
+      "documented": true
+    },
+    {
+      "owner": "ownMaterialWarnings",
+      "line": 1931,
+      "documented": true
+    },
+    {
+      "owner": "ownMaterialWarnings",
+      "line": 1931,
+      "documented": true
+    },
+    {
+      "owner": "ownMaterialWarnings",
+      "line": 1933,
+      "documented": true
+    },
+    {
+      "owner": "ownMaterialWarnings",
+      "line": 1939,
+      "documented": true
+    },
+    {
+      "owner": "draw",
+      "line": 1941,
+      "documented": true
+    },
+    {
+      "owner": "draw",
+      "line": 1948,
+      "documented": true
+    },
+    {
+      "owner": "draw",
+      "line": 1955,
+      "documented": true
+    },
+    {
+      "owner": "ownMaterialWarnings",
+      "line": 1968,
+      "documented": true
+    },
+    {
+      "owner": "cloneNativeWidget",
+      "line": 1983,
+      "documented": true
+    },
+    {
+      "owner": "clone",
+      "line": 1986,
+      "documented": true
+    },
+    {
+      "owner": "clone",
+      "line": 1994,
+      "documented": true
+    },
+    {
+      "owner": "clone",
+      "line": 2005,
+      "documented": true
+    },
+    {
+      "owner": "clone",
+      "line": 2007,
+      "documented": true
+    },
+    {
+      "owner": "clone",
+      "line": 2009,
+      "documented": true
+    },
+    {
+      "owner": "clone",
+      "line": 2012,
+      "documented": true
+    },
+    {
+      "owner": "clone",
+      "line": 2016,
+      "documented": true
+    },
+    {
+      "owner": "clone",
+      "line": 2025,
+      "documented": true
+    },
+    {
+      "owner": "ensureNativeSlotArt",
+      "line": 2042,
+      "documented": true
+    },
+    {
+      "owner": "ensureNativeSlotArt",
+      "line": 2065,
+      "documented": true
+    },
+    {
+      "owner": "nativeInvFor",
+      "line": 2076,
+      "documented": true
+    },
+    {
+      "owner": "nativeInvFor",
+      "line": 2081,
+      "documented": true
+    },
+    {
+      "owner": "nativeInvFor",
+      "line": 2083,
+      "documented": true
+    },
+    {
+      "owner": "nativeInvFor",
+      "line": 2085,
+      "documented": true
+    },
+    {
+      "owner": "nativeInvFor",
+      "line": 2087,
+      "documented": true
+    },
+    {
+      "owner": "nativeInvFor",
+      "line": 2091,
+      "documented": true
+    },
+    {
+      "owner": "nativeInvFor",
+      "line": 2092,
+      "documented": true
+    },
+    {
+      "owner": "drawNativeInv",
+      "line": 2129,
+      "documented": true
+    },
+    {
+      "owner": "drawNativeInv",
+      "line": 2135,
+      "documented": true
+    },
+    {
+      "owner": "drawNativeInv",
+      "line": 2146,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2155,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2161,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2162,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2167,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2172,
+      "documented": true
+    },
+    {
+      "owner": "pair.node[method]",
+      "line": 2174,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2177,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2179,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2181,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2183,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2191,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2193,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2202,
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2211,
+      "documented": true
+    },
+    {
+      "owner": "resetNativeHud",
+      "line": 2234,
+      "documented": true
+    },
+    {
+      "owner": "resetNativeHud",
+      "line": 2235,
+      "documented": true
+    },
+    {
+      "owner": "resetNativeHud",
+      "line": 2237,
+      "documented": true
+    },
+    {
+      "owner": "resetNativeHud",
+      "line": 2239,
+      "documented": true
+    },
+    {
+      "owner": "resetNativeHud",
+      "line": 2241,
+      "documented": true
+    },
+    {
+      "owner": "nativeSlotAmmoIndex",
+      "line": 2269,
+      "documented": true
+    },
+    {
+      "owner": "drawRemoteChargeWarning",
+      "line": 2289,
+      "documented": true
+    },
+    {
+      "owner": "drawRemoteChargeWarning",
+      "line": 2291,
+      "documented": true
+    },
+    {
+      "owner": "drawRemoteChargeWarning",
+      "line": 2295,
+      "documented": true
+    },
+    {
+      "owner": "nativeSlotAmmo",
+      "line": 2300,
+      "documented": true
+    },
+    {
+      "owner": "slotArtStyle",
+      "line": 2313,
+      "documented": true
+    },
+    {
+      "owner": "slotArtStyle",
+      "line": 2320,
+      "documented": true
+    },
+    {
+      "owner": "drawSlotArt",
+      "line": 2324,
+      "documented": true
+    },
+    {
+      "owner": "drawEmptyX",
+      "line": 2332,
+      "documented": true
+    },
+    {
+      "owner": "invImage",
+      "line": 2348,
+      "documented": true
+    },
+    {
+      "owner": "im.onload",
+      "line": 2353,
+      "documented": true
+    },
+    {
+      "owner": "im.onerror",
+      "line": 2358,
+      "documented": true
+    },
+    {
+      "owner": "im.onerror",
+      "line": 2359,
+      "documented": true
+    },
+    {
+      "owner": "itemPath",
+      "line": 2372,
+      "documented": true
+    },
+    {
+      "owner": "itemPath",
+      "line": 2376,
+      "documented": true
+    },
+    {
+      "owner": "matState",
+      "line": 2378,
+      "documented": true
+    },
+    {
+      "owner": "drawImg",
+      "line": 2381,
+      "documented": true
+    },
+    {
+      "owner": "drawImg",
+      "line": 2384,
+      "documented": true
+    },
+    {
+      "owner": "drawImg",
+      "line": 2386,
+      "documented": true
+    },
+    {
+      "owner": "drawHudText",
+      "line": 2390,
+      "documented": true
+    },
+    {
+      "owner": "drawInv",
+      "line": 2404,
+      "documented": true
+    },
+    {
+      "owner": "drawInv",
+      "line": 2411,
+      "documented": true
+    },
+    {
+      "owner": "drawInv",
+      "line": 2412,
+      "documented": true
+    },
+    {
+      "owner": "drawInv",
+      "line": 2416,
+      "documented": true
+    },
+    {
+      "owner": "drawInv",
+      "line": 2418,
+      "documented": true
+    },
+    {
+      "owner": "drawInv",
+      "line": 2427,
+      "documented": true
+    },
+    {
+      "owner": "vals.forEach callback",
+      "line": 2431,
+      "documented": true
+    },
+    {
+      "owner": "drawInv",
+      "line": 2436,
+      "documented": true
+    },
+    {
+      "owner": "drawInv",
+      "line": 2440,
+      "documented": true
+    },
+    {
+      "owner": "Eââ",
+      "line": 2461,
+      "documented": true
+    },
+    {
+      "owner": "éa",
+      "line": 2468,
+      "documented": true
+    },
+    {
+      "owner": "ÊÈA",
+      "line": 2476,
+      "documented": true
+    },
+    {
+      "owner": "ÊÈA",
+      "line": 2477,
+      "documented": true
+    },
+    {
+      "owner": "ÊÈA",
+      "line": 2479,
+      "documented": true
+    },
+    {
+      "owner": "attachInv",
+      "line": 2485,
+      "documented": true
+    },
+    {
+      "owner": "attachInv",
+      "line": 2488,
+      "documented": true
+    },
+    {
+      "owner": "attachInv",
+      "line": 2491,
+      "documented": true
+    },
+    {
+      "owner": "restoreInvTrace",
+      "line": 2495,
+      "documented": true
+    },
+    {
+      "owner": "automaticPhase",
+      "line": 2499,
+      "documented": true
+    },
+    {
+      "owner": "botPhase",
+      "line": 2506,
+      "documented": true
+    },
+    {
+      "owner": "botSample",
+      "line": 2519,
+      "documented": true
+    },
+    {
+      "owner": "botSample",
+      "line": 2522,
+      "documented": true
+    },
+    {
+      "owner": "botSample",
+      "line": 2523,
+      "documented": true
+    },
+    {
+      "owner": "botSample",
+      "line": 2533,
+      "documented": true
+    },
+    {
+      "owner": "botSample",
+      "line": 2569,
+      "documented": true
+    },
+    {
+      "owner": "botSample",
+      "line": 2577,
+      "documented": true
+    },
+    {
+      "owner": "botSample",
+      "line": 2583,
+      "documented": true
+    },
+    {
+      "owner": "botStart",
+      "line": 2592,
+      "documented": true
+    },
+    {
+      "owner": "setInterval callback",
+      "line": 2600,
+      "documented": true
+    },
+    {
+      "owner": "botStop",
+      "line": 2608,
+      "documented": true
+    },
+    {
+      "owner": "collectWorld().filter(/* BRIO expr: nearestBy / collectWorld().filter callback — callback",
+      "line": 2630,
+      "documented": true
+    },
+    {
+      "owner": "targetOnScreen",
+      "line": 2636,
+      "documented": true
+    },
+    {
+      "owner": "indicatorTick",
+      "line": 2642,
+      "documented": true
+    },
+    {
+      "owner": "shallowState",
+      "line": 2643,
+      "documented": true
+    },
+    {
+      "owner": "shallowState",
+      "line": 2645,
+      "documented": true
+    },
+    {
+      "owner": "shallowState",
+      "line": 2647,
+      "documented": true
+    },
+    {
+      "owner": "shallowState",
+      "line": 2649,
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2659,
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2660,
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2662,
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2664,
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2667,
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2674,
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2676,
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2678,
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2685,
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2690,
+      "documented": true
+    },
+    {
+      "owner": "passiveAdded",
+      "line": 2693,
+      "documented": true
+    },
+    {
+      "owner": "restoreRandom",
+      "line": 2706,
+      "documented": true
+    },
+    {
+      "owner": "stopMeteorPersist",
+      "line": 2707,
+      "documented": true
+    },
+    {
+      "owner": "restoreMeteor",
+      "line": 2711,
+      "documented": true
+    },
+    {
+      "owner": "meteorAutoStop",
+      "line": 2717,
+      "documented": true
+    },
+    {
+      "owner": "meteorCandidate",
+      "line": 2728,
+      "documented": true
+    },
+    {
+      "owner": "meteorCandidate",
+      "line": 2732,
+      "documented": true
+    },
+    {
+      "owner": "meteorScan",
+      "line": 2739,
+      "documented": true
+    },
+    {
+      "owner": "meteorScan",
+      "line": 2741,
+      "documented": true
+    },
+    {
+      "owner": "meteorScan",
+      "line": 2748,
+      "documented": true
+    },
+    {
+      "owner": "meteorScan",
+      "line": 2753,
+      "documented": true
+    },
+    {
+      "owner": "meteorScan",
+      "line": 2760,
+      "documented": true
+    },
+    {
+      "owner": "meteorScan",
+      "line": 2771,
+      "documented": true
+    },
+    {
+      "owner": "meteorAutoStart",
+      "line": 2778,
+      "documented": true
+    },
+    {
+      "owner": "tick",
+      "line": 2785,
+      "documented": true
+    },
+    {
+      "owner": "tick",
+      "line": 2786,
+      "documented": true
+    },
+    {
+      "owner": "tick",
+      "line": 2788,
+      "documented": true
+    },
+    {
+      "owner": "tick",
+      "line": 2789,
+      "documented": true
+    },
+    {
+      "owner": "applyRemote",
+      "line": 2811,
+      "documented": true
+    },
+    {
+      "owner": "applyRemote",
+      "line": 2816,
+      "documented": true
+    },
+    {
+      "owner": "applyRemote",
+      "line": 2825,
+      "documented": true
+    },
+    {
+      "owner": "queueRemote",
+      "line": 2831,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2835,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2838,
+      "documented": true
+    },
+    {
+      "owner": "queueWorld",
+      "line": 2842,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2846,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2850,
+      "documented": true
+    },
+    {
+      "owner": "handleAdded",
+      "line": 2859,
+      "documented": true
+    },
+    {
+      "owner": "handleAdded",
+      "line": 2861,
+      "documented": true
+    },
+    {
+      "owner": "handleAdded",
+      "line": 2864,
+      "documented": true
+    },
+    {
+      "owner": "handleAdded",
+      "line": 2870,
+      "documented": true
+    },
+    {
+      "owner": "handleAdded",
+      "line": 2877,
+      "documented": true
+    },
+    {
+      "owner": "patchArray",
+      "line": 2884,
+      "documented": true
+    },
+    {
+      "owner": "p",
+      "line": 2886,
+      "documented": true
+    },
+    {
+      "owner": "u",
+      "line": 2890,
+      "documented": true
+    },
+    {
+      "owner": "restoreArrays",
+      "line": 2913,
+      "documented": true
+    },
+    {
+      "owner": "restoreArrays",
+      "line": 2914,
+      "documented": true
+    },
+    {
+      "owner": "restoreArrays",
+      "line": 2917,
+      "documented": true
+    },
+    {
+      "owner": "onLocal",
+      "line": 2922,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2928,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2932,
+      "documented": true
+    },
+    {
+      "owner": "onLocal",
+      "line": 2946,
+      "documented": true
+    },
+    {
+      "owner": "setInterval callback",
+      "line": 2949,
+      "documented": true
+    },
+    {
+      "owner": "stopCapture",
+      "line": 2965,
+      "documented": true
+    },
+    {
+      "owner": "maybeStop",
+      "line": 2976,
+      "documented": true
+    },
+    {
+      "owner": "tagName",
+      "line": 2983,
+      "documented": true
+    },
+    {
+      "owner": "tagName",
+      "line": 2990,
+      "documented": true
+    },
+    {
+      "owner": "tagName",
+      "line": 2992,
+      "documented": true
+    },
+    {
+      "owner": "tagName",
+      "line": 2999,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3006,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3029,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3056,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3060,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3067,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3069,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3071,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3073,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3075,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3077,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3079,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3083,
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3087,
+      "documented": true
+    },
+    {
+      "owner": "hp",
+      "line": 3103,
+      "documented": true
+    },
+    {
+      "owner": "hu",
+      "line": 3108,
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 3116,
+      "documented": true
+    },
+    {
+      "owner": "bindPlay",
+      "line": 3136,
+      "documented": true
+    },
+    {
+      "owner": "verify",
+      "line": 3150,
+      "documented": true
+    },
+    {
+      "owner": "term.onclick",
+      "line": 3214,
+      "documented": true
+    },
+    {
+      "owner": "term.onclick",
+      "line": 3216,
+      "documented": true
+    },
+    {
+      "owner": "term.onclick",
+      "line": 3218,
+      "documented": true
+    },
+    {
+      "owner": "term.onclick",
+      "line": 3222,
+      "documented": true
+    },
+    {
+      "owner": "term.onclick",
+      "line": 3222,
+      "documented": true
+    },
+    {
+      "owner": "Promise.resolve().then callback",
+      "line": 3227,
+      "documented": true
+    },
+    {
+      "owner": "Promise.resolve().then(() => { /* BRIO block: term.onclick — Promise.resolve().t callback",
+      "line": 3230,
+      "documented": true
+    },
+    {
+      "owner": "Promise.resolve().then(() => { /* BRIO block: term.onclick — Promise.resolve().t callback",
+      "line": 3233,
+      "documented": true
+    },
+    {
+      "owner": "Promise.resolve().then(() => { /* BRIO block: term.onclick — Promise.resolve().t callback",
+      "line": 3235,
+      "documented": true
+    },
+    {
+      "owner": "term.querySelector(\".head\").onpointerdown",
+      "line": 3241,
+      "documented": true
+    },
+    {
+      "owner": "term.querySelector(\".head\").onpointermove",
+      "line": 3253,
+      "documented": true
+    },
+    {
+      "owner": "S.destroy",
+      "line": 3264,
+      "documented": true
+    },
+    {
+      "owner": "S.destroy",
+      "line": 3295,
+      "documented": true
+    },
+    {
+      "owner": "S.destroy",
+      "line": 3297,
+      "documented": true
+    },
+    {
+      "owner": "S.destroy",
+      "line": 3298,
+      "documented": true
+    },
+    {
+      "owner": "S.destroy",
+      "line": 3300,
+      "documented": true
+    },
+    {
+      "owner": "S.destroy",
+      "line": 3301,
+      "documented": true
+    },
+    {
+      "owner": "S.destroy",
+      "line": 3303,
+      "documented": true
+    },
+    {
+      "owner": "S.destroy",
+      "line": 3305,
+      "documented": true
+    },
+    {
+      "owner": "S.destroy",
+      "line": 3307,
+      "documented": true
+    },
+    {
+      "owner": "botAuditReset",
+      "line": 3324,
+      "documented": true
+    },
+    {
+      "owner": "botMeta",
+      "line": 3337,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3339,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3342,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3345,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3347,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3351,
+      "documented": true
+    },
+    {
+      "owner": "botAuditTick",
+      "line": 3358,
+      "documented": true
+    },
+    {
+      "owner": "botAuditTick",
+      "line": 3360,
+      "documented": true
+    },
+    {
+      "owner": "botAuditTick",
+      "line": 3363,
+      "documented": true
+    },
+    {
+      "owner": "botAuditTick",
+      "line": 3381,
+      "documented": true
+    },
+    {
+      "owner": "botSourceAudit",
+      "line": 3393,
+      "documented": true
+    },
+    {
+      "owner": "botSourceAudit",
+      "line": 3402,
+      "documented": true
+    },
+    {
+      "owner": "deepError",
+      "line": 3428,
+      "documented": true
+    },
+    {
+      "owner": "probeSnapshot",
+      "line": 3436,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3438,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3439,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3440,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3440,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3446,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3449,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3452,
+      "documented": true
+    },
+    {
+      "owner": "deepRecord",
+      "line": 3466,
+      "documented": true
+    },
+    {
+      "owner": "deepRecord",
+      "line": 3467,
+      "documented": true
+    },
+    {
+      "owner": "deepRecord",
+      "line": 3469,
+      "documented": true
+    },
+    {
+      "owner": "environmentProbe",
+      "line": 3477,
+      "documented": true
+    },
+    {
+      "owner": "environmentProbe",
+      "line": 3481,
+      "documented": true
+    },
+    {
+      "owner": "environmentProbe",
+      "line": 3483,
+      "documented": true
+    },
+    {
+      "owner": "environmentProbe",
+      "line": 3484,
+      "documented": true
+    },
+    {
+      "owner": "incomingDelta",
+      "line": 3494,
+      "documented": true
+    },
+    {
+      "owner": "incomingDelta",
+      "line": 3500,
+      "documented": true
+    },
+    {
+      "owner": "incomingDelta",
+      "line": 3505,
+      "documented": true
+    },
+    {
+      "owner": "incomingDelta",
+      "line": 3512,
+      "documented": true
+    },
+    {
+      "owner": "incomingDelta",
+      "line": 3517,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3523,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3526,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3535,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3537,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3539,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3543,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3545,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3548,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3556,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3558,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3561,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3562,
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3565,
+      "documented": true
+    },
+    {
+      "owner": "deepEngineProbe",
+      "line": 3575,
+      "documented": true
+    },
+    {
+      "owner": "deepEngineProbe",
+      "line": 3581,
+      "documented": true
+    },
+    {
+      "owner": "deepEngineProbe",
+      "line": 3584,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3586,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3587,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3587,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3590,
+      "documented": true
+    },
+    {
+      "owner": "deep.engineRestores.push callback",
+      "line": 3594,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3602,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3603,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3604,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3605,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3605,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3607,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3608,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3610,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3610,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3611,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3611,
+      "documented": true
+    },
+    {
+      "owner": "deep.restore",
+      "line": 3616,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3622,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3624,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3628,
+      "documented": true
+    },
+    {
+      "owner": "Reflect.ownKeys(p).map callback",
+      "line": 3631,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3633,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3636,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3638,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3642,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3644,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3646,
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3651,
+      "documented": true
+    },
+    {
+      "owner": "deepStop",
+      "line": 3668,
+      "documented": true
+    },
+    {
+      "owner": "deepStop",
+      "line": 3670,
+      "documented": true
+    },
+    {
+      "owner": "deepStart",
+      "line": 3677,
+      "documented": true
+    },
+    {
+      "owner": "tick",
+      "line": 3681,
+      "documented": true
+    },
+    {
+      "owner": "tick",
+      "line": 3681,
+      "documented": true
+    },
+    {
+      "owner": "tick",
+      "line": 3681,
+      "documented": true
+    },
+    {
+      "owner": "numericSourceConstants",
+      "line": 3688,
+      "documented": true
+    },
+    {
+      "owner": "readNumber",
+      "line": 3690,
+      "documented": true
+    },
+    {
+      "owner": "readNumber",
+      "line": 3694,
+      "documented": true
+    },
+    {
+      "owner": "readNumber",
+      "line": 3695,
+      "documented": true
+    },
+    {
+      "owner": "invalidate",
+      "line": 3706,
+      "documented": true
+    },
+    {
+      "owner": "execute",
+      "line": 3712,
+      "documented": true
+    },
+    {
+      "owner": "execute",
+      "line": 3714,
+      "documented": true
+    },
+    {
+      "owner": "execute",
+      "line": 3716,
+      "documented": true
+    },
+    {
+      "owner": "execute",
+      "line": 3717,
+      "documented": true
+    },
+    {
+      "owner": "execute",
+      "line": 3717,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3729,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3731,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3734,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3734,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3735,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3737,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3747,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3747,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3748,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3748,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3749,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3749,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3750,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3750,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3754,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3755,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3756,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3758,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3765,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3769,
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3775,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3783,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3785,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3803,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3807,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3812,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3814,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3818,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3823,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3830,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3854,
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3856,
+      "documented": true
+    },
+    {
+      "owner": "replicaStateAudit",
+      "line": 3870,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3877,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3880,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3883,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3885,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3889,
+      "documented": true
+    },
+    {
+      "owner": "registrationAudit",
+      "line": 3909,
+      "documented": true
+    },
+    {
+      "owner": "registrationAudit",
+      "line": 3910,
+      "documented": true
+    },
+    {
+      "owner": "registrationAudit",
+      "line": 3926,
+      "documented": true
+    },
+    {
+      "owner": "registrationAudit",
+      "line": 3928,
+      "documented": true
+    },
+    {
+      "owner": "resetMonochrome",
+      "line": 3944,
+      "documented": true
+    },
+    {
+      "owner": "resetMonochrome",
+      "line": 3946,
+      "documented": true
+    },
+    {
+      "owner": "syncMonochrome",
+      "line": 3955,
+      "documented": true
+    },
+    {
+      "owner": "syncMonochrome",
+      "line": 3956,
+      "documented": true
+    },
+    {
+      "owner": "syncMonochrome",
+      "line": 3958,
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw",
+      "line": 3975,
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw",
+      "line": 3978,
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw",
+      "line": 3981,
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw",
+      "line": 3982,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3986,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3987,
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3989,
+      "documented": true
+    },
+    {
+      "owner": "featureRestore.push callback",
+      "line": 3998,
+      "documented": true
+    },
+    {
+      "owner": "featureRestore.push callback",
+      "line": 3999,
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw",
+      "line": 4004,
+      "documented": true
+    },
+    {
+      "owner": "nativeVisualCandidate",
+      "line": 4023,
+      "documented": true
+    },
+    {
+      "owner": "nativeVisualCandidate",
+      "line": 4027,
+      "documented": true
+    },
+    {
+      "owner": "nativeVisualCandidate",
+      "line": 4040,
+      "documented": true
+    },
+    {
+      "owner": "nativeVisualCandidate",
+      "line": 4047,
+      "documented": true
+    },
+    {
+      "owner": "nativeVisualCandidate",
+      "line": 4056,
+      "documented": true
+    },
+    {
+      "owner": "nativeVisualCandidate",
+      "line": 4063,
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4064,
+      "documented": true
+    },
+    {
+      "owner": "nativeInventoryChallenge",
+      "line": 4090,
+      "documented": true
+    },
+    {
+      "owner": "nativeInventoryChallenge",
+      "line": 4093,
+      "documented": true
+    },
+    {
+      "owner": "nativeInventoryChallenge",
+      "line": 4097,
+      "documented": true
+    },
+    {
+      "owner": "nativeInventoryChallenge",
+      "line": 4100,
+      "documented": true
+    },
+    {
+      "owner": "remoteInformation",
+      "line": 4111,
+      "documented": true
+    },
+    {
+      "owner": "remoteInformation",
+      "line": 4114,
+      "documented": true
+    },
+    {
+      "owner": "remoteInformation",
+      "line": 4117,
+      "documented": true
+    },
+    {
+      "owner": "remoteInformation",
+      "line": 4124,
+      "documented": true
+    },
+    {
+      "owner": "remoteInformation",
+      "line": 4125,
+      "documented": true
+    },
+    {
+      "owner": "remoteInformation",
+      "line": 4126,
+      "documented": true
+    },
+    {
+      "owner": "restoreRemoteInformation",
+      "line": 4131,
+      "documented": true
+    },
+    {
+      "owner": "restoreRemoteInformation",
+      "line": 4132,
+      "documented": true
+    },
+    {
+      "owner": "restoreRemoteInformation",
+      "line": 4133,
+      "documented": true
+    },
+    {
+      "owner": "syncFeatureSettings",
+      "line": 4142,
+      "documented": true
+    },
+    {
+      "owner": "syncFeatureSettings",
+      "line": 4145,
+      "documented": true
+    },
+    {
+      "owner": "syncFeatureSettings",
+      "line": 4149,
+      "documented": true
+    },
+    {
+      "owner": "syncFeatureSettings",
+      "line": 4156,
+      "documented": true
+    },
+    {
+      "owner": "syncFeatureSettings",
+      "line": 4158,
+      "documented": true
+    },
+    {
+      "owner": "syncFeatureSettings",
+      "line": 4160,
+      "documented": true
+    },
+    {
+      "owner": "syncFeatureSettings",
+      "line": 4162,
+      "documented": true
+    },
+    {
+      "owner": "exFast",
+      "line": 4175,
+      "documented": true
+    },
+    {
+      "owner": "exFast",
+      "line": 4177,
+      "documented": true
+    },
+    {
+      "owner": "Eââ",
+      "line": 4198,
+      "documented": true
+    },
+    {
+      "owner": "Eââ",
+      "line": 4199,
+      "documented": true
+    },
+    {
+      "owner": "Eââ",
+      "line": 4201,
+      "documented": true
+    },
+    {
+      "owner": "éa",
+      "line": 4205,
+      "documented": true
+    },
+    {
+      "owner": "éa",
+      "line": 4208,
+      "documented": true
+    },
+    {
+      "owner": "éa",
+      "line": 4212,
+      "documented": true
+    },
+    {
+      "owner": "ÊÈA",
+      "line": 4216,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature",
+      "line": 4223,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature",
+      "line": 4226,
+      "documented": true
+    },
+    {
+      "owner": "featureRing",
+      "line": 4234,
+      "documented": true
+    },
+    {
+      "owner": "resetFeatures",
+      "line": 4245,
+      "documented": true
+    },
+    {
+      "owner": "resetFeatures",
+      "line": 4247,
+      "documented": true
+    },
+    {
+      "owner": "resetFeatures",
+      "line": 4249,
+      "documented": true
+    },
+    {
+      "owner": "resetFeatures",
+      "line": 4253,
+      "documented": true
+    },
+    {
+      "owner": "resetFeatures",
+      "line": 4255,
+      "documented": true
+    },
+    {
+      "owner": "lockOpacity",
+      "line": 4263,
+      "documented": true
+    },
+    {
+      "owner": "get",
+      "line": 4271,
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 4274,
+      "documented": true
+    },
+    {
+      "owner": "restore",
+      "line": 4279,
+      "documented": true
+    },
+    {
+      "owner": "restore",
+      "line": 4280,
+      "documented": true
+    },
+    {
+      "owner": "restore",
+      "line": 4284,
+      "documented": true
+    },
+    {
+      "owner": "featurePlayer",
+      "line": 4294,
+      "documented": true
+    },
+    {
+      "owner": "featurePlayer",
+      "line": 4300,
+      "documented": true
+    },
+    {
+      "owner": "featurePlayer",
+      "line": 4311,
+      "documented": true
+    },
+    {
+      "owner": "featurePlayer",
+      "line": 4313,
+      "documented": true
+    },
+    {
+      "owner": "featurePlayer",
+      "line": 4315,
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 4321,
+      "documented": true
+    },
+    {
+      "owner": "featureRestore.push callback",
+      "line": 4326,
+      "documented": true
+    },
+    {
+      "owner": "featureRestore.push callback",
+      "line": 4327,
+      "documented": true
+    },
+    {
+      "owner": "featureRestore.push callback",
+      "line": 4330,
+      "documented": true
+    },
+    {
+      "owner": "featurePlayer",
+      "line": 4337,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4339,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4345,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4358,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4362,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4366,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4371,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4377,
+      "documented": true
+    },
+    {
+      "owner": "featureWorld",
+      "line": 4389,
+      "documented": true
+    },
+    {
+      "owner": "featureWorld",
+      "line": 4398,
+      "documented": true
+    },
+    {
+      "owner": "featureWorld",
+      "line": 4401,
+      "documented": true
+    },
+    {
+      "owner": "featureWorld",
+      "line": 4407,
+      "documented": true
+    },
+    {
+      "owner": "featureWorld",
+      "line": 4411,
+      "documented": true
+    },
+    {
+      "owner": "featureWorld",
+      "line": 4417,
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4422,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4432,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4433,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4434,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4448,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4462,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4466,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4467,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4469,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4473,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4474,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4476,
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4480,
+      "documented": true
+    },
+    {
+      "owner": "indicatorReport",
+      "line": 4483,
+      "documented": true
+    },
+    {
+      "owner": "indicatorReport",
+      "line": 4485,
+      "documented": true
+    },
+    {
+      "owner": "showIndicator",
+      "line": 4499,
+      "documented": true
+    },
+    {
+      "owner": "showIndicator",
+      "line": 4501,
+      "documented": true
+    },
+    {
+      "owner": "showIndicator",
+      "line": 4507,
+      "documented": true
+    },
+    {
+      "owner": "nearestV40",
+      "line": 4514,
+      "documented": true
+    },
+    {
+      "owner": "nearestV40",
+      "line": 4515,
+      "documented": true
+    },
+    {
+      "owner": "nearestV40",
+      "line": 4517,
+      "documented": true
+    },
+    {
+      "owner": "active.sort callback",
+      "line": 4524,
+      "documented": true
+    },
+    {
+      "owner": "nearestV40",
+      "line": 4529,
+      "documented": true
+    },
+    {
+      "owner": "indicatorsV40",
+      "line": 4532,
+      "documented": true
+    },
+    {
+      "owner": "indicatorsV40",
+      "line": 4533,
+      "documented": true
+    },
+    {
+      "owner": "indicatorsV40",
+      "line": 4536,
+      "documented": true
+    },
+    {
+      "owner": "runtimeV40",
+      "line": 4539,
+      "documented": true
+    },
+    {
+      "owner": "nativeAssetAudit",
+      "line": 4574,
+      "documented": true
+    },
+    {
+      "owner": "nativeAssetAudit",
+      "line": 4576,
+      "documented": true
+    },
+    {
+      "owner": "nativeAssetAudit",
+      "line": 4581,
+      "documented": true
+    },
+    {
+      "owner": "reconSource",
+      "line": 4594,
+      "documented": true
+    },
+    {
+      "owner": "reconSource",
+      "line": 4595,
+      "documented": true
+    },
+    {
+      "owner": "[ ...D.scripts ].map(/* BRIO expr: reconSource / [ ...D.scripts ].map callback — callback",
+      "line": 4596,
+      "documented": true
+    },
+    {
+      "owner": "[ ...D.scripts ].map(/* BRIO expr: reconSource / [ ...D.scripts ].map callback — callback",
+      "line": 4597,
+      "documented": true
+    },
+    {
+      "owner": "[ ...D.scripts ].map(/* BRIO expr: reconSource / [ ...D.scripts ].map callback — callback",
+      "line": 4600,
+      "documented": true
+    },
+    {
+      "owner": "reconSource",
+      "line": 4606,
+      "documented": true
+    },
+    {
+      "owner": "reconSource",
+      "line": 4613,
+      "documented": true
+    },
+    {
+      "owner": "reconSource",
+      "line": 4624,
+      "documented": true
+    },
+    {
+      "owner": "reconSource",
+      "line": 4637,
+      "documented": true
+    },
+    {
+      "owner": "reconSource",
+      "line": 4672,
+      "documented": true
+    },
+    {
+      "owner": "reconDom",
+      "line": 4676,
+      "documented": true
+    },
+    {
+      "owner": "nodes.map callback",
+      "line": 4680,
+      "documented": true
+    },
+    {
+      "owner": "reconAdded",
+      "line": 4697,
+      "documented": true
+    },
+    {
+      "owner": "reconRuntime",
+      "line": 4710,
+      "documented": true
+    },
+    {
+      "owner": "reconRuntime",
+      "line": 4711,
+      "documented": true
+    },
+    {
+      "owner": "reconRuntime",
+      "line": 4727,
+      "documented": true
+    },
+    {
+      "owner": "reconRuntime",
+      "line": 4729,
+      "documented": true
+    },
+    {
+      "owner": "reconRuntime",
+      "line": 4734,
+      "documented": true
+    },
+    {
+      "owner": "reconKind",
+      "line": 4738,
+      "documented": true
+    },
+    {
+      "owner": "reconDeep",
+      "line": 4747,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 4749,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 4752,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 4755,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 4757,
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 4761,
+      "documented": true
+    },
+    {
+      "owner": "reconContainers",
+      "line": 4772,
+      "documented": true
+    },
+    {
+      "owner": "reconContainers",
+      "line": 4773,
+      "documented": true
+    },
+    {
+      "owner": "reconContainers",
+      "line": 4775,
+      "documented": true
+    },
+    {
+      "owner": "reconContainers",
+      "line": 4779,
+      "documented": true
+    },
+    {
+      "owner": "reconContainers",
+      "line": 4794,
+      "documented": true
+    },
+    {
+      "owner": "reconContainers",
+      "line": 4803,
+      "documented": true
+    },
+    {
+      "owner": "reconContainers",
+      "line": 4821,
+      "documented": true
+    },
+    {
+      "owner": "restoreMarkerCapture",
+      "line": 4825,
+      "documented": true
+    },
+    {
+      "owner": "restoreMarkerHolds",
+      "line": 4835,
+      "documented": true
+    },
+    {
+      "owner": "restoreMarkerHolds",
+      "line": 4844,
+      "documented": true
+    },
+    {
+      "owner": "restoreMarkerHolds",
+      "line": 4846,
+      "documented": true
+    },
+    {
+      "owner": "restoreMarkerHolds",
+      "line": 4849,
+      "documented": true
+    },
+    {
+      "owner": "restoreMarkerHolds",
+      "line": 4852,
+      "documented": true
+    },
+    {
+      "owner": "restoreMarkerHolds",
+      "line": 4852,
+      "documented": true
+    },
+    {
+      "owner": "holdMeteor",
+      "line": 4860,
+      "documented": true
+    },
+    {
+      "owner": "queueMicrotask callback",
+      "line": 4862,
+      "documented": true
+    },
+    {
+      "owner": "queueMicrotask callback",
+      "line": 4863,
+      "documented": true
+    },
+    {
+      "owner": "queueMicrotask callback",
+      "line": 4867,
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 4884,
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 4885,
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4901,
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4902,
+      "documented": true
+    },
+    {
+      "owner": "queueMicrotask callback",
+      "line": 4906,
+      "documented": true
+    },
+    {
+      "owner": "get",
+      "line": 4914,
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 4917,
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4922,
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4923,
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4926,
+      "documented": true
+    },
+    {
+      "owner": "queueMicrotask callback",
+      "line": 4933,
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 4939,
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4943,
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4944,
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4947,
+      "documented": true
+    },
+    {
+      "owner": "queueMicrotask callback",
+      "line": 4954,
+      "documented": true
+    },
+    {
+      "owner": "dw",
+      "line": 4955,
+      "documented": true
+    },
+    {
+      "owner": "dw",
+      "line": 4956,
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4963,
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4964,
+      "documented": true
+    },
+    {
+      "owner": "queueMicrotask callback",
+      "line": 4978,
+      "documented": true
+    },
+    {
+      "owner": "loadCustom().finally callback",
+      "line": 5002,
+      "documented": true
+    }
+  ],
+  "functions": [
+    {
+      "owner": "startup IIFE",
+      "line": 32,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "parseNative",
+      "line": 39,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "weaponChoices",
+      "line": 118,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "[...GUN_TYPES].filter callback",
+      "line": 118,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "indicatorColor",
+      "line": 119,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "renderIndicatorControls",
+      "line": 120,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "input.oninput",
+      "line": 125,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "c.onchange",
+      "line": 134,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "v51HealthColor",
+      "line": 140,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "v51ObjectBody",
+      "line": 145,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "v51GroundType",
+      "line": 146,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "v51AmmoIndex",
+      "line": 152,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "v51World",
+      "line": 156,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 161,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 161,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 162,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 167,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 173,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "(S.renderer?.['Åé']||[]).some callback",
+      "line": 175,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "v51TrailSample",
+      "line": 179,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "v51Player",
+      "line": 186,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 190,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 192,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 193,
+      "body": "Literal",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 193,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 194,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 195,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 198,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 207,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "path.points.forEach callback",
+      "line": 213,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "v51SafePoint",
+      "line": 218,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "edges.sort callback",
+      "line": 225,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "v51Indicators",
+      "line": 227,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "collectWorld().filter callback",
+      "line": 232,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "matches.sort callback",
+      "line": 233,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "v51NativeCandidate",
+      "line": 252,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "children",
+      "line": 254,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[...a,...b].filter callback",
+      "line": 254,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "color",
+      "line": 255,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 257,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "list.some callback",
+      "line": 259,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "list.some callback",
+      "line": 259,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "list.some callback",
+      "line": 259,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 259,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 260,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "list.filter callback",
+      "line": 261,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "white.filter callback",
+      "line": 262,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "white.filter callback",
+      "line": 262,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "white.some callback",
+      "line": 262,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "children(marker).filter callback",
+      "line": 263,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 264,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "list.some callback",
+      "line": 266,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "children(root.parent||{}).some callback",
+      "line": 266,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 266,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "v51PacketValue",
+      "line": 269,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "v51StatsObserve",
+      "line": 272,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "value",
+      "line": 277,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "v51Sample",
+      "line": 298,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "v51PostGame",
+      "line": 310,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "shown",
+      "line": 322,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "[...stats.weaponSeconds].sort callback",
+      "line": 327,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "[...stats.weaponSeconds].sort(/* BRIO expr V51: v51PostGame — Replace only the n callback",
+      "line": 327,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "v51Reset",
+      "line": 332,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "normalizeWarningThresholds",
+      "line": 355,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "valid",
+      "line": 356,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "WARNING_DEFAULTS.ammo.map callback",
+      "line": 358,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "WARNING_DEFAULTS.materials.map callback",
+      "line": 359,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "belowWarning",
+      "line": 365,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "materialIndex",
+      "line": 370,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "[\"wood\",\"brick\",\"metal\",\"scrap\"].findIndex callback",
+      "line": 370,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "q",
+      "line": 371,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "t",
+      "line": 371,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "read",
+      "line": 374,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "write",
+      "line": 383,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "state",
+      "line": 392,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "saveState",
+      "line": 392,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "storedExtras",
+      "line": 395,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "Object.entries(INDICATOR_COLORS).map callback",
+      "line": 400,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "value.lootChoices.filter callback",
+      "line": 401,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "LOOT_TIERS.some callback",
+      "line": 403,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "BUILD_TIERS.some callback",
+      "line": 404,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "extrasState",
+      "line": 412,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "saveExtras",
+      "line": 427,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "norm",
+      "line": 427,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "clean",
+      "line": 436,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "J",
+      "line": 445,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "log",
+      "line": 454,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 458,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "mkBlank",
+      "line": 471,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "catalog",
+      "line": 485,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "syncSet",
+      "line": 485,
+      "body": "NewExpression",
+      "documented": true
+    },
+    {
+      "owner": "items",
+      "line": 485,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "Object.entries(catalog()).filter callback",
+      "line": 485,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "Object.entries(catalog()).filter(/* BRIO expr: items / Object.entries(catalog()) callback",
+      "line": 485,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "Object.entries(catalog()).filter(/* BRIO expr: items / Object.entries(catalog()) callback",
+      "line": 489,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "openDB",
+      "line": 493,
+      "body": "NewExpression",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 493,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "r.onupgradeneeded",
+      "line": 495,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "r.onsuccess",
+      "line": 500,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "r.onerror",
+      "line": 501,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "loadCustom",
+      "line": 505,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 508,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "r.onsuccess",
+      "line": 509,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "r.onerror",
+      "line": 510,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "S.custom[k].sort callback",
+      "line": 519,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "Object.entries(S.custom).map callback",
+      "line": 520,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "putCustom",
+      "line": 528,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 530,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "tr.onerror",
+      "line": 534,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "statusOf",
+      "line": 541,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "patchButtons",
+      "line": 548,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "kcat",
+      "line": 586,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "sel",
+      "line": 586,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setSel",
+      "line": 596,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "preview",
+      "line": 609,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "card",
+      "line": 609,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "c.querySelector(\"img\").onerror",
+      "line": 616,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "c.onclick",
+      "line": 617,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "c.onclick",
+      "line": 624,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "c.onclick",
+      "line": 631,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "renderGrid",
+      "line": 639,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "match",
+      "line": 640,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "renderLocker",
+      "line": 651,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "z.onclick",
+      "line": 658,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "z.onclick",
+      "line": 669,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "z.onclick",
+      "line": 680,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "locker.querySelector(\"[data-close]\").onclick",
+      "line": 688,
+      "body": "AssignmentExpression",
+      "documented": true
+    },
+    {
+      "owner": "locker.querySelector(\"[data-upload]\").onclick",
+      "line": 690,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "locker.querySelector('input[type=\"file\"]').onchange",
+      "line": 691,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "im.onload",
+      "line": 695,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "S.custom[k].reduce callback",
+      "line": 705,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "nativeScanNeeded",
+      "line": 770,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "[\"showBulletSpread\",\"buildHealth\",\"objectHealth\",\"safeZoneIndicator\",\"lootIndica callback",
+      "line": 772,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "CHALLENGE_TESTS.some callback",
+      "line": 772,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "renderWarningThresholds",
+      "line": 779,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "current",
+      "line": 797,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "input.oninput",
+      "line": 801,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "input.onblur",
+      "line": 809,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "reset.onclick",
+      "line": 815,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "renderChallengeTier",
+      "line": 832,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "select.onchange",
+      "line": 840,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "renderExtras",
+      "line": 849,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "z.onclick",
+      "line": 860,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "c.onchange",
+      "line": 899,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "c.onchange",
+      "line": 909,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "extras.querySelector(\"[data-close]\").onclick",
+      "line": 933,
+      "body": "AssignmentExpression",
+      "documented": true
+    },
+    {
+      "owner": "intercept",
+      "line": 937,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "choose",
+      "line": 952,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "S.custom[k].find callback",
+      "line": 958,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "asset",
+      "line": 988,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "loadRes",
+      "line": 988,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 994,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "im.onload",
+      "line": 997,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "im.onerror",
+      "line": 1008,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "p.catch callback",
+      "line": 1012,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "held",
+      "line": 1014,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nativeSnap",
+      "line": 1017,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "restoreEmote",
+      "line": 1034,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "emoteSlot",
+      "line": 1042,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "(read(\"locker2\", {}).emotes || []).map callback",
+      "line": 1045,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "mapEmote",
+      "line": 1047,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "installEmote",
+      "line": 1050,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "get",
+      "line": 1063,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 1066,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restoreSrc",
+      "line": 1072,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "installSrc",
+      "line": 1079,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "R.emotes.some callback",
+      "line": 1081,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 1089,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restoreResourceMaps",
+      "line": 1104,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock",
+      "line": 1112,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "getNative",
+      "line": 1123,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "get",
+      "line": 1127,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 1130,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "(S.cosmeticAdapters || (S.cosmeticAdapters = [])).push callback",
+      "line": 1134,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restoreCosmetics",
+      "line": 1143,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "sceneObserve",
+      "line": 1149,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 1163,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restores.push callback",
+      "line": 1182,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "sceneRoots",
+      "line": 1190,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "nativeDrawable",
+      "line": 1211,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "observeRendered",
+      "line": 1212,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "observeRenderArray",
+      "line": 1227,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1233,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1234,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1238,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restores.push callback",
+      "line": 1253,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "stopRenderDiscovery",
+      "line": 1262,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restoreRenderArrays",
+      "line": 1272,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "startRenderDiscovery",
+      "line": 1278,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 1281,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1285,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "applyLocal",
+      "line": 1310,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "Array.from callback",
+      "line": 1322,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "safe",
+      "line": 1325,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "loadRes(k, x).catch callback",
+      "line": 1325,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "R.emotes.map callback",
+      "line": 1338,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1341,
+      "body": "Identifier",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1343,
+      "body": "Identifier",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1344,
+      "body": "Identifier",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1347,
+      "body": "Identifier",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1348,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1351,
+      "body": "Literal",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1352,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1353,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1354,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1357,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "cosmeticLock callback",
+      "line": 1358,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "em.map callback",
+      "line": 1364,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "[ \"body\", \"head\", \"pickaxe\", \"trail\", \"wrap\", \"glider\" ].map callback",
+      "line": 1371,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "R.emotes.map callback",
+      "line": 1374,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "isPlayer",
+      "line": 1384,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "isLocal",
+      "line": 1384,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "worldPos",
+      "line": 1384,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "localNameMatch",
+      "line": 1390,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots",
+      "line": 1399,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 1400,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "isWorld",
+      "line": 1432,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "collectPlayers",
+      "line": 1435,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "collectWorld",
+      "line": 1445,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "transparentImage",
+      "line": 1453,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 1456,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "make",
+      "line": 1457,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "im.onload",
+      "line": 1468,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "im.onerror",
+      "line": 1474,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "done",
+      "line": 1479,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "loaded",
+      "line": 1484,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "failed",
+      "line": 1487,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "p.then callback",
+      "line": 1501,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "blankWrapper",
+      "line": 1505,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "captureRoof",
+      "line": 1518,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "blankWrapper(w, S.roofSaved, p).then(maybeStop).catch callback",
+      "line": 1521,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "isBuild",
+      "line": 1522,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots(o).map callback",
+      "line": 1523,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots(o).some callback",
+      "line": 1524,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "blankBuild",
+      "line": 1527,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "blankWrapper(x.w, S.buildSaved, x.path).catch callback",
+      "line": 1528,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "blankLoot",
+      "line": 1531,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "blankWrapper(x.w, S.lootSaved, x.path).catch callback",
+      "line": 1532,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "rememberRemote",
+      "line": 1534,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "makeTrack",
+      "line": 1549,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "Eââ",
+      "line": 1562,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "éa",
+      "line": 1577,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "ÊÈA",
+      "line": 1580,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "attachTrack",
+      "line": 1586,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "attachLocalTrack",
+      "line": 1595,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "screenState",
+      "line": 1609,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "ensureArrow",
+      "line": 1619,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "placeArrow",
+      "line": 1628,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "projectWorld",
+      "line": 1649,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "nearestTick",
+      "line": 1660,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "hudKinds",
+      "line": 1661,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "hudWalk",
+      "line": 1665,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "hudPath",
+      "line": 1679,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "hudCandidate",
+      "line": 1680,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 1688,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "slotCaption",
+      "line": 1704,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "hudWalk(root, 32).find callback",
+      "line": 1704,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "slotUnit",
+      "line": 1708,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "hudWalk(root, 40).filter callback",
+      "line": 1713,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "captureSlotRow",
+      "line": 1723,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[...(row[\"âè\"] || []), ...(row[\"ÉE\"] || [])].map callback",
+      "line": 1730,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "[...(row[\"âè\"] || []), ...(row[\"ÉE\"] || [])].map(/* BRIO expr: captureSlotRow /  callback",
+      "line": 1730,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "holders.some callback",
+      "line": 1731,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "holders.sort callback",
+      "line": 1739,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "holders.map callback",
+      "line": 1740,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.find callback",
+      "line": 1745,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "S.hudTemplates.slots.findIndex callback",
+      "line": 1748,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.find callback",
+      "line": 1755,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "Object.entries(S.hudTemplates).map callback",
+      "line": 1761,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "hudInspect",
+      "line": 1768,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "nodes.filter callback",
+      "line": 1783,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.some callback",
+      "line": 1785,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.some callback",
+      "line": 1786,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.filter callback",
+      "line": 1794,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.some callback",
+      "line": 1797,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.some callback",
+      "line": 1800,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "ammoIndex",
+      "line": 1806,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "S.hudTemplates[kind].findIndex callback",
+      "line": 1807,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.find callback",
+      "line": 1822,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "Object.entries(S.hudTemplates).map callback",
+      "line": 1830,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.map callback",
+      "line": 1840,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "Object.entries(x).filter callback",
+      "line": 1850,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "hudBounds",
+      "line": 1859,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "liveSlotWarningBounds",
+      "line": 1901,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "hudWalk(holder,32).filter callback",
+      "line": 1904,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.filter callback",
+      "line": 1905,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.find callback",
+      "line": 1907,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "ownMaterialWarnings",
+      "line": 1927,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "draw",
+      "line": 1941,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "cloneNativeWidget",
+      "line": 1983,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "clone",
+      "line": 1986,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "ensureNativeSlotArt",
+      "line": 2042,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "unit.pairs.some callback",
+      "line": 2043,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "unit.pairs.find callback",
+      "line": 2044,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "nativeInvFor",
+      "line": 2076,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "raw.slice().sort callback",
+      "line": 2086,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "inventoryBounds",
+      "line": 2116,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "remoteRowAdvance",
+      "line": 2124,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "drawNativeInv",
+      "line": 2129,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "row.units.map callback",
+      "line": 2151,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "row.units.map callback",
+      "line": 2152,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "widths.reduce callback",
+      "line": 2153,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "row.units.forEach callback",
+      "line": 2155,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "pair.node[method]",
+      "line": 2174,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "u.pairs.find callback",
+      "line": 2201,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "resetNativeHud",
+      "line": 2234,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "isSlotArtwork",
+      "line": 2262,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nativeSlotAmmoIndex",
+      "line": 2269,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "rec?.nodes?.find callback",
+      "line": 2274,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "nativeSlotLow",
+      "line": 2283,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "drawRemoteChargeWarning",
+      "line": 2289,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "nativeSlotAmmo",
+      "line": 2300,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "slotArtStyle",
+      "line": 2313,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "drawSlotArt",
+      "line": 2324,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "drawEmptyX",
+      "line": 2332,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "invScale",
+      "line": 2345,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "invImage",
+      "line": 2348,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "im.onload",
+      "line": 2353,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "im.onerror",
+      "line": 2358,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "itemPath",
+      "line": 2372,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "matState",
+      "line": 2378,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "drawImg",
+      "line": 2381,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "warningColor",
+      "line": 2390,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "drawHudText",
+      "line": 2390,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "drawTxt",
+      "line": 2401,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "drawInv",
+      "line": 2404,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "vals.forEach callback",
+      "line": 2431,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "makeInv",
+      "line": 2448,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "Eââ",
+      "line": 2461,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "éa",
+      "line": 2468,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "ÊÈA",
+      "line": 2476,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "attachInv",
+      "line": 2485,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restoreInvTrace",
+      "line": 2495,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "automaticPhase",
+      "line": 2499,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "botPhase",
+      "line": 2506,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "botSample",
+      "line": 2519,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "collectPlayers().filter callback",
+      "line": 2522,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "BOT_CLUSTER.map callback",
+      "line": 2529,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "BOT_CLUSTER.map callback",
+      "line": 2543,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "BOT_CLUSTER.map callback",
+      "line": 2544,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "botStart",
+      "line": 2592,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setInterval callback",
+      "line": 2600,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "botStop",
+      "line": 2608,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[ ...S.botWatch.values() ].map callback",
+      "line": 2615,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "Object.entries(e.phases).map callback",
+      "line": 2620,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "nearestBy",
+      "line": 2630,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "collectWorld().filter callback",
+      "line": 2630,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "collectWorld().filter(/* BRIO expr: nearestBy / collectWorld().filter callback — callback",
+      "line": 2630,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "airdropPred",
+      "line": 2636,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots(o).some callback",
+      "line": 2636,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "fishingPred",
+      "line": 2636,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots(o).some callback",
+      "line": 2636,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "airdropObj",
+      "line": 2636,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "chestObj",
+      "line": 2636,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "nearestBy callback",
+      "line": 2636,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "fishingObj",
+      "line": 2636,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "targetOnScreen",
+      "line": 2636,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "indicatorTick",
+      "line": 2642,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "shallowState",
+      "line": 2643,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "passiveTick",
+      "line": 2659,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "passiveAdded",
+      "line": 2693,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots(o).map callback",
+      "line": 2703,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "restoreRandom",
+      "line": 2706,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "stopMeteorPersist",
+      "line": 2707,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restoreMeteor",
+      "line": 2711,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "meteorAutoStop",
+      "line": 2717,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "meteorCandidate",
+      "line": 2728,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "meteorScan",
+      "line": 2739,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "meteorAutoStart",
+      "line": 2778,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "tick",
+      "line": 2785,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "applyRemote",
+      "line": 2811,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "queueRemote",
+      "line": 2831,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2835,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2838,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "queueWorld",
+      "line": 2842,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2846,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2850,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "handleAdded",
+      "line": 2859,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "patchArray",
+      "line": 2884,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "p",
+      "line": 2886,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "u",
+      "line": 2890,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restoreArrays",
+      "line": 2913,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "onLocal",
+      "line": 2922,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2928,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 2932,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setInterval callback",
+      "line": 2949,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "goals",
+      "line": 2962,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "stopCapture",
+      "line": 2965,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "maybeStop",
+      "line": 2976,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "tagName",
+      "line": 2983,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "arm",
+      "line": 3006,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "required.map callback",
+      "line": 3095,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "required.filter callback",
+      "line": 3098,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "hp",
+      "line": 3103,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "hu",
+      "line": 3108,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 3116,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "bindPlay",
+      "line": 3136,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "prep",
+      "line": 3140,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "go",
+      "line": 3140,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "verify",
+      "line": 3150,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "reconMarkers.map callback",
+      "line": 3167,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "term.onclick",
+      "line": 3214,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "Promise.resolve().then callback",
+      "line": 3227,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "Promise.resolve().then(() => { /* BRIO block: term.onclick — Promise.resolve().t callback",
+      "line": 3230,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "Promise.resolve().then(() => { /* BRIO block: term.onclick — Promise.resolve().t callback",
+      "line": 3230,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "term.querySelector(\".head\").onpointerdown",
+      "line": 3241,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "term.querySelector(\".head\").onpointermove",
+      "line": 3253,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "term.querySelector(\".head\").onpointerup",
+      "line": 3258,
+      "body": "AssignmentExpression",
+      "documented": true
+    },
+    {
+      "owner": "S.destroy",
+      "line": 3264,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "botAuditReset",
+      "line": 3324,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "botMeta",
+      "line": 3337,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3339,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "x.every callback",
+      "line": 3353,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "botAuditTick",
+      "line": 3358,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "botSourceAudit",
+      "line": 3393,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "deepError",
+      "line": 3428,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "probeSnapshot",
+      "line": 3436,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3438,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "deepRecord",
+      "line": 3466,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "environmentProbe",
+      "line": 3477,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "fields.map callback",
+      "line": 3480,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "incomingDelta",
+      "line": 3494,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "incomingProbe",
+      "line": 3523,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "own",
+      "line": 3528,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "targetObject",
+      "line": 3533,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "targetKind",
+      "line": 3534,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "deepEngineProbe",
+      "line": 3575,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3586,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "deep.engineRestores.push callback",
+      "line": 3594,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "deepTick",
+      "line": 3602,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3608,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "deep.restore",
+      "line": 3616,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "Reflect.ownKeys(p).map callback",
+      "line": 3631,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "deepReport",
+      "line": 3657,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "deepStop",
+      "line": 3668,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "deepStart",
+      "line": 3677,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "tick",
+      "line": 3681,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "numericSourceConstants",
+      "line": 3688,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "readNumber",
+      "line": 3690,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "invalidate",
+      "line": 3706,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "execute",
+      "line": 3712,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "ast.body.find callback",
+      "line": 3722,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "completeSourceAudit",
+      "line": 3729,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "Array.from callback",
+      "line": 3734,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3737,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[...GUN_TYPES].filter callback",
+      "line": 3754,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "fn.params.map callback",
+      "line": 3761,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "object.properties.filter callback",
+      "line": 3768,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "object.properties.filter(/* BRIO expr: completeSourceAudit / object.properties.f callback",
+      "line": 3768,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "object.properties.filter(/* BRIO expr: completeSourceAudit / object.properties.f callback",
+      "line": 3768,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "[...GUN_TYPES].filter callback",
+      "line": 3769,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "[...schemaFields].filter callback",
+      "line": 3771,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "(members.get(key) || []).slice(0, 120).map callback",
+      "line": 3772,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "strings.filter callback",
+      "line": 3773,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "sourceSchemaAudit",
+      "line": 3783,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "pairs.filter callback",
+      "line": 3799,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "pairs.filter callback",
+      "line": 3800,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "replicaStateAudit",
+      "line": 3870,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 3877,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "registrationAudit",
+      "line": 3909,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[ ...text.matchAll(/([\\w$À-ÿ]+)\\.([\\w$À-ÿ]+)\\s*=\\s*([\\w$À-ÿ]+)\\.([\\w$À-ÿ]+)/g) ] callback",
+      "line": 3913,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "resetMonochrome",
+      "line": 3944,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "syncMonochrome",
+      "line": 3955,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw",
+      "line": 3975,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "wrapper",
+      "line": 3986,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "featureRestore.push callback",
+      "line": 3998,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "pickupPopupHidden",
+      "line": 4016,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nativeVisualCandidate",
+      "line": 4023,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[node,node.parent].filter callback",
+      "line": 4026,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4030,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "[...(root[\"âè\"]||[]),...(root[\"ÉE\"]||[])].filter callback",
+      "line": 4036,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "color",
+      "line": 4037,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "children.some callback",
+      "line": 4040,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4042,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "children.find callback",
+      "line": 4045,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "children.filter callback",
+      "line": 4046,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4048,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "children.filter callback",
+      "line": 4051,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "arms.filter callback",
+      "line": 4052,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "arms.filter callback",
+      "line": 4052,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "arms.some callback",
+      "line": 4052,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4053,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "children.find callback",
+      "line": 4055,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "children.find callback",
+      "line": 4055,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4059,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4064,
+      "body": "Literal",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4064,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4083,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nativeInventoryChallenge",
+      "line": 4090,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4094,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "hudWalk(root,240).filter callback",
+      "line": 4098,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "paths.some callback",
+      "line": 4099,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "paths.filter callback",
+      "line": 4100,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "paths.some callback",
+      "line": 4100,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "paths.some callback",
+      "line": 4100,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4101,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "remoteInformation",
+      "line": 4111,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "lockOpacity callback",
+      "line": 4116,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "lockOpacity callback",
+      "line": 4119,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "featureRestore.push callback",
+      "line": 4121,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "restoreRemoteInformation",
+      "line": 4131,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "syncFeatureSettings",
+      "line": 4142,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "exFast",
+      "line": 4175,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "nativeNode",
+      "line": 4185,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "Eââ",
+      "line": 4198,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "éa",
+      "line": 4205,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "ÊÈA",
+      "line": 4216,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "attachFeature",
+      "line": 4223,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "featureRing",
+      "line": 4234,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "resetFeatures",
+      "line": 4245,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "lockOpacity",
+      "line": 4263,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "featureRestore.some callback",
+      "line": 4264,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "get",
+      "line": 4271,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 4274,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restore",
+      "line": 4279,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "featurePlayer",
+      "line": 4294,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4302,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4304,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4307,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4310,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "get",
+      "line": 4320,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 4321,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "featureRestore.push callback",
+      "line": 4326,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4339,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4371,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4377,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "featureWorld",
+      "line": 4389,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4395,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4419,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4420,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "gateNativeDraw callback",
+      "line": 4421,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "attachFeature callback",
+      "line": 4422,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "featureTick",
+      "line": 4432,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "(S.hudTemplates?.slots || []).map callback",
+      "line": 4460,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "indicatorReport",
+      "line": 4483,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "validTarget",
+      "line": 4499,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "showIndicator",
+      "line": 4499,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "nearestV40",
+      "line": 4514,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "collectPlayers().filter callback",
+      "line": 4521,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "active.sort callback",
+      "line": 4524,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "indicatorsV40",
+      "line": 4532,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 4535,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "anonymous callback",
+      "line": 4535,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nearestBy callback",
+      "line": 4535,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "runtimeV40",
+      "line": 4539,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "collectPlayers().filter callback",
+      "line": 4542,
+      "body": "UnaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "world.map callback",
+      "line": 4546,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "[ ...featureNodes.values() ].flatMap callback",
+      "line": 4548,
+      "body": "ArrayExpression",
+      "documented": true
+    },
+    {
+      "owner": "[ ...featureNodes.values() ].flatMap(/* BRIO expr: runtimeV40 / [ ...featureNode callback",
+      "line": 4548,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "x[\"Åé\"].map callback",
+      "line": 4562,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nativeAssetAudit",
+      "line": 4574,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[ ...paths ].filter callback",
+      "line": 4579,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "reconSource",
+      "line": 4594,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[ ...D.scripts ].map callback",
+      "line": 4596,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "[ ...D.scripts ].map(/* BRIO expr: reconSource / [ ...D.scripts ].map callback — callback",
+      "line": 4596,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "urls.find callback",
+      "line": 4603,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "setTimeout callback",
+      "line": 4604,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "raw.replace callback",
+      "line": 4617,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "matches.filter callback",
+      "line": 4644,
+      "body": "BinaryExpression",
+      "documented": true
+    },
+    {
+      "owner": "runtime.filter callback",
+      "line": 4644,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "chosen.map callback",
+      "line": 4649,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "EXTRA.challenges.concat(EXTRA.modifiers).filter callback",
+      "line": 4662,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "EXTRA.challenges.concat(EXTRA.modifiers).filter(/* BRIO expr: reconSource / EXTR callback",
+      "line": 4662,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "reconDom",
+      "line": 4676,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[ ...D.querySelectorAll(\"[id]\") ].filter callback",
+      "line": 4677,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "nodes.map callback",
+      "line": 4680,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[ ...D.querySelectorAll(\"canvas\") ].slice(0, 12).map callback",
+      "line": 4689,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "reconAdded",
+      "line": 4697,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots(o).map callback",
+      "line": 4700,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots(o).map callback",
+      "line": 4706,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "reconRuntime",
+      "line": 4710,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "r[\"Åé\"].map callback",
+      "line": 4721,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "reconKind",
+      "line": 4738,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots(o).map callback",
+      "line": 4739,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "reconDeep",
+      "line": 4747,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "walk",
+      "line": 4749,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "x.every callback",
+      "line": 4763,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "Object.entries(out).filter callback",
+      "line": 4768,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "reconContainers",
+      "line": 4772,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "world.map callback",
+      "line": 4774,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "resourceSlots(o).map callback",
+      "line": 4791,
+      "body": "MemberExpression",
+      "documented": true
+    },
+    {
+      "owner": "world.filter callback",
+      "line": 4809,
+      "body": "CallExpression",
+      "documented": true
+    },
+    {
+      "owner": "world.filter(/* BRIO expr: reconContainers / world.filter callback — Keep this e callback",
+      "line": 4809,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "world.filter(/* BRIO expr: reconContainers / world.filter callback — Keep this e callback",
+      "line": 4812,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "world.filter(/* BRIO expr: reconContainers / world.filter callback — Keep this e callback",
+      "line": 4812,
+      "body": "ObjectExpression",
+      "documented": true
+    },
+    {
+      "owner": "restoreMarkerCapture",
+      "line": 4825,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "restoreMarkerHolds",
+      "line": 4835,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "holdMeteor",
+      "line": 4860,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "queueMicrotask callback",
+      "line": 4862,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "wrap",
+      "line": 4884,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4901,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "get",
+      "line": 4914,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 4917,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4922,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "get",
+      "line": 4938,
+      "body": "ConditionalExpression",
+      "documented": true
+    },
+    {
+      "owner": "set",
+      "line": 4939,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4943,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "dw",
+      "line": 4955,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "reconRestore.push callback",
+      "line": 4963,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "loadCustom().finally callback",
+      "line": 5002,
+      "body": "BlockStatement",
+      "documented": true
+    },
+    {
+      "owner": "[...REQUIRED_TESTS,...CHALLENGE_TESTS].map callback",
+      "line": 5009,
+      "body": "LogicalExpression",
+      "documented": true
+    },
+    {
+      "owner": "[...EXTRA.modifiers,...EXTRA.challenges].find callback",
+      "line": 5009,
+      "body": "BinaryExpression",
+      "documented": true
+    }
+  ],
+  "missing": [],
+  "comments": 1320,
+  "vendor": {
+    "characters": 121857,
+    "sha256": "845e6f940e25c2fd3d90ce2ea8b5974ec01282f24d666030201db18cd37150f4"
+  }
+}

@@ -20,11 +20,12 @@ async function run({own=false,combinedStart=false}={}) {
   w.setInterval=(fn,ms)=>{timers.set(++next,{fn,at:clock+ms,period:ms});return next;};w.clearInterval=w.clearTimeout;
   Object.defineProperty(w.performance,'now',{value:()=>clock});w.performance.getEntriesByType=()=>[];
   const canvas=page.querySelector('canvas');canvas.width=1000;canvas.height=800;
-  canvas.getBoundingClientRect=()=>({left:0,top:0,width:1000,height:800});
+  canvas.getBoundingClientRect=()=>({left:0,top:0,right:1000,bottom:800,width:1000,height:800});
   const ctx={canvas,save(){},restore(){},translate(){},rotate(){},scale(){},beginPath(){},closePath(){},moveTo(){},lineTo(){},arc(){},clip(){},rect(){},fill(){},stroke(){},drawImage(){},fillRect(){},fillText(){},strokeText(){},getTransform:()=>({a:1,b:0,c:0,d:1,e:500,f:400}),measureText:t=>({width:String(t).length*5}),strokeRect(){paints.push('outline:'+this.strokeStyle);}};
   w.HTMLCanvasElement.prototype.getContext=function(){return {...ctx,canvas:this};};
   w.HTMLCanvasElement.prototype.toDataURL=()=> 'data:image/png;base64,blank';
   Object.defineProperty(w.HTMLImageElement.prototype,'src',{configurable:true,get(){return this._src||'';},set(v){this._src=v;this.width=this.height=300;Object.defineProperties(this,{naturalWidth:{configurable:true,value:300},naturalHeight:{configurable:true,value:300}});w.queueMicrotask(()=>this.onload?.());}});
+  let decodeCalls=0;const nativeDecode=packet=>{decodeCalls++;return packet;};w.msgpack={decode:nativeDecode};
   w.fetch=async()=>({ok:true,text:async()=>fs.readFileSync('docs/game-sources/engine.js','utf8')});w.AbortController=global.AbortController;
   w.indexedDB={open(){const r={result:{objectStoreNames:{contains:()=>true},transaction:()=>({objectStore:()=>({getAll(){const x={result:[]};w.queueMicrotask(()=>x.onsuccess?.());return x;}})}),close(){}}};w.queueMicrotask(()=>r.onsuccess?.());return r;}};
   const preferences={goodFlippinLuck:combinedStart,monochrome:true,flashlightMode:true,transparentRoofs:true,transparentFoliage:true,healthBars:true,numericHealthShield:true,playerNames:true,identifyBots:true,nearestPlayer:true,nearestPlayerName:true,nearestChest:true,nearestAirdrop:true,permanentMeteor:true,allTrailsInvisible:false,allGlidersInvisible:false,inventorySlots:true,inventoryMaterials:true,inventoryAmmo:true,lowHealthWarning:true,lowAmmoWarning:true,lowMatsWarning:true,warningThresholds:{health:55,ammo:[1,2,3,4,5,6],materials:[11,12,13,14]},lootMaskTier:'item',buildMaskTier:'blueprints',cleanLoot:true};
@@ -64,14 +65,14 @@ async function run({own=false,combinedStart=false}={}) {
   for(const n of [hpIcon,shieldIcon,hpBar,shieldBar,currentAmmo])hpHud.add(n);stage.add(hpHud);
   const mapHud=new NativeNode('mapHud'),map=image('/buildart/empty.png','minimap');map.width=map.height=250;
   map.Eââ=function(context){context.drawImage();paints.push('minimap');return 'native map';};
-  const waiting=image('/buildart/waitingIcon.png','timer');waiting.width=waiting.height=32;mapHud.add(map);mapHud.add(waiting);stage.add(mapHud);
+  const waiting=image('/buildart/timer.png','timer');waiting.width=waiting.height=32;waiting.add(Object.assign(new NativeNode('countdown'),{type:'text',text:'0:30'}));mapHud.add(image('/buildart/playersIcon.png','playerCounter'));mapHud.add(map);mapHud.add(waiting);stage.add(mapHud);
   const stormWorld=new NativeNode('stormWorld');stormWorld.Ée='borderScene';stormWorld.add(rect('worldShade','#F00',100,100));stage.add(stormWorld);
   const stormMap=new NativeNode('stormMap');stormMap.Éèå=[];const mapShades=[];
   for(let i=0;i<4;i++){const n=rect('mapShade'+i,'#F00',1,1);mapShades.push(n);stormMap.add(n);}
   const border=rect('stormBorder','#FFF',2000,2000);border.lineWidth=50;stormMap.add(border);stormMap.add(new NativeNode('teammateMapDot'));stage.add(stormMap);
   const crosshair=new NativeNode('crosshair');
   for(const [i,dimensions]of [[0,[4,20,0,40]],[1,[4,20,0,-40]],[2,[20,4,40,0]],[3,[20,4,-40,0]],[4,[4,4,0,0]]])crosshair.add(rect('cross'+i,'#FFF',...dimensions));
-  const hit=new NativeNode('hit-marker');hit.add(rect('hit','#F00',4,20));crosshair.add(hit);stage.add(crosshair);
+  const hit=new NativeNode('hit-marker');for(let i=0;i<4;i++)hit.add(rect(i?'hit'+i:'hit','#F00',4,20));crosshair.add(hit);stage.add(crosshair);
   // A same-color unrelated rectangle must not be mistaken for the validated crosshair or map storm scene.
   const unrelated=rect('unrelated','#FFF',4,20);stage.add(unrelated);
   const inventory=new NativeNode('inventory-root');
@@ -88,10 +89,10 @@ async function run({own=false,combinedStart=false}={}) {
   w.eval(code);await flush();page.querySelector('#ready').click();
   const players=arr(),local=player(1,page.querySelector('#nameBox').value,0),remote=player(2,'other',1000);players.push(local,remote);
   const loot={id:3,type:'gun',â:new NativeNode('lootRoot'),âê:image('/buildart/scar.png','lootArt'),ÀÅ:image('/buildart/rarity3.png','lootGlow')};loot.ÀÅ.opacity=.7;loot.â.add(loot.âê);loot.â.âá(loot.ÀÅ);stage.add(loot.â);players.push(loot);
-  const wall={id:4,type:'object',Àâ:'wall',â:new NativeNode('wallRoot')};wall.â.add(image('/buildart/bluewood.png','placedBlue'));wall.â.add(image('/buildart/wood2.png','placedArt'));stage.add(wall.â);players.push(wall);
+  const wall={id:4,type:'object',Àâ:'wall',åÈ:100,ËÆ:100,â:new NativeNode('wallRoot'),ÄA:rect('wallBody','#999',100,100)};wall.â.add(wall.ÄA);wall.â.add(image('/buildart/bluewood.png','placedBlue'));wall.â.add(image('/buildart/wood2.png','placedArt'));stage.add(wall.â);players.push(wall);
   const explicitPreview={id:5,type:'object',Àâ:'wall',AÀ:true,â:new NativeNode('explicitPreview')};explicitPreview.â.add(image('/buildart/bluewood.png','explicitBlue'));stage.add(explicitPreview.â);players.push(explicitPreview);
   stage.éa(ctx);await tick(3000);
-  const S=w.__brio_unlocker_v50;assert.equal(S.renderer,local);assert(S.hudTemplates?.slots.length===5);
+  const S=w.__brio_unlocker_v51;assert.equal(S.renderer,local);assert(S.hudTemplates?.slots.length===5);
   const extras=Array.from(page.querySelectorAll('.brioModal')).find(n=>n.textContent.includes('BRIO Extras'));
   page.querySelector('.brioTerm [data-a=min]').click();page.querySelector('.brioTerm [data-a=extras]').click();assert.equal(extras.style.display,'flex','live tiers reachable from minimized terminal');
   extras.querySelector('[data-close]').click();assert.equal(extras.style.display,'none');page.querySelector('.brioTerm [data-a=extras]').click();
@@ -104,10 +105,10 @@ async function run({own=false,combinedStart=false}={}) {
   const checkCombined=()=>{
     assert(S.meteorAutoTimer,'combined-only configuration must keep scoped scene discovery running');
     assert(!S.nearestTimer&&!S.indicatorTimer&&!S.botTimer,'combined disables modifier-owned timers');
-    assert.equal(draw(loot.â,wall.â,explicitPreview.â,remote.ÄA,remote.ÁÆ,remote.Eå,remote.æE,remote.Eâ,crosshair,inventory,map,stormWorld,stormMap,hpHud).filter(x=>!['stormMap','teammateMapDot','hpHud','currentAmmo'].includes(x)).length,0);
+    assert.equal(draw(loot.â,wall.â,explicitPreview.â,remote.ÄA,remote.ÁÆ,remote.Eå,remote.æE,remote.Eâ,crosshair,inventory,map,stormWorld,stormMap,hpHud).filter(x=>!['stormMap','teammateMapDot','hpHud','currentAmmo','mapHud','playerCounter'].includes(x)).length,0);
     assert(draw(local.ÄA).includes('body1'),'native local body retained');
     assert.equal(remote.ÃÊ.opacity,.2,'name assistance disabled');assert(remote.æÄ.parent==null,'BRIO-added remote health bars detached');
-    tab('Modifiers');for(const n of extras.querySelectorAll('.brioOpt input[type=checkbox]')){assert(n.disabled);assert(!n.checked);}
+    tab('Modifiers');for(const n of extras.querySelectorAll('.brioOpt > label input[type=checkbox]')){assert(n.disabled);assert(!n.checked);}
     for(const n of extras.querySelectorAll('.brioThresholds input,.brioThresholds button'))assert(n.matches(':disabled'));
     tab('Challenges');assert(control('monochrome').checked&&!control('monochrome').disabled);assert(control('flashlightMode').checked&&!control('flashlightMode').disabled);
     for(const id of ['playersInvisible','lootInvisible','buildsInvisible','noMinimap','noCrosshair','noInventoryHud','invisibleStorm','noChestsVisible','noHealthShieldHud']){assert(control(id).checked);assert(control(id).disabled);}
@@ -176,8 +177,49 @@ async function run({own=false,combinedStart=false}={}) {
   assert.equal(raw().lootMaskTier,'rarity');assert.equal(raw().buildMaskTier,'blueprints');
   // Preserve the native return value/error with gates disabled; native resources and descriptors remain original.
   const nativeMethod=NativeNode.prototype.éa;assert.equal(loot.âê.éa(ctx),'lootArt');loot.âê.explode=true;assert.throws(()=>loot.âê.éa(ctx),/native draw exception/);delete loot.âê.explode;
+  // V51: real UI toggles plus constructor-shaped nodes cover additive render paths, boundaries and cleanup.
+  assert(control('goodFlippinLuck').parentElement.textContent.includes('Hell'));
+  assert(control('noMinimap').parentElement.textContent.includes('No map'));
+  tab('Modifiers');
+  const colorIds=['nearestPlayer','nearestChest','nearestAirdrop','safeZoneIndicator','lootIndicator'];
+  for(const id of colorIds){assert(extras.querySelector('[data-indicator-color='+id+']'),'missing swatch '+id);}
+  toggle('safeZoneIndicator',true);const swatch=extras.querySelector('[data-indicator-color=safeZoneIndicator]');assert.equal(swatch.value,'#168cff');swatch.value='#abcdef';swatch.dispatchEvent(new w.Event('input'));assert.equal(raw().indicatorColors.safeZoneIndicator,'#abcdef');
+  toggle('buildHealth',true);
+  for(const [hp,color]of [[100,'#20da50'],[76,'#20da50'],[75,'#ffd21c'],[51,'#ffd21c'],[50,'#ff851b'],[26,'#ff851b'],[25,'#ff3030'],[0,'#ff3030']]){wall.åÈ=hp;assert(draw(wall.â).includes('outline:'+color),'build health boundary '+hp);}
+  wall.ËÆ=undefined;assert(!draw(wall.â).some(x=>x.startsWith('outline:')),'missing max does not imply red');wall.ËÆ=100;toggle('buildHealth',false);assert(!draw(wall.â).some(x=>x.startsWith('outline:')));
+  const car={id:21,type:'car',åÈ:50,ËÆ:100,â:new NativeNode('carRoot'),ÄÀè:rect('carBody','#888',130,220)};car.â.add(car.ÄÀè);stage.add(car.â);players.push(car);
+  const tree={id:22,type:'object',Àâ:'tree',åÈ:25,ËÆ:100,â:new NativeNode('treeRoot'),ÄA:rect('treeBody','#888',300,300)};tree.â.add(tree.ÄA);stage.add(tree.â);players.push(tree);await tick(2200);
+  toggle('objectHealth',true);assert(draw(car.â).includes('outline:#ff851b'));assert(draw(tree.â).includes('outline:#ff3030'));toggle('objectHealth',false);
+  toggle('highlightOwnedAmmo',true);nativeAmmo.âê.À=resource('/buildart/stack1.png');assert(draw(nativeAmmo.â).includes('outline:#34ff75'),'scar owns ammo index1');nativeAmmo.âê.À=resource('/buildart/stack4.png');assert(!draw(nativeAmmo.â).includes('outline:#34ff75'),'unowned ammo skipped');toggle('highlightOwnedAmmo',false);
+  toggle('showBulletSpread',true);local.èÂ=false;local.ËÂ=4;const arcs=[];ctx.arc=(...args)=>arcs.push(args);draw(local.â);assert(arcs.some(a=>a[2]===600),'native forward cone renders');arcs.length=0;local.Åé[1].type='pickaxe';draw(local.â);assert(!arcs.some(a=>a[2]===600),'pickaxe has no gun cone');local.Åé[1].type='scar';toggle('showBulletSpread',false);
+  toggle('lootIndicator',true);const choice=extras.querySelector('[data-loot-choice="scar:4"]');assert(choice&&!choice.disabled);choice.checked=true;choice.dispatchEvent(new w.Event('change'));assert(raw().lootChoices.includes('scar:4'));
+  loot.äã=4;loot.â.ë.É=3000;draw(local.â);await tick(500);let lootArrows=[...page.querySelectorAll('.brioArrow')].filter(n=>n.querySelector('img'));assert.equal(lootArrows.length,1,'selected offscreen pickup has one arrow '+JSON.stringify({clock,settings:raw().lootChoices,track:S.localTrack?.state,root:{position:loot.â.ë,visible:loot.â.visible,opacity:loot.â.opacity},last:S.log.slice(-4),errors:S.errors}));assert([...lootArrows[0].querySelectorAll('img')].some(n=>n.src.endsWith('inv4.png')));assert([...lootArrows[0].querySelectorAll('img')].some(n=>n.src.endsWith('scar.png')));
+  loot.â.ë.É=0;draw(local.â);await tick(500);assert.equal([...page.querySelectorAll('.brioArrow')].filter(n=>n.querySelector('img')).length,0,'onscreen loot hides arrow');loot.â.ë.É=3000;loot.Äã=true;await tick(500);assert.equal([...page.querySelectorAll('.brioArrow')].filter(n=>n.querySelector('img')).length,0,'removed loot cannot leave arrow');loot.Äã=false;toggle('lootIndicator',false);
+  tab('Challenges');
+  const fullMap=new NativeNode('fullMap');fullMap.Ée='mapScene';fullMap.add(new NativeNode('mapTerrain'));stage.add(fullMap);
+  const reload=new NativeNode('reload'),arc=Object.assign(new NativeNode('reloadArc'),{type:'arc',éã:33,Äe:'#FFF'}),reloadText=Object.assign(new NativeNode('reloadText'),{type:'text',fontSize:22}),reloadBack=Object.assign(new NativeNode('reloadBack'),{type:'circle',éã:40,Äe:'#000'});for(const n of [arc,reloadText,reloadBack])reload.add(n);stage.add(reload);
+  const charge=new NativeNode('charge');charge.Àä_=Array.from({length:8},()=>rect('chargeCell','#0D0',10,18));charge.Eé_=3;charge.Æéá=8;charge.èeÊ=rect('chargeProgress','#1ADAE0',70,6);charge.add(charge.èeÊ);for(const n of charge.Àä_)charge.add(n);stage.add(charge);
+  local.Áa=arr();const damageText=new NativeNode('damageText');local.Áa.push(damageText);stage.add(damageText);
+  const bullet={id:23,type:'bullet',â:new NativeNode('bulletRoot')};bullet.â.add(new NativeNode('bulletArt'));stage.add(bullet.â);players.push(bullet);
+  const throwable={id:24,type:'throwable',â:new NativeNode('throwableRoot')};throwable.â.add(new NativeNode('throwableArt'));stage.add(throwable.â);players.push(throwable);await tick(2200);draw(stage);
+  for(const [id,nodes,hidden,kept]of [['noMinimap',[fullMap],['mapTerrain'],[]],['noHitMarker',[crosshair],['hit','hit1','hit2','hit3'],['cross0']],['noWeaponProgress',[reload,charge],['reloadText','chargeProgress','chargeCell'],[]],['noDamageNumbers',[damageText],['damageText'],[]],['noStormTimer',[mapHud],['timer','countdown'],['minimap','playerCounter']],['invisibleProjectiles',[bullet.â,throwable.â,trail],['bulletArt','throwableArt','trail'],[]],['hideWeapons',[local.ÄA,remote.ÄA,local.ÁÆ],['held1','held2','preview1'],['body1','body2']]]){
+    toggle(id,true);const seen=draw(...nodes);for(const label of hidden)assert(!seen.includes(label),id+' leaked '+label);for(const label of kept)assert(seen.includes(label),id+' hid '+label);toggle(id,false);for(const label of hidden)assert(draw(...nodes).includes(label),id+' did not restore '+label);
+  }
+  // New damage children must be silenced on their first player draw, rather than waiting for a scan tick.
+  toggle('noDamageNumbers',true);const lateDamage=new NativeNode('lateDamage');local.Áa.push(lateDamage);stage.add(lateDamage);draw(local.â);assert.deepEqual(draw(lateDamage),[]);toggle('noDamageNumbers',false);
+  tab('Modifiers');toggle('longerBulletTrails',true);bullet.â.ë.É=10;draw(bullet.â);await tick(40);bullet.â.ë.É=50;draw(bullet.â);let lines=0;ctx.lineTo=()=>lines++;draw(local.â);assert(lines>0,'observed projectile history rendered');bullet.Äã=true;await tick(1300);lines=0;draw(local.â);assert.equal(lines,0,'history expires without more projectile draws');toggle('longerBulletTrails',false);
+  // Observe unchanged native decode identity; native terminal totals plus bounded local events drive both win/loss sheets.
+  const packet={t:'circle',circle:{position:[100,200],radius:2000},state:'waiting'};assert.equal(w.msgpack.decode(packet),packet);draw(local.â);await tick(500);assert(S.safeZoneUi&&S.safeZoneUi.querySelector('.d').textContent.includes('m'));
+  w.msgpack.decode({t:'setID',i:1});w.msgpack.decode({t:'elim',name:'<b>opponent</b>',knock:false});w.msgpack.decode({t:'y',a:[1],hLost:13,sLost:20});w.msgpack.decode({t:'x',p:[90,'bullet'],pi:1});
+  const end=page.createElement('div');end.id='deathscreen';end.innerHTML='<h1>Native heading</h1><div class="statsContainer"></div><div class="topContainer"></div><div id="deathPass"><div class="passHolder" style="display:grid">Battle pass</div></div><button>Play again</button>';page.body.appendChild(end);
+  for(const place of [2,1]){
+    if(place===1){page.querySelector('#ready').click();await tick(3000);assert.equal(page.querySelector('[data-brio-postgame]'),null,'Play restores the original panel');assert.equal(end.querySelector('.passHolder').style.display,'grid');}
+    const terminal={t:'death',place,eliminations:2,damageToEnemies:230,wallsBuilt:7,timeAlive:60,name:'killer'};assert.equal(w.msgpack.decode(terminal),terminal);await tick(500);const sheet=page.querySelector('[data-brio-postgame]');assert(sheet,'postgame sheet missing');assert(sheet.textContent.includes('#'+place));assert(sheet.textContent.includes('230'));assert(sheet.textContent.includes('unavailable'));assert.equal(sheet.querySelector('b'),null,'player names remain text');assert.equal(end.querySelector('.passHolder').style.display,'none');assert.equal(end.querySelector('h1').textContent,'Native heading');
+    end.querySelector('.statsContainer').style.display='none';await tick(500);assert.equal(sheet.style.display,'none','dedicated Battle Pass browse preserves native view');assert.equal(end.querySelector('.passHolder').style.display,'grid');end.querySelector('.statsContainer').style.display='';await tick(500);assert.equal(sheet.style.display,'');
+  }
+  assert(decodeCalls>5);tab('Challenges');toggle('goodFlippinLuck',true);for(const id of ['noPickupLabels','noHitMarker','noDamageNumbers','noWeaponProgress','invisibleProjectiles','hideWeapons','noStormTimer'])assert(control(id).checked&&control(id).disabled);toggle('goodFlippinLuck',false);
   const logCount=S.log.length;page.querySelector('#ready').click();await tick(14000);assert(S.log.length>logCount);assert.equal(S.renderer,null);assert.equal(loot.âê.éa,nativeMethod);assert.equal(trail.éa,nativeMethod);assert.equal(remote.ÃÊ.opacity,.2);assert.equal(remote.æÄ.parent,null);
   assert.equal(w.Array.prototype.forEach,nativeForEach);S.destroy();assert.equal(page.querySelectorAll('.brioModal').length,0);assert.deepEqual([...S.errors],[]);
-  dom.window.close();console.log('V50 challenges passed',JSON.stringify({own,combinedStart}));
+  dom.window.close();console.log('V50 carry-forward challenges passed (V51)',JSON.stringify({own,combinedStart}));
 }
 (async()=>{for(const settings of [{own:false},{own:true},{own:false,combinedStart:true}])await run(settings);})().catch(e=>{console.error(e);process.exitCode=1;});
