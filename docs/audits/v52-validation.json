@@ -1,0 +1,35 @@
+{
+  "version": 52,
+  "date": "2026-10-07",
+  "source": {
+    "bytes": 630192,
+    "sha256": "ab2b8b87947d34d260f6fc385178c94eab6c397be759a54a37c337440b48a04d"
+  },
+  "payload": {
+    "bytes": 292124,
+    "sha256": "3eb0ed1dc6a74c0a58c169b9ae538c18d162f18504973f6a3e8fdb38937ea98d"
+  },
+  "validation": {
+    "configurations": 35,
+    "executions": 70,
+    "regressionExecutions": 64,
+    "challengeExecutions": 6,
+    "particleSubtrees": 25800,
+    "missingSourceAnnotations": 0,
+    "sourceBlocks": 874,
+    "sourceFunctions": 651,
+    "sourceComments": 1424,
+    "minifiedComments": 0,
+    "nativeVisualProof": false
+  },
+  "inputLog": {
+    "path": "logs/runs/v51-log.txt",
+    "bytes": 4653775,
+    "sha256": "b6354f5e33d95f59bdeb17ffe03164d3b3700390f14709e4459e28163edb4b65"
+  },
+  "publication": {
+    "repository": "shortcutsbin-netizen/brio-unlocker",
+    "baseCommit": "4c3b060bd90cf4164cff0dcaf579ea52923f0edb",
+    "noRemovals": true
+  }
+}

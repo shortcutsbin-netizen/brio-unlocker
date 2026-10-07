@@ -1,3 +1,11 @@
+# V52 repository guide
+
+Current: [findings](findings/v52-findings.md), [status](status/v52-status.md), [minimal live procedure/complete carried surface](test-procedures/v52-test-procedure.md), [source map](audits/v52-source-map.md), [validation](audits/v52-validation.md), [full V51 log](../logs/runs/v51-log.txt), [observations](../logs/observations/v51-2026-10-07-observations.md), [general analysis](analysis/runs/v52-v51-analysis.json), [focused chronology/native callback excerpts](analysis/runs/v52-v51-focused-analysis.json).
+
+Reproduce read-only log evidence with `node tools/analysis/analyze-log.cjs` and `node tools/analysis/analyze-v52.cjs`. Parse-only engine/strict source comment tools remain available. V51 proposal decisions still govern approved/denied additions. All historical paths/files retained; current sections supersede old test/HTML requests.
+
+---
+
 # V51 repository guide update
 
 Current links: ../README.md and ../AGENTS.md. V51 decisions resolve all42 proposal IDs; V50 proposal bytes remain historical. Both current/historical direct dist payloads and archived duplicates are preserved. Readable V50/V51 source is frozen beside payloads. Reproduce native V51 evidence with node tools/analysis/analyze-v51.cjs; general engine analyzer now defaults to V51 output. No original file is removed.

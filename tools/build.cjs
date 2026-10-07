@@ -1,2 +1,14 @@
+// Conservative local build: no compression rewrites, no external loader, no native source evaluation.
 const fs=require('fs'),vm=require('vm'),{minify}=require('terser');
-(async()=>{const source=fs.readFileSync('src/brio.js','utf8');new vm.Script(source);const {code}=await minify(source,{compress:false,mangle:true,format:{ascii_only:false,comments:false}});new vm.Script(code);const comments=[];require('acorn').parse(code,{ecmaVersion:'latest',onComment:comments});if(comments.length)throw Error('Minified payload contains comments');fs.mkdirSync('dist',{recursive:true});fs.mkdirSync('versions/v51',{recursive:true});fs.writeFileSync('dist/brio-v51.min.js',code);const archive='versions/v51/brio-v51.min.js';if(fs.existsSync(archive)&&fs.readFileSync(archive,'utf8')!==code)throw Error('Refusing to overwrite version archive');fs.writeFileSync(archive,code);console.log('Parsed source and standalone minified payload:',Buffer.byteLength(code),'bytes')})().catch(e=>{console.error(e);process.exitCode=1});
+(async()=>{
+ const source=fs.readFileSync('src/brio.js','utf8');new vm.Script(source);
+ const {code}=await minify(source,{compress:false,mangle:true,format:{ascii_only:false,comments:false}});
+ new vm.Script(code);const comments=[];require('acorn').parse(code,{ecmaVersion:'latest',onComment:comments});
+ if(comments.length)throw Error('Minified payload contains comments');
+ // Validate immutable readable/payload archives before writing any release output.
+ const artifacts=[['versions/v52/brio.js',source],['versions/v52/brio-v52.min.js',code]];
+ for(const [path,text]of artifacts)if(fs.existsSync(path)&&fs.readFileSync(path,'utf8')!==text)throw Error('Refusing to overwrite version archive: '+path);
+ fs.mkdirSync('dist',{recursive:true});fs.mkdirSync('versions/v52',{recursive:true});
+ fs.writeFileSync('dist/brio-v52.min.js',code);for(const [path,text]of artifacts)fs.writeFileSync(path,text);
+ console.log('Parsed source and standalone minified payload:',Buffer.byteLength(code),'bytes; zero comments; immutable source/payload archives verified');
+})().catch(e=>{console.error(e);process.exitCode=1});

@@ -1,5 +1,19 @@
 # BRIO Unlocker
 
+Current release **V52**: [complete Console payload](dist/brio-v52.min.js). Copy raw file, paste on Build Royale home, open **Extras → Set up normal test**, then ordinary Play. **EXTRAS** stays available in the minimized terminal during a match. Prior preferences have a reversible persistent backup.
+
+V52 repairs cumulative particle-adapter starvation and reported Hell/HUD leaks, adds **Hide info popups**, fixes the cone's90-degree axis error and projected-storm target retention, experiments with cached artwork silhouette borders, and replaces unclear loot/tier controls with explicit buttons. Modifiers now have subsections; Match breakdown uses light-text cards.
+
+[Minimal two-match procedure and complete carried-forward coverage](docs/test-procedures/v52-test-procedure.md) · [Findings](docs/findings/v52-findings.md) · [Status](docs/status/v52-status.md) · [Commented source](src/brio.js) · [Source map](docs/audits/v52-source-map.md) · [Validation](docs/audits/v52-validation.md) · [Release history](docs/releases.md).
+
+Native visual validation remains pending. Cone half-angle units remain provisional; passive shot comparisons now record both client/server aim offsets. Silhouette fallback preserves box outlines for unreadable assets. Contents/bot recon is unresolved, not disproven. Native physics/network/ownership remain unchanged; no file removals.
+
+Earlier handoffs below are preserved history; current V52 instructions/status take precedence.
+
+---
+
+# BRIO Unlocker
+
 Current release **V51**: [complete plain Console payload](dist/brio-v51.min.js). Use **Copy raw file**, paste on Build Royale home, then ordinary Play. Terminal **EXTRAS** opens the same controls during a match/minimized. Every non-vendored source block/function is annotated; minified payload contains zero comments.
 
 [Source](src/brio.js) · [Full V50/V51 test procedure](docs/test-procedures/v51-test-procedure.md) · [Findings](docs/findings/v51-findings.md) · [Status](docs/status/v51-status.md) · [All42 decisions](docs/proposals/v51-decisions.md) · [Source map](docs/audits/v51-source-map.md) · [Validation](docs/audits/v51-validation.md) · [Repository guide](docs/README.md) · [Release history](docs/releases.md) · [Parser notice](docs/licenses/THIRD_PARTY_NOTICES.md).

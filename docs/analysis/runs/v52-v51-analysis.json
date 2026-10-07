@@ -1,0 +1,916 @@
+{
+  "input": "logs/runs/v51-log.txt",
+  "version": "51",
+  "bytes": 4653775,
+  "characters": 4301530,
+  "sha256": "b6354f5e33d95f59bdeb17ffe03164d3b3700390f14709e4459e28163edb4b65",
+  "eventCounts": {
+    "BOT AUDIT PLAN": 1,
+    "BOT CANDIDATE": 12,
+    "BOT METADATA AUDIT": 13,
+    "BOT METADATA SETTLED": 7,
+    "BOT PHASE": 2,
+    "BOT SOURCE AUDIT": 1,
+    "CHALLENGE BRANCH COVERAGE": 52,
+    "COSMETIC SELECTIONS": 2,
+    "CUSTOM CACHE": 1,
+    "DECODED FIELD SCHEMA": 1,
+    "DEEP CALLBACK STRUCTURE": 40,
+    "DEEP CONTAINER NEARBY": 21,
+    "DEEP FIELD DICTIONARY": 1,
+    "DEEP SEMANTIC REFERENCES": 18,
+    "DEEP SOURCE STRUCTURE": 1,
+    "DEEP TARGET CHANGE": 470,
+    "DEEP TARGET DISAPPEARED": 170,
+    "DEEP TARGET INITIAL": 112,
+    "ENVIRONMENT MANIFEST": 2,
+    "ENVIRONMENT TARGET CHUNK": 2,
+    "FULL NATIVE SOURCE CHUNK": 85,
+    "GLOBAL HOOK RESTORED": 2,
+    "GUN SLOT WARNING STATE": 53,
+    "HUD DOM CANDIDATES": 3,
+    "INCOMING DECODE PROBE": 2,
+    "INCOMING SCHEMA FIRST": 541,
+    "INCOMING TARGET PAYLOAD": 1182,
+    "INDICATOR STATE": 289,
+    "INVENTORY ASSET RESOLUTION": 39,
+    "LOCAL HUD STATE": 29,
+    "LOCAL READY": 2,
+    "LOCAL RENDERER": 2,
+    "LOOT EFFECT BRANCH": 2,
+    "MATCH STATE RESET": 2,
+    "METEOR AUTOMATIC": 2,
+    "METEOR AUTOMATIC START": 2,
+    "METEOR NATIVE HOLD INSTALLED": 2,
+    "METEOR NATIVE REMOVE BLOCKED": 1,
+    "NATIVE AMMO TYPE MAP": 1,
+    "NATIVE CALLBACK AUDIT": 12,
+    "NATIVE EMPTY SLOT ART": 1,
+    "NATIVE HUD ASSET MAP": 1,
+    "NATIVE HUD CAPTURE STATUS": 52,
+    "NATIVE HUD WIDGET": 9,
+    "NATIVE REGISTRATION AUDIT": 4,
+    "NATIVE REGISTRATION REFERENCE": 23,
+    "NATIVE RENDER DISCOVERY": 2,
+    "NATIVE RENDER DISCOVERY RESTORED": 2,
+    "NATIVE REPLICA SCHEMA SAMPLE": 160,
+    "NATIVE SESSION STATE": 21,
+    "NATIVE VISUAL BRANCH": 50,
+    "NATIVE VISUAL GATE CAP": 2,
+    "NATIVE WEAPON SLOT": 48,
+    "OLD MATCH METEORS REMOVED": 1,
+    "OWN GUN SLOT WARNING BINDING": 10,
+    "OWN MATERIAL WARNING BINDING": 8,
+    "PASSIVE BUILDABLE": 1,
+    "PASSIVE CONTAINER BASE": 97,
+    "PASSIVE CONTAINER CHANGE": 27,
+    "PASSIVE CONTAINER REMOVED": 90,
+    "PASSIVE LOCAL FIELDS": 2,
+    "PASSIVE NATIVE OBJECT": 153,
+    "PASSIVE RUNTIME COVERAGE": 67,
+    "PASSIVE SOURCE SURFACE": 8,
+    "PREMATCH ARMED": 2,
+    "PROBE OBSERVATION ERROR": 4,
+    "READY": 1,
+    "RECON COVERAGE": 1,
+    "REMOTE HUD SAMPLE": 53,
+    "SCENE CAPTURE": 2,
+    "SOURCE CALLBACK CHUNK": 45,
+    "SOURCE LOADED": 1,
+    "SOURCE PACKET REMAPPER": 1,
+    "TARGETED FEATURE SOURCE": 4,
+    "TARGETED NATIVE REFERENCE": 2,
+    "TEST SETTINGS AT PLAY": 2,
+    "V39 HUMAN GROUND TRUTH": 1,
+    "V50 DEEP PROBE PLAN": 2,
+    "V51 DYNAMIC GUN CHOICES": 1,
+    "V51 NATIVE SOURCE": 11,
+    "V51 POSTGAME COUNTERS": 2,
+    "V51 PROBE COVERAGE": 4,
+    "V51 SPREAD CALIBRATION": 56,
+    "V51 WEAPON CATALOG": 1,
+    "VERIFY": 1,
+    "WARNING DEFAULT RESET": 4,
+    "WAYPOINT HANDLER SOURCE": 1
+  },
+  "incomingPayloadKinds": {
+    "x:player:": 77,
+    "setID:player:": 9,
+    "y:player:": 337,
+    "z:player:": 97,
+    "x:object:grenadecrate": 73,
+    "x:object:ammocrate": 77,
+    "x:chest:": 82,
+    "z:object:grenadecrate": 74,
+    "z:object:ammocrate": 75,
+    "z:chest:": 92,
+    "x:object:bubbles": 68,
+    "z:object:bubbles": 88,
+    "x:object:airdrop": 7,
+    "z:object:airdrop": 8,
+    "x:object:meteorite": 5,
+    "y:object:meteorite": 5,
+    "z:object:meteorite": 5,
+    "y:object:airdrop": 3
+  },
+  "containerChestTypes": {
+    "default": 82
+  },
+  "payloadProperties": {
+    "player:": [
+      "ammo",
+      "building",
+      "canBuild",
+      "chosenBuild",
+      "chosenVariant",
+      "close",
+      "closeR",
+      "cookingNade",
+      "diving",
+      "effects",
+      "elims",
+      "emote",
+      "flashed",
+      "frt",
+      "gh",
+      "gliderSkin",
+      "glidingTicks",
+      "grapple",
+      "hLost",
+      "hair",
+      "health",
+      "house",
+      "i",
+      "id",
+      "jump",
+      "knocked",
+      "la",
+      "layer",
+      "locker",
+      "mats",
+      "maxGlidingTicks",
+      "name",
+      "needResource",
+      "p",
+      "pickaxeSkin",
+      "rs",
+      "rt",
+      "s",
+      "sLost",
+      "score",
+      "selectedWeapon",
+      "shield",
+      "shot",
+      "specs",
+      "spread",
+      "sprinting",
+      "steadying",
+      "t",
+      "team",
+      "teleported",
+      "v",
+      "wAmmo",
+      "weaponSlots"
+    ],
+    "object:grenadecrate": [
+      "fullHealth",
+      "health",
+      "height",
+      "i",
+      "p",
+      "t",
+      "type",
+      "width"
+    ],
+    "object:ammocrate": [
+      "fullHealth",
+      "health",
+      "height",
+      "i",
+      "p",
+      "t",
+      "type",
+      "width"
+    ],
+    "chest:": [
+      "chestType",
+      "i",
+      "p",
+      "t"
+    ],
+    "object:bubbles": [
+      "fullHealth",
+      "health",
+      "height",
+      "i",
+      "p",
+      "t",
+      "type",
+      "width"
+    ],
+    "object:airdrop": [
+      "fullHealth",
+      "health",
+      "height",
+      "i",
+      "landProgress",
+      "landed",
+      "p",
+      "t",
+      "type",
+      "width"
+    ],
+    "object:meteorite": [
+      "fullHealth",
+      "hasWeapon",
+      "health",
+      "height",
+      "i",
+      "landProgress",
+      "landed",
+      "p",
+      "t",
+      "type",
+      "width"
+    ]
+  },
+  "runs": [
+    {
+      "epoch": 1,
+      "reset": {
+        "epoch": 1,
+        "meteorMarkers": 0,
+        "remoteRefs": 0,
+        "inventoryNodes": 0,
+        "trackNodes": 0,
+        "featureNodes": 0,
+        "savedSelectionsPreserved": true
+      },
+      "settings": {
+        "requiredOn": {
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "identifyBots": true,
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "nearestPlayer": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "showBulletSpread": true,
+          "buildHealth": true,
+          "objectHealth": true,
+          "safeZoneIndicator": true,
+          "lootIndicator": true,
+          "highlightOwnedAmmo": true,
+          "longerBulletTrails": true
+        },
+        "missing": [],
+        "profile": "normal / tier comparison",
+        "allSelected": {
+          "playersInvisible": false,
+          "lootInvisible": false,
+          "buildsInvisible": false,
+          "transparentRoofs": true,
+          "healthBars": true,
+          "playerNames": true,
+          "allGlidersInvisible": true,
+          "allTrailsInvisible": true,
+          "nearestPlayer": true,
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "inventoryAmmo": true,
+          "permanentMeteor": true,
+          "inventorySize": "xl",
+          "identifyBots": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "numericHealthShield": true,
+          "lowHealthWarning": true,
+          "lowMatsWarning": true,
+          "lowAmmoWarning": true,
+          "nearestPlayerName": true,
+          "highContrastPlayers": false,
+          "transparentFoliage": true,
+          "monochrome": false,
+          "noChestsVisible": false,
+          "warningThresholds": {
+            "health": 20,
+            "ammo": [
+              30,
+              30,
+              10,
+              15,
+              5,
+              5
+            ],
+            "materials": [
+              30,
+              30,
+              30,
+              1
+            ]
+          },
+          "indicatorColors": {
+            "nearestPlayer": "#a81020",
+            "nearestChest": "#ffd21c",
+            "nearestAirdrop": "#f28b16",
+            "safeZoneIndicator": "#168cff",
+            "lootIndicator": "#f5f5f5"
+          },
+          "lootChoices": [
+            "heavy sniper:5",
+            "lmg:5",
+            "vector:5"
+          ],
+          "lootMaskTier": "item",
+          "buildMaskTier": "all",
+          "showBulletSpread": true,
+          "buildHealth": true,
+          "objectHealth": true,
+          "safeZoneIndicator": true,
+          "lootIndicator": true,
+          "highlightOwnedAmmo": true,
+          "longerBulletTrails": true,
+          "maskLootArt": false,
+          "cleanLoot": false,
+          "maskLootPopup": false,
+          "maskLootOutline": false
+        },
+        "savedSelections": {
+          "playersInvisible": false,
+          "lootInvisible": false,
+          "buildsInvisible": false,
+          "transparentRoofs": true,
+          "healthBars": true,
+          "playerNames": true,
+          "allGlidersInvisible": true,
+          "allTrailsInvisible": true,
+          "nearestPlayer": true,
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "inventoryAmmo": true,
+          "permanentMeteor": true,
+          "inventorySize": "xl",
+          "identifyBots": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "numericHealthShield": true,
+          "lowHealthWarning": true,
+          "lowMatsWarning": true,
+          "lowAmmoWarning": true,
+          "nearestPlayerName": true,
+          "highContrastPlayers": false,
+          "transparentFoliage": true,
+          "monochrome": false,
+          "noChestsVisible": false,
+          "warningThresholds": {
+            "health": 20,
+            "ammo": [
+              30,
+              30,
+              10,
+              15,
+              5,
+              5
+            ],
+            "materials": [
+              30,
+              30,
+              30,
+              1
+            ]
+          },
+          "indicatorColors": {
+            "nearestPlayer": "#a81020",
+            "nearestChest": "#ffd21c",
+            "nearestAirdrop": "#f28b16",
+            "safeZoneIndicator": "#168cff",
+            "lootIndicator": "#f5f5f5"
+          },
+          "lootChoices": [
+            "heavy sniper:5",
+            "lmg:5",
+            "vector:5"
+          ],
+          "lootMaskTier": "item",
+          "buildMaskTier": "all",
+          "showBulletSpread": true,
+          "buildHealth": true,
+          "objectHealth": true,
+          "safeZoneIndicator": true,
+          "lootIndicator": true,
+          "highlightOwnedAmmo": true,
+          "longerBulletTrails": true
+        }
+      },
+      "coverage": {
+        "incomingInstalled": true,
+        "incomingObservedThisRun": true,
+        "incomingPackets": 20761,
+        "incomingSchemas": 313,
+        "nativeEngineCaptured": false,
+        "targetedEntities": 81,
+        "records": 1352,
+        "approximateBytes": 777703,
+        "truncations": 1,
+        "errors": 5,
+        "errorStages": {
+          "window registry discovery": 5
+        },
+        "lanes": {
+          "schema": 313,
+          "environment": 2,
+          "player": 322,
+          "replica": 300,
+          "container": 415
+        },
+        "laneCaps": {
+          "schema": 350,
+          "player": 350,
+          "container": 700,
+          "replica": 300,
+          "environment": 100
+        },
+        "suppressed": {
+          "routineFieldChanges": 3837,
+          "replica": 222
+        },
+        "incomingTargetIds": 83,
+        "circleState": "moving",
+        "epoch": 1,
+        "caps": {
+          "packets": 80000,
+          "records": 1800,
+          "bytes": 8000000,
+          "entities": 200,
+          "durationMs": 900000
+        },
+        "limitsReached": {
+          "packets": false,
+          "records": false,
+          "bytes": false,
+          "entities": false
+        },
+        "source": {
+          "url": "https://buildroyale.io/js/uOfrVi.js",
+          "characters": 764701,
+          "chunks": 85,
+          "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+          "captured": true,
+          "astParsed": true
+        },
+        "conclusion": "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
+      },
+      "payloads": 648
+    },
+    {
+      "epoch": 2,
+      "reset": {
+        "epoch": 2,
+        "meteorMarkers": 0,
+        "remoteRefs": 0,
+        "inventoryNodes": 0,
+        "trackNodes": 0,
+        "featureNodes": 0,
+        "savedSelectionsPreserved": true
+      },
+      "settings": {
+        "requiredOn": {
+          "playersInvisible": true,
+          "lootInvisible": true,
+          "buildsInvisible": true,
+          "noMinimap": true,
+          "noCrosshair": true,
+          "noInventoryHud": true,
+          "invisibleStorm": true,
+          "noHealthShieldHud": true,
+          "goodFlippinLuck": true,
+          "noPickupLabels": true,
+          "noHitMarker": true,
+          "noDamageNumbers": true,
+          "noWeaponProgress": true,
+          "invisibleProjectiles": true,
+          "hideWeapons": true,
+          "noStormTimer": true
+        },
+        "missing": [],
+        "profile": "combined challenge",
+        "allSelected": {
+          "playersInvisible": true,
+          "lootInvisible": true,
+          "buildsInvisible": true,
+          "transparentRoofs": false,
+          "healthBars": false,
+          "playerNames": false,
+          "allGlidersInvisible": false,
+          "allTrailsInvisible": false,
+          "nearestPlayer": false,
+          "inventorySlots": false,
+          "inventoryMaterials": false,
+          "inventoryAmmo": false,
+          "permanentMeteor": false,
+          "inventorySize": false,
+          "identifyBots": false,
+          "nearestChest": false,
+          "nearestAirdrop": false,
+          "screenChests": false,
+          "screenAirdrops": false,
+          "screenFishing": false,
+          "numericHealthShield": false,
+          "lowHealthWarning": false,
+          "lowMatsWarning": false,
+          "lowAmmoWarning": false,
+          "nearestPlayerName": false,
+          "highContrastPlayers": false,
+          "transparentFoliage": false,
+          "monochrome": false,
+          "noChestsVisible": true,
+          "warningThresholds": {
+            "health": 20,
+            "ammo": [
+              30,
+              30,
+              10,
+              15,
+              5,
+              5
+            ],
+            "materials": [
+              30,
+              30,
+              30,
+              1
+            ]
+          },
+          "indicatorColors": {
+            "nearestPlayer": "#a81020",
+            "nearestChest": "#ffd21c",
+            "nearestAirdrop": "#f28b16",
+            "safeZoneIndicator": "#168cff",
+            "lootIndicator": "#f5f5f5"
+          },
+          "lootChoices": [
+            "heavy sniper:5",
+            "lmg:5",
+            "vector:5"
+          ],
+          "lootMaskTier": "all",
+          "buildMaskTier": "all",
+          "showBulletSpread": false,
+          "buildHealth": false,
+          "objectHealth": false,
+          "safeZoneIndicator": false,
+          "lootIndicator": false,
+          "highlightOwnedAmmo": false,
+          "longerBulletTrails": false,
+          "goodFlippinLuck": true,
+          "noMinimap": true,
+          "noCrosshair": true,
+          "noInventoryHud": true,
+          "invisibleStorm": true,
+          "noHealthShieldHud": true,
+          "noPickupLabels": true,
+          "noHitMarker": true,
+          "noDamageNumbers": true,
+          "noWeaponProgress": true,
+          "invisibleProjectiles": true,
+          "hideWeapons": true,
+          "noStormTimer": true,
+          "stormEdge": false,
+          "stormCenter": false,
+          "stormDistance": false,
+          "customCrosshair": false,
+          "maskLootArt": true,
+          "cleanLoot": true,
+          "maskLootPopup": true,
+          "maskLootOutline": false
+        },
+        "savedSelections": {
+          "playersInvisible": false,
+          "lootInvisible": false,
+          "buildsInvisible": false,
+          "transparentRoofs": true,
+          "healthBars": true,
+          "playerNames": true,
+          "allGlidersInvisible": true,
+          "allTrailsInvisible": true,
+          "nearestPlayer": true,
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "inventoryAmmo": true,
+          "permanentMeteor": true,
+          "inventorySize": "xl",
+          "identifyBots": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "numericHealthShield": true,
+          "lowHealthWarning": true,
+          "lowMatsWarning": true,
+          "lowAmmoWarning": true,
+          "nearestPlayerName": true,
+          "highContrastPlayers": false,
+          "transparentFoliage": true,
+          "monochrome": false,
+          "noChestsVisible": false,
+          "warningThresholds": {
+            "health": 20,
+            "ammo": [
+              30,
+              30,
+              10,
+              15,
+              5,
+              5
+            ],
+            "materials": [
+              30,
+              30,
+              30,
+              1
+            ]
+          },
+          "indicatorColors": {
+            "nearestPlayer": "#a81020",
+            "nearestChest": "#ffd21c",
+            "nearestAirdrop": "#f28b16",
+            "safeZoneIndicator": "#168cff",
+            "lootIndicator": "#f5f5f5"
+          },
+          "lootChoices": [
+            "heavy sniper:5",
+            "lmg:5",
+            "vector:5"
+          ],
+          "lootMaskTier": "item",
+          "buildMaskTier": "all",
+          "showBulletSpread": true,
+          "buildHealth": true,
+          "objectHealth": true,
+          "safeZoneIndicator": true,
+          "lootIndicator": true,
+          "highlightOwnedAmmo": true,
+          "longerBulletTrails": true,
+          "goodFlippinLuck": true
+        }
+      },
+      "coverage": {
+        "incomingInstalled": true,
+        "incomingObservedThisRun": true,
+        "incomingPackets": 19764,
+        "incomingSchemas": 228,
+        "nativeEngineCaptured": false,
+        "targetedEntities": 71,
+        "records": 1148,
+        "approximateBytes": 708057,
+        "truncations": 1,
+        "errors": 4,
+        "errorStages": {
+          "window registry discovery": 4
+        },
+        "lanes": {
+          "schema": 228,
+          "environment": 2,
+          "player": 350,
+          "replica": 300,
+          "container": 268
+        },
+        "laneCaps": {
+          "schema": 350,
+          "player": 350,
+          "container": 700,
+          "replica": 300,
+          "environment": 100
+        },
+        "suppressed": {
+          "routineFieldChanges": 2700,
+          "player": 65,
+          "replica": 130
+        },
+        "incomingTargetIds": 74,
+        "circleState": "waiting",
+        "epoch": 2,
+        "caps": {
+          "packets": 80000,
+          "records": 1800,
+          "bytes": 8000000,
+          "entities": 200,
+          "durationMs": 900000
+        },
+        "limitsReached": {
+          "packets": false,
+          "records": false,
+          "bytes": false,
+          "entities": false
+        },
+        "source": {
+          "url": "https://buildroyale.io/js/uOfrVi.js",
+          "characters": 764701,
+          "chunks": 85,
+          "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+          "captured": true,
+          "astParsed": true
+        },
+        "conclusion": "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
+      },
+      "payloads": 534
+    }
+  ],
+  "coverage": {
+    "incomingInstalled": true,
+    "incomingObservedThisRun": true,
+    "incomingPackets": 19764,
+    "incomingSchemas": 228,
+    "nativeEngineCaptured": false,
+    "targetedEntities": 71,
+    "records": 1148,
+    "approximateBytes": 708057,
+    "truncations": 1,
+    "errors": 4,
+    "errorStages": {
+      "window registry discovery": 4
+    },
+    "lanes": {
+      "schema": 228,
+      "environment": 2,
+      "player": 350,
+      "replica": 300,
+      "container": 268
+    },
+    "laneCaps": {
+      "schema": 350,
+      "player": 350,
+      "container": 700,
+      "replica": 300,
+      "environment": 100
+    },
+    "suppressed": {
+      "routineFieldChanges": 2700,
+      "player": 65,
+      "replica": 130
+    },
+    "incomingTargetIds": 74,
+    "circleState": "waiting",
+    "epoch": 2,
+    "caps": {
+      "packets": 80000,
+      "records": 1800,
+      "bytes": 8000000,
+      "entities": 200,
+      "durationMs": 900000
+    },
+    "limitsReached": {
+      "packets": false,
+      "records": false,
+      "bytes": false,
+      "entities": false
+    },
+    "source": {
+      "url": "https://buildroyale.io/js/uOfrVi.js",
+      "characters": 764701,
+      "chunks": 85,
+      "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+      "captured": true,
+      "astParsed": true
+    },
+    "conclusion": "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
+  },
+  "hudStatus": {
+    "captured": true,
+    "counts": {
+      "slots": 5,
+      "materials": 4,
+      "ammo": 1
+    },
+    "replica": "native slot holders and material/stack templates; visual comparison required",
+    "ownWarningBindings": 9,
+    "renderedArrays": 160,
+    "discoveryActive": false,
+    "approximationFallback": true,
+    "note": "Warnings/selected native borders proven. V50 remote sizing/caption removal is the narrow changed presentation."
+  },
+  "phaseTransitions": [
+    {
+      "phase": "match",
+      "automatic": true,
+      "evidence": "native circle state=moving",
+      "tracked": 5
+    },
+    {
+      "phase": "match",
+      "automatic": true,
+      "evidence": "native circle state=moving",
+      "tracked": 0
+    }
+  ],
+  "sessionTransitions": [
+    {
+      "epoch": 1,
+      "state": "lobby"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 1,
+      "state": "waiting"
+    },
+    {
+      "epoch": 1,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "lobby"
+    },
+    {
+      "epoch": 2,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "waiting"
+    },
+    {
+      "epoch": 2,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "waiting"
+    },
+    {
+      "epoch": 2,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "waiting"
+    },
+    {
+      "epoch": 2,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "waiting"
+    },
+    {
+      "epoch": 2,
+      "state": "moving"
+    },
+    {
+      "epoch": 2,
+      "state": "waiting"
+    }
+  ],
+  "removedMeteors": [
+    {
+      "count": 2,
+      "epoch": 2
+    }
+  ],
+  "runtimeSource": {
+    "chunks": 85,
+    "complete": true,
+    "characters": 764701,
+    "bytes": 838390,
+    "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+    "matchesReference": true
+  },
+  "limits": "Counts summarize recorded JSON events only. Group by chronological Play resets: v46 historical rearm coverage reports the next epoch before resetting its probe. User observations are separate. Capped or missing records and unencountered targets cannot establish impossibility."
+}

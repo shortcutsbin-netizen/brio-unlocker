@@ -1,7 +1,7 @@
 // Reproducible read-only run evidence. No engine or log text is executed.
 const fs = require('fs'), crypto = require('crypto');
-const input = process.argv[2] || 'logs/runs/v49-log.txt';
-const output = process.argv[3] || 'docs/analysis/runs/v50-v49-analysis.json';
+const input = process.argv[2] || 'logs/runs/v51-log.txt';
+const output = process.argv[3] || 'docs/analysis/runs/v52-v51-analysis.json';
 const bytes = fs.readFileSync(input), text = bytes.toString('utf8');
 const version = text.match(/^BRIO (\d+)/)?.[1] || '48';
 const events = [];

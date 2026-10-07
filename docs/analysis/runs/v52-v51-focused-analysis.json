@@ -1,0 +1,1473 @@
+{
+  "input": "logs/runs/v51-log.txt",
+  "bytes": 4653775,
+  "sha256": "b6354f5e33d95f59bdeb17ffe03164d3b3700390f14709e4459e28163edb4b65",
+  "events": 4223,
+  "runs": [
+    {
+      "epoch": 1,
+      "time": "22:50:10.538",
+      "settings": {
+        "requiredOn": {
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "identifyBots": true,
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "nearestPlayer": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "showBulletSpread": true,
+          "buildHealth": true,
+          "objectHealth": true,
+          "safeZoneIndicator": true,
+          "lootIndicator": true,
+          "highlightOwnedAmmo": true,
+          "longerBulletTrails": true
+        },
+        "missing": [],
+        "profile": "normal / tier comparison",
+        "allSelected": {
+          "playersInvisible": false,
+          "lootInvisible": false,
+          "buildsInvisible": false,
+          "transparentRoofs": true,
+          "healthBars": true,
+          "playerNames": true,
+          "allGlidersInvisible": true,
+          "allTrailsInvisible": true,
+          "nearestPlayer": true,
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "inventoryAmmo": true,
+          "permanentMeteor": true,
+          "inventorySize": "xl",
+          "identifyBots": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "numericHealthShield": true,
+          "lowHealthWarning": true,
+          "lowMatsWarning": true,
+          "lowAmmoWarning": true,
+          "nearestPlayerName": true,
+          "highContrastPlayers": false,
+          "transparentFoliage": true,
+          "monochrome": false,
+          "noChestsVisible": false,
+          "warningThresholds": {
+            "health": 20,
+            "ammo": [
+              30,
+              30,
+              10,
+              15,
+              5,
+              5
+            ],
+            "materials": [
+              30,
+              30,
+              30,
+              1
+            ]
+          },
+          "indicatorColors": {
+            "nearestPlayer": "#a81020",
+            "nearestChest": "#ffd21c",
+            "nearestAirdrop": "#f28b16",
+            "safeZoneIndicator": "#168cff",
+            "lootIndicator": "#f5f5f5"
+          },
+          "lootChoices": [
+            "heavy sniper:5",
+            "lmg:5",
+            "vector:5"
+          ],
+          "lootMaskTier": "item",
+          "buildMaskTier": "all",
+          "showBulletSpread": true,
+          "buildHealth": true,
+          "objectHealth": true,
+          "safeZoneIndicator": true,
+          "lootIndicator": true,
+          "highlightOwnedAmmo": true,
+          "longerBulletTrails": true,
+          "maskLootArt": false,
+          "cleanLoot": false,
+          "maskLootPopup": false,
+          "maskLootOutline": false
+        },
+        "savedSelections": {
+          "playersInvisible": false,
+          "lootInvisible": false,
+          "buildsInvisible": false,
+          "transparentRoofs": true,
+          "healthBars": true,
+          "playerNames": true,
+          "allGlidersInvisible": true,
+          "allTrailsInvisible": true,
+          "nearestPlayer": true,
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "inventoryAmmo": true,
+          "permanentMeteor": true,
+          "inventorySize": "xl",
+          "identifyBots": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "numericHealthShield": true,
+          "lowHealthWarning": true,
+          "lowMatsWarning": true,
+          "lowAmmoWarning": true,
+          "nearestPlayerName": true,
+          "highContrastPlayers": false,
+          "transparentFoliage": true,
+          "monochrome": false,
+          "noChestsVisible": false,
+          "warningThresholds": {
+            "health": 20,
+            "ammo": [
+              30,
+              30,
+              10,
+              15,
+              5,
+              5
+            ],
+            "materials": [
+              30,
+              30,
+              30,
+              1
+            ]
+          },
+          "indicatorColors": {
+            "nearestPlayer": "#a81020",
+            "nearestChest": "#ffd21c",
+            "nearestAirdrop": "#f28b16",
+            "safeZoneIndicator": "#168cff",
+            "lootIndicator": "#f5f5f5"
+          },
+          "lootChoices": [
+            "heavy sniper:5",
+            "lmg:5",
+            "vector:5"
+          ],
+          "lootMaskTier": "item",
+          "buildMaskTier": "all",
+          "showBulletSpread": true,
+          "buildHealth": true,
+          "objectHealth": true,
+          "safeZoneIndicator": true,
+          "lootIndicator": true,
+          "highlightOwnedAmmo": true,
+          "longerBulletTrails": true
+        }
+      },
+      "gateCaps": [
+        {
+          "time": "22:53:29.306",
+          "cap": 4096
+        }
+      ],
+      "branches": {
+        "trailParticles": {
+          "time": "22:50:10.578",
+          "category": "trailParticles",
+          "type": "particle",
+          "path": "/buildart/trail0-1.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "stormMap": {
+          "time": "22:50:10.645",
+          "category": "stormMap",
+          "type": "rectangle",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "heldWeapons": {
+          "time": "22:50:11.967",
+          "category": "heldWeapons",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "v51PlayerChildren": {
+          "time": "22:50:11.967",
+          "category": "v51PlayerChildren",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "glider": {
+          "time": "22:50:11.967",
+          "category": "glider",
+          "type": "image",
+          "path": "/cosmetics/glider/glider.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "buildPreview": {
+          "time": "22:50:11.967",
+          "category": "buildPreview",
+          "type": "image",
+          "path": "/buildart/bluewood.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "damageNumbers": {
+          "time": "22:50:12.034",
+          "category": "damageNumbers",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "stormWorld": {
+          "time": "22:50:12.034",
+          "category": "stormWorld",
+          "type": "scene",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "pickupPopup": {
+          "time": "22:50:12.034",
+          "category": "pickupPopup",
+          "type": "image",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "chargeProgress": {
+          "time": "22:50:12.039",
+          "category": "chargeProgress",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "reloadProgress": {
+          "time": "22:50:12.039",
+          "category": "reloadProgress",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "healthShieldHud": {
+          "time": "22:50:12.039",
+          "category": "healthShieldHud",
+          "type": "image",
+          "path": "/buildart/health.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "minimap": {
+          "time": "22:50:12.044",
+          "category": "minimap",
+          "type": "image",
+          "path": "/buildart/blank.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "stormCountdown": {
+          "time": "22:50:12.044",
+          "category": "stormCountdown",
+          "type": "image",
+          "path": "/buildart/timer.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "crosshair": {
+          "time": "22:50:12.055",
+          "category": "crosshair",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "hitConfirmation": {
+          "time": "22:50:12.055",
+          "category": "hitConfirmation",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "playerPhysical": {
+          "time": "22:50:12.135",
+          "category": "playerPhysical",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "combinedPlayerInfo": {
+          "time": "22:50:12.135",
+          "category": "combinedPlayerInfo",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "inventoryHudUnit": {
+          "time": "22:50:13.978",
+          "category": "inventoryHudUnit",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "placedBuild": {
+          "time": "22:50:22.126",
+          "category": "placedBuild",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "lootArt": {
+          "time": "22:50:54.949",
+          "category": "lootArt",
+          "type": "image",
+          "path": "/buildart/stack0.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "lootRarity": {
+          "time": "22:50:54.949",
+          "category": "lootRarity",
+          "type": "image",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "lootAll": {
+          "time": "22:50:54.949",
+          "category": "lootAll",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "projectile": {
+          "time": "22:51:00.557",
+          "category": "projectile",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "projectileNativeTrail": {
+          "time": "22:51:00.557",
+          "category": "projectileNativeTrail",
+          "type": "polygon",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "inventoryHud": {
+          "time": "22:51:53.973",
+          "category": "inventoryHud",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        }
+      },
+      "lastBranchCoverage": {
+        "epoch": 1,
+        "tiers": {
+          "loot": "all",
+          "builds": "all"
+        },
+        "combined": true,
+        "installed": {
+          "trailParticles": 2301,
+          "stormMap": 5,
+          "heldWeapons": 150,
+          "v51PlayerChildren": 30,
+          "glider": 30,
+          "buildPreview": 30,
+          "damageNumbers": 168,
+          "stormWorld": 1,
+          "pickupPopup": 1,
+          "chargeProgress": 1,
+          "reloadProgress": 1,
+          "healthShieldHud": 13,
+          "minimap": 1,
+          "stormCountdown": 1,
+          "crosshair": 1,
+          "hitConfirmation": 1,
+          "playerPhysical": 290,
+          "combinedPlayerInfo": 29,
+          "inventoryHudUnit": 9,
+          "placedBuild": 163,
+          "lootArt": 273,
+          "lootRarity": 272,
+          "lootAll": 272,
+          "projectile": 161,
+          "projectileNativeTrail": 8,
+          "inventoryHud": 1
+        },
+        "adapterInstances": 4096,
+        "cap": 4096,
+        "v51": {
+          "zone": {
+            "x": 1655,
+            "y": 1988,
+            "radius": 1802
+          },
+          "lootArrows": 0,
+          "projectileHistories": 0,
+          "statsActive": false,
+          "localSpread": 8.39,
+          "weaponChoices": 35
+        },
+        "limits": "Reached branches only. Missing categories require live capture; fixtures are not pixel proof."
+      },
+      "spread": [
+        {
+          "weapon": "pickaxe",
+          "packetSpread": 600,
+          "nativeScalar": 6,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 540,
+          "nativeScalar": 5.4,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 479,
+          "nativeScalar": 4.79,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 419,
+          "nativeScalar": 4.19,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 359,
+          "nativeScalar": 3.59,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 299,
+          "nativeScalar": 2.99,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 539,
+          "nativeScalar": 5.39,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 239,
+          "nativeScalar": 2.39,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 250,
+          "nativeScalar": 2.5,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 290,
+          "nativeScalar": 2.9,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 330,
+          "nativeScalar": 3.3,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 370,
+          "nativeScalar": 3.7,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 409,
+          "nativeScalar": 4.09,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 450,
+          "nativeScalar": 4.5,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 490,
+          "nativeScalar": 4.9,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 530,
+          "nativeScalar": 5.3,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 570,
+          "nativeScalar": 5.7,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 610,
+          "nativeScalar": 6.1,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 600,
+          "nativeScalar": 6,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 379,
+          "nativeScalar": 3.79,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 339,
+          "nativeScalar": 3.39,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 279,
+          "nativeScalar": 2.79,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 519,
+          "nativeScalar": 5.19,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 459,
+          "nativeScalar": 4.59,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 399,
+          "nativeScalar": 3.99,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 209,
+          "nativeScalar": 2.09,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 169,
+          "nativeScalar": 1.69,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 189,
+          "nativeScalar": 1.89,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 429,
+          "nativeScalar": 4.29,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 369,
+          "nativeScalar": 3.69,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 309,
+          "nativeScalar": 3.09,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 249,
+          "nativeScalar": 2.49,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 489,
+          "nativeScalar": 4.89,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 510,
+          "nativeScalar": 5.1,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "pickaxe",
+          "packetSpread": 400,
+          "nativeScalar": 4,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "silencedpistol",
+          "packetSpread": 300,
+          "nativeScalar": 3,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 240,
+          "nativeScalar": 2.4,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 180,
+          "nativeScalar": 1.8,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 200,
+          "nativeScalar": 2,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 280,
+          "nativeScalar": 2.8,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        }
+      ],
+      "terminal": {
+        "epoch": 1,
+        "terminal": {
+          "place": 2,
+          "eliminations": 3,
+          "damage": 220,
+          "walls": 29,
+          "seconds": 211,
+          "killer": "PiXeL BR"
+        },
+        "hpLoss": 125,
+        "shieldLoss": 60,
+        "eliminated": [
+          "IowaTime",
+          "SORROW",
+          "DngT"
+        ],
+        "ownProjectiles": 150,
+        "attribution": "unavailable: no authoritative attacker/victim on observed loss events"
+      },
+      "probe": {
+        "incomingInstalled": true,
+        "incomingObservedThisRun": true,
+        "incomingPackets": 20761,
+        "incomingSchemas": 313,
+        "nativeEngineCaptured": false,
+        "targetedEntities": 81,
+        "records": 1352,
+        "approximateBytes": 777703,
+        "truncations": 1,
+        "errors": 5,
+        "errorStages": {
+          "window registry discovery": 5
+        },
+        "lanes": {
+          "schema": 313,
+          "environment": 2,
+          "player": 322,
+          "replica": 300,
+          "container": 415
+        },
+        "laneCaps": {
+          "schema": 350,
+          "player": 350,
+          "container": 700,
+          "replica": 300,
+          "environment": 100
+        },
+        "suppressed": {
+          "routineFieldChanges": 3837,
+          "replica": 222
+        },
+        "incomingTargetIds": 83,
+        "circleState": "moving",
+        "epoch": 1,
+        "caps": {
+          "packets": 80000,
+          "records": 1800,
+          "bytes": 8000000,
+          "entities": 200,
+          "durationMs": 900000
+        },
+        "limitsReached": {
+          "packets": false,
+          "records": false,
+          "bytes": false,
+          "entities": false
+        },
+        "source": {
+          "url": "https://buildroyale.io/js/uOfrVi.js",
+          "characters": 764701,
+          "chunks": 85,
+          "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+          "captured": true,
+          "astParsed": true
+        },
+        "conclusion": "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
+      },
+      "hud": {
+        "captured": true,
+        "counts": {
+          "slots": 5,
+          "materials": 4,
+          "ammo": 0
+        },
+        "replica": "native slot holders and material/stack templates; visual comparison required",
+        "ownWarningBindings": 9,
+        "renderedArrays": 158,
+        "discoveryActive": false,
+        "approximationFallback": true,
+        "note": "Warnings/selected native borders proven. V50 remote sizing/caption removal is the narrow changed presentation."
+      },
+      "firstWaitingTarget": {
+        "t": "circle",
+        "circle": {
+          "position": [
+            698.4611760608095,
+            -870.8501750124135
+          ],
+          "radius": 5000,
+          "final": null,
+          "wander": null
+        },
+        "state": "waiting",
+        "time": 40
+      }
+    },
+    {
+      "epoch": 2,
+      "time": "22:57:45.839",
+      "settings": {
+        "requiredOn": {
+          "playersInvisible": true,
+          "lootInvisible": true,
+          "buildsInvisible": true,
+          "noMinimap": true,
+          "noCrosshair": true,
+          "noInventoryHud": true,
+          "invisibleStorm": true,
+          "noHealthShieldHud": true,
+          "goodFlippinLuck": true,
+          "noPickupLabels": true,
+          "noHitMarker": true,
+          "noDamageNumbers": true,
+          "noWeaponProgress": true,
+          "invisibleProjectiles": true,
+          "hideWeapons": true,
+          "noStormTimer": true
+        },
+        "missing": [],
+        "profile": "combined challenge",
+        "allSelected": {
+          "playersInvisible": true,
+          "lootInvisible": true,
+          "buildsInvisible": true,
+          "transparentRoofs": false,
+          "healthBars": false,
+          "playerNames": false,
+          "allGlidersInvisible": false,
+          "allTrailsInvisible": false,
+          "nearestPlayer": false,
+          "inventorySlots": false,
+          "inventoryMaterials": false,
+          "inventoryAmmo": false,
+          "permanentMeteor": false,
+          "inventorySize": false,
+          "identifyBots": false,
+          "nearestChest": false,
+          "nearestAirdrop": false,
+          "screenChests": false,
+          "screenAirdrops": false,
+          "screenFishing": false,
+          "numericHealthShield": false,
+          "lowHealthWarning": false,
+          "lowMatsWarning": false,
+          "lowAmmoWarning": false,
+          "nearestPlayerName": false,
+          "highContrastPlayers": false,
+          "transparentFoliage": false,
+          "monochrome": false,
+          "noChestsVisible": true,
+          "warningThresholds": {
+            "health": 20,
+            "ammo": [
+              30,
+              30,
+              10,
+              15,
+              5,
+              5
+            ],
+            "materials": [
+              30,
+              30,
+              30,
+              1
+            ]
+          },
+          "indicatorColors": {
+            "nearestPlayer": "#a81020",
+            "nearestChest": "#ffd21c",
+            "nearestAirdrop": "#f28b16",
+            "safeZoneIndicator": "#168cff",
+            "lootIndicator": "#f5f5f5"
+          },
+          "lootChoices": [
+            "heavy sniper:5",
+            "lmg:5",
+            "vector:5"
+          ],
+          "lootMaskTier": "all",
+          "buildMaskTier": "all",
+          "showBulletSpread": false,
+          "buildHealth": false,
+          "objectHealth": false,
+          "safeZoneIndicator": false,
+          "lootIndicator": false,
+          "highlightOwnedAmmo": false,
+          "longerBulletTrails": false,
+          "goodFlippinLuck": true,
+          "noMinimap": true,
+          "noCrosshair": true,
+          "noInventoryHud": true,
+          "invisibleStorm": true,
+          "noHealthShieldHud": true,
+          "noPickupLabels": true,
+          "noHitMarker": true,
+          "noDamageNumbers": true,
+          "noWeaponProgress": true,
+          "invisibleProjectiles": true,
+          "hideWeapons": true,
+          "noStormTimer": true,
+          "stormEdge": false,
+          "stormCenter": false,
+          "stormDistance": false,
+          "customCrosshair": false,
+          "maskLootArt": true,
+          "cleanLoot": true,
+          "maskLootPopup": true,
+          "maskLootOutline": false
+        },
+        "savedSelections": {
+          "playersInvisible": false,
+          "lootInvisible": false,
+          "buildsInvisible": false,
+          "transparentRoofs": true,
+          "healthBars": true,
+          "playerNames": true,
+          "allGlidersInvisible": true,
+          "allTrailsInvisible": true,
+          "nearestPlayer": true,
+          "inventorySlots": true,
+          "inventoryMaterials": true,
+          "inventoryAmmo": true,
+          "permanentMeteor": true,
+          "inventorySize": "xl",
+          "identifyBots": true,
+          "nearestChest": true,
+          "nearestAirdrop": true,
+          "screenChests": true,
+          "screenAirdrops": true,
+          "screenFishing": true,
+          "numericHealthShield": true,
+          "lowHealthWarning": true,
+          "lowMatsWarning": true,
+          "lowAmmoWarning": true,
+          "nearestPlayerName": true,
+          "highContrastPlayers": false,
+          "transparentFoliage": true,
+          "monochrome": false,
+          "noChestsVisible": false,
+          "warningThresholds": {
+            "health": 20,
+            "ammo": [
+              30,
+              30,
+              10,
+              15,
+              5,
+              5
+            ],
+            "materials": [
+              30,
+              30,
+              30,
+              1
+            ]
+          },
+          "indicatorColors": {
+            "nearestPlayer": "#a81020",
+            "nearestChest": "#ffd21c",
+            "nearestAirdrop": "#f28b16",
+            "safeZoneIndicator": "#168cff",
+            "lootIndicator": "#f5f5f5"
+          },
+          "lootChoices": [
+            "heavy sniper:5",
+            "lmg:5",
+            "vector:5"
+          ],
+          "lootMaskTier": "item",
+          "buildMaskTier": "all",
+          "showBulletSpread": true,
+          "buildHealth": true,
+          "objectHealth": true,
+          "safeZoneIndicator": true,
+          "lootIndicator": true,
+          "highlightOwnedAmmo": true,
+          "longerBulletTrails": true,
+          "goodFlippinLuck": true
+        }
+      },
+      "gateCaps": [
+        {
+          "time": "22:59:27.520",
+          "cap": 4096
+        }
+      ],
+      "branches": {
+        "trailParticles": {
+          "time": "22:57:45.861",
+          "category": "trailParticles",
+          "type": "particle",
+          "path": "/buildart/trail0-1.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "stormMap": {
+          "time": "22:57:45.974",
+          "category": "stormMap",
+          "type": "rectangle",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "heldWeapons": {
+          "time": "22:57:46.273",
+          "category": "heldWeapons",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "v51PlayerChildren": {
+          "time": "22:57:46.273",
+          "category": "v51PlayerChildren",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "glider": {
+          "time": "22:57:46.273",
+          "category": "glider",
+          "type": "image",
+          "path": "/cosmetics/glider/glider.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "buildPreview": {
+          "time": "22:57:46.273",
+          "category": "buildPreview",
+          "type": "image",
+          "path": "/buildart/bluewood.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "stormWorld": {
+          "time": "22:57:46.337",
+          "category": "stormWorld",
+          "type": "scene",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "pickupPopup": {
+          "time": "22:57:46.338",
+          "category": "pickupPopup",
+          "type": "image",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "chargeProgress": {
+          "time": "22:57:46.339",
+          "category": "chargeProgress",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "reloadProgress": {
+          "time": "22:57:46.339",
+          "category": "reloadProgress",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "healthShieldHud": {
+          "time": "22:57:46.339",
+          "category": "healthShieldHud",
+          "type": "image",
+          "path": "/buildart/health.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "minimap": {
+          "time": "22:57:46.341",
+          "category": "minimap",
+          "type": "image",
+          "path": "/buildart/blank.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "stormCountdown": {
+          "time": "22:57:46.342",
+          "category": "stormCountdown",
+          "type": "image",
+          "path": "/buildart/storm.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "crosshair": {
+          "time": "22:57:46.345",
+          "category": "crosshair",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "hitConfirmation": {
+          "time": "22:57:46.345",
+          "category": "hitConfirmation",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "playerPhysical": {
+          "time": "22:57:46.423",
+          "category": "playerPhysical",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "combinedPlayerInfo": {
+          "time": "22:57:46.423",
+          "category": "combinedPlayerInfo",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "damageNumbers": {
+          "time": "22:57:46.788",
+          "category": "damageNumbers",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "inventoryHudUnit": {
+          "time": "22:57:48.279",
+          "category": "inventoryHudUnit",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "lootArt": {
+          "time": "22:59:06.774",
+          "category": "lootArt",
+          "type": "image",
+          "path": "/buildart/stack1.png",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "lootRarity": {
+          "time": "22:59:06.774",
+          "category": "lootRarity",
+          "type": "image",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "lootAll": {
+          "time": "22:59:06.774",
+          "category": "lootAll",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "projectile": {
+          "time": "22:59:11.456",
+          "category": "projectile",
+          "type": "object",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        },
+        "projectileNativeTrail": {
+          "time": "22:59:11.456",
+          "category": "projectileNativeTrail",
+          "type": "polygon",
+          "path": "/",
+          "mode": "scoped éa gate; native state unchanged"
+        }
+      },
+      "lastBranchCoverage": {
+        "epoch": 2,
+        "tiers": {
+          "loot": "all",
+          "builds": "all"
+        },
+        "combined": true,
+        "installed": {
+          "trailParticles": 3612,
+          "stormMap": 5,
+          "heldWeapons": 115,
+          "v51PlayerChildren": 23,
+          "glider": 23,
+          "buildPreview": 23,
+          "stormWorld": 1,
+          "pickupPopup": 1,
+          "chargeProgress": 1,
+          "reloadProgress": 1,
+          "healthShieldHud": 13,
+          "minimap": 1,
+          "stormCountdown": 1,
+          "crosshair": 1,
+          "hitConfirmation": 1,
+          "playerPhysical": 220,
+          "combinedPlayerInfo": 22,
+          "damageNumbers": 71,
+          "inventoryHudUnit": 10,
+          "lootArt": 6,
+          "lootRarity": 6,
+          "lootAll": 6,
+          "projectile": 15,
+          "projectileNativeTrail": 7
+        },
+        "adapterInstances": 4096,
+        "cap": 4096,
+        "v51": {
+          "zone": {
+            "x": 2105,
+            "y": 775,
+            "radius": 5739
+          },
+          "lootArrows": 0,
+          "projectileHistories": 0,
+          "statsActive": false,
+          "localSpread": 0.8,
+          "weaponChoices": 35
+        },
+        "limits": "Reached branches only. Missing categories require live capture; fixtures are not pixel proof."
+      },
+      "spread": [
+        {
+          "weapon": "pickaxe",
+          "packetSpread": 300,
+          "nativeScalar": 3,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "sawedoff",
+          "packetSpread": 459,
+          "nativeScalar": 4.59,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 300,
+          "nativeScalar": 3,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 240,
+          "nativeScalar": 2.4,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 180,
+          "nativeScalar": 1.8,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 200,
+          "nativeScalar": 2,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 280,
+          "nativeScalar": 2.8,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 320,
+          "nativeScalar": 3.2,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 259,
+          "nativeScalar": 2.59,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 239,
+          "nativeScalar": 2.39,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 279,
+          "nativeScalar": 2.79,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "musket",
+          "packetSpread": 319,
+          "nativeScalar": 3.19,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "scoped ar",
+          "packetSpread": 140,
+          "nativeScalar": 1.4,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "scoped ar",
+          "packetSpread": 80,
+          "nativeScalar": 0.8,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "scoped ar",
+          "packetSpread": 100,
+          "nativeScalar": 1,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        },
+        {
+          "weapon": "scoped ar",
+          "packetSpread": 755,
+          "nativeScalar": 7.55,
+          "halfAngleUnit": "provisional degrees; server semantics not established"
+        }
+      ],
+      "terminal": {
+        "epoch": 2,
+        "terminal": {
+          "place": 17,
+          "eliminations": 0,
+          "damage": 50,
+          "walls": 4,
+          "seconds": 66,
+          "killer": "cool"
+        },
+        "hpLoss": 96,
+        "shieldLoss": 0,
+        "eliminated": [],
+        "ownProjectiles": 35,
+        "attribution": "unavailable: no authoritative attacker/victim on observed loss events"
+      },
+      "probe": {
+        "incomingInstalled": true,
+        "incomingObservedThisRun": true,
+        "incomingPackets": 19764,
+        "incomingSchemas": 228,
+        "nativeEngineCaptured": false,
+        "targetedEntities": 71,
+        "records": 1148,
+        "approximateBytes": 708057,
+        "truncations": 1,
+        "errors": 4,
+        "errorStages": {
+          "window registry discovery": 4
+        },
+        "lanes": {
+          "schema": 228,
+          "environment": 2,
+          "player": 350,
+          "replica": 300,
+          "container": 268
+        },
+        "laneCaps": {
+          "schema": 350,
+          "player": 350,
+          "container": 700,
+          "replica": 300,
+          "environment": 100
+        },
+        "suppressed": {
+          "routineFieldChanges": 2700,
+          "player": 65,
+          "replica": 130
+        },
+        "incomingTargetIds": 74,
+        "circleState": "waiting",
+        "epoch": 2,
+        "caps": {
+          "packets": 80000,
+          "records": 1800,
+          "bytes": 8000000,
+          "entities": 200,
+          "durationMs": 900000
+        },
+        "limitsReached": {
+          "packets": false,
+          "records": false,
+          "bytes": false,
+          "entities": false
+        },
+        "source": {
+          "url": "https://buildroyale.io/js/uOfrVi.js",
+          "characters": 764701,
+          "chunks": 85,
+          "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+          "captured": true,
+          "astParsed": true
+        },
+        "conclusion": "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
+      },
+      "hud": {
+        "captured": true,
+        "counts": {
+          "slots": 5,
+          "materials": 4,
+          "ammo": 1
+        },
+        "replica": "native slot holders and material/stack templates; visual comparison required",
+        "ownWarningBindings": 9,
+        "renderedArrays": 160,
+        "discoveryActive": false,
+        "approximationFallback": true,
+        "note": "Warnings/selected native borders proven. V50 remote sizing/caption removal is the narrow changed presentation."
+      },
+      "firstWaitingTarget": {
+        "t": "circle",
+        "circle": {
+          "position": [
+            2589.212869324646,
+            952.8768243667148
+          ],
+          "radius": 5000,
+          "final": null,
+          "wander": null
+        },
+        "state": "waiting",
+        "time": 40
+      }
+    }
+  ],
+  "source": {
+    "bytes": 838390,
+    "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+    "chunks": 85,
+    "recoveredMatches": true,
+    "circleCallback": {
+      "kind": "circle",
+      "start": 753472,
+      "end": 754085,
+      "characters": 613,
+      "text": "function(å){ãÉÃ=ÈâÄ;if(å.state!==ÄÂÄ){ÃÄ=å.state;if((\"\\167a\\151\\x74\\x69\\156\\147\"==ÃÄ)||(\"\\x6C\\157\\x62\\x62y\"==ÃÄ)){ÅÉÅ.À=Á[\"\\u0077\\x61\\151\\164\\x69n\\x67\\x49\\x63\\x6F\\x6E\"];}else if(ÃÄ==\"m\\x6Fv\\x69n\\147\"){ÅÉÅ.À=Á[\"\\x6D\\157\\x76\\x69\\x6e\\147\\111\\143\\x6f\\x6E\"];}}if(å.time!==ÂÈ_){Èá=å.time;var aãe=\"\\x30\\x3A\";if(Èá<10)aãe+=\"\\u0030\";aãe+=Math.max(Èá,ËÊ);Êä$.text=aãe;}if(å.AË!==eÈÊ){if(ÃÄ==\"\\155\\157\\166\\151\\x6E\\x67\"){áÊ.ë[ÄÅ]=Å.ÅÅ(áÊ.ë[0],å.AË.ë[aÂ]);áÊ.ë[ÊA]=Å.ÅÅ(áÊ.ë[0X1],å.AË.ë[1]);EÃÊ=áÊ;áÊ=å.AË;EÃÊ.éã=áÉä;áÊ.width=Math.min(áÊ.width,aÂ);}else {âÊ.width=âÊ.height=äEå*å.AË.éã;âÊ.ë=new Å.æÈ(å.AË.ë[0],å.AË.ë[0X1]);}}}",
+      "excerptLimited": false
+    },
+    "callbacks": [
+      {
+        "kind": "bullet",
+        "start": 432693,
+        "end": 436602,
+        "characters": 3909,
+        "text": "function(á,å){á.ÀÂ=å.ÀÂ;á.â=new Å.À$;á.Ëé=new Å.À$;á.Äã=false;á.äæË=0x32;á.ëèÂ=eê;á.æeã=0x96;á.ëÉÄ=ËèE;á.Éaâ=00;var Áå;var ÅãÃ=0X5;switch(á.ÀÂ){case \"\\x73\\141\\x77\\x65\\u0064\\157\\146\\x66\":á.äæË=0x23;á.æeã=0X46;á.ëÉÄ=ËÃá;á.ÀÂ=\"\\163\\150o\\164\\x67\\x75\\x6E\";case \"\\x73\\x70\\141\\x73\":á.ÀÂ=\"\\163\\150o\\x74\\147\\165\\x6E\";case \"s\\150\\157\\164\\x67\\x75\\156\":case \"\\150\\145\\141\\x76\\171\":case \"\\x64\\x72\\x75\\x6D\":case \"\\x63\\157\\x6d\\x62\\141\\x74\":case \"\\142\\165\\x72\\x73\\x74\\x20\\x73h\\x6f\\x74\\147\\165n\":Áå=new Å.À(Á[\"\\163\\x68\\x6F\\x74\\x67\\165n\\142\\165\\x6C\\154\\x65\\164\"],ÃÈ,Åå,èåã,10);ÅãÃ=ãæå;if(á.ÀÂ==\"\\163\\150\\u006F\\x74\\x67\\165\\x6e\"){if((0<ÅáÉ)&&(á.AÀ===Éá)){Aã(á.ÀÂ,Å.Åâ.â.ë,new Å.æÈ(å.É,å.Ä));ÅáÉ=ËÊ;}}else {if((0X0<Æáè)&&(á.AÀ===ÈæA)){Aã(á.ÀÂ,Å.Åâ.â.ë,new Å.æÈ(å.É,å.Ä));Æáè=Èâ;}}Áå.A=Math.PI/éÉ;break;case \"\\163\\156\\x6f\\167\\142\\x61\\x6C\\154\":Áå=new Å.À(Á[\"\\163\\x6E\\157\\x77\\142\\141\\154\\x6c\"],ëä,00,0x3C,0x3C);ÅãÃ=0x4;var ÀÀ=á.ÀÂ;if(ëèÁ.indexOf(ÀÀ)<0X0){ÀÀ=\"\\141\\x72\";}if(undefined===á.AÀ){Aã(ÀÀ,Å.Åâ.â.ë,new Å.æÈ(å.É,å.Ä));}Áå.A=Math.PI/Êä;á.ÁÈ=ÄÅ;break;break;case \"\\x67\\x72\\145\\156\\x61d\\x65\\x20\\154\\x61\\u0075\\156\\143\\x68\\145\\162\":case \"\\x6d\\x67\\154\":case \"\\x67\\x72\\145\\x6e\\141\\x64\\145\\40\\160\\x69s\\164\\157\\154\":case \"\\x67\\162\\145\\x6e\\141\\u0064\\x65\\x20\\163\\x6E\\151\\160\\145\\162\":Áå=new Å.À(Á[æÈÅ[á.ÀÂ].Áå],ãÀ,ëä,0xA0,0XA0);ÅãÃ=Ëæå;var ÀÀ=á.ÀÂ;if(á.ÀÂ===\"\\x67\\162\\145\\x6E\\x61\\144\\145\\x20\\x73\\156\\151\\x70\\x65\\x72\"){ÀÀ=\"\\x67\\162\\145\\156a\\144\\x65\\x20\\160\\u0069\\u0073\\164\\157\\x6c\";}if(áËÀ===á.AÀ)Aã(ÀÀ,Å.Åâ.â.ë,new Å.æÈ(å.É,å.Ä));Áå.A=Math.PI;á.ÁÈ=0x0;Ã$.ÄEæ(á);break;case \"\\163\\151\\x67\\156\\x61\\154\\x20\\x66\\x6ca\\162\\u0065\":Áå=new Å.À(Á[\"\\146\\154\\x61\\162\\x65\"],0X0,Ea,160,160);var ÀÀ=á.ÀÂ;á.ÀÁ=00;á.cos=0;á.éÄÈ=new Å.À(Á[\"\\x66\\x6c\\x61\\162\\145\\147\\x6C\\x6F\\x77\"],EÊ,00,160,160);á.â.add(á.éÄÈ);(á.AÀ===undefined)&&(Aã(ÀÀ,Å.Åâ.â.ë,new Å.æÈ(å.É,å.Ä)));break;case \"\\x72\\x70\\147\":Áå=new Å.À(Á[\"\\162o\\x63k\\145\\164\"],0,0,160,160);ÅãÃ=0X5;(undefined===á.AÀ)&&(Aã(\"\\x65x\\160\\x6c\\x6f\\163\\151\\x6F\\156\\x30\",Å.Åâ.â.ë,new Å.æÈ(å.É,å.Ä)));Áå.A=Math.PI;á.ÁÈ=èÊ;Ã$.ÄEæ(á);break;case \"\\143\\150\\x61\\x72\\147\\x65\\40\\162\\x69\\x66\\x6C\\x65\":Áå=new Å.À(Á[\"\\x62l\\x61\\163\\x74\\x62\\165\\154\\x6c\\x65\\164\"],ëä,0X0,0XA0,0Xa0);ÅãÃ=ÂA;var ÀÀ=á.ÀÂ;if(á.AÀ===Éá){Aã(ÀÀ,Å.Åâ.â.ë,new Å.æÈ(å.É,å.Ä));}Áå.A=Math.PI;á.ÁÈ=eê;Ã$.ÄEæ(á);break;case \"\\x62\\141\\x6c\\154\\x69\\u0073\\x74\\x61\":á.äæË=0170;á.æeã=120;á.ëÉÄ=10;á.ëèÂ=-35;Áå=new Å.À(Á[\"\\x62\\141\\u006c\\x6Ci\\x73\\164\\141\\142u\\154l\\x65\\164\"],0x0,ãÀ,0xC8,0Xc8);ÅãÃ=0X10;var ÀÀ=á.ÀÂ;Aã(ÀÀ,Å.Åâ.â.ë,new Å.æÈ(å.É,å.Ä));Áå.A=Math.PI/0x2;á.ÁÈ=ÃÈ;break;case \"c\\162\\x6F\\u0073\\x73\\u0062\\157\\167\":á.äæË=0x3c;á.æeã=0x3c;á.ëÉÄ=äÄÆ;á.ëèÂ=-20;Áå=new Å.À(Á[\"\\u0062\\x61\\x6c\\154\\151\\x73\\x74a\\x62\\x75\\x6c\\154e\\164\"],Èâ,0X0,0X64,0X64);ÅãÃ=äAé;var ÀÀ=á.ÀÂ;Aã(ÀÀ,Å.Åâ.â.ë,new Å.æÈ(å.É,å.Ä));Áå.A=Math.PI/ÅÃ;á.ÁÈ=ãÊ;break;break;default:Áå=ÂÉÉ();ÅãÃ=4;var ÀÀ=á.ÀÂ;if(ÀÀ==\"\\x73\\143\\x6f\\160\\x65\\x64\\40\\141r\"){ÀÀ=\"\\x73\\143\\157\\160\\145\\x64\\u002D\\141\\162\";}if(ëèÁ.indexOf(ÀÀ)<Èâ){ÀÀ=\"\\141\\162\";}(á.AÀ===undefined)&&(Aã(ÀÀ,Å.Åâ.â.ë,new Å.æÈ(å.É,å.Ä)));Áå.A=Math.PI/ee;break;}á.â.add(Áå);á.Ëé=ÆÃ$(ÅãÃ);á.Ëé.opacity=ëä;á.Áå=Áå;á.â.âá(á.Ëé);äe.Åæê(á.â);((((((\"\\163\\x6E\\x6F\\x77\\x62\\x61\\154\\154\"==á.ÀÂ)||(á.ÀÂ==\"\\x67\\x72\\145\\x6e\\141\\x64\\145\\x20\\154\\x61\\165\\x6E\\143\\x68e\\x72\"))||(\"\\155\\147\\x6c\"===á.ÀÂ))||(\"\\x67\\162\\145\\156a\\x64\\x65\\u0020\\x70\\151\\163\\x74\\x6f\\x6C\"===á.ÀÂ))||(\"\\x67\\162\\145\\x6E\\x61\\x64\\x65\\x20\\163\\156\\x69\\x70\\x65\\162\"===á.ÀÂ))||(\"\\163\\151\\x67\\156\\x61\\154\\x20\\x66\\x6ca\\x72\\x65\"===á.ÀÂ))&&(äe.remove(á.â),äe.add(á.â));(((å.åá$==Å.Åâ.id)&&!Å.EÆ)&&((((((((\"\\u0073\\x6E\\x69\\160\\145\\x72\"==á.ÀÂ)||(\"\\163\\x68\\157\\x74\\x67u\\x6E\"==á.ÀÂ))||(\"\\150e\\x61\\166\\171\"==á.ÀÂ))||(á.ÀÂ==\"g\\x72\\145\\156\\u0061\\x64\\145\\x20\\x6c\\141\\u0075\\x6E\\143\\150\\145\\x72\"))||(\"\\155\\x67\\x6C\"===á.ÀÂ))||(á.ÀÂ===\"\\147\\162\\x65\\156\\x61\\144\\145\\x20\\x70\\x69\\163\\x74\\157\\x6c\"))||(\"\\147\\x72\\x65\\u006E\\x61\\144\\145\\40s\\x6E\\x69\\160\\x65\\162\"===á.ÀÂ))||(á.ÀÂ==\"d\\162\\165\\155\")))&&(ä$.ä$(017,Å.Åâ.æâæ+Math.PI));}",
+        "excerptLimited": false
+      },
+      {
+        "kind": "gun",
+        "start": 685240,
+        "end": 688427,
+        "characters": 3187,
+        "text": "function(á,å){á.ÉëÉ=ÃÈ;á.â=new Å.À$;á.â.opacity=0x0;á.äã=å.äã;á.ÃáÃ=å.äã;á.ÀEE=ãÊ;á.âê=new Å.À(Á[å.Ëá],-Êâä,05,0156,0156);á.âê.A=Math.PI/ëëÊ;if((((((((((((å.Ëá==\"m\\151\\u006e\\u0069\")||(\"\\160\\x6f\\164\"==å.Ëá))||(å.Ëá==\"\\147i\\141\\x6E\\u0074\\163\\156\\157\\167b\\x61\\154\\u006c\"))||(\"\\x66\\x6C\\x65\\x78\"==å.Ëá))||(\"\\143\\141\\u006E\\x64\\x79\\143\\141\\156\\145\"==å.Ëá))||(\"\\x62\\x61\\156\\144\\x61\\147\\x65\\163\"==å.Ëá))||(å.Ëá==\"\\x6d\\x65\\x64\\x6b\\x69\\x74\"))||(å.Ëá==\"\\146\\x65\\x65\\163\\150\"))||(\"\\x62\\u006c\\x75\\x65\\x66\\x65\\145\\x73\\x68\"==å.Ëá))||(å.Ëá==\"\\141\\x6Ce\\172\\x66\\145\\145\\163\\x68\"))||(å.Ëá==\"\\164\\162\\x79\\141\\x67\\141\\x69\\156\\u0066\\145\\145\\163\\x68\"))||(å.Ëá==\"\\164\\150\\x61\\164\\146\\x65\\145\\163\\x68\")){á.âê.size=0.4;á.âê.A=00;if((\"\\155\\x69\\x6E\\x69\"==å.Ëá)||(å.Ëá==\"p\\157\\x74\")){á.âê.ë.Ä=-02;á.âê.ë.É=0.6;}else if(å.Ëá===\"c\\u0061\\x6Ed\\171c\\141n\\x65\"){á.âê.size=0.6;á.âê.ë.É=ÀË;á.âê.ë.Ä=eê;}else if(\"\\x66\\x65\\x65\\x73\\x68\"===å.Ëá){á.âê.A=Math.PI/ÊÁæ;á.âê.size=0.6;á.âê.ë.É=ëä;á.âê.ë.Ä=Èâ;}else if(å.Ëá===\"\\142\\x6C\\x75\\145\\x66\\145e\\x73\\150\"){á.âê.A=Math.PI/ÁÉÅ;á.âê.size=0.6;á.âê.ë.É=ÄÅ;á.âê.ë.Ä=00;}else if(å.Ëá===\"\\164\\150\\141\\164\\146\\145\\x65s\\150\"){á.âê.A=Math.PI/æãÄ;á.âê.size=0.6;á.âê.ë.É=0;á.âê.ë.Ä=0;}else if(\"\\x61\\154\\x65\\172\\x66\\145\\145\\163\\u0068\"===å.Ëá){á.âê.A=Math.PI/ÁÉÀ;á.âê.size=0.6;á.âê.ë.É=ÄÅ;á.âê.ë.Ä=00;}else if(å.Ëá===\"\\164\\x72\\171\\141g\\141\\x69\\156\\x66\\x65\\x65\\163\\x68\"){á.âê.A=Math.PI/AÁ_;á.âê.size=0.6;á.âê.ë.É=00;á.âê.ë.Ä=00;}else {á.âê.ë.É=ëÁ;á.âê.ë.Ä=00;á.âê.size=0.5;}}else if(å.Ëá==\"\\163\\x6E\\x6f\\167\\x62\\141\\x6C\\154\"){á.âê.size=0.65;á.âê.ë.Ä=-0.5;á.âê.ë.É=åE;}else if(\"\\151\\143\\x69\\143\\x6ce\"==å.Ëá){á.âê.size=0.65;á.âê.ë.Ä=-0.5;á.âê.ë.É=Äæ;á.âê.A=åÀ;}else if(\"\\143\\162\\157\\x73\\x73\\142\\x6f\\x77\"==å.Ëá){á.âê.size=0x1;á.âê.ë.Ä=0;á.âê.ë.É=æÉ;}else if(([\"\\x67\\162\\x65\\x6Ea\\x64\\145\",\"\\154a\\156\\u0064\\x6d\\x69\\156\\x65\",\"\\x6d\\151\\162\\166\",\"\\163\\x6d\\157\\u006b\\145\\147\\162\\145\\156\\141\\x64\\u0065\",\"\\151\\x6e\\x76\\x67\\x72\\141\\166\\151\\x74\\171\\156\\141\\x64\\145\",\"\\u0067\\x72\\x61\\x76\\151\\164\\171\\x6e\\141\\144\\145\",\"\\x66\\154\\141\\u0073\\x68\\x62\\x61\\x6E\\x67\",\"\\155\\157\\154\\157\\164\\157\\166\",\"\\x66\\x6c\\x65\\170\\x73\\u0070l\\141\\x73\\x68\"]).includes(å.Ëá)){á.âê.A=0;á.âê.size=0.6;á.âê.ë.Ä=ãA;á.âê.ë.É=-3;if(\"\\154\\141\\156\\144\\x6di\\156\\145\"===å.Ëá){á.âê.ë.Ä=00;á.âê.ë.É=ãâ;}}else if(å.Ëá==\"\\144\\145\\x61\\147\\154\\145\"){á.âê.size=0.6;}else if(å.Ëá==\"\\162\\145\\x76\\x6f\\154\\x76\\145\\162\"){á.âê.size=0.8;á.âê.ë.Ä=-ÁË;á.âê.ë.É=Ãa;}else if(\"\\x67\\162\\141\\160\\160\\x6c\\x65\\162\"==å.Ëá){á.âê.size=0.8;á.âê.ë.Ä=-ÈA;á.âê.ë.É=-ÄÅÉ;}else if(\"\\x73\\151\\147\\x6e\\x61\\x6c\\x20\\x66\\x6c\\141\\x72\\145\"==å.Ëá){á.âê.size=0.8;á.âê.ë.Ä=-åáæ;á.âê.ë.É=-ÁÉÀ;}else if(å.Ëá==\"\\163\\x61\\167\\x65\\x64\\157\\146\\146\"){á.âê.size=0.9;}else if(å.Ëá==\"\\x76\\145\\x63\\164\\x6F\\162\"){á.âê.ë.Ä=-ee;}else if(\"\\x67\\162\\145\\156\\141\\144\\145\\40\\163\\156\\x69\\x70\\x65\\x72\"==å.Ëá){á.âê.ë.Ä=-0x2;}else if(\"\\x6d\\151\\156\\151\\147\\165\\156\"==å.Ëá){á.âê.ë.Ä=-Äå;}else (å.Ëá==\"\\143\\150\\x61\\x72\\147\\145\\40\\162\\x69\\x66\\x6c\\x65\")&&(á.âê.size=0x1,á.âê.ë.Ä=-02,á.âê.ë.É=-ÀåÁ);á.â.add(á.âê);á.ÀÅ=new Å.À(âeæ[å.äã],0x0,Èâ,0x64,0X64);á.â.âá(á.ÀÅ);á.Eëa=00;á.æÊa=AÈä;if(4===á.äã){á.æÊa=áÉÉ-ëA$;}else if(á.äã===05){á.æÊa=012-Êaå;}else if(á.äã===ÀâÄ){á.æÊa=ÊÄá-05;}else if(7===á.äã){á.æÊa=2;}aæ.add(á.â);}",
+        "excerptLimited": false
+      },
+      {
+        "kind": "ammo",
+        "start": 690251,
+        "end": 690768,
+        "characters": 517,
+        "text": "function(á,å){á.ÉëÉ=00;á.â=new Å.À$;á.â.opacity=0;å.äã=0x0;var type=\"\\145\\155\\160\\164\\x79\";if(undefined!==å.æá_){switch(å.æá_){case 0:type=\"\\167\\x6F\\x6f\\x64\";break;case 01:type=\"\\u0062\\162\\151\\x63\\x6B\";break;case 0X2:type=\"\\x6D\\145\\164\\141\\x6c\";break;case 03:type=\"\\147\\145\\x61\\x72\";break;}}else (å.åæ!==EáÆ)&&(type=\"\\x73\\x74\\x61\\x63\\153\"+å.åæ);á.âê=new Å.À(Á[type],æÉ,æÉ,110,110);á.âê.A=ãÊ;á.âê.size=0.45;á.â.add(á.âê);á.Äã=false;á.ÀÅ=new Å.À(ÁEÆ,0,0,ÈEÁ,100);á.â.âá(á.ÀÅ);var ÂèÅ=0.5;á.ÀÅ.opacity*=ÂèÅ;aæ.add(á.â);}",
+        "excerptLimited": false
+      },
+      {
+        "kind": "object",
+        "start": 693763,
+        "end": 703080,
+        "characters": 9317,
+        "text": "function(á,å){á.Àâ=å.type;á.â=new Å.À$;á.ÄA=new Å.À$;if((\"\\x70u\\x6D\\x70\\153\\u0069\\x6e\"==å.type)&&(Math.random()>0.5)){å.type=\"\\u0070\\165\\x6d\\u0070\\153\\151\\x6e\\x31\";}if(å.type===\"\\x62\\141\\154\\154\\151\\163\\164\\141\"){á.ÄA=new Å.À(Á[\"\\142\\141\\x6c\\x6c\\x69\\163\\164\\x61\\u002d\\x62\\141\\163\\x65\"],0,00,ÄÃè,äÃâ);}else ((\"\\167\\x61\\x6C\\u006C\"!=å.type)||(\"\\x62\\x75\\151\\x6c\\144\\141\\142\\x6C\\x65\"!=å.type))&&(á.ÄA=new Å.À(Á[å.type],0,00,å.width,å.height));if((å.width==æÉ)||(eê==å.height)){á.ÄA.width=00;á.ÄA.height=0X0;}á.â.add(á.ÄA);á.Eâ=new Å.À$;á.ä$=0X0;á.Äã=ÉÄæ;á.åÈ=å.åÈ;á.ËÆ=å.ËÆ;á.Èáä=0X1F4;var EÂÄ=50;á.æÄ=new Å.ÅÆ(Åå,EÂÄ,á.åÈ,eäæ,\"\\43\\60D\\60\");á.æÄ.width=ëä;á.aAå=new Å.ÅÆ(0,EÂÄ,ËÉê,016,\"\\u0023\\u0030\\x30\\x30\",0.3);á.Eâ.add(á.aAå);á.Eâ.add(á.æÄ);var â$=Ãèé;var Éæ$=-25;var eÅ=\"\\u0062\\157\\154\\x64\";á.áãá=new Å.text(á.ËÆ,Éæ$+03,EÂÄ,\"\\43\\x46\\106\\106\",\"\\x41\\x72\\151\\x61\\x6C\",â$,eÅ,0.9,\"\\x6C\\145\\x66\\x74\");(á.ËÆ==0X64)&&(á.áãá.canvas=áÊA);á.Eâ.add(á.áãá);á.eÅé=new Å.text(\"\\57\",Éæ$+01,EÂÄ,\"\\x23\\x46\\106\\u0046\",\"A\\162\\151\\141\\154\",â$,eÅ,0.5,\"\\143\\145\\156\\x74\\x65\\162\");á.eÅé.canvas=Åáé;á.Eâ.add(á.eÅé);á.ãéÃ=new Å.text(\"\\x31\\60\\x30\",Éæ$-aÆæ,EÂÄ,\"\\43\\106\\106\\106\",\"\\101\\x72\\151\\x61\\154\",â$,eÅ,éâ,\"\\162\\x69\\147\\150\\x74\");á.Eâ.add(á.ãéÃ);á.Eâ.opacity=ëä;á.â.add(á.Eâ);á.EEã=new Å.æÈ(0x0,0);á.ÄA.ë=á.EEã;á.Àè=new Å.æÈ(0x0,00);á.åaæ=0.01;á.âÁÁ=0.5;á.Aã=æAe;if(á.Àâ==\"\\167\\141\\x6C\\154\"){if(ÂÂÀ[å.ÄæÅ]==\"\\142\\x72\\151\\143\\153\\167\\x61\\x6c\\x6C\"){á.Aã=éaÉ;}else ((\"\\x6De\\x74\\u0061\\154\\167\\u0061\\x6c\\154\"==ÂÂÀ[å.ÄæÅ])||(ÂÂÀ[å.ÄæÅ]==\"\\146\\157\\x72\\x74\\x69\\x66\\x69\\x65\\144\\167\\x61\\u006c\\154\"))&&(á.Aã=ÉÄâ);}else if(á.Àâ==\"\\x72\\157\\x63\\x6B\"){á.Aã=éaÉ;}else if(\"\\164\\162a\\163\\x68\"==á.Àâ){á.ÄA.size=1.34;á.Aã=ÉÄâ;}else if(á.Àâ==\"\\x73\\x69\\154\\u006F\"){á.Aã=ÉÄâ;}else if(å.type==\"\\x68\\x61\\171\"){á.ÄA.size=ÊÅ;}else if(\"\\x62\\x61\\163\\153\\x65\\x74\\u0062\\x61\\154\\154\\x6E\\x65\\164\"==å.type){á.ÄA.width=0454;á.ÄA.height=0xC8;á.Aã=ÉÄâ;}else if(\"\\142\\145\\x6e\\x63\\x68\"==å.type){á.ÄA.width=450;á.ÄA.height=0226;á.Aã=ÉÄâ;}else if(å.type==\"\\x6d\\x65\\x74\\141\\154\\x62\\145\\x6e\\143h\"){á.ÄA.width=0310;á.ÄA.height=0310;á.Aã=ÉÄâ;}else if(å.type===\"t\\145\\x6C\\145\\163\\u0063\\157\\x70\\x65\"){let Ãåå=new Å.À(Á[\"\\164\\145\\x6c\\x65\\163\\143\\157\\x70\\145\\x73\\143\\x6F\\160\\145\"],Áè,aÂ,300,300);á.ÄA.add(Ãåå);á.Aã=ÉÄâ;}else if(å.type===\"b\\141\\x6c\\x6C\\x69\\163\\x74\\141\"){let Ãåå=new Å.À(Á[\"\\142a\\154\\154\\151\\x73\\164\\x61\\55\\164o\\160\"],0X0,ãÀ,300,0X12C);á.ÄA.add(Ãåå);}else if((((\"\\142\\154\\u0075\\x65\\x63\\157\\x6e\\164a\\151\\156\\145\\162\"==å.type)||(\"\\x72\\145\\144\\x63\\157\\x6Et\\141\\x69\\156\\x65\\x72\"===å.type))||(å.type===\"\\163\\x74\\x65\\145\\154\"))||(å.type===\"\\x73\\x70\\x65\\143\\x69\\141l\\x64\\x75\\x6D\\x70\\x73\\164\\x65\\162\")){á.Aã=ÉÄâ;}else if(((å.type===\"\\x62\\x72\\x69\\x63\\153\\x70\\u0069\\154e\")||(\"\\154\\x61\\x72\\147\\145\\141\\x6d\\u0062\\x65\\162\"===å.type))||(\"\\x6d\\141\\162\\x62\\x6c\\x65\"===å.type)){á.Aã=éaÉ;}else if(((\"\\143\\x61\\x73\\164\\154\\x65\\167\\141\\154l\\61\"===å.type)||(å.type===\"\\143\\141\\x73\\164\\x6C\\x65\\167\\141\\x6C\\x6c\\62\"))||(\"\\143\\x61\\163\\164\\x6C\\145w\\x61\\154\\u006c\\63\"===å.type)){á.ÄA.size=1.04;á.Aã=éaÉ;á.ÄA.height=200;}else if(å.type===\"\\143\\141\\163\\164\\x6C\\145t\\157\\167\\x65\\162\"){á.ÄA.size=1.02;á.Aã=éaÉ;}else if(å.type==\"\\142\\141\\162\\x72\\151\\145\\x72\"){á.ÄA.width=0X32;á.ÄA.height=250;}else if(å.type==\"\\162\\157\\x70\\x65\\142\\u0061\\162\\x72\\u0069\\145\\162\"){á.ÄA.width=0XD4;á.ÄA.height=0X3E;}else if(\"\\164\\162\\151\\x6b\\x65\\u0073\\153\\165\\x6C\\154\"==å.type){á.ÄA.width=0X190;á.ÄA.height=0372;}else if(\"\\162\\141\\143\\x6b\"==å.type){á.ÄA.width=0x96;á.ÄA.height=0x15e;á.Aã=ÉÄâ;}else if(å.type==\"\\143\\157\\165\\156\\x74\\145r\"){á.ÄA.width=0X190;á.ÄA.height=eäÊ;á.Aã=ÉÄâ;}else if(\"\\x67e\\171\\163\\x65\\x72\"==å.type){á.ÄA.width=0xC8;á.ÄA.height=0xC8;}else if(\"\\x63\\157\\x72\\156\"==å.type){á.ÄA.size=1.9;}else if(å.type.indexOf(\"\\160\\165\\155\\160\\153\\x69\\156\")!==-ÊA){á.ÄA.size=1.2;}else if(\"\\164\\x61\\x62\\x6C\\145\"==å.type){á.ÄA.width=0XAF;á.ÄA.height=0175;}else if(å.type==\"\\143\\150\\141\\151r\"){á.ÄA.width=0125;á.ÄA.height=0X55;}else if((å.type==\"\\143\\x6f\\165\\143\\x68\")||(\"\\152\\165\\x6e\\x67\\154\\x65\\143\\157\\x75\\x63\\x68\"==å.type)){á.ÄA.size=1.3;}else if(å.type==\"\\144\\145\\x73\\153\"){á.ÄA.size=1.2;}else if(å.type==\"\\x6D\\x65\\x74\\x65\\157\\162\\151\\164\\145\"){á.ËÉE=å.ËÉE;á.Êeä=å.Êeä;á.ÊÂã=å.ÊÂã;á.ÄÅ_=false;á.Aã=éaÉ;}else if(å.type==\"\\141\\151\\162\\x64\\x72\\x6F\\x70\"){á.Êeä=å.Êeä;á.ÊÂã=å.ÊÂã;á.ÄÅ_=false;}if(å.type==\"\\167\\x61\\x6c\\x6c\"){á.ÄæÅ=ÂÂÀ[å.ÄæÅ];äe.Åæê(á.â);á.ÄA.opacity=0.9;á.ÄA.âá(new Å.À(Á[(\"\\x62\\154\\165\\x65\"+á.ÄæÅ)+\"\\137\\142\\x75\\x69\\x6c\\144\"],0x0,aÂ,(Æã*áä$)/2,Æã,0.7));á.Ëã$=new Å.À(Á[á.ÄæÅ+\"\\137\\x73\\164\\141\\x67\\145\\60\"],Åå,0x0,Æã*áä$,Æã*éÀ);á.ÀÁê=new Å.À(Á[á.ÄæÅ+\"_\\163\\164\\141\\147\\x65\\x31\"],0,0X0,Æã*áä$,Æã*2);á.eaâ=new Å.À(Á[á.ÄæÅ+\"\\x5fs\\x74\\x61\\147\\145\\x32\"],ÃÈ,ëä,Æã*áä$,Æã*2);á.éá=[];á.Éé=[á.Ëã$];á.ÄA.add(á.Ëã$);á.ÄA.add(á.ÀÁê);á.ÄA.add(á.eaâ);á.Ëã$.opacity=00;á.ÀÁê.opacity=0;á.eaâ.opacity=00;((((0.8<(å.åÈ/á.ËÆ))&&(á.eaâ.opacity<Àã))&&(0X0>á.Éé.indexOf(á.eaâ)))&&(Ea>á.éá.indexOf(á.eaâ)))&&(á.Éé.push(á.eaâ));if(((((å.åÈ/á.ËÆ)>=0.4)&&(Æa>á.ÀÁê.opacity))&&(ÄÅ>á.Éé.indexOf(á.ÀÁê)))&&(0>á.éá.indexOf(á.À",
+        "excerptLimited": true
+      },
+      {
+        "kind": "announcement",
+        "start": 744964,
+        "end": 745083,
+        "characters": 119,
+        "text": "function(å){äÃÀ.text=å.text;ÅÅÅ.âáE=å.time;å.áÀä&&(è[\"\\154\\x69\\u0073\\164\\x65\\x64\\120\\154\\x61\\171\\x65\\x72\\163\"]=å.ÆEA);}",
+        "excerptLimited": false
+      },
+      {
+        "kind": "feed",
+        "start": 748790,
+        "end": 749014,
+        "characters": 224,
+        "text": "function(å){(å.ãÅé==\"\")&&(å.ãÅé=\"\\74\\165n\\x6E\\141\\x6d\\x65\\x64\\x3e\");(\"\"==å.ËâÄ)&&(å.ËâÄ=\"\\74\\x75\\156\\x6e\\x61\\x6D\\145\\144\\x3E\");if(å.ÂåA===undefined){å.ÂåA=false;}(å.Ãè===undefined)&&(å.Ãè=false);ÉëE(å.ãÅé,å.ËâÄ,å.ÂåA,å.Ãè);}",
+        "excerptLimited": false
+      },
+      {
+        "kind": "elim",
+        "start": 749041,
+        "end": 749344,
+        "characters": 303,
+        "text": "function(å){ÉËe.text=å.Ée;éáe=4;if((ÈæA!==å.ÂåA)&&å.ÂåA){eåæ.text=\"K\\x6E\\157\\x63\\x6b\\x65\\144\";eåæ.ÉE[0].text=\"\\113\\156\\x6f\\x63\\x6Be\\144\";eåæ.fillStyle=ÆËe;}else {eåæ.text=\"\\x45\\x6c\\151\\x6D\\x69\\156\\x61\\x74\\145\\144\";eåæ.ÉE[0].text=\"\\x45\\x6c\\151\\155\\x69\\x6E\\141\\164\\145\\x64\";eåæ.fillStyle=\"\\43C\\x31\\x31\";}}",
+        "excerptLimited": false
+      },
+      {
+        "kind": "death",
+        "start": 749499,
+        "end": 753437,
+        "characters": 3938,
+        "text": "function(å){aé.Ááã({âÈ:å.Ée,åÄA:å.ÅèÁ,æÁÉ:å.åÃÂ,ÂÂÀ:å.ÅÀå,âe:å.ÊAÃ,åÁE:å.åÁE*0x3E8});if(ÉæÊ&&!gameWrapper.enabled){try{if(èéâ){èÀ_[\"\\162\\145q\\x75\\145\\x73\\x74\\x41\\x64\"]('\\155\\x69\\144\\x67a\\155\\145');èÀ_[\"\\147\\x61\\x6D\\145\\x70\\x6C\\x61\\171\\123\\x74\\157\\x70\"]();èÀ_[\"\\x72\\u0065\\x71\\165\\u0065\\163\\x74\\x42\\141\\156\\156\\x65\\162\"]([{\"\\163\\x69\\x7A\\145\":\"\\67\\x32\\x38\\170\\x39\\60\",\"\\143\\157\\156\\164\\x61\\x69\\156\\x65\\x72\\x49\\144\":\"\\x62\\165\\x69\\x6c\\144\\x72o\\x79\\u0061\\u006c\\145\\u002D\\x69\\157\\x5F\\x37\\62\\70\\170\\x39\\60\"},{\"\\x73\\x69\\172\\145\":\"\\x33\\x30\\60\\x78\\x32\\65\\u0030\",\"\\x63\\157\\156\\164\\x61\\x69\\x6e\\145\\162I\\x64\":\"\\x62\\165\\151\\x6C\\144\\162\\x6F\\x79\\141\\154\\u0065\\x2D\\151\\x6F\\x5F\\63\\x30\\x30\\170\\66\\60\\x30\"}]);}else {aiptag[\"\\143\\155\\x64\"][\"\\x64\\151\\163\\x70\\x6C\\141\\x79\"].push(function(){è[\"\\x61\\x69\\x70\\x44\\x69\\x73\\160\\154\\x61\\x79\\x54\\141\\x67\"][\"\\144\\151\\163\\160\\154\\x61\\x79\"]('\\x62\\x75\\x69\\x6C\\144\\162\\157\\171\\x61\\x6C\\145\\x2d\\151\\x6f\\137\\x33\\x300\\u0078\\62\\65\\60');});aiptag[\"\\143m\\x64\"][\"\\144\\x69\\x73\\x70\\154a\\x79\"].push(function(){è[\"\\x61\\151\\160\\104\\x69\\u0073\\160\\154\\x61\\x79\\x54\\x61\\147\"][\"\\144\\151\\163\\160\\u006c\\x61\\u0079\"]('\\142\\165\\151\\154\\144\\162\\157\\x79\\x61\\154\\x65\\x2D\\151\\157\\u005F\\63\\x30\\x30\\1702\\x35\\x30\\x5F2');});aiptag[\"\\143\\u006D\\x64\"][\"\\x64\\x69\\163\\x70\\154\\141\\171\"].push(function(){è[\"\\x61\\151pD\\x69\\163\\x70\\x6c\\x61y\\124\\141\\x67\"][\"\\x64\\x69\\163p\\x6C\\141\\171\"]('\\142\\165\\151\\x6C\\x64\\x72\\157y\\x61\\x6c\\145\\x2d\\151\\x6f\\x5F\\x37\\62\\70\\x78\\710');});aiptag[\"\\143\\x6dd\"][\"\\144\\151\\163\\x70\\x6C\\141\\x79\"].push(function(){è[\"\\x61\\x69\\160\\x44\\x69\\x73p\\x6C\\x61\\x79\\124\\x61\\147\"][\"d\\x69\\x73\\x70l\\141\\x79\"]('b\\165\\151\\154\\x64\\162\\157\\171\\u0061\\x6C\\x65\\u002D\\151\\x6f\\137\\63\\x30\\60\\170\\x36\\x30\\x30');});aiptag[\"\\143\\x6d\\x64\"][\"\\144\\u0069\\163\\160\\x6C\\141\\171\"].push(function(){è[\"\\x61\\151\\x70\\x44\\x69\\163\\u0070\\154\\u0061\\171\\x54\\x61\\147\"][\"\\u0064\\151\\163\\160\\x6ca\\171\"]('\\142\\165\\x69\\x6c\\144\\u0072o\\171a\\154\\x65\\x2d\\x69\\x6F\\137\\63\\60\\x30\\x78\\x32\\65\\60');});aiptag[\"\\143\\x6D\\144\"][\"\\x64\\151\\163\\160\\154\\141\\171\"].push(function(){è[\"\\x61\\151\\x70\\x44\\x69\\163\\x70\\154\\141\\171\\x54\\141\\147\"][\"\\144\\151\\x73\\x70\\x6C\\u0061\\x79\"]('\\u0062\\165\\x69\\154\\144\\x72\\x6F\\171\\141\\154\\145\\55\\x69\\157\\137\\63\\60\\60\\x78\\x32\\x35\\x30\\x5F2');});aiptag[\"\\143\\155\\x64\"][\"\\144\\151\\x73\\x70\\x6C\\x61\\u0079\"].push(function(){è[\"\\141\\151\\x70\\104\\x69\\163\\x70\\154\\u0061\\171\\x54\\141\\x67\"][\"\\u0064\\x69\\163\\x70\\154\\141\\171\"]('\\x62\\165\\x69\\u006c\\u0064\\x72\\157\\171\\141\\x6c\\145\\55\\151\\157_\\x37\\x32\\x38\\170\\x39\\60');});aiptag[\"c\\x6D\\x64\"][\"\\144\\151\\x73\\x70\\x6c\\x61\\171\"].push(function(){è[\"\\u0061\\x69\\160\\x44\\x69\\163\\x70l\\x61\\x79\\x54\\x61\\147\"][\"d\\151\\x73\\160\\x6c\\141\\x79\"]('\\x62\\x75\\151\\x6c\\x64\\x72\\x6f\\x79a\\154\\x65\\55\\u0069\\x6f\\x5f\\x33\\60\\x30\\x78\\66\\60\\60');});aiptag[\"c\\155\\144\"][\"d\\x69\\163\\x70\\154\\x61\\171\"].push(function(){è[\"\\x61\\151\\160\\104\\151\\x73\\x70\\x6c\\141\\171\\124\\x61\\147\"][\"\\144\\151\\163\\x70\\x6c\\x61\\171\"]('b\\x75\\x69\\u006c\\x64\\x72\\157\\171\\x61\\x6c\\u0065\\x2d\\x69\\u006F_\\x39\\u0037\\60\\x78\\x32\\65\\60');});}}catch(ãE){console.log(\"\\x41\\x64\\40\\105\\162\\162\\x6F\\x72\");}}if(è[\"\\147\\141\"]!==åÂÅ)è[\"\\147\\141\"]('\\163\\145\\x6e\\x64','\\145\\166\\x65\\156\\164','\\x47\\x61\\155\\145','\\x70\\154\\141\\171');Å.EÆ=ÆE;æãe=Date.now();EãÅ=false;Âe=false;AÆ_=-æá;if(å.ÅèÁ==Æa){Äáé.opacity=1;eáå.opacity=0x0;èéâ&&(èÀ_[\"\\150\\x61\\x70\\x70\\x79\\164\\x69\\x6D\\u0065\"]());}else {Äáé.opacity=0;eáå.opacity=Æa;}Ãæé.text=\"\\x23\"+å.ÅèÁ;ÉÁË.text=å.åÃÂ;ÆÊÂ.text=ÀÄê(å.ÊAÃ);aÅ_.text=å.ÅÀå;eáå.text=\"\\131\\x6F\\165\\x20\\160\\x6c\\141\\143\\x65\\144\\x20\\43\"+å.ÅèÁ;áâ_.opacity=èÊ;ÅÉã.opacity=0x0;ËËã.opacity=ãâ;if(Äæ==å.ÅèÁ){áâ_.text=\"\\x45\\x6c\\x69\\155\\x69\\156\\x61\\164\\x65\\144\\x3a\";}if(undefined!==å.Ée){var Ée=å.Ée;(Ée==\"\")&&(Ée=\"\\74\\165\\x6e\\x6E\\141\\155\\x65\\x64\\x3e\");(Åã==å.ÅèÁ)?(áâ_.text=\"\\x45\\x6c\\x69\\x6d\\x69\\x6e\\x61\\x74\\x65\\144\\72\"):(áâ_.text=\"\\105\\154\\x69\\155\\151\\156\\x61\\x74e\\x64\\40\\102\\x79\\x3A\");ÅÉã.text=Ée;áâ_.opacity=Àã;ÅÉã.opacity=0X1;ËËã.opacity=0.3;}if((å.ÅèÁ==Àã)&&(éáe>0x3)){ÅÉã.text=ÉËe.text;áâ_.opacity=1;ÅÉã.opacity=0X1;ËËã.opacity=0.3;}}",
+        "excerptLimited": false
+      },
+      {
+        "kind": "circle",
+        "start": 753472,
+        "end": 754085,
+        "characters": 613,
+        "text": "function(å){ãÉÃ=ÈâÄ;if(å.state!==ÄÂÄ){ÃÄ=å.state;if((\"\\167a\\151\\x74\\x69\\156\\147\"==ÃÄ)||(\"\\x6C\\157\\x62\\x62y\"==ÃÄ)){ÅÉÅ.À=Á[\"\\u0077\\x61\\151\\164\\x69n\\x67\\x49\\x63\\x6F\\x6E\"];}else if(ÃÄ==\"m\\x6Fv\\x69n\\147\"){ÅÉÅ.À=Á[\"\\x6D\\157\\x76\\x69\\x6e\\147\\111\\143\\x6f\\x6E\"];}}if(å.time!==ÂÈ_){Èá=å.time;var aãe=\"\\x30\\x3A\";if(Èá<10)aãe+=\"\\u0030\";aãe+=Math.max(Èá,ËÊ);Êä$.text=aãe;}if(å.AË!==eÈÊ){if(ÃÄ==\"\\155\\157\\166\\151\\x6E\\x67\"){áÊ.ë[ÄÅ]=Å.ÅÅ(áÊ.ë[0],å.AË.ë[aÂ]);áÊ.ë[ÊA]=Å.ÅÅ(áÊ.ë[0X1],å.AË.ë[1]);EÃÊ=áÊ;áÊ=å.AË;EÃÊ.éã=áÉä;áÊ.width=Math.min(áÊ.width,aÂ);}else {âÊ.width=âÊ.height=äEå*å.AË.éã;âÊ.ë=new Å.æÈ(å.AË.ë[0],å.AË.ë[0X1]);}}}",
+        "excerptLimited": false
+      }
+    ]
+  },
+  "findings": {
+    "gateCapacity": "Both Play epochs hit4096 cumulative instances. Hell has3612 trail-particle installations, but no placedBuild/fullMap/complete inventoryHud. Capacity starvation is supported; not every visible leak can be attributed to it.",
+    "storm": "Native waiting/lobby circle writes projected âÊ; moving circle updates current áÊ/EÃÊ and does not move projected âÊ. V51 incorrectly used every circle packet as a destination.",
+    "spread": "Client local aim -atan2(dx,dy)+PI/2 establishes positive-X forward; V51 positive-Y cone was rotated90degrees. Spread/100 is reticle scalar, not proven server half-angle units. Routine local rotation fields were omitted from capped/changed-field exports, so V51 cannot establish an accurate empirical bound.",
+    "hud": "Hell captured only inventory units, not complete inventory root; native empty slots/pickaxe/build bindings/lift rectangle are siblings. No map must now hide whole timer/player/kill holder. Own ammo HUD is outside inventory root, above health rows.",
+    "recon": "No authoritative unopened-container contents or bot classifier found in existing observed routes. Private/capped/missing evidence cannot establish impossibility.",
+    "observation": "User skipped Match B. Build/object outline presentation and basic postgame stats were positively observed. Other unmentioned or skipped surfaces remain live-pending."
+  }
+}

@@ -1,3 +1,11 @@
+# V52 release —2026-10-07
+
+Current [Console payload](../dist/brio-v52.min.js), immutable [payload](../versions/v52/brio-v52.min.js) and [commented source](../versions/v52/brio.js). Payload292124 bytes, SHA2563eb0ed1dc6a74c0a58c169b9ae538c18d162f18504973f6a3e8fdb38937ea98d. Source630192 bytes, SHA256ab2b8b87947d34d260f6fc385178c94eab6c397be759a54a37c337440b48a04d. [Findings](findings/v52-findings.md) · [status](status/v52-status.md) · [minimal procedure/full carried surface](test-procedures/v52-test-procedure.md) · [validation](audits/v52-validation.md).
+
+V51 log analyzed in full; particle lifecycle/HUD/info leaks repaired, No map includes counters, projected storm and90-degree aim error corrected, silhouette experiment, explicit loot/tier controls and grouped modifiers, light-text stats cards, reversible one-click normal setup and automatic branch/shot diagnostics.70 fixture executions passed; V52 native visuals/performance and exact cone half-angle remain pending. No file removals; every previous release/source/log/handoff preserved.
+
+---
+
 # V51 release update — 2026-10-07
 
 Current src/brio.js; direct dist/brio-v51.min.js; identical immutable payload plus readable source in versions/v51/. All V50 code/tests/live checklist carried forward; V50 remains untested. Approved V50 handoff published, exact V50 readable source frozen at versions/v50/brio.js. All direct/archive historical dist files preserved, including restored v49 direct duplicate.
