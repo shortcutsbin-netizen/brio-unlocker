@@ -1,3 +1,13 @@
+# V53 — 2026-10-09
+
+Complete `dist/brio-v53.min.js`; immutable source/payload under `versions/v53/`; current `src/brio.js` annotated throughout. Repairs complete native inventory depth-three acquisition and selected/pickaxe/build siblings; new independent Hide damage direction automatically belongs to Hell; late empty-root construction uses bounded scoped microtasks.
+
+Speculative spread width replaced by accepted stable/fresh exact gun/rarity observed envelopes and auditable raw signed-angle records. Source does not establish an authoritative server table. Caches reduce repeated settings/resource/HUD work; queued outline preparation avoids native-draw readback; retirement work is bounded; diagnostic lanes/previews avoid redundant serialization. Explicit 24-second normal/quiet/modifier-pause comparison preserves preferences/challenges and restores assistance automatically.
+
+70 carried source/payload integration executions plus new synthetic work-budget regression pass. 942 blocks/672 functions annotated, zero missing; payload zero comments; frozen archives exact. Actual latency cause/improvement and remaining native visuals remain live-pending. V52 map hiding is user-proven. [Procedure](test-procedures/v53-test-procedure.md) requests two ordinary matches, one short stationary firing sequence, one comparison click, one export; full prior surface retained without manual option sweep. No files removed.
+
+---
+
 # V52 release —2026-10-07
 
 Current [Console payload](../dist/brio-v52.min.js), immutable [payload](../versions/v52/brio-v52.min.js) and [commented source](../versions/v52/brio.js). Payload292124 bytes, SHA2563eb0ed1dc6a74c0a58c169b9ae538c18d162f18504973f6a3e8fdb38937ea98d. Source630192 bytes, SHA256ab2b8b87947d34d260f6fc385178c94eab6c397be759a54a37c337440b48a04d. [Findings](findings/v52-findings.md) · [status](status/v52-status.md) · [minimal procedure/full carried surface](test-procedures/v52-test-procedure.md) · [validation](audits/v52-validation.md).

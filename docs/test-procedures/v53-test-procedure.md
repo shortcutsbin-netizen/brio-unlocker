@@ -1,0 +1,42 @@
+# V53 test procedure — two ordinary matches, one export
+
+V50 was never live-tested; V51 Match B was skipped. All prior tests remain represented by the matrix below, automated fixtures or passive observations. Proven map hiding no longer needs a repeated map opening or Hell off/on cycle.
+
+1. Paste the entire `dist/brio-v53.min.js` payload on the home screen. In **Extras**, click **Set up normal test**, then play normally. Prior settings have a persistent reversible backup; cosmetics/thresholds stay saved. With your first ordinary gun, stand still and keep the mouse aim fixed while firing for about three seconds. Then pause about one second before each of three single shots. No angle measurement, shot counting, particular gun/rarity, deliberate depletion or hunt is needed. The script records native gun/rarity/aim/scalar/offsets; the cone appears only after 12 accepted projectiles and says **Observed spread**. Keep using other guns naturally.
+2. During that normal match, click the terminal header's **PERF CHECK (24s)** once and continue playing. It runs eight seconds normal, eight seconds with quiet diagnostics, then eight seconds with quiet diagnostics and modifiers temporarily paused. Assistance disappears in the last phase and returns automatically. Challenges/cosmetics/saved preferences stay intact. Ending early records an incomplete comparison; that is not a failed feature. If you notice a delay changing between phases, mention it; no manual timing or watching counters is required.
+3. Enable **Hell** before the second ordinary match and play normally, including your usual item/slot use. Report only anything that remains visible, especially the pickaxe, selected-slot highlight or incoming-damage arrow. No full-map opening, option sweep or Hell cycle is requested. After both matches click **COPY RESULTS** once and upload the complete export as `logs/runs/v53-log.txt`. Add only visible exceptions and whether the delays persisted. **Restore saved settings** is available after export.
+
+No required win, full-map repeat, special harvest route, rarity hunt, every-gun sweep, manual measurement/table, health/ammo depletion or HTML-file hunt. A condition not encountered remains unknown. If the normal match is too short for the comparison or calibration, the export still records the coverage; do not manufacture an event solely to finish a checklist.
+
+## Automatic evidence
+
+Periodic audits report active/historical/retired adapters, suppression by native category, reached/unobserved routes, HUD acquisition, deferred-constructor visits, masks and bounded work counters. Terminal and export audits include shot examples and performance summaries. Raw bullet/server/client angles, modular offsets, exact gun/rarity, scalar bins, timing/stability and rejected-sample reasons let us analyze spread without manual observation. Correlated pellets are projectiles, not independent shots. Exact server spread bounds remain unknown; an observed envelope is not a theoretical maximum.
+
+Performance helper timings are sampled and can overlap. Local native-draw cadence is not server ping or universal FPS; page long tasks have no feature attribution. Three ordinary-play phases are a practical comparison, not a controlled benchmark. Deep/passive logging is paused in quiet phases, cheap counters/calibration continue, and modifiers return on completion/cancel/death/export/next Play/teardown. No saved setting is rewritten by the comparison.
+
+## Complete V50–V52 carried surface
+
+| Previous surface | V53 automated/passive coverage | Minimal live evidence / remaining limit |
+|---|---|---|
+| Warning resets, inclusive thresholds, flare/grappler exclusions, disabled controls | Actual Extras buttons, independent preferences/groups, native warning bindings and stale parents | Ordinary resource use; previous warning/selection proof retained |
+| Remote inventory slots/materials/ammo, hotkeys, four sizes, native/fallback art | All 32 regression configurations, constructor-shaped native checks, captions/scaling/selection/delegation/cleanup | Natural remote encounters; only visible defects |
+| Five Mask loot levels | Art, rarity/future particles, popup cache, ammo, outline, values/restoration at each level | Highest level through Hell; lower native appearances pending if not naturally used |
+| Two Invisible builds levels | Preview→placed transitions, future/current previews, complete placed roots including blue stage, restore | Natural building/Hell; Blueprints only appearance pending if absent |
+| Player invisibility/held art/gliders/grapples/trails | Own/prototype methods, weapon replacements, late children, independent scope, shared detached trails and preflight | Natural remote encounters; local physical body remains native |
+| Mini/full map, crosshair/hit marker, HP/shield/inventory, storm/chests/crates | Exact independent native/root signatures, full-map identity, composite locks; depth-three inventory/pickaxe/selection siblings | Map hiding explicitly proven. Hell leak report only; live independent restore remains unknown |
+| Hide info popups | Announcement/feed/waiting/elimination cache/raster, pickup/status/object info; initially empty feed populated after attach | Natural Hell announcements/pickups; no forced trigger |
+| Pickup labels/hit marker/floating damage/progress/projectiles/weapons/timer | Every approved independent challenge, late children, native returns/errors/descriptors/resources | Hell aggregate; unobserved independent visuals stay pending |
+| New Hide damage direction | Native composite redarrow, late allocation, independent number/arrow toggles and restoration | Natural incoming damage under Hell, exception-only report |
+| Spread direction/width | Positive-X sector/native parent rotation at 0, ±PI/2, PI; no guessed cone; signed wrapping, stable/fresh exact-rarity samples and switch rejection | One fixed-aim burst plus paused single shots; native server bounds unresolved |
+| Build/object/vehicle outlines | All 75/50/25 boundaries, invalid max, body transforms, alpha/tint/fallback/cache; no draw-time readback | Natural damage/harvesting; previous presentation observation retained |
+| Projected storm direction/distance | Square edge, waiting→moving retention, new target, stale/unknown suppression | Ordinary storm play; only visibly wrong direction reported |
+| Indicator colors / Gold-Red multi-choice loot art | Swatches/saved pairs, dynamic source catalog, art/offscreen/culling, pressed/disabled controls | Natural spawns; missing Gold eligibility is not a failure |
+| Owned-ammo highlight / longer bullet-throwable histories | Owned mapping/exclusions, bounded observed histories/expiry, challenge suppression/restore | Ordinary pickup/fire/throwables when available |
+| Hell pre-Play/live restoration, max tiers, modifier locks/preferences | Both activation paths, effective registry/all tiers, disabled controls/timers/parents/resource restoration | Second ordinary match; no repeated off/on requested |
+| Match breakdown/win/loss/browse/next Play | Native totals, bounded counters, safe names/light grid, win/loss/async/Battle Pass restore | Ordinary ending; no forced win/browse, unseen outcomes pending |
+| Lifecycle/capacity/discovery/reinjection | More than 4300 removed native trail wrappers per challenge configuration, late loot/build/bullet/HUD capture, teardown; all prior source/payload configurations | Two Play epochs; automatic occupancy/retirement evidence |
+| Performance | ≤256 retirement visits/pass, no repeated full cap sweeps, settings/path/signature caching, deferred-root bounds, queued readback; three phases restore settings/challenges | One 24-second click; exceptions/lag only. Synthetic work bound is not live latency proof |
+| Contents/fishing/airdrops/chests/bot metadata | Original source/AST and native-decode novelty lanes/caps; independent observations and quiet-phase coverage markers | Passive normal events only; unresolved/private/capped is not impossible |
+| Source/payload/parser/archive audit | Every non-vendored executable block/function annotated, parser unchanged, actual zero-comment payload parsed/tested, immutable archives identical | No user audit chore |
+
+Fixtures establish wiring/ownership/cleanup and work bounds. They do not establish actual engine pixels, server authority or performance under all gameplay conditions. All denied proposals and original logs/archives remain preserved.

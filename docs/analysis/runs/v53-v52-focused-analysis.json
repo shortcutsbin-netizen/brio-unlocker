@@ -1,0 +1,207 @@
+{
+  "input": "logs/runs/v52-log.txt",
+  "bytes": 4099701,
+  "sha256": "48c9cd47104c1354b0985112a3fa0e41f92a7d3ac88308e3da9617c76bccb5cd",
+  "eventCount": 3090,
+  "eventCounts": {
+    "HUD DOM CANDIDATES": 3,
+    "V39 HUMAN GROUND TRUTH": 1,
+    "CUSTOM CACHE": 1,
+    "READY": 1,
+    "FULL NATIVE SOURCE CHUNK": 85,
+    "SOURCE PACKET REMAPPER": 1,
+    "V52 WEAPON CATALOG": 1,
+    "DEEP FIELD DICTIONARY": 1,
+    "DEEP CALLBACK STRUCTURE": 40,
+    "SOURCE CALLBACK CHUNK": 45,
+    "V52 DYNAMIC GUN CHOICES": 1,
+    "NATIVE AMMO TYPE MAP": 1,
+    "DEEP SEMANTIC REFERENCES": 18,
+    "DEEP SOURCE STRUCTURE": 1,
+    "V52 PROBE COVERAGE": 4,
+    "DECODED FIELD SCHEMA": 1,
+    "NATIVE CALLBACK AUDIT": 12,
+    "TARGETED NATIVE REFERENCE": 2,
+    "NATIVE HUD ASSET MAP": 1,
+    "V52 NATIVE SOURCE": 11,
+    "BOT SOURCE AUDIT": 1,
+    "NATIVE REGISTRATION AUDIT": 4,
+    "NATIVE REGISTRATION REFERENCE": 23,
+    "TARGETED FEATURE SOURCE": 4,
+    "SOURCE LOADED": 1,
+    "PASSIVE SOURCE SURFACE": 8,
+    "WAYPOINT HANDLER SOURCE": 1,
+    "RECON COVERAGE": 1,
+    "INDICATOR STATE": 163,
+    "INVENTORY ASSET RESOLUTION": 39,
+    "V52 TEST PROFILE": 1,
+    "MATCH STATE RESET": 2,
+    "V50 DEEP PROBE PLAN": 2,
+    "INCOMING DECODE PROBE": 2,
+    "PROBE OBSERVATION ERROR": 4,
+    "NATIVE RENDER DISCOVERY": 2,
+    "TEST SETTINGS AT PLAY": 2,
+    "PREMATCH ARMED": 2,
+    "NATIVE VISUAL BRANCH": 67,
+    "INCOMING SCHEMA FIRST": 422,
+    "ENVIRONMENT MANIFEST": 2,
+    "ENVIRONMENT TARGET CHUNK": 2,
+    "INCOMING TARGET PAYLOAD": 651,
+    "LOCAL RENDERER": 2,
+    "COSMETIC SELECTIONS": 2,
+    "PASSIVE LOCAL FIELDS": 2,
+    "BOT AUDIT PLAN": 2,
+    "GLOBAL HOOK RESTORED": 2,
+    "DEEP TARGET INITIAL": 84,
+    "METEOR AUTOMATIC START": 2,
+    "SCENE CAPTURE": 2,
+    "METEOR AUTOMATIC": 2,
+    "PASSIVE NATIVE OBJECT": 139,
+    "NATIVE SESSION STATE": 12,
+    "V52 OUTLINE MASK": 2,
+    "DEEP TARGET CHANGE": 356,
+    "LOCAL READY": 2,
+    "NATIVE HUD WIDGET": 14,
+    "OWN MATERIAL WARNING BINDING": 8,
+    "NATIVE WEAPON SLOT": 48,
+    "OWN GUN SLOT WARNING BINDING": 10,
+    "NATIVE EMPTY SLOT ART": 2,
+    "BOT CANDIDATE": 11,
+    "BOT METADATA AUDIT": 8,
+    "NATIVE REPLICA SCHEMA SAMPLE": 124,
+    "NATIVE HUD CAPTURE STATUS": 24,
+    "CHALLENGE BRANCH COVERAGE": 24,
+    "GUN SLOT WARNING STATE": 46,
+    "BOT METADATA SETTLED": 7,
+    "NATIVE RENDER DISCOVERY RESTORED": 2,
+    "LOCAL HUD STATE": 27,
+    "PASSIVE RUNTIME COVERAGE": 30,
+    "REMOTE HUD SAMPLE": 25,
+    "DEEP TARGET DISAPPEARED": 104,
+    "BOT PHASE": 2,
+    "V52 PROJECTED ZONE": 120,
+    "DEEP CONTAINER NEARBY": 23,
+    "V52 SPREAD CALIBRATION": 44,
+    "PASSIVE CONTAINER BASE": 55,
+    "PASSIVE CONTAINER REMOVED": 55,
+    "PASSIVE CONTAINER CHANGE": 18,
+    "METEOR NATIVE HOLD INSTALLED": 2,
+    "METEOR NATIVE REMOVE BLOCKED": 1,
+    "V52 AUTOMATIC AUDIT": 2,
+    "V52 POSTGAME COUNTERS": 2,
+    "OLD MATCH METEORS REMOVED": 1,
+    "LOOT EFFECT BRANCH": 2,
+    "VERIFY": 1
+  },
+  "runs": [
+    {
+      "epoch": 1,
+      "maximumActiveAdapters": 658,
+      "capHits": 0,
+      "completeInventoryRoots": 1,
+      "individualInventoryUnits": 9,
+      "fullMapRoots": 0,
+      "probeRecords": 1104
+    },
+    {
+      "epoch": 2,
+      "maximumActiveAdapters": 637,
+      "capHits": 0,
+      "completeInventoryRoots": 0,
+      "individualInventoryUnits": 14,
+      "fullMapRoots": 1,
+      "probeRecords": 540
+    }
+  ],
+  "source": {
+    "bytes": 838390,
+    "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+    "recoveredChunks": 85,
+    "recoveredMatches": true,
+    "matchingLiteralCount": 818,
+    "classificationTables": [
+      {
+        "role": "ammo-type classification, not spread values",
+        "start": 211594,
+        "end": 213688
+      },
+      {
+        "role": "bullet art/effects configuration, not rarity/spread values",
+        "start": 431629,
+        "end": 431635
+      }
+    ],
+    "callbackRoutes": [
+      {
+        "kind": "bullet",
+        "argument": 1,
+        "start": 432693,
+        "end": 436602,
+        "characters": 3909
+      },
+      {
+        "kind": "bullet",
+        "argument": 2,
+        "start": 436603,
+        "end": 439924,
+        "characters": 3321
+      },
+      {
+        "kind": "bullet",
+        "argument": 3,
+        "start": 439925,
+        "end": 440292,
+        "characters": 367
+      },
+      {
+        "kind": "bullet",
+        "argument": 4,
+        "start": 440293,
+        "end": 440918,
+        "characters": 625
+      },
+      {
+        "kind": "player",
+        "argument": 1,
+        "start": 444034,
+        "end": 451564,
+        "characters": 7530
+      },
+      {
+        "kind": "player",
+        "argument": 2,
+        "start": 451565,
+        "end": 463818,
+        "characters": 12253
+      },
+      {
+        "kind": "player",
+        "argument": 3,
+        "start": 463819,
+        "end": 497350,
+        "characters": 33531
+      },
+      {
+        "kind": "player",
+        "argument": 4,
+        "start": 497351,
+        "end": 498784,
+        "characters": 1433
+      }
+    ]
+  },
+  "spread": {
+    "reviewedExamples": 41,
+    "arithmeticAnomalies": 41,
+    "interpretation": "Reported V52 offsets disagree with modular differences of the same raw angles. Published V52 code uses standard atan2(sin(delta),cos(delta)); cause is unknown without runtime math/payload identity. Do not calibrate from those summaries. Client has a server-received reticle scalar; no verified scalar-angle conversion or per-rarity firing bounds."
+  },
+  "findings": {
+    "inventory": "Hell has zero complete inventoryHud gates despite individual units. Source material icons have wrapper→rectangle→icon depth3; previous immediate-child inspection reached only depth2.",
+    "damage": "Floating text is suppressed but local incoming damage arrow is separate ÁÄå/Èâã/redarrow. New independent direction challenge joins Hell.",
+    "capacity": "Neither run reaches cap; maximum658/637 active. V51 capacity problem no longer explains these leaks. Old high-occupancy full-sweep path remains a potential pathological cost and is corrected separately.",
+    "performance": "V52 has no callback/frame timings, so user-visible latency cannot be attributed. Repeated saved-settings normalization on render/asset paths, duplicate uncached signature passes, capped replica resampling and synchronous draw-time contour preparation are measurable code risks; V53 adds bounded profiling/comparison and fixes those risks.",
+    "confirmed": "User explicitly confirms map disappeared; pickaxe/selected slot and damage indicators still visible; cones wrong; substantial delays. Unmentioned surfaces are not proof.",
+    "scope": "Two epochs: normal win, Hell loss. V50 never live-tested; prior lower tier/independent/win/browse tests remain carried. No HTML request, no authoritative contents/bot claims."
+  },
+  "publicationScope": "Aggregate derivative only: no player identities, timestamps, raw packet/audit/settings examples, or source excerpts. Original previously uploaded evidence is unchanged."
+}

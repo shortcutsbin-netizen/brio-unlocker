@@ -1,3 +1,15 @@
+# Current repository guide — V53
+
+- `src/brio.js`: thoroughly annotated current source; `dist/brio-v53.min.js`: complete zero-comment Console payload; `versions/v53/`: immutable exact copies.
+- [V53 findings](findings/v53-findings.md), [status](status/v53-status.md), [minimal test procedure and complete carried matrix](test-procedures/v53-test-procedure.md).
+- [Validation](audits/v53-validation.md), [source map](audits/v53-source-map.md), [synthetic work comparison](audits/v53-performance-benchmark.json), [complete V52 analysis](analysis/runs/v53-v52-focused-analysis.json).
+- Original `logs/runs/v52-log.txt` and [separate user observations](../logs/observations/v52-2026-10-09-observations.md). `tools/analysis/analyze-v53.cjs` regenerates the analysis without evaluating engine source.
+- `tests/performance.cjs` tests work bounds; existing regression/challenge suites retain 70 source/payload integration executions. `npm ci`, `npm run build`, `npm test` reproduce validation.
+
+No paths were removed or renamed. Historical releases/source/logs/decisions and all older guide bytes below are retained. Current V53 status takes precedence.
+
+---
+
 # V52 repository guide
 
 Current: [findings](findings/v52-findings.md), [status](status/v52-status.md), [minimal live procedure/complete carried surface](test-procedures/v52-test-procedure.md), [source map](audits/v52-source-map.md), [validation](audits/v52-validation.md), [full V51 log](../logs/runs/v51-log.txt), [observations](../logs/observations/v51-2026-10-07-observations.md), [general analysis](analysis/runs/v52-v51-analysis.json), [focused chronology/native callback excerpts](analysis/runs/v52-v51-focused-analysis.json).

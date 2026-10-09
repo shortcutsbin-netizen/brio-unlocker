@@ -1,0 +1,66 @@
+{
+  "version": 53,
+  "date": "2026-10-09",
+  "source": {
+    "path": "src/brio.js",
+    "bytes": 657906,
+    "sha256": "09668272c0ac4a94f8223fb23c5ba4ce55024dbc1ac2d03c918691cf4ec33380"
+  },
+  "payload": {
+    "path": "dist/brio-v53.min.js",
+    "bytes": 303511,
+    "sha256": "edbe4e89fbbf4645dc99727d7d086a50ea91bf3923edcf40b01f4b1041c3c53e"
+  },
+  "validation": {
+    "commands": [
+      "npm ci",
+      "npm run build",
+      "npm test",
+      "node tools/analysis/analyze-v53.cjs",
+      "node tests/performance.cjs --record",
+      "git diff --check"
+    ],
+    "configurations": 35,
+    "executions": 70,
+    "regressionExecutions": 64,
+    "challengeExecutions": 6,
+    "additionalPerformanceChecks": 1,
+    "particleSubtrees": 25800,
+    "sourceBlocks": 942,
+    "sourceFunctions": 672,
+    "sourceComments": 1497,
+    "missingSourceAnnotations": 0,
+    "minifiedComments": 0,
+    "nativeVisualProof": false,
+    "livePerformanceProof": false
+  },
+  "inputLog": {
+    "path": "logs/runs/v52-log.txt",
+    "bytes": 4099701,
+    "sha256": "48c9cd47104c1354b0985112a3fa0e41f92a7d3ac88308e3da9617c76bccb5cd"
+  },
+  "preservedV52Source": {
+    "path": "versions/v52/brio.js",
+    "bytes": 630192,
+    "sha256": "ab2b8b87947d34d260f6fc385178c94eab6c397be759a54a37c337440b48a04d"
+  },
+  "preservedV52Payload": {
+    "path": "versions/v52/brio-v52.min.js",
+    "bytes": 292124,
+    "sha256": "3eb0ed1dc6a74c0a58c169b9ae538c18d162f18504973f6a3e8fdb38937ea98d"
+  },
+  "vendor": {
+    "characters": 121857,
+    "sha256": "845e6f940e25c2fd3d90ce2ea8b5974ec01282f24d666030201db18cd37150f4"
+  },
+  "publication": {
+    "repository": "shortcutsbin-netizen/brio-unlocker",
+    "baseCommit": "beca32a52a25cc5693ed2b8464401f5dcb129726",
+    "noRemovals": true
+  },
+  "limitations": [
+    "Fixtures are not live engine pixel or performance proof.",
+    "Observed spread extrema do not establish server maximum.",
+    "Synthetic high-occupancy benchmark does not explain V52 matches below 700 adapters."
+  ]
+}

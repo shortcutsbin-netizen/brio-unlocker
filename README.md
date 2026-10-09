@@ -1,3 +1,15 @@
+# BRIO Unlocker — V53
+
+Current release: [complete Console payload](dist/brio-v53.min.js). Copy raw file and paste on Build Royale home. In **Extras**, **Set up normal test** applies a reversible test profile; the terminal header stays available during play.
+
+V53 repairs complete inventory/pickaxe/selection hiding and adds **Hide damage direction** to Hell. It reduces repeated draw/discovery/logging work and adds **PERF CHECK (24s)**. Spread now uses a labeled observed gun/rarity envelope after stable native shot samples; no guessed scalar-to-angle conversion or exact server spread bound is claimed.
+
+[Minimal two-match procedure and all carried coverage](docs/test-procedures/v53-test-procedure.md) · [Findings](docs/findings/v53-findings.md) · [Status](docs/status/v53-status.md) · [Commented source](src/brio.js) · [Source map](docs/audits/v53-source-map.md) · [Validation](docs/audits/v53-validation.md) · [Repository guide](docs/README.md) · [Release history](docs/releases.md).
+
+70 source/payload integration executions plus a work-budget regression pass; every non-vendored executable block/function is annotated and the payload contains zero comments. Native performance and repaired visuals still need the next live export. V52 map hiding is explicitly user-proven. Older files and earlier text below are preserved history.
+
+---
+
 # BRIO Unlocker
 
 Current release **V52**: [complete Console payload](dist/brio-v52.min.js). Copy raw file, paste on Build Royale home, open **Extras → Set up normal test**, then ordinary Play. **EXTRAS** stays available in the minimized terminal during a match. Prior preferences have a reversible persistent backup.
