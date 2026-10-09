@@ -1,3 +1,15 @@
+# BRIO Unlocker — V54
+
+Current [complete Console payload](dist/brio-v54.min.js): use **Copy raw file**, paste on Build Royale home, then play normally. Spread recording is automatic. **SPREAD RECON** opens the gun-image/name checklist with ADS/No ADS columns; progress persists across matches and reloads. Rarities share one gun entry.
+
+A mode checks after100accepted shot groups, eight firing sequences and stable observations. The above-player test badge shows recorded/rejected shots and completion. **Show bullet spread** now draws a small unfilled V from the native held-gun muzzle using observed data. Performance metrics collect passively; there is no required PERF action.
+
+[Minimal procedure/full carried coverage](docs/test-procedures/v54-test-procedure.md) · [Findings](docs/findings/v54-findings.md) · [Status](docs/status/v54-status.md) · [Commented source](src/brio.js) · [Source map](docs/audits/v54-source-map.md) · [Validation](docs/audits/v54-validation.md).
+
+70source/payload integration executions plus a bounded-work regression pass; every non-vendored executable block/function annotated, zero payload comments. Completion is an empirical estimate, not a server maximum. No V53 log was uploaded; native visuals/performance remain pending. No files removed; full historical text follows unchanged.
+
+---
+
 # BRIO Unlocker — V53
 
 Current release: [complete Console payload](dist/brio-v53.min.js). Copy raw file and paste on Build Royale home. In **Extras**, **Set up normal test** applies a reversible test profile; the terminal header stays available during play.

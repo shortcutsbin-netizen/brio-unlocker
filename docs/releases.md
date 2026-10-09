@@ -1,3 +1,13 @@
+# V54 — 2026-10-09
+
+Complete `dist/brio-v54.min.js` (315323bytes, SHA256 `5ca7290852c8f86358147bafff8ed258ec7bb608871a3194b8828667a0ab03c2`), immutable readable/payload copies under `versions/v54/`, current annotated `src/brio.js` (681855bytes, SHA256 `b08f4b0c70ab51aa173def55a5c30a0b6e1d18eed1a871f4a2d6d322b1038c2e`).
+
+Passive persistent gun-type ADS/No ADS recon, rarity pooling,100groups/eightsequences/stability milestone, readonly inventory-art checklist, above-player accepted/rejected/completion badge. Native recoil does not misclassify ADS; automatic/click/single-round reload styles covered. Small unfilled native-muzzle V replaces oversized sector. Routine performance timings automatic; heavy observer timecap transitions to lean same-decoder recon through native match end.
+
+70source/payload integration executions plus bounded-work regression; 977blocks/693functions annotated, zero missing, zero payload comments, unchanged parser. [Procedure](test-procedures/v54-test-procedure.md) requests ordinary repeatedgames/mixedADS and one eventual export, no PERF action. No V53 log exists; exact server spread/live visuals/performance remain pending. No files deleted; full release history follows unchanged.
+
+---
+
 # V53 — 2026-10-09
 
 Complete `dist/brio-v53.min.js`; immutable source/payload under `versions/v53/`; current `src/brio.js` annotated throughout. Repairs complete native inventory depth-three acquisition and selected/pickaxe/build siblings; new independent Hide damage direction automatically belongs to Hell; late empty-root construction uses bounded scoped microtasks.

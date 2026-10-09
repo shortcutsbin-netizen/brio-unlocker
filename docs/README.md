@@ -1,3 +1,15 @@
+# Current repository guide — V54
+
+- `src/brio.js`, `dist/brio-v54.min.js`, exact immutable `versions/v54/` copies.
+- [Findings](findings/v54-findings.md), [status](status/v54-status.md), [passive procedure/full carried matrix](test-procedures/v54-test-procedure.md).
+- [Validation](audits/v54-validation.md), [source map](audits/v54-source-map.md), [work benchmark](audits/v54-performance-benchmark.json), [source mechanics](analysis/engine/v54-spread-mechanics.json).
+- [V53 user observations, no log](../logs/observations/v53-2026-10-09-observations.md); latest actual complete run remains `logs/runs/v52-log.txt`.
+- Reproduce with `npm ci`, `npm run build`, `npm test`, `node tools/analysis/analyze-v54.cjs`. All carried tests and original source/log/archive files remain.
+
+No paths removed. Current V54 instructions supersede earlier manual PERF/Hell/fixed-aim requirements. Full previous guide follows unchanged.
+
+---
+
 # Current repository guide — V53
 
 - `src/brio.js`: thoroughly annotated current source; `dist/brio-v53.min.js`: complete zero-comment Console payload; `versions/v53/`: immutable exact copies.

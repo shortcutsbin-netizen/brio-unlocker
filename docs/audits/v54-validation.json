@@ -1,0 +1,71 @@
+{
+  "version": 54,
+  "date": "2026-10-09",
+  "source": {
+    "path": "src/brio.js",
+    "bytes": 681855,
+    "sha256": "b08f4b0c70ab51aa173def55a5c30a0b6e1d18eed1a871f4a2d6d322b1038c2e"
+  },
+  "payload": {
+    "path": "dist/brio-v54.min.js",
+    "bytes": 315323,
+    "sha256": "5ca7290852c8f86358147bafff8ed258ec7bb608871a3194b8828667a0ab03c2"
+  },
+  "validation": {
+    "commands": [
+      "npm ci",
+      "npm run build",
+      "npm test",
+      "node tools/analysis/analyze-v54.cjs",
+      "node tests/performance.cjs --record",
+      "git diff --check"
+    ],
+    "configurations": 35,
+    "executions": 70,
+    "regressionExecutions": 64,
+    "challengeExecutions": 6,
+    "additionalPerformanceChecks": 1,
+    "sourceBlocks": 977,
+    "sourceFunctions": 693,
+    "sourceComments": 1541,
+    "missingSourceAnnotations": 0,
+    "minifiedComments": 0,
+    "nativeVisualProof": false,
+    "livePerformanceProof": false
+  },
+  "latestActualInput": {
+    "path": "logs/runs/v52-log.txt",
+    "bytes": 4099701,
+    "sha256": "48c9cd47104c1354b0985112a3fa0e41f92a7d3ac88308e3da9617c76bccb5cd"
+  },
+  "v53LogUploaded": false,
+  "preservedV53Source": {
+    "path": "versions/v53/brio.js",
+    "bytes": 657906,
+    "sha256": "09668272c0ac4a94f8223fb23c5ba4ce55024dbc1ac2d03c918691cf4ec33380"
+  },
+  "preservedV53Payload": {
+    "path": "versions/v53/brio-v53.min.js",
+    "bytes": 303511,
+    "sha256": "edbe4e89fbbf4645dc99727d7d086a50ea91bf3923edcf40b01f4b1041c3c53e"
+  },
+  "vendor": {
+    "characters": 121857,
+    "sha256": "845e6f940e25c2fd3d90ce2ea8b5974ec01282f24d666030201db18cd37150f4"
+  },
+  "publication": {
+    "repository": "shortcutsbin-netizen/brio-unlocker",
+    "baseCommit": "2579470b0c729cc6d49749735be128e0aae7e06a",
+    "noRemovals": true
+  },
+  "publicationContent": {
+    "priorPlayerStartupRecords": "replaced with anonymous historical count/scope; original published archives unchanged",
+    "preliminaryRejectedBuildPublished": false
+  },
+  "limits": [
+    "Shot grouping has no authoritative discharge ID;35ms timing may conservatively merge rapid shots or split delayed pellet fragments.",
+    "Completion is empirical stability across mixed bloom/movement; finite observations do not prove server maximum or rarity equality.",
+    "Client catalog does not establish current server spawn availability.",
+    "Source-shaped fixtures and synthetic timings are not live pixel or latency proof."
+  ]
+}

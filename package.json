@@ -1,10 +1,10 @@
 {
   "name": "brio-unlocker",
-  "version": "53.0.0",
+  "version": "54.0.0",
   "private": true,
   "scripts": {
     "build": "node tools/build.cjs",
-    "test": "node tools/analysis/audit-comments.cjs && node tests/regression.cjs src/brio.js && node tests/challenges.cjs src/brio.js && node tests/regression.cjs dist/brio-v53.min.js && node tests/challenges.cjs dist/brio-v53.min.js && node tests/performance.cjs"
+    "test": "node tools/analysis/audit-comments.cjs && node tests/regression.cjs src/brio.js && node tests/challenges.cjs src/brio.js && node tests/regression.cjs dist/brio-v54.min.js && node tests/challenges.cjs dist/brio-v54.min.js && node tests/performance.cjs"
   },
   "devDependencies": {
     "jsdom": "^27.0.0",

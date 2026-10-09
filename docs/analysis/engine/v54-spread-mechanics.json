@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-09",
+  "source": {
+    "input": "docs/game-sources/engine.js",
+    "bytes": 838390,
+    "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4"
+  },
+  "fields": [
+    {
+      "nativeKey": "Åé",
+      "meaning": "weaponSlots",
+      "start": 231224,
+      "end": 231276
+    },
+    {
+      "nativeKey": "ÈÆ",
+      "meaning": "selectedWeapon",
+      "start": 231277,
+      "end": 231341
+    },
+    {
+      "nativeKey": "ée",
+      "meaning": "steadying",
+      "start": 231426,
+      "end": 231470
+    },
+    {
+      "nativeKey": "áAæ",
+      "meaning": "wAmmo",
+      "start": 231826,
+      "end": 231855
+    },
+    {
+      "nativeKey": "ËÂ",
+      "meaning": "spread",
+      "start": 233413,
+      "end": 233445
+    },
+    {
+      "nativeKey": "åá$",
+      "meaning": "pi",
+      "start": 233701,
+      "end": 233718
+    },
+    {
+      "nativeKey": "ÀÂ",
+      "meaning": "bulletType",
+      "start": 233719,
+      "end": 233767
+    }
+  ],
+  "steadyWrites": [
+    {
+      "owner": "Éæ",
+      "valueType": "Literal",
+      "start": 231426,
+      "end": 231470
+    },
+    {
+      "owner": "á",
+      "valueType": "MemberExpression",
+      "start": 450118,
+      "end": 450127
+    },
+    {
+      "owner": "å",
+      "valueType": "Identifier",
+      "start": 464115,
+      "end": 464123
+    },
+    {
+      "owner": "å",
+      "valueType": "Identifier",
+      "start": 465557,
+      "end": 465565
+    },
+    {
+      "owner": "á",
+      "valueType": "MemberExpression",
+      "start": 469303,
+      "end": 469312
+    }
+  ],
+  "callbacks": [
+    {
+      "kind": "bullet",
+      "argument": 1,
+      "start": 432693,
+      "end": 436602
+    },
+    {
+      "kind": "bullet",
+      "argument": 2,
+      "start": 436603,
+      "end": 439924
+    },
+    {
+      "kind": "bullet",
+      "argument": 3,
+      "start": 439925,
+      "end": 440292
+    },
+    {
+      "kind": "bullet",
+      "argument": 4,
+      "start": 440293,
+      "end": 440918
+    },
+    {
+      "kind": "player",
+      "argument": 1,
+      "start": 444034,
+      "end": 451564
+    },
+    {
+      "kind": "player",
+      "argument": 2,
+      "start": 451565,
+      "end": 463818
+    },
+    {
+      "kind": "player",
+      "argument": 3,
+      "start": 463819,
+      "end": 497350
+    },
+    {
+      "kind": "player",
+      "argument": 4,
+      "start": 497351,
+      "end": 498784
+    }
+  ],
+  "findings": {
+    "ads": "Original decoded steadying is authoritative; native updates can temporarily force renderer steadying true during hip-fire recoil. Observe the original decode result before native mutation and check held right-click, not camera/art state.",
+    "identity": "Inventory gun type is the recon key; native bulletType can be a shared projectile family such as sniper. Slot/context stability is required; rarities are pooled with secondary counts.",
+    "muzzle": "Native flash is a child of held weapon, hand and physical containers. Compose native ancestry into the already-rotated local root; do not use a player-centered600-unit sector.",
+    "lifetime": "Heavy diagnostics retain15-minute and existing lane caps; lean anonymous shot/counter observation continues through native match end, then restores decoder identity."
+  },
+  "estimation": {
+    "groupsPerMode": 100,
+    "minimumSequences": 8,
+    "groupWindowMs": 35,
+    "stabilityWindows": [
+      50,
+      50
+    ],
+    "toleranceDegrees": "max(0.6, 10% of the larger window maximum)",
+    "rarities": "one gun-type surface; secondary counts only",
+    "theory": {
+      "model": "IID absolute-offset maximum, fixed distribution",
+      "oneSidedConfidenceFormula": "1-p^n",
+      "coverageAt95ConfidenceFor100": 0.9704869503929601,
+      "samplesFor99CoverageAt95Confidence": 299,
+      "inference": "Mathematical motivation only. Bloom, motion, filtering and grouped/correlated pellets violate IID; completion is an empirical stability milestone, not a guaranteed server maximum."
+    },
+    "reference": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc264.htm"
+  },
+  "publicationScope": "source coordinates, anonymous mechanism summaries, own mathematical design; no raw log derivative"
+}
