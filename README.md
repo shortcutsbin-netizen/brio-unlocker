@@ -1,3 +1,13 @@
+# BRIO Unlocker — V56
+
+[Complete Console payload](dist/brio-v56.min.js): Copy raw file and paste once on home. Existing V55 spread progress is retained. The recorder is unchanged; V56 is the full gun/ADS collection run.
+
+**SPREAD RECON** is now a right sidebar: drag its left edge to resize and keep it open across games. Green **✓ COMPLETE** marks weapons with both modes recorded. Remote native material widgets are adjacent and centered again.
+
+[Full collection procedure](docs/test-procedures/v56-test-procedure.md) · [Findings](docs/findings/v56-findings.md) · [Status](docs/status/v56-status.md) · [Validation](docs/audits/v56-validation.md). Play until all obtainable guns are checked, then upload one full COPY RESULTS export as `logs/runs/v56-log.txt`.
+
+---
+
 # BRIO Unlocker — V55
 
 [Complete Console payload](dist/brio-v55.min.js): **Copy raw file**, paste once on Build Royale home, then ordinary Play. V55 counts native firing separately from angle-quality filtering and distinguishes held-right-click ADS from hip-fire recoil. **SPREAD RECON** shows clip-based targets: **max(10, clip size×3)** per mode, with no eight-sequence/stability requirement.

@@ -1,3 +1,9 @@
+# V56 current entry point
+
+Current source/payload/frozen release use V56 paths. Recording uses unchanged V55 helper bodies/storage/revision; full collection continues existing progress. See V56 findings/status/procedure/validation and `logs/observations/v55-2026-10-12-observations.md`. Earlier entries below remain exact history.
+
+---
+
 # V55 repository entry point — 2026-10-12
 
 Current direct payload `dist/brio-v55.min.js`, readable `src/brio.js`, immutable `versions/v55/`. Current findings/status/procedure/validation use V55 paths. See root README/AGENTS and `logs/observations/v54-2026-10-12-observations.md`. V54 is rejected; no rerun/log requested. Native firing/ADS/clip targets are now separate from angle quality. Earlier entries below are preserved history.

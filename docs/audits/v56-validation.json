@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-12",
+  "version": 56,
+  "artifacts": [
+    {
+      "path": "src/brio.js",
+      "bytes": 700477,
+      "sha256": "3967af7b7851fb33d9cc1f65543dde353b875da13c137196c5c3478e9bb65f0f"
+    },
+    {
+      "path": "dist/brio-v56.min.js",
+      "bytes": 323522,
+      "sha256": "49b0b9da9dfdd08437fd946617c42be867da6d3d8c943ebf054421e2dfc158e4"
+    }
+  ],
+  "checks": {
+    "npmCi": true,
+    "npmBuild": true,
+    "npmTest": true,
+    "sourceRegression": 32,
+    "payloadRegression": 32,
+    "sourceChallenges": 3,
+    "payloadChallenges": 3,
+    "recorderHelpersByteIdentical": 21,
+    "storageRevisionAndScopeUnchanged": true,
+    "workBudget": true,
+    "zeroPayloadComments": true,
+    "exactArchives": true,
+    "oldDocumentSuffixesPreserved": true
+  },
+  "annotations": {
+    "blocks": 1012,
+    "functions": 714,
+    "comments": 1586,
+    "missing": 0,
+    "vendorUnchanged": true
+  },
+  "limits": "New presentation has fixture coverage; native sidebar/material pixels remain pending. User confirms V55 recorder appears accurate; full collection remains pending."
+}

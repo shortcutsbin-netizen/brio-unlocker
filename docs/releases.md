@@ -1,3 +1,9 @@
+# V56 — 2026-10-12
+
+Presentation-only release: contiguous centered remote materials; resizable right recon sidebar that remains open across matches; whole-weapon both-mode completion marker. Exact V55 recorder/storage/scope preserved. Direct `dist/brio-v56.min.js`, frozen source/payload under `versions/v56/`; full collection ends with one `logs/runs/v56-log.txt` upload. Historical bytes retained.
+
+---
+
 # V55 — 2026-10-12
 
 Direct zero-comment `dist/brio-v55.min.js`; exact readable/payload copies `versions/v55/`. Repair native firing/ADS recording, conserve marker/ammo/pellet evidence, retain authoritative partial packet state, use clip×3/minimum10 targets and remove requested utility/vaulted entries from the spread experiment. Fresh revision-scoped progress, all historical archives/logs/preferences preserved. See V55 findings, validation, status and short test procedure. No new V54 log is requested/analyzed; live confirmation remains pending.
