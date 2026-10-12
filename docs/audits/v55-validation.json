@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-12",
+  "version": 55,
+  "artifacts": [
+    {
+      "path": "src/brio.js",
+      "bytes": 692857,
+      "sha256": "6796a1c76fe0dbce45b2622827248f78ce81cc449823948b5e3426c41e6d7ddc"
+    },
+    {
+      "path": "dist/brio-v55.min.js",
+      "bytes": 320070,
+      "sha256": "8ddfb964310628d8e24842500a245937a667463a5a5371ecd883938a2890937f"
+    }
+  ],
+  "executions": {
+    "sourceRegression": 32,
+    "payloadRegression": 32,
+    "sourceChallenges": 3,
+    "payloadChallenges": 3,
+    "workBudget": 1
+  },
+  "sourceAudit": {
+    "blocks": 995,
+    "functions": 706,
+    "comments": 1568,
+    "missing": 0,
+    "vendorUnchanged": true,
+    "vendorSha256": "845e6f940e25c2fd3d90ce2ea8b5974ec01282f24d666030201db18cd37150f4"
+  },
+  "checks": {
+    "npmCi": true,
+    "npmBuild": true,
+    "npmTest": true,
+    "sourceAndPayloadSyntax": true,
+    "zeroPayloadComments": true,
+    "exactFrozenCopies": true,
+    "historicalDocumentSuffixes": true,
+    "noDeletedFiles": true,
+    "diffCheck": true
+  },
+  "limits": "Fixture wiring/counters/lifecycle/work bounds only; native firing/mode/clip/angle visuals remain pending. Clip high-water can be a lower bound after partial loads; no maximum-capacity table is supplied."
+}

@@ -1,3 +1,9 @@
+# V55 — 2026-10-12
+
+Direct zero-comment `dist/brio-v55.min.js`; exact readable/payload copies `versions/v55/`. Repair native firing/ADS recording, conserve marker/ammo/pellet evidence, retain authoritative partial packet state, use clip×3/minimum10 targets and remove requested utility/vaulted entries from the spread experiment. Fresh revision-scoped progress, all historical archives/logs/preferences preserved. See V55 findings, validation, status and short test procedure. No new V54 log is requested/analyzed; live confirmation remains pending.
+
+---
+
 # V54 — 2026-10-09
 
 Complete `dist/brio-v54.min.js` (315323bytes, SHA256 `5ca7290852c8f86358147bafff8ed258ec7bb608871a3194b8828667a0ab03c2`), immutable readable/payload copies under `versions/v54/`, current annotated `src/brio.js` (681855bytes, SHA256 `b08f4b0c70ab51aa173def55a5c30a0b6e1d18eed1a871f4a2d6d322b1038c2e`).

@@ -1,3 +1,9 @@
+# V55 repository entry point — 2026-10-12
+
+Current direct payload `dist/brio-v55.min.js`, readable `src/brio.js`, immutable `versions/v55/`. Current findings/status/procedure/validation use V55 paths. See root README/AGENTS and `logs/observations/v54-2026-10-12-observations.md`. V54 is rejected; no rerun/log requested. Native firing/ADS/clip targets are now separate from angle quality. Earlier entries below are preserved history.
+
+---
+
 # Current repository guide — V54
 
 - `src/brio.js`, `dist/brio-v54.min.js`, exact immutable `versions/v54/` copies.

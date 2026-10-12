@@ -1,3 +1,15 @@
+# BRIO Unlocker — V55
+
+[Complete Console payload](dist/brio-v55.min.js): **Copy raw file**, paste once on Build Royale home, then ordinary Play. V55 counts native firing separately from angle-quality filtering and distinguishes held-right-click ADS from hip-fire recoil. **SPREAD RECON** shows clip-based targets: **max(10, clip size×3)** per mode, with no eight-sequence/stability requirement.
+
+Clip size learns from native loaded rounds; partly used pickups are lower bounds and fuller reloads can raise the target. Requested utility/vaulted entries are excluded; Heavy Sniper remains. Progress uses a new revision; preferences/custom data and old storage survive.
+
+[Short procedure/full carried coverage](docs/test-procedures/v55-test-procedure.md) · [Findings](docs/findings/v55-findings.md) · [Status](docs/status/v55-status.md) · [Commented source](src/brio.js) · [Validation](docs/audits/v55-validation.md).
+
+No V54 log/rerun is requested. Native live confirmation remains pending; source/payload integration and bounded-work checks are separate evidence. All historical text follows unchanged.
+
+---
+
 # BRIO Unlocker — V54
 
 Current [complete Console payload](dist/brio-v54.min.js): use **Copy raw file**, paste on Build Royale home, then play normally. Spread recording is automatic. **SPREAD RECON** opens the gun-image/name checklist with ADS/No ADS columns; progress persists across matches and reloads. Rarities share one gun entry.

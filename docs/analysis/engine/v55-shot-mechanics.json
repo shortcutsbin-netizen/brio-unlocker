@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-12",
+  "source": {
+    "path": "docs/game-sources/engine.js",
+    "bytes": 838390,
+    "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4"
+  },
+  "fields": [
+    {
+      "nativeKey": "åæ",
+      "meaning": "ammo",
+      "start": 231169,
+      "end": 231193
+    },
+    {
+      "nativeKey": "Åé",
+      "meaning": "weaponSlots",
+      "start": 231224,
+      "end": 231276
+    },
+    {
+      "nativeKey": "ÈÆ",
+      "meaning": "selectedWeapon",
+      "start": 231277,
+      "end": 231341
+    },
+    {
+      "nativeKey": "ée",
+      "meaning": "steadying",
+      "start": 231426,
+      "end": 231470
+    },
+    {
+      "nativeKey": "áAæ",
+      "meaning": "wAmmo",
+      "start": 231826,
+      "end": 231855
+    },
+    {
+      "nativeKey": "áäe",
+      "meaning": "rt",
+      "start": 233343,
+      "end": 233360
+    },
+    {
+      "nativeKey": "ÃAæ",
+      "meaning": "shot",
+      "start": 233361,
+      "end": 233386
+    },
+    {
+      "nativeKey": "ËÂ",
+      "meaning": "spread",
+      "start": 233413,
+      "end": 233445
+    },
+    {
+      "nativeKey": "åá$",
+      "meaning": "pi",
+      "start": 233701,
+      "end": 233718
+    }
+  ],
+  "shotUses": [
+    {
+      "start": 233361,
+      "end": 233367
+    },
+    {
+      "start": 465066,
+      "end": 465071
+    },
+    {
+      "start": 465152,
+      "end": 465157
+    }
+  ],
+  "callbacks": [
+    {
+      "kind": "bullet",
+      "argument": 1,
+      "start": 432693,
+      "end": 436602
+    },
+    {
+      "kind": "bullet",
+      "argument": 2,
+      "start": 436603,
+      "end": 439924
+    },
+    {
+      "kind": "bullet",
+      "argument": 3,
+      "start": 439925,
+      "end": 440292
+    },
+    {
+      "kind": "bullet",
+      "argument": 4,
+      "start": 440293,
+      "end": 440918
+    },
+    {
+      "kind": "player",
+      "argument": 1,
+      "start": 444034,
+      "end": 451564
+    },
+    {
+      "kind": "player",
+      "argument": 2,
+      "start": 451565,
+      "end": 463818
+    },
+    {
+      "kind": "player",
+      "argument": 3,
+      "start": 463819,
+      "end": 497350
+    },
+    {
+      "kind": "player",
+      "argument": 4,
+      "start": 497351,
+      "end": 498784
+    }
+  ],
+  "mechanisms": {
+    "firing": "Native player update shot marker ÃAæ is observed independently of local-owned bullet pi. Unchanged-gun loaded-ammo decreases provide fallback; correlated evidence is deduplicated, including coalesced rounds.",
+    "ads": "Requested held-right-click state defines ADS/No ADS. Original native steadying remains a separate angle-quality signal; native renderer recoil cannot relabel recorded hip shots.",
+    "partialUpdates": "Copy primitive inventory/selected/ammo state across decoder deltas before native remapping; missing fields never revert to pre-batch renderer state. Replacement slots invalidate prior gun ammo.",
+    "targets": "max(10, native observed loaded magazine high-water ×3) per mode. The supplied client has no maximum-capacity table; partial pickup/reload counts are lower bounds and fuller loads can increase/reopen targets.",
+    "angles": "Shot count is independent of qualified angular groups. Unknown owner, stale/turning aim, transitional/mismatched ADS and ambiguous batch gun/discharge joins cannot create angle evidence.",
+    "scope": "No V54 log is requested or newly analyzed for this revision. User feedback and source-shaped tests guide the fixes; historical files remain exact."
+  }
+}

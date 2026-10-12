@@ -1,0 +1,14 @@
+// Reproducible V55 mechanics audit: parse supplied native source data, never execute it.
+// Publish coordinates and anonymous mechanisms only; no raw player/log/packet derivative.
+const fs=require('fs'),crypto=require('crypto'),{parse}=require('acorn');
+const bytes=fs.readFileSync('docs/game-sources/engine.js'),source=bytes.toString('utf8'),ast=parse(source,{ecmaVersion:'latest'}),fields=[],shotUses=[],callbacks=[];
+function walk(n){
+ if(!n?.type)return;
+ if(n.type==='AssignmentExpression'&&n.left?.type==='MemberExpression'&&n.right?.type==='Literal'&&['shot','steadying','wAmmo','weaponSlots','selectedWeapon','spread','pi','rt','ammo'].includes(n.right.value))fields.push({nativeKey:n.left.property.name||n.left.property.value,meaning:n.right.value,start:n.start,end:n.end});
+ if(n.type==='MemberExpression'&&(n.property.name||n.property.value)==='ÃAæ')shotUses.push({start:n.start,end:n.end});
+ if(n.type==='CallExpression'&&['player','bullet'].includes(n.arguments[0]?.value))n.arguments.forEach((a,i)=>{if(a.type==='FunctionExpression')callbacks.push({kind:n.arguments[0].value,argument:i,start:a.start,end:a.end});});
+ for(const v of Object.values(n))if(Array.isArray(v))v.forEach(walk);else if(v?.type)walk(v);
+}
+walk(ast);
+const report={date:'2026-10-12',source:{path:'docs/game-sources/engine.js',bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex')},fields,shotUses,callbacks,mechanisms:{firing:'Native player update shot marker ÃAæ is observed independently of local-owned bullet pi. Unchanged-gun loaded-ammo decreases provide fallback; correlated evidence is deduplicated, including coalesced rounds.',ads:'Requested held-right-click state defines ADS/No ADS. Original native steadying remains a separate angle-quality signal; native renderer recoil cannot relabel recorded hip shots.',partialUpdates:'Copy primitive inventory/selected/ammo state across decoder deltas before native remapping; missing fields never revert to pre-batch renderer state. Replacement slots invalidate prior gun ammo.',targets:'max(10, native observed loaded magazine high-water ×3) per mode. The supplied client has no maximum-capacity table; partial pickup/reload counts are lower bounds and fuller loads can increase/reopen targets.',angles:'Shot count is independent of qualified angular groups. Unknown owner, stale/turning aim, transitional/mismatched ADS and ambiguous batch gun/discharge joins cannot create angle evidence.',scope:'No V54 log is requested or newly analyzed for this revision. User feedback and source-shaped tests guide the fixes; historical files remain exact.'}};
+fs.writeFileSync('docs/analysis/engine/v55-shot-mechanics.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({fields:fields.length,shotUses:shotUses.length,callbacks:callbacks.length}));
