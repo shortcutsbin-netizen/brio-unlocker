@@ -1,0 +1,15 @@
+# V57 short live procedure
+
+1. On Build Royale home, paste the complete `dist/brio-v57.min.js` once. Existing spread counts and angles are retained.
+2. In Extras → Modifiers, click **Set up normal test**. This enables Show bullet spread and the new **Safe-zone center direction** alongside the carried passive test profile. The previous settings backup remains; restore it afterward if desired. Do not turn on Hell for this pass.
+3. Open **SPREAD RECON** and resize its left edge as desired. Continue ordinary games, using the weapons/modes marked amber **ANGLES NEEDED**. No need to repeat already-green modes, count clips/shots, hunt rarities or deliberately hold fixed aim. Native freshness/turning filters may require further ordinary shots. Charge Rifle and Grenade Pistol require only their No ADS/shared spread row; no ADS run for either.
+4. In natural storm movement, observe the **purple center arrow**: it points to the destination center, not the nearest edge; hides when that center is on-screen; retains the destination while the zone moves. The blue edge arrow remains independent. Optional: toggle the center option off/on or change its swatch once to check restoration/color. No special travel/death/second-match chore.
+5. When pending angle rows are ready, or if a row remains stuck/marker or center arrow looks wrong, use **COPY RESULTS** once and upload the entire export to `logs/runs/v57-log.txt`. Report only visible exceptions, especially wrong mode, missing count/angles, wrong cone origin/axis/width or center destination. A normal shorter problem log is useful; do not keep replaying a stuck suite.
+
+The sidebar shows shot and angle completion separately. Every V56 applicable shot target is already met; V57 is collecting the missing angles, not resetting progress. Observed widths are empirical, not guaranteed maxima. Do not request a V54 rerun, PERF/Hell/map/cosmetic chores, another complete shot-target tour or ten ADS shots from a gun without distinct ADS spread.
+
+## Carried full surface
+
+All 32 prior regression configurations and three challenge configurations remain against source and actual minified payload: warning/reset/native slot geometry; cosmetics/roof/foliage; inventories/materials/size/caption/warnings; all Mask loot/build tiers; native HUD/damage/popup/progress/projectile gates; Hell locks/restoration; arrows/colors/loot/ammo/history/outlines; stats/endgame/browse; native descriptors/returns/exceptions; second Play/destroy/reinject; bounded discovery/cap/retirement/performance; long-match same-decoder recon; owner/marker/ammo/pellet/packet-order/deduplication/stale-context/storage guards. No silent manual pass is inferred.
+
+V57 adds log-derived hip-recoil and false ADS-acknowledgement angle acceptance, retained stale/transition/ambiguous rejection, single-spread exceptions and sampled-zero versus unknown, per-mode angular readiness, independent center/edge/color, moving destination, on-screen/stale camera, Hell/disable/Play/destroy and persisted progress. Fixtures prove wiring and work bounds; native appearance is live-pending. Existing contents/bot passive lanes remain bounded/unresolved.

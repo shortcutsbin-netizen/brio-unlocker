@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-12",
+  "artifacts": {
+    "src/brio.js": {
+      "bytes": 704616,
+      "sha256": "7852eb4902f5b1cc9a13742328921ea71a91a04a014e60f6fbdc12e452422c25"
+    },
+    "dist/brio-v57.min.js": {
+      "bytes": 325063,
+      "sha256": "14c7255c9146417e0679a7420a614a6208cefa69639eed97d7096e8773400dfd"
+    },
+    "logs/runs/v56-log.txt": {
+      "bytes": 17799726,
+      "sha256": "d95ddf5c66157e153286ae4fa76a6adbd0821984b802cb46fa9e76a02ac63cb7"
+    }
+  },
+  "tests": {
+    "cleanInstall": "npm ci passed",
+    "build": "npm run build passed",
+    "suite": "npm test passed",
+    "sourceRegressionConfigurations": 32,
+    "payloadRegressionConfigurations": 32,
+    "sourceChallengeConfigurations": 3,
+    "payloadChallengeConfigurations": 3,
+    "totalIntegrationExecutions": 70,
+    "preservedRecorderHelpers": 17,
+    "angularFilterDiff": "Only remove native steadying acknowledgement and irrelevant exception ADS transition; retain ambiguity/freshness/stability/alignment/ownership/switch/deduplication",
+    "payloadComments": 0,
+    "archiveEquality": true,
+    "historicalDocumentSuffixes": 6,
+    "vendorUnchanged": true,
+    "boundedWork": true
+  },
+  "limits": "Fixtures are not native pixel/live latency or server-maximum proof; missing angular modes need the next ordinary live pass."
+}

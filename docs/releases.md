@@ -1,3 +1,11 @@
+# V57 — 2026-10-12
+
+Current runnable payload: `dist/brio-v57.min.js`; readable source: `src/brio.js`; immutable source/payload: `versions/v57/`. [Findings](findings/v57-findings.md), [status](status/v57-status.md), [short procedure](test-procedures/v57-test-procedure.md), [validation](audits/v57-validation.md).
+
+Full V56 has all applicable shot targets but insufficient angles (13/44 ready). V57 fixes recoil-confused angle rejection without resetting counts, retires the Charge Rifle/Grenade Pistol ADS requirements, makes shot/angle readiness explicit and adds a purple projected safe-zone center arrow. Continue normal firing for pending angles, observe the center in natural storm movement, export full `logs/runs/v57-log.txt` when ready or something is stuck/wrong. All older explicit proofs/pending/denied decisions preserved. User authorizes scoped publication without repeated confirmation.
+
+---
+
 # V56 — 2026-10-12
 
 Presentation-only release: contiguous centered remote materials; resizable right recon sidebar that remains open across matches; whole-weapon both-mode completion marker. Exact V55 recorder/storage/scope preserved. Direct `dist/brio-v56.min.js`, frozen source/payload under `versions/v56/`; full collection ends with one `logs/runs/v56-log.txt` upload. Historical bytes retained.

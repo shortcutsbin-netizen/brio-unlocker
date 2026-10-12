@@ -1,5 +1,5 @@
-/* BRIO v56 maintenance map — 2026-10-12
- * V56 changes only remote material spacing and the resizable recon sidebar/completion presentation; V55 recording is user-confirmed and retained exactly; retains inventory/damage/performance repairs. User confirms build/object outline colors and stats baseline; changed routes remain live-pending.
+/* BRIO v57 maintenance map — 2026-10-12
+ * V57 repairs recoil-confused angle filtering, honors single-spread guns, separates shot/angle readiness and tests safe-zone center direction. Counts/storage remain; further angle recon is required by V56 evidence.
  * Hell is the composite title; saved goodFlippinLuck/noMinimap IDs remain compatible.
  * Damage rankings are unavailable; spread angle interpretation requires live calibration.
  * V49 user proves warnings (including selected-slot lift), transparent foliage and loot effect suppression.
@@ -31,8 +31,8 @@
  */
 (() => { /* BRIO block: startup — Own this injection; destroy prior releases before creating UI or native adapters. Saved choices survive; per-Play game state does not. */
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v56";
-    for (const k of [ K, "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
+    const W = window, D = document, K = "__brio_unlocker_v57";
+    for (const k of [ K, "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
         W[k]?.destroy?.();
     } catch (_) { /* BRIO fallback: startup — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -41,7 +41,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "56",
+        v: "57",
         log: [],
         errors: [],
         renderer: null,
@@ -113,7 +113,7 @@
      * Persistent gun type/ADS modes, quality-filtered server aim and scalar bins support empirical estimates without fake bounds.
      * Stats damage attribution is unavailable; NEVER attach nearby-player guesses to damage.
      */
-    const INDICATOR_COLORS={nearestPlayer:'#a81020',nearestChest:'#ffd21c',nearestAirdrop:'#f28b16',safeZoneIndicator:'#168cff',lootIndicator:'#ffd21c'};
+    const INDICATOR_COLORS={nearestPlayer:'#a81020',nearestChest:'#ffd21c',nearestAirdrop:'#f28b16',safeZoneIndicator:'#168cff',stormCenter:'#b578ff',lootIndicator:'#ffd21c'};
     const v55={deferred:new Set,perf:null,playerChecks:new WeakMap,outlineQueue:new Set,outlinePreparing:false,timer:0,zone:null,zoneAt:0,paths:new Map,lootUis:new Map,stats:null,post:null,postStyles:new Map,shotChecks:new Map,recon:{guns:Object.create(null),dirty:false,savedAt:-Infinity,version:0,storageError:false},reconSession:null,reconInput:{known:true,right:false,left:false,at:-Infinity,fireSerial:0},reconUi:null,reconRows:new Map,reconCatalog:"",reconResize:null,reconWidth:null,outlines:new Map,outlineFailures:new Set};
     /* BRIO: V55 performance telemetry. Only BRIO-owned callbacks are timed (one in64 calls);
      * no native RAF/Canvas/Array/protocol timing hook is installed. Per-phase histograms are capped64 keys.
@@ -241,6 +241,10 @@
         return v55.recon.guns[key];
     };
     const v55ReconTarget=/* BRIO expr V55: v55ReconTarget — Use max(10, learned native clip size times3), without a hidden sequence or angle requirement. */ gun=>Number.isInteger(gun?.clipSize)&&gun.clipSize>0?Math.max(10,gun.clipSize*3):null;
+    const v57SingleSpread=/* BRIO expr V57: v57SingleSpread — User-confirmed exceptions share one observed spread; keep old ADS records intact as history. */ weapon=>['charge rifle','grenade pistol'].includes(v55GunName(weapon));
+    const v57SpreadModes=/* BRIO expr V57: v57SpreadModes — Charge Rifle has no ADS, Grenade Pistol has no ADS spread change; other guns require independent evidence. */ weapon=>v57SingleSpread(weapon)?['hip']:['hip','ads'];
+    const v57AngleTarget=/* BRIO expr V57: v57AngleTarget — Keep the existing minimum of twelve or a small gun's shot target; completion concerns observations, never server limits. */ gun=>Math.min(12,v55ReconTarget(gun)||12);
+    const v57SpreadReady=/* BRIO expr V57: v57SpreadReady — Zero width is valid only with qualified samples; unknown widths remain unknown. */ (gun,mode)=>!!gun?.[mode]&&gun[mode].angleGroups>=v57AngleTarget(gun)&&Number.isFinite(gun[mode].maxAbsDegrees)&&gun[mode].maxAbsDegrees>=0&&gun[mode].maxAbsDegrees<60;
     const v55ReconEvaluate=gun=>{ /* BRIO block V55: v55ReconEvaluate — Recompute clip-based recording completion; angle sampling remains independent. */
         const target=v55ReconTarget(gun);for(const mode of ['hip','ads'])gun[mode].complete=target!=null&&gun[mode].groups>=target;
     };
@@ -307,7 +311,7 @@
     };
     const v55ReconInput=e=>{
         /* Passive input observation only: no preventDefault, event rewriting, clicks or input sends.
-         * Original decoded steadying is required; renderer true can be a hip-fire recoil animation. Blur/hidden invalidates state until a native input event.
+         * Native steadying/renderer true can be hip-fire recoil and never determine ADS or angle eligibility. Blur/hidden invalidates state until a native input event.
          * Same-state mouse moves return before DOM work; only transitions allocate/update context. */
         const input=v55.reconInput;if(e.type==='pagehide'||e.type==='blur'||e.type==='visibilitychange'&&D.hidden){ /* BRIO block V55: v55ReconInput — Observe native mouse transitions passively; never alter or synthesize input and invalidate blur state. */ v55ReconFinishGroup();v55ReconSave(true);input.known=false;input.right=false;input.left=false;input.releasedAt=null;input.at=performance.now();return;}
         if(!S.renderer||v55.stats?.finished)return;
@@ -318,9 +322,10 @@
         if(left&&!input.left){ /* BRIO block V55: v55ReconInput — Observe native mouse transitions passively; never alter or synthesize input and invalidate blur state. */ input.fireSerial++;input.releasedAt=null;}if(!left&&input.left){ /* BRIO block V55: v55ReconInput — Observe native mouse transitions passively; never alter or synthesize input and invalidate blur state. */ input.releasedAt=performance.now();input.releaseMode=input.right?'ads':'hip';}if(right!==input.right||!input.known)input.at=performance.now();input.right=right;input.left=left;input.known=true;
     };
     const v55ReconMode=()=>{
-        /* Held right-click is the requested ADS ground truth. Original steadying is retained as
-         * independent angle-quality evidence, never used to relabel hip-fire recoil as ADS. */
+        /* Held right-click is the requested ADS ground truth. Native steadying is retained diagnostically, never used to relabel or reject hip-fire recoil as ADS. */
         const input=v55.reconInput;if(!input.known)return null;
+        // V57: right-click cannot create a distinct ADS spread for these user-confirmed guns.
+        if(v57SingleSpread(v55.stats?.gunContext?.weapon||S.renderer?.['Åé']?.[S.renderer?.['ÈÆ']]?.type))return 'hip';
         if(!input.left&&input.releasedAt!=null&&performance.now()-input.releasedAt<=150)return input.releaseMode;
         return input.right?'ads':'hip';
     };
@@ -362,7 +367,7 @@
         const record=v55ReconRecord(native?'native shot':'ammo drop',units);if(record){ /* BRIO block V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ record.nativeMatched=true;record.markerCredits=native?1:0;record.ammoMatched=delta>0;session.batchShots.push(record);}
 
     };
-    const v55ReconReport=/* BRIO expr V55: v55ReconReport — Export anonymous persistent gun/mode aggregates and explicit estimation limits. */ ()=>({revision:SPREAD_RECON_REVISION,threshold:{formula:'max(10, native observed clip size × 3)',minimumShots:10,extraSequenceRequirement:false},guns:v55.recon.guns,diagnostics:v55.reconSession?{nativeShots:v55.reconSession.nativeShots,ammoEvents:v55.reconSession.ammoEvents,ownedProjectiles:v55.reconSession.ownedProjectiles,correlated:v55.reconSession.correlated,duplicates:v55.reconSession.duplicates,unclassified:v55.reconSession.unclassified}:null,storageAvailable:!v55.recon.storageError,scope:'shot progress is separate from qualified angular evidence; input-held ADS/No ADS; clip is native loaded high-water and can increase after a fuller reload; no server-maximum claim'});
+    const v55ReconReport=/* BRIO expr V55: v55ReconReport — Export anonymous persistent gun/mode aggregates and explicit estimation limits. */ ()=>({revision:SPREAD_RECON_REVISION,anglePolicy:'v57-input-not-recoil; unchanged freshness/alignment/ambiguity gates',singleSpreadWeapons:['charge rifle','grenade pistol'],threshold:{formula:'max(10, native observed clip size × 3)',minimumShots:10,extraSequenceRequirement:false},guns:v55.recon.guns,diagnostics:v55.reconSession?{nativeShots:v55.reconSession.nativeShots,ammoEvents:v55.reconSession.ammoEvents,ownedProjectiles:v55.reconSession.ownedProjectiles,correlated:v55.reconSession.correlated,duplicates:v55.reconSession.duplicates,unclassified:v55.reconSession.unclassified}:null,storageAvailable:!v55.recon.storageError,scope:'shot progress is separate from qualified angular evidence; input-held ADS/No ADS except user-confirmed single-spread guns; native steadying is recoil, not ADS acknowledgement; clip is native loaded high-water and can increase after a fuller reload; no server-maximum claim'});
     const RECON_SIDEBAR_KEY='brio_spread_recon_sidebar';
     const v56ReconSidebarLayout=()=>{
         /* Width is a separate view preference; viewport clamping never writes recording/settings data.
@@ -394,7 +399,7 @@
         W.addEventListener('pointermove',v56ReconResizeMove,{capture:true,passive:false});for(const event of ['pointerup','pointercancel','blur'])W.addEventListener(event,v56ReconResizeEnd,true);
     };
     const v55ReconShow=()=>{
-        /* V56 changes presentation only. Preserve the existing V55 storage/revision and aggregates;
+        /* V57 retains the V56 sidebar and V55 storage/revision/aggregates; readiness now separates shots from angles.
          * this readonly sidebar can remain open across ordinary Play without arming/pausing recon. */
         if(!v55.reconUi){ /* BRIO block V55: v55ReconShow — Open the optional read-only checklist with native inventory art; no measurement arming action. */
             const host=D.createElement('section');host.dataset.brioRecon='';host.setAttribute('aria-label','Spread recon sidebar');Object.assign(host.style,{position:'fixed',top:'0px',right:'0px',bottom:'0px',zIndex:'2147483647',boxSizing:'border-box',background:'#101923',color:'#eef6ff',borderLeft:'1px solid #7594b5',padding:'16px 12px 12px 18px',overflow:'auto',font:'14px Arial',boxShadow:'-8px 0 28px #0009'});
@@ -420,24 +425,35 @@
                 for(const mode of ['hip','ads']){ /* BRIO block V55: v55ReconChecklist — Update only visible checklist cells, with actual progress/completion and catalog changes. */ const td=D.createElement('td');td.style='padding:10px;border-bottom:1px solid #33465b;vertical-align:middle';const box=D.createElement('input');box.type='checkbox';box.disabled=true;box.style='all:initial;appearance:auto;display:inline-block;position:static;float:none;margin:0 8px 0 0;vertical-align:middle;width:16px;height:16px;accent-color:#5cda9e';box.setAttribute('aria-label',weapon+' '+(mode==='ads'?'ADS':'No ADS')+' calibrated');const text=D.createElement('span');text.style='white-space:pre-line;color:#d4e6fb;font:13px Arial';td.append(box,text);tr.appendChild(td);row[mode]={box,text};}table.appendChild(tr);v55.reconRows.set(weapon,row);
             }
         }
-        let checked=0,total=0,completeWeapons=0;for(const [weapon,row]of v55.reconRows)for(const mode of ['hip','ads']){ /* BRIO block V55: v55ReconChecklist — Update only visible checklist cells, with actual progress/completion and catalog changes. */
-            const gun=v55.recon.guns[weapon],target=v55ReconTarget(gun),cell=gun?.[mode],utility=false,done=!!cell?.complete;
-            if(mode==='hip'){ /* BRIO block V56: v55ReconChecklist — Whole-weapon completion is derived from both existing mode flags; never write recording state. */ const complete=!!gun?.hip.complete&&!!gun?.ads.complete,one=!!gun?.hip.complete||!!gun?.ads.complete,active=(gun?.hip.groups||0)+(gun?.ads.groups||0)>0;if(complete)completeWeapons++;row.tr.dataset.weaponComplete=String(complete);row.tr.style.background=complete?'#15382b':'';row.status.textContent=complete?'✓ COMPLETE':one?'1 OF 2 MODES COMPLETE':active?'IN PROGRESS':'NOT STARTED';row.status.style.color=complete?'#78f2b3':one?'#ffd487':'#aabed2';}if(!utility){ /* BRIO block V55: v55ReconChecklist — Update only visible checklist cells, with actual progress/completion and catalog changes. */ total++;if(done)checked++;}row[mode].box.checked=done;row[mode].box.hidden=utility;row[mode].box.style.display=utility?'none':'inline-block';
-            const text=(done?'Recorded · ':'')+(cell?.groups||0)+' / '+(target??'—')+' shots\n'+(gun?.clipSize?'Clip '+gun.clipSize+' · ×3, minimum 10':'Clip size pending native ammo')+'\n'+(cell?.angleGroups||0)+' angle samples';
-            if(row[mode].text.textContent!==text)row[mode].text.textContent=text;
+        let checked=0,total=0,completeWeapons=0,readyWeapons=0;
+        for(const [weapon,row]of v55.reconRows){
+            /* Count only applicable modes; preserved historical ADS records do not become invented hip evidence. */
+            const gun=v55.recon.guns[weapon],target=v55ReconTarget(gun),modes=v57SpreadModes(weapon),complete=modes.every(/* BRIO expr V57: v55ReconChecklist — Show shot targets separately from qualified angular evidence; require only applicable gun modes; preserve progress. */ mode=>!!gun?.[mode]?.complete),ready=modes.every(/* BRIO expr V57: v55ReconChecklist — Show shot targets separately from qualified angular evidence; require only applicable gun modes; preserve progress. */ mode=>v57SpreadReady(gun,mode)),one=modes.some(/* BRIO expr V57: v55ReconChecklist — Show shot targets separately from qualified angular evidence; require only applicable gun modes; preserve progress. */ mode=>!!gun?.[mode]?.complete),active=modes.some(/* BRIO expr V57: v55ReconChecklist — Show shot targets separately from qualified angular evidence; require only applicable gun modes; preserve progress. */ mode=>(gun?.[mode]?.groups||0)>0);
+            if(complete)completeWeapons++;if(ready)readyWeapons++;
+            row.tr.dataset.weaponComplete=String(complete);row.tr.dataset.angleReady=String(ready);row.tr.style.background=ready?'#15382b':complete?'#3b301c':'';
+            row.status.textContent=ready?(complete?'✓ SHOTS COMPLETE · OBSERVED WIDTH READY':'OBSERVED WIDTH READY · SHOTS PENDING'):complete?'SHOTS COMPLETE · ANGLES NEEDED':one?'1 OF 2 SHOT TARGETS COMPLETE':active?'IN PROGRESS':'NOT STARTED';row.status.style.color=ready?'#78f2b3':complete||one?'#ffd487':'#aabed2';
+            for(const mode of ['hip','ads']){
+                /* Readiness never resets counts or requires a fake ADS run for either exception. */
+                const cell=gun?.[mode],applicable=modes.includes(mode),done=applicable&&!!cell?.complete;
+                if(applicable){ /* BRIO block V57: v55ReconChecklist — Show shot targets separately from qualified angular evidence; require only applicable gun modes; preserve progress. */ total++;if(done)checked++;}row[mode].box.checked=done;row[mode].box.hidden=!applicable;row[mode].box.style.display=applicable?'inline-block':'none';
+                const angleReady=v57SpreadReady(gun,mode),width=cell?.angleGroups>0?' · observed ±'+cell.maxAbsDegrees.toFixed(2)+'°':' · width unknown';
+                const text=!applicable?(weapon==='charge rifle'?'No ADS mode':'Same spread as No ADS'):(done?'Shots recorded · ':'')+(cell?.groups||0)+' / '+(target??'—')+' shots\n'+(gun?.clipSize?'Clip '+gun.clipSize+' · ×3, minimum 10':'Clip size pending native ammo')+'\n'+(angleReady?'✓ Observed width ready: ':'ANGLES NEEDED: ')+(cell?.angleGroups||0)+' / '+v57AngleTarget(gun)+' angle samples'+width;
+                if(row[mode].text.textContent!==text)row[mode].text.textContent=text;
+            }
         }
-        const message=completeWeapons+' / '+v55.reconRows.size+' weapons complete · '+checked+' / '+total+' modes recorded. Target per mode: max(10, clip size × 3). Clip size learns from native loaded rounds; partial pickups are a lower bound and fuller reloads update the target. Fire normally without/with held right-click. Native shots count even when angle data is unavailable. Recording completion does not establish a spread maximum.'+(v55.recon.storageError?' Storage unavailable: keep this page open and export results to preserve progress.':'');
+        const message=completeWeapons+' / '+v55.reconRows.size+' weapons have complete shot targets · '+readyWeapons+' / '+v55.reconRows.size+' have observed widths ready · '+checked+' / '+total+' applicable modes recorded. Shot target: max(10, native observed clip × 3); fuller reloads can raise it. Angle evidence is separate: continue normal firing for amber ANGLES NEEDED rows. Charge Rifle has no ADS; Grenade Pistol shares No ADS spread. Observed widths are empirical, not server maxima.'+(v55.recon.storageError?' Storage unavailable: keep this page open and export results to preserve progress.':'');
         const note=host.querySelector('[data-recon-summary]');if(note.textContent!==message)note.textContent=message;
+
     };
     const v55ReconBadgeState=()=>{ /* BRIO block V55: v55ReconBadgeState — Report current recording acceptance, rejection and gun/mode completion above the local player. */
         const r=S.renderer,weapon=v55GunName(v55.stats?.gunContext?.weapon||r?.['Åé']?.[r?.['ÈÆ']]?.type),mode=v55ReconMode(),now=performance.now(),session=v55.reconSession;
         if(!v55ReconEligible(weapon))return {top:'Spread recon · hold an active gun',bottom:'Not a spread-test weapon',color:'#b4c4d9'};
-        const gun=v55.recon.guns[weapon],cell=gun?.[mode],both=!!gun?.ads.complete&&!!gun?.hip.complete,heading=weapon+' · '+(mode==='ads'?'ADS':mode==='hip'?'No ADS':'Input unknown')+' · '+(both?'gun recorded':cell?.complete?'mode recorded':(cell?.groups||0)+'/'+(v55ReconTarget(gun)??'—')+' shots');
+        const gun=v55.recon.guns[weapon],cell=gun?.[mode],both=v57SpreadModes(weapon).every(/* BRIO expr V57: v55ReconBadgeState — Report current recording acceptance, rejection and gun/mode completion above the local player. */ mode=>!!gun?.[mode]?.complete),heading=weapon+' · '+(v57SingleSpread(weapon)?'Single spread':mode==='ads'?'ADS':mode==='hip'?'No ADS':'Input unknown')+' · '+(both?'gun recorded':cell?.complete?'mode recorded':(cell?.groups||0)+'/'+(v55ReconTarget(gun)??'—')+' shots');
         if(v55.recon.storageError)return {top:heading,bottom:'Recording · progress not saved',color:'#ffc56b'};
         if(session&&now-session.lastAccepted<800&&session.lastAccepted>=session.lastRejected&&session.lastWeapon===weapon&&session.lastMode===mode)return {top:heading,bottom:'● Recording shots',color:'#65edac'};
         if(session&&now-session.lastRejected<1200&&session.lastWeapon===weapon)return {top:heading,bottom:'Not counted · '+session.reason,color:'#ffca77'};
         if(!deep.restore)return {top:heading,bottom:'Waiting for native recorder',color:'#ffca77'};
-        return {top:heading,bottom:mode?cell?.complete?'✓ Recorded · still monitoring':'Ready · native shots count':'Waiting for ADS input',color:cell?.complete?'#65edac':'#d2eaff'};
+        return {top:heading,bottom:mode?v57SpreadReady(gun,mode)?'Observed width ready · monitoring':cell?.complete?'Shots recorded · angles needed':'Ready · native shots count':'Waiting for ADS input',color:cell?.complete?'#65edac':'#d2eaff'};
     };
     const v55Muzzle=r=>{
         /* Source-backed flash center is a child of held art, then hand/physical/root containers.
@@ -587,8 +603,8 @@
              * No inferred scalar conversion: use a sufficiently sampled current bin or mode envelope.
              * Rarity is pooled. Parent rotation/camera transform is applied exactly once. */
             const e=exFast(),slot=r['Åé']?.[r['ÈÆ']],mode=v55ReconMode(),cell=v55.recon.guns[v55GunName(slot?.type)]?.[mode],muzzle=v55Muzzle(r);
-            if(!e.showBulletSpread||e.goodFlippinLuck||r['èÂ']||!cell||cell.angleGroups<Math.min(12,v55ReconTarget(v55.recon.guns[v55GunName(slot?.type)])||12)||!muzzle||!Number.isFinite(s)||s<=0)return;
-            const bin=cell.bins[String(Math.round((Number(r['ËÂ'])||0)*2)/2)],degrees=bin?.groups>=12?bin.maxAbsDegrees:cell.maxAbsDegrees;
+            if(!e.showBulletSpread||e.goodFlippinLuck||r['èÂ']||!v57SpreadReady(v55.recon.guns[v55GunName(slot?.type)],mode)||!muzzle||!Number.isFinite(s)||s<=0)return;
+            const bin=cell.bins[String(Math.round((Number(r['ËÂ'])||0)*2)/2)],degrees=bin?.groups>=v57AngleTarget(v55.recon.guns[v55GunName(slot?.type)])?bin.maxAbsDegrees:cell.maxAbsDegrees;
             if(!Number.isFinite(degrees)||degrees>=60)return;const half=degrees*Math.PI/180,length=96/s,x=muzzle.x/s,y=muzzle.y/s;
             ctx.save();ctx.strokeStyle='#72caff';ctx.lineWidth=1.5/s;ctx.beginPath();ctx.moveTo(x+Math.cos(-half)*length,y+Math.sin(-half)*length);ctx.lineTo(x,y);ctx.lineTo(x+Math.cos(half)*length,y+Math.sin(half)*length);ctx.stroke();ctx.restore();
         });
@@ -625,6 +641,12 @@
         if(e.safeZoneIndicator&&me&&v55.zone&&performance.now()-v55.zoneAt<900000){ /* BRIO block V52: v55Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */
             const p=v55SafePoint(v55.zone,me),target=p?{'â':{'ë':{'É':p.x,'Ä':p.y}}}:null;showIndicator('safeZone','safeZoneUi',target,'',indicatorColor(e,'safeZoneIndicator'),110);
         }else if(S.safeZoneUi)S.safeZoneUi.style.display='none';
+        // V57: center is distinct from the nearest square edge. Reuse the same validated
+        // projected target, camera projection and 500ms feature tick; no new discovery/timer.
+        if(e.stormCenter&&me&&!v55.stats?.finished&&v55.zone&&performance.now()-v55.zoneAt<900000){
+            /* Center assistance hides on-screen/stale/no target through the existing indicator contract. */
+            const target={'â':{'ë':{'É':v55.zone.x,'Ä':v55.zone.y}}};showIndicator('stormCenter','stormCenterUi',target,'',indicatorColor(e,'stormCenter'),165);
+        }else if(S.stormCenterUi)S.stormCenterUi.style.display='none';
         const selected=new Set(e.lootChoices||[]),matches=e.lootIndicator&&me?collectWorld().filter(/* BRIO expr V52: v55Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */ o=>o.type==='gun'&&validTarget(o)&&selected.has(v55GroundType(o)+':'+o['äã'])&&!targetOnScreen(o)):[];
         matches.sort((a,b)=>{ /* BRIO block V52: v55Indicators — Use current targets, bounded DOM arrows and source-backed square zone geometry; suppress stale arrows. */ const p=worldPos(a),q=worldPos(b);return Math.hypot(p.x-me.x,p.y-me.y)-Math.hypot(q.x-me.x,q.y-me.y);});
         /* Closest12 selected pickups have separate plain arrows+inventory artwork; cap DOM/update work.
@@ -685,7 +707,7 @@
     };
     const v55ShotCompare=(p,localId)=>{
         /* Owner pi is required; never attribute remote/unknown bullets by proximity or family name.
-         * Native firing progress is already counted. Join one nearby discharge where unambiguous,
+         * Native firing progress is already counted. Native steadying is recoil, never an ADS acknowledgement. Join one nearby discharge where unambiguous,
          * otherwise group projectiles as a conservative fallback and expose angle rejection reasons. */
         if(v55PacketValue(p,'pi')!==localId)return;const r=S.renderer,session=v55.reconSession,context=v55.stats?.gunContext;if(!r||!session||!context)return;
         const rotation=p.p?.[4],weapon=context.weapon,server=v55.stats?.serverAim,mode=v55ReconMode(),now=performance.now(),input=v55.reconInput;
@@ -702,7 +724,9 @@
         }group.at=now;group.projectiles++;
         let reason=null;
         if(session.batchGunChange)reason='gun changed in native batch';else if(near.length>1||session.batchShots.length>1)reason='multiple discharges in packet window';
-        else if(now-input.at<100)reason='ADS transition';else if(typeof v55.stats.nativeSteadying==='boolean'&&v55.stats.nativeSteadying!==input.right)reason='native ADS acknowledgement differs';
+        else if(!v57SingleSpread(weapon)&&now-input.at<100)reason='ADS transition';
+        // V56 log: steadying is also set by native hip-fire recoil. It is not an ADS
+        // acknowledgement. Input, aim freshness/stability, gun stability and alignment still gate angles.
         else if(!server||now-server.at>150)reason='aim packet stale';else if(now-server.stableSince<80)reason='aim turning';
         else if(now-context.stableSince<150||server.weapon!==weapon)reason='gun switching';
         else if(!Number.isFinite(r['â']?.A)||Math.abs(v55AngleDifference(r['â'].A,server.angle))>Math.PI/180)reason='aim not aligned';
@@ -784,7 +808,7 @@
         v55ReconFinishGroup();v55ReconSave(true);v55.reconSession=start?{pending:null,seen:new Map,nativePackets:new WeakSet,shots:[],batchShots:[],nativeShots:0,ammoEvents:0,ownedProjectiles:0,correlated:0,duplicates:0,unclassified:0,lastGroup:null,lastAccepted:-Infinity,lastRejected:-Infinity,reason:'',lastWeapon:'',lastMode:null}:null;v55.reconInput={known:true,right:false,left:false,at:performance.now(),fireSerial:0};
         v55PerfReset(start);v55.playerChecks=new WeakMap;v55.deferred=new Set;v55.outlineQueue.clear();packetFieldCache.clear();packetFieldRevision=-1;
         clearInterval(v55.timer);v55.timer=0;v55.zone=null;v55.zoneState=null;v55.zoneAt=0;v55.shotChecks=new Map;v55.outlines.clear();v55.outlineFailures.clear();S.outlineMaskLogged=false;v55.paths.clear();
-        for(const u of v55.lootUis.values())u.remove();v55.lootUis.clear();if(S.safeZoneUi)S.safeZoneUi.style.display='none';
+        for(const u of v55.lootUis.values())u.remove();v55.lootUis.clear();if(S.safeZoneUi)S.safeZoneUi.style.display='none';if(S.stormCenterUi)S.stormCenterUi.style.display='none';
         v55.post?.remove();v55.post=null;for(const [node,[value,priority]]of v55.postStyles)node.style.setProperty('display',value,priority);v55.postStyles.clear();
         v55.stats=start?{localId:null,names:new Map,eliminated:[],hpLoss:0,shieldLoss:0,calibrations:new Set,ownProjectiles:0,weaponSeconds:new Map,distance:0,teleports:0,position:null,sampleAt:performance.now(),finished:false}:null;
         if(start)v55.timer=setInterval(v55Sample,500);
@@ -995,7 +1019,7 @@
     };
     const STATUS = {
         green: new Set([ "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventoryAmmo", "inventorySize", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "nearestPlayer", "nearestChest", "nearestAirdrop", "nearestPlayerName", "noChestsVisible", "monochrome", "lowMatsWarning", "lowAmmoWarning", "transparentFoliage", "noMinimap" ]),
-        yellow: new Set([ "showBulletSpread","buildHealth","objectHealth","safeZoneIndicator","lootIndicator","highlightOwnedAmmo","longerBulletTrails","noDamageDirection","noInfoPopups","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons","noStormTimer", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "highContrastPlayers", "playersInvisible", "lootInvisible", "buildsInvisible", "noCrosshair", "noInventoryHud", "invisibleStorm", "noHealthShieldHud", "goodFlippinLuck", "inventorySlots", "inventoryMaterials" ])
+        yellow: new Set([ "showBulletSpread","buildHealth","objectHealth","safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails","noDamageDirection","noInfoPopups","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons","noStormTimer", "screenChests", "screenAirdrops", "screenFishing", "identifyBots", "highContrastPlayers", "playersInvisible", "lootInvisible", "buildsInvisible", "noCrosshair", "noInventoryHud", "invisibleStorm", "noHealthShieldHud", "goodFlippinLuck", "inventorySlots", "inventoryMaterials" ])
     }, statusOf = /* BRIO expr: statusOf — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ id => STATUS.yellow.has(id) ? "yellow" : STATUS.green.has(id) ? "green" : "red";
     const style = D.createElement("style");
     style.textContent = `[data-brio-mono-page] canvas:not(#playerPreview):not([data-brio-mono]){filter:grayscale(1)!important}#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioThresholds{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;padding:6px 10px 10px 34px;border-bottom:1px solid #555}.brioThresholds fieldset{display:flex;align-items:center;flex:0 0 auto;gap:8px;border:0;margin:0;padding:2px 0;min-width:0}.brioThresholds fieldset:disabled{opacity:.4}.brioThresholds fieldset label{display:flex;flex:0 0 auto;flex-direction:row;align-items:center;gap:4px;font-size:11px;white-space:nowrap}.brioThresholds input{width:56px;box-sizing:border-box;background:#111;color:#fff;border:1px solid #777;padding:4px}.brioThresholds input:disabled{cursor:not-allowed}.brioThresholds button{white-space:nowrap}.brioTier{display:flex;align-items:center;gap:12px;padding:6px 10px 10px 34px;border-bottom:1px solid #333}.brioModal :disabled{cursor:not-allowed}.brioOpt.locked{opacity:.55}.brioLockNote{padding:8px;color:#ffd21c}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
@@ -1212,8 +1236,8 @@
             ["flashlightMode","Flashlight mode","planned; visual-only, excluded from combined challenge",false,"visual"],
             ["goodFlippinLuck","Hell","all gameplay challenges, highest tiers; every modifier locked off"]
         ],
-        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "always-visible contents above detected containers: unresolved" ], [ "screenAirdrops", "Screen airdrops", "always-visible contents above detected airdrops: unresolved" ], [ "screenFishing", "Screen fishing spots", "always-visible contents above detected fishing spots: unresolved" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "transparentFoliage", "Transparent foliage", "canopy opacity 25% · proven" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "planned" ], [ "stormDistance", "Storm-edge distance", "planned" ],
-            ["showBulletSpread","Show bullet spread","observed gun/ADS envelope; recording targets use clip × 3 (minimum 10), no guaranteed maximum"],
+        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "always-visible contents above detected containers: unresolved" ], [ "screenAirdrops", "Screen airdrops", "always-visible contents above detected airdrops: unresolved" ], [ "screenFishing", "Screen fishing spots", "always-visible contents above detected fishing spots: unresolved" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "transparentFoliage", "Transparent foliage", "canopy opacity 25% · proven" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "purple off-screen arrow to projected safe-zone center; target retained while moving" ], [ "stormDistance", "Storm-edge distance", "planned" ],
+            ["showBulletSpread","Show bullet spread","observed widths still collecting; shot targets and angle readiness are separate; no guaranteed maximum"],
             ["buildHealth","Build health outlines","green >75%; yellow >50%; orange >25%; red ≤25%"],
             ["objectHealth","Breakable object health outlines","same bands; includes vehicles"],
             ["safeZoneIndicator","Nearest safe-zone edge","blue by default; distance built in; target zone during movement"],
@@ -1223,7 +1247,7 @@
     };
     // V50 flags distinguish normal-profile switches from challenges to cycle; no impossible all-on requirement.
     // Warning decisions/foliage/slot-border motion are PROVEN. Only their new reset buttons get UI-check badges.
-    const REQUIRED_TESTS = ["screenChests","screenAirdrops","screenFishing","identifyBots","inventorySlots","inventoryMaterials","nearestPlayer","nearestChest","nearestAirdrop","showBulletSpread","buildHealth","objectHealth","safeZoneIndicator","lootIndicator","highlightOwnedAmmo","longerBulletTrails"],
+    const REQUIRED_TESTS = ["screenChests","screenAirdrops","screenFishing","identifyBots","inventorySlots","inventoryMaterials","nearestPlayer","nearestChest","nearestAirdrop","showBulletSpread","buildHealth","objectHealth","safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails"],
         CHALLENGE_TESTS = ["playersInvisible","lootInvisible","buildsInvisible","noMinimap","noCrosshair","noInventoryHud","invisibleStorm","noHealthShieldHud","goodFlippinLuck","noDamageDirection","noInfoPopups","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons","noStormTimer"];
     /* BRIO: nativeScanNeeded (V50)
      * Reuse the existing3000-node/second scene scanner even when the composite disables every modifier.
@@ -1231,7 +1255,7 @@
      */
     const nativeScanNeeded = /* BRIO expr: nativeScanNeeded — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ e => !!e.permanentMeteor || !!e.transparentRoofs || !!e.lowMatsWarning || !!e.lowAmmoWarning ||
         !!e.inventorySlots || !!e.inventoryMaterials || !!e.inventoryAmmo || !!e.allTrailsInvisible ||
-        ["showBulletSpread","buildHealth","objectHealth","safeZoneIndicator","lootIndicator","highlightOwnedAmmo","longerBulletTrails"].some(/* BRIO expr V52: nativeScanNeeded — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ id=>!!e[id]) || CHALLENGE_TESTS.some(/* BRIO expr: nativeScanNeeded / CHALLENGE_TESTS.some callback — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ id => !!e[id]);
+        ["showBulletSpread","buildHealth","objectHealth","safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails"].some(/* BRIO expr V52: nativeScanNeeded — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ id=>!!e[id]) || CHALLENGE_TESTS.some(/* BRIO expr: nativeScanNeeded / CHALLENGE_TESTS.some callback — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ id => !!e[id]);
     const /* BRIO: renderWarningThresholds (V50; controls/reset live-pending, decisions proven)
      * V49 inline child row directly under each warning option, like nearest-player name under its indicator.
      * Each group stays on one nonwrapping horizontal row; all11 fields remain labeled and persisted.
@@ -1306,7 +1330,7 @@
     const modifierRows=()=>{
         /* BRIO: modifierRows V52 — render groups from stable registry IDs, minimum three real entries.
          * Keep the registry unchanged for saved settings/Hell derivation. Two-member groups join Miscellaneous. */
-        const definitions=[['Indicators',['nearestPlayer','nearestPlayerName','nearestChest','nearestAirdrop','safeZoneIndicator','lootIndicator']],['Warnings',['lowHealthWarning','lowAmmoWarning','lowMatsWarning']],['Player inventories',['inventorySlots','inventoryMaterials','inventoryAmmo','inventorySize']],['Content screening',['screenChests','screenAirdrops','screenFishing']],['Player information',['healthBars','numericHealthShield','playerNames','identifyBots','highContrastPlayers']],['World appearance',['transparentRoofs','transparentFoliage','buildHealth','objectHealth']]],used=new Set,rows=[];
+        const definitions=[['Indicators',['nearestPlayer','nearestPlayerName','nearestChest','nearestAirdrop','safeZoneIndicator','stormCenter','lootIndicator']],['Warnings',['lowHealthWarning','lowAmmoWarning','lowMatsWarning']],['Player inventories',['inventorySlots','inventoryMaterials','inventoryAmmo','inventorySize']],['Content screening',['screenChests','screenAirdrops','screenFishing']],['Player information',['healthBars','numericHealthShield','playerNames','identifyBots','highContrastPlayers']],['World appearance',['transparentRoofs','transparentFoliage','buildHealth','objectHealth']]],used=new Set,rows=[];
         for(const [title,ids]of definitions){ /* A group counts modifiers, not headings or subordinate name controls. */ const members=EXTRA.modifiers.filter(/* BRIO expr V52: modifierRows — Group stable modifier IDs into sections of at least three, with remaining IDs in Miscellaneous. */ r=>r[0]&&ids.includes(r[0]));if(members.filter(/* BRIO expr V52: modifierRows — Group stable modifier IDs into sections of at least three, with remaining IDs in Miscellaneous. */ r=>r[0]!=='nearestPlayerName').length<3)continue;rows.push([null,title,'']);for(const member of members){ /* BRIO block V52: modifierRows — Group stable modifier IDs into sections of at least three, with remaining IDs in Miscellaneous. */ used.add(member[0]);rows.push(member);}}
         rows.push([null,'Miscellaneous','']);rows.push(...EXTRA.modifiers.filter(/* BRIO expr V52: modifierRows — Group stable modifier IDs into sections of at least three, with remaining IDs in Miscellaneous. */ r=>r[0]&&!used.has(r[0])));return rows;
     };
@@ -3545,7 +3569,7 @@
         reconNow.captures = 0;
         S.botWatch.clear(); S.botLogged.clear(); botAuditSeen.clear(); botAuditUntil = 0;
         S.manualCopy = false;
-        for (const key of ["nearestUi", "chestUi", "airdropUi"]) if (S[key]) S[key].style.display = "none";
+        for (const key of ["nearestUi", "chestUi", "airdropUi", "stormCenterUi"]) if (S[key]) S[key].style.display = "none";
         stopCapture("rearm");
         restoreArrays();
         S.renderer = S.native = S.rendererArray = null;
@@ -3714,7 +3738,7 @@
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
     // V50 reopens the SAME Extras modal during play, including from the minimized terminal. Native home
     // buttons disappear in a match; a reachable control is necessary for tier cycling/preset restoration.
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v56</b><button data-a="extras">EXTRAS</button><button data-a="recon">SPREAD RECON</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v57</b><button data-a="extras">EXTRAS</button><button data-a="recon">SPREAD RECON</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     v55ReconLoad();S.performanceCheck=v55PerfStart;S.spreadRecon=v55ReconReport;for(const event of ['mousedown','mouseup','mousemove','blur','pagehide'])W.addEventListener(event,v55ReconInput,{capture:true,passive:true});D.addEventListener('visibilitychange',v55ReconInput,{passive:true});
@@ -3811,7 +3835,7 @@
         for (const n of [ ...S.trackNodes.values(), ...S.invNodes.values() ]) try { /* BRIO guarded: S.destroy — Keep the existing exception boundary for S.destroy. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
             n.parent?.remove?.(n);
         } catch (_) { /* BRIO fallback: S.destroy — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
-        for (const u of [ S.nearestUi, S.chestUi, S.airdropUi ]) u?.remove?.();
+        for (const u of [ S.nearestUi, S.chestUi, S.airdropUi, S.stormCenterUi ]) u?.remove?.();
         for (const id of [ "loggedInLocker", "loggedInShop" ]) { /* BRIO loop: S.destroy — Iterate [ "loggedInLocker", "loggedInShop" ]. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
             const e = D.getElementById(id), b = S.bak[id];
             if (e && b) { /* BRIO branch: S.destroy — Accept e && b. Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
@@ -4058,7 +4082,7 @@
                     if (["waiting", "moving"].includes(circleState)) botPhase("native circle state=" + circleState);
                     if (circleState === "lobby" && deep.circleState && deep.circleState !== "lobby") { /* BRIO branch: incomingProbe — Accept circleState === "lobby" && deep.circleState && deep.circleState !== "lobby". Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
                         restoreMarkerHolds();
-                        for (const key of ["nearestUi","chestUi","airdropUi"]) if (S[key]) S[key].style.display = "none";
+                        for (const key of ["nearestUi","chestUi","airdropUi","stormCenterUi"]) if (S[key]) S[key].style.display = "none";
                     }
                     deep.circleState = circleState;
                 }
