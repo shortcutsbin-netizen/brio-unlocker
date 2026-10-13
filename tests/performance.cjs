@@ -13,5 +13,5 @@ function measure(file,current){const names=['gateAnchor','restoreNativeGate','re
  return {file,attempts:64,activeNodes:4096,membershipChecks,retirementVisits:current?ctx.v55.perf.retirementVisits:null,overflowAdmissionMs:ms};
 }
 const baseline=measure('versions/v52/brio.js',false),current=measure('src/brio.js',true);assert(baseline.membershipChecks>=4096*64);
-const report={date:'2026-10-12',baseline,current,assertions:'fixed visit budget; no full sweep on every rejected high-occupancy node; native branch count preserved',limits:'single synthetic Node run; elapsed values depend on machine and do not prove live-game latency'};
-fs.mkdirSync('docs/audits',{recursive:true});if(process.argv.includes('--record'))fs.writeFileSync('docs/audits/v57-performance-benchmark.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+const report={date:'2026-10-13',baseline,current,assertions:'fixed visit budget; no full sweep on every rejected high-occupancy node; native branch count preserved',limits:'single synthetic Node run; elapsed values depend on machine and do not prove live-game latency'};
+fs.mkdirSync('docs/audits',{recursive:true});if(process.argv.includes('--record'))fs.writeFileSync('docs/audits/v58-performance-benchmark.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

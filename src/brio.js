@@ -1,5 +1,5 @@
-/* BRIO v57 maintenance map — 2026-10-12
- * V57 repairs recoil-confused angle filtering, honors single-spread guns, separates shot/angle readiness and tests safe-zone center direction. Counts/storage remain; further angle recon is required by V56 evidence.
+/* BRIO v58 maintenance map — 2026-10-12
+ * V58 targets only Bolt/Heavy Sniper ADS gaps with primitive bounded angle feedback; unchanged firing/quality thresholds/storage. Contents screening is next after spread validation.
  * Hell is the composite title; saved goodFlippinLuck/noMinimap IDs remain compatible.
  * Damage rankings are unavailable; spread angle interpretation requires live calibration.
  * V49 user proves warnings (including selected-slot lift), transparent foliage and loot effect suppression.
@@ -31,8 +31,8 @@
  */
 (() => { /* BRIO block: startup — Own this injection; destroy prior releases before creating UI or native adapters. Saved choices survive; per-Play game state does not. */
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v57";
-    for (const k of [ K, "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
+    const W = window, D = document, K = "__brio_unlocker_v58";
+    for (const k of [ K, "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
         W[k]?.destroy?.();
     } catch (_) { /* BRIO fallback: startup — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -41,7 +41,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "57",
+        v: "58",
         log: [],
         errors: [],
         renderer: null,
@@ -299,11 +299,27 @@
         session.shots.push(record);while(session.shots.length>32||session.shots[0]&&now-session.shots[0].at>250)session.shots.shift();
         v55ReconCredit(record,units);return record;
     };
+    const v58AngleFeedback=(g,cell)=>{
+        /* V58: one primitive last outcome and at most24 focused attempts per match. No objects/IDs,
+         * input sending or quality relaxation; accepted zero degrees is still a qualified sample. */
+        const session=v55.reconSession;if(!session)return;
+        session.angleFeedback={weapon:g.weapon,mode:g.mode,accepted:g.accepted>0,reason:g.accepted>0?'qualified':g.rejectionReason||'no qualified angles',at:performance.now(),angleGroups:cell.angleGroups+(g.accepted>0?1:0),quality:g.quality||null,maxAbsDegrees:g.accepted>0?g.maxAbsDegrees:null};
+        if(g.mode==='ads'&&['bolt','heavy sniper'].includes(g.weapon)&&(session.angleFeedbackLogs||0)<24){
+            /* Export the exact angular outcome only for remaining target modes; never raw identities. */
+            session.angleFeedbackLogs=(session.angleFeedbackLogs||0)+1;log('V58 FOCUSED ANGLE',session.angleFeedback);
+        }
+    };
+    const v58SpreadFinishSetup=()=>{
+        /* Save the existing preferences once and enable the one relevant modifier. Open the readonly
+         * reference panel, preserving all prior counts, thresholds, other preferences and custom data. */
+        const z=storedExtras();if(!read('brio_test_backup',null))write('brio_test_backup',z);
+        z.goodFlippinLuck=false;z.showBulletSpread=true;saveExtras(z);featureEx.at=-Infinity;syncFeatureSettings();renderExtras();v55ReconShow();
+    };
     const v55ReconFinishGroup=()=>{
         /* Pending groups contain only local-owned projectile angles. They update envelope evidence,
          * not the already credited native shot count. A missing/turning aim never erases firing. */
         const session=v55.reconSession,g=session?.pending;if(!g)return;session.pending=null;
-        const cell=v55ReconGun(g.weapon)?.[g.mode];if(!cell)return;cell.projectiles+=g.projectiles;
+        const cell=v55ReconGun(g.weapon)?.[g.mode];if(!cell)return;cell.projectiles+=g.projectiles;v58AngleFeedback(g,cell);
         if(!g.accepted)return;cell.angleGroups++;cell.maxAbsDegrees=Math.max(cell.maxAbsDegrees,g.maxAbsDegrees);cell.minDegrees=cell.minDegrees==null?g.minDegrees:Math.min(cell.minDegrees,g.minDegrees);cell.maxDegrees=cell.maxDegrees==null?g.maxDegrees:Math.max(cell.maxDegrees,g.maxDegrees);
         cell.sumDegrees+=g.meanDegrees;cell.sumSquaredDegrees+=g.meanDegrees*g.meanDegrees;cell.tail.push(g.maxAbsDegrees);if(cell.tail.length>100)cell.tail.shift();
         const bin=String(Math.round(g.scalar*2)/2);let b=cell.bins[bin];if(!b&&Object.keys(cell.bins).length<48)b=cell.bins[bin]={groups:0,maxAbsDegrees:0};if(b){ /* BRIO block V55: v55ReconFinishGroup — Commit one conservative pellet/discharge group to bounded evidence; do not inflate confidence per pellet. */ b.groups++;b.maxAbsDegrees=Math.max(b.maxAbsDegrees,g.maxAbsDegrees);}
@@ -367,7 +383,7 @@
         const record=v55ReconRecord(native?'native shot':'ammo drop',units);if(record){ /* BRIO block V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ record.nativeMatched=true;record.markerCredits=native?1:0;record.ammoMatched=delta>0;session.batchShots.push(record);}
 
     };
-    const v55ReconReport=/* BRIO expr V55: v55ReconReport — Export anonymous persistent gun/mode aggregates and explicit estimation limits. */ ()=>({revision:SPREAD_RECON_REVISION,anglePolicy:'v57-input-not-recoil; unchanged freshness/alignment/ambiguity gates',singleSpreadWeapons:['charge rifle','grenade pistol'],threshold:{formula:'max(10, native observed clip size × 3)',minimumShots:10,extraSequenceRequirement:false},guns:v55.recon.guns,diagnostics:v55.reconSession?{nativeShots:v55.reconSession.nativeShots,ammoEvents:v55.reconSession.ammoEvents,ownedProjectiles:v55.reconSession.ownedProjectiles,correlated:v55.reconSession.correlated,duplicates:v55.reconSession.duplicates,unclassified:v55.reconSession.unclassified}:null,storageAvailable:!v55.recon.storageError,scope:'shot progress is separate from qualified angular evidence; input-held ADS/No ADS except user-confirmed single-spread guns; native steadying is recoil, not ADS acknowledgement; clip is native loaded high-water and can increase after a fuller reload; no server-maximum claim'});
+    const v55ReconReport=/* BRIO expr V55: v55ReconReport — Export anonymous persistent gun/mode aggregates and explicit estimation limits. */ ()=>({revision:SPREAD_RECON_REVISION,anglePolicy:'v57-input-not-recoil; unchanged freshness/alignment/ambiguity gates',singleSpreadWeapons:['charge rifle','grenade pistol'],angleFeedback:v55.reconSession?.angleFeedback||null,threshold:{formula:'max(10, native observed clip size × 3)',minimumShots:10,extraSequenceRequirement:false},guns:v55.recon.guns,diagnostics:v55.reconSession?{nativeShots:v55.reconSession.nativeShots,ammoEvents:v55.reconSession.ammoEvents,ownedProjectiles:v55.reconSession.ownedProjectiles,correlated:v55.reconSession.correlated,duplicates:v55.reconSession.duplicates,unclassified:v55.reconSession.unclassified}:null,storageAvailable:!v55.recon.storageError,scope:'shot progress is separate from qualified angular evidence; input-held ADS/No ADS except user-confirmed single-spread guns; native steadying is recoil, not ADS acknowledgement; clip is native loaded high-water and can increase after a fuller reload; no server-maximum claim'});
     const RECON_SIDEBAR_KEY='brio_spread_recon_sidebar';
     const v56ReconSidebarLayout=()=>{
         /* Width is a separate view preference; viewport clamping never writes recording/settings data.
@@ -437,11 +453,13 @@
                 const cell=gun?.[mode],applicable=modes.includes(mode),done=applicable&&!!cell?.complete;
                 if(applicable){ /* BRIO block V57: v55ReconChecklist — Show shot targets separately from qualified angular evidence; require only applicable gun modes; preserve progress. */ total++;if(done)checked++;}row[mode].box.checked=done;row[mode].box.hidden=!applicable;row[mode].box.style.display=applicable?'inline-block':'none';
                 const angleReady=v57SpreadReady(gun,mode),width=cell?.angleGroups>0?' · observed ±'+cell.maxAbsDegrees.toFixed(2)+'°':' · width unknown';
-                const text=!applicable?(weapon==='charge rifle'?'No ADS mode':'Same spread as No ADS'):(done?'Shots recorded · ':'')+(cell?.groups||0)+' / '+(target??'—')+' shots\n'+(gun?.clipSize?'Clip '+gun.clipSize+' · ×3, minimum 10':'Clip size pending native ammo')+'\n'+(angleReady?'✓ Observed width ready: ':'ANGLES NEEDED: ')+(cell?.angleGroups||0)+' / '+v57AngleTarget(gun)+' angle samples'+width;
+                const feedback=v55.reconSession?.angleFeedback,feedbackText=feedback?.weapon===weapon&&feedback.mode===mode?'\nLast angle: '+(feedback.accepted?'✓ accepted (zero is valid)':feedback.reason):'';
+                const text=!applicable?(weapon==='charge rifle'?'No ADS mode':'Same spread as No ADS'):(done?'Shots recorded · ':'')+(cell?.groups||0)+' / '+(target??'—')+' shots\n'+(gun?.clipSize?'Clip '+gun.clipSize+' · ×3, minimum 10':'Clip size pending native ammo')+'\n'+(angleReady?'✓ Observed width ready: ':'ANGLES NEEDED: ')+(cell?.angleGroups||0)+' / '+v57AngleTarget(gun)+' angle samples'+width+feedbackText;
                 if(row[mode].text.textContent!==text)row[mode].text.textContent=text;
             }
         }
-        const message=completeWeapons+' / '+v55.reconRows.size+' weapons have complete shot targets · '+readyWeapons+' / '+v55.reconRows.size+' have observed widths ready · '+checked+' / '+total+' applicable modes recorded. Shot target: max(10, native observed clip × 3); fuller reloads can raise it. Angle evidence is separate: continue normal firing for amber ANGLES NEEDED rows. Charge Rifle has no ADS; Grenade Pistol shares No ADS spread. Observed widths are empirical, not server maxima.'+(v55.recon.storageError?' Storage unavailable: keep this page open and export results to preserve progress.':'');
+        const focus=['bolt','heavy sniper'].map(/* BRIO expr V58: v55ReconChecklist — Show shot targets separately from qualified angular evidence; require only applicable gun modes; preserve progress. */ weapon=>weapon+' ADS '+(v55.recon.guns[weapon]?.ads.angleGroups||0)+'/10').join(' · ');
+        const message='Focused finish: '+focus+'. Hold ADS and keep the mouse still for 200ms before each shot; keep ADS held through reload. Zero-degree samples count. '+completeWeapons+' / '+v55.reconRows.size+' weapons have complete shot targets · '+readyWeapons+' / '+v55.reconRows.size+' have observed widths ready · '+checked+' / '+total+' applicable modes recorded. Shot target: max(10, native observed clip × 3); fuller reloads can raise it. Angle evidence is separate: continue normal firing for amber ANGLES NEEDED rows. Charge Rifle has no ADS; Grenade Pistol shares No ADS spread. Observed widths are empirical, not server maxima.'+(v55.recon.storageError?' Storage unavailable: keep this page open and export results to preserve progress.':'');
         const note=host.querySelector('[data-recon-summary]');if(note.textContent!==message)note.textContent=message;
 
     };
@@ -450,8 +468,9 @@
         if(!v55ReconEligible(weapon))return {top:'Spread recon · hold an active gun',bottom:'Not a spread-test weapon',color:'#b4c4d9'};
         const gun=v55.recon.guns[weapon],cell=gun?.[mode],both=v57SpreadModes(weapon).every(/* BRIO expr V57: v55ReconBadgeState — Report current recording acceptance, rejection and gun/mode completion above the local player. */ mode=>!!gun?.[mode]?.complete),heading=weapon+' · '+(v57SingleSpread(weapon)?'Single spread':mode==='ads'?'ADS':mode==='hip'?'No ADS':'Input unknown')+' · '+(both?'gun recorded':cell?.complete?'mode recorded':(cell?.groups||0)+'/'+(v55ReconTarget(gun)??'—')+' shots');
         if(v55.recon.storageError)return {top:heading,bottom:'Recording · progress not saved',color:'#ffc56b'};
-        if(session&&now-session.lastAccepted<800&&session.lastAccepted>=session.lastRejected&&session.lastWeapon===weapon&&session.lastMode===mode)return {top:heading,bottom:'● Recording shots',color:'#65edac'};
+        if(session&&!session.angleFeedback&&now-session.lastAccepted<800&&session.lastAccepted>=session.lastRejected&&session.lastWeapon===weapon&&session.lastMode===mode)return {top:heading,bottom:'● Recording shots',color:'#65edac'};
         if(session&&now-session.lastRejected<1200&&session.lastWeapon===weapon)return {top:heading,bottom:'Not counted · '+session.reason,color:'#ffca77'};
+        const feedback=v55.reconSession?.angleFeedback;if(feedback?.weapon===weapon&&feedback.mode===mode&&now-feedback.at<3000)return {top:heading,bottom:feedback.accepted?'✓ Angle accepted · '+feedback.angleGroups+'/'+v57AngleTarget(gun):'Angle rejected · '+feedback.reason,color:feedback.accepted?'#65edac':'#ffca77'};
         if(!deep.restore)return {top:heading,bottom:'Waiting for native recorder',color:'#ffca77'};
         return {top:heading,bottom:mode?v57SpreadReady(gun,mode)?'Observed width ready · monitoring':cell?.complete?'Shots recorded · angles needed':'Ready · native shots count':'Waiting for ADS input',color:cell?.complete?'#65edac':'#d2eaff'};
     };
@@ -722,6 +741,7 @@
             const credit=record||v55ReconRecord('owned projectile');if(!credit)return;credit.projectileMatched=true;
             group=session.pending={weapon,mode,record:credit,firstAt:now,at:now,fireSerial:input.fireSerial,reloadSerial:context.reloadSerial,scalar:server?.spread,projectiles:0,accepted:0,meanDegrees:0,maxAbsDegrees:0,minDegrees:null,maxDegrees:null};
         }group.at=now;group.projectiles++;
+        group.quality={aimAgeMs:server?now-server.at:null,aimStableMs:server?now-server.stableSince:null,gunStableMs:now-context.stableSince,inputStableMs:now-input.at,aimMismatchDegrees:server&&Number.isFinite(r['â']?.A)?Math.abs(v55AngleDifference(r['â'].A,server.angle))*180/Math.PI:null,scalar:server?.spread??null};
         let reason=null;
         if(session.batchGunChange)reason='gun changed in native batch';else if(near.length>1||session.batchShots.length>1)reason='multiple discharges in packet window';
         else if(!v57SingleSpread(weapon)&&now-input.at<100)reason='ADS transition';
@@ -731,7 +751,7 @@
         else if(now-context.stableSince<150||server.weapon!==weapon)reason='gun switching';
         else if(!Number.isFinite(r['â']?.A)||Math.abs(v55AngleDifference(r['â'].A,server.angle))>Math.PI/180)reason='aim not aligned';
         else if(!Number.isFinite(server.spread)||server.spread<0)reason='spread scalar missing';
-        const cell=v55ReconGun(weapon)?.[mode];if(reason){ /* BRIO block V55: v55ShotCompare — Deduplicate owned projectiles, join native discharges and reject uncertain angles without erasing firing progress. */ if(cell)cell.rejected[reason]=(cell.rejected[reason]||0)+1;v55.recon.dirty=true;return;}
+        const cell=v55ReconGun(weapon)?.[mode];if(reason){ /* BRIO block V55: v55ShotCompare — Deduplicate owned projectiles, join native discharges and reject uncertain angles without erasing firing progress. */ group.rejectionReason=reason;if(cell)cell.rejected[reason]=(cell.rejected[reason]||0)+1;v55.recon.dirty=true;return;}
         const offset=v55AngleDifference(rotation/100,server.angle)*180/Math.PI;group.accepted++;group.meanDegrees+=(offset-group.meanDegrees)/group.accepted;group.maxAbsDegrees=Math.max(group.maxAbsDegrees,Math.abs(offset));group.minDegrees=group.minDegrees==null?offset:Math.min(group.minDegrees,offset);group.maxDegrees=group.maxDegrees==null?offset:Math.max(group.maxDegrees,offset);
     };
 
@@ -1363,6 +1383,7 @@
             a.appendChild(z);
         }
         const setup=D.createElement('div');setup.className='brioTestSetup';
+        const finish=D.createElement('button');finish.textContent='Finish spread recon';finish.dataset.testSetup='spread';finish.onclick=v58SpreadFinishSetup;setup.appendChild(finish);
         for(const [label,restore]of [['Set up normal test',false],['Restore saved settings',true]]){ /* Explicit profile actions keep routine testing reversible and one-click. */ const b=D.createElement('button');b.type='button';b.textContent=label;b.dataset.testSetup=restore?'restore':'normal';b.onclick=/* BRIO expr V52: renderExtras — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ()=>testSetup(restore);b.disabled=restore&&!read('brio_test_backup',null);setup.appendChild(b);}
         const spreadStatus=D.createElement('small');spreadStatus.dataset.spreadStatus='';spreadStatus.style='display:block;color:#cad9ef;padding:6px';setup.appendChild(spreadStatus);
         p.appendChild(setup);v55CalibrationStatus();
@@ -3738,7 +3759,7 @@
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
     // V50 reopens the SAME Extras modal during play, including from the minimized terminal. Native home
     // buttons disappear in a match; a reachable control is necessary for tier cycling/preset restoration.
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v57</b><button data-a="extras">EXTRAS</button><button data-a="recon">SPREAD RECON</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v58</b><button data-a="extras">EXTRAS</button><button data-a="recon">SPREAD RECON</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     v55ReconLoad();S.performanceCheck=v55PerfStart;S.spreadRecon=v55ReconReport;for(const event of ['mousedown','mouseup','mousemove','blur','pagehide'])W.addEventListener(event,v55ReconInput,{capture:true,passive:true});D.addEventListener('visibilitychange',v55ReconInput,{passive:true});

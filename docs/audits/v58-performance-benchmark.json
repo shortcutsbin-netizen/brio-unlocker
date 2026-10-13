@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-13",
+  "baseline": {
+    "file": "versions/v52/brio.js",
+    "attempts": 64,
+    "activeNodes": 4096,
+    "membershipChecks": 262144,
+    "retirementVisits": null,
+    "overflowAdmissionMs": 190.89977000000002
+  },
+  "current": {
+    "file": "src/brio.js",
+    "attempts": 64,
+    "activeNodes": 4096,
+    "membershipChecks": 0,
+    "retirementVisits": 256,
+    "overflowAdmissionMs": 0.35865199999994957
+  },
+  "assertions": "fixed visit budget; no full sweep on every rejected high-occupancy node; native branch count preserved",
+  "limits": "single synthetic Node run; elapsed values depend on machine and do not prove live-game latency"
+}

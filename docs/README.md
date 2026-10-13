@@ -1,3 +1,11 @@
+# V58 — focused Bolt / Heavy Sniper ADS finish
+
+Current direct script `dist/brio-v58.min.js`, readable `src/brio.js`, exact frozen `versions/v58/`. Read `docs/findings/v58-findings.md`, `docs/status/v58-status.md`, `docs/test-procedures/v58-test-procedure.md` and `docs/audits/v58-validation.md` (paths relative to repo root).
+
+V57 has42/44angle modes ready; only Bolt ADS8/10 and Heavy Sniper ADS2/10 remain. Zero angles already qualify. V58 retains all progress/gates and adds visible primitive acceptance/rejection feedback and≤24focused traces per match. Click Finish spread recon; hold ADS and keep mouse still≥200ms before firing. Stop at ready or ten attempts/gun; upload full logs/runs/v58-log.txt. No broad all-gun tour. Contents screening is the next required target after final spread; no unsupported impossibility claim now. User reports no other issues; original proof/pending distinctions remain.
+
+---
+
 # V57 documentation
 
 Current runnable payload: `dist/brio-v57.min.js`; readable source: `src/brio.js`; immutable source/payload: `versions/v57/`. [Findings](findings/v57-findings.md), [status](status/v57-status.md), [short procedure](test-procedures/v57-test-procedure.md), [validation](audits/v57-validation.md).

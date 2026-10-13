@@ -1,0 +1,542 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> brio-unlocker@58.0.0 test
+> node tests/recon-preservation.cjs && node tools/analysis/audit-comments.cjs && node tests/regression.cjs src/brio.js && node tests/challenges.cjs src/brio.js && node tests/regression.cjs dist/brio-v58.min.js && node tests/challenges.cjs dist/brio-v58.min.js && node tests/performance.cjs
+
+V58 preservation passed: 16 unchanged recorder helpers; firing/storage/scope/targets and angular freshness/stability/alignment/ambiguity/deduplication preserved
+{"blocks":1016,"functions":726,"comments":1605,"missing":0,"vendorUnchanged":true}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: false,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: true,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{ mode: 'native', result: 'passed' }
+{ mode: 'invisible', result: 'passed' }
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{ mode: 'custom', result: 'passed' }
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: true,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: true,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: true,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: true,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: true,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: false,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+V50 carry-forward challenges passed (V58) {"own":false,"combinedStart":false}
+V50 carry-forward challenges passed (V58) {"own":true,"combinedStart":false}
+V50 carry-forward challenges passed (V58) {"own":false,"combinedStart":true}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: false,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: true,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{ mode: 'native', result: 'passed' }
+{ mode: 'invisible', result: 'passed' }
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{ mode: 'custom', result: 'passed' }
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: true,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: true,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: true,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: true,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: true,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: true,
+  sixSlotHud: true,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: true,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+{
+  own: false,
+  failHead: false,
+  nativeHud: false,
+  sixSlotHud: false,
+  matchLifecycle: false,
+  probeBudget: false,
+  result: 'passed'
+}
+V50 carry-forward challenges passed (V58) {"own":false,"combinedStart":false}
+V50 carry-forward challenges passed (V58) {"own":true,"combinedStart":false}
+V50 carry-forward challenges passed (V58) {"own":false,"combinedStart":true}
+{"date":"2026-10-12","baseline":{"file":"versions/v52/brio.js","attempts":64,"activeNodes":4096,"membershipChecks":262144,"retirementVisits":null,"overflowAdmissionMs":181.708662},"current":{"file":"src/brio.js","attempts":64,"activeNodes":4096,"membershipChecks":0,"retirementVisits":256,"overflowAdmissionMs":0.3337349999999901},"assertions":"fixed visit budget; no full sweep on every rejected high-occupancy node; native branch count preserved","limits":"single synthetic Node run; elapsed values depend on machine and do not prove live-game latency"}
