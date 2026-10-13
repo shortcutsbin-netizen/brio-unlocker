@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-13",
+  "artifacts": {
+    "src/brio.js": {
+      "bytes": 721465,
+      "sha256": "bfae23837d0a4f5b38e258c5054fc5f368c26f6e85be759624d6a4b77b59f896"
+    },
+    "dist/brio-v59.min.js": {
+      "bytes": 336588,
+      "sha256": "1783279faff65c3ad1f5f4a6f48896061e8300dad1707d344454b9e87d15ba2b"
+    },
+    "logs/runs/v58-log.txt": {
+      "bytes": 19792740,
+      "sha256": "7db36239df7b4e05a4ed805cb38d41b5a76c6d93081e7d7a0823834aeebada44"
+    }
+  },
+  "checks": {
+    "cleanInstall": true,
+    "build": true,
+    "npmTest": true,
+    "sourceRegressionConfigurations": 32,
+    "payloadRegressionConfigurations": 32,
+    "sourceChallengeConfigurations": 3,
+    "payloadChallengeConfigurations": 3,
+    "totalIntegrationExecutions": 70,
+    "sourceShapedAffineCases": 360,
+    "contentsBudgetChecks": "1200 focused/700 normal; zero focused player; original1800/8MB ceilings",
+    "allRecordingGuardsPreserved": true,
+    "unchangedRecorderHelpers": 16,
+    "payloadComments": 0,
+    "missingAnnotations": 0,
+    "blocks": 1027,
+    "functions": 733,
+    "comments": 1616,
+    "vendorUnchanged": true,
+    "exactArchives": true,
+    "historicalSuffixes": 6
+  },
+  "limits": "Final empirical candidate still requires actual native muzzle/direction/style review; no server maxima, pixels/latency or contents impossibility inferred."
+}

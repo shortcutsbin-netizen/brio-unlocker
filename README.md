@@ -1,3 +1,13 @@
+# V59 — final observed spread candidate; contents focus
+
+Current direct script dist/brio-v59.min.js, readable src/brio.js, exact versions/v59/. Findings/status/procedure/validation: docs/{findings,status,test-procedures,audits}/v59-* (repo-relative).
+
+All44 empirical angle modes complete. Fix native muzzle origin and root-local -Y direction, add color/length controls (blue/Medium default, five lengths/reset) and freeze observed envelopes for fresh-browser use without fake progress. Native visual review still required; no guaranteed server maxima.
+
+Next pass: Test contents beforePlay, verify cone direction/origin with any natural gun and try styles, open naturally available containers normally, export full logs/runs/v59-log.txt. Contents capture gets priority within existing caps; no invented content labels or unsupported impossibility. All old evidence/proof/decisions preserved; no generic all-gun/special hunt.
+
+---
+
 # V58 — focused Bolt / Heavy Sniper ADS finish
 
 Current direct script `dist/brio-v58.min.js`, readable `src/brio.js`, exact frozen `versions/v58/`. Read `docs/findings/v58-findings.md`, `docs/status/v58-status.md`, `docs/test-procedures/v58-test-procedure.md` and `docs/audits/v58-validation.md` (paths relative to repo root).

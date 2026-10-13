@@ -1,0 +1,656 @@
+{
+  "source": "logs/runs/v58-log.txt",
+  "scope": "Frozen empirical observed envelopes; not server maxima, range, probability or rarity equivalence",
+  "guns": {
+    "revolver": {
+      "hip": {
+        "angleGroups": 18,
+        "maxAbsDegrees": 4.766167018889638,
+        "bins": {
+          "4": {
+            "groups": 10,
+            "maxAbsDegrees": 1.5363687275494364
+          },
+          "5": {
+            "groups": 2,
+            "maxAbsDegrees": 0.9634109324186254
+          },
+          "6": {
+            "groups": 2,
+            "maxAbsDegrees": 4.766167018889638
+          },
+          "3.5": {
+            "groups": 1,
+            "maxAbsDegrees": 0.9634109324186254
+          },
+          "5.5": {
+            "groups": 3,
+            "maxAbsDegrees": 4.401157703203542
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 17,
+        "maxAbsDegrees": 4.58366236104659,
+        "bins": {
+          "4": {
+            "groups": 3,
+            "maxAbsDegrees": 2.291831180523244
+          },
+          "5": {
+            "groups": 3,
+            "maxAbsDegrees": 4.010704565915779
+          },
+          "3.5": {
+            "groups": 3,
+            "maxAbsDegrees": 1.145915590261622
+          },
+          "5.5": {
+            "groups": 8,
+            "maxAbsDegrees": 4.58366236104659
+          }
+        }
+      }
+    },
+    "scoped ar": {
+      "hip": {
+        "angleGroups": 25,
+        "maxAbsDegrees": 5.339124814020448,
+        "bins": {
+          "2": {
+            "groups": 4,
+            "maxAbsDegrees": 0.7554624529738585
+          },
+          "1.5": {
+            "groups": 19,
+            "maxAbsDegrees": 0.9634109324186763
+          },
+          "9.5": {
+            "groups": 2,
+            "maxAbsDegrees": 5.339124814020448
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 92,
+        "maxAbsDegrees": 13.17802928800896,
+        "bins": {
+          "1.5": {
+            "groups": 89,
+            "maxAbsDegrees": 9.16732472209318
+          },
+          "9.5": {
+            "groups": 3,
+            "maxAbsDegrees": 13.17802928800896
+          }
+        }
+      }
+    },
+    "combat": {
+      "hip": {
+        "angleGroups": 29,
+        "maxAbsDegrees": 9.349829379936228,
+        "bins": {
+          "2": {
+            "groups": 29,
+            "maxAbsDegrees": 9.349829379936228
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 26,
+        "maxAbsDegrees": 9.16732472209318,
+        "bins": {
+          "2": {
+            "groups": 26,
+            "maxAbsDegrees": 9.16732472209318
+          }
+        }
+      }
+    },
+    "scar": {
+      "hip": {
+        "angleGroups": 33,
+        "maxAbsDegrees": 4.58366236104659,
+        "bins": {
+          "4": {
+            "groups": 3,
+            "maxAbsDegrees": 4.010704565915779
+          },
+          "3.5": {
+            "groups": 30,
+            "maxAbsDegrees": 4.58366236104659
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 144,
+        "maxAbsDegrees": 4.58366236104659,
+        "bins": {
+          "3.5": {
+            "groups": 144,
+            "maxAbsDegrees": 4.58366236104659
+          }
+        }
+      }
+    },
+    "smg": {
+      "hip": {
+        "angleGroups": 18,
+        "maxAbsDegrees": 7.448451336700645,
+        "bins": {
+          "6": {
+            "groups": 1,
+            "maxAbsDegrees": 6.875493541569936
+          },
+          "5.5": {
+            "groups": 15,
+            "maxAbsDegrees": 7.448451336700645
+          },
+          "4.5": {
+            "groups": 1,
+            "maxAbsDegrees": 1.145915590261622
+          },
+          "8.5": {
+            "groups": 1,
+            "maxAbsDegrees": 0.572957795130811
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 49,
+        "maxAbsDegrees": 11.459155902616423,
+        "bins": {
+          "4": {
+            "groups": 1,
+            "maxAbsDegrees": 2.291831180523244
+          },
+          "4.5": {
+            "groups": 2,
+            "maxAbsDegrees": 4.1932092237587755
+          },
+          "5.5": {
+            "groups": 43,
+            "maxAbsDegrees": 7.057998199412881
+          },
+          "2.5": {
+            "groups": 1,
+            "maxAbsDegrees": 0.1825046578430475
+          },
+          "8.5": {
+            "groups": 2,
+            "maxAbsDegrees": 11.459155902616423
+          }
+        }
+      }
+    },
+    "spas": {
+      "hip": {
+        "angleGroups": 16,
+        "maxAbsDegrees": 4.010704565915779,
+        "bins": {
+          "1": {
+            "groups": 7,
+            "maxAbsDegrees": 4.010704565915779
+          },
+          "1.5": {
+            "groups": 9,
+            "maxAbsDegrees": 4.010704565915779
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 14,
+        "maxAbsDegrees": 4.010704565915779,
+        "bins": {
+          "1": {
+            "groups": 13,
+            "maxAbsDegrees": 4.010704565915779
+          },
+          "1.5": {
+            "groups": 1,
+            "maxAbsDegrees": 3.437746770784968
+          }
+        }
+      }
+    },
+    "silencedpistol": {
+      "hip": {
+        "angleGroups": 72,
+        "maxAbsDegrees": 8.021409131831557,
+        "bins": {
+          "4": {
+            "groups": 1,
+            "maxAbsDegrees": 0.7554624529738585
+          },
+          "5": {
+            "groups": 2,
+            "maxAbsDegrees": 1.7188733853925349
+          },
+          "4.5": {
+            "groups": 3,
+            "maxAbsDegrees": 1.718873385392433
+          },
+          "5.5": {
+            "groups": 66,
+            "maxAbsDegrees": 8.021409131831557
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 31,
+        "maxAbsDegrees": 7.057998199412881,
+        "bins": {
+          "4.5": {
+            "groups": 4,
+            "maxAbsDegrees": 2.4743358383662915
+          },
+          "5.5": {
+            "groups": 27,
+            "maxAbsDegrees": 7.057998199412881
+          }
+        }
+      }
+    },
+    "famas": {
+      "hip": {
+        "angleGroups": 24,
+        "maxAbsDegrees": 3.437746770784968,
+        "bins": {
+          "4": {
+            "groups": 1,
+            "maxAbsDegrees": 2.291831180523244
+          },
+          "3.5": {
+            "groups": 23,
+            "maxAbsDegrees": 3.437746770784968
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 48,
+        "maxAbsDegrees": 6.692988883726888,
+        "bins": {
+          "5.5": {
+            "groups": 3,
+            "maxAbsDegrees": 6.692988883726888
+          },
+          "3.5": {
+            "groups": 45,
+            "maxAbsDegrees": 5.156620156177401
+          }
+        }
+      }
+    },
+    "bolt": {
+      "hip": {
+        "angleGroups": 18,
+        "maxAbsDegrees": 5.156620156177401,
+        "bins": {
+          "2": {
+            "groups": 12,
+            "maxAbsDegrees": 0.572957795130811
+          },
+          "1.5": {
+            "groups": 5,
+            "maxAbsDegrees": 1.7188733853925349
+          },
+          "9.5": {
+            "groups": 1,
+            "maxAbsDegrees": 5.156620156177401
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 12,
+        "maxAbsDegrees": 0.572957795130811,
+        "bins": {
+          "2": {
+            "groups": 10,
+            "maxAbsDegrees": 0.572957795130811
+          },
+          "1.5": {
+            "groups": 2,
+            "maxAbsDegrees": 0.572957795130811
+          }
+        }
+      }
+    },
+    "charge rifle": {
+      "hip": {
+        "angleGroups": 21,
+        "maxAbsDegrees": 0.7554624529738585,
+        "bins": {
+          "2": {
+            "groups": 5,
+            "maxAbsDegrees": 0.572957795130811
+          },
+          "1.5": {
+            "groups": 16,
+            "maxAbsDegrees": 0.7554624529738585
+          }
+        }
+      }
+    },
+    "sawedoff": {
+      "hip": {
+        "angleGroups": 12,
+        "maxAbsDegrees": 10.886198107485614,
+        "bins": {
+          "3": {
+            "groups": 12,
+            "maxAbsDegrees": 10.886198107485614
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 12,
+        "maxAbsDegrees": 10.313240312354802,
+        "bins": {
+          "3": {
+            "groups": 12,
+            "maxAbsDegrees": 10.313240312354802
+          }
+        }
+      }
+    },
+    "lmg": {
+      "hip": {
+        "angleGroups": 17,
+        "maxAbsDegrees": 9.74028251722399,
+        "bins": {
+          "7.5": {
+            "groups": 16,
+            "maxAbsDegrees": 9.74028251722399
+          },
+          "6.5": {
+            "groups": 1,
+            "maxAbsDegrees": 1.7188733853925349
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 84,
+        "maxAbsDegrees": 12.995524630165912,
+        "bins": {
+          "7.5": {
+            "groups": 81,
+            "maxAbsDegrees": 10.886198107485614
+          },
+          "11.5": {
+            "groups": 3,
+            "maxAbsDegrees": 12.995524630165912
+          }
+        }
+      }
+    },
+    "shotgun": {
+      "hip": {
+        "angleGroups": 15,
+        "maxAbsDegrees": 15.07940733124444,
+        "bins": {
+          "3": {
+            "groups": 15,
+            "maxAbsDegrees": 15.07940733124444
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 12,
+        "maxAbsDegrees": 15.469860468532202,
+        "bins": {
+          "3": {
+            "groups": 12,
+            "maxAbsDegrees": 15.469860468532202
+          }
+        }
+      }
+    },
+    "rifle": {
+      "hip": {
+        "angleGroups": 12,
+        "maxAbsDegrees": 1.145915590261622,
+        "bins": {
+          "2": {
+            "groups": 5,
+            "maxAbsDegrees": 0.3904531372878144
+          },
+          "1.5": {
+            "groups": 7,
+            "maxAbsDegrees": 1.145915590261622
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 20,
+        "maxAbsDegrees": 1.145915590261622,
+        "bins": {
+          "2": {
+            "groups": 4,
+            "maxAbsDegrees": 0
+          },
+          "1.5": {
+            "groups": 16,
+            "maxAbsDegrees": 1.145915590261622
+          }
+        }
+      }
+    },
+    "aug": {
+      "hip": {
+        "angleGroups": 23,
+        "maxAbsDegrees": 1.7188733853925349,
+        "bins": {
+          "1.5": {
+            "groups": 23,
+            "maxAbsDegrees": 1.7188733853925349
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 58,
+        "maxAbsDegrees": 2.291831180523244,
+        "bins": {
+          "1.5": {
+            "groups": 57,
+            "maxAbsDegrees": 2.291831180523244
+          },
+          "4.5": {
+            "groups": 1,
+            "maxAbsDegrees": 1.5363687275494873
+          }
+        }
+      }
+    },
+    "rpg": {
+      "hip": {
+        "angleGroups": 18,
+        "maxAbsDegrees": 2.864788975654157,
+        "bins": {
+          "2": {
+            "groups": 18,
+            "maxAbsDegrees": 2.864788975654157
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 12,
+        "maxAbsDegrees": 2.291831180523244,
+        "bins": {
+          "2": {
+            "groups": 12,
+            "maxAbsDegrees": 2.291831180523244
+          }
+        }
+      }
+    },
+    "heavy sniper": {
+      "hip": {
+        "angleGroups": 10,
+        "maxAbsDegrees": 0.3904531372878144,
+        "bins": {
+          "2": {
+            "groups": 10,
+            "maxAbsDegrees": 0.3904531372878144
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 11,
+        "maxAbsDegrees": 0.3904531372878144,
+        "bins": {
+          "2": {
+            "groups": 11,
+            "maxAbsDegrees": 0.3904531372878144
+          }
+        }
+      }
+    },
+    "ak47": {
+      "hip": {
+        "angleGroups": 27,
+        "maxAbsDegrees": 1.145915590261622,
+        "bins": {
+          "2": {
+            "groups": 4,
+            "maxAbsDegrees": 0.7554624529738585
+          },
+          "1.5": {
+            "groups": 23,
+            "maxAbsDegrees": 1.145915590261622
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 99,
+        "maxAbsDegrees": 2.291831180523244,
+        "bins": {
+          "1.5": {
+            "groups": 99,
+            "maxAbsDegrees": 2.291831180523244
+          }
+        }
+      }
+    },
+    "musket": {
+      "hip": {
+        "angleGroups": 13,
+        "maxAbsDegrees": 2.864788975654157,
+        "bins": {
+          "3": {
+            "groups": 7,
+            "maxAbsDegrees": 2.864788975654157
+          },
+          "2.5": {
+            "groups": 6,
+            "maxAbsDegrees": 2.864788975654157
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 11,
+        "maxAbsDegrees": 2.864788975654157,
+        "bins": {
+          "3": {
+            "groups": 3,
+            "maxAbsDegrees": 2.291831180523244
+          },
+          "2.5": {
+            "groups": 8,
+            "maxAbsDegrees": 2.864788975654157
+          }
+        }
+      }
+    },
+    "drum": {
+      "hip": {
+        "angleGroups": 12,
+        "maxAbsDegrees": 22.527858667945136,
+        "bins": {
+          "5": {
+            "groups": 12,
+            "maxAbsDegrees": 22.527858667945136
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 32,
+        "maxAbsDegrees": 22.918311805232946,
+        "bins": {
+          "5": {
+            "groups": 32,
+            "maxAbsDegrees": 22.918311805232946
+          }
+        }
+      }
+    },
+    "vector": {
+      "hip": {
+        "angleGroups": 30,
+        "maxAbsDegrees": 4.58366236104659,
+        "bins": {
+          "3": {
+            "groups": 25,
+            "maxAbsDegrees": 4.58366236104659
+          },
+          "3.5": {
+            "groups": 4,
+            "maxAbsDegrees": 3.437746770784968
+          },
+          "1.5": {
+            "groups": 1,
+            "maxAbsDegrees": 0.572957795130811
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 56,
+        "maxAbsDegrees": 4.766167018889638,
+        "bins": {
+          "3": {
+            "groups": 52,
+            "maxAbsDegrees": 4.766167018889638
+          },
+          "1.5": {
+            "groups": 4,
+            "maxAbsDegrees": 0.572957795130811
+          }
+        }
+      }
+    },
+    "crossbow": {
+      "hip": {
+        "angleGroups": 11,
+        "maxAbsDegrees": 0.9634109324186254,
+        "bins": {
+          "4": {
+            "groups": 11,
+            "maxAbsDegrees": 0.9634109324186254
+          }
+        }
+      },
+      "ads": {
+        "angleGroups": 11,
+        "maxAbsDegrees": 3.437746770784968,
+        "bins": {
+          "4": {
+            "groups": 11,
+            "maxAbsDegrees": 3.437746770784968
+          }
+        }
+      }
+    },
+    "grenade pistol": {
+      "hip": {
+        "angleGroups": 12,
+        "maxAbsDegrees": 2.864788975654157,
+        "bins": {
+          "2": {
+            "groups": 12,
+            "maxAbsDegrees": 2.864788975654157
+          }
+        }
+      }
+    }
+  }
+}
