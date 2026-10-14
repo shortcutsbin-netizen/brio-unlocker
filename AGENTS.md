@@ -1,3 +1,9 @@
+# V61 follow-up — awaiting source/visual artifacts, no V62 yet
+
+Read docs/findings/v61-followup-review.md, docs/analysis/runs/v61-followup-analysis.json and logs/observations/v61-2026-10-14-observations.md first. User rejects V61 cone alignment. Complete V61 log analyzed; no repeated contents run required. Request raw loaded index, sanitized home-load HAR and hip/ADS visual evidence; optional original held-art sprites. Do not develop/publish V62 until the material geometry/source evidence gap is resolved. If another gameplay evidence run is needed, retain V61 and use v61-log-2.txt as user directed. User authorizes a final bounded passive bot provenance/controller investigation next pass; no guessed labels, identity heuristics, input manipulation or inaccessible-server-source claim. Source/payload remainV61. All prior history below is preserved.
+
+---
+
 # V61 current handoff — 2026-10-14
 
 Current src/brio.js, direct zero-comment dist/brio-v61.min.js, exact versions/v61/. Read docs/findings/v61-findings.md, docs/status/v61-status.md, docs/test-procedures/v61-test-procedure.md, docs/audits/v61-validation.md, docs/analysis/runs/v61-v60-focused-analysis.json and separate logs/observations/v60-2026-10-14-observations.md. This supersedes V59/V60 axis claims; full historical document suffixes remain intact. User explicitly rejects V60 alignment and requests completed spread UI removal. Next release is61, not another60.

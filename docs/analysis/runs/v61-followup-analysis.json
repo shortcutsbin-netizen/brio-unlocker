@@ -1,0 +1,1125 @@
+{
+  "input": "logs/runs/v61-log.txt",
+  "bytes": 5488100,
+  "sha256": "5d4f3ff7cae2e59de08a007e70983ad625eea2208018384701d2e0e878c00e2c",
+  "gitBlob": "787a2b14edb1a5b9def6b1479335a93d3ae2248c",
+  "eventCount": 3282,
+  "malformedJsonEvents": 0,
+  "eventCounts": {
+    "HUD DOM CANDIDATES": 3,
+    "V39 HUMAN GROUND TRUTH": 1,
+    "CUSTOM CACHE": 1,
+    "READY": 1,
+    "FULL NATIVE SOURCE CHUNK": 85,
+    "SOURCE PACKET REMAPPER": 1,
+    "V55 WEAPON CATALOG": 1,
+    "DEEP FIELD DICTIONARY": 1,
+    "DEEP CALLBACK STRUCTURE": 40,
+    "SOURCE CALLBACK CHUNK": 45,
+    "V55 DYNAMIC GUN CHOICES": 1,
+    "NATIVE AMMO TYPE MAP": 1,
+    "DEEP SEMANTIC REFERENCES": 18,
+    "DEEP SOURCE STRUCTURE": 1,
+    "V55 PROBE COVERAGE": 4,
+    "DECODED FIELD SCHEMA": 1,
+    "NATIVE CALLBACK AUDIT": 12,
+    "TARGETED NATIVE REFERENCE": 2,
+    "NATIVE HUD ASSET MAP": 1,
+    "V55 NATIVE SOURCE": 11,
+    "BOT SOURCE AUDIT": 1,
+    "NATIVE REGISTRATION AUDIT": 4,
+    "NATIVE REGISTRATION REFERENCE": 23,
+    "TARGETED FEATURE SOURCE": 4,
+    "SOURCE LOADED": 1,
+    "PASSIVE SOURCE SURFACE": 8,
+    "WAYPOINT HANDLER SOURCE": 1,
+    "RECON COVERAGE": 1,
+    "INDICATOR STATE": 415,
+    "V59 CONTENTS FOCUS": 1,
+    "MATCH STATE RESET": 2,
+    "V50 DEEP PROBE PLAN": 2,
+    "INCOMING DECODE PROBE": 2,
+    "PROBE OBSERVATION ERROR": 2,
+    "NATIVE RENDER DISCOVERY": 2,
+    "TEST SETTINGS AT PLAY": 2,
+    "PREMATCH ARMED": 2,
+    "NATIVE VISUAL BRANCH": 67,
+    "NATIVE VISUAL GATE CAP": 2,
+    "INCOMING SCHEMA FIRST": 167,
+    "ENVIRONMENT MANIFEST": 2,
+    "ENVIRONMENT TARGET CHUNK": 2,
+    "LOCAL RENDERER": 2,
+    "COSMETIC SELECTIONS": 2,
+    "PASSIVE LOCAL FIELDS": 2,
+    "BOT AUDIT PLAN": 2,
+    "V55 COMPLETE INVENTORY": 2,
+    "METEOR AUTOMATIC START": 2,
+    "SCENE CAPTURE": 2,
+    "METEOR AUTOMATIC": 2,
+    "GLOBAL HOOK RESTORED": 2,
+    "NATIVE HUD WIDGET": 9,
+    "OWN MATERIAL WARNING BINDING": 8,
+    "LOCAL READY": 2,
+    "PASSIVE NATIVE OBJECT": 165,
+    "NATIVE SESSION STATE": 23,
+    "BOT CANDIDATE": 43,
+    "BOT METADATA AUDIT": 21,
+    "NATIVE WEAPON SLOT": 48,
+    "OWN GUN SLOT WARNING BINDING": 10,
+    "NATIVE EMPTY SLOT ART": 2,
+    "NATIVE HUD CAPTURE STATUS": 36,
+    "CHALLENGE BRANCH COVERAGE": 36,
+    "GUN SLOT WARNING STATE": 80,
+    "BOT METADATA SETTLED": 14,
+    "NATIVE RENDER DISCOVERY RESTORED": 2,
+    "LOCAL HUD STATE": 44,
+    "PASSIVE RUNTIME COVERAGE": 47,
+    "REMOTE HUD SAMPLE": 95,
+    "BOT PHASE": 2,
+    "INCOMING TARGET PAYLOAD": 613,
+    "DEEP TARGET INITIAL": 99,
+    "V55 PROJECTED ZONE": 232,
+    "NATIVE REPLICA SCHEMA SAMPLE": 160,
+    "DEEP CONTAINER NEARBY": 38,
+    "DEEP TARGET DISAPPEARED": 184,
+    "V61 SPREAD PROJECTION": 16,
+    "DEEP TARGET CHANGE": 79,
+    "PASSIVE CONTAINER BASE": 75,
+    "INVENTORY ASSET RESOLUTION": 21,
+    "PASSIVE CONTAINER CHANGE": 24,
+    "PASSIVE CONTAINER REMOVED": 73,
+    "V58 FOCUSED ANGLE": 2,
+    "METEOR NATIVE HOLD INSTALLED": 4,
+    "METEOR NATIVE REMOVE BLOCKED": 2,
+    "V55 AUTOMATIC AUDIT": 2,
+    "V55 POSTGAME COUNTERS": 2,
+    "DEEP PROBES RESTORED": 2,
+    "OLD MATCH METEORS REMOVED": 1,
+    "PASSIVE BUILDABLE": 1,
+    "VERIFY": 1,
+    "V55 EXPORT AUDIT": 1,
+    "BOT WATCH STOP": 1
+  },
+  "runs": [
+    {
+      "epoch": 1,
+      "maximumActiveAdapters": 3542,
+      "capHits": 1,
+      "terminalObserved": true,
+      "probe": {
+        "packets": 21429,
+        "records": 528,
+        "nativeEngineCaptured": false,
+        "truncations": 1,
+        "errors": 3,
+        "cappedLanes": []
+      }
+    },
+    {
+      "epoch": 2,
+      "maximumActiveAdapters": 3898,
+      "capHits": 1,
+      "terminalObserved": true,
+      "probe": {
+        "packets": 28417,
+        "records": 656,
+        "nativeEngineCaptured": false,
+        "truncations": 1,
+        "errors": 0,
+        "cappedLanes": [
+          "replica"
+        ]
+      }
+    }
+  ],
+  "containers": {
+    "grenadecrate": {
+      "records": 160,
+      "packetTypes": {
+        "x": 78,
+        "z": 82
+      },
+      "fields": [
+        "fullHealth",
+        "health",
+        "height",
+        "i",
+        "p",
+        "t",
+        "type",
+        "width"
+      ],
+      "observedRunIdentities": 27
+    },
+    "ammocrate": {
+      "records": 155,
+      "packetTypes": {
+        "x": 73,
+        "z": 82
+      },
+      "fields": [
+        "fullHealth",
+        "health",
+        "height",
+        "i",
+        "p",
+        "t",
+        "type",
+        "width"
+      ],
+      "observedRunIdentities": 27
+    },
+    "chest": {
+      "records": 209,
+      "packetTypes": {
+        "x": 83,
+        "z": 126
+      },
+      "fields": [
+        "chestType",
+        "i",
+        "p",
+        "t"
+      ],
+      "observedRunIdentities": 38
+    },
+    "bubbles": {
+      "records": 80,
+      "packetTypes": {
+        "x": 39,
+        "z": 41
+      },
+      "fields": [
+        "fullHealth",
+        "health",
+        "height",
+        "i",
+        "p",
+        "t",
+        "type",
+        "width"
+      ],
+      "observedRunIdentities": 16
+    },
+    "meteorite": {
+      "records": 9,
+      "packetTypes": {
+        "x": 2,
+        "z": 4,
+        "y": 3
+      },
+      "fields": [
+        "fullHealth",
+        "hasWeapon",
+        "health",
+        "height",
+        "i",
+        "landProgress",
+        "landed",
+        "p",
+        "t",
+        "type",
+        "width"
+      ],
+      "observedRunIdentities": 2
+    }
+  },
+  "replicas": {
+    "shallowSamplesByKind": {
+      "grenadeCrate": 56,
+      "ammoCrate": 34,
+      "chest": 60,
+      "legendaryChest": 5,
+      "fishing": 5
+    },
+    "fullSnapshotFieldsByKind": {
+      "ammoCrate": [
+        "A\u00e3",
+        "EE\u00e3",
+        "E\u00e2",
+        "aA\u00e5",
+        "e\u00c5\u00e9",
+        "id",
+        "new",
+        "type",
+        "\u00c0\u00e2",
+        "\u00c0\u00e8",
+        "\u00c2\u00e4",
+        "\u00c4A",
+        "\u00c4\u00e3",
+        "\u00c5\u00c9\u00ca",
+        "\u00c8\u00e1\u00e4",
+        "\u00cb\u00c6",
+        "\u00e1\u00c6",
+        "\u00e1\u00e3\u00e1",
+        "\u00e2",
+        "\u00e2\u00c1\u00c1",
+        "\u00e3\u00e9\u00c3",
+        "\u00e4$",
+        "\u00e5a\u00e6",
+        "\u00e5\u00c8",
+        "\u00e6\u00c4",
+        "\u00e6\u00eb\u00c3",
+        "\u00eba"
+      ],
+      "chest": [
+        "cos",
+        "id",
+        "new",
+        "type",
+        "\u00c0\u00c1",
+        "\u00c2\u00e4",
+        "\u00c4\u00e3",
+        "\u00c5a\u00e1",
+        "\u00c5\u00c9\u00ca",
+        "\u00e1\u00c6",
+        "\u00e2",
+        "\u00e6\u00eb\u00c3",
+        "\u00eba"
+      ],
+      "grenadeCrate": [
+        "A\u00e3",
+        "EE\u00e3",
+        "E\u00e2",
+        "aA\u00e5",
+        "e\u00c5\u00e9",
+        "id",
+        "new",
+        "type",
+        "\u00c0\u00e2",
+        "\u00c0\u00e8",
+        "\u00c2\u00e4",
+        "\u00c4A",
+        "\u00c4\u00e3",
+        "\u00c5\u00c9\u00ca",
+        "\u00c8\u00e1\u00e4",
+        "\u00cb\u00c6",
+        "\u00e1\u00c6",
+        "\u00e1\u00e3\u00e1",
+        "\u00e2",
+        "\u00e2\u00c1\u00c1",
+        "\u00e3\u00e9\u00c3",
+        "\u00e4$",
+        "\u00e5a\u00e6",
+        "\u00e5\u00c8",
+        "\u00e6\u00c4",
+        "\u00e6\u00eb\u00c3",
+        "\u00eba"
+      ],
+      "legendaryChest": [
+        "cos",
+        "id",
+        "new",
+        "type",
+        "\u00c0\u00c1",
+        "\u00c2\u00e4",
+        "\u00c4\u00e3",
+        "\u00c5a\u00e1",
+        "\u00c5\u00c9\u00ca",
+        "\u00e1\u00c6",
+        "\u00e2",
+        "\u00e6\u00eb\u00c3",
+        "\u00eba"
+      ],
+      "fishing": [
+        "A\u00e3",
+        "EE\u00e3",
+        "E\u00e2",
+        "aA\u00e5",
+        "e\u00c5\u00e9",
+        "id",
+        "new",
+        "type",
+        "\u00c0\u00c1",
+        "\u00c0\u00e2",
+        "\u00c0\u00e8",
+        "\u00c2\u00e4",
+        "\u00c4A",
+        "\u00c4\u00e3",
+        "\u00c5\u00c9\u00ca",
+        "\u00c8\u00e1\u00e4",
+        "\u00cb\u00c6",
+        "\u00e1\u00c6",
+        "\u00e1\u00e3\u00e1",
+        "\u00e2",
+        "\u00e2\u00c1\u00c1",
+        "\u00e3\u00e9\u00c3",
+        "\u00e4$",
+        "\u00e5a\u00e6",
+        "\u00e5\u00c8",
+        "\u00e6\u00c4",
+        "\u00e6\u00eb\u00c3",
+        "\u00eba"
+      ]
+    },
+    "observedChanges": 79,
+    "animationOnlyChanges": 0,
+    "signatureIgnoredFields": [
+      "new",
+      "\u00c2\u00e4",
+      "\u00e1\u00c6",
+      "\u00eba",
+      "\u00e6\u00eb\u00c3",
+      "\u00c0\u00c1",
+      "cos"
+    ],
+    "limits": "Full raw snapshots retained; only change-trigger equality filters known animation. Shallow samples are not unique openings; capped lanes remain incomplete."
+  },
+  "source": {
+    "chunks": 85,
+    "bytes": 838390,
+    "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+    "recoveredMatches": true
+  },
+  "spread": {
+    "weapons": [
+      {
+        "weapon": "revolver",
+        "observedClip": 6,
+        "target": 18,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 27,
+            "projectiles": 27,
+            "qualifiedAngleGroups": 18,
+            "observedHalfDegrees": 4.766167018889638,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 20,
+            "projectiles": 20,
+            "qualifiedAngleGroups": 17,
+            "observedHalfDegrees": 4.58366236104659,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "scoped ar",
+        "observedClip": 20,
+        "target": 60,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 104,
+            "projectiles": 103,
+            "qualifiedAngleGroups": 25,
+            "observedHalfDegrees": 5.339124814020448,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {
+              "aim turning": 2
+            }
+          },
+          "ads": {
+            "shots": 166,
+            "projectiles": 166,
+            "qualifiedAngleGroups": 92,
+            "observedHalfDegrees": 13.17802928800896,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "combat",
+        "observedClip": 10,
+        "target": 30,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 166,
+            "projectiles": 1150,
+            "qualifiedAngleGroups": 35,
+            "observedHalfDegrees": 9.349829379936228,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {
+              "aim turning": 77
+            }
+          },
+          "ads": {
+            "shots": 31,
+            "projectiles": 217,
+            "qualifiedAngleGroups": 26,
+            "observedHalfDegrees": 9.16732472209318,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "scar",
+        "observedClip": 30,
+        "target": 90,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 172,
+            "projectiles": 172,
+            "qualifiedAngleGroups": 38,
+            "observedHalfDegrees": 4.58366236104659,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {
+              "ADS transition": 3,
+              "aim turning": 5
+            }
+          },
+          "ads": {
+            "shots": 424,
+            "projectiles": 424,
+            "qualifiedAngleGroups": 220,
+            "observedHalfDegrees": 7.83890447398851,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {
+              "aim turning": 64,
+              "ADS transition": 13,
+              "aim not aligned": 66
+            }
+          }
+        }
+      },
+      {
+        "weapon": "smg",
+        "observedClip": 30,
+        "target": 90,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 185,
+            "projectiles": 185,
+            "qualifiedAngleGroups": 18,
+            "observedHalfDegrees": 7.448451336700645,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 372,
+            "projectiles": 372,
+            "qualifiedAngleGroups": 49,
+            "observedHalfDegrees": 11.459155902616423,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {
+              "aim turning": 5,
+              "multiple discharges in packet window": 8
+            }
+          }
+        }
+      },
+      {
+        "weapon": "spas",
+        "observedClip": 4,
+        "target": 12,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 79,
+            "projectiles": 540,
+            "qualifiedAngleGroups": 17,
+            "observedHalfDegrees": 4.010704565915779,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 18,
+            "projectiles": 126,
+            "qualifiedAngleGroups": 15,
+            "observedHalfDegrees": 4.010704565915779,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "silencedpistol",
+        "observedClip": 12,
+        "target": 36,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 624,
+            "projectiles": 624,
+            "qualifiedAngleGroups": 167,
+            "observedHalfDegrees": 8.021409131831557,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {
+              "aim turning": 22,
+              "multiple discharges in packet window": 13
+            }
+          },
+          "ads": {
+            "shots": 36,
+            "projectiles": 36,
+            "qualifiedAngleGroups": 31,
+            "observedHalfDegrees": 7.057998199412881,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "famas",
+        "observedClip": 30,
+        "target": 90,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 266,
+            "projectiles": 265,
+            "qualifiedAngleGroups": 32,
+            "observedHalfDegrees": 3.437746770784968,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 370,
+            "projectiles": 370,
+            "qualifiedAngleGroups": 74,
+            "observedHalfDegrees": 6.692988883726888,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "bolt",
+        "observedClip": 1,
+        "target": 10,
+        "angleTarget": 10,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 88,
+            "projectiles": 87,
+            "qualifiedAngleGroups": 20,
+            "observedHalfDegrees": 13.75098708313977,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {
+              "aim turning": 4,
+              "ADS transition": 2
+            }
+          },
+          "ads": {
+            "shots": 90,
+            "projectiles": 90,
+            "qualifiedAngleGroups": 15,
+            "observedHalfDegrees": 0.7554624529738585,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {
+              "aim turning": 1
+            }
+          }
+        }
+      },
+      {
+        "weapon": "charge rifle",
+        "observedClip": 9,
+        "target": 27,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 66,
+            "projectiles": 48,
+            "qualifiedAngleGroups": 21,
+            "observedHalfDegrees": 0.7554624529738585,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 27,
+            "projectiles": 1,
+            "qualifiedAngleGroups": 0,
+            "observedHalfDegrees": null,
+            "shotTargetMet": true,
+            "angleReady": false,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "sawedoff",
+        "observedClip": 2,
+        "target": 10,
+        "angleTarget": 10,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 34,
+            "projectiles": 272,
+            "qualifiedAngleGroups": 15,
+            "observedHalfDegrees": 10.886198107485614,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 20,
+            "projectiles": 160,
+            "qualifiedAngleGroups": 12,
+            "observedHalfDegrees": 10.313240312354802,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "lmg",
+        "observedClip": 50,
+        "target": 150,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 298,
+            "projectiles": 298,
+            "qualifiedAngleGroups": 17,
+            "observedHalfDegrees": 9.74028251722399,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 510,
+            "projectiles": 510,
+            "qualifiedAngleGroups": 88,
+            "observedHalfDegrees": 12.995524630165912,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "shotgun",
+        "observedClip": 5,
+        "target": 15,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 80,
+            "projectiles": 554,
+            "qualifiedAngleGroups": 16,
+            "observedHalfDegrees": 15.07940733124444,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 28,
+            "projectiles": 196,
+            "qualifiedAngleGroups": 12,
+            "observedHalfDegrees": 15.469860468532202,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "rifle",
+        "observedClip": 3,
+        "target": 10,
+        "angleTarget": 10,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 57,
+            "projectiles": 57,
+            "qualifiedAngleGroups": 12,
+            "observedHalfDegrees": 1.145915590261622,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 60,
+            "projectiles": 60,
+            "qualifiedAngleGroups": 23,
+            "observedHalfDegrees": 2.291831180523244,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "aug",
+        "observedClip": 24,
+        "target": 72,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 139,
+            "projectiles": 139,
+            "qualifiedAngleGroups": 23,
+            "observedHalfDegrees": 1.7188733853925349,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 197,
+            "projectiles": 197,
+            "qualifiedAngleGroups": 64,
+            "observedHalfDegrees": 2.291831180523244,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "rpg",
+        "observedClip": 1,
+        "target": 10,
+        "angleTarget": 10,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 36,
+            "projectiles": 36,
+            "qualifiedAngleGroups": 18,
+            "observedHalfDegrees": 2.864788975654157,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 24,
+            "projectiles": 24,
+            "qualifiedAngleGroups": 12,
+            "observedHalfDegrees": 2.291831180523244,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "heavy sniper",
+        "observedClip": 1,
+        "target": 10,
+        "angleTarget": 10,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 35,
+            "projectiles": 35,
+            "qualifiedAngleGroups": 12,
+            "observedHalfDegrees": 0.3904531372878144,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 36,
+            "projectiles": 36,
+            "qualifiedAngleGroups": 18,
+            "observedHalfDegrees": 0.3904531372878144,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "ak47",
+        "observedClip": 25,
+        "target": 75,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 107,
+            "projectiles": 107,
+            "qualifiedAngleGroups": 28,
+            "observedHalfDegrees": 1.145915590261622,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 350,
+            "projectiles": 350,
+            "qualifiedAngleGroups": 171,
+            "observedHalfDegrees": 4.58366236104659,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "musket",
+        "observedClip": 2,
+        "target": 10,
+        "angleTarget": 10,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 54,
+            "projectiles": 162,
+            "qualifiedAngleGroups": 15,
+            "observedHalfDegrees": 2.864788975654157,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {
+              "aim turning": 12
+            }
+          },
+          "ads": {
+            "shots": 17,
+            "projectiles": 51,
+            "qualifiedAngleGroups": 12,
+            "observedHalfDegrees": 2.864788975654157,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "drum",
+        "observedClip": 10,
+        "target": 30,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 40,
+            "projectiles": 280,
+            "qualifiedAngleGroups": 12,
+            "observedHalfDegrees": 22.527858667945136,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 35,
+            "projectiles": 245,
+            "qualifiedAngleGroups": 32,
+            "observedHalfDegrees": 22.918311805232946,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "vector",
+        "observedClip": 36,
+        "target": 108,
+        "angleTarget": 12,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 230,
+            "projectiles": 232,
+            "qualifiedAngleGroups": 30,
+            "observedHalfDegrees": 4.58366236104659,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 177,
+            "projectiles": 178,
+            "qualifiedAngleGroups": 56,
+            "observedHalfDegrees": 4.766167018889638,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "crossbow",
+        "observedClip": 2,
+        "target": 10,
+        "angleTarget": 10,
+        "requiredModes": [
+          "hip",
+          "ads"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 19,
+            "projectiles": 19,
+            "qualifiedAngleGroups": 11,
+            "observedHalfDegrees": 0.9634109324186254,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 19,
+            "projectiles": 19,
+            "qualifiedAngleGroups": 11,
+            "observedHalfDegrees": 3.437746770784968,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          }
+        }
+      },
+      {
+        "weapon": "grenade pistol",
+        "observedClip": 1,
+        "target": 10,
+        "angleTarget": 10,
+        "requiredModes": [
+          "hip"
+        ],
+        "modeEvidence": {
+          "hip": {
+            "shots": 33,
+            "projectiles": 33,
+            "qualifiedAngleGroups": 14,
+            "observedHalfDegrees": 2.864788975654157,
+            "shotTargetMet": true,
+            "angleReady": true,
+            "rejections": {}
+          },
+          "ads": {
+            "shots": 6,
+            "projectiles": 6,
+            "qualifiedAngleGroups": 0,
+            "observedHalfDegrees": null,
+            "shotTargetMet": false,
+            "angleReady": false,
+            "rejections": {}
+          }
+        }
+      }
+    ],
+    "requiredModes": 44,
+    "shotTargetsMet": 44,
+    "angleReadyModes": 44,
+    "zeroAngleModes": [],
+    "missingAngleModes": [],
+    "rejections": {
+      "aim turning": 192,
+      "ADS transition": 18,
+      "aim not aligned": 66,
+      "multiple discharges in packet window": 21
+    },
+    "exceptions": {
+      "chargeRifle": "User confirms no ADS mode; retain old held-right-click records but do not require a separate ADS calibration.",
+      "grenadePistol": "User confirms unchanged ADS spread. Hip has 10 native shots; the six held-right-click shots are not a missing independent target."
+    },
+    "decision": "User rejects V61 cones as worse. No corrective release has been developed. Existing projection samples assert finite only, not measured coordinates/native pixel alignment. Request raw index document, sanitized resource HAR, held-art sprites and hip/ADS visual evidence before another geometry implementation. No repeated chest run required."
+  },
+  "limits": "Finite observed envelopes, pooled rarities, and native observed clip high-water are not theoretical/server maxima. Native pixels and performance are not inferred from unmentioned outcomes. Aggregate derivative only: no identities, raw packets, timestamps, settings or source excerpts.",
+  "review": {
+    "releaseKept": 61,
+    "v62Developed": false,
+    "repeatContentsRunRequired": false,
+    "airdropMissingThisRun": true,
+    "priorAirdropEvidence": "V60 has65 payload records and7 observed run/identity pairs; these are not opening counts.",
+    "projectionSamples": 16,
+    "projectionLimits": "First8 finite-only musket/hip records per match; no numeric native matrices/muzzle/root/cursor values or independent ADS visual confirmation.",
+    "botCoverage": "Focused schema skips player; player lane0. Suppressed player record attempts294+348; no classifier can be inferred.",
+    "botNextPass": "User authorizes final passive investigation of authoritative spawn provenance, explicit AI/controller metadata, shared versus separate update routes, and source-shipped control logic. No automatic labels, behavioral certainty, server source claims, ID/name/timing classifier or injected input.",
+    "sourceGaps": [
+      "Raw loaded main document and complete first-party/shared script inventory",
+      "Potential loaded modules/workers/wasm/source maps not yet inventoried; existence unproven",
+      "Private engine registry not captured",
+      "Finite/capped replica and metadata coverage"
+    ],
+    "feasibility": "Pre-open exact contents currently unsupported and looking unlikely from current client information; not proven impossible. Reliable bot labels unsupported unless an explicit provenance discriminator or independently validated control distinction becomes visible."
+  }
+}
