@@ -1,0 +1,39 @@
+{
+  "sourceSHA256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "method": "Read-only Acorn AST and literal arithmetic; native code never evaluated",
+  "resolved": {
+    "ÉÉ": 2,
+    "èäÉ": 2,
+    "äÂÀ": 7
+  },
+  "aimFormula": "-atan2(mouseX,mouseY)+PI/2",
+  "cardinalChecks": [
+    {
+      "x": 1,
+      "y": 0,
+      "angle": 0,
+      "standard": 0
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "angle": 1.5707963267948966,
+      "standard": 1.5707963267948966
+    },
+    {
+      "x": -1,
+      "y": 0,
+      "angle": 3.141592653589793,
+      "standard": 3.141592653589793
+    },
+    {
+      "x": 0,
+      "y": -1,
+      "angle": -1.5707963267948966,
+      "standard": -1.5707963267948966
+    }
+  ],
+  "muzzle": "Native held image width110; flash center=(-110/2)-7. Barrel anchor=flash.x+7, flash.y. Compose live held/hand/physical hierarchy into root.",
+  "oldError": "V59 asserted root-local -Y from gun-art rotation alone. Native aim establishes root-local +X; art rotates independently.",
+  "limits": "Source-derived drawing anchor and fixture validation. Native pixel alignment remains pending; no server spawn-offset or ballistic-range claim."
+}

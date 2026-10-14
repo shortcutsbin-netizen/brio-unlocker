@@ -1,0 +1,34 @@
+{
+  "release": 60,
+  "checks": {
+    "npmCi": true,
+    "build": true,
+    "sourceAndPayloadIntegrationConfigurations": 70,
+    "affineCasesActualBrioRenderer": 360,
+    "focusedReplicaPaths": true,
+    "recorderPreservedAgainstV59": true,
+    "vendorUnchanged": true,
+    "zeroPayloadComments": true,
+    "allTrackedArchivesLogsAndNativeSourceUnchanged": true,
+    "sixFullHistoricalDocumentSuffixesPreserved": true,
+    "exactV60Archives": true
+  },
+  "artifacts": [
+    {
+      "path": "src/brio.js",
+      "bytes": 721836,
+      "sha256": "7a5e49257a5df25a747ad0ba6e38ae46a4a8ec0a5769523ecc563ceb75f67bb9"
+    },
+    {
+      "path": "dist/brio-v60.min.js",
+      "bytes": 336817,
+      "sha256": "3336ba5932fde65a8a8c05547e7f3c2bde1e4bec498767dac03ca889cea5ee0c"
+    },
+    {
+      "path": "logs/runs/v59-log.txt",
+      "bytes": 5623910,
+      "sha256": "d733b2f8ce88191d7f37acbc42d4a2bdec0cbf56a105df499190b96c02b7f7c7"
+    }
+  ],
+  "limits": "Fixture and static-source proof only; native pixels/live performance/server spread maximum not established."
+}

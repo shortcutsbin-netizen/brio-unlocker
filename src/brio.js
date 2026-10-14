@@ -1,4 +1,4 @@
-/* BRIO v59 maintenance map — 2026-10-12
+/* BRIO v60 maintenance map — 2026-10-12
  * V59 final observed spread candidate: native muzzle attachment/-Y root firing axis, frozen44-mode envelopes, color/length controls; contents-first bounded recon is next. Recording/storage retained.
  * Hell is the composite title; saved goodFlippinLuck/noMinimap IDs remain compatible.
  * Damage rankings are unavailable; spread angle interpretation requires live calibration.
@@ -31,8 +31,8 @@
  */
 (() => { /* BRIO block: startup — Own this injection; destroy prior releases before creating UI or native adapters. Saved choices survive; per-Play game state does not. */
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v59";
-    for (const k of [ K, "__brio_unlocker_v58", "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
+    const W = window, D = document, K = "__brio_unlocker_v60";
+    for (const k of [ K, "__brio_unlocker_v59", "__brio_unlocker_v58", "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
         W[k]?.destroy?.();
     } catch (_) { /* BRIO fallback: startup — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -41,7 +41,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "59",
+        v: "60",
         log: [],
         errors: [],
         renderer: null,
@@ -476,16 +476,22 @@
     };
     const V59_ENVELOPES={"revolver":{"hip":{"angleGroups":18,"maxAbsDegrees":4.766167018889638,"bins":{"4":{"groups":10,"maxAbsDegrees":1.5363687275494364},"5":{"groups":2,"maxAbsDegrees":0.9634109324186254},"6":{"groups":2,"maxAbsDegrees":4.766167018889638},"3.5":{"groups":1,"maxAbsDegrees":0.9634109324186254},"5.5":{"groups":3,"maxAbsDegrees":4.401157703203542}}},"ads":{"angleGroups":17,"maxAbsDegrees":4.58366236104659,"bins":{"4":{"groups":3,"maxAbsDegrees":2.291831180523244},"5":{"groups":3,"maxAbsDegrees":4.010704565915779},"3.5":{"groups":3,"maxAbsDegrees":1.145915590261622},"5.5":{"groups":8,"maxAbsDegrees":4.58366236104659}}}},"scoped ar":{"hip":{"angleGroups":25,"maxAbsDegrees":5.339124814020448,"bins":{"2":{"groups":4,"maxAbsDegrees":0.7554624529738585},"1.5":{"groups":19,"maxAbsDegrees":0.9634109324186763},"9.5":{"groups":2,"maxAbsDegrees":5.339124814020448}}},"ads":{"angleGroups":92,"maxAbsDegrees":13.17802928800896,"bins":{"1.5":{"groups":89,"maxAbsDegrees":9.16732472209318},"9.5":{"groups":3,"maxAbsDegrees":13.17802928800896}}}},"combat":{"hip":{"angleGroups":29,"maxAbsDegrees":9.349829379936228,"bins":{"2":{"groups":29,"maxAbsDegrees":9.349829379936228}}},"ads":{"angleGroups":26,"maxAbsDegrees":9.16732472209318,"bins":{"2":{"groups":26,"maxAbsDegrees":9.16732472209318}}}},"scar":{"hip":{"angleGroups":33,"maxAbsDegrees":4.58366236104659,"bins":{"4":{"groups":3,"maxAbsDegrees":4.010704565915779},"3.5":{"groups":30,"maxAbsDegrees":4.58366236104659}}},"ads":{"angleGroups":144,"maxAbsDegrees":4.58366236104659,"bins":{"3.5":{"groups":144,"maxAbsDegrees":4.58366236104659}}}},"smg":{"hip":{"angleGroups":18,"maxAbsDegrees":7.448451336700645,"bins":{"6":{"groups":1,"maxAbsDegrees":6.875493541569936},"5.5":{"groups":15,"maxAbsDegrees":7.448451336700645},"4.5":{"groups":1,"maxAbsDegrees":1.145915590261622},"8.5":{"groups":1,"maxAbsDegrees":0.572957795130811}}},"ads":{"angleGroups":49,"maxAbsDegrees":11.459155902616423,"bins":{"4":{"groups":1,"maxAbsDegrees":2.291831180523244},"4.5":{"groups":2,"maxAbsDegrees":4.1932092237587755},"5.5":{"groups":43,"maxAbsDegrees":7.057998199412881},"2.5":{"groups":1,"maxAbsDegrees":0.1825046578430475},"8.5":{"groups":2,"maxAbsDegrees":11.459155902616423}}}},"spas":{"hip":{"angleGroups":16,"maxAbsDegrees":4.010704565915779,"bins":{"1":{"groups":7,"maxAbsDegrees":4.010704565915779},"1.5":{"groups":9,"maxAbsDegrees":4.010704565915779}}},"ads":{"angleGroups":14,"maxAbsDegrees":4.010704565915779,"bins":{"1":{"groups":13,"maxAbsDegrees":4.010704565915779},"1.5":{"groups":1,"maxAbsDegrees":3.437746770784968}}}},"silencedpistol":{"hip":{"angleGroups":72,"maxAbsDegrees":8.021409131831557,"bins":{"4":{"groups":1,"maxAbsDegrees":0.7554624529738585},"5":{"groups":2,"maxAbsDegrees":1.7188733853925349},"4.5":{"groups":3,"maxAbsDegrees":1.718873385392433},"5.5":{"groups":66,"maxAbsDegrees":8.021409131831557}}},"ads":{"angleGroups":31,"maxAbsDegrees":7.057998199412881,"bins":{"4.5":{"groups":4,"maxAbsDegrees":2.4743358383662915},"5.5":{"groups":27,"maxAbsDegrees":7.057998199412881}}}},"famas":{"hip":{"angleGroups":24,"maxAbsDegrees":3.437746770784968,"bins":{"4":{"groups":1,"maxAbsDegrees":2.291831180523244},"3.5":{"groups":23,"maxAbsDegrees":3.437746770784968}}},"ads":{"angleGroups":48,"maxAbsDegrees":6.692988883726888,"bins":{"5.5":{"groups":3,"maxAbsDegrees":6.692988883726888},"3.5":{"groups":45,"maxAbsDegrees":5.156620156177401}}}},"bolt":{"hip":{"angleGroups":18,"maxAbsDegrees":5.156620156177401,"bins":{"2":{"groups":12,"maxAbsDegrees":0.572957795130811},"1.5":{"groups":5,"maxAbsDegrees":1.7188733853925349},"9.5":{"groups":1,"maxAbsDegrees":5.156620156177401}}},"ads":{"angleGroups":12,"maxAbsDegrees":0.572957795130811,"bins":{"2":{"groups":10,"maxAbsDegrees":0.572957795130811},"1.5":{"groups":2,"maxAbsDegrees":0.572957795130811}}}},"charge rifle":{"hip":{"angleGroups":21,"maxAbsDegrees":0.7554624529738585,"bins":{"2":{"groups":5,"maxAbsDegrees":0.572957795130811},"1.5":{"groups":16,"maxAbsDegrees":0.7554624529738585}}}},"sawedoff":{"hip":{"angleGroups":12,"maxAbsDegrees":10.886198107485614,"bins":{"3":{"groups":12,"maxAbsDegrees":10.886198107485614}}},"ads":{"angleGroups":12,"maxAbsDegrees":10.313240312354802,"bins":{"3":{"groups":12,"maxAbsDegrees":10.313240312354802}}}},"lmg":{"hip":{"angleGroups":17,"maxAbsDegrees":9.74028251722399,"bins":{"7.5":{"groups":16,"maxAbsDegrees":9.74028251722399},"6.5":{"groups":1,"maxAbsDegrees":1.7188733853925349}}},"ads":{"angleGroups":84,"maxAbsDegrees":12.995524630165912,"bins":{"7.5":{"groups":81,"maxAbsDegrees":10.886198107485614},"11.5":{"groups":3,"maxAbsDegrees":12.995524630165912}}}},"shotgun":{"hip":{"angleGroups":15,"maxAbsDegrees":15.07940733124444,"bins":{"3":{"groups":15,"maxAbsDegrees":15.07940733124444}}},"ads":{"angleGroups":12,"maxAbsDegrees":15.469860468532202,"bins":{"3":{"groups":12,"maxAbsDegrees":15.469860468532202}}}},"rifle":{"hip":{"angleGroups":12,"maxAbsDegrees":1.145915590261622,"bins":{"2":{"groups":5,"maxAbsDegrees":0.3904531372878144},"1.5":{"groups":7,"maxAbsDegrees":1.145915590261622}}},"ads":{"angleGroups":20,"maxAbsDegrees":1.145915590261622,"bins":{"2":{"groups":4,"maxAbsDegrees":0},"1.5":{"groups":16,"maxAbsDegrees":1.145915590261622}}}},"aug":{"hip":{"angleGroups":23,"maxAbsDegrees":1.7188733853925349,"bins":{"1.5":{"groups":23,"maxAbsDegrees":1.7188733853925349}}},"ads":{"angleGroups":58,"maxAbsDegrees":2.291831180523244,"bins":{"1.5":{"groups":57,"maxAbsDegrees":2.291831180523244},"4.5":{"groups":1,"maxAbsDegrees":1.5363687275494873}}}},"rpg":{"hip":{"angleGroups":18,"maxAbsDegrees":2.864788975654157,"bins":{"2":{"groups":18,"maxAbsDegrees":2.864788975654157}}},"ads":{"angleGroups":12,"maxAbsDegrees":2.291831180523244,"bins":{"2":{"groups":12,"maxAbsDegrees":2.291831180523244}}}},"heavy sniper":{"hip":{"angleGroups":10,"maxAbsDegrees":0.3904531372878144,"bins":{"2":{"groups":10,"maxAbsDegrees":0.3904531372878144}}},"ads":{"angleGroups":11,"maxAbsDegrees":0.3904531372878144,"bins":{"2":{"groups":11,"maxAbsDegrees":0.3904531372878144}}}},"ak47":{"hip":{"angleGroups":27,"maxAbsDegrees":1.145915590261622,"bins":{"2":{"groups":4,"maxAbsDegrees":0.7554624529738585},"1.5":{"groups":23,"maxAbsDegrees":1.145915590261622}}},"ads":{"angleGroups":99,"maxAbsDegrees":2.291831180523244,"bins":{"1.5":{"groups":99,"maxAbsDegrees":2.291831180523244}}}},"musket":{"hip":{"angleGroups":13,"maxAbsDegrees":2.864788975654157,"bins":{"3":{"groups":7,"maxAbsDegrees":2.864788975654157},"2.5":{"groups":6,"maxAbsDegrees":2.864788975654157}}},"ads":{"angleGroups":11,"maxAbsDegrees":2.864788975654157,"bins":{"3":{"groups":3,"maxAbsDegrees":2.291831180523244},"2.5":{"groups":8,"maxAbsDegrees":2.864788975654157}}}},"drum":{"hip":{"angleGroups":12,"maxAbsDegrees":22.527858667945136,"bins":{"5":{"groups":12,"maxAbsDegrees":22.527858667945136}}},"ads":{"angleGroups":32,"maxAbsDegrees":22.918311805232946,"bins":{"5":{"groups":32,"maxAbsDegrees":22.918311805232946}}}},"vector":{"hip":{"angleGroups":30,"maxAbsDegrees":4.58366236104659,"bins":{"3":{"groups":25,"maxAbsDegrees":4.58366236104659},"3.5":{"groups":4,"maxAbsDegrees":3.437746770784968},"1.5":{"groups":1,"maxAbsDegrees":0.572957795130811}}},"ads":{"angleGroups":56,"maxAbsDegrees":4.766167018889638,"bins":{"3":{"groups":52,"maxAbsDegrees":4.766167018889638},"1.5":{"groups":4,"maxAbsDegrees":0.572957795130811}}}},"crossbow":{"hip":{"angleGroups":11,"maxAbsDegrees":0.9634109324186254,"bins":{"4":{"groups":11,"maxAbsDegrees":0.9634109324186254}}},"ads":{"angleGroups":11,"maxAbsDegrees":3.437746770784968,"bins":{"4":{"groups":11,"maxAbsDegrees":3.437746770784968}}}},"grenade pistol":{"hip":{"angleGroups":12,"maxAbsDegrees":2.864788975654157,"bins":{"2":{"groups":12,"maxAbsDegrees":2.864788975654157}}}}};
     const SPREAD_LENGTHS={xs:.75,small:1,medium:1.25,large:1.5,xl:2};
-    const v59MuzzleFrame=r=>{
-        /* Source image Êáe is the muzzle flash center. Attach to its live held-art parent, bypassing only invisible flash opacity; native translation,
-         * size and camera transformations position it. Root-local firing axis is -Y, not +X.
-         * Cancel only descendant rotations already applied by native éa; verify live ancestry. */
-        const muzzle=r?.['Êáe'],holder=muzzle?.parent;if(!holder||![...(holder['âè']||[]),...(holder['ÉE']||[])].includes(muzzle)||!Number.isFinite(muzzle['ë']?.['É'])||!Number.isFinite(muzzle['ë']?.['Ä']))return null;let node=holder,angle=0,scale=1,depth=0;
-        while(node&&node!==r['â']&&depth++<6){ /* BRIO block V59: v59MuzzleFrame — Keep this branch bounded and reversible under the enclosing helper. V59 live-pending; regression proof is separate. */
-            const parent=node.parent;if(!parent||![...(parent['âè']||[]),...(parent['ÉE']||[])].includes(node)||!Number.isFinite(node.A))return null;
-            if(!Number.isFinite(node.size)||node.size<=0)return null;scale*=node.size;angle+=node.A;node=parent;
+    const v60MuzzleFrame=r=>{
+        /* Native aim -atan2(mouseX,mouseY)+PI/2 is the standard +X firing angle.
+         * Compose the barrel point into root coordinates, never infer forward from animated gun art.
+         * Êáe is seven art units beyond the barrel (constructor -110/2-7); use that exact
+         * source offset, excluding flash rotation/size. Each parent translates before scaling children.
+         * Six verified live edges, finite positive sizes, no held/player-center fallback. */
+        const muzzle=r?.['Êáe'],holder=muzzle?.parent,root=r?.['â'];
+        if(!root||!holder||holder!==r['ä']||![...(holder['âè']||[]),...(holder['ÉE']||[])].includes(muzzle)||!Number.isFinite(muzzle['ë']?.['É'])||!Number.isFinite(muzzle['ë']?.['Ä']))return null;
+        let node=holder,x=muzzle['ë']['É']+7,y=muzzle['ë']['Ä'],depth=0;
+        while(node&&node!==root&&depth++<6){ /* BRIO V60: Compose a live parent edge with native translate/rotate/child-size ordering. */
+            const parent=node.parent,pos=node['ë'];
+            if(!parent||![...(parent['âè']||[]),...(parent['ÉE']||[])].includes(node)||!Number.isFinite(node.A)||!Number.isFinite(node.size)||node.size<=0||!Number.isFinite(pos?.['É'])||!Number.isFinite(pos?.['Ä']))return null;
+            const c=Math.cos(node.A),sn=Math.sin(node.A),px=x*node.size,py=y*node.size;
+            x=px*c-py*sn+pos['É'];y=px*sn+py*c+pos['Ä'];node=parent;
         }
-        return node===r['â']?{node:holder,x:muzzle['ë']['É'],y:muzzle['ë']['Ä'],scale,angle:-Math.PI/2-angle}:null;
+        return node===root?{node:root,x,y,scale:1,angle:0}:null;
     };
     const v59Envelope=(weapon,mode)=>{
         /* Frozen user-run evidence works on a fresh page without fabricating saved shot counts.
@@ -653,12 +659,12 @@
             v55PlayerPreflight(r);if(isLocal(r))v55Frame(ctx);
         });
         if(!isLocal(r))return;
-        const frame=v59MuzzleFrame(r),oldCone=featureNodes.get(r)?.get('spreadCone');
+        const frame=v60MuzzleFrame(r),oldCone=featureNodes.get(r)?.get('spreadCone');
         if(oldCone&&oldCone.parent!==frame?.node){ /* BRIO block V59: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ oldCone.parent?.remove?.(oldCone);featureNodes.get(r).delete('spreadCone');}
         if(frame)attachFeature(r,'spreadCone',frame.node,(ctx,s)=>{
-            /* Native muzzle-centered V. Parent rotates/scales once; compensate descendant angles
-             * so the centerline follows root-local -Y, independently of held-art recoil/ADS angle. */
-            const e=exFast(),current=v59MuzzleFrame(r),weapon=r['Åé']?.[r['ÈÆ']]?.type,mode=v55ReconMode(),cell=v59Envelope(weapon,mode);
+            /* V60 barrel-centered V in the native root frame. Root rotation/camera apply once;
+             * animated hand positions affect origin only, never the +X firing centerline. */
+            const e=exFast(),current=v60MuzzleFrame(r),weapon=r['Åé']?.[r['ÈÆ']]?.type,mode=v55ReconMode(),cell=v59Envelope(weapon,mode);
             if(!e.showBulletSpread||e.goodFlippinLuck||r['èÂ']||!current||current.node!==frame.node||!cell||!Number.isFinite(s)||s<=0)return;
             const bin=cell.bins[String(Math.round((Number(r['ËÂ'])||0)*2)/2)],degrees=bin?.groups>=12?bin.maxAbsDegrees:cell.maxAbsDegrees;
             if(!Number.isFinite(degrees)||degrees<0||degrees>=60)return;
@@ -3800,7 +3806,7 @@
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
     // V50 reopens the SAME Extras modal during play, including from the minimized terminal. Native home
     // buttons disappear in a match; a reachable control is necessary for tier cycling/preset restoration.
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v59</b><button data-a="extras">EXTRAS</button><button data-a="recon">SPREAD RECON</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v60</b><button data-a="extras">EXTRAS</button><button data-a="recon">SPREAD RECON</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     v55ReconLoad();S.performanceCheck=v55PerfStart;S.spreadRecon=v55ReconReport;for(const event of ['mousedown','mouseup','mousemove','blur','pagehide'])W.addEventListener(event,v55ReconInput,{capture:true,passive:true});D.addEventListener('visibilitychange',v55ReconInput,{passive:true});
@@ -4222,11 +4228,11 @@
         const live = new Set;
         const localPosition = worldPos(S.renderer);
         for (const o of [...collectPlayers(), ...collectWorld()]) { /* BRIO loop: deepTick — Iterate [...collectPlayers(), ...collectWorld()]. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
-            const kind = isPlayer(o) ? "player" : reconKind(o); if (!kind) continue;
+            const kind = isPlayer(o) ? "player" : reconKind(o); if (!kind || deep.contentsFocus && kind === "player") continue;
             if (o.id != null && deep.identities.size < 600) { /* BRIO branch: deepTick — Accept o.id != null && deep.identities.size < 600. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */ deep.identities.set(o.id, kind === "player" ? "player" : o.type); if (o["Àâ"]) deep.subtypes.set(o.id, o["Àâ"]);}
             const key = kind + ":" + o.id; live.add(key);
             let rec = deep.replicas.get(key); if (!rec && deep.replicas.size >= 200) continue;
-            if(deep.records>=1800||deep.bytes>=8e6||(deep.lanes.replica||0)>=DEEP_LANES.replica)continue;
+            if(deep.records>=1800||deep.bytes>=8e6||(deep.lanes.replica||0)>=v59LaneCaps().replica)continue;
             const snapshot = probeSnapshot(o), signature = JSON.stringify(snapshot.data);
             if (!rec) { /* BRIO branch: deepTick — Accept !rec. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
                 rec = {last: signature, absent: false, updates: 0, firstAt: performance.now()}; deep.replicas.set(key, rec);
@@ -4476,7 +4482,7 @@
     replicaStateAudit = o => { /* BRIO block: replicaStateAudit — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
         if (!o || replicaAuditSeen.has(o) || S.replicaAuditCount >= 80) return;
         const kind = isPlayer(o) ? "player" : reconKind(o);
-        if (!kind) return;
+        if (!kind || deep.contentsFocus && kind === "player") return;
         replicaAuditSeen.add(o);
         S.replicaAuditCount = (S.replicaAuditCount || 0) + 1;
         const entries = [], seen = new Set;

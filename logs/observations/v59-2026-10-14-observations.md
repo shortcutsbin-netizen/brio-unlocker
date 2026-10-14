@@ -1,0 +1,3 @@
+# User feedback supplied 2026-10-14
+
+User resumed an interrupted v59-analysis/v60-development thread and named logs/runs/v59-log.txt. Reported cone roughly90 degrees off and origin misplaced; requested barrel origin/firing direction, saved color, XS25% shorter/Small current/Medium25% longer/Large50% longer/XL100% longer, default existing blue/Medium. Reported Bolt and Heavy Sniper recon completed. This restated message does not independently confirm V59 styles/native pixels or container-screening success. All44 required modes were already complete in V58 and remain so in V59. No invented visual confirmation.
