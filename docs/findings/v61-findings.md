@@ -1,0 +1,26 @@
+# V61 current handoff — 2026-10-14
+
+Current src/brio.js, direct zero-comment dist/brio-v61.min.js, exact versions/v61/. Read docs/findings/v61-findings.md, docs/status/v61-status.md, docs/test-procedures/v61-test-procedure.md, docs/audits/v61-validation.md, docs/analysis/runs/v61-v60-focused-analysis.json and separate logs/observations/v60-2026-10-14-observations.md. This supersedes V59/V60 axis claims; full historical document suffixes remain intact. User explicitly rejects V60 alignment and requests completed spread UI removal. Next release is61, not another60.
+
+Complete V60 upload:6,731,244 bytes SHA256 d25ab12d9f0a8341309e5a812f2e178cb5fce1f9c1d7a15ec081a4d3d472b10a;4099 valid JSON events,0 malformed,two terminal matches,85 native source chunks exactly match unchanged engine.44/44 shot and angle targets remain complete. Keep frozen23-gun empirical widths, V55 storage/revision/firing/angle guards, blue #72caff/Medium and five lengths/reset. No new collection quotas, server maxima or range claims.
+
+V61 removes terminal SPREAD RECON, Extras Spread reference/progress line, above-player sampling badge and entire sidebar/resize code/listeners. Anonymous saved aggregates and passive recorder stay; no reset/migration/deletion. Actual native held parent contains cone as flash sibling, independent of flash opacity. Use actual held canvas matrix at draw to locate barrel (source flash.x+7,flash.y); existing own-root draw preflight supplies actual canvas-projected player center and units using native scale. Existing passive mouse handler supplies client cursor coordinates, converted through current canvas CSS/backing dimensions. Draw player-to-cursor axis in backing pixels with save/setTransform/restore; never guess root-local forward or manually reconstruct animated ancestors. Validate live membership≤6edges; invalid/stale/singular matrix, absent pointer, blur, unsupported Canvas or unknown weapon suppress. No touch/controller promise; unsupported pointer state suppresses safely. Existing own-instance gate preflight forwards original argument list, original native method still once/unchanged. Bounded8 primitive projection checks per match; references reset on Play/destroy.640 actual OUR-renderer cases vary all four root axes independently of all four cursor axes, ADS hand poses, native/art/camera scales, CSS/backing ratios, lengths, invisible flash, blur and stale removal. These are fixtures, not pixel confirmation. Live review pending.
+
+V60 focused records699/898, packets33081/32372, native registry missing, one truncation each, zero discovery errors, replica200 cap both. Packet identities observed across runs:ammo33/grenade32/chest39/airdrop7/fishing49/meteor1; these are lifecycle identities, not opening counts. Shallow samples include a legendary chest. No authoritative pre-open contents in observed packets/replicas.232 of254 full replica changes involve ONLY interpolation/animation keys. V61 excludes new/Âä/áÆ/ëa/æëÃ/ÀÁ/cos from focused change equality ONLY; full snapshots retain them. Removal/fade Äã, health, unknown/nested/new fields remain significant. Existing per-entity5changes/200identities/replica200lane/1800records/8MB/15min/80000packets unchanged. This creates useful headroom, not an impossibility proof. Missing loaded-client index manifest/private registry/capped observations remain; never invent contents/NONE or infer from nearby/removal/types. Native source/vendor and user uploads unchanged.
+
+Next live:paste61 once; Extras Test contents; Play; any natural gun, move cursor around player, hip/ADS, observe barrel and bullet alignment; normal play/openings without every-kind quota or second-match demand; COPY RESULTS to logs/runs/v61-log.txt with cone exception details. All prior proven features exception-only. Sources buildroyale.io (index) saved as docs/game-sources/index.html remains useful for closing loaded-client manifest gap; no repeated broad contents-only baseline justified without novel change/source evidence.
+
+Standing authorization publish completed scoped changes to shortcutsbin-netizen/brio-unlocker/main, no repeated approval/subagents/force push/historical deletion. User requests bounded tool output/recoverable repository handoff; maintain release-specific analysis/status/procedure rather than relying on conversation access. Platform conversation availability cannot be guaranteed.
+
+## Observed container packets
+
+| Kind | Packet records | Run/identity pairs | Fields |
+|---|---:|---:|---|
+| ammocrate | 234 | 33 | fullHealth, health, height, i, p, t, type, width |
+| grenadecrate | 214 | 32 | fullHealth, health, height, i, p, t, type, width |
+| chest | 261 | 39 | chestType, i, p, t |
+| airdrop | 65 | 7 | fullHealth, health, height, i, landProgress, landed, p, t, type, width |
+| bubbles | 212 | 49 | fullHealth, health, height, i, p, t, type, width |
+| meteorite | 4 | 1 | fullHealth, hasWeapon, health, height, i, landProgress, landed, p, t, type, width |
+
+User confirms every openable kind encountered; legendary chest additionally appears in shallow native samples. These tables do not count openings. Unknown nested metadata and removal/health changes remain recordable; existing per-entity change caps are still reported as a limitation.

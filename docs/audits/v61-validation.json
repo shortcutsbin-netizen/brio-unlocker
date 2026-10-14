@@ -1,0 +1,38 @@
+{
+  "release": 61,
+  "date": "2026-10-14",
+  "baseCommit": "d1a53f15473f7451f559dd7346907929feecc039",
+  "commands": {
+    "npm ci": "passed",
+    "npm run build": "passed",
+    "npm test": "passed"
+  },
+  "integrationConfigurations": 70,
+  "spreadGeometryCases": 640,
+  "recorderPreserved": true,
+  "fullHistoricalDocumentSuffixesPreserved": true,
+  "oldPublishedSourcePayloadLogsNativeSourceUnchanged": true,
+  "standalonePayloadComments": 0,
+  "sourceAudit": {
+    "comments": 1581,
+    "vendor": {
+      "characters": 121857,
+      "sha256": "845e6f940e25c2fd3d90ce2ea8b5974ec01282f24d666030201db18cd37150f4"
+    }
+  },
+  "limits": "Synthetic fixtures are not live pixel alignment/latency proof. Native desktop cursor required. Pre-open contents unresolved; private registry, capped observation and missing index manifest remain. Frozen angular widths are empirical, not server maxima.",
+  "artifacts": {
+    "src/brio.js": {
+      "bytes": 704223,
+      "sha256": "6807b18ae45acbb6a1e42fb645168b8865363751a773c9d44e02597894e960cc"
+    },
+    "dist/brio-v61.min.js": {
+      "bytes": 327692,
+      "sha256": "b04a76d02aa305df550ec4b725c13b6e875a563f9346ad04b40c3f148cd3de24"
+    },
+    "logs/runs/v60-log.txt": {
+      "bytes": 6731244,
+      "sha256": "d25ab12d9f0a8341309e5a812f2e178cb5fce1f9c1d7a15ec081a4d3d472b10a"
+    }
+  }
+}

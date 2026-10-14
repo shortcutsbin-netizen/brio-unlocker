@@ -1,3 +1,13 @@
+# V61 — canvas-projected spread; completed recon UI retired
+
+Current [Console script](dist/brio-v61.min.js), readable [source](src/brio.js), exact versions/v61/. Copy raw file and paste once on the home page. See docs/findings/v61-findings.md, docs/status/v61-status.md, docs/test-procedures/v61-test-procedure.md and docs/audits/v61-validation.md.
+
+User rejects V60 cone alignment. V61 uses actual held-art canvas transforms for the barrel and passive player-to-cursor projection for direction. Native pixels remain pending live review. Completed spread diagnostic menus/sidebar/badge removed; color/size/reset and empirical data retained. V60 full log analyzed; focused replica change detection skips documented animation without dropping exported fields. Contents screening remains unresolved, with no guessed labels or unsupported retirement.
+
+Next: Extras → Test contents → Play; any natural gun, observe hip/ADS muzzle and firing direction. Normal openings only; no every-kind hunt or recording quotas. Export logs/runs/v61-log.txt. Full findings/handoff in repo preserve recoverability.
+
+---
+
 # V59 — final observed spread candidate; contents focus
 
 Current direct script dist/brio-v59.min.js, readable src/brio.js, exact versions/v59/. Findings/status/procedure/validation: docs/{findings,status,test-procedures,audits}/v59-* (repo-relative).
