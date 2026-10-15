@@ -1,0 +1,10 @@
+{
+  "artifact": "dist/brio_asset_retrieval.js",
+  "bytes": 153160,
+  "sha256": "d8c10e275b0d130f26178f344011d62fef773cb7d9ef5f15f1199972c3602a5e",
+  "parserBytes": 246643,
+  "parserSha256": "b95392d79457d0357555c5ed3e56302d074b92dff119bcf3b44179500b10e9df",
+  "comments": 0,
+  "standalone": true,
+  "numberedReleaseUnchanged": 61
+}

@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "build": "node tools/build.cjs",
-    "test": "node tests/recon-preservation.cjs && node tests/spread-geometry.cjs && node tests/contents-budget.cjs && node tools/analysis/audit-comments.cjs && node tests/regression.cjs src/brio.js && node tests/challenges.cjs src/brio.js && node tests/regression.cjs dist/brio-v61.min.js && node tests/challenges.cjs dist/brio-v61.min.js && node tests/performance.cjs"
+    "test": "node tests/recon-preservation.cjs && node tests/spread-geometry.cjs && node tests/contents-budget.cjs && node tools/analysis/audit-comments.cjs && node tests/regression.cjs src/brio.js && node tests/challenges.cjs src/brio.js && node tests/regression.cjs dist/brio-v61.min.js && node tests/challenges.cjs dist/brio-v61.min.js && node tests/performance.cjs",
+    "build:assets": "node tools/supplemental/build-assets.cjs",
+    "test:assets": "node tests/supplemental/asset-retrieval.cjs"
   },
   "devDependencies": {
+    "acorn": "8.19.0",
+    "fake-indexeddb": "^6.2.5",
     "jsdom": "^27.0.0",
-    "terser": "^5.44.0",
-    "acorn": "8.19.0"
+    "terser": "^5.44.0"
   }
 }

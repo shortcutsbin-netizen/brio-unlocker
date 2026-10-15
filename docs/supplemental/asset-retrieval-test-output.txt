@@ -1,0 +1,7 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> brio-unlocker@61.0.0 test:assets
+> node tests/supplemental/asset-retrieval.cjs
+
+{"zipFiles": 26, "events": 36, "wireRecords": 5, "zipCRC": "passed", "flat": "passed", "networkDelegation": "passed", "restoration": "passed"}
+Standalone supplemental collector passed: actual minified execution, IndexedDB recovery, source discovery, exact wire/asset bytes, ZIP CRC/flat paths, native delegation and teardown.

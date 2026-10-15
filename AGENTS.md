@@ -1,3 +1,9 @@
+# Supplemental asset collector — independent of numbered releases
+
+The user authorized `dist/brio_asset_retrieval.js` as an independent minified collector, not V62/V63 or a numbered-pipeline change. Read docs/supplemental/asset-retrieval.md and its validation/build records. Source is src/supplemental/brio_asset_retrieval.js; independent commands build:assets/test:assets. Two natural matches, flat ZIP named brio_asset_retrival-results.zip, then reviewed extracted files to docs/game-sources root. Recorder/backfill/persistence budgets and browser-only gaps are explicit; no claim of universal network capture or server-code access. Main V61 source/payload/archives remain unchanged. Supplemental file acquisition is authorized before resuming the paused cone/bot/contents work below. Preserve source uploads, filenames, all historical evidence and complete document suffixes; no repeated approval/subagents/force push.
+
+---
+
 # V61 follow-up — awaiting source/visual artifacts, no V62 yet
 
 Read docs/findings/v61-followup-review.md, docs/analysis/runs/v61-followup-analysis.json and logs/observations/v61-2026-10-14-observations.md first. User rejects V61 cone alignment. Complete V61 log analyzed; no repeated contents run required. Request raw loaded index, sanitized home-load HAR and hip/ADS visual evidence; optional original held-art sprites. Do not develop/publish V62 until the material geometry/source evidence gap is resolved. If another gameplay evidence run is needed, retain V61 and use v61-log-2.txt as user directed. User authorizes a final bounded passive bot provenance/controller investigation next pass; no guessed labels, identity heuristics, input manipulation or inaccessible-server-source claim. Source/payload remainV61. All prior history below is preserved.
