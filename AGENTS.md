@@ -1,3 +1,9 @@
+# Cloud test surface handoff — 2026-10-16
+
+Read docs/knowledge/game_knowledge.md and docs/testing/cloud-access-questionnaire.md. User requests context/state updates published each work turn. No cloud session opened yet; user answers and supplemental assets next, then access/sign-in trial. Assistant name unlocker_test_observer; user unlocker_test_player; script adds ul prefix. User authorizes requested coordinated party/solo testing assistance; duos/squads and second-tab party decoy surface described in game knowledge. Concurrent account behavior/input/auth/script support unverified. Incorporate answers into game knowledge; ask additional focused questions as needed. V61/paused V62 and supplemental script unchanged. Preserve all historical suffixes.
+
+---
+
 # Supplemental asset collector — independent of numbered releases
 
 The user authorized `dist/brio_asset_retrieval.js` as an independent minified collector, not V62/V63 or a numbered-pipeline change. Read docs/supplemental/asset-retrieval.md and its validation/build records. Source is src/supplemental/brio_asset_retrieval.js; independent commands build:assets/test:assets. Two natural matches, flat ZIP named brio_asset_retrival-results.zip, then reviewed extracted files to docs/game-sources root. Recorder/backfill/persistence budgets and browser-only gaps are explicit; no claim of universal network capture or server-code access. Main V61 source/payload/archives remain unchanged. Supplemental file acquisition is authorized before resuming the paused cone/bot/contents work below. Preserve source uploads, filenames, all historical evidence and complete document suffixes; no repeated approval/subagents/force push.
