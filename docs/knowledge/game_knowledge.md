@@ -1,3 +1,31 @@
+# Recovered cloud-trial answers — 2026-10-17
+
+Recovery audit: main at b6e20dfba4bc1d795df63ff302c46150332abdd4 still contained the unanswered questionnaire. Personal Context recovered the subsequent user answers and the prior assistant's statement that it was publishing documentation. That statement was not reflected in the inspected main tree. No cloud browser/session or live test result was recorded; no V62 exists. This recovery turn performs documentation only.
+
+## Confirmed answers
+
+- Use the user's regular testing account; user handles interactive authentication. Account identifier intentionally omitted from public documentation.
+- Change the observer display name each game for identification. Retain the established observer base name and avoid adding a second script prefix.
+- Do not change native settings/keybinds. Custom bindings may be read on the first trial; interact/pickup is F; ADS remains held right-click. Read other controls rather than assuming defaults.
+- Server selection is automatic. Existing ad suppression is reported reliable; newly observed ad screens may be incorporated into removal.
+- Reloading permanently removes the player from the current match; it cannot rejoin that match.
+- Pregame waits for another human, then starts a 60-second countdown. Same-party tabs do not satisfy the other human-team requirement in team modes.
+- Same-account concurrent tabs are allowed per user report; live behavior is not yet verified here.
+- User can join coordinated tests and locate the observer.
+- Preserve default native cosmetics; alternate unlocker cosmetics may be used for testing.
+- No private/custom/practice matches.
+- User accepted the proposed initial movement, hip/ADS firing, one opening, and output-retrieval sequence.
+
+## Resume point
+
+Cloud access/sign-in/input/script/output capability trial is next; its execution has not occurred in the recovered record. The previous assistant said it awaited a user greenlight. This recovery request itself is for state reconstruction, so no browser was opened during the audit.
+
+V61 remains current. V62 remains paused for source/visual evidence supporting cone geometry, with final bounded bot provenance and separate contents investigation pending. Supplemental collector remains independent. The inspected game-sources tree still contains only engine.js, main.css, msgpack.js and scheme.js; no supplemental results, index.html, HAR, or fresh hip/ADS visual artifacts were found. No repeated broad contents run or new spread sampling quota is required.
+
+The older handoff below is retained verbatim as history; its unanswered questions are superseded by the confirmed answers above. Any details not recovered remain unknown rather than inferred.
+
+---
+
 # Gameplay knowledge and cloud testing handoff
 
 ## Current state — 2026-10-16, America/Chicago
