@@ -1,0 +1,187 @@
+[
+  {
+    "at": 1792271836291,
+    "stage": "pre-existing socket coverage",
+    "detail": "Existing private sockets become observable only after a normal native send reaches the scoped send observer. Earlier frames cannot be recovered."
+  },
+  {
+    "at": 1792271836544,
+    "stage": "resource GET",
+    "detail": "https://webgames.io/css/widget.css?v=4 TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271836553,
+    "stage": "resource GET",
+    "detail": "https://accounts.google.com/gsi/client TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271837055,
+    "stage": "resource GET",
+    "detail": "https://go.affec.tv/j/6a8467d38bd85e8b944429ce?referer_url_enc=https%3A%2F%2Fbuildroyale.io%2F&gdpr=0&gdpr_consent= TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271837235,
+    "stage": "resource GET",
+    "detail": "https://signal-beacon.s-onetag.com/beacon.min.js?affiliateId=264160 TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271847480,
+    "stage": "resource GET",
+    "detail": "https://webgames.io/img/message.png TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271847494,
+    "stage": "resource GET",
+    "detail": "https://webgames.io/img/message-b.png TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271847505,
+    "stage": "resource GET",
+    "detail": "https://webgames.io/img/biscuit7-b.png TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271847515,
+    "stage": "resource GET",
+    "detail": "https://webgames.io/img/limaxio-banner.png TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271847519,
+    "stage": "resource GET",
+    "detail": "https://webgames.io/img/biscuit7.png TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271847955,
+    "stage": "resource GET",
+    "detail": "https://webgames.io/js/widget.min.js?br=1 TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271848138,
+    "stage": "resource GET",
+    "detail": "https://map.go.affec.tv/map/af/?gdpr=0&gdpr_consent= TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271848323,
+    "stage": "resource GET",
+    "detail": "https://eb2.3lift.com/sync?gdpr=false&gpp_sid=16& TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271848484,
+    "stage": "resource GET",
+    "detail": "https://ads.pubmatic.com/AdServer/js/user_sync.html?kdntuid=1&p=156857&gdpr=0&gdpr_consent= TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271848499,
+    "stage": "resource GET",
+    "detail": "https://js-sec.indexww.com/um/ixmatch.html TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271848599,
+    "stage": "resource GET",
+    "detail": "https://public.servenobid.com/sync.html?gdpr=0&gdpr_consent= TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271848655,
+    "stage": "resource GET",
+    "detail": "https://eus.rubiconproject.com/usync.html?gdpr=0&gdpr_consent= TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271850128,
+    "stage": "resource GET",
+    "detail": "https://secure.xsolla.com/favicon.ico TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271850583,
+    "stage": "resource GET",
+    "detail": "https://static.xsolla.com/embed/paystation/1.0.7/spinners/xsolla.svg TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271850662,
+    "stage": "resource GET",
+    "detail": "https://static.xsolla.com/embed/paystation/1.0.7/spinners/round.svg TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271850835,
+    "stage": "resource GET",
+    "detail": "https://s0.2mdn.net/instream/video/client.js TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271850925,
+    "stage": "static JS parse",
+    "detail": "https://buildroyale.io/.js Unexpected token (1:0)"
+  },
+  {
+    "at": 1792271850963,
+    "stage": "static JS parse",
+    "detail": "https://buildroyale.io/custom.elements.min.js Unexpected token (1:0)"
+  },
+  {
+    "at": 1792271850983,
+    "stage": "resource GET",
+    "detail": "data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(o)))),\" TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271851045,
+    "stage": "static JS parse",
+    "detail": "https://buildroyale.io/outstream.min.js Unexpected token (1:0)"
+  },
+  {
+    "at": 1792271851045,
+    "stage": "resource GET",
+    "detail": "data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(s)))),\" TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271851066,
+    "stage": "static JS parse",
+    "detail": "https://buildroyale.io/cdn-ihb.33across.com/ihbloader.js Unexpected token (1:0)"
+  },
+  {
+    "at": 1792271851093,
+    "stage": "static JS parse",
+    "detail": "https://buildroyale.io/.tag.min.js Unexpected token (1:0)"
+  },
+  {
+    "at": 1792271933734,
+    "stage": "static JS parse",
+    "detail": "https://buildroyale.io/prebid.js Unexpected token (1:0)"
+  },
+  {
+    "at": 1792271933793,
+    "stage": "static JS parse",
+    "detail": "https://buildroyale.io/-standalone.js Unexpected token (1:0)"
+  },
+  {
+    "at": 1792271933882,
+    "stage": "static JS parse",
+    "detail": "https://buildroyale.io/events.js Unexpected token (1:0)"
+  },
+  {
+    "at": 1792271933901,
+    "stage": "static JS parse",
+    "detail": "https://buildroyale.io/debugging-standalone.js Unexpected token (1:0)"
+  },
+  {
+    "at": 1792271934027,
+    "stage": "resource GET",
+    "detail": "https://imasdk.googleapis.com/pal/sdkloader/pal.js TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271934061,
+    "stage": "resource GET",
+    "detail": "https://cadmus.script.ac/d1oykxszdrgjgl/script.js TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271934065,
+    "stage": "resource GET",
+    "detail": "https://imasdk.googleapis.com/js/sdkloader/gpt_proxy.js TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271934533,
+    "stage": "resource GET",
+    "detail": "https://api.adinplay.com/choice.js?tag_version=V3 TypeError: Failed to fetch"
+  },
+  {
+    "at": 1792271942652,
+    "stage": "static JS parse",
+    "detail": "https://buildroyale.io/AVmanager.js?v=1.0&type=s&pid= Unexpected token (1:0)"
+  }
+]

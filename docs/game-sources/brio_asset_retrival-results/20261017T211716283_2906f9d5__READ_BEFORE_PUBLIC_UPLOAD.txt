@@ -1,0 +1,13 @@
+Page JavaScript is not DevTools/CDP: it cannot guarantee every browser request, response, redirect, header or frame.
+
+Initial already-loaded responses are discovery GET refetches, not original network transactions. Original HTTP compression/framing, forbidden headers, TLS and WebSocket handshake/control frames are unavailable.
+
+Cross-origin frames/resources may be unreadable. Worker/service-worker internal traffic and private pre-existing sockets may be unobserved; only reachable application-native decoder results are observed.
+
+Streaming/preconstructed Request bodies, WebTransport/WebRTC, source maps not exposed to the page, server code and server-only state require separate evidence.
+
+Raw asset/HTTP/WebSocket bodies may contain player/account data or credentials. Structured headers/metadata redact recognized secrets; arbitrary binary/raw response bodies cannot be guaranteed sanitized. Review before a public repository upload.
+
+Every omission, cap, refetch and write failure is recorded. Capture does not prove contents/bot feasibility or native pixel alignment.
+
+DevTools: export sanitized Network HAR from a reload; manually save any inaccessible source maps/workers. Capture screenshots/clip for DOM/cursor/native visuals. Server code is unavailable unless actually shipped.
