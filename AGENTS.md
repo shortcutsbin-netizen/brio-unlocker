@@ -1,3 +1,9 @@
+# Recovery audit — 2026-10-17
+
+Read the new recovery section in docs/knowledge/game_knowledge.md first. Subsequent questionnaire answers were recovered from Personal Context; the prior assistant's publishing statement was not reflected in main b6e20df. Answers are now saved, with account identifier omitted from public documentation. No cloud session/live test recorded; V61 current, V62 paused, supplemental collector unchanged. Current game-sources tree still lacks supplemental results/index/HAR/visual evidence. This turn reconstructed state only; access trial remains next. Older unanswered-question handoff below is historical and superseded by recovered answers. Preserve all historical suffixes.
+
+---
+
 # Cloud test surface handoff — 2026-10-16
 
 Read docs/knowledge/game_knowledge.md and docs/testing/cloud-access-questionnaire.md. User requests context/state updates published each work turn. No cloud session opened yet; user answers and supplemental assets next, then access/sign-in trial. Assistant name unlocker_test_observer; user unlocker_test_player; script adds ul prefix. User authorizes requested coordinated party/solo testing assistance; duos/squads and second-tab party decoy surface described in game knowledge. Concurrent account behavior/input/auth/script support unverified. Incorporate answers into game knowledge; ask additional focused questions as needed. V61/paused V62 and supplemental script unchanged. Preserve all historical suffixes.
