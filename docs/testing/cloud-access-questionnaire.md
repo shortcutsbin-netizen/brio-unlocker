@@ -1,3 +1,9 @@
+# Current questionnaire status — 2026-10-17
+
+Confirmed answers were recovered and saved in ../knowledge/game_knowledge.md. Asset analysis is complete; see cloud-access-trial.md. Do not resend the full questionnaire or repeat already answered account/server/keybind/lobby/multi-tab/cosmetic questions. Other controls can be read without changing them during the trial; ask only a concrete material question if it actually blocks progress. No cloud session has yet been tested. The original unanswered questionnaire below is retained as history.
+
+---
+
 # Cloud access and gameplay questionnaire
 
 Status: awaiting user answers. No cloud session opened. Short numbered answers are sufficient; unknown/skip is acceptable. Existing confirmed behavior need not be re-explained.

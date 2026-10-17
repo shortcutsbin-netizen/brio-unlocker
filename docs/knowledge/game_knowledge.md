@@ -1,3 +1,9 @@
+# Asset analysis complete; access trial next — 2026-10-17
+
+User completed the capture/upload step. Read ../findings/asset-retrieval-2026-10-17.md for findings and ../testing/cloud-access-trial.md for the next trial. All 3,368uploaded files are accessible despite GitHub's1,000 entry display warning; two manifest-embedded missing files recovered offline. No repeat asset run or container/gun quota is required before access testing. No cloud browser, authentication, input or live visual test has been performed by the assistant. V61 remains current; V62 remains paused for sufficient cone evidence. The user's workflow is explicit: publish asset analysis, report and END TURN, then start real-game access testing only after a separate user greenlight. Preserve all confirmed gameplay answers below.
+
+---
+
 # Recovered cloud-trial answers — 2026-10-17
 
 Recovery audit: main at b6e20dfba4bc1d795df63ff302c46150332abdd4 still contained the unanswered questionnaire. Personal Context recovered the subsequent user answers and the prior assistant's statement that it was publishing documentation. That statement was not reflected in the inspected main tree. No cloud browser/session or live test result was recorded; no V62 exists. This recovery turn performs documentation only.

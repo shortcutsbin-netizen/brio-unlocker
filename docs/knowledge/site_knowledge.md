@@ -1,3 +1,13 @@
+# Captured loaded-client evidence — 2026-10-17
+
+See ../findings/asset-retrieval-2026-10-17.md and ../analysis/runs/asset-retrieval-2026-10-17.json plus -source.json. Full user upload lives at game-sources/brio_asset_retrival-results relative to docs; all 3,368 files accessible by git. GitHub's listing truncation loses no access. Original main document is in client-load.har; later refetch asset_00003_index.html is26,229 bytes vs HAR 26,596 bytes, so do not conflate them. Both list js/msgpack.js,js/scheme.js,js/uOfrVi.js. Captured engine is byte-identical to old engine.js (SHA42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4); codec/scheme/main CSS unchanged. HAR is45 document requests, not a complete script/socket history. Payment/lightbox source maps are not game/server code; inaccessible/conditional contexts remain explicit.
+
+All 14,526captured incoming frames decode OFFLINE, no extensions/errors; raw packet fields and create/update schemas now inspected beyond standard recorder lanes. No authoritative pre-open contents list/deterministic seed or separate bot/controller field established. Uniform77 player-create schemas are not bot proof. Counts and bounded negative findings in the review are not universal impossibility. Unknown tuple/private/server semantics remain unresolved. No repeat baseline quota.
+
+Original 350x350 topmusket/topscar art and flash images available; native110unit display, art left-facing.32captured ancestry poses validate membership only, not cursor/ADS/bullet/cone pixels. Native draw source at character343704..344241 uses translate(position/incomingScale),rotate(A),childScale=incomingScale/size; size does not enter Canvas scale. No CAPTURE CANVASES clicks; site assets/output.mp4 is not user gameplay. V61 visual failure remains open; V62 paused pending supported live observation, not another guessed axis correction. Next separate user greenlight begins cloud access capability trial; no browser was opened in this analysis turn.
+
+---
+
 # V61 current handoff — 2026-10-14
 
 Current src/brio.js, direct zero-comment dist/brio-v61.min.js, exact versions/v61/. Read docs/findings/v61-findings.md, docs/status/v61-status.md, docs/test-procedures/v61-test-procedure.md, docs/audits/v61-validation.md, docs/analysis/runs/v61-v60-focused-analysis.json and separate logs/observations/v60-2026-10-14-observations.md. This supersedes V59/V60 axis claims; full historical document suffixes remain intact. User explicitly rejects V60 alignment and requests completed spread UI removal. Next release is61, not another60.

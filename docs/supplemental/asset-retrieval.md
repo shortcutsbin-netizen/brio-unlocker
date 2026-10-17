@@ -1,3 +1,9 @@
+# Completed capture — 2026-10-17
+
+The user has completed this acquisition pass. Results are at ../game-sources/brio_asset_retrival-results; review at ../findings/asset-retrieval-2026-10-17.md. All 3,368uploaded files are accessible via git; no re-upload/splitting is required for GitHub's directory display warning. Two absent embedded files were recovered from manifest data URLs without recapture. No additional run is requested before the first separately greenlit cloud trial. The original revision1 procedure below is retained for future acquisition only; it is not a new testing demand.
+
+---
+
 # BRIO supplemental asset retrieval — revision 1
 
 Runnable artifact: [brio_asset_retrieval.js](../../dist/brio_asset_retrieval.js). This is a standalone, direct minified Console script with no remote loader, eval, archive library download or numbered release bump. Current numbered suite stays V61. Build/test commands are separate: `npm run build:assets` and `npm run test:assets`.

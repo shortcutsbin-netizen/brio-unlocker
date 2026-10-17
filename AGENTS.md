@@ -1,3 +1,9 @@
+# Asset upload reviewed — 2026-10-17
+
+Read docs/findings/asset-retrieval-2026-10-17.md and docs/testing/cloud-access-trial.md first. Full clone accesses all 3,368 files from capture c93b1df at docs/game-sources/brio_asset_retrival-results; GitHub's 1,000-file warning is UI-only. Two absent embedded data-URL assets are losslessly recovered under docs/analysis/asset-retrieval-recovered with mappings in the aggregate JSON. 58,875 contiguous events; all wire ranges verified; all 14,526 received WebSocket frames decoded OFFLINE with zero errors. Core engine/codec/scheme/main CSS unchanged; home sources now present. HAR is document-only, not full network coverage. No reliable pre-open contents or bot provenance flag established; no guesses/retirement.32 pose snapshots/original art available, but no gameplay pixels/cursor/matrix evidence; site output.mp4 is not a test clip. V61/current payload unchanged; V62 remains paused. Main build/regressions pass; source fixtures are not live visual proof. Analysis turn ends before browser; next separate user greenlight starts access trial. No additional asset/container/spread quota. Preserve original upload/archives/full historical suffixes.
+
+---
+
 # Recovery audit — 2026-10-17
 
 Read the new recovery section in docs/knowledge/game_knowledge.md first. Subsequent questionnaire answers were recovered from Personal Context; the prior assistant's publishing statement was not reflected in main b6e20df. Answers are now saved, with account identifier omitted from public documentation. No cloud session/live test recorded; V61 current, V62 paused, supplemental collector unchanged. Current game-sources tree still lacks supplemental results/index/HAR/visual evidence. This turn reconstructed state only; access trial remains next. Older unanswered-question handoff below is historical and superseded by recovered answers. Preserve all historical suffixes.

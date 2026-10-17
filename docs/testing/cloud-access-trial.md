@@ -1,0 +1,16 @@
+# First cloud access trial — ready after asset review
+
+Asset review: `../findings/asset-retrieval-2026-10-17.md`. All uploaded entries are accessible despite GitHub's directory display truncation; two embedded assets are recovered. No further asset pass is required before the first trial. V61 remains the current suite; V62 is paused. **No cloud session has yet been opened or tested.**
+
+The user-requested workflow separates asset analysis from real-game access testing. This document prepares the trial; the next user greenlight starts it. User handles authentication in the supported interactive handoff. Use the regular testing account without placing its identifier in public documentation.
+
+1. Check available browser/plugin capabilities and supported sign-in handoff. Open the real game only after greenlight. Verify actual capability for canvas input, script execution and output retrieval; do not assume all are supported. Stop on a concrete capability blocker and report it accurately.
+2. Let the user authenticate where needed. Read the custom native bindings; never change them or native settings. Interact/pickup is F; ADS is held right-click. Server selection is automatic. Preserve default native cosmetics; local unlocker cosmetic variants are allowed for testing.
+3. Set a distinguishable per-game observer name based on `unlocker_test_observer`; avoid double script prefixes. User may appear as `unlocker_test_player`. Use V61 unchanged for the baseline, with Show bullet spread enabled. No new numbered release or acquisition collector is required for this basic trial.
+4. Play normally. Confirm movement, one naturally available gun's hip/ADS firing, and one naturally available opening. If the lobby waits for another human, use the confirmed waiting/countdown behavior. Same-party decoy tabs do not satisfy the other human-team requirement. User can join coordinated tests if needed; verify a shared match rather than assuming queue timing proves it.
+5. Observe the full player, held gun, cursor, cone and bullet travel together. Capture supported screenshots/clip and relevant state at the same time. Native steadying alone is not ADS proof. Describe the actual defect before designing any correction; existing asset poses are supporting evidence only.
+6. Confirm V61 output retrieval and record supported/unsupported capabilities, bindings read, observed interactions and geometry result. A new V61 evidence run, if used, belongs in `logs/runs/v61-log-2.txt`, preserving the old log. Output export is separate from the three extra manual action-type limit. Prior proven features are exception-only; no all-gun/container quota or repeated cosmetic/map chores.
+
+Never reload during an active match: reload permanently removes the player, and that match cannot be rejoined. No private/custom/practice matches are available. Same-account multi-tab use is user-reported, not yet cloud-verified. No game purchases, account linking/deletion, guessed bot labels or protocol modifications are part of this trial.
+
+After the trial, publish the new observations/capability result and updated handoff. V62 requires sufficient source/visual evidence supporting a concrete fix and appropriate regression verification; an access success by itself does not prove the cone fixed or the unresolved features feasible.

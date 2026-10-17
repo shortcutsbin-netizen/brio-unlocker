@@ -1,3 +1,9 @@
+# Current follow-up — asset review complete, 2026-10-17
+
+[Asset findings](docs/findings/asset-retrieval-2026-10-17.md) · [Next cloud access trial](docs/testing/cloud-access-trial.md). All 3,368uploaded capture files are accessible despite GitHub's1,000 entry display limit. V61 remains current; V62 paused for sufficient visual evidence. No cloud trial performed yet; the next separate user greenlight starts it. No further asset pass is required. Original documentation follows.
+
+---
+
 # Supplemental asset collector — independent of numbered releases
 
 The user authorized `dist/brio_asset_retrieval.js` as an independent minified collector, not V62/V63 or a numbered-pipeline change. Read docs/supplemental/asset-retrieval.md and its validation/build records. Source is src/supplemental/brio_asset_retrieval.js; independent commands build:assets/test:assets. Two natural matches, flat ZIP named brio_asset_retrival-results.zip, then reviewed extracted files to docs/game-sources root. Recorder/backfill/persistence budgets and browser-only gaps are explicit; no claim of universal network capture or server-code access. Main V61 source/payload/archives remain unchanged. Supplemental file acquisition is authorized before resuming the paused cone/bot/contents work below. Preserve source uploads, filenames, all historical evidence and complete document suffixes; no repeated approval/subagents/force push.

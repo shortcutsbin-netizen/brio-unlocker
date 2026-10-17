@@ -1,0 +1,87 @@
+{
+  "sources": [
+    {
+      "file": "20261017T211716283_2906f9d5__asset_01014_msgpack.js",
+      "path": "/js/msgpack.js",
+      "bytes": 51128,
+      "sha256": "c670cb2d82b1285c0b12640ad52919f48ec8c268dd794446b57524ff45a74d1a",
+      "parsedNodes": 18264,
+      "identifierReferences": [],
+      "selectedStringReferences": [],
+      "loaderStringCandidates": []
+    },
+    {
+      "file": "20261017T211716283_2906f9d5__asset_01016_uOfrVi.js",
+      "path": "/js/uOfrVi.js",
+      "bytes": 838390,
+      "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+      "parsedNodes": 156450,
+      "identifierReferences": [],
+      "selectedStringReferences": [
+        {
+          "offset": 164519,
+          "term": "droid"
+        },
+        {
+          "offset": 230605,
+          "term": "isPreview"
+        },
+        {
+          "offset": 232160,
+          "term": "droid"
+        },
+        {
+          "offset": 235752,
+          "term": "wander"
+        },
+        {
+          "offset": 441319,
+          "term": "droid"
+        }
+      ],
+      "loaderStringCandidates": [
+        {
+          "offset": 107443,
+          "term": "Potato Palace Worker"
+        },
+        {
+          "offset": 170192,
+          "term": "worker"
+        },
+        {
+          "offset": 260963,
+          "term": "workerbody"
+        },
+        {
+          "offset": 261006,
+          "term": "buildart/worker_body.png"
+        },
+        {
+          "offset": 291748,
+          "term": "workerhead"
+        },
+        {
+          "offset": 291791,
+          "term": "buildart/worker_head.png"
+        }
+      ]
+    },
+    {
+      "file": "20261017T211716283_2906f9d5__asset_01017_scheme.js",
+      "path": "/js/scheme.js",
+      "bytes": 36,
+      "sha256": "ce4236494d4856533d06fc1c3c6dee94ca26127de2aee1c98a2432dcc210217c",
+      "parsedNodes": 7,
+      "identifierReferences": [],
+      "selectedStringReferences": [],
+      "loaderStringCandidates": []
+    }
+  ],
+  "nativeDrawable": {
+    "start": 343704,
+    "end": 344241,
+    "source": "éa:function(ÉÆ,áå,Æ){if((!this.visible||(Æ<=ëÁ))||(this.opacity<=ëä)){return;}Æ=Math.min(Math.max(ãâ,Æ),ÅÀ);var È=this.size;Æ=Math.min(this.opacity*Æ,áÈ);var AÊÁ,áÊÃ;if((this.ë.É!=ÃÈ)||(this.ë.Ä!=ãâ)){AÊÁ=this.ë.É/áå;áÊÃ=this.ë.Ä/áå;ÉÆ.translate(AÊÁ,áÊÃ);}if(this.A!=Åå){ÉÆ.rotate(this.A);}var ÄáÂ=áå/this.size;this.ÉE.forEach(function(À$){À$.éa(ÉÆ,ÄáÂ,Æ);});ÉÆ.globalAlpha=Æ;this.Eââ(ÉÆ,ÄáÂ);this.âè.forEach(function(À$){À$.éa(ÉÆ,ÄáÂ,Æ);});if(this.A!=00){ÉÆ.rotate(-this.A);}if((this.ë.É!=Åå)||(this.ë.Ä!=0)){ÉÆ.translate(-AÊÁ,-áÊÃ);}},",
+    "interpretation": "Native drawable divides incoming scalar by size; it translates by position/incoming scalar, rotates canvas, and passes the divided scalar to draw/children. Canvas matrix alone does not carry all native size scaling."
+  },
+  "limits": "Exact parsed identifier/literal checks, not proof against every dynamically assembled path or inaccessible server/controller code. Supplied core hashes match previous source. No captured script executed."
+}

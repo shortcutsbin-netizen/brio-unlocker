@@ -1,3 +1,14 @@
+# Current asset review — 2026-10-17
+
+- [Findings and evidence limits](findings/asset-retrieval-2026-10-17.md)
+- [Aggregate capture audit](analysis/runs/asset-retrieval-2026-10-17.json) and [source AST audit](analysis/runs/asset-retrieval-2026-10-17-source.json)
+- [Prepared cloud access trial](testing/cloud-access-trial.md), awaiting separate user greenlight
+- Original capture: game-sources/brio_asset_retrival-results (all 3,368uploaded files accessible through git)
+
+V61 remains current. Historical documentation index follows.
+
+---
+
 # V59 — final observed spread candidate; contents focus
 
 Current direct script dist/brio-v59.min.js, readable src/brio.js, exact versions/v59/. Findings/status/procedure/validation: docs/{findings,status,test-procedures,audits}/v59-* (repo-relative).

@@ -1,0 +1,1620 @@
+{
+  "captureCommit": "c93b1df60bbd6d68220db283dce467910fa09429",
+  "directory": "docs/game-sources/brio_asset_retrival-results",
+  "verification": {
+    "files": 3368,
+    "bytes": 55433083,
+    "extensions": {
+      ".txt": 1,
+      ".png": 1683,
+      ".css": 3,
+      ".html": 6,
+      ".json": 9,
+      ".svg": 1,
+      ".js": 730,
+      ".jpg": 1,
+      ".woff2": 1,
+      ".ico": 1,
+      ".map": 1,
+      ".gif": 1,
+      ".mp4": 1,
+      ".mp3": 48,
+      ".jsonl": 442,
+      ".bin": 438,
+      ".har": 1
+    },
+    "inventoryDigestSha256": "ac7e7eb56e1cc154f5be32267f0cb194b669194cf6750560a58cc66f3e8288dd",
+    "manifestEntries": 3365,
+    "missing": [
+      {
+        "name": "20261017T211716283_2906f9d5__SxjQUFNLEVBR2hDLFVBQVUsQ0FBVixnQ0FBVSxDQUNSLEFBQUEsSUFBSSxDQUFHLFNBQVMsQ0FBRSxZQUFNLENBQ3hCLEFBQUEsRUFBRSxDQUFHLFNBQVMsQ0FBRSxjQUFNIiwKCSJuYW1lcyI6IFtdCn0_.json",
+        "bytes": 5897,
+        "host": null,
+        "reason": "source-map",
+        "nameLength": 189
+      },
+      {
+        "name": "20261017T211716283_2906f9d5__asset_01022_HULY2VYKGf64QA5bMTh2qK9bJAblqIHfrZPyfQB6B2mF_1V_QM29JPhSmdxzjevH7ae3V_wd4BAPdKzRQVxNqcReK635GETLbpW4AbwAeGQwWAULmU3qXgeBVcYxyGkFvjyJkkCAAA.bin",
+        "bytes": 45198,
+        "host": null,
+        "reason": "dom",
+        "nameLength": 183
+      }
+    ],
+    "byteMismatches": [],
+    "unlistedFiles": [
+      "20261017T211716283_2906f9d5__READ_BEFORE_PUBLIC_UPLOAD.txt",
+      "20261017T211716283_2906f9d5__gaps.json",
+      "20261017T211716283_2906f9d5__inventory.json",
+      "20261017T211716283_2906f9d5__manifest.json",
+      "client-load.har"
+    ],
+    "recoveredEmbeddedAssets": [
+      {
+        "originalName": "20261017T211716283_2906f9d5__SxjQUFNLEVBR2hDLFVBQVUsQ0FBVixnQ0FBVSxDQUNSLEFBQUEsSUFBSSxDQUFHLFNBQVMsQ0FBRSxZQUFNLENBQ3hCLEFBQUEsRUFBRSxDQUFHLFNBQVMsQ0FBRSxjQUFNIiwKCSJuYW1lcyI6IFtdCn0_.json",
+        "recoveredFile": "docs/analysis/asset-retrieval-recovered/embedded-lightbox.scss.map",
+        "bytes": 5897,
+        "sha256": "c3977ebcd252a7924c9280fec5cab0299c94162baff3e9ae5235004339fab702",
+        "method": "Exact base64 bytes from original manifest data URL; no fetch"
+      },
+      {
+        "originalName": "20261017T211716283_2906f9d5__asset_01022_HULY2VYKGf64QA5bMTh2qK9bJAblqIHfrZPyfQB6B2mF_1V_QM29JPhSmdxzjevH7ae3V_wd4BAPdKzRQVxNqcReK635GETLbpW4AbwAeGQwWAULmU3qXgeBVcYxyGkFvjyJkkCAAA.bin",
+        "recoveredFile": "docs/analysis/asset-retrieval-recovered/embedded-image.webp",
+        "bytes": 45198,
+        "sha256": "984fb9a34700143d279318e919cec00c457135432d7cb1795a9a47ddf50205e9",
+        "method": "Exact base64 bytes from original manifest data URL; no fetch"
+      }
+    ],
+    "events": 58875,
+    "eventCounts": {
+      "capture-start": 1,
+      "document-state": 1,
+      "resource-timing": 3642,
+      "http-response": 2479,
+      "beacon-request": 95,
+      "wire": 38062,
+      "xhr-request": 16,
+      "socket-observed": 2,
+      "xhr-response": 14,
+      "native-decoded": 14526,
+      "native-render-snapshot": 32,
+      "redacted-text-request": 2,
+      "socket-close": 2,
+      "capture-stopped": 1
+    },
+    "malformedJSONL": [],
+    "sequencesContiguous": true,
+    "collectorState": {
+      "revision": 1,
+      "prefix": "20261017T211716283_2906f9d5",
+      "active": false,
+      "ready": true,
+      "files": 3364,
+      "bytes": {
+        "asset": 20756401,
+        "wire": 4329903,
+        "events": 24961071
+      },
+      "stored": 3364,
+      "failedWrites": 0,
+      "events": 58875,
+      "gaps": 37,
+      "backfill": 2479,
+      "liveResponses": 0,
+      "decoded": 14526,
+      "decodedBytes": 8030068,
+      "decodedOmitted": 0,
+      "sockets": 2,
+      "started": "2026-10-17T21:17:16.283Z",
+      "busy": true,
+      "captureActiveAt": "2026-10-17T21:17:16.290Z"
+    },
+    "gapStages": {
+      "pre-existing socket coverage": 1,
+      "resource GET": 26,
+      "static JS parse": 10
+    },
+    "inventoryStatus": {
+      "retrieved": 1741,
+      "omitted-third-party-ad-tracker": 11,
+      "unreadable": 26,
+      "http-404": 32,
+      "omitted-sensitive-endpoint": 7,
+      "metadata-only-unclassified": 73,
+      "http-403": 706
+    }
+  },
+  "sources": {
+    "firstParty": [
+      {
+        "path": "/css/bp.css",
+        "file": "20261017T211716283_2906f9d5__asset_00002_bp.css",
+        "bytes": 22144,
+        "sha256": "f3eec69d14456875b643187b040d224f200f048d20c49b30eff12e548c8a4801",
+        "status": 200,
+        "mime": "text/css; charset=UTF-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/",
+        "file": "20261017T211716283_2906f9d5__asset_00003_index.html",
+        "bytes": 26229,
+        "sha256": "2e16c893c0810db9475c1cd48d8dec6d86e1b4f69a8ef148441d3df9e73c165d",
+        "status": 200,
+        "mime": "text/html; charset=UTF-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/css/main.css",
+        "file": "20261017T211716283_2906f9d5__asset_00006_main.css",
+        "bytes": 45118,
+        "sha256": "219da77fb7cc452be7418f5905295122d98d0e4d686db1305c4e39e8908e061d",
+        "status": 200,
+        "mime": "text/css; charset=UTF-8",
+        "matchesExisting": true
+      },
+      {
+        "path": "/js/msgpack.js",
+        "file": "20261017T211716283_2906f9d5__asset_01014_msgpack.js",
+        "bytes": 51128,
+        "sha256": "c670cb2d82b1285c0b12640ad52919f48ec8c268dd794446b57524ff45a74d1a",
+        "status": 200,
+        "mime": "application/javascript; charset=UTF-8",
+        "matchesExisting": true
+      },
+      {
+        "path": "/js/uOfrVi.js",
+        "file": "20261017T211716283_2906f9d5__asset_01016_uOfrVi.js",
+        "bytes": 838390,
+        "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+        "status": 200,
+        "mime": "application/javascript; charset=UTF-8",
+        "matchesExisting": true
+      },
+      {
+        "path": "/js/scheme.js",
+        "file": "20261017T211716283_2906f9d5__asset_01017_scheme.js",
+        "bytes": 36,
+        "sha256": "ce4236494d4856533d06fc1c3c6dee94ca26127de2aee1c98a2432dcc210217c",
+        "status": 200,
+        "mime": "application/javascript; charset=UTF-8",
+        "matchesExisting": true
+      },
+      {
+        "path": "/.js",
+        "file": "20261017T211716283_2906f9d5__asset_01174_.js",
+        "bytes": 142,
+        "sha256": "417056a826e4117737864d8c22188c60ceda6c905e5fdd0c7e30d23ec74cf350",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/custom.elements.min.js",
+        "file": "20261017T211716283_2906f9d5__asset_01175_custom.elements.min.js",
+        "bytes": 161,
+        "sha256": "710d4dd4275ac33f161105a28372d94c1936616e49b8eac937fe5cf0ad5395b6",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/outstream.min.css",
+        "file": "20261017T211716283_2906f9d5__asset_01177_outstream.min.css",
+        "bytes": 156,
+        "sha256": "488a42365360babe63c3f64db1ee0c2d7676bf3ec2fa4cb07f11ec6f93732436",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/outstream.min.js",
+        "file": "20261017T211716283_2906f9d5__asset_01178_outstream.min.js",
+        "bytes": 155,
+        "sha256": "66a52c2ab2fffa9fa7bcc42357d1caefde779a1f1b56eaf6f21abbd599df57ef",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/cdn-ihb.33across.com/ihbloader.js",
+        "file": "20261017T211716283_2906f9d5__asset_01179_ihbloader.js",
+        "bytes": 172,
+        "sha256": "3728eda624f1def53f767fd010f57b68d97ef39bfda6a5471b7ce693506947fc",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/.tag.min.js",
+        "file": "20261017T211716283_2906f9d5__asset_01180_.tag.min.js",
+        "bytes": 150,
+        "sha256": "29850e2fad4038942b261f95f453780551e93b28731a0a019eecbbffc92e258d",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/prebid.js",
+        "file": "20261017T211716283_2906f9d5__asset_01887_prebid.js",
+        "bytes": 148,
+        "sha256": "1b8da60d798001be20e608c19d6383ce16d59286885fd621b322cb556e8d76f8",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/-standalone.js",
+        "file": "20261017T211716283_2906f9d5__asset_01888_-standalone.js",
+        "bytes": 153,
+        "sha256": "a74c69e142adbf9cb445b8c0ddf2242f0bdb46889d0bf8abb7ab08e7b8aaa8c9",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/events.js",
+        "file": "20261017T211716283_2906f9d5__asset_01891_events.js",
+        "bytes": 148,
+        "sha256": "e3ecd7039ff1a71406476ede1834eb174aba26d6197e74ac123b184d8bd73bca",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/debugging-standalone.js",
+        "file": "20261017T211716283_2906f9d5__asset_01892_debugging-standalone.js",
+        "bytes": 162,
+        "sha256": "fc5a7842e529f4051caff2c2ce6c2745f115d7a7bc2a424d74efdbf34896d04b",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      },
+      {
+        "path": "/AVmanager.js",
+        "file": "20261017T211716283_2906f9d5__asset_02365_AVmanager.js",
+        "bytes": 151,
+        "sha256": "57b30d6fb7d98b69b8e6ea74c88d3eeb4fe742f12a06055b85883fb45123e97e",
+        "status": 404,
+        "mime": "text/html; charset=utf-8",
+        "matchesExisting": null
+      }
+    ],
+    "documentScripts": [
+      "https://accounts.google.com/gsi/client",
+      "https://buildroyale.io/js/msgpack.js",
+      "https://buildroyale.io/js/scheme.js",
+      "https://buildroyale.io/js/uOfrVi.js",
+      "https://webgames.io/js/widget.min.js",
+      "https://exapush.com/sdk/buildroyale.js",
+      "https://www.googletagmanager.com/gtag/js",
+      "https://apis.google.com/js/platform.js"
+    ],
+    "inlineScriptBytes": [
+      1006,
+      164
+    ],
+    "har": {
+      "entries": 45,
+      "bytes": 606082,
+      "sha256": "818272d9be38af7b476dcdcca4ebc3b307466f10d414d1ca1a00a8d3adb9fa64",
+      "resourceTypes": {
+        "document": 45
+      },
+      "bodies": 11,
+      "firstPartyEntries": 1,
+      "homeBodyBytes": 26596,
+      "homeBodySha256": "a59c91cf965bf1417286aae0f76782fbe5d455280a0d86e50794751811978ebf",
+      "homeScriptSourcesEqual": false
+    },
+    "sourceMaps": [
+      {
+        "file": "20261017T211716283_2906f9d5__asset_01173_widget.min.js.map",
+        "host": "static.xsolla.com"
+      }
+    ]
+  },
+  "offlineWire": {
+    "decoder": "Python msgpack 1.2.1",
+    "frames": 37967,
+    "indexedFiles": 428,
+    "allWireRecords": 38062,
+    "allWireCoverageErrors": [],
+    "nativeSnapshotMarkers": {},
+    "frameCounts": [
+      {
+        "socketOrdinal": 1,
+        "direction": "received",
+        "count": 7883
+      },
+      {
+        "socketOrdinal": 1,
+        "direction": "sent",
+        "count": 11424
+      },
+      {
+        "socketOrdinal": 2,
+        "direction": "received",
+        "count": 6643
+      },
+      {
+        "socketOrdinal": 2,
+        "direction": "sent",
+        "count": 12017
+      }
+    ],
+    "boundsErrors": [],
+    "decodedReceivedFrames": 14526,
+    "decodeErrors": [],
+    "extensions": {},
+    "packetCounts": {
+      "e": 2,
+      "players": 1321,
+      "x": 5920,
+      "setID": 3,
+      "y": 43838,
+      "circle": 7256,
+      "z": 13761,
+      "feed": 94,
+      "elim": 14,
+      "announcement": 24,
+      "createWaypoint": 12,
+      "death": 2
+    },
+    "packetFields": {
+      "e": {
+        "t": 2,
+        "envs": 2
+      },
+      "players": {
+        "t": 1321,
+        "players": 1321
+      },
+      "x": {
+        "t": 5920,
+        "p": 5920,
+        "name": 99,
+        "health": 3507,
+        "score": 77,
+        "shield": 77,
+        "weaponSlots": 77,
+        "selectedWeapon": 77,
+        "building": 77,
+        "sprinting": 77,
+        "cookingNade": 77,
+        "steadying": 77,
+        "hair": 77,
+        "canBuild": 77,
+        "chosenBuild": 77,
+        "chosenVariant": 77,
+        "effects": 77,
+        "diving": 77,
+        "glidingTicks": 77,
+        "maxGlidingTicks": 77,
+        "mats": 77,
+        "wAmmo": 77,
+        "ammo": 370,
+        "knocked": 77,
+        "frt": 77,
+        "pickaxeSkin": 77,
+        "v": 77,
+        "locker": 77,
+        "flashed": 77,
+        "grapple": 77,
+        "gliderSkin": 77,
+        "layer": 710,
+        "house": 77,
+        "type": 3430,
+        "width": 3430,
+        "height": 3430,
+        "fullHealth": 3430,
+        "size": 8,
+        "rarity": 907,
+        "gunType": 907,
+        "chestType": 114,
+        "bo": 2,
+        "pi": 935,
+        "bulletType": 884,
+        "mat": 138,
+        "wallType": 474,
+        "landProgress": 22,
+        "landed": 22,
+        "launch": 51,
+        "throwableType": 51,
+        "radius": 14,
+        "subType": 6,
+        "buildIndex": 6,
+        "hasWeapon": 1
+      },
+      "setID": {
+        "t": 3,
+        "id": 3,
+        "s": 3
+      },
+      "y": {
+        "t": 43838,
+        "a": 43838,
+        "house": 532,
+        "effects": 27149,
+        "team": 27149,
+        "weaponSlots": 449,
+        "glidingTicks": 665,
+        "maxGlidingTicks": 665,
+        "selectedWeapon": 598,
+        "specs": 303,
+        "pickaxeSkin": 287,
+        "wAmmo": 1141,
+        "ammo": 462,
+        "steadying": 680,
+        "building": 526,
+        "close": 24248,
+        "sprinting": 1720,
+        "mats": 600,
+        "canBuild": 613,
+        "cookingNade": 329,
+        "chosenBuild": 412,
+        "chosenVariant": 329,
+        "elims": 287,
+        "health": 1420,
+        "hLost": 443,
+        "shield": 539,
+        "sLost": 539,
+        "knocked": 287,
+        "diving": 289,
+        "rt": 6403,
+        "frt": 456,
+        "v": 289,
+        "shot": 714,
+        "size": 183,
+        "layer": 526,
+        "teleported": 11,
+        "jump": 2006,
+        "closeR": 4900,
+        "spread": 4623,
+        "gh": 82,
+        "la": 66,
+        "h": 66,
+        "rs": 147,
+        "landProgress": 1645,
+        "landed": 1645,
+        "grapple": 30,
+        "no": 65,
+        "emote": 9,
+        "launch": 48,
+        "radius": 407,
+        "reflectionPoints": 3,
+        "hasWeapon": 16,
+        "exploded": 1
+      },
+      "circle": {
+        "t": 7256,
+        "state": 845,
+        "time": 845,
+        "circle": 6447
+      },
+      "z": {
+        "t": 13761,
+        "i": 13761,
+        "health": 5237,
+        "p": 5095,
+        "hLost": 128,
+        "exploded": 158
+      },
+      "feed": {
+        "t": 94,
+        "n1": 94,
+        "n2": 94,
+        "knock": 94,
+        "infected": 94
+      },
+      "elim": {
+        "t": 14,
+        "name": 14
+      },
+      "announcement": {
+        "t": 24,
+        "text": 24,
+        "time": 24
+      },
+      "createWaypoint": {
+        "t": 12,
+        "waypointType": 12,
+        "position": 12,
+        "ownerId": 12
+      },
+      "death": {
+        "t": 2,
+        "place": 2,
+        "wallsBuilt": 2,
+        "damageToEnemies": 2,
+        "eliminations": 2,
+        "timeAlive": 2
+      }
+    },
+    "creates": {
+      "player": 77,
+      "object": 3360,
+      "ball": 8,
+      "car": 70,
+      "ammo": 431,
+      "gun": 907,
+      "house": 4,
+      "chest": 114,
+      "bullet": 884,
+      "throwable": 51,
+      "spellfield": 14
+    },
+    "uniqueSocketIdentityPairs": {
+      "player": 37,
+      "object": 831,
+      "ball": 2,
+      "car": 18,
+      "ammo": 197,
+      "gun": 307,
+      "house": 4,
+      "chest": 29,
+      "bullet": 883,
+      "throwable": 51,
+      "spellfield": 14
+    },
+    "createFields": {
+      "player": {
+        "t": 77,
+        "p": 77,
+        "name": 77,
+        "health": 77,
+        "score": 77,
+        "shield": 77,
+        "weaponSlots": 77,
+        "selectedWeapon": 77,
+        "building": 77,
+        "sprinting": 77,
+        "cookingNade": 77,
+        "steadying": 77,
+        "hair": 77,
+        "canBuild": 77,
+        "chosenBuild": 77,
+        "chosenVariant": 77,
+        "effects": 77,
+        "diving": 77,
+        "glidingTicks": 77,
+        "maxGlidingTicks": 77,
+        "mats": 77,
+        "wAmmo": 77,
+        "ammo": 77,
+        "knocked": 77,
+        "frt": 77,
+        "pickaxeSkin": 77,
+        "v": 77,
+        "locker": 77,
+        "flashed": 77,
+        "grapple": 77,
+        "gliderSkin": 77,
+        "layer": 77,
+        "house": 77
+      },
+      "object": {
+        "t": 3360,
+        "p": 3360,
+        "type": 3360,
+        "width": 3360,
+        "height": 3360,
+        "health": 3360,
+        "fullHealth": 3360,
+        "wallType": 474,
+        "landProgress": 22,
+        "landed": 22,
+        "subType": 6,
+        "buildIndex": 6,
+        "hasWeapon": 1
+      },
+      "ball": {
+        "t": 8,
+        "p": 8,
+        "size": 8,
+        "name": 8
+      },
+      "car": {
+        "t": 70,
+        "p": 70,
+        "type": 70,
+        "width": 70,
+        "height": 70,
+        "health": 70,
+        "fullHealth": 70,
+        "bo": 2
+      },
+      "ammo": {
+        "t": 431,
+        "p": 431,
+        "ammo": 293,
+        "mat": 138
+      },
+      "gun": {
+        "t": 907,
+        "p": 907,
+        "rarity": 907,
+        "gunType": 907
+      },
+      "house": {
+        "t": 4,
+        "p": 4
+      },
+      "chest": {
+        "t": 114,
+        "p": 114,
+        "chestType": 114
+      },
+      "bullet": {
+        "t": 884,
+        "p": 884,
+        "layer": 582,
+        "pi": 884,
+        "bulletType": 884
+      },
+      "throwable": {
+        "t": 51,
+        "p": 51,
+        "layer": 51,
+        "launch": 51,
+        "pi": 51,
+        "throwableType": 51
+      },
+      "spellfield": {
+        "t": 14,
+        "p": 14,
+        "radius": 14,
+        "name": 14
+      }
+    },
+    "objectsByType": {
+      "rock": 499,
+      "chair": 164,
+      "tree1": 621,
+      "couch": 16,
+      "metalbench": 4,
+      "geyser": 24,
+      "tree0": 515,
+      "jungletree": 17,
+      "table": 42,
+      "ammocrate": 102,
+      "grenadecrate": 120,
+      "cherryblossom": 43,
+      "wall": 474,
+      "bubbles": 109,
+      "castlewall1": 85,
+      "castlewall2": 37,
+      "castlewall3": 309,
+      "ballista": 36,
+      "castletower": 18,
+      "airdrop": 21,
+      "buildable": 6,
+      "hay": 9,
+      "silo": 2,
+      "button": 4,
+      "telescope": 3,
+      "bench": 5,
+      "basketballnet": 12,
+      "meteorite": 1,
+      "counter": 13,
+      "rack": 24,
+      "museumcounter": 10,
+      "museumcase": 14,
+      "crate": 1
+    },
+    "objectFields": {
+      "rock": {
+        "t": 499,
+        "p": 499,
+        "type": 499,
+        "width": 499,
+        "height": 499,
+        "health": 499,
+        "fullHealth": 499
+      },
+      "chair": {
+        "t": 164,
+        "p": 164,
+        "type": 164,
+        "width": 164,
+        "height": 164,
+        "health": 164,
+        "fullHealth": 164
+      },
+      "tree1": {
+        "t": 621,
+        "p": 621,
+        "type": 621,
+        "width": 621,
+        "height": 621,
+        "health": 621,
+        "fullHealth": 621
+      },
+      "couch": {
+        "t": 16,
+        "p": 16,
+        "type": 16,
+        "width": 16,
+        "height": 16,
+        "health": 16,
+        "fullHealth": 16
+      },
+      "metalbench": {
+        "t": 4,
+        "p": 4,
+        "type": 4,
+        "width": 4,
+        "height": 4,
+        "health": 4,
+        "fullHealth": 4
+      },
+      "geyser": {
+        "t": 24,
+        "p": 24,
+        "type": 24,
+        "width": 24,
+        "height": 24,
+        "health": 24,
+        "fullHealth": 24
+      },
+      "tree0": {
+        "t": 515,
+        "p": 515,
+        "type": 515,
+        "width": 515,
+        "height": 515,
+        "health": 515,
+        "fullHealth": 515
+      },
+      "jungletree": {
+        "t": 17,
+        "p": 17,
+        "type": 17,
+        "width": 17,
+        "height": 17,
+        "health": 17,
+        "fullHealth": 17
+      },
+      "table": {
+        "t": 42,
+        "p": 42,
+        "type": 42,
+        "width": 42,
+        "height": 42,
+        "health": 42,
+        "fullHealth": 42
+      },
+      "ammocrate": {
+        "t": 102,
+        "p": 102,
+        "type": 102,
+        "width": 102,
+        "height": 102,
+        "health": 102,
+        "fullHealth": 102
+      },
+      "grenadecrate": {
+        "t": 120,
+        "p": 120,
+        "type": 120,
+        "width": 120,
+        "height": 120,
+        "health": 120,
+        "fullHealth": 120
+      },
+      "cherryblossom": {
+        "t": 43,
+        "p": 43,
+        "type": 43,
+        "width": 43,
+        "height": 43,
+        "health": 43,
+        "fullHealth": 43
+      },
+      "wall": {
+        "t": 474,
+        "p": 474,
+        "type": 474,
+        "width": 474,
+        "height": 474,
+        "health": 474,
+        "fullHealth": 474,
+        "wallType": 474
+      },
+      "bubbles": {
+        "t": 109,
+        "p": 109,
+        "type": 109,
+        "width": 109,
+        "height": 109,
+        "health": 109,
+        "fullHealth": 109
+      },
+      "castlewall1": {
+        "t": 85,
+        "p": 85,
+        "type": 85,
+        "width": 85,
+        "height": 85,
+        "health": 85,
+        "fullHealth": 85
+      },
+      "castlewall2": {
+        "t": 37,
+        "p": 37,
+        "type": 37,
+        "width": 37,
+        "height": 37,
+        "health": 37,
+        "fullHealth": 37
+      },
+      "castlewall3": {
+        "t": 309,
+        "p": 309,
+        "type": 309,
+        "width": 309,
+        "height": 309,
+        "health": 309,
+        "fullHealth": 309
+      },
+      "ballista": {
+        "t": 36,
+        "p": 36,
+        "type": 36,
+        "width": 36,
+        "height": 36,
+        "health": 36,
+        "fullHealth": 36
+      },
+      "castletower": {
+        "t": 18,
+        "p": 18,
+        "type": 18,
+        "width": 18,
+        "height": 18,
+        "health": 18,
+        "fullHealth": 18
+      },
+      "airdrop": {
+        "t": 21,
+        "p": 21,
+        "type": 21,
+        "width": 21,
+        "height": 21,
+        "health": 21,
+        "fullHealth": 21,
+        "landProgress": 21,
+        "landed": 21
+      },
+      "buildable": {
+        "t": 6,
+        "p": 6,
+        "type": 6,
+        "width": 6,
+        "height": 6,
+        "health": 6,
+        "fullHealth": 6,
+        "subType": 6,
+        "buildIndex": 6
+      },
+      "hay": {
+        "t": 9,
+        "p": 9,
+        "type": 9,
+        "width": 9,
+        "height": 9,
+        "health": 9,
+        "fullHealth": 9
+      },
+      "silo": {
+        "t": 2,
+        "p": 2,
+        "type": 2,
+        "width": 2,
+        "height": 2,
+        "health": 2,
+        "fullHealth": 2
+      },
+      "button": {
+        "t": 4,
+        "p": 4,
+        "type": 4,
+        "width": 4,
+        "height": 4,
+        "health": 4,
+        "fullHealth": 4
+      },
+      "telescope": {
+        "t": 3,
+        "p": 3,
+        "type": 3,
+        "width": 3,
+        "height": 3,
+        "health": 3,
+        "fullHealth": 3
+      },
+      "bench": {
+        "t": 5,
+        "p": 5,
+        "type": 5,
+        "width": 5,
+        "height": 5,
+        "health": 5,
+        "fullHealth": 5
+      },
+      "basketballnet": {
+        "t": 12,
+        "p": 12,
+        "type": 12,
+        "width": 12,
+        "height": 12,
+        "health": 12,
+        "fullHealth": 12
+      },
+      "meteorite": {
+        "t": 1,
+        "p": 1,
+        "type": 1,
+        "width": 1,
+        "height": 1,
+        "health": 1,
+        "fullHealth": 1,
+        "hasWeapon": 1,
+        "landProgress": 1,
+        "landed": 1
+      },
+      "counter": {
+        "t": 13,
+        "p": 13,
+        "type": 13,
+        "width": 13,
+        "height": 13,
+        "health": 13,
+        "fullHealth": 13
+      },
+      "rack": {
+        "t": 24,
+        "p": 24,
+        "type": 24,
+        "width": 24,
+        "height": 24,
+        "health": 24,
+        "fullHealth": 24
+      },
+      "museumcounter": {
+        "t": 10,
+        "p": 10,
+        "type": 10,
+        "width": 10,
+        "height": 10,
+        "health": 10,
+        "fullHealth": 10
+      },
+      "museumcase": {
+        "t": 14,
+        "p": 14,
+        "type": 14,
+        "width": 14,
+        "height": 14,
+        "health": 14,
+        "fullHealth": 14
+      },
+      "crate": {
+        "t": 1,
+        "p": 1,
+        "type": 1,
+        "width": 1,
+        "height": 1,
+        "health": 1,
+        "fullHealth": 1
+      }
+    },
+    "objectUniqueSocketIdentityPairs": {
+      "rock": 117,
+      "chair": 30,
+      "tree1": 142,
+      "couch": 6,
+      "metalbench": 4,
+      "geyser": 6,
+      "tree0": 132,
+      "jungletree": 14,
+      "table": 8,
+      "ammocrate": 26,
+      "grenadecrate": 28,
+      "cherryblossom": 6,
+      "wall": 142,
+      "bubbles": 26,
+      "castlewall1": 20,
+      "castlewall2": 12,
+      "castlewall3": 62,
+      "ballista": 6,
+      "castletower": 4,
+      "airdrop": 8,
+      "buildable": 6,
+      "hay": 9,
+      "silo": 2,
+      "button": 2,
+      "telescope": 1,
+      "bench": 3,
+      "basketballnet": 2,
+      "meteorite": 1,
+      "counter": 1,
+      "rack": 2,
+      "museumcounter": 1,
+      "museumcase": 1,
+      "crate": 1
+    },
+    "objectUpdatesByType": {
+      "rock": 337,
+      "tree0": 334,
+      "tree1": 461,
+      "geyser": 29,
+      "metalbench": 32,
+      "chair": 79,
+      "couch": 11,
+      "table": 21,
+      "jungletree": 7,
+      "cherryblossom": 69,
+      "ammocrate": 60,
+      "grenadecrate": 57,
+      "wall": 1092,
+      "castlewall2": 38,
+      "castlewall3": 230,
+      "castlewall1": 55,
+      "ballista": 20,
+      "airdrop": 1629,
+      "castletower": 27,
+      "bubbles": 37,
+      "buildable": 98,
+      "hay": 8,
+      "silo": 2,
+      "button": 4,
+      "telescope": 5,
+      "basketballnet": 7,
+      "bench": 17,
+      "meteorite": 16,
+      "counter": 4,
+      "rack": 4,
+      "museumcounter": 3,
+      "museumcase": 2,
+      "crate": 1
+    },
+    "objectUpdateFields": {
+      "rock": {
+        "t": 337,
+        "a": 337,
+        "health": 29
+      },
+      "tree0": {
+        "t": 334,
+        "a": 334,
+        "health": 39
+      },
+      "tree1": {
+        "t": 461,
+        "a": 461,
+        "health": 70
+      },
+      "geyser": {
+        "t": 29,
+        "a": 29
+      },
+      "metalbench": {
+        "t": 32,
+        "a": 32
+      },
+      "chair": {
+        "t": 79,
+        "a": 79,
+        "health": 1
+      },
+      "couch": {
+        "t": 11,
+        "a": 11
+      },
+      "table": {
+        "t": 21,
+        "a": 21,
+        "health": 2
+      },
+      "jungletree": {
+        "t": 7,
+        "a": 7
+      },
+      "cherryblossom": {
+        "t": 69,
+        "a": 69,
+        "health": 22
+      },
+      "ammocrate": {
+        "t": 60,
+        "a": 60,
+        "health": 1
+      },
+      "grenadecrate": {
+        "t": 57,
+        "a": 57,
+        "health": 3
+      },
+      "wall": {
+        "t": 1092,
+        "a": 1092,
+        "health": 630
+      },
+      "castlewall2": {
+        "t": 38,
+        "a": 38,
+        "health": 5
+      },
+      "castlewall3": {
+        "t": 230,
+        "a": 230,
+        "health": 42
+      },
+      "castlewall1": {
+        "t": 55,
+        "a": 55,
+        "health": 3
+      },
+      "ballista": {
+        "t": 20,
+        "a": 20
+      },
+      "airdrop": {
+        "t": 1629,
+        "a": 1629,
+        "health": 6,
+        "landProgress": 1629,
+        "landed": 1629
+      },
+      "castletower": {
+        "t": 27,
+        "a": 27,
+        "health": 13
+      },
+      "bubbles": {
+        "t": 37,
+        "a": 37
+      },
+      "buildable": {
+        "t": 98,
+        "a": 98,
+        "health": 82
+      },
+      "hay": {
+        "t": 8,
+        "a": 8
+      },
+      "silo": {
+        "t": 2,
+        "a": 2
+      },
+      "button": {
+        "t": 4,
+        "a": 4
+      },
+      "telescope": {
+        "t": 5,
+        "a": 5,
+        "health": 4
+      },
+      "basketballnet": {
+        "t": 7,
+        "a": 7
+      },
+      "bench": {
+        "t": 17,
+        "a": 17,
+        "health": 11
+      },
+      "meteorite": {
+        "t": 16,
+        "a": 16,
+        "hasWeapon": 16,
+        "landProgress": 16,
+        "landed": 16,
+        "health": 14
+      },
+      "counter": {
+        "t": 4,
+        "a": 4
+      },
+      "rack": {
+        "t": 4,
+        "a": 4
+      },
+      "museumcounter": {
+        "t": 3,
+        "a": 3
+      },
+      "museumcase": {
+        "t": 2,
+        "a": 2
+      },
+      "crate": {
+        "t": 1,
+        "a": 1
+      }
+    },
+    "chestTypes": {
+      "default": 114
+    },
+    "updates": {
+      "player": 27149,
+      "object": 4796,
+      "ball": 183,
+      "ammo": 2065,
+      "gun": 4057,
+      "chest": 1058,
+      "car": 670,
+      "bullet": 2911,
+      "throwable": 535,
+      "spellfield": 414
+    },
+    "updateFields": {
+      "player": {
+        "t": 27149,
+        "a": 27149,
+        "house": 532,
+        "effects": 27149,
+        "team": 27149,
+        "weaponSlots": 449,
+        "glidingTicks": 665,
+        "maxGlidingTicks": 665,
+        "selectedWeapon": 598,
+        "specs": 303,
+        "pickaxeSkin": 287,
+        "wAmmo": 1141,
+        "ammo": 462,
+        "steadying": 680,
+        "building": 526,
+        "close": 24248,
+        "sprinting": 1720,
+        "mats": 600,
+        "canBuild": 613,
+        "cookingNade": 329,
+        "chosenBuild": 412,
+        "chosenVariant": 329,
+        "elims": 287,
+        "health": 443,
+        "hLost": 443,
+        "shield": 539,
+        "sLost": 539,
+        "knocked": 287,
+        "diving": 289,
+        "rt": 6403,
+        "frt": 456,
+        "v": 289,
+        "shot": 714,
+        "layer": 10,
+        "teleported": 11,
+        "jump": 2006,
+        "closeR": 4900,
+        "spread": 4623,
+        "gh": 82,
+        "la": 66,
+        "rs": 147,
+        "grapple": 30,
+        "emote": 9
+      },
+      "object": {
+        "t": 4796,
+        "a": 4796,
+        "health": 977,
+        "landProgress": 1645,
+        "landed": 1645,
+        "hasWeapon": 16
+      },
+      "ball": {
+        "t": 183,
+        "a": 183,
+        "size": 183
+      },
+      "ammo": {
+        "t": 2065,
+        "a": 2065
+      },
+      "gun": {
+        "t": 4057,
+        "a": 4057
+      },
+      "chest": {
+        "t": 1058,
+        "a": 1058
+      },
+      "car": {
+        "t": 670,
+        "a": 670,
+        "h": 66,
+        "no": 65,
+        "exploded": 1
+      },
+      "bullet": {
+        "t": 2911,
+        "a": 2911,
+        "layer": 468,
+        "reflectionPoints": 3
+      },
+      "throwable": {
+        "t": 535,
+        "a": 535,
+        "layer": 48,
+        "launch": 48
+      },
+      "spellfield": {
+        "t": 414,
+        "a": 414,
+        "radius": 407
+      }
+    },
+    "removals": {
+      "player": 116,
+      "object": 3593,
+      "car": 75,
+      "<unobserved-create>": 5229,
+      "ball": 10,
+      "house": 4,
+      "chest": 138,
+      "ammo": 700,
+      "gun": 1136,
+      "bullet": 2565,
+      "throwable": 153,
+      "spellfield": 42
+    },
+    "candidateFieldNameHits": {},
+    "nestedCandidateFieldNameHits": {},
+    "environmentFields": {
+      "river": 2,
+      "riverWidth": 2,
+      "locations": 2,
+      "resources": 2,
+      "resourceNames": 2,
+      "houses": 2,
+      "zoomed": 2
+    },
+    "playerCreates": 77,
+    "playerCreateShapes": [
+      {
+        "fields": [
+          "ammo",
+          "building",
+          "canBuild",
+          "chosenBuild",
+          "chosenVariant",
+          "cookingNade",
+          "diving",
+          "effects",
+          "flashed",
+          "frt",
+          "gliderSkin",
+          "glidingTicks",
+          "grapple",
+          "hair",
+          "health",
+          "house",
+          "knocked",
+          "layer",
+          "locker",
+          "mats",
+          "maxGlidingTicks",
+          "name",
+          "p",
+          "pickaxeSkin",
+          "score",
+          "selectedWeapon",
+          "shield",
+          "sprinting",
+          "steadying",
+          "t",
+          "v",
+          "wAmmo",
+          "weaponSlots"
+        ],
+        "count": 77
+      }
+    ],
+    "playerCreateFields": {
+      "t": 77,
+      "p": 77,
+      "name": 77,
+      "health": 77,
+      "score": 77,
+      "shield": 77,
+      "weaponSlots": 77,
+      "selectedWeapon": 77,
+      "building": 77,
+      "sprinting": 77,
+      "cookingNade": 77,
+      "steadying": 77,
+      "hair": 77,
+      "canBuild": 77,
+      "chosenBuild": 77,
+      "chosenVariant": 77,
+      "effects": 77,
+      "diving": 77,
+      "glidingTicks": 77,
+      "maxGlidingTicks": 77,
+      "mats": 77,
+      "wAmmo": 77,
+      "ammo": 77,
+      "knocked": 77,
+      "frt": 77,
+      "pickaxeSkin": 77,
+      "v": 77,
+      "locker": 77,
+      "flashed": 77,
+      "grapple": 77,
+      "gliderSkin": 77,
+      "layer": 77,
+      "house": 77
+    },
+    "limits": "Offline stored payloads only. Identity pairs are not opening counts. Equal schemas do not prove equal controllers. No behavioural or bot labels inferred."
+  },
+  "geometry": {
+    "snapshots": 32,
+    "poses": [
+      {
+        "gun": "bandages",
+        "nativeSteadying": "False",
+        "count": 2
+      },
+      {
+        "gun": "bolt",
+        "nativeSteadying": "False",
+        "count": 1
+      },
+      {
+        "gun": "bolt",
+        "nativeSteadying": "True",
+        "count": 1
+      },
+      {
+        "gun": "famas",
+        "nativeSteadying": "True",
+        "count": 1
+      },
+      {
+        "gun": "flex",
+        "nativeSteadying": "False",
+        "count": 1
+      },
+      {
+        "gun": "medkit",
+        "nativeSteadying": "False",
+        "count": 1
+      },
+      {
+        "gun": "mini",
+        "nativeSteadying": "False",
+        "count": 1
+      },
+      {
+        "gun": "musket",
+        "nativeSteadying": "False",
+        "count": 2
+      },
+      {
+        "gun": "musket",
+        "nativeSteadying": "True",
+        "count": 1
+      },
+      {
+        "gun": "pickaxe",
+        "nativeSteadying": "False",
+        "count": 2
+      },
+      {
+        "gun": "rifle",
+        "nativeSteadying": "False",
+        "count": 1
+      },
+      {
+        "gun": "sawedoff",
+        "nativeSteadying": "False",
+        "count": 5
+      },
+      {
+        "gun": "sawedoff",
+        "nativeSteadying": "True",
+        "count": 2
+      },
+      {
+        "gun": "scar",
+        "nativeSteadying": "False",
+        "count": 6
+      },
+      {
+        "gun": "scar",
+        "nativeSteadying": "True",
+        "count": 3
+      },
+      {
+        "gun": "signal flare",
+        "nativeSteadying": "False",
+        "count": 2
+      }
+    ],
+    "allMembershipChecksTrue": true,
+    "artwork": [
+      {
+        "path": "/buildart/flash1.png",
+        "file": "20261017T211716283_2906f9d5__asset_01962_flash1.png",
+        "pixels": [
+          200,
+          200
+        ],
+        "alphaBounds": [
+          61,
+          34,
+          138,
+          165
+        ]
+      },
+      {
+        "path": "/buildart/topscar.png",
+        "file": "20261017T211716283_2906f9d5__asset_02022_topscar.png",
+        "pixels": [
+          350,
+          350
+        ],
+        "alphaBounds": [
+          7,
+          150,
+          333,
+          200
+        ]
+      },
+      {
+        "path": "/buildart/topmusket.png",
+        "file": "20261017T211716283_2906f9d5__asset_02027_topmusket.png",
+        "pixels": [
+          350,
+          350
+        ],
+        "alphaBounds": [
+          21,
+          145,
+          330,
+          205
+        ]
+      },
+      {
+        "path": "/buildart/flash2.png",
+        "file": "20261017T211716283_2906f9d5__asset_02066_flash2.png",
+        "pixels": [
+          200,
+          200
+        ],
+        "alphaBounds": [
+          56,
+          6,
+          150,
+          168
+        ]
+      },
+      {
+        "path": "/buildart/flash0.png",
+        "file": "20261017T211716283_2906f9d5__asset_02301_flash0.png",
+        "pixels": [
+          200,
+          200
+        ],
+        "alphaBounds": [
+          62,
+          38,
+          137,
+          163
+        ]
+      }
+    ],
+    "canvasCaptureClicks": 0,
+    "limits": "Pose/nativeSteadying is not held-input ADS proof. No captured canvas matrices, cursor coordinates or bullet/cone pixels; do not infer alignment."
+  },
+  "limits": [
+    "Browser UI truncation is bypassed by full git clone.",
+    "No source, HAR or raw wire bodies are executed. Offline MessagePack decoding does not invoke the game codec.",
+    "No extra network requests or gameplay performed. All original uploaded bytes preserved.",
+    "Manifest integrity is byte-count verification plus new hashes; exporter supplied no per-file expected hashes.",
+    "No complete browser/worker/private-server coverage claim."
+  ]
+}
