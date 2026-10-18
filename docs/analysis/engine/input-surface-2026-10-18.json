@@ -1,0 +1,71 @@
+{
+  "source": "docs/game-sources/engine.js",
+  "bytes": 838390,
+  "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "listeners": [
+    {
+      "event": "mousemove",
+      "start": 332969,
+      "end": 333321,
+      "callbackType": "FunctionExpression",
+      "source": "è[Ê[260]](\"\\x6d\\157\\165s\\x65\\155\\157\\166\\x65\",function(event){é.áæ=ËÉã;if(é.locked){é.AÂá.É+=event.movementX;é.AÂá.Ä+=event.movementY;é.AÂá.É=Math.max(Math.min(é.AÂá.É,è.innerWidth),ëÁ);é.AÂá.Ä=Math.max(Math.min(é.AÂá.Ä,è.innerHeight),EÊ);é.åÂÃ=é.AÂá.É;é.ëÆ$=é.AÂá.Ä;}else {é.åÂÃ=event.clientX;é.ëÆ$=event.clientY;é.AÂá.É=é.É;é.AÂá.Ä=é.Ä;}é.aÁÃ=true;})"
+    },
+    {
+      "event": "mousedown",
+      "start": 333322,
+      "end": 333817,
+      "callbackType": "FunctionExpression",
+      "source": "è[Ê[260]](\"\\155\\157\\x75\\163\\x65\\x64\\x6F\\x77\\x6e\",function(event){var p=event.target;while(p&&p.classList){p.classList.add(\"\\x70\\x72\\145\\163s\\x65\\u0064\");p=p.parentNode;}è[Ê[260]](\"\\155\\157\\165\\x73\\x65\\165\\x70\",function(){var p=event.target;while(p&&p.classList){p.classList.remove(\"\\160\\x72\\145\\163\\163\\x65\\u0064\");p=p.parentNode;}},{once:true});é.áæ=ÉÉâ;if(event.button===ëä){é.áÄ=Eåå;é.æA=aAã;}else if(event.button==0X2){é.Aãé=ÆâÁ;é.æaã=ÈâÄ;}else (event.button>Eê)&&(event.preventDefault());})"
+    },
+    {
+      "event": "mouseup",
+      "start": 333491,
+      "end": 333667,
+      "callbackType": "FunctionExpression",
+      "source": "è[Ê[260]](\"\\155\\157\\165\\x73\\x65\\165\\x70\",function(){var p=event.target;while(p&&p.classList){p.classList.remove(\"\\160\\x72\\145\\163\\163\\x65\\u0064\");p=p.parentNode;}},{once:true})"
+    },
+    {
+      "event": "mouseup",
+      "start": 334071,
+      "end": 334282,
+      "callbackType": "FunctionExpression",
+      "source": "è[Ê[260]](\"\\x6d\\157\\165\\x73\\x65\\x75\\u0070\",function(event){é.áæ=EÈâ;if(event.button===0x0){é.áÄ=äÆã;é.æA=true;}else if(event.button==Äå){é.Aãé=false;é.æaã=true;}else if(2<event.button){event.preventDefault();}})"
+    },
+    {
+      "event": "keydown",
+      "start": 628449,
+      "end": 628497,
+      "callbackType": "Identifier",
+      "source": "è[Ê[260]]('\\153\\x65\\x79\\x64\\157\\x77\\156',Áä,EÈâ)"
+    },
+    {
+      "event": "mousedown",
+      "start": 628498,
+      "end": 628595,
+      "callbackType": "FunctionExpression",
+      "source": "è[Ê[260]](\"\\155\\157\\165\\x73\\145\\144\\157\\x77\\x6E\",function(ãE){ãE.keyCode=2000+ãE.button;Áä(ãE);})"
+    },
+    {
+      "event": "keyup",
+      "start": 629924,
+      "end": 629963,
+      "callbackType": "Identifier",
+      "source": "è[Ê[260]]('k\\x65\\171\\165\\x70',ä_,false)"
+    },
+    {
+      "event": "mouseup",
+      "start": 629964,
+      "end": 630050,
+      "callbackType": "FunctionExpression",
+      "source": "è[Ê[260]](\"\\155\\157\\165\\163\\145\\x75p\",function(ãE){ãE.keyCode=2000+ãE.button;ä_(ãE);})"
+    }
+  ],
+  "directIsTrustedReferences": [],
+  "interpretation": {
+    "unlocked": "Native mousemove reads event.clientX/clientY.",
+    "locked": "Native mousemove adds event.movementX/movementY to a bounded virtual point.",
+    "buttons": "Native mousedown/mouseup track left and right state independently; configured binding dispatch maps mouse buttons through 2000 + event.button.",
+    "keyboard": "Native keydown/keyup handlers use configured action bindings; live custom keys must still be read."
+  },
+  "limits": "Static source only. No game or source execution, connected input bridge, VM isolation, synthetic-event acceptance, simultaneous input timing, server acceptance or live aiming verified. No direct isTrusted hit is not proof that every input route accepts synthetic events."
+}

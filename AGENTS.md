@@ -1,3 +1,9 @@
+# Dedicated control boundary and aiming design — 2026-10-18
+
+User asks for a dedicated window the assistant cannot operate outside and for mouse/programmatic aiming plus all needed controls. Read docs/testing/isolation-and-input.md and docs/analysis/engine/input-surface-2026-10-18.json. A window/profile alone is not an enforced boundary for all tools. Preferred stronger candidate: controller app and Chrome inside a VM without host integrations/tools; guest-only is not literally browser-window-only. Literal one-target enforcement requires a restricted tab/window interface and no parallel broad control tools. None installed or verified; no custom bridge build authorized by this discussion. Native source reads clientX/Y unlocked and movementX/Y under pointer lock; left/right states and custom key down/up paths support a plausible input route. Browser-level virtual input could avoid moving host pointer, but actual exposed move/independent hold APIs, synthetic acceptance and live behavior remain unverified. Do not misuse read-only eval, edit game state, send protocol inputs directly or promise wins. Test movement+aim+held ADS+fire together, reliable release/timeout/stop/focus safety and target enforcement. Existing V61/cloud-blocked state unchanged. Document design vs installed capability precisely; user has not reported desktop installation/VM setup. Preserve historical suffixes.
+
+---
+
 # Desktop onboarding checkpoint — 2026-10-18
 
 User has only used chatgpt.com/mobile. Walk through desktop setup incrementally; first install the official Windows app, sign in, and check Computer Use availability. No desktop app, extension, local connection or permissions are verified yet. Explain browser authority/privacy/prompt-injection risks; separate testing profile and site-specific approvals are recommendations. Keep developer/full-CDP access off initially. No gameplay capability or resolution claimed; existing authorization and handoff remain.

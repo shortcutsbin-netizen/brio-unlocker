@@ -1,3 +1,11 @@
+# Isolation and input checkpoint — 2026-10-18
+
+User wants potentially enforced confinement and programmatic aiming. Design: ../testing/isolation-and-input.md. A separate window/profile alone does not constrain every computer/browser/file/shell tool. VM control must run inside the guest with host integrations withheld; strict one-tab-only additionally needs an enforced narrow interface, not a prompt promise. No route is installed or chosen yet.
+
+Static native input evidence now saved in ../analysis/engine/input-surface-2026-10-18.json: absolute client coordinates unlocked, relative movement deltas under pointer lock, independent left/right state, key down/up and configured mouse-button dispatch. This establishes a plausible ordinary-input route, not live success. A browser virtual pointer may avoid host OS-pointer movement if the actual connected driver supports it. Need separate down/up/held state and release safety for move+ADS+fire+aim together; click-only input may not suffice. Keyboard bindings must still be read unchanged. No game-state edits, protocol sends, unsupported APIs or read-only-eval mutation. No matches/input success/wins claimed. Controller latency and VM graphics overhead remain practical limits.
+
+---
+
 # Setup guidance pending user action — 2026-10-18
 
 User is new to the desktop app. Next practical step is official Windows app installation/sign-in, then checking whether Computer Use is offered. Do not assume installation, eligibility, extension connection or game support. Explain permissions before extension setup; recommend a separate Chrome testing profile and limited site approvals. No new gameplay learned and no permissions changed.

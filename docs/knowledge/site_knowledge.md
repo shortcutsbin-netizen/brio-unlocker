@@ -1,3 +1,9 @@
+# Native input surface — 2026-10-18
+
+Read ../analysis/engine/input-surface-2026-10-18.json and ../testing/isolation-and-input.md. Unchanged engine SHA42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4: native mouse listener call332969..333321 uses event.clientX/clientY unlocked; locked branch accumulates movementX/movementY and clamps a virtual point to viewport bounds. Separate mousedown/mouseup state exists for left/right. Custom binding mouse dispatch at628498..628595/629964..630050 maps button to2000+event.button and uses action keydown/up paths. Actual custom keys remain live-unread. No direct isTrusted identifier/literal found in this static AST scan; not proof of all synthetic-input acceptance. Source supports a plausible virtual-input aim route, not an installed/usable bridge or live game proof. No input/state/protocol/runtime changes were made. Prior V61 cone and controller feasibility remain unresolved.
+
+---
+
 # Captured loaded-client evidence — 2026-10-17
 
 See ../findings/asset-retrieval-2026-10-17.md and ../analysis/runs/asset-retrieval-2026-10-17.json plus -source.json. Full user upload lives at game-sources/brio_asset_retrival-results relative to docs; all 3,368 files accessible by git. GitHub's listing truncation loses no access. Original main document is in client-load.har; later refetch asset_00003_index.html is26,229 bytes vs HAR 26,596 bytes, so do not conflate them. Both list js/msgpack.js,js/scheme.js,js/uOfrVi.js. Captured engine is byte-identical to old engine.js (SHA42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4); codec/scheme/main CSS unchanged. HAR is45 document requests, not a complete script/socket history. Payment/lightbox source maps are not game/server code; inaccessible/conditional contexts remain explicit.

@@ -1,3 +1,9 @@
+# Additional containment/input requirements — 2026-10-18
+
+Read isolation-and-input.md before choosing a desktop access boundary. User asks for enforced dedicated-window confinement; a normal profile/window is insufficient. Controller-inside-VM and a separate restricted-target interface are proposed layers, not installed features. Native source supports absolute/relative mouse input, but actual aiming, independent button/key holds, simultaneous move+ADS+fire and safe release must pass the acceptance gate. Programmatic input must use a supported driver and ordinary events; do not mistake moving a drawn cursor or changing game variables for verified control. The setup below has not been performed or chosen by the user yet.
+
+---
+
 # Incremental onboarding — 2026-10-18
 
 User has used web/mobile only. Start with the official [Windows app installation guide](https://learn.chatgpt.com/docs/windows/windows-app), sign in, and check for Computer Use before extension installation. No local installation is verified. Explain that browser control can act through signed-in sessions and that captured content may enter chat context. A separate testing profile is recommended, not a hard security boundary. Preserve approvals; leave full CDP and file-URL access off initially. Game input remains an acceptance test, not a promised feature.
