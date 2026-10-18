@@ -1,3 +1,9 @@
+# Standing publication and full-procedure instruction — 2026-10-18
+
+User explicitly approved publishing the reviewed V62 change to main: “yes, push to the repo. always p7sh at the end of a turn and print the full test procedure here in chat (not summarized)”. This resolves the prior automatic-review authorization gap. Publish completed scoped repository work at the end of each work turn, verify the remote result, and include the entire applicable test procedure in the final chat response, not merely a link or summary. Do not ask for the same publication approval again. This does not authorize force pushes, historical deletion or unrelated changes. Current V62 source/payload/tests are unchanged from the reviewed draft; only handoff/publication documentation changes in this turn. Prior blocked/review-only publication directions below are historical and superseded by this explicit approval.
+
+---
+
 # V62 current handoff — resumed development pipeline, 2026-10-18
 
 User explicitly abandoned assistant-controlled browser/VM testing and resumed the established assistant development/verification/publication → user gameplay/export pipeline after asset retrieval. This supersedes historical V62-paused/cloud-next/setup directions below. Do not retry the browser, request an asset rerun or restart installation. Current standalone payload is dist/brio-v62.min.js, readable src/brio.js, exact immutable versions/v62/. Read docs/findings/v62-findings.md, docs/status/v62-status.md, docs/test-procedures/v62-test-procedure.md and docs/audits/v62-validation.md.
