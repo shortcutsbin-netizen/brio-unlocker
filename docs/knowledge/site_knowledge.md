@@ -1,3 +1,13 @@
+# V63 source/render update — 2026-10-18
+
+Native engine/codec/assets unchanged; full newly uploaded BRIO62 export is mislabeled logs/runs/v63-log.txt (4860392bytes,2777valid events,1terminal,85source chunks match original). Next V63 upload uses v63-log-2.txt. No new asset/browser-control pass. Canonical native gun aimed hand target15,-12,PI/2-.23 now positions only BRIO cone using actual pre-hand matrix/scalar; inherited held geometry/scales stay native. Source proof v63-aimed-pose.json. New styles are a rounded thin curved sector with faint fill; direction/evidence/storage unchanged.
+
+Native five-white-arm reticle signature supplies new custom-crosshair center; gate white arms only, preserving red hit child, No crosshair/Hell precedence and exact restoration. PNG/WebP data stays in separate local storage and never becomes a network URL or exported settings field. New flashlight owns one pointer-transparent canvas-bounded DOM mask with existing passive pointer/root projection,≤30Hzupdates/≤250mslayout cache, no timer/global hook. NEW · CHECK flags are explicit; native pixels pending.
+
+Bot/controller provenance and exact pre-open contents remain unsupported, low-feasibility/unresolved, not universally impossible. V62 same33field player schema/shared structures/empty+woodsound callbacks carry no AI proof; container state lacks exact lists. Capture caps/private registry remain explicit. V63 reserves each envelope kind/event≤8inside unchanged40total/globalbudgets; no classifier/NONE/input/network/source execution. Read findings/status/feature matrix/validation/full procedure. Complete historical suffix follows.
+
+---
+
 # V62 source/asset continuation — 2026-10-18
 
 Active pipeline is repository development/local checks/publication followed by user gameplay/upload; user abandoned assistant-controlled browser/VM testing. No further browser retry/setup is pending. Asset retrieval review is complete; all3,368uploads are accessible in git despite GitHub's1000entry UI list cap. Core native engine remains SHA25642ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4. Existing manifest/HAR/raw-wire limitations remain in asset findings; no recapture requested.

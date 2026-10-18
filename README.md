@@ -1,3 +1,13 @@
+# V63 — fixed aimed cone, custom crosshair and flashlight
+
+Current [complete Console payload](dist/brio-v63.min.js) · [Full test procedure](docs/test-procedures/v63-test-procedure.md) · [Findings](docs/findings/v63-findings.md) · [Feature matrix](docs/status/v63-feature-matrix.md) · [Validation](docs/audits/v63-validation.md).
+
+Cone position now uses the native aimed hand reference even while walking, with a softer curved/filled sector. Newly built **NEW · CHECK** features: custom crosshair presets/color/size/local PNG-WebP upload, and configurable player/cursor flashlight.70source/payload integration executions and1920geometry cases pass; live review is next. Bot/exact contents remain low-feasibility/unresolved, not proven impossible; no guessed labels.
+
+The uploaded v63-log.txt actually contains BRIO62 and is preserved. Next: paste V63 once, Set up normal test then Set up V63 test, one natural match with new-feature checks, export **logs/runs/v63-log-2.txt**. No asset/all-gun/container quota. Full procedure is printed in chat each work turn. Historical checkpoints follow.
+
+---
+
 # V62 — user-play pipeline resumed
 
 Current [complete Console payload](dist/brio-v62.min.js) · [Short test procedure](docs/test-procedures/v62-test-procedure.md) · [Findings](docs/findings/v62-findings.md) · [Status](docs/status/v62-status.md) · [Validation](docs/audits/v62-validation.md).

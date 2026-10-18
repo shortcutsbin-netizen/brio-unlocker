@@ -1,0 +1,29 @@
+{
+  "source": "docs/game-sources/engine.js",
+  "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "aimedHand": {
+    "x": 15,
+    "y": -12,
+    "angle": "Math.PI/2-.23",
+    "size": "live native hand.size"
+  },
+  "evidence": [
+    {
+      "start": 457643,
+      "end": 457680,
+      "source": "á.aá.A=Å.ÅÅ(á.aá.A,(Math.PI/Äå)-0.23)"
+    },
+    {
+      "start": 457681,
+      "end": 457722,
+      "source": "á.aá.ë.É=Math.max(Å.ÅÅ(á.aá.ë.É,0xF),0X1)"
+    },
+    {
+      "start": 457723,
+      "end": 457751,
+      "source": "á.aá.ë.Ä=Å.ÅÅ(á.aá.ë.Ä,-0XC)"
+    }
+  ],
+  "interpretation": "Gun aimed/steadying branch sets these interpolation targets. Walking uses different hand rotation/translation; recoil can override translation. V63 positions only its own cone at the settled aimed-hand reference, leaving game pose/input untouched.",
+  "limits": "Nominal barrel/held geometry and inherited transforms stay native. User confirms firing/ADS position; exact new always-aimed visual remains pending."
+}

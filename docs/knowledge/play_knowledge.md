@@ -1,3 +1,11 @@
+# V63 user-play surface — 2026-10-18
+
+Current loop remains assistant repository development/verification/publication → user gameplay/export; no assistant browser/VM play. New full procedure: docs/test-procedures/v63-test-procedure.md, printed entirely in final chat each work turn. New payload dist/brio-v63.min.js. Home: Set up normal test THEN Set up V63 test; this broadens built-modifier visibility while retaining focused bot/content budgets. User checks one natural match: walking→ADS/fire→walking cone reference/soft curved fill, NEW · CHECK custom crosshair and flashlight controls, natural old-modifier/terminal exceptions. No quota/exhaustive old challenges/forced second match. Upload v63-log-2.txt: existing v63-log.txt is actually the V62 export and must remain exact.
+
+Crosshair: native center/white-arm replacement, red hit cue retained, No crosshair/Hell precedence, three presets/color/size/reset; local PNG/WebP upload optional≤256KiB/512×512. Flashlight: Player/Cursor follow/radius/reset, off restores view; visual-only independent of Hell; settings stay accessible. Turn flashlight/Hell off before ordinary remaining checks. Keep≤3extra manual action types/match; repeated settings edits one type/export separate. Mark unencountered checks untested; user proof so far concerns V62 firing/ADS position only, walking failed. New feature/pose native pixels remain pending.
+
+---
+
 # Active test workflow: user plays V62 — 2026-10-18
 
 User abandoned assistant browser/VM control exploration. Do not retry that surface or continue setup; resume the established user-play/export loop. No assistant game was loaded or match played. Prior cloud authorization/setup discussion below is historical, not the active next action.

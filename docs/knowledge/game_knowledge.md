@@ -1,3 +1,11 @@
+# V63 aimed pose and current feasibility — 2026-10-18
+
+User reports V62 cone position correct during ADS/firing but offset walking. Native source targets gun hand aá at(15,-12),PI/2-.23 while aimed; walking/recoil change this pose. V63 projects that settled aimed hand reference for its own cone only, under actual native ancestor transforms/scalars; native animations/input remain unchanged. Existing direction/empirical widths stay. The new fixed position/style still needs native visual approval. Exact source expressions: docs/analysis/engine/v63-aimed-pose.json.
+
+Uploaded logs/runs/v63-log.txt is BRIO62; full analysis2777events/1terminal/unchanged source.21playercreates share prior33fields; no controller flag or known-bot truth. New descriptor/function routes yield no bot proof. Container lifecycle identities chest21/ammo18/grenade17/fishing24/airdrop2/meteor1expose no authoritative exact pre-open list. Counts are not openings. Both features remain low-feasibility/unresolved, not universally impossible; server-only/after-open data would be unavailable beforehand. No source can prove all unobserved server timing/private state. See V63 findings for bounded remaining routes and stop rule.
+
+---
+
 # V62 native aim and replication correction — 2026-10-18
 
 Static unchanged-engine evidence establishes **root +X as native firing direction**. The assignment is -atan2(dx,dy)+PI/2 (numeric aliases resolve to2), equivalent to atan2(dy,dx). Old -Y claims were wrong. Native canvas traversal carries scale through its scalar argument, not Canvas.scale; project root direction and actual held barrel independently. flash.x+7 is the nominal held-image edge; art transparency means exact opaque tips may differ. Live visual agreement remains pending. See docs/analysis/engine/v62-native-aim.json and findings.

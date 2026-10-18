@@ -1,10 +1,10 @@
 {
   "name": "brio-unlocker",
-  "version": "62.0.0",
+  "version": "63.0.0",
   "private": true,
   "scripts": {
     "build": "node tools/build.cjs",
-    "test": "node tests/recon-preservation.cjs && node tests/spread-geometry.cjs && node tests/contents-budget.cjs && node tests/provenance.cjs && node tools/analysis/analyze-v62.cjs --check && node tools/analysis/audit-comments.cjs && node tests/regression.cjs src/brio.js && node tests/challenges.cjs src/brio.js && node tests/regression.cjs dist/brio-v62.min.js && node tests/challenges.cjs dist/brio-v62.min.js && node tests/performance.cjs",
+    "test": "node tests/recon-preservation.cjs && node tests/spread-geometry.cjs && node tests/contents-budget.cjs && node tests/provenance.cjs && node tools/analysis/analyze-v62.cjs --check && node tools/analysis/analyze-v63-pose.cjs --check && node tools/analysis/audit-comments.cjs && node tests/regression.cjs src/brio.js && node tests/challenges.cjs src/brio.js && node tests/regression.cjs dist/brio-v63.min.js && node tests/challenges.cjs dist/brio-v63.min.js && node tests/performance.cjs",
     "build:assets": "node tools/supplemental/build-assets.cjs",
     "test:assets": "node tests/supplemental/asset-retrieval.cjs"
   },
