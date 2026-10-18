@@ -1,3 +1,11 @@
+# Updated continuation decision — 2026-10-18
+
+Second, explicitly requested cloud diagnosis again reached Site Unavailable before native home/sign-in. Browser inventory has only cloud Chrome. DOM/console do not reveal the root cause; no further request-level diagnostic API or permission-management tool is exposed. No new matches or mechanics learned. See ../testing/browser-pipeline-diagnosis-2026-10-18.md and ../testing/evidence/brio-browser-diagnosis-2026-10-18.jpg.
+
+Preferred next candidate: user connects local Chrome through the ChatGPT desktop app, then starts a new local-capable task using @Chrome and reads ../testing/local-browser-trial.md. Official setup is documented, but actual game/input/script/output capability is not verified. Check held/combined inputs and release safety before attempting autonomous matches. If insufficient, keep user-controlled play plus targeted evidence and assistant source/regression/publishing work. Cloud per-site permission is a user-checkable possibility, not established cause; do not infer browser access from shell-network policy. No permissions or protections were changed. Standing testing authorization persists, while new connection/developer-mode access still follows its own supported approval flow. All older instructions below remain historical where superseded.
+
+---
+
 # Play knowledge — operator guide for BRIO test matches
 
 ## Resume state — 2026-10-18

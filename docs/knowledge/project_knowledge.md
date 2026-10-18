@@ -1,3 +1,13 @@
+# Pipeline diagnosis checkpoint — 2026-10-18
+
+User requested cause diagnosis, supported alternatives or permission requirements to make testing/development effective. See ../testing/browser-pipeline-diagnosis-2026-10-18.md and ../testing/local-browser-trial.md. One direct cloud recheck again displayed Site Unavailable. Read DOM/HTML and supported console logs: no native game, no technical request-level cause; extension metadata error cannot establish causality. Only cloud Chrome connected. No sign-in, native input/script/export or matches tested; no bot-detection classification, network/proxy/fingerprint changes or permissions mutated.
+
+Official OpenAI documentation supports a desktop Chrome extension connection; setup is a candidate, not a verified remedy or game-input guarantee. User needs desktop connection/new eligible task with @Chrome, then capability acceptance gates for reachability, custom controls, held/combined input/release, V61 execution and complete output retrieval. Existing cloud task does not automatically gain local tools. Exact-host Cloud browser block state is unknown and user-checkable; shell-network permissions are separate. Full CDP is optional desktop developer access with separate approval, not currently exposed or enabled. Plugin discovery found uninstalled TinyFish without verified realtime game capabilities; no recommendation to grant credentials/install blindly. Existing user-play/targeted-evidence/repo-development loop remains the known working fallback, without broad asset/container/all-gun reruns.
+
+Screenshot ../testing/evidence/brio-browser-diagnosis-2026-10-18.jpg records the second failure. Update play_knowledge as real capability/play lessons emerge; game mechanics unchanged this turn. Runtime/source/payload/archives/captures remain unchanged and exact. V61 current, V62 paused; scoped testing authorization persists. Connection/setup requires user action because no local control is present in this cloud task. Preserve historical suffixes and verify the published remote tree; no actual match support or wins claimed.
+
+---
+
 # Cloud access checkpoint — 2026-10-18
 
 User explicitly authorized cloud access and a few matches, live correction, practical play_knowledge and reliable published checkpoints. That greenlight persists across threads; earlier waiting-for-greenlight instructions below are superseded. New operator guide: play_knowledge.md. Run evidence: ../../logs/observations/cloud-access-2026-10-18.md; screenshot: ../testing/evidence/brio-cloud-access-2026-10-18.jpg.

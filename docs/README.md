@@ -1,3 +1,13 @@
+# Current pipeline continuation — 2026-10-18
+
+- [Browser diagnostic findings](testing/browser-pipeline-diagnosis-2026-10-18.md)
+- [Desktop/local-browser setup and acceptance gate](testing/local-browser-trial.md)
+- [Practical operator knowledge](knowledge/play_knowledge.md)
+
+Cloud failure cause remains unverified. No local browser is connected here; no game-play capability or match success is claimed. User-play plus targeted evidence remains the fallback. Historical index follows.
+
+---
+
 # Current operator handoff — 2026-10-18
 
 - [play_knowledge](knowledge/play_knowledge.md): practical loading, start/control instructions, learning plan and checkpoint ledger.

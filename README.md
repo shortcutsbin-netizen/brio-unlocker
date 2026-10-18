@@ -1,3 +1,9 @@
+# Pipeline continuation — 2026-10-18
+
+[Browser diagnosis](docs/testing/browser-pipeline-diagnosis-2026-10-18.md) · [Local Chrome trial procedure](docs/testing/local-browser-trial.md). Cloud home access still fails with no established cause. A supported desktop Chrome connection is the next candidate; actual game/input/script capability must be tested. Existing user-play/evidence/repository loop remains available. V61 unchanged; no assistant-played matches or verified V62 fix. Historical checkpoints follow.
+
+---
+
 # Cloud access checkpoint — 2026-10-18
 
 [Play/operator knowledge](docs/knowledge/play_knowledge.md) · [Observed access result](logs/observations/cloud-access-2026-10-18.md). User greenlight received; the real cloud home page returned Site Unavailable before sign-in, unchanged after one reload. No match played; cause undetermined. Authorization persists for resuming when the supported browser can reach the game. V61 unchanged; V62 paused. Earlier waiting language below is historical.

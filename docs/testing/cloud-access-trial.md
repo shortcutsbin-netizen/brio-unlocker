@@ -1,3 +1,9 @@
+# Diagnosis and alternate continuation — 2026-10-18
+
+A second explicit diagnostic visit again returned the same pre-game error; cause remains unverified. See browser-pipeline-diagnosis-2026-10-18.md. Recommended next candidate is the supported desktop Chrome connection and local-browser-trial.md capability gate; local setup is not available in this cloud task and is not proven game support. User can check exact-host Cloud browser permissions, but no permission denial was exposed. Keep the user-play/targeted-evidence loop if local control fails. Existing game-testing authorization persists; do not demand new assets or repeat greenlight.
+
+---
+
 # Attempt 1 checkpoint — 2026-10-18
 
 User greenlight received and remains valid. The real cloud browser returned Site Unavailable / Unable to access this site before game/sign-in, unchanged after one reload. No matches or game controls/script/output were tested. Cause undetermined; no visible bot-detection evidence. See ../knowledge/play_knowledge.md and ../../logs/observations/cloud-access-2026-10-18.md for the exact resume state. Resume the trial below when the supported browser can reach the actual home page; do not ask for another greenlight or repeat the asset capture. The earlier ready/awaiting language is historical.
