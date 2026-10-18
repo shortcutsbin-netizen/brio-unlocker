@@ -1,0 +1,50 @@
+{
+  "tuple": {
+    "fields": [
+      "i",
+      "b",
+      "x",
+      "y",
+      "a",
+      "n"
+    ],
+    "references": [
+      {
+        "start": 366751,
+        "end": 366762,
+        "excerpt": "Ã].â.ë.Ä,Å.âè[Ã].áÆ.A=Å.âè[Ã].â.A);if(((Å.âè[Ã].ÅÉÊ&&((Å.âè[Ã].æëÃ>201)&&(((Å.âè[Ã].new.ë.É==Å.âè[Ã].áÆ.ë.É)&&(Å.âè[Ã].áÆ.ë.Ä==Å.âè[Ã].new.ë.Ä))&&(Å.âè[Ã].new.A==Å.âè[Ã].áÆ.A))))||((!Å.âè[Ã].ÅÉÊ&&(Å.âè[Ã].æëÃ>=120))&&!Å.ÁËÄ(Å.âè[Ã])))&&(Å.ãéê.indexOf(Å.âè[Ã].id)==-1)){if(Å.ÁÂ[Å.âè[Ã].type].remove(Å.âè[Ã],{}))continue;if(Å.âè[Ã].â.parent!=null)Å.âè[Ã].â.parent.remove(Å."
+      },
+      {
+        "start": 366894,
+        "end": 366905,
+        "excerpt": ")&&(Å.âè[Ã].new.A==Å.âè[Ã].áÆ.A))))||((!Å.âè[Ã].ÅÉÊ&&(Å.âè[Ã].æëÃ>=120))&&!Å.ÁËÄ(Å.âè[Ã])))&&(Å.ãéê.indexOf(Å.âè[Ã].id)==-1)){if(Å.ÁÂ[Å.âè[Ã].type].remove(Å.âè[Ã],{}))continue;if(Å.âè[Ã].â.parent!=null)Å.âè[Ã].â.parent.remove(Å.âè[Ã].â);Å.âè.splice(Ã,æá);}}Å.ãéê=[];Å.Êæä();Å.áÀ.ÅÃÉ=0X0;};Å.ÀÆ=function(){Å.now=Date.now();AÈÊ=Å.now-eÀË;eÀË=Å.now;var ëÄã=Math.max(áäÃ.éÀé("
+      }
+    ],
+    "mapping": {
+      "start": 328793,
+      "end": 328882,
+      "source": "ãÂÆ=[ãè.ÄÁ(\"\\x69\"),ãè.ÄÁ(\"\\x62\"),ãè.ÄÁ(\"\\170\"),ãè.ÄÁ(\"\\171\"),ãè.ÄÁ(\"\\x61\"),ãè.ÄÁ(\"\\156\")]"
+    },
+    "assignment": {
+      "start": 363711,
+      "source": "ÅÉÊ:å.n"
+    },
+    "interpretation": "p[5] maps to n then native ÅÉÊ. Its observed client uses are stale entity cleanup thresholds/conditions; this is not a controller-provenance classifier or proof of every server-side meaning."
+  },
+  "source": "docs/game-sources/engine.js",
+  "bytes": 838390,
+  "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "aim": {
+    "start": 722651,
+    "end": 722754,
+    "source": "A=-Math.atan2(é.É+((äe.Èa.ë.É-Å.Åâ.â.ë.É)/äe.Èa.áå),é.Ä+((äe.Èa.ë.Ä-Å.Åâ.â.ë.Ä)/äe.Èa.áå))+(Math.PI/ÉÉ)"
+  },
+  "constants": {
+    "ÉÉ": 2,
+    "èäÉ": 2,
+    "äÂÀ": 7
+  },
+  "firingDirection": "native root +X: -atan2(dx,dy)+PI/2 equals atan2(dy,dx) modulo2PI",
+  "barrel": "native flash at -110/2-7; nominal barrel/image edge is flash.x+7; exact visible alpha tip varies by artwork",
+  "limits": "Static source arithmetic plus fixtures; no live pixel confirmation or maximum-spread/range claim"
+}

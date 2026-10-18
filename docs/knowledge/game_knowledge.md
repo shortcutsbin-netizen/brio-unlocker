@@ -1,3 +1,11 @@
+# V62 native aim and replication correction — 2026-10-18
+
+Static unchanged-engine evidence establishes **root +X as native firing direction**. The assignment is -atan2(dx,dy)+PI/2 (numeric aliases resolve to2), equivalent to atan2(dy,dx). Old -Y claims were wrong. Native canvas traversal carries scale through its scalar argument, not Canvas.scale; project root direction and actual held barrel independently. flash.x+7 is the nominal held-image edge; art transparency means exact opaque tips may differ. Live visual agreement remains pending. See docs/analysis/engine/v62-native-aim.json and findings.
+
+Create tuple fields are [i,b,x,y,a,n]. Last boolean n is copied to ÅÉÊ; observed client reads participate in stale-entity cleanup, not a proven bot controller flag. Native replicas can share a constructor/replication path for humans and bots. No exact authoritative pre-open contents list or validated bot provenance is known. Unknown fields and finite/capped/private routes are not impossibility proof. Source observations are separate from gameplay verification. No assistant match occurred; user has returned to playing/exporting the next suite.
+
+---
+
 # Current game-mechanics knowledge — 2026-10-18
 
 The user has now greenlit access testing and a few cloud matches. Practical operation/learning notes live in play_knowledge.md; project implementation state lives in project_knowledge.md. This document records gameplay mechanics, with attribution. The first actual cloud home-page attempt failed before the game loaded, so no new live mechanics were established; see ../../logs/observations/cloud-access-2026-10-18.md. Existing greenlight persists; no repeat authorization is needed.

@@ -1,3 +1,13 @@
+# Active test workflow: user plays V62 — 2026-10-18
+
+User abandoned assistant browser/VM control exploration. Do not retry that surface or continue setup; resume the established user-play/export loop. No assistant game was loaded or match played. Prior cloud authorization/setup discussion below is historical, not the active next action.
+
+Next executable suite: dist/brio-v62.min.js. User pastes raw once at home, Extras → Test bots + contents → Play. Any natural gun: inspect cone/barrel/bullet direction while normally aiming and hip/ADS firing; natural available container/fishing openings only. Export complete COPY RESULTS as logs/runs/v62-log.txt, report visual exceptions. No gun/kind/rarity quotas, manual arming or forced second match. If cone fails, obtain one clear image/clip with cursor, player, gun, cone and bullets, identify gun/mode. Do not claim absent bot/content labels are a regression: implementation is unresolved.
+
+Assistant next step is offline analysis of new original tuple/descriptor/provenance and numeric cone evidence, not autonomous input. Preserve actual-user observations separately from source arithmetic/fixtures. See docs/test-procedures/v62-test-procedure.md and docs/findings/v62-findings.md. Checkpoint findings/source/status/knowledge and publish each completed scoped pass so another connected thread can resume without chat access.
+
+---
+
 # Isolation and input checkpoint — 2026-10-18
 
 User wants potentially enforced confinement and programmatic aiming. Design: ../testing/isolation-and-input.md. A separate window/profile alone does not constrain every computer/browser/file/shell tool. VM control must run inside the guest with host integrations withheld; strict one-tab-only additionally needs an enforced narrow interface, not a prompt promise. No route is installed or chosen yet.

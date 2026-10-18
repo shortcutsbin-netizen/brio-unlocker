@@ -1,3 +1,11 @@
+# V62 source/asset continuation — 2026-10-18
+
+Active pipeline is repository development/local checks/publication followed by user gameplay/upload; user abandoned assistant-controlled browser/VM testing. No further browser retry/setup is pending. Asset retrieval review is complete; all3,368uploads are accessible in git despite GitHub's1000entry UI list cap. Core native engine remains SHA25642ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4. Existing manifest/HAR/raw-wire limitations remain in asset findings; no recapture requested.
+
+Static V62 analysis resolves root +X firing arithmetic and create tuple [i,b,x,y,a,n], with p[5]/n copied to native ÅÉÊ and observed in stale-entity cleanup. This is not a bot flag or loot seed. New bounded passive descriptor/tuple/prototype/reached-registry evidence uses existing ticks and native decode result, never captured-source execution or outgoing traffic. Current source/payload V62; see findings/status/procedure/audit. Live visual cone alignment, reliable bot provenance and exact pre-open contents remain pending/unresolved. Complete historical suffix follows.
+
+---
+
 # Native input surface — 2026-10-18
 
 Read ../analysis/engine/input-surface-2026-10-18.json and ../testing/isolation-and-input.md. Unchanged engine SHA42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4: native mouse listener call332969..333321 uses event.clientX/clientY unlocked; locked branch accumulates movementX/movementY and clamps a virtual point to viewport bounds. Separate mousedown/mouseup state exists for left/right. Custom binding mouse dispatch at628498..628595/629964..630050 maps button to2000+event.button and uses action keydown/up paths. Actual custom keys remain live-unread. No direct isTrusted identifier/literal found in this static AST scan; not proof of all synthetic-input acceptance. Source supports a plausible virtual-input aim route, not an installed/usable bridge or live game proof. No input/state/protocol/runtime changes were made. Prior V61 cone and controller feasibility remain unresolved.

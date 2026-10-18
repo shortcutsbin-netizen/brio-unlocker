@@ -1,3 +1,13 @@
+# V62 — user-play pipeline resumed
+
+Current [complete Console payload](dist/brio-v62.min.js) · [Short test procedure](docs/test-procedures/v62-test-procedure.md) · [Findings](docs/findings/v62-findings.md) · [Status](docs/status/v62-status.md) · [Validation](docs/audits/v62-validation.md).
+
+Cloud/VM control exploration is abandoned. V62 uses source-proven native +X cone direction, adds numeric visual diagnostics and reserves separate player/container/provenance capture. Bot identification and exact pre-open contents remain unresolved; no guessed labels.70source/payload integration checks and1,280geometry cases passed; live cone verification is next.
+
+Paste raw V62 once on home → Extras **Test bots + contents** → Play one natural match → **COPY RESULTS** to `logs/runs/v62-log.txt`. Any gun hip/ADS and natural openings only; report visual exceptions. No asset recapture or all-gun/container quota. Earlier paused/cloud-next instructions below are historical.
+
+---
+
 # Pipeline continuation — 2026-10-18
 
 [Browser diagnosis](docs/testing/browser-pipeline-diagnosis-2026-10-18.md) · [Local Chrome trial procedure](docs/testing/local-browser-trial.md). Cloud home access still fails with no established cause. A supported desktop Chrome connection is the next candidate; actual game/input/script capability must be tested. Existing user-play/evidence/repository loop remains available. V61 unchanged; no assistant-played matches or verified V62 fix. Historical checkpoints follow.

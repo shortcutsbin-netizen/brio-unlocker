@@ -1,5 +1,5 @@
-/* BRIO v61 maintenance map — 2026-10-12
- * V61 uses actual held-art canvas transforms and passive cursor direction; completed spread UI retired. Frozen evidence/storage retained; focused contents changes exclude documented animation counters.
+/* BRIO v62 maintenance map — 2026-10-18
+ * V62 projects native root +X firing direction and held barrel independently; numeric diagnostics and reserved bot/container provenance probes remain bounded. Frozen spread evidence/storage and retired UI stay intact.
  * Hell is the composite title; saved goodFlippinLuck/noMinimap IDs remain compatible.
  * Damage rankings are unavailable; spread angle interpretation requires live calibration.
  * V49 user proves warnings (including selected-slot lift), transparent foliage and loot effect suppression.
@@ -31,8 +31,8 @@
  */
 (() => { /* BRIO block: startup — Own this injection; destroy prior releases before creating UI or native adapters. Saved choices survive; per-Play game state does not. */
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v61";
-    for (const k of [ K, "__brio_unlocker_v60", "__brio_unlocker_v59", "__brio_unlocker_v58", "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
+    const W = window, D = document, K = "__brio_unlocker_v62";
+    for (const k of [ K, "__brio_unlocker_v61", "__brio_unlocker_v60", "__brio_unlocker_v59", "__brio_unlocker_v58", "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
         W[k]?.destroy?.();
     } catch (_) { /* BRIO fallback: startup — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -41,7 +41,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "61",
+        v: "62",
         log: [],
         errors: [],
         renderer: null,
@@ -381,7 +381,7 @@
     const v55ReconReport=/* BRIO expr V55: v55ReconReport — Export anonymous persistent gun/mode aggregates and explicit estimation limits. */ ()=>({revision:SPREAD_RECON_REVISION,anglePolicy:'v57-input-not-recoil; unchanged freshness/alignment/ambiguity gates',singleSpreadWeapons:['charge rifle','grenade pistol'],angleFeedback:v55.reconSession?.angleFeedback||null,threshold:{formula:'max(10, native observed clip size × 3)',minimumShots:10,extraSequenceRequirement:false},guns:v55.recon.guns,diagnostics:v55.reconSession?{nativeShots:v55.reconSession.nativeShots,ammoEvents:v55.reconSession.ammoEvents,ownedProjectiles:v55.reconSession.ownedProjectiles,correlated:v55.reconSession.correlated,duplicates:v55.reconSession.duplicates,unclassified:v55.reconSession.unclassified}:null,storageAvailable:!v55.recon.storageError,scope:'shot progress is separate from qualified angular evidence; input-held ADS/No ADS except user-confirmed single-spread guns; native steadying is recoil, not ADS acknowledgement; clip is native loaded high-water and can increase after a fuller reload; no server-maximum claim'});
     const V59_ENVELOPES={"revolver":{"hip":{"angleGroups":18,"maxAbsDegrees":4.766167018889638,"bins":{"4":{"groups":10,"maxAbsDegrees":1.5363687275494364},"5":{"groups":2,"maxAbsDegrees":0.9634109324186254},"6":{"groups":2,"maxAbsDegrees":4.766167018889638},"3.5":{"groups":1,"maxAbsDegrees":0.9634109324186254},"5.5":{"groups":3,"maxAbsDegrees":4.401157703203542}}},"ads":{"angleGroups":17,"maxAbsDegrees":4.58366236104659,"bins":{"4":{"groups":3,"maxAbsDegrees":2.291831180523244},"5":{"groups":3,"maxAbsDegrees":4.010704565915779},"3.5":{"groups":3,"maxAbsDegrees":1.145915590261622},"5.5":{"groups":8,"maxAbsDegrees":4.58366236104659}}}},"scoped ar":{"hip":{"angleGroups":25,"maxAbsDegrees":5.339124814020448,"bins":{"2":{"groups":4,"maxAbsDegrees":0.7554624529738585},"1.5":{"groups":19,"maxAbsDegrees":0.9634109324186763},"9.5":{"groups":2,"maxAbsDegrees":5.339124814020448}}},"ads":{"angleGroups":92,"maxAbsDegrees":13.17802928800896,"bins":{"1.5":{"groups":89,"maxAbsDegrees":9.16732472209318},"9.5":{"groups":3,"maxAbsDegrees":13.17802928800896}}}},"combat":{"hip":{"angleGroups":29,"maxAbsDegrees":9.349829379936228,"bins":{"2":{"groups":29,"maxAbsDegrees":9.349829379936228}}},"ads":{"angleGroups":26,"maxAbsDegrees":9.16732472209318,"bins":{"2":{"groups":26,"maxAbsDegrees":9.16732472209318}}}},"scar":{"hip":{"angleGroups":33,"maxAbsDegrees":4.58366236104659,"bins":{"4":{"groups":3,"maxAbsDegrees":4.010704565915779},"3.5":{"groups":30,"maxAbsDegrees":4.58366236104659}}},"ads":{"angleGroups":144,"maxAbsDegrees":4.58366236104659,"bins":{"3.5":{"groups":144,"maxAbsDegrees":4.58366236104659}}}},"smg":{"hip":{"angleGroups":18,"maxAbsDegrees":7.448451336700645,"bins":{"6":{"groups":1,"maxAbsDegrees":6.875493541569936},"5.5":{"groups":15,"maxAbsDegrees":7.448451336700645},"4.5":{"groups":1,"maxAbsDegrees":1.145915590261622},"8.5":{"groups":1,"maxAbsDegrees":0.572957795130811}}},"ads":{"angleGroups":49,"maxAbsDegrees":11.459155902616423,"bins":{"4":{"groups":1,"maxAbsDegrees":2.291831180523244},"4.5":{"groups":2,"maxAbsDegrees":4.1932092237587755},"5.5":{"groups":43,"maxAbsDegrees":7.057998199412881},"2.5":{"groups":1,"maxAbsDegrees":0.1825046578430475},"8.5":{"groups":2,"maxAbsDegrees":11.459155902616423}}}},"spas":{"hip":{"angleGroups":16,"maxAbsDegrees":4.010704565915779,"bins":{"1":{"groups":7,"maxAbsDegrees":4.010704565915779},"1.5":{"groups":9,"maxAbsDegrees":4.010704565915779}}},"ads":{"angleGroups":14,"maxAbsDegrees":4.010704565915779,"bins":{"1":{"groups":13,"maxAbsDegrees":4.010704565915779},"1.5":{"groups":1,"maxAbsDegrees":3.437746770784968}}}},"silencedpistol":{"hip":{"angleGroups":72,"maxAbsDegrees":8.021409131831557,"bins":{"4":{"groups":1,"maxAbsDegrees":0.7554624529738585},"5":{"groups":2,"maxAbsDegrees":1.7188733853925349},"4.5":{"groups":3,"maxAbsDegrees":1.718873385392433},"5.5":{"groups":66,"maxAbsDegrees":8.021409131831557}}},"ads":{"angleGroups":31,"maxAbsDegrees":7.057998199412881,"bins":{"4.5":{"groups":4,"maxAbsDegrees":2.4743358383662915},"5.5":{"groups":27,"maxAbsDegrees":7.057998199412881}}}},"famas":{"hip":{"angleGroups":24,"maxAbsDegrees":3.437746770784968,"bins":{"4":{"groups":1,"maxAbsDegrees":2.291831180523244},"3.5":{"groups":23,"maxAbsDegrees":3.437746770784968}}},"ads":{"angleGroups":48,"maxAbsDegrees":6.692988883726888,"bins":{"5.5":{"groups":3,"maxAbsDegrees":6.692988883726888},"3.5":{"groups":45,"maxAbsDegrees":5.156620156177401}}}},"bolt":{"hip":{"angleGroups":18,"maxAbsDegrees":5.156620156177401,"bins":{"2":{"groups":12,"maxAbsDegrees":0.572957795130811},"1.5":{"groups":5,"maxAbsDegrees":1.7188733853925349},"9.5":{"groups":1,"maxAbsDegrees":5.156620156177401}}},"ads":{"angleGroups":12,"maxAbsDegrees":0.572957795130811,"bins":{"2":{"groups":10,"maxAbsDegrees":0.572957795130811},"1.5":{"groups":2,"maxAbsDegrees":0.572957795130811}}}},"charge rifle":{"hip":{"angleGroups":21,"maxAbsDegrees":0.7554624529738585,"bins":{"2":{"groups":5,"maxAbsDegrees":0.572957795130811},"1.5":{"groups":16,"maxAbsDegrees":0.7554624529738585}}}},"sawedoff":{"hip":{"angleGroups":12,"maxAbsDegrees":10.886198107485614,"bins":{"3":{"groups":12,"maxAbsDegrees":10.886198107485614}}},"ads":{"angleGroups":12,"maxAbsDegrees":10.313240312354802,"bins":{"3":{"groups":12,"maxAbsDegrees":10.313240312354802}}}},"lmg":{"hip":{"angleGroups":17,"maxAbsDegrees":9.74028251722399,"bins":{"7.5":{"groups":16,"maxAbsDegrees":9.74028251722399},"6.5":{"groups":1,"maxAbsDegrees":1.7188733853925349}}},"ads":{"angleGroups":84,"maxAbsDegrees":12.995524630165912,"bins":{"7.5":{"groups":81,"maxAbsDegrees":10.886198107485614},"11.5":{"groups":3,"maxAbsDegrees":12.995524630165912}}}},"shotgun":{"hip":{"angleGroups":15,"maxAbsDegrees":15.07940733124444,"bins":{"3":{"groups":15,"maxAbsDegrees":15.07940733124444}}},"ads":{"angleGroups":12,"maxAbsDegrees":15.469860468532202,"bins":{"3":{"groups":12,"maxAbsDegrees":15.469860468532202}}}},"rifle":{"hip":{"angleGroups":12,"maxAbsDegrees":1.145915590261622,"bins":{"2":{"groups":5,"maxAbsDegrees":0.3904531372878144},"1.5":{"groups":7,"maxAbsDegrees":1.145915590261622}}},"ads":{"angleGroups":20,"maxAbsDegrees":1.145915590261622,"bins":{"2":{"groups":4,"maxAbsDegrees":0},"1.5":{"groups":16,"maxAbsDegrees":1.145915590261622}}}},"aug":{"hip":{"angleGroups":23,"maxAbsDegrees":1.7188733853925349,"bins":{"1.5":{"groups":23,"maxAbsDegrees":1.7188733853925349}}},"ads":{"angleGroups":58,"maxAbsDegrees":2.291831180523244,"bins":{"1.5":{"groups":57,"maxAbsDegrees":2.291831180523244},"4.5":{"groups":1,"maxAbsDegrees":1.5363687275494873}}}},"rpg":{"hip":{"angleGroups":18,"maxAbsDegrees":2.864788975654157,"bins":{"2":{"groups":18,"maxAbsDegrees":2.864788975654157}}},"ads":{"angleGroups":12,"maxAbsDegrees":2.291831180523244,"bins":{"2":{"groups":12,"maxAbsDegrees":2.291831180523244}}}},"heavy sniper":{"hip":{"angleGroups":10,"maxAbsDegrees":0.3904531372878144,"bins":{"2":{"groups":10,"maxAbsDegrees":0.3904531372878144}}},"ads":{"angleGroups":11,"maxAbsDegrees":0.3904531372878144,"bins":{"2":{"groups":11,"maxAbsDegrees":0.3904531372878144}}}},"ak47":{"hip":{"angleGroups":27,"maxAbsDegrees":1.145915590261622,"bins":{"2":{"groups":4,"maxAbsDegrees":0.7554624529738585},"1.5":{"groups":23,"maxAbsDegrees":1.145915590261622}}},"ads":{"angleGroups":99,"maxAbsDegrees":2.291831180523244,"bins":{"1.5":{"groups":99,"maxAbsDegrees":2.291831180523244}}}},"musket":{"hip":{"angleGroups":13,"maxAbsDegrees":2.864788975654157,"bins":{"3":{"groups":7,"maxAbsDegrees":2.864788975654157},"2.5":{"groups":6,"maxAbsDegrees":2.864788975654157}}},"ads":{"angleGroups":11,"maxAbsDegrees":2.864788975654157,"bins":{"3":{"groups":3,"maxAbsDegrees":2.291831180523244},"2.5":{"groups":8,"maxAbsDegrees":2.864788975654157}}}},"drum":{"hip":{"angleGroups":12,"maxAbsDegrees":22.527858667945136,"bins":{"5":{"groups":12,"maxAbsDegrees":22.527858667945136}}},"ads":{"angleGroups":32,"maxAbsDegrees":22.918311805232946,"bins":{"5":{"groups":32,"maxAbsDegrees":22.918311805232946}}}},"vector":{"hip":{"angleGroups":30,"maxAbsDegrees":4.58366236104659,"bins":{"3":{"groups":25,"maxAbsDegrees":4.58366236104659},"3.5":{"groups":4,"maxAbsDegrees":3.437746770784968},"1.5":{"groups":1,"maxAbsDegrees":0.572957795130811}}},"ads":{"angleGroups":56,"maxAbsDegrees":4.766167018889638,"bins":{"3":{"groups":52,"maxAbsDegrees":4.766167018889638},"1.5":{"groups":4,"maxAbsDegrees":0.572957795130811}}}},"crossbow":{"hip":{"angleGroups":11,"maxAbsDegrees":0.9634109324186254,"bins":{"4":{"groups":11,"maxAbsDegrees":0.9634109324186254}}},"ads":{"angleGroups":11,"maxAbsDegrees":3.437746770784968,"bins":{"4":{"groups":11,"maxAbsDegrees":3.437746770784968}}}},"grenade pistol":{"hip":{"angleGroups":12,"maxAbsDegrees":2.864788975654157,"bins":{"2":{"groups":12,"maxAbsDegrees":2.864788975654157}}}}};
     const SPREAD_LENGTHS={xs:.75,small:1,medium:1.25,large:1.5,xl:2};
-    const v61SpreadView={pointer:null,root:null,checks:0};
+    const v61SpreadView={pointer:null,root:null,checks:0,traceKeys:new Set,suppressed:Object.create(null)};
     const v61Pointer=e=>{
         /* Reuse existing passive mouse listeners. Keep CSS client coordinates, not world/aim constants.
          * Blur and ordinary Play invalidate the point; UI events never move the gameplay reference. */
@@ -395,8 +395,8 @@
         v61SpreadView.root=null;
         if(!ctx?.getTransform||!Number.isFinite(s)||s<=0)return;
         const m=ctx.getTransform(),p=r['â']?.['ë'],size=r['â']?.size;
-        if(!p||![m.a,m.b,m.c,m.d,m.e,m.f,p['É'],p['Ä'],size].every(Number.isFinite)||size<=0)return;
-        v61SpreadView.root={r,canvas:ctx.canvas,x:m.e+(m.a*p['É']+m.c*p['Ä'])/s,y:m.f+(m.b*p['É']+m.d*p['Ä'])/s,unit:Math.hypot(m.a,m.b)*size/s,at:performance.now()};
+        if(!p||![m.a,m.b,m.c,m.d,m.e,m.f,p['É'],p['Ä'],size,r['â'].A].every(Number.isFinite)||size<=0)return;
+        v61SpreadView.root={r,canvas:ctx.canvas,x:m.e+(m.a*p['É']+m.c*p['Ä'])/s,y:m.f+(m.b*p['É']+m.d*p['Ä'])/s,unit:Math.hypot(m.a,m.b)*size/s,axis:Math.atan2(m.b*Math.cos(r['â'].A)+m.d*Math.sin(r['â'].A),m.a*Math.cos(r['â'].A)+m.c*Math.sin(r['â'].A)),at:performance.now()};
     };
     const v61MuzzleFrame=r=>{
         /* The cone is a sibling of the native flash INSIDE live held art. Native ancestors apply
@@ -412,23 +412,37 @@
         }
         return node===root?{node:holder,x:muzzle['ë']['É']+7,y:muzzle['ë']['Ä']}:null;
     };
+    const v62SpreadSkip=reason=>{
+        /* Count suppression reasons without logging every frame or keeping native references. */
+        v61SpreadView.suppressed[reason]=(v61SpreadView.suppressed[reason]||0)+1;
+    };
     const v61SpreadDraw=(r,holder,ctx,s)=>{
-        /* Read native held-art matrix at the actual draw. Render in canvas backing pixels so a
-         * guessed root-local axis cannot introduce another quarter-turn. Aim is player-to-cursor,
-         * not muzzle-to-cursor; native camera offset and CSS/backing pixel ratios are explicit. */
-        const e=exFast(),frame=v61MuzzleFrame(r),root=v61SpreadView.root,pointer=v61SpreadView.pointer;
+        /* Native aim is -atan2(dx,dy)+PI/2 = atan2(dy,dx): root +X, not -Y.
+         * Project that vector through the actual incoming root canvas matrix. The barrel still
+         * uses the actual held-art matrix/scalar, independent of hand sway/recoil/ADS rotations.
+         * Passive cursor is diagnostic only; pointer lock, CSS transforms and stale input cannot steer this visual. */
+        const e=exFast();if(!e.showBulletSpread||e.goodFlippinLuck||r['èÂ'])return;
+        const frame=v61MuzzleFrame(r),root=v61SpreadView.root,pointer=v61SpreadView.pointer;
         const weapon=r['Åé']?.[r['ÈÆ']]?.type,mode=v55ReconMode(),cell=v59Envelope(weapon,mode);
-        if(!e.showBulletSpread||e.goodFlippinLuck||r['èÂ']||!frame||frame.node!==holder||!cell||!root||root.r!==r||root.canvas!==ctx.canvas||pointer?.canvas!==ctx.canvas||performance.now()-root.at>100||!ctx.getTransform||!ctx.setTransform||!Number.isFinite(s)||s<=0)return;
-        const m=ctx.getTransform(),rect=ctx.canvas.getBoundingClientRect();
-        if(![m.a,m.b,m.c,m.d,m.e,m.f,rect.left,rect.top,rect.width,rect.height,root.unit].every(Number.isFinite)||rect.width<=0||rect.height<=0||root.unit<=0||Math.abs(m.a*m.d-m.b*m.c)<1e-12)return;
+        if(!frame||frame.node!==holder){ /* Invalid held ancestry never falls back to player center. */ v62SpreadSkip('held ancestry');return;}
+        if(!cell){ /* Unknown gun/mode never invents a zero-width envelope. */ v62SpreadSkip('unknown envelope');return;}
+        if(!root||root.r!==r||root.canvas!==ctx.canvas||performance.now()-root.at>100){ /* Require same reached root and current native draw. */ v62SpreadSkip('root projection');return;}
+        if(!ctx.getTransform||!ctx.setTransform||!Number.isFinite(s)||s<=0){ /* Unsupported context suppresses safely. */ v62SpreadSkip('canvas API/scale');return;}
+        const m=ctx.getTransform();
+        if(![m.a,m.b,m.c,m.d,m.e,m.f,root.unit,root.axis].every(Number.isFinite)||root.unit<=0||Math.abs(m.a*m.d-m.b*m.c)<1e-12){ /* Reject invalid geometry before touching the canvas. */ v62SpreadSkip('invalid matrix');return;}
         const x=m.e+(m.a*frame.x+m.c*frame.y)/s,y=m.f+(m.b*frame.x+m.d*frame.y)/s;
-        const dx=(pointer.x-rect.left)*ctx.canvas.width/rect.width-root.x,dy=(pointer.y-rect.top)*ctx.canvas.height/rect.height-root.y;
-        if(!Number.isFinite(dx)||!Number.isFinite(dy)||Math.hypot(dx,dy)<1)return;
         const bin=cell.bins[String(Math.round((Number(r['ËÂ'])||0)*2)/2)],degrees=bin?.groups>=12?bin.maxAbsDegrees:cell.maxAbsDegrees;
-        if(!Number.isFinite(degrees)||degrees<0||degrees>=60)return;
-        const half=degrees*Math.PI/180,length=96*SPREAD_LENGTHS[e.spreadSize]*root.unit,axis=Math.atan2(dy,dx);
-        ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.translate(x,y);ctx.strokeStyle=e.spreadColor;ctx.lineWidth=1.5*root.unit;ctx.beginPath();ctx.moveTo(Math.cos(axis-half)*length,Math.sin(axis-half)*length);ctx.lineTo(0,0);ctx.lineTo(Math.cos(axis+half)*length,Math.sin(axis+half)*length);ctx.stroke();ctx.restore();
-        if(v61SpreadView.checks<8){ /* BRIO block V61: v61SpreadDraw — Keep this branch bounded and reversible under the enclosing helper. V59 live-pending; regression proof is separate. */ v61SpreadView.checks++;log('V61 SPREAD PROJECTION',{sample:v61SpreadView.checks,weapon,mode,method:'native held canvas matrix + player-to-cursor backing-pixel direction',finite:true});}
+        if(![x,y,degrees].every(Number.isFinite)||degrees<0||degrees>=60){ /* Preserve empirical validity gates. */ v62SpreadSkip('invalid envelope/origin');return;}
+        const half=degrees*Math.PI/180,length=96*SPREAD_LENGTHS[e.spreadSize]*root.unit,axis=root.axis;
+        ctx.save();try{ /* Always restore even if a canvas implementation throws while drawing. */
+            ctx.setTransform(1,0,0,1,0,0);ctx.translate(x,y);ctx.strokeStyle=e.spreadColor;ctx.lineWidth=1.5*root.unit;ctx.beginPath();ctx.moveTo(Math.cos(axis-half)*length,Math.sin(axis-half)*length);ctx.lineTo(0,0);ctx.lineTo(Math.cos(axis+half)*length,Math.sin(axis+half)*length);ctx.stroke();
+        }finally{ /* Own canvas state must not leak into native sibling draws. */ ctx.restore();}
+        const key=weapon+':'+mode+':'+Math.round(axis/(Math.PI/4));
+        if(v61SpreadView.checks<24&&!v61SpreadView.traceKeys.has(key)){ /* Sample distinct poses/modes rather than only the first eight hip frames. */
+            v61SpreadView.traceKeys.add(key);v61SpreadView.checks++;
+            const rect=ctx.canvas.getBoundingClientRect?.(),cursor=pointer?.canvas===ctx.canvas&&rect?.width>0&&rect?.height>0?{x:(pointer.x-rect.left)*ctx.canvas.width/rect.width,y:(pointer.y-rect.top)*ctx.canvas.height/rect.height}:null;
+            log('V62 SPREAD PROJECTION',{sample:v61SpreadView.checks,weapon,mode,method:'native root +X / actual held barrel',root:{x:root.x,y:root.y,unit:root.unit,angle:r['â'].A},origin:{x,y},axis,length,halfDegrees:degrees,heldScale:s,heldMatrix:[m.a,m.b,m.c,m.d,m.e,m.f],cursor,scope:'numeric draw evidence; native pixel alignment still requires visual review'});
+        }
     };
     const v59Envelope=(weapon,mode)=>{
         /* Frozen user-run evidence works on a fresh page without fabricating saved shot counts.
@@ -448,10 +462,10 @@
         const colorLabel=D.createElement('label'),sizeLabel=D.createElement('label');colorLabel.textContent='Color ';sizeLabel.textContent='Size ';colorLabel.appendChild(color);sizeLabel.appendChild(size);row.append(colorLabel,sizeLabel,reset);parent.appendChild(row);
     };
     const v59ContentsSetup=()=>{
-        /* Focus only pre-open contents evidence and the finalized spread review. Keep the old backup,
+        /* Focus bot/container evidence and the native-axis spread candidate. Keep the old backup,
          * authority and world simulation intact; prioritize containers within existing total caps. */
-        const z=storedExtras();if(!read('brio_test_backup',null))write('brio_test_backup',z);z.goodFlippinLuck=false;z.showBulletSpread=true;z.contentsReconFocus=true;
-        for(const id of ['screenChests','screenAirdrops','screenFishing'])z[id]=true;saveExtras(z);featureEx.at=-Infinity;syncFeatureSettings();renderExtras();log('V59 CONTENTS FOCUS',{enabled:true,requiresNextPlay:true,claimsPreOpenContents:false});
+        const z=storedExtras();if(!read('brio_test_backup',null))write('brio_test_backup',z);z.goodFlippinLuck=false;z.showBulletSpread=true;z.identifyBots=true;z.contentsReconFocus=true;
+        for(const id of ['screenChests','screenAirdrops','screenFishing'])z[id]=true;saveExtras(z);featureEx.at=-Infinity;syncFeatureSettings();renderExtras();log('V62 RECON FOCUS',{enabled:true,requiresNextPlay:true,claimsPreOpenContents:false,claimsBotClassifier:false});
     };
     const weaponChoices=/* BRIO expr V52: weaponChoices — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ()=>[...GUN_TYPES].filter(/* BRIO expr V52: weaponChoices — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ type=>type!=='akƧ'&&(!S.weaponCatalog||S.weaponCatalog.has(type))).sort();
     const indicatorColor=/* BRIO expr V52: indicatorColor — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ (e,id)=>e.indicatorColors?.[id]||INDICATOR_COLORS[id];
@@ -774,7 +788,7 @@
         const note=D.createElement('p');note.style='color:#c7d3e2;font:12px Arial;line-height:1.5';note.textContent='Per-player damage dealt/received: unavailable. Native observed loss events identify no attacker/victim; proximity is not attribution. Observed counters cover this injection, with bounded sampling and a match-lifetime recorder; deep diagnostics retain their 15-minute cap; travel excludes '+stats.teleports+' large position jumps.';v55.post.appendChild(note);
     };
     const v55Reset=(start=false)=>{ /* BRIO block V59: v55Reset — Clear per-match references and restore owned DOM changes at Play/destroy; retain saved choices. */
-        v61SpreadView.pointer=null;v61SpreadView.root=null;v61SpreadView.checks=0; /* BRIO block V52: v55Reset — Reset transient references/input/groups at Play/destroy, flushing persistent gun/mode progress and restoring owned DOM. */
+        v61SpreadView.pointer=null;v61SpreadView.root=null;v61SpreadView.checks=0;v61SpreadView.traceKeys.clear();v61SpreadView.suppressed=Object.create(null); /* BRIO block V52: v55Reset — Reset transient references/input/groups at Play/destroy, flushing persistent gun/mode progress and restoring owned DOM. */
         v55ReconFinishGroup();v55ReconSave(true);v55.reconSession=start?{pending:null,seen:new Map,nativePackets:new WeakSet,shots:[],batchShots:[],nativeShots:0,ammoEvents:0,ownedProjectiles:0,correlated:0,duplicates:0,unclassified:0,lastGroup:null,lastAccepted:-Infinity,lastRejected:-Infinity,reason:'',lastWeapon:'',lastMode:null}:null;v55.reconInput={known:true,right:false,left:false,at:performance.now(),fireSerial:0};
         v55PerfReset(start);v55.playerChecks=new WeakMap;v55.deferred=new Set;v55.outlineQueue.clear();packetFieldCache.clear();packetFieldRevision=-1;
         clearInterval(v55.timer);v55.timer=0;v55.zone=null;v55.zoneState=null;v55.zoneAt=0;v55.shotChecks=new Map;v55.outlines.clear();v55.outlineFailures.clear();S.outlineMaskLogged=false;v55.paths.clear();
@@ -1208,7 +1222,7 @@
             ["goodFlippinLuck","Hell","all gameplay challenges, highest tiers; every modifier locked off"]
         ],
         modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "screenChests", "Screen chests", "always-visible contents above detected containers: unresolved" ], [ "screenAirdrops", "Screen airdrops", "always-visible contents above detected airdrops: unresolved" ], [ "screenFishing", "Screen fishing spots", "always-visible contents above detected fishing spots: unresolved" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "identifyBots", "Identify bots", "bounded native metadata/source recon; no classifier yet" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "transparentFoliage", "Transparent foliage", "canopy opacity 25% · proven" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "purple off-screen arrow to projected safe-zone center; target retained while moving" ], [ "stormDistance", "Storm-edge distance", "planned" ],
-            ["showBulletSpread","Show bullet spread","observed widths still collecting; shot targets and angle readiness are separate; no guaranteed maximum"],
+            ["showBulletSpread","Show bullet spread","complete observed widths; empirical estimate, not a guaranteed maximum"],
             ["buildHealth","Build health outlines","green >75%; yellow >50%; orange >25%; red ≤25%"],
             ["objectHealth","Breakable object health outlines","same bands; includes vehicles"],
             ["safeZoneIndicator","Nearest safe-zone edge","blue by default; distance built in; target zone during movement"],
@@ -1334,7 +1348,7 @@
             a.appendChild(z);
         }
         const setup=D.createElement('div');setup.className='brioTestSetup';
-        const contents=D.createElement('button');contents.textContent='Test contents';contents.dataset.testSetup='contents';contents.onclick=v59ContentsSetup;setup.appendChild(contents);
+        const contents=D.createElement('button');contents.textContent='Test bots + contents';contents.dataset.testSetup='contents';contents.onclick=v59ContentsSetup;setup.appendChild(contents);
         for(const [label,restore]of [['Set up normal test',false],['Restore saved settings',true]]){ /* Explicit profile actions keep routine testing reversible and one-click. */ const b=D.createElement('button');b.type='button';b.textContent=label;b.dataset.testSetup=restore?'restore':'normal';b.onclick=/* BRIO expr V52: renderExtras — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ()=>testSetup(restore);b.disabled=restore&&!read('brio_test_backup',null);setup.appendChild(b);}
         p.appendChild(setup);
         if (s.goodFlippinLuck) { /* BRIO branch: renderExtras — Accept s.goodFlippinLuck. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
@@ -3710,7 +3724,7 @@
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
     // V50 reopens the SAME Extras modal during play, including from the minimized terminal. Native home
     // buttons disappear in a match; a reachable control is necessary for tier cycling/preset restoration.
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v61</b><button data-a="extras">EXTRAS</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v62</b><button data-a="extras">EXTRAS</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     v55ReconLoad();S.performanceCheck=v55PerfStart;S.spreadRecon=v55ReconReport;for(const event of ['mousedown','mouseup','mousemove','blur','pagehide'])W.addEventListener(event,v55ReconInput,{capture:true,passive:true});D.addEventListener('visibilitychange',v55ReconInput,{passive:true});
@@ -3964,8 +3978,8 @@
         const data = walk(value, 0);
         return {data, entries, truncated};
     };
-    const DEEP_LANES = {schema: 350, player: 350, container: 700, replica: 300, environment: 100};
-    const v59LaneCaps=()=>{ /* Reallocate within the existing1800 records/8MB/15min native observer limits. */ return deep.contentsFocus?{schema:200,player:0,container:1200,replica:200,environment:100}:DEEP_LANES;};
+    const DEEP_LANES = {schema: 350, player: 350, container: 700, replica: 250, environment: 100, provenance: 50};
+    const v59LaneCaps=()=>{ /* Reallocate within the existing1800 records/8MB/15min native observer limits. */ return deep.contentsFocus?{schema:200,player:200,container:1000,replica:200,environment:100,provenance:100}:DEEP_LANES;};
     const /* BRIO: deepRecord
      * Enforce total and reserved-lane budgets before committing record bytes. One busy lane cannot consume another lane's records.
      */
@@ -4020,7 +4034,8 @@
         }
         if (capped.length) deep.suppressed.routineFieldChanges = (deep.suppressed.routineFieldChanges || 0) + capped.length;
         const packed = Object.getOwnPropertyDescriptor(p, "a")?.value;
-        if (Array.isArray(packed) && packed.length > 4) { /* BRIO branch: incomingDelta — Accept Array.isArray(packed) && packed.length > 4. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ packet.packedExtension = packed.slice(4); fields.push("packedExtension");}
+        if (Array.isArray(packed) && packed.length > 4) { /* BRIO branch: incomingDelta — Accept Array.isArray(packed) && packed.length > 4. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ const extension=probeSnapshot(packed.slice(4)).data,fingerprint=JSON.stringify(extension);
+            if(state.values.get('[packedExtension]')!==fingerprint){ /* Retain each changed extension; identical tails must not consume every record. */ state.values.set('[packedExtension]',fingerprint);packet.packedExtension=extension;fields.push('packedExtension');}}
         return {packet, fields};
     };
     const /* BRIO: incomingProbe
@@ -4043,7 +4058,7 @@
             kind ||= deep.identities.get(id); subtype ||= deep.subtypes.get(id);
             if (type === "x" && id != null && (deep.identities.has(id) || deep.identities.size < 600) && deep.identities.get(id) !== kind && targetKind(kind)) { /* BRIO branch: incomingProbe — Accept type === "x" && id != null && (deep.identities.has(id) || deep.identities.size < 600) && deep.identities.get(i. Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */ deep.identities.set(id, kind); if (subtype) deep.subtypes.set(id, subtype);}
             const signature = String(type) + ":" + String(kind || "") + ":" + String(subtype || "") + ":" + Object.keys(desc).sort().join(",");
-            if ((!deep.contentsFocus||kind!=="player")&&!deep.schemas.has(signature) && deep.schemas.size < v59LaneCaps().schema) { /* BRIO branch: incomingProbe — Accept !deep.schemas.has(signature) && deep.schemas.size < 350. Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+            if (!deep.schemas.has(signature) && deep.schemas.size < v59LaneCaps().schema) { /* BRIO branch: incomingProbe — Accept !deep.schemas.has(signature) && deep.schemas.size < 350. Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
                 deep.schemas.add(signature); deepRecord("INCOMING SCHEMA FIRST", {type, kind, subtype, id, packet: p, scope: "native msgpack.decode return before native field remap; no mutation"});
             }
             if (type === "setID" && id != null) deep.localId = id;
@@ -4066,6 +4081,7 @@
             }
             const relevant = kind === "player" || kind === "chest" || kind === "object" && targetObject(subtype) || kind === "airdrop";
             if (relevant) { /* BRIO branch: incomingProbe — Accept relevant. Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
+                v62EnvelopeProbe(p,kind,type,id);if(type==="x")deep.incomingState.delete(kind+":"+id);
                 if (type === "y") { /* BRIO branch: incomingProbe — Accept type === "y". Observe decoded native data read-only, with bounded snapshots; delegate native decoding unchanged. */
                     const delta = incomingDelta(p, kind, id, type);
                     if (delta.fields?.length || delta.first) deepRecord("INCOMING TARGET PAYLOAD", {type, kind, subtype, id, ...delta, phase: S.botPhase, scope: "changed field values; bounded routine fields; novel/unknown container fields retained"});
@@ -4085,7 +4101,7 @@
         if (!engine || deep.engines.has(engine)) return;
         const handlers = Object.getOwnPropertyDescriptor(engine, "áÉâ")?.value;
         const registry = Object.getOwnPropertyDescriptor(engine, "ÁÂ")?.value;
-        if (!handlers || typeof handlers.x !== "function" || !registry) return;
+        if (!handlers || typeof Object.getOwnPropertyDescriptor(handlers,"x")?.value !== "function" || !registry) return;
         deep.engines.add(engine);
         for (const kind of ["player","chest","object"]) { /* BRIO loop: deepEngineProbe — Iterate ["player","chest","object"]. Observe only reached native callbacks; missing/private registries remain explicit evidence gaps. */
             const callbacks = Object.getOwnPropertyDescriptor(registry, kind)?.value;
@@ -4100,10 +4116,68 @@
                     return Reflect.apply(original, this, args);
                 };
                 Object.defineProperty(callbacks, key, {...d, value: wrapper});
-                deep.engineRestores.push(() => { /* BRIO block: deepEngineProbe — deep.engineRestores.push callback. Observe only reached native callbacks; missing/private registries remain explicit evidence gaps. */ if (callbacks[key] === wrapper) Object.defineProperty(callbacks, key, d);});
+                deep.engineRestores.push(() => { /* BRIO block: deepEngineProbe — deep.engineRestores.push callback. Observe only reached native callbacks; missing/private registries remain explicit evidence gaps. */ if (Object.getOwnPropertyDescriptor(callbacks,key)?.value === wrapper) Object.defineProperty(callbacks, key, d);});
             }
         }
         log("NATIVE ENGINE PROBE", {captured: true, callbacks: deep.engineRestores.length});
+    };
+    const v62DescriptorManifest=value=>{
+        /* Own descriptors only, including symbols/non-enumerable/accessors omitted by JSON snapshots.
+         * Do not traverse renderer graphs or call getters/constructors. Samples use the existing redactor. */
+        const keys=Reflect.ownKeys(value),rows=[];
+        for(const key of keys.slice(0,240)){ /* Match the established snapshot property ceiling. */
+            const d=Object.getOwnPropertyDescriptor(value,key);if(!d)continue;
+            const text=String(key),meaning=schemaFields.get(text)||text,row={key:text,meaning,symbol:typeof key==='symbol',enumerable:!!d.enumerable,accessor:!('value'in d),type:'value'in d?typeof d.value:'accessor'};
+            if(/token|password|email|(?:^|_)ip(?:$|_)/i.test(meaning)){ /* Never bypass normal evidence redaction through a descriptor sample. */ row.sample='[REDACTED]';}
+            else if('value'in d&&(row.symbol||!d.enumerable)&&typeof d.value!=='function'){ /* Include otherwise invisible own data within ordinary snapshot limits. */ row.sample=probeSnapshot({[text]:d.value}).data;}
+            rows.push(row);
+        }
+        return {rows,omitted:Math.max(0,keys.length-240)};
+    };
+    const v62EnvelopeProbe=(packet,kind,type,id)=>{
+        /* Preserve compact tuple shape/tail before remapping, separately from routine payload deltas.
+         * A boolean or tuple slot is unlabelled until its exact native consumption is established. */
+        const p=deep.provenance;if(!p||(deep.lanes.provenance||0)>=v59LaneCaps().provenance)return;
+        const d=Object.getOwnPropertyDescriptors(packet),packed=d[type==='x'?'p':'a']?.value;
+        const tail=Array.isArray(packed)?probeSnapshot(packed.slice(type==='x'?5:4)).data:null;
+        const signature=Reflect.ownKeys(d).map(/* BRIO expr V62: compare descriptor shape before allocating a full manifest. */ k=>[String(k),typeof k,typeof d[k].value,!!d[k].enumerable,'value'in d[k]]);
+        const key=JSON.stringify([kind,type,Array.isArray(packed)?packed.length:null,tail,signature]);if(p.envelopes.has(key))return;
+        const manifest=v62DescriptorManifest(packet),shape={kind,type,tupleLength:Array.isArray(packed)?packed.length:null,tail,manifest};
+        if(p.envelopes.size>=40){ /* Global novelty limit prevents changing tails from exhausting all provenance capacity. */ p.limited++;return;}
+        p.envelopes.add(key);deepRecord('V62 TARGET ENVELOPE',{...shape,id,knownHuman:kind==='player'&&id===(deep.localId??S.renderer?.id)?'current local user':null,scope:'unlabelled native decoded descriptors/tuple extension; no provenance or contents interpretation'},'provenance');
+    };
+    const v62NativeProvenance=(o,kind)=>{
+        /* One descriptor/prototype pass per reached identity; new structures are logged once per kind.
+         * Source is Function.toString DATA only (never evaluated). Private closures remain inaccessible. */
+        const p=deep.provenance;if(!p||p.seen.has(o)||(deep.lanes.provenance||0)>=v59LaneCaps().provenance)return;
+        if(p.entities>=200){ /* Separate work cap applies even when many objects share a manifest. */ p.limited++;return;}
+        p.seen.add(o);p.entities++;
+        deepEngineProbe(o);
+        for(const d of Object.values(Object.getOwnPropertyDescriptors(o)).slice(0,60)){ /* Only reached own object values; no getters or graph search. */ if(d.value&&typeof d.value==='object'&&!(d.value instanceof Node))deepEngineProbe(d.value);}
+        const own=v62DescriptorManifest(o),prototypes=[];
+        let proto=o;
+        for(let depth=0;proto&&depth<4;depth++,proto=Object.getPrototypeOf(proto)){ /* No deep/global object crawl. */
+            const descriptors=depth===0?own:v62DescriptorManifest(proto);
+            for(const row of descriptors.rows){ /* Source prefixes distinguish reached callback structures without invoking them. */
+                const d=Object.getOwnPropertyDescriptor(proto,row.symbol?Reflect.ownKeys(proto).find(/* BRIO expr V62: locate a symbol descriptor without reading its value. */ k=>String(k)===row.key):row.key);
+                if(proto!==Object.prototype&&typeof d?.value==='function'&&p.functions.size<16){ /* At most16 unique bounded source excerpts per match. */
+                    const source=Function.prototype.toString.call(d.value),key=source.length+':'+source.slice(0,2048);
+                    let index=p.functions.get(key);if(index===undefined){ /* Evidence index is a comparison aid, never a bot identity. */ index=p.functions.size;p.functions.set(key,index);deepRecord('V62 REACHED FUNCTION',{index,characters:source.length,prefix:source.slice(0,2048),truncated:source.length>2048,scope:'reached prototype function; read only; never executed'},'provenance');}
+                    row.functionEvidence=index;
+                }
+            }
+            if(depth>0)prototypes.push(descriptors);
+        }
+        const shape={kind,own,prototypes},key=JSON.stringify(shape);if(p.shapes.has(key))return;
+        if(p.shapes.size>=40){ /* Independent native shape novelty ceiling. */ p.limited++;return;}
+        p.shapes.add(key);
+        const manifests=[own,...prototypes];
+        for(let depth=0;depth<manifests.length;depth++){ /* Chunk manifests so large native entities cannot hide late fields behind snapshot traversal limits. */
+            const manifest=manifests[depth],count=Math.ceil(manifest.rows.length/40);
+            for(let chunk=0;chunk<count;chunk++){ /* Each record has at most40 descriptor rows; ordinary deep byte/record budgets still apply. */
+                if(!deepRecord('V62 NATIVE PROVENANCE',{kind,id:Object.getOwnPropertyDescriptor(o,'id')?.value,knownHuman:isLocal(o)?'current local user':null,depth,chunk,count,omitted:manifest.omitted,rows:manifest.rows.slice(chunk*40,(chunk+1)*40),scope:'descriptor structure only; shared constructor does not establish human/bot; no server control access'},'provenance'))break;
+            }
+        }
     };
     const v61ReplicaSignature=snapshot=>{
         /* Snapshot/export retain every captured field. Only the change signature drops documented
@@ -4138,7 +4212,7 @@
         const live = new Set;
         const localPosition = worldPos(S.renderer);
         for (const o of [...collectPlayers(), ...collectWorld()]) { /* BRIO loop: deepTick — Iterate [...collectPlayers(), ...collectWorld()]. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */
-            const kind = isPlayer(o) ? "player" : reconKind(o); if (!kind || deep.contentsFocus && kind === "player") continue;
+            const kind = isPlayer(o) ? "player" : reconKind(o); if(!kind)continue;v62NativeProvenance(o,kind);if(deep.contentsFocus&&kind==="player")continue;
             if (o.id != null && deep.identities.size < 600) { /* BRIO branch: deepTick — Accept o.id != null && deep.identities.size < 600. Collect useful novel passive evidence within independent player/container/schema/replica/environment budgets. */ deep.identities.set(o.id, kind === "player" ? "player" : o.type); if (o["Àâ"]) deep.subtypes.set(o.id, o["Àâ"]);}
             const key = kind + ":" + o.id; live.add(key);
             let rec = deep.replicas.get(key); if (!rec && deep.replicas.size >= 200) continue;
@@ -4179,6 +4253,7 @@
         calibrationOnlyAfterTimeCap:!!deep.reconOnly,incomingInstalled: !!deep.restore, incomingObservedThisRun: !!deep.installedEver, incomingPackets: deep.packets, incomingSchemas: deep.schemas.size, nativeEngineCaptured: deep.engineRestores.length > 0,
         targetedEntities: deep.replicas.size, records: deep.records, approximateBytes: deep.bytes, truncations: deep.truncations, errors: deep.errors, errorStages: deep.errorStages,
         lanes: deep.lanes, laneCaps: v59LaneCaps(), contentsFocus:!!deep.contentsFocus, suppressed: deep.suppressed, incomingTargetIds: deep.identities.size, circleState: deep.circleState, epoch: deep.epoch,
+        spreadProjection:{samples:v61SpreadView.checks,suppressed:v61SpreadView.suppressed},provenance:deep.provenance?{nativeEntities:deep.provenance.entities,shapes:deep.provenance.shapes.size,envelopes:deep.provenance.envelopes.size,functions:deep.provenance.functions.size,limited:deep.provenance.limited}:null,
         caps: {packets: 80000, records: 1800, bytes: 8000000, entities: 200, durationMs: 900000},
         limitsReached: {packets: deep.packets >= 80000, records: deep.records >= 1800, bytes: deep.bytes >= 8e6, entities: deep.replicas.size >= 200}, source: deep.source,
         conclusion: "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
@@ -4198,8 +4273,8 @@
      */
     deepStart = () => { /* BRIO block: deepStart — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */
         deepStop(); deep.reconOnly=false;deep.until = performance.now() + 900000; deep.packets = deep.records = deep.bytes = deep.truncations = deep.errors = 0;
-        deep.epoch = S.runEpoch; deep.contentsFocus=!!storedExtras().contentsReconFocus; deep.errorStages = {}; deep.installedEver = false; deep.lanes = {}; deep.suppressed = {}; deep.incomingState.clear(); deep.environmentSeen = new WeakSet; deep.localId = null; deep.circleState = null; deep.schemas.clear(); deep.identities.clear(); deep.subtypes.clear(); deep.replicas.clear(); deep.windowScanned = false; deep.engines = new WeakSet;
-        log("V50 DEEP PROBE PLAN", {readOnly: true, source: "complete raw bundle + AST", targets: "all observed container kinds and players; environment target chunks", laneCaps: DEEP_LANES, updatePolicy: "changed fields only; reserve container/late-target capacity", noManualArm: true, noClassifier: true});
+        deep.epoch = S.runEpoch; deep.contentsFocus=!!storedExtras().contentsReconFocus; deep.errorStages = {}; deep.installedEver = false; deep.lanes = {}; deep.suppressed = {}; deep.incomingState.clear(); deep.environmentSeen = new WeakSet; deep.localId = null; deep.circleState = null; deep.schemas.clear(); deep.identities.clear(); deep.subtypes.clear(); deep.replicas.clear(); deep.windowScanned = false; deep.engines = new WeakSet;deep.provenance={seen:new WeakSet,entities:0,shapes:new Set,envelopes:new Set,functions:new Map,limited:0};
+        log("V50 DEEP PROBE PLAN", {readOnly: true, source: "complete raw bundle + AST", targets: "all observed container kinds and players; environment target chunks", laneCaps: v59LaneCaps(), updatePolicy: "changed fields only; reserve container/late-target capacity", noManualArm: true, noClassifier: true});
         const tick = () => { /* BRIO block: tick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  try { /* BRIO guarded: tick — Keep the existing exception boundary for tick. Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  deepTick(); } catch (e) { /* BRIO fallback: tick — Handle failure in tick through its existing fallback/report path; optional native fields may be unavailable. */  deepError("target tick", e); } };
         tick(); deep.timer = setInterval(tick, 1000);
     };
