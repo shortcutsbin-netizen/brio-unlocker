@@ -1,3 +1,9 @@
+# Access attempt checkpoint — 2026-10-18
+
+User authorized cloud access and a few matches. First home-page access failed with Site Unavailable, unchanged after one reload; no authentication or gameplay reached. V61 runtime/source/payload remain unchanged, and V62 remains paused. Existing greenlight persists. Resume instructions: ../knowledge/play_knowledge.md. Evidence: ../../logs/observations/cloud-access-2026-10-18.md. No additional asset or baseline collection required.
+
+---
+
 # V61 follow-up status — asset review, 2026-10-17
 
 | Surface | Current status |

@@ -1,3 +1,14 @@
+# Current operator handoff — 2026-10-18
+
+- [play_knowledge](knowledge/play_knowledge.md): practical loading, start/control instructions, learning plan and checkpoint ledger.
+- [game_knowledge](knowledge/game_knowledge.md): user-confirmed mechanics versus untested/live facts.
+- [project_knowledge](knowledge/project_knowledge.md): project state and persistent authorization.
+- [First cloud access result](../logs/observations/cloud-access-2026-10-18.md): Site Unavailable before sign-in, same after one reload; zero matches.
+
+User greenlight persists; resume without re-asking when the cloud browser can reach the game. Historical index follows.
+
+---
+
 # Current asset review — 2026-10-17
 
 - [Findings and evidence limits](findings/asset-retrieval-2026-10-17.md)

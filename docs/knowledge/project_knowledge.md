@@ -1,3 +1,13 @@
+# Cloud access checkpoint — 2026-10-18
+
+User explicitly authorized cloud access and a few matches, live correction, practical play_knowledge and reliable published checkpoints. That greenlight persists across threads; earlier waiting-for-greenlight instructions below are superseded. New operator guide: play_knowledge.md. Run evidence: ../../logs/observations/cloud-access-2026-10-18.md; screenshot: ../testing/evidence/brio-cloud-access-2026-10-18.jpg.
+
+Observed real cloud Chrome tab at https://buildroyale.io/ titled Site Unavailable, with Unable to access this site. Screenshot and AX unchanged after one reload. No game/sign-in reached; no credentials entered, custom binding read, setting changed, script run or match played. Cloud tab creation/observation/screenshot works; actual game input/script/output capability remains unverified. Generic access failure is not established bot detection, account failure or general site downtime. No alternate routes/network/security changes attempted. Existing capture analysis and V61 runtime/payload/archive/collector remain unchanged; V62 still awaits sufficient geometry evidence.
+
+Resume: when the supported cloud browser can reach the real home, use existing authorization, handle sign-in with user, read custom controls unchanged, then execute the initial movement/gun hip-ADS/opening/output plan and a few learning matches. No repeat asset pass or greenlight. User watching may correct actions; keep the correction and date, do not invent proficiency or wins. Checkpoint practical action lessons in play_knowledge; game mechanics in game_knowledge; development/evidence state here; current handoff in AGENTS. A statement or local commit is not a verified remote checkpoint. No native play lessons were learned from this failed load.
+
+---
+
 # Asset capture review and next step — 2026-10-17
 
 Current source/payload remain V61; V62 paused. Full asset review: ../findings/asset-retrieval-2026-10-17.md. Offline audit: ../analysis/runs/asset-retrieval-2026-10-17.json and matching -source.json. Reproduce with python tools/analysis/analyze-assets.py and node tools/analysis/analyze-asset-source.cjs from repository root. User upload c93b1df is docs/game-sources/brio_asset_retrival-results (underscore); all 3,368 files/55,433,083 bytes available through git despite GitHub display limit. Every present manifest entry matches its byte count; two missing embedded assets recovered exactly without fetching and mapped under docs/analysis/asset-retrieval-recovered. Original files unchanged.

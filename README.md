@@ -1,3 +1,9 @@
+# Cloud access checkpoint — 2026-10-18
+
+[Play/operator knowledge](docs/knowledge/play_knowledge.md) · [Observed access result](logs/observations/cloud-access-2026-10-18.md). User greenlight received; the real cloud home page returned Site Unavailable before sign-in, unchanged after one reload. No match played; cause undetermined. Authorization persists for resuming when the supported browser can reach the game. V61 unchanged; V62 paused. Earlier waiting language below is historical.
+
+---
+
 # Current follow-up — asset review complete, 2026-10-17
 
 [Asset findings](docs/findings/asset-retrieval-2026-10-17.md) · [Next cloud access trial](docs/testing/cloud-access-trial.md). All 3,368uploaded capture files are accessible despite GitHub's1,000 entry display limit. V61 remains current; V62 paused for sufficient visual evidence. No cloud trial performed yet; the next separate user greenlight starts it. No further asset pass is required. Original documentation follows.

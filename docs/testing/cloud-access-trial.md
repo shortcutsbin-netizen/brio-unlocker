@@ -1,3 +1,9 @@
+# Attempt 1 checkpoint — 2026-10-18
+
+User greenlight received and remains valid. The real cloud browser returned Site Unavailable / Unable to access this site before game/sign-in, unchanged after one reload. No matches or game controls/script/output were tested. Cause undetermined; no visible bot-detection evidence. See ../knowledge/play_knowledge.md and ../../logs/observations/cloud-access-2026-10-18.md for the exact resume state. Resume the trial below when the supported browser can reach the actual home page; do not ask for another greenlight or repeat the asset capture. The earlier ready/awaiting language is historical.
+
+---
+
 # First cloud access trial — ready after asset review
 
 Asset review: `../findings/asset-retrieval-2026-10-17.md`. All uploaded entries are accessible despite GitHub's directory display truncation; two embedded assets are recovered. No further asset pass is required before the first trial. V61 remains the current suite; V62 is paused. **No cloud session has yet been opened or tested.**

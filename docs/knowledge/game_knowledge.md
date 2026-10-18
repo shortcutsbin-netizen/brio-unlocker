@@ -1,3 +1,24 @@
+# Current game-mechanics knowledge — 2026-10-18
+
+The user has now greenlit access testing and a few cloud matches. Practical operation/learning notes live in play_knowledge.md; project implementation state lives in project_knowledge.md. This document records gameplay mechanics, with attribution. The first actual cloud home-page attempt failed before the game loaded, so no new live mechanics were established; see ../../logs/observations/cloud-access-2026-10-18.md. Existing greenlight persists; no repeat authorization is needed.
+
+| Mechanic | Current evidence |
+|---|---|
+| Interact/pickup uses F; ADS is held right mouse | User-confirmed; not yet tested in cloud |
+| Native bindings are custom; read them without changing | User instruction; other controls unverified |
+| Server selection is automatic | User-confirmed |
+| Pregame waits for another human team, then starts a 60-second countdown | User-confirmed; same-party decoy tabs do not satisfy the other-team requirement |
+| Reload permanently removes a player from the current match; cannot rejoin it | User-confirmed; never reload during a live test |
+| Duos has two-player parties; squads has four | User-confirmed |
+| Party ID can put multiple tabs/players together; user can help intricate tests | User-confirmed; verify shared match and cloud concurrency |
+| Same-account concurrent tabs possible | User-reported; not cloud-verified |
+| No private/custom/practice matches available | User-confirmed |
+| Native default cosmetics should be preserved; local unlocker variants allowed for tests | User instruction |
+
+Start/drop selection, exact movement/reload/heal/build/map inputs, opening-specific timing/proximity, spectator flow and winning tactics remain to be learned. Do not fill these gaps with assumed default controls or source fixtures. Capture user corrections as mechanics only when their meaning is clear; actual actions and useful tactics belong in play_knowledge. Historical sections follow unchanged and may describe older waiting states.
+
+---
+
 # Asset analysis complete; access trial next — 2026-10-17
 
 User completed the capture/upload step. Read ../findings/asset-retrieval-2026-10-17.md for findings and ../testing/cloud-access-trial.md for the next trial. All 3,368uploaded files are accessible despite GitHub's1,000 entry display warning; two manifest-embedded missing files recovered offline. No repeat asset run or container/gun quota is required before access testing. No cloud browser, authentication, input or live visual test has been performed by the assistant. V61 remains current; V62 remains paused for sufficient cone evidence. The user's workflow is explicit: publish asset analysis, report and END TURN, then start real-game access testing only after a separate user greenlight. Preserve all confirmed gameplay answers below.
