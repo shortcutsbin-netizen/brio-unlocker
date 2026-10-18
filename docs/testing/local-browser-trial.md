@@ -1,3 +1,9 @@
+# Incremental onboarding — 2026-10-18
+
+User has used web/mobile only. Start with the official [Windows app installation guide](https://learn.chatgpt.com/docs/windows/windows-app), sign in, and check for Computer Use before extension installation. No local installation is verified. Explain that browser control can act through signed-in sessions and that captured content may enter chat context. A separate testing profile is recommended, not a hard security boundary. Preserve approvals; leave full CDP and file-URL access off initially. Game input remains an acceptance test, not a promised feature.
+
+---
+
 # Local-browser continuation and acceptance test
 
 ## Setup required outside the current cloud task

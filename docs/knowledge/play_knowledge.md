@@ -1,3 +1,9 @@
+# Setup guidance pending user action — 2026-10-18
+
+User is new to the desktop app. Next practical step is official Windows app installation/sign-in, then checking whether Computer Use is offered. Do not assume installation, eligibility, extension connection or game support. Explain permissions before extension setup; recommend a separate Chrome testing profile and limited site approvals. No new gameplay learned and no permissions changed.
+
+---
+
 # Updated continuation decision — 2026-10-18
 
 Second, explicitly requested cloud diagnosis again reached Site Unavailable before native home/sign-in. Browser inventory has only cloud Chrome. DOM/console do not reveal the root cause; no further request-level diagnostic API or permission-management tool is exposed. No new matches or mechanics learned. See ../testing/browser-pipeline-diagnosis-2026-10-18.md and ../testing/evidence/brio-browser-diagnosis-2026-10-18.jpg.
