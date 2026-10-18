@@ -1,3 +1,11 @@
+# Publication checkpoint — V62 review branch
+
+Automatic approval review rejected updating default `main` to the tested V62 commit because retained messages did not explicitly authorize this exact direct-to-main update. Do not retry/merge/bypass that rejection without new explicit user approval. Main remains07d78dfd0c4d704266bba7449077eac622c62ce2 (V61 plus documentation). The safer publication target is `codex/v62-passive-provenance`, with a draft PR for review. Source/payload/tests are complete; only promotion to main is blocked. The main update would publish all27reviewed files, including replacing current source/build targets with V62 while preserving historical releases/uploads. No force update/deletion is proposed.
+
+All uploaded V62 blobs matched local git hashes; initial reviewed remote tree68819e8fbcbf6b2b2d723b9a8d4bb5b1dd37e671 exactly matched local review. Publication-only notes follow in this branch. Use branch-specific payload/procedure links until main promotion is explicitly approved. This checkpoint supersedes any implication below that default main already contains V62.
+
+---
+
 # V62 status — 2026-10-18
 
 | Surface | State |
