@@ -1,3 +1,11 @@
+# V63 user observations / V64 correction scope — 2026-10-19
+
+User reports custom crosshair alternate shapes/sizes work; color always white. Player-follow flashlight good and disappears at match end. Own inventory/health and native storm/airdrop/meteor/elimination status text should stay visible above darkness in BOTH follows; removal should animate. These are user reports/requirements, not assistant gameplay proof. Current V64 implements live preset color input, native world/HUD mask ordering and300ms end fade; local/source checks pass subject to validation record, live review pending. Unmentioned cone/Cursor/upload/old features are not newly approved. Gameplay hide challenges still intentionally suppress their selected HUD/messages even with flashlight. No new mechanics inferred from the two terminal records, one of which is a win. Bot/exact pre-open contents remain unresolved; same-schema players and container lifecycle IDs do not prove bot status, exact loot or openings. Max2matches per future suite; V64 plans1. Historical suffix follows.
+
+Final evidence integrity check: uploaded renamed v62-log.txt contained only CRLF (2bytes). Restored the exact4,860,392-byte original export from commit3ca20c6:logs/runs/v63-log.txt into the intended v62-log.txt; SHA2561cf50537170783db9e524b1ad37700edb52c2a69678a86c0d0adf051fe85ce5f. Original blank-file upload remains in Git history; genuine current V63 upload unchanged. Old V63 analyzer now writes its recovered-V62 derivative to v64-v62-recovered-analysis.json, preserving the historical report.
+
+---
+
 # V63 aimed pose and current feasibility — 2026-10-18
 
 User reports V62 cone position correct during ADS/firing but offset walking. Native source targets gun hand aá at(15,-12),PI/2-.23 while aimed; walking/recoil change this pose. V63 projects that settled aimed hand reference for its own cone only, under actual native ancestor transforms/scalars; native animations/input remain unchanged. Existing direction/empirical widths stay. The new fixed position/style still needs native visual approval. Exact source expressions: docs/analysis/engine/v63-aimed-pose.json.

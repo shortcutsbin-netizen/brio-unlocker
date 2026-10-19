@@ -1,0 +1,18 @@
+// Execute the actual owned visual callbacks with a stateful canvas fixture; native source is never executed.
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),{parse}=require('acorn');
+const source=fs.readFileSync('src/brio.js','utf8'),ast=parse(source,{ecmaVersion:'latest'}),wanted=['v63FlashlightHide','v63FlashlightFrame'],found=new Map;
+function walk(n){if(!n?.type)return;if(n.type==='VariableDeclarator'&&wanted.includes(n.id?.name))found.set(n.id.name,source.slice(n.init.start,n.init.end));for(const v of Object.values(n))if(Array.isArray(v))v.forEach(walk);else if(v?.type)walk(v);}walk(ast);assert.equal(found.size,2);
+let now=0;const settings={flashlightMode:true,flashlightFollow:'player',flashlightRadius:220},canvas={width:1800,height:1000,getBoundingClientRect:()=>({left:50,top:30,width:900,height:500})},state={light:null,fadeAt:null,rectAt:-Infinity},view={root:{canvas,x:600,y:300,at:0}},stats={finished:false},D={hidden:false};
+const c={Math,Number,performance:{now:()=>now},v63Visual:state,v61SpreadView:view,exFast:()=>settings,S:{renderer:{}},v55:{stats},D};vm.createContext(c);vm.runInContext([...found].map(([name,body])=>'const '+name+'='+body).join(';')+';this.draw=v63FlashlightFrame;this.hide=v63FlashlightHide;',c);
+const stack=[],paints=[],initial={transform:[.5,.2,.1,.7,30,50],globalAlpha:.4,fillStyle:'#abcd00'};
+const ctx={canvas,...structuredClone(initial),save(){stack.push({transform:[...this.transform],globalAlpha:this.globalAlpha,fillStyle:this.fillStyle});},restore(){Object.assign(this,stack.pop());},setTransform(...args){this.transform=args;},createRadialGradient(...args){return {args,stops:[],addColorStop(...stop){this.stops.push(stop);}};},fillRect(...rect){paints.push({gradient:this.fillStyle,alpha:this.globalAlpha,transform:[...this.transform],rect});if(this.explode)throw Error('paint failure');}};
+const restored=()=>assert.deepEqual({transform:ctx.transform,globalAlpha:ctx.globalAlpha,fillStyle:ctx.fillStyle},initial);
+c.draw(ctx);assert.deepEqual(paints.at(-1).gradient.args,[300,150,176,300,150,220]);assert.deepEqual(paints.at(-1).transform,[2,0,0,2,0,0]);assert.deepEqual(paints.at(-1).rect,[0,0,900,500]);restored();
+settings.flashlightFollow='cursor';view.pointer={canvas,x:250,y:330};c.draw(ctx);assert.deepEqual(paints.at(-1).gradient.args,[200,300,176,200,300,220]);restored();
+ctx.explode=true;assert.throws(()=>c.draw(ctx),/paint failure/);restored();ctx.explode=false;
+// Fade continues without fresh player draws and cannot restart on duplicate terminal packets.
+stats.finished=true;c.hide(true);const start=state.fadeAt;now=100;c.hide(true);assert.equal(state.fadeAt,start);now=150;c.draw(ctx);assert.equal(paints.at(-1).alpha,.5);restored();const count=paints.length;now=300;c.draw(ctx);assert.equal(paints.length,count);assert.equal(state.light,null);
+// No old geometry, hidden-document mask, missing pointer, unsupported API or stale projection may darken the canvas.
+stats.finished=false;now=1000;view.root.at=now;settings.flashlightFollow='player';c.draw(ctx);assert(state.light);D.hidden=true;c.draw(ctx);assert.equal(state.light,null);D.hidden=false;
+settings.flashlightFollow='cursor';view.pointer=null;const before=paints.length;c.draw(ctx);assert.equal(paints.length,before);settings.flashlightFollow='player';view.root.at=0;c.draw(ctx);assert.equal(paints.length,before);view.root.at=now;c.draw({...ctx,createRadialGradient:null});assert.equal(state.light,null);
+console.log('Owned flashlight stateful canvas passed: CSS/backing scale, both follows, full restore on throw, terminal fade/duplicate/stale-root handling and fail-open prerequisites');

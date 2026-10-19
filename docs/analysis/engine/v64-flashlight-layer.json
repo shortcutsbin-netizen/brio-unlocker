@@ -1,0 +1,135 @@
+{
+  "source": "docs/game-sources/engine.js",
+  "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "draws": [
+    {
+      "offset": 711537,
+      "scene": "ÆËé"
+    },
+    {
+      "offset": 711547,
+      "scene": "èáâ"
+    },
+    {
+      "offset": 711557,
+      "scene": "ÊÁ"
+    },
+    {
+      "offset": 711566,
+      "scene": "aëÅ"
+    },
+    {
+      "offset": 711576,
+      "scene": "aæ"
+    },
+    {
+      "offset": 711585,
+      "scene": "äe"
+    },
+    {
+      "offset": 711594,
+      "scene": "éÅ"
+    },
+    {
+      "offset": 711603,
+      "scene": "ÃÄä"
+    },
+    {
+      "offset": 711649,
+      "scene": "ãaÅ"
+    },
+    {
+      "offset": 711659,
+      "scene": "ËäÊ"
+    },
+    {
+      "offset": 711670,
+      "scene": "top"
+    },
+    {
+      "offset": 713234,
+      "scene": "èEå"
+    },
+    {
+      "offset": 713266,
+      "scene": "aäÀ"
+    },
+    {
+      "offset": 713872,
+      "scene": "Eâ"
+    },
+    {
+      "offset": 713930,
+      "scene": "âÄÈ"
+    },
+    {
+      "offset": 713964,
+      "scene": "âÄÈ"
+    },
+    {
+      "offset": 713982,
+      "scene": "Åè$"
+    }
+  ],
+  "hudChildren": [
+    {
+      "offset": 651545,
+      "child": "Eéå"
+    },
+    {
+      "offset": 658115,
+      "child": "ãÉã"
+    },
+    {
+      "offset": 658473,
+      "child": "ÅÅÅ"
+    },
+    {
+      "offset": 683140,
+      "child": "ÆÁ"
+    },
+    {
+      "offset": 683497,
+      "child": "Åâê"
+    },
+    {
+      "offset": 683743,
+      "child": "EãÂ"
+    },
+    {
+      "offset": 683756,
+      "child": "åÈ"
+    },
+    {
+      "offset": 683768,
+      "child": "EÆä"
+    },
+    {
+      "offset": 683781,
+      "child": "AÄÁ"
+    },
+    {
+      "offset": 683794,
+      "child": "EèÂ"
+    },
+    {
+      "offset": 683807,
+      "child": "éâã"
+    },
+    {
+      "offset": 683820,
+      "child": "èê"
+    },
+    {
+      "offset": 683832,
+      "child": "áåè"
+    },
+    {
+      "offset": 683845,
+      "child": "ÊÀ"
+    }
+  ],
+  "method": "Reversible own-instance éa preflight on the shared scene validated by complete native inventory and health/shield siblings. Canvas mask after world/top and before all native HUD children, later map and crosshair. No native replay or DOM mask.",
+  "fade": "300ms smoothstep opacity on native scene draws; terminal reuses last valid geometry. Off/blur/Play/destroy clear immediately. Missing native boundary/API/projection fails open.",
+  "limits": "AST order and actual BRIO integration fixtures establish implementation behavior, not live game pixel approval. Existing hide-UI challenge predicates remain authoritative."
+}

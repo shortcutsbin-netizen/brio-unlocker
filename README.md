@@ -1,3 +1,15 @@
+# V64 — crosshair color, readable flashlight HUD and smooth end fade
+
+Current [complete Console payload](dist/brio-v64.min.js) · [Full one-match test procedure](docs/test-procedures/v64-test-procedure.md) · [Findings](docs/findings/v64-findings.md) · [Feature matrix](docs/status/v64-feature-matrix.md) · [Validation](docs/audits/v64-validation.md).
+
+Fixes live preset color updates, puts flashlight darkness behind native own HUD/status messages, adds a300ms match-end fade, and repairs the385 repeated V63 maintenance exceptions. User confirms prior shapes/sizes and Player-follow/end removal; new fixes await live review. Bot/exact unopened contents remain unresolved without guessed labels.
+
+One natural match requested, HARD MAXIMUM TWO per suite. Load V64 → normal profile → Set up V64 test → same-match visual checks → COPY RESULTS to logs/runs/v64-log.txt. Entire procedure prints in chat. Genuine V63 upload reviewed; user-renamed V62 upload preserved. Earlier checkpoints below are historical.
+
+Final evidence integrity check: uploaded renamed v62-log.txt contained only CRLF (2bytes). Restored the exact4,860,392-byte original export from commit3ca20c6:logs/runs/v63-log.txt into the intended v62-log.txt; SHA2561cf50537170783db9e524b1ad37700edb52c2a69678a86c0d0adf051fe85ce5f. Original blank-file upload remains in Git history; genuine current V63 upload unchanged. Old V63 analyzer now writes its recovered-V62 derivative to v64-v62-recovered-analysis.json, preserving the historical report.
+
+---
+
 # V63 — fixed aimed cone, custom crosshair and flashlight
 
 Current [complete Console payload](dist/brio-v63.min.js) · [Full test procedure](docs/test-procedures/v63-test-procedure.md) · [Findings](docs/findings/v63-findings.md) · [Feature matrix](docs/status/v63-feature-matrix.md) · [Validation](docs/audits/v63-validation.md).

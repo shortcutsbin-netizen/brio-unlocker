@@ -1,3 +1,11 @@
+# V64 native rendering boundary — 2026-10-19
+
+Native supplied engine unchanged. AST proof docs/analysis/engine/v64-flashlight-layer.json shows world/top before shared own-HUD scene èEå, followed by full-map/crosshair draws. This explains why a DOM mask obscured health/inventory/status messages and supports native own-scene preflight masking without native replay or screen cutouts. Complete inventory and validated health/shield holders identify the shared scene, bounded32/48children; missing capture fails open. V64 preflight paints CSS-radius gradient then native UI renders once. Existing challenge gates remain authoritative.300ms end fade uses existing native draws, no added timer. Crosshair live input+change refreshes saved color; previous V63 log retains white and does not establish browser event cause conclusively. No browser session or site gameplay undertaken. Current payload V64; full one-match procedure/max2suite in docs/test-procedures/v64-test-procedure.md. Historical suffix follows.
+
+Final evidence integrity check: uploaded renamed v62-log.txt contained only CRLF (2bytes). Restored the exact4,860,392-byte original export from commit3ca20c6:logs/runs/v63-log.txt into the intended v62-log.txt; SHA2561cf50537170783db9e524b1ad37700edb52c2a69678a86c0d0adf051fe85ce5f. Original blank-file upload remains in Git history; genuine current V63 upload unchanged. Old V63 analyzer now writes its recovered-V62 derivative to v64-v62-recovered-analysis.json, preserving the historical report.
+
+---
+
 # V63 source/render update — 2026-10-18
 
 Native engine/codec/assets unchanged; full newly uploaded BRIO62 export is mislabeled logs/runs/v63-log.txt (4860392bytes,2777valid events,1terminal,85source chunks match original). Next V63 upload uses v63-log-2.txt. No new asset/browser-control pass. Canonical native gun aimed hand target15,-12,PI/2-.23 now positions only BRIO cone using actual pre-hand matrix/scalar; inherited held geometry/scales stay native. Source proof v63-aimed-pose.json. New styles are a rounded thin curved sector with faint fill; direction/evidence/storage unchanged.

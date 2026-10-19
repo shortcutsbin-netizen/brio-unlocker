@@ -1,5 +1,5 @@
-/* BRIO v63 maintenance map — 2026-10-18
- * V63 fixes cone position to the native aimed hand pose, softens its sector, adds custom crosshair/flashlight and preserves bounded bot/content evidence. Frozen spread evidence/storage and retired UI stay intact.
+/* BRIO v64 maintenance map — 2026-10-19
+ * V64 fixes live reticle color, masks before the native own HUD, fades at match end and repairs feature maintenance initialization. Frozen spread evidence/storage and retired UI stay intact.
  * Hell is the composite title; saved goodFlippinLuck/noMinimap IDs remain compatible.
  * Damage rankings are unavailable; spread angle interpretation requires live calibration.
  * V49 user proves warnings (including selected-slot lift), transparent foliage and loot effect suppression.
@@ -31,8 +31,8 @@
  */
 (() => { /* BRIO block: startup — Own this injection; destroy prior releases before creating UI or native adapters. Saved choices survive; per-Play game state does not. */
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v63";
-    for (const k of [ K, "__brio_unlocker_v62", "__brio_unlocker_v61", "__brio_unlocker_v60", "__brio_unlocker_v59", "__brio_unlocker_v58", "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
+    const W = window, D = document, K = "__brio_unlocker_v64";
+    for (const k of [ K, "__brio_unlocker_v63", "__brio_unlocker_v62", "__brio_unlocker_v61", "__brio_unlocker_v60", "__brio_unlocker_v59", "__brio_unlocker_v58", "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
         W[k]?.destroy?.();
     } catch (_) { /* BRIO fallback: startup — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -41,7 +41,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "63",
+        v: "64",
         log: [],
         errors: [],
         renderer: null,
@@ -412,7 +412,7 @@
         }
         return node===root?{node:holder,x:muzzle['ë']['É']+7,y:muzzle['ë']['Ä']}:null;
     };
-    const v63Visual={light:null,lightAt:-Infinity,rect:null,rectAt:-Infinity,canvas:null,image:null,imageSource:'',imageRequested:false,imageReady:false,upload:0,crosshairDraws:0,lightFrames:0};
+    const v63Visual={light:null,hudScene:null,fadeAt:null,lightAt:-Infinity,rect:null,rectAt:-Infinity,canvas:null,image:null,imageSource:'',imageRequested:false,imageReady:false,upload:0,crosshairDraws:0,lightFrames:0};
     const v63NormalizeVisuals=value=>{
         /* Bound persisted presentation only; uploaded image lives separately and is never included in settings exports. */
         value.reticleStyle=['dot','cross','ring','image'].includes(value.reticleStyle)?value.reticleStyle:'cross';
@@ -453,25 +453,52 @@
         }finally{ /* Restore native transform/alpha on success and draw failure. */ ctx.restore();}
         v63Visual.reticleRoot=root;v63Visual.crosshairDraws++;
     };
-    const v63FlashlightHide=()=>{ /* Empty state is fail-open, never a stuck dark canvas after a match. */ if(v63Visual.light)v63Visual.light.style.display='none';};
+    const v63FlashlightHide=(smooth=false)=>{
+        /* Native match end fades the last valid mask for300ms. Off/focus/reset fail open immediately. */
+        if(smooth&&v63Visual.light){ /* Do not restart a fade when another terminal packet arrives. */ if(v63Visual.fadeAt===null)v63Visual.fadeAt=performance.now();return;}
+        v63Visual.light=null;v63Visual.fadeAt=null;
+    };
+    const v64FlashlightBoundary=scene=>{
+        /* Supplied engine draws world/top, then this shared native own-HUD scene, then map/crosshair.
+         * Require complete inventory and validated health/shield holders as immediate siblings, never a screen-region guess.
+         * Preflight masks once before native UI; all existing hide-HUD/challenge predicates remain authoritative. */
+        if(!scene||v63Visual.hudScene===scene)return;
+        const a=scene['âè']||[],b=scene['ÉE']||[];if(a.length+b.length>32)return;
+        let inventory=false,health=false;for(const child of [...a,...b]){ /* Only reached, independently validated native HUD signatures qualify. */ const gates=nativeDrawGates.get(child)?.gates;inventory||=!!gates?.has('inventoryHud');const c=child['âè']||[],d=child['ÉE']||[];if(c.length+d.length<=48)health||=[...c,...d].filter(/* Count only independently recognized native health/shield drawables. */ n=>nativeDrawGates.get(n)?.gates.has('healthShieldHud')).length>=2;}
+        if(!inventory||!health)return;
+        gateNativeDraw(scene,'v64FlashlightBoundary',/* Preserve native draw/predicates. */ ()=>false,v63FlashlightFrame);
+        if(nativeDrawGates.get(scene)?.gates.has('v64FlashlightBoundary')){ /* Missing/unsupported boundary leaves the world clear. */ v63Visual.hudScene=scene;log('V64 FLASHLIGHT LAYER',{method:'native own-HUD scene preflight',inventory:true,health:true});}
+    };
     const v63FlashlightFrame=ctx=>{
-        /* Existing local-root draw preflight supplies smooth position with a30Hz DOM-update ceiling.
-         * Canvas bounds cache lasts at most250ms; no new timer/global listener/Canvas patch. UI remains above the visual mask. */
+        /* Paint only after the native world and before native HUD/status/map/crosshair. No DOM overlay,
+         * Canvas prototype patch, new timer, native state mutation or duplicated native UI draw. */
         const e=exFast(),root=v61SpreadView.root,now=performance.now();
-        if(!e.flashlightMode||!S.renderer||v55.stats?.finished||D.hidden||!root||root.canvas!==ctx?.canvas){ /* Disable/end/unsupported capture restores an unobscured canvas. */ v63FlashlightHide();return;}
-        if(now-v63Visual.lightAt<33)return;v63Visual.lightAt=now;
-        const canvas=ctx.canvas;if(v63Visual.canvas!==canvas||now-v63Visual.rectAt>250){ /* Bounded layout reads, including a changed native canvas. */ v63Visual.canvas=canvas;v63Visual.rect=canvas.getBoundingClientRect();v63Visual.rectAt=now;}
-        const rect=v63Visual.rect,pointer=v61SpreadView.pointer;
-        if(!rect||![rect.left,rect.top,rect.width,rect.height].every(Number.isFinite)||rect.width<=0||rect.height<=0||canvas.width<=0||canvas.height<=0){ /* Invalid geometry does not produce a screen-sized blindfold. */ v63FlashlightHide();return;}
-        const x=e.flashlightFollow==='cursor'?(pointer?.canvas===canvas?pointer.x-rect.left:NaN):root.x*rect.width/canvas.width;
-        const y=e.flashlightFollow==='cursor'?(pointer?.canvas===canvas?pointer.y-rect.top:NaN):root.y*rect.height/canvas.height;
-        if(!Number.isFinite(x)||!Number.isFinite(y)||x<0||y<0||x>rect.width||y>rect.height){ /* Missing/outside cursor suppresses rather than inventing a target. */ v63FlashlightHide();return;}
-        if(!v63Visual.light){ /* One owned, pointer-transparent overlay per injection. */ const node=D.createElement('div');node.dataset.brioFlashlight='';node.style='position:fixed;pointer-events:none;z-index:2147483640;display:none';D.documentElement.appendChild(node);v63Visual.light=node;}
-        const node=v63Visual.light,r=e.flashlightRadius;node.style.left=rect.left+'px';node.style.top=rect.top+'px';node.style.width=rect.width+'px';node.style.height=rect.height+'px';node.style.background=`radial-gradient(circle at ${x}px ${y}px,transparent ${r*.8}px,rgba(0,0,0,.96) ${r}px)`;node.style.display='block';v63Visual.lightFrames++;
+        if(!e.flashlightMode||!S.renderer||D.hidden||!ctx?.createRadialGradient||!ctx.setTransform){ /* Unsupported/off/focus state is unobscured. */ v63FlashlightHide();return;}
+        let alpha=1,geometry=v63Visual.light;
+        if(v55.stats?.finished){ /* Fade can finish even when the local player root no longer draws. */
+            if(v63Visual.fadeAt===null||!geometry)return;
+            const t=Math.min(1,Math.max(0,(now-v63Visual.fadeAt)/300));alpha=1-t*t*(3-2*t);
+            if(t===1){ /* Retire only mask data, preserving saved preferences. */ v63FlashlightHide();return;}
+        }else { /* Fresh local projection and real canvas bounds supply both follow modes. */
+            if(!root||root.canvas!==ctx.canvas||now-root.at>100){ /* No stale player or cursor fallback. */ v63FlashlightHide();return;}
+            const canvas=ctx.canvas;if(v63Visual.canvas!==canvas||now-v63Visual.rectAt>250){ /* Cache layout reads without throttling native mask/HUD ordering. */ v63Visual.canvas=canvas;v63Visual.rect=canvas.getBoundingClientRect();v63Visual.rectAt=now;}
+            const rect=v63Visual.rect,pointer=v61SpreadView.pointer;
+            if(!rect||![rect.left,rect.top,rect.width,rect.height].every(Number.isFinite)||rect.width<=0||rect.height<=0||canvas.width<=0||canvas.height<=0){ /* Reject invalid geometry. */ v63FlashlightHide();return;}
+            const x=e.flashlightFollow==='cursor'?(pointer?.canvas===canvas?pointer.x-rect.left:NaN):root.x*rect.width/canvas.width;
+            const y=e.flashlightFollow==='cursor'?(pointer?.canvas===canvas?pointer.y-rect.top:NaN):root.y*rect.height/canvas.height;
+            if(!Number.isFinite(x)||!Number.isFinite(y)||x<0||y<0||x>rect.width||y>rect.height){ /* Outside/missing cursor fails open. */ v63FlashlightHide();return;}
+            geometry={x,y,r:e.flashlightRadius,width:rect.width,height:rect.height,canvas};v63Visual.light=geometry;
+        }
+        if(geometry.canvas!==ctx.canvas)return;
+        ctx.save();try{ /* CSS-pixel radius stays circular under unequal canvas/CSS scaling; restore every canvas property. */
+            ctx.setTransform(ctx.canvas.width/geometry.width,0,0,ctx.canvas.height/geometry.height,0,0);ctx.globalAlpha=alpha;
+            const gradient=ctx.createRadialGradient(geometry.x,geometry.y,geometry.r*.8,geometry.x,geometry.y,geometry.r);gradient.addColorStop(0,'rgba(0,0,0,0)');gradient.addColorStop(1,'rgba(0,0,0,.96)');ctx.fillStyle=gradient;ctx.fillRect(0,0,geometry.width,geometry.height);
+        }finally{ /* Native UI inherits its original transform/alpha/style. */ ctx.restore();}
+        v63Visual.lightFrames++;
     };
     const v63VisualReset=()=>{
-        /* Match/destroy invalidates image callbacks and removes all owned visual DOM. Saved image/preferences survive. */
-        v63Visual.reticleRoot=null;v63Visual.light?.remove();v63Visual.light=null;v63Visual.lightAt=v63Visual.rectAt=-Infinity;v63Visual.rect=null;v63Visual.canvas=null;v63Visual.image=null;v63Visual.imageSource='';v63Visual.imageRequested=v63Visual.imageReady=false;v63Visual.upload++;v63Visual.crosshairDraws=v63Visual.lightFrames=0;
+        /* Play/destroy invalidate pending image callbacks, boundary and mask; saved image/preferences survive. */
+        v63Visual.reticleRoot=null;v63FlashlightHide();v63Visual.hudScene=null;v63Visual.lightAt=v63Visual.rectAt=-Infinity;v63Visual.rect=null;v63Visual.canvas=null;v63Visual.image=null;v63Visual.imageSource='';v63Visual.imageRequested=v63Visual.imageReady=false;v63Visual.upload++;v63Visual.crosshairDraws=v63Visual.lightFrames=0;
     };
     const v63VisualControls=(parent,settings,id,locked)=>{
         /* Independent saved presentation controls/reset; native disabled fieldset enforces keyboard locks. */
@@ -481,7 +508,7 @@
             const label=D.createElement('label'),input=D.createElement(Array.isArray(kind)?'select':'input');label.textContent=title+' ';input.dataset.visualPreference=key;input.setAttribute('aria-label',title);
             if(Array.isArray(kind)){ /* Enumerated presets/follow target have no arbitrary code/URL input. */ for(const [value,text]of kind){ /* Create native options with textContent. */ const o=D.createElement('option');o.value=value;o.textContent=text;input.appendChild(o);}}
             else { /* Bound numeric presentation values at both control and settings normalization layers. */ input.type=kind;if(kind==='number'){ /* Unit is CSS pixels for flashlight, backing pixels for reticle. */ input.min=key==='reticleSize'?'6':'80';input.max=key==='reticleSize'?'64':'600';input.step='1';}}
-            input.value=settings[key];input.onchange=()=>{ /* No control may alter native bindings/input or other preferences. */ const z=storedExtras();z[key]=kind==='number'?Number(input.value):input.value;v63NormalizeVisuals(z);saveExtras(z);featureEx.at=-Infinity;v63Visual.lightAt=-Infinity;};label.appendChild(input);row.appendChild(label);
+            input.value=settings[key];const savePreference=()=>{ /* No control may alter native bindings/input or other preferences. */ const z=storedExtras();z[key]=kind==='number'?Number(input.value):input.value;v63NormalizeVisuals(z);saveExtras(z);featureEx.at=-Infinity;v63Visual.lightAt=-Infinity;};input.onchange=savePreference;if(kind==='color')input.oninput=savePreference;label.appendChild(input);row.appendChild(label);
         }
         if(id==='customCrosshair'){ /* Upload accepts bounded raster data only, kept outside exported settings. */
             const file=D.createElement('input'),message=D.createElement('small');file.type='file';file.accept='image/png,image/webp';file.dataset.reticleUpload='';file.setAttribute('aria-label','Upload crosshair PNG or WebP (256 KiB, 512 pixels maximum)');
@@ -695,7 +722,7 @@
         v55PlayerPreflight(r);
         gateNativeDraw(r['â'],'v55PlayerChildren',/* BRIO expr V55: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ ()=>false,(ctx,nativeScale)=>{
             /* Detect native held/pool replacements before first draw with O(1) unchanged-state checks. */
-            v55PlayerPreflight(r);if(isLocal(r)){ /* BRIO block V59: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ v55Frame(ctx);v61RootProjection(r,ctx,nativeScale);v63FlashlightFrame(ctx);}
+            v55PlayerPreflight(r);if(isLocal(r)){ /* BRIO block V59: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ v55Frame(ctx);v61RootProjection(r,ctx,nativeScale);}
         });
         if(!isLocal(r))return;
         const frame=v61MuzzleFrame(r);if(frame&&frame.node.parent===r['aá'])gateNativeDraw(r['aá'],'v63AimedAnchor',/* BRIO expr V63: observe hand draw only, never suppress native art. */ ()=>false,(ctx,s)=>{ /* Capture canonical aimed barrel using actual incoming native transform. */ v63AimedAnchor(r,ctx,s);});
@@ -849,7 +876,7 @@
                 const id=p.i??p.a?.[0];if(id===(stats.localId??S.renderer?.id))for(const [name,key]of [['hLost','hpLoss'],['sLost','shieldLoss']]){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */ const n=value(name);if(Number.isFinite(n)&&n>0)stats[key]+=n;}
             }
             if(type==='death'){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */
-                for(const bullet of bullets)v55ShotCompare(bullet,stats.localId??S.renderer?.id);bullets.length=0;stats.terminal={place:value('place'),eliminations:value('eliminations'),damage:value('damageToEnemies'),walls:value('wallsBuilt'),seconds:value('timeAlive'),killer:String(value('name')||'')};v55ReconFinishGroup();v55ReconSave(true);stats.finished=true;v63FlashlightHide();v55PerfFinish('native match end');
+                for(const bullet of bullets)v55ShotCompare(bullet,stats.localId??S.renderer?.id);bullets.length=0;stats.terminal={place:value('place'),eliminations:value('eliminations'),damage:value('damageToEnemies'),walls:value('wallsBuilt'),seconds:value('timeAlive'),killer:String(value('name')||'')};v55ReconFinishGroup();v55ReconSave(true);stats.finished=true;v63FlashlightHide(true);v55PerfFinish('native match end');
                 log('V55 AUTOMATIC AUDIT',v55Audit(true));log('V55 POSTGAME COUNTERS',{epoch:S.runEpoch,terminal:stats.terminal,hpLoss:stats.hpLoss,shieldLoss:stats.shieldLoss,eliminated:stats.eliminated,ownProjectiles:stats.ownProjectiles,attribution:'unavailable: no authoritative attacker/victim on observed loss events'});deepStop('native match end');
             }
         }
@@ -1453,7 +1480,7 @@
             a.appendChild(z);
         }
         const setup=D.createElement('div');setup.className='brioTestSetup';
-        const contents=D.createElement('button');contents.textContent='Set up V63 test';contents.dataset.testSetup='contents';contents.onclick=v59ContentsSetup;setup.appendChild(contents);
+        const contents=D.createElement('button');contents.textContent='Set up V64 test';contents.dataset.testSetup='contents';contents.onclick=v59ContentsSetup;setup.appendChild(contents);
         for(const [label,restore]of [['Set up normal test',false],['Restore saved settings',true]]){ /* Explicit profile actions keep routine testing reversible and one-click. */ const b=D.createElement('button');b.type='button';b.textContent=label;b.dataset.testSetup=restore?'restore':'normal';b.onclick=/* BRIO expr V52: renderExtras — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ()=>testSetup(restore);b.disabled=restore&&!read('brio_test_backup',null);setup.appendChild(b);}
         p.appendChild(setup);
         if (s.goodFlippinLuck) { /* BRIO branch: renderExtras — Accept s.goodFlippinLuck. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
@@ -3832,7 +3859,7 @@
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
     // V50 reopens the SAME Extras modal during play, including from the minimized terminal. Native home
     // buttons disappear in a match; a reachable control is necessary for tier cycling/preset restoration.
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v63</b><button data-a="extras">EXTRAS</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v64</b><button data-a="extras">EXTRAS</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
     v55ReconLoad();S.performanceCheck=v55PerfStart;S.spreadRecon=v55ReconReport;for(const event of ['mousedown','mouseup','mousemove','blur','pagehide'])W.addEventListener(event,v55ReconInput,{capture:true,passive:true});D.addEventListener('visibilitychange',v55ReconInput,{passive:true});
@@ -4362,7 +4389,7 @@
         calibrationOnlyAfterTimeCap:!!deep.reconOnly,incomingInstalled: !!deep.restore, incomingObservedThisRun: !!deep.installedEver, incomingPackets: deep.packets, incomingSchemas: deep.schemas.size, nativeEngineCaptured: deep.engineRestores.length > 0,
         targetedEntities: deep.replicas.size, records: deep.records, approximateBytes: deep.bytes, truncations: deep.truncations, errors: deep.errors, errorStages: deep.errorStages,
         lanes: deep.lanes, laneCaps: v59LaneCaps(), contentsFocus:!!deep.contentsFocus, suppressed: deep.suppressed, incomingTargetIds: deep.identities.size, circleState: deep.circleState, epoch: deep.epoch,
-        newVisuals:{customCrosshairDraws:v63Visual.crosshairDraws,flashlightFrames:v63Visual.lightFrames},spreadProjection:{samples:v61SpreadView.checks,suppressed:v61SpreadView.suppressed},provenance:deep.provenance?{nativeEntities:deep.provenance.entities,shapes:deep.provenance.shapes.size,envelopes:deep.provenance.envelopes.size,functions:deep.provenance.functions.size,limited:deep.provenance.limited}:null,
+        newVisuals:{customCrosshairDraws:v63Visual.crosshairDraws,flashlightFrames:v63Visual.lightFrames,flashlightLayer:!!v63Visual.hudScene,flashlightFadeMs:300},spreadProjection:{samples:v61SpreadView.checks,suppressed:v61SpreadView.suppressed},provenance:deep.provenance?{nativeEntities:deep.provenance.entities,shapes:deep.provenance.shapes.size,envelopes:deep.provenance.envelopes.size,functions:deep.provenance.functions.size,limited:deep.provenance.limited}:null,
         caps: {packets: 80000, records: 1800, bytes: 8000000, entities: 200, durationMs: 900000},
         limitsReached: {packets: deep.packets >= 80000, records: deep.records >= 1800, bytes: deep.bytes >= 8e6, entities: deep.replicas.size >= 200}, source: deep.source,
         conclusion: "Coverage evidence only. Absence is not impossibility; bot/content classification remains unassigned."
@@ -4760,7 +4787,7 @@
             if(root["Ée"]==="mapScene")gateNativeDraw(root,"fullMap",/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noMinimap);
             if (root["Ée"] === "borderScene") gateNativeDraw(root,"stormWorld",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.invisibleStorm);
             const front = root["âè"], back = root["ÉE"], length = (front?.length||0)+(back?.length||0), now = performance.now();
-            v55InventoryRoot(root);
+            v55InventoryRoot(root);v64FlashlightBoundary(root.parent);
             if (length>48) continue;
             const previous = nativeCandidateCache.get(root);
             if (previous && previous.front===front && previous.back===back && previous.length===length && now-previous.at<1000) continue;
@@ -4831,6 +4858,7 @@
             }
             // Native popup root has explicit art/title/fill/stroke fields. Tag its offscreen canvas from a child
             // draw (discovery can occur after the parent's draw has already begun), then gate the cached sprite.
+            v64FlashlightBoundary(root.parent);
             if (root.stroke && root.fill && root["ÅÉ"] && root["ä"] && root["èèÆ"]===.8) { /* BRIO branch: nativeVisualCandidate — Accept root.stroke && root.fill && root["ÅÉ"] && root["ä"] && root["èèÆ"]===.8. Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
                 for (const child of children) gateNativeDraw(child,"pickupRaster",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ () => false,ctx => { /* BRIO block: nativeVisualCandidate — gateNativeDraw callback. Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
                     if (ctx?.canvas?.tagName === "CANVAS") pickupCanvases.add(ctx.canvas);
@@ -5243,7 +5271,7 @@
             featureEx.value = extrasState();
             featureEx.at = performance.now();
             ownMaterialWarnings();
-            reclaimNativeGates();if(!e.flashlightMode)v63FlashlightHide();
+            reclaimNativeGates();if(!featureEx.value.flashlightMode)v63FlashlightHide();
             nativeInventoryChallenge();
             const slotState = (S.hudTemplates?.slots || []).map(/* BRIO expr: featureTick / (S.hudTemplates?.slots || []).map callback — Update existing visual/recon adapters within their cadence; logs describe coverage, not live visual proof. */ rec => ({slot: rec.slotIndex, type: S.renderer?.["Åé"]?.[rec.slotIndex]?.type, ammo: nativeSlotAmmo(S.renderer, rec.slotIndex, rec) ?? null, selected: S.renderer?.["ÈÆ"] === rec.slotIndex, ammoType: nativeSlotAmmoIndex(S.renderer, rec.slotIndex, rec) ?? null, threshold: featureEx.value.warningThresholds.ammo[nativeSlotAmmoIndex(S.renderer, rec.slotIndex, rec)] ?? null, low: nativeSlotLow(featureEx.value, S.renderer, rec.slotIndex, rec)}));
             const slotSignature = J(slotState);
