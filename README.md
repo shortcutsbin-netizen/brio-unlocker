@@ -1,3 +1,13 @@
+# V65 — stable cone rebuild; flashlight finalized; unsupported recon retired
+
+Current [complete Console payload](dist/brio-v65.min.js) · [Full one-match procedure](docs/test-procedures/v65-test-procedure.md) · [Findings](docs/findings/v65-findings.md) · [Feature matrix](docs/status/v65-feature-matrix.md) · [Validation](docs/audits/v65-validation.md).
+
+V64 evidence identifies wrong cone direction and changing bin widths. V65 draws a rigid player-root aim sector using source-derived static gun references and frozen per-mode widths; origin still needs visual review. Flashlight and outlines are user-approved, with no routine retest. Bot identification/exact unopened contents are retired from the current client-only product/test pipeline; no reliable authoritative signal was found, and further ordinary matches are not requested for them.
+
+One natural cone-focused match, hardmaximum2per suite. Load V65 → normal profile → Set up V65 test → native walking/fire/hip-ADS review → COPY RESULTS to logs/runs/v65-log.txt. If still wrong, get a clear visual before another correction. Entire current procedure prints in chat. Historical checkpoints follow.
+
+---
+
 # V64 — crosshair color, readable flashlight HUD and smooth end fade
 
 Current [complete Console payload](dist/brio-v64.min.js) · [Full one-match test procedure](docs/test-procedures/v64-test-procedure.md) · [Findings](docs/findings/v64-findings.md) · [Feature matrix](docs/status/v64-feature-matrix.md) · [Validation](docs/audits/v64-validation.md).

@@ -1,0 +1,381 @@
+{
+  "defaultsEvidence": [
+    {
+      "offset": 480725,
+      "source": "á.ä.ë.É=30"
+    },
+    {
+      "offset": 480736,
+      "source": "á.ä.ë.Ä=0x0"
+    },
+    {
+      "offset": 480748,
+      "source": "á.ä.size=0.56"
+    },
+    {
+      "offset": 480762,
+      "source": "á.ä.A=Math.PI/Ãa"
+    },
+    {
+      "offset": 480816,
+      "source": "á.ä.ë.É=030"
+    },
+    {
+      "offset": 480828,
+      "source": "á.ä.ë.Ä=-aèÀ"
+    },
+    {
+      "offset": 480842,
+      "source": "á.ä.A=(Math.PI/Ãa)+0.2"
+    },
+    {
+      "offset": 480865,
+      "source": "á.ä.size=0X1"
+    }
+  ],
+  "source": "docs/game-sources/engine.js",
+  "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "scope": {
+    "start": 481161,
+    "end": 488923,
+    "defaults": {
+      "x": 24,
+      "y": -13,
+      "angle": 1.7707963267948965,
+      "size": 1
+    },
+    "hand": {
+      "x": 15,
+      "y": -12,
+      "angle": 1.3407963267948966,
+      "size": 1
+    },
+    "muzzle": -55
+  },
+  "poses": {
+    "revolver": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "scoped ar": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "combat": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "scar": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "smg": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "spas": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "silencedpistol": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "famas": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "bolt": {
+      "x": 97.32332815822744,
+      "y": 6.650068241228336
+    },
+    "charge rifle": {
+      "x": 106.71551892386839,
+      "y": 5.57318289597384
+    },
+    "sawedoff": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "lmg": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "shotgun": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "rifle": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "aug": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "rpg": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "heavy sniper": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "ak47": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "musket": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "drum": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "vector": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "crossbow": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    },
+    "grenade pistol": {
+      "x": 88.10437555610869,
+      "y": 6.754533163034278
+    }
+  },
+  "evidence": {
+    "revolver": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "scoped ar": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "combat": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "scar": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "smg": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "spas": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "silencedpistol": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "famas": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "bolt": {
+      "held": {
+        "x": 26,
+        "y": -22,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": [
+        {
+          "offset": 481229,
+          "source": "á.ä.ë.Ä=-0x16"
+        },
+        {
+          "offset": 481243,
+          "source": "á.ä.ë.É=26"
+        }
+      ]
+    },
+    "charge rifle": {
+      "held": {
+        "x": 26,
+        "y": -26,
+        "angle": 1.7707963267948965,
+        "size": 1.1
+      },
+      "assignments": [
+        {
+          "offset": 483472,
+          "source": "á.ä.size=1.1"
+        },
+        {
+          "offset": 483485,
+          "source": "á.ä.ë.É=0X1a"
+        },
+        {
+          "offset": 483498,
+          "source": "á.ä.ë.Ä=-0x1a"
+        }
+      ]
+    },
+    "sawedoff": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "lmg": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "shotgun": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "rifle": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "aug": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "rpg": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "heavy sniper": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "ak47": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "musket": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "drum": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "vector": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "crossbow": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    },
+    "grenade pistol": {
+      "held": {
+        "x": 24,
+        "y": -13,
+        "angle": 1.7707963267948965,
+        "size": 1
+      },
+      "assignments": []
+    }
+  },
+  "method": "Settled aimed hand plus selected-weapon ADS scalar pose; no walking/recoil/live held properties. Rotate this fixed local reference once by observed native aim angle at the native player center. Nominal art edge, not alpha-tip pixel proof."
+}

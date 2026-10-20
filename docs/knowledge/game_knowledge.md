@@ -1,3 +1,13 @@
+# V64 user proof and V65 cone semantics — 2026-10-20 UTC
+
+User: outlines look good; flashlight both follows, HUD/status visibility and fade correct, explicitly finalized. Cone V63/V64 rejected (V63 worse than V62); must remain static and rotate with player aim, origin uncertain due instability. User played2matches, normal then flashlight. Record proofs only for reported surfaces: crosshair color has saved nonwhite evidence but no explicit visual approval.
+
+V65 cone is a static empirical aim sector: one nominal aimed-gun reference per supported gun, one frozen width per gun/hip-ADS mode, aim rotation and player translation. Walking/recoil/fire/spread bins cannot reshape it. Deliberate gun/ADS/size/camera changes can change corresponding geometry. Correct native art alignment remains unverified; request one usable failure visual before more correction. No universal maximum-spread/range promise. Core gameplay/physics and recorder storage unchanged.
+
+Bots/exact unopened contents retired for this current client-only evidence pipeline: no authoritative controller provenance/list/generator found; same native schemas/engine and ordinary metadata cannot support reliable labels. Not universal impossibility. No names/IDs/aim/appearance/n/nearby drops/removal/NONE guessing. Visible player inventories and nearest-container locations are retained exposed-state features. No more opening/ground-truth/broad-recon quota. Next focused procedure requests1match, hardmax2; finalized surfaces exceptions only. Historical suffix follows.
+
+---
+
 # V63 user observations / V64 correction scope — 2026-10-19
 
 User reports custom crosshair alternate shapes/sizes work; color always white. Player-follow flashlight good and disappears at match end. Own inventory/health and native storm/airdrop/meteor/elimination status text should stay visible above darkness in BOTH follows; removal should animate. These are user reports/requirements, not assistant gameplay proof. Current V64 implements live preset color input, native world/HUD mask ordering and300ms end fade; local/source checks pass subject to validation record, live review pending. Unmentioned cone/Cursor/upload/old features are not newly approved. Gameplay hide challenges still intentionally suppress their selected HUD/messages even with flashlight. No new mechanics inferred from the two terminal records, one of which is a win. Bot/exact pre-open contents remain unresolved; same-schema players and container lifecycle IDs do not prove bot status, exact loot or openings. Max2matches per future suite; V64 plans1. Historical suffix follows.

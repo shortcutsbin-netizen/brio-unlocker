@@ -1,3 +1,4 @@
+// Historical recorder helpers only: offline fixture opts into the dormant path; product integration separately verifies retirement.
 // Exercise OUR passive recorder with hostile descriptors, compact tuples and lifecycle changes.
 // No native source execution, game network, input synthesis, bot labels or loot guesses.
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),{parse}=require('acorn');
@@ -5,7 +6,7 @@ const s=fs.readFileSync('src/brio.js','utf8'),ast=parse(s,{ecmaVersion:'latest'}
 function walk(n){if(!n?.type)return;if(n.type==='VariableDeclarator'&&names.includes(n.id?.name))found.set(n.id.name,s.slice(n.init.start,n.init.end));for(const v of Object.values(n))if(Array.isArray(v))v.forEach(walk);else if(v?.type)walk(v);}walk(ast);assert.equal(found.size,names.length);
 let clock=1,getters=0;const logs=[],engines=[],deep={engines:new WeakSet,engineRestores:[],contentsFocus:true,until:900000,packets:0,records:0,bytes:0,truncations:0,lanes:{},suppressed:{},identities:new Map,subtypes:new Map,schemas:new Set,incomingState:new Map,environmentSeen:new WeakSet,provenance:{seen:new WeakSet,entities:0,shapes:new Set,envelopes:new Set,functions:new Map,limited:0}};
 const ctx={deep,clearInterval(){},v55:{stats:null},Node:class Node{},schemaFields:new Map,performance:{now:()=>clock},S:{renderer:{id:1},botPhase:'match'},v55Quiet:()=>false,v55PerfBegin(){},v55PerfEnd(){},deepEngineProbe:o=>engines.push(o),isLocal:o=>o.id===1,log:(label,data)=>logs.push({label,data}),botPhase(){},environmentProbe(){},restoreMarkerHolds(){}};
-vm.createContext(ctx);vm.runInContext(names.map(n=>'const '+n+'='+found.get(n)+';').join('\n')+'\nthis.observe=incomingProbe;this.delta=incomingDelta;this.native=v62NativeProvenance;this.manifest=v62DescriptorManifest;this.engine=deepEngineProbe;this.stop=deepStop;',ctx);
+ctx.V65_RECON_RETIRED=false;vm.createContext(ctx);vm.runInContext(names.map(n=>'const '+n+'='+found.get(n)+';').join('\n')+'\nthis.observe=incomingProbe;this.delta=incomingDelta;this.native=v62NativeProvenance;this.manifest=v62DescriptorManifest;this.engine=deepEngineProbe;this.stop=deepStop;',ctx);
 const symbol=Symbol('controllerCandidate'),p={t:'x',p:[1,'player',10,20,100,true],health:100,token:'secret'};
 Object.defineProperty(p,'hidden',{value:7,enumerable:false});Object.defineProperty(p,'isAI',{get(){getters++;throw Error('getter invoked')},enumerable:true});p[symbol]=false;
 const originalDescriptors=Object.getOwnPropertyDescriptors(p);ctx.observe(p);assert.equal(getters,0);assert.deepEqual(Object.getOwnPropertyDescriptors(p),originalDescriptors);
