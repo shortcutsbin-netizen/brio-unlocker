@@ -1,10 +1,10 @@
 {
   "name": "brio-unlocker",
-  "version": "66.0.0",
+  "version": "67.0.0",
   "private": true,
   "scripts": {
     "build": "node tools/build.cjs",
-    "test": "node tests/completion.cjs && node tools/analysis/catalog-v66.cjs --check && node tools/analysis/analyze-v66-storm.cjs --check && node tests/visuals.cjs && node tests/retirement.cjs && node tests/contents-budget.cjs && node tests/provenance.cjs && node tools/analysis/analyze-v64-layer.cjs --check && node tools/analysis/audit-comments.cjs && node tests/regression.cjs src/brio.js && node tests/challenges.cjs src/brio.js && node tests/regression.cjs dist/brio-v66.min.js && node tests/challenges.cjs dist/brio-v66.min.js && node tests/performance.cjs",
+    "test": "node tests/completion.cjs && node tools/analysis/catalog-v67.cjs --check && node tools/analysis/analyze-v67-zone.cjs --check && node tests/visuals.cjs && node tests/retirement.cjs && node tests/contents-budget.cjs && node tests/provenance.cjs && node tools/analysis/analyze-v64-layer.cjs --check && node tools/analysis/audit-comments.cjs && node tests/regression.cjs src/brio.js && node tests/challenges.cjs src/brio.js && node tests/regression.cjs dist/brio-v67.min.js && node tests/challenges.cjs dist/brio-v67.min.js && node tests/performance.cjs",
     "build:assets": "node tools/supplemental/build-assets.cjs",
     "test:assets": "node tests/supplemental/asset-retrieval.cjs"
   },

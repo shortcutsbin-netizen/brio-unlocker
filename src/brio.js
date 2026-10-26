@@ -1,5 +1,5 @@
-/* BRIO v66 maintenance map — 2026-10-26
- * V66 permanently removes spread display/calibration, completes the remaining storm/player cues and audits every retained option. Historical evidence is untouched.
+/* BRIO v67 maintenance map — 2026-10-26
+ * V67 corrects the projected next-zone boundary and permanently preserves native status messages, countdown and kill feed. Production redesign/optimization is deferred.
  * Hell is the composite title; saved goodFlippinLuck/noMinimap IDs remain compatible.
  * Damage rankings/accuracy remain unavailable; retired spread/bot/contents routes never reactivate.
  * V49 user proves warnings (including selected-slot lift), transparent foliage and loot effect suppression.
@@ -31,8 +31,8 @@
  */
 (() => { /* BRIO block: startup — Own this injection; destroy prior releases before creating UI or native adapters. Saved choices survive; per-Play game state does not. */
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v66";
-    for (const k of [ K, "__brio_unlocker_v65", "__brio_unlocker_v64", "__brio_unlocker_v63", "__brio_unlocker_v62", "__brio_unlocker_v61", "__brio_unlocker_v60", "__brio_unlocker_v59", "__brio_unlocker_v58", "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
+    const W = window, D = document, K = "__brio_unlocker_v67";
+    for (const k of [ K, "__brio_unlocker_v66", "__brio_unlocker_v65", "__brio_unlocker_v64", "__brio_unlocker_v63", "__brio_unlocker_v62", "__brio_unlocker_v61", "__brio_unlocker_v60", "__brio_unlocker_v59", "__brio_unlocker_v58", "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
         W[k]?.destroy?.();
     } catch (_) { /* BRIO fallback: startup — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -41,7 +41,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "66",
+        v: "67",
         log: [],
         errors: [],
         renderer: null,
@@ -554,7 +554,6 @@
                 const red=children(marker).filter(/* BRIO expr V52: v55NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>color(n)==='#F00'&&!n['À']&&Number.isFinite(n.width)&&Number.isFinite(n.height));
                 if(red.length===4)gateNativeDraw(marker,'hitConfirmation',/* BRIO expr V52: v55NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noHitMarker);
             }
-            if(/\/(?:timer|storm|waitingIcon|movingIcon)\.png$/i.test(hudPath(root))&&root.width===32&&root.height===32&&list.some(/* BRIO expr V52: v55NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.type==='text')&&children(root.parent||{}).some(/* BRIO expr V52: v55NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>/\/(?:playersIcon|killsIcon)\.png$/i.test(hudPath(n))))gateNativeDraw(root,'stormCountdown',/* BRIO expr V52: v55NativeCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noStormTimer);
         }
     };
     /* BRIO: field lookup cache follows source dictionary revision, not every packet. Native decoder return
@@ -702,7 +701,7 @@
         const stored = read("brio_extras_state", {}), value = stored && typeof stored === "object" && !Array.isArray(stored) ? stored : {};
         for (const key of ["buildMaterialLabels", "deployableLabels", "deployableRadius", "highlightLoot", "noFoliage", "cleanLoot", "playerIds"]) delete value[key];
         // V48 choices persist across Play/reinjection. No per-match references belong in this settings record.
-        for(const key of ['screenChests','screenAirdrops','screenFishing','identifyBots','contentsReconFocus','showBulletSpread','spreadColor','spreadSize','stormDistance'])delete value[key];
+        for(const key of ['screenChests','screenAirdrops','screenFishing','identifyBots','contentsReconFocus','showBulletSpread','spreadColor','spreadSize','stormDistance','noStormTimer'])delete value[key];
         v63NormalizeVisuals(value);
         value.warningThresholds = normalizeWarningThresholds(value.warningThresholds);
         value.indicatorColors=Object.fromEntries(Object.entries(INDICATOR_COLORS).map(/* BRIO expr V52: storedExtras — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ([id,color])=>[id,/^#[0-9a-f]{6}$/i.test(value.indicatorColors?.[id]||'')?value.indicatorColors[id]:color]));
@@ -852,37 +851,33 @@
     const v66EvidenceNote=id=>{
         /* Status is release evidence, not an automatic live verdict; specific partial proof remains visible. */
         if(statusOf(id)==='green')return 'User-confirmed in prior reports; retained regression checks. Report new exceptions only.';
-        if(id==='stormEdge')return 'Built: follows native current storm rectangles. New visual check; unencountered storm remains unobserved.';
+        if(id==='noMinimap')return 'Map hiding previously confirmed; V67 narrows suppression to retain sibling storm countdown. Final countdown visibility check pending.';
+        if(id==='stormEdge')return 'Built: all four projected next-zone sides, matching minimap target; 8-unit cyan edge with dark backing. Corrected visual check pending.';
         if(id==='highContrastPlayers')return 'Built: remote-player yellow halo, suppressed by player invisibility/Hell. Deferred visual review is now included.';
         if(id==='customCrosshair')return 'Shapes/sizes confirmed; preset color persistence checked. Color/artwork appearance still needs explicit visual approval.';
         return 'Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure.';
     };
-    const v66StormSegments=scene=>{
-        /* Supplied borderScene adds left/right/top/bottom red rectangles in that exact order.
-         * Read their current native inner edges, including moving bounds and viewport clipping; no projected-zone guess. */
-        const list=scene?.['âè'];if(scene?.['Ée']!=='borderScene'||!Array.isArray(list)||list.length<4)return [];
-        const segments=[];
-        for(let i=0;i<4;i++){ /* Four fixed constructor branches; no world scan or native mutation. */
-            const n=list[i],p=n?.['ë'],w=n?.width,h=n?.height;
-            if(!n||String(n['Äe']||n.fillStyle||'').toUpperCase()!=='#F00'||n['À'])return [];
-            if(![p?.['É'],p?.['Ä'],w,h].every(Number.isFinite)||w<=0||h<=0||n.visible===false||n.opacity<=0)continue;
-            const x=p['É'],y=p['Ä'];let x1=x-w/2,x2=x+w/2;if(i>=2){ /* Horizontal shade rectangles span the viewport; clip highlights to any visible side boundaries. */ const left=list[0],right=list[1];if(left?.width>0&&left.height>0&&left.opacity>0&&Number.isFinite(left['ë']?.['É']))x1=Math.max(x1,left['ë']['É']+left.width/2);if(right?.width>0&&right.height>0&&right.opacity>0&&Number.isFinite(right['ë']?.['É']))x2=Math.min(x2,right['ë']['É']-right.width/2);if(x2<=x1)continue;}segments.push(i<2?[x+(i===0?w/2:-w/2),y-h/2,x+(i===0?w/2:-w/2),y+h/2]:[x1,y+(i===2?h/2:-h/2),x2,y+(i===2?h/2:-h/2)]);
-        }
-        return segments;
+    const v66StormSegments=()=>{
+        /* Native minimap waiting border uses center +/- radius and width=height=2*radius.
+         * Retain that exact next-zone target during moving packets. Never read live shade rectangles. */
+        const z=v55.zone;if(!z||![z.x,z.y,z.radius,v55.zoneAt].every(Number.isFinite)||z.radius<=0||performance.now()-v55.zoneAt>900000)return [];
+        const left=z.x-z.radius,right=z.x+z.radius,top=z.y-z.radius,bottom=z.y+z.radius;
+        if(![left,right,top,bottom].every(Number.isFinite))return [];
+        return [[left,top,right,top],[right,top,right,bottom],[right,bottom,left,bottom],[left,bottom,left,top]];
     };
     const v66StormScene=scene=>{
-        /* One owned native drawable in the already reached world-storm scene; native suppression and camera ordering remain. */
+        /* One owned native drawable under the reached world-storm camera scene, independent of live shade extents; native suppression and camera ordering remain. */
         if(scene?.['Ée']!=='borderScene'||v66Completion.scene===scene||!scene.add)return;
         const list=scene['âè'];if(!Array.isArray(list)||list.length<4||!list.slice(0,4).every(/* Require the original four red shade primitives, not a map or arbitrary rectangle. */ n=>n&&String(n['Äe']||n.fillStyle||'').toUpperCase()==='#F00'&&!n['À']))return;
         v66Completion.node?.parent?.remove?.(v66Completion.node);
-        const node=nativeNode((ctx,s)=>{ /* Paint only a current, enabled native boundary; preserve native styles and simulation. */
+        const node=nativeNode((ctx,s)=>{ /* Paint only an enabled projected next-zone boundary; preserve native styles and simulation. */
             const e=exFast();if(!e.stormEdge||e.invisibleStorm||e.goodFlippinLuck||!S.renderer||v55.stats?.finished||!Number.isFinite(s)||s<=0)return;
-            const segments=v66StormSegments(scene);if(!segments.length)return;
-            ctx.save();try{ /* Thin cyan edge with a dark backing keeps the current boundary legible. */
-                ctx.beginPath();for(const [x1,y1,x2,y2]of segments){ /* Each segment already uses actual world coordinates under this native scene. */ ctx.moveTo(x1/s,y1/s);ctx.lineTo(x2/s,y2/s);}ctx.lineJoin='round';ctx.lineCap='round';ctx.strokeStyle='rgba(0,0,0,.65)';ctx.lineWidth=5/s;ctx.stroke();ctx.strokeStyle='#65d9ff';ctx.lineWidth=2/s;ctx.stroke();v66Mark('stormEdge');
+            const segments=v66StormSegments();if(!segments.length)return;
+            ctx.save();try{ /* A strong cyan edge and broader dark backing distinguish the next safe zone from native red storm shades. */
+                ctx.beginPath();for(const [x1,y1,x2,y2]of segments){ /* Each segment already uses actual world coordinates under this native scene. */ ctx.moveTo(x1/s,y1/s);ctx.lineTo(x2/s,y2/s);}ctx.lineJoin='round';ctx.lineCap='round';ctx.strokeStyle='rgba(0,0,0,.65)';ctx.lineWidth=14/s;ctx.stroke();ctx.strokeStyle='#65d9ff';ctx.lineWidth=8/s;ctx.stroke();v66Mark('stormEdge');
             }finally{ /* Never leak style/alpha to later native map/HUD draws. */ ctx.restore();}
         });
-        v66Completion.scene=scene;v66Completion.node=node;scene.add(node);log('V66 STORM EDGE BOUND',{source:'native current world shade inner edges',branches:4});
+        v66Completion.scene=scene;v66Completion.node=node;scene.add(node);log('V67 PROJECTED EDGE BOUND',{source:'native minimap next-zone center +/- radius; waiting target retained during movement',branches:4,foregroundWidth:8,backingWidth:14});
     };
     const v66Reset=()=>{ /* Only owned storm node/evidence references are discarded; preferences and original native nodes survive. */ v66Completion.node?.parent?.remove?.(v66Completion.node);v66Completion.node=null;v66Completion.scene=null;v66Completion.reached=Object.create(null);};
     const v66Report=reason=>{
@@ -892,11 +887,11 @@
             if(!id)continue;const branches=audit.rows.filter(/* Existing audit contains enabled native challenge paths only. */ r=>r.challenge===id);
             rows.push({id,label,category,state:statusOf(id)==='green'?'proven':statusOf(id)==='yellow'?'built-awaiting-visual':'unplanned',effective:e[id]??false,ownedDraws:v66Completion.reached[id]||0,nativeBranches:branches,note:v66EvidenceNote(id)});
         }
-        const report={version:S.v,epoch:S.runEpoch,reason,mode:e.goodFlippinLuck?'Hell':'normal',rows,implementationGaps:rows.filter(/* No unknown status can silently become complete. */ r=>r.state==='unplanned').map(/* Report exact unsupported IDs. */ r=>r.id),pendingVisual:rows.filter(/* User proof is separate from implementation verification. */ r=>r.state==='built-awaiting-visual').map(/* Preserve the exhaustive pending list. */ r=>r.id),removed:['showBulletSpread','stormDistance','screenChests','screenAirdrops','screenFishing','identifyBots'],nativeGateCap:audit.capHit,limits:'Run-cumulative reached/suppressed contexts, not visual passes. Unencountered conditions remain unobserved. Local checks cannot grant user visual approval.'};log('V66 COMPLETION AUDIT',report);return report;
+        const report={version:S.v,epoch:S.runEpoch,reason,mode:e.goodFlippinLuck?'Hell':'normal',rows,implementationGaps:rows.filter(/* No unknown status can silently become complete. */ r=>r.state==='unplanned').map(/* Report exact unsupported IDs. */ r=>r.id),pendingVisual:rows.filter(/* User proof is separate from implementation verification. */ r=>r.state==='built-awaiting-visual').map(/* Preserve the exhaustive pending list. */ r=>r.id),removed:['noStormTimer','showBulletSpread','stormDistance','screenChests','screenAirdrops','screenFishing','identifyBots'],nativeGateCap:audit.capHit,alwaysVisiblePolicy:['status announcements','waiting/elimination banners','kill feed','storm countdown'],limits:'Run-cumulative reached/suppressed contexts, not visual passes. Unencountered conditions remain unobserved. Local checks cannot grant user visual approval.'};log('V67 COMPLETION AUDIT',report);return report;
     };
     const STATUS = {
-        green: new Set([ "buildHealth", "objectHealth", "flashlightMode", "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventoryAmmo", "inventorySize", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "nearestPlayer", "nearestChest", "nearestAirdrop", "nearestPlayerName", "noChestsVisible", "monochrome", "lowMatsWarning", "lowAmmoWarning", "transparentFoliage", "noMinimap" ]),
-        yellow: new Set([ "safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails","customCrosshair","noDamageDirection","noInfoPopups","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons","noStormTimer", "highContrastPlayers","stormEdge", "playersInvisible", "lootInvisible", "buildsInvisible", "noCrosshair", "noInventoryHud", "invisibleStorm", "noHealthShieldHud", "goodFlippinLuck", "inventorySlots", "inventoryMaterials" ])
+        green: new Set([ "buildHealth", "objectHealth", "flashlightMode", "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventoryAmmo", "inventorySize", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "nearestPlayer", "nearestChest", "nearestAirdrop", "nearestPlayerName", "noChestsVisible", "monochrome", "lowMatsWarning", "lowAmmoWarning", "transparentFoliage" ]),
+        yellow: new Set([ "noMinimap","safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails","customCrosshair","noDamageDirection","noInfoPopups","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons", "highContrastPlayers","stormEdge", "playersInvisible", "lootInvisible", "buildsInvisible", "noCrosshair", "noInventoryHud", "invisibleStorm", "noHealthShieldHud", "goodFlippinLuck", "inventorySlots", "inventoryMaterials" ])
     }, statusOf = /* BRIO expr: statusOf — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ id => STATUS.yellow.has(id) ? "yellow" : STATUS.green.has(id) ? "green" : "red";
     const style = D.createElement("style");
     style.textContent = `[data-brio-mono-page] canvas:not(#playerPreview):not([data-brio-mono]){filter:grayscale(1)!important}#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioThresholds{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;padding:6px 10px 10px 34px;border-bottom:1px solid #555}.brioThresholds fieldset{display:flex;align-items:center;flex:0 0 auto;gap:8px;border:0;margin:0;padding:2px 0;min-width:0}.brioThresholds fieldset:disabled{opacity:.4}.brioThresholds fieldset label{display:flex;flex:0 0 auto;flex-direction:row;align-items:center;gap:4px;font-size:11px;white-space:nowrap}.brioThresholds input{width:56px;box-sizing:border-box;background:#111;color:#fff;border:1px solid #777;padding:4px}.brioThresholds input:disabled{cursor:not-allowed}.brioThresholds button{white-space:nowrap}.brioTier{display:flex;align-items:center;gap:12px;padding:6px 10px 10px 34px;border-bottom:1px solid #333}.brioModal :disabled{cursor:not-allowed}.brioOpt.locked{opacity:.55}.brioLockNote{padding:8px;color:#ffd21c}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
@@ -1094,13 +1089,13 @@
             ["playersInvisible","All players invisible","remote body, held items/builds, glider/grapple; all trail particles"],
             ["lootInvisible","Mask loot","five information levels",false,"lootTier"],
             ["buildsInvisible","Builds invisible","placement preview separate from placed blue base",false,"buildTier"],
-            ["noMinimap","No map","minimap + full map + player/kill counters"],
+            ["noMinimap","No map","minimap + full map + player/kill counters; storm countdown retained"],
             ["noCrosshair","No crosshair","native arms/center/hit marker"],
             ["noInventoryHud","No inventory/item bar","native item/material/ammo/build widgets"],
             ["invisibleStorm","Invisible storm","world storm + minimap/full-map shading/border"],
             ["noChestsVisible","Chests invisible","chests + ammo/grenade crates · proven"],
             ["noHealthShieldHud","No health/shield HUD","native own bars; ammo counter retained"],
-            ["noInfoPopups","Hide info popups","native announcements, kill feed, elimination banners and gameplay prompts"],
+            ["noInfoPopups","Hide interaction prompts","build/inventory/pickup instructions only; status messages and kill feed always visible"],
             ["noPickupLabels","No pickup labels","ground loot visible; native nearby pickup popup hidden"],
             ["noHitMarker","No hit-confirmation marker","crosshair retained"],
             ["noDamageDirection","Hide damage direction","native incoming-damage arrow; independent of floating numbers"],
@@ -1108,12 +1103,11 @@
             ["noWeaponProgress","No reload/charge progress","native progress HUD retained in simulation"],
             ["invisibleProjectiles","Invisible bullets/throwables","also silences shared detached trails; native physics/sounds retained"],
             ["hideWeapons","Hide weapons","local + remote held art and aiming build previews"],
-            ["noStormTimer","No storm countdown","timer icon/text; player/kill counters retained"],
             ["monochrome","Monochrome vision","game canvas grayscale · proven",false,"visual"],
             ["flashlightMode","Flashlight mode","player/cursor light radius; visual-only, excluded from Hell",false,"visual"],
             ["goodFlippinLuck","Hell","all gameplay challenges, highest tiers; every modifier locked off"]
         ],
-        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "highContrastPlayers", "High-contrast players", "yellow contrast halo around remote players; hidden-player challenges take precedence" ], [ "transparentFoliage", "Transparent foliage", "canopy opacity 25% · proven" ], [ "stormEdge", "Storm edge highlight", "cyan current storm boundary; follows native movement" ], [ "stormCenter", "Safe-zone center direction", "purple off-screen arrow to projected safe-zone center; target retained while moving" ], ["buildHealth","Build health outlines","green >75%; yellow >50%; orange >25%; red ≤25%"],
+        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "highContrastPlayers", "High-contrast players", "yellow contrast halo around remote players; hidden-player challenges take precedence" ], [ "transparentFoliage", "Transparent foliage", "canopy opacity 25% · proven" ], [ "stormEdge", "Storm edge highlight", "all four projected next-zone edges; bold cyan; matches minimap target" ], [ "stormCenter", "Safe-zone center direction", "purple off-screen arrow to projected safe-zone center; target retained while moving" ], ["buildHealth","Build health outlines","green >75%; yellow >50%; orange >25%; red ≤25%"],
             ["objectHealth","Breakable object health outlines","same bands; includes vehicles"],
             ["safeZoneIndicator","Nearest safe-zone edge","blue by default; distance built in; target zone during movement"],
             ["lootIndicator","Loot indicator","selected source guns in gold/red rarity; closest12 off-screen pickups"],
@@ -1123,7 +1117,7 @@
     // V50 flags distinguish normal-profile switches from challenges to cycle; no impossible all-on requirement.
     // Warning decisions/foliage/slot-border motion are PROVEN. Only their new reset buttons get UI-check badges.
     const REQUIRED_TESTS = ["highContrastPlayers","stormEdge","customCrosshair","inventorySlots","inventoryMaterials","nearestPlayer","nearestChest","nearestAirdrop","safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails"],
-        CHALLENGE_TESTS = ["playersInvisible","lootInvisible","buildsInvisible","noMinimap","noCrosshair","noInventoryHud","invisibleStorm","noHealthShieldHud","goodFlippinLuck","noDamageDirection","noInfoPopups","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons","noStormTimer"];
+        CHALLENGE_TESTS = ["playersInvisible","lootInvisible","buildsInvisible","noMinimap","noCrosshair","noInventoryHud","invisibleStorm","noHealthShieldHud","goodFlippinLuck","noDamageDirection","noInfoPopups","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons"];
     /* BRIO: nativeScanNeeded (V50)
      * Reuse the existing3000-node/second scene scanner even when the composite disables every modifier.
      * A modifier-only guard would strand map/popup/trail widgets created after12-second initial discovery.
@@ -1238,7 +1232,7 @@
             a.appendChild(z);
         }
         const setup=D.createElement('div');setup.className='brioTestSetup';
-        const contents=D.createElement('button');contents.textContent='Set up V66 modifiers';contents.dataset.testSetup='completion';contents.onclick=()=>{ /* Explicit normal review; never change live challenge modes automatically. */ testSetup(false);const z=storedExtras();z.highContrastPlayers=z.stormEdge=z.customCrosshair=true;saveExtras(z);featureEx.at=-Infinity;syncFeatureSettings();renderExtras();log('V66 REVIEW PROFILE',{mode:'modifiers',maximumMatches:2});};setup.appendChild(contents);const challenge=D.createElement('button');challenge.textContent='Set up V66 challenges (Hell)';challenge.dataset.testSetup='challengeReview';challenge.onclick=()=>{ /* User-selected highest-tier challenge review; restore button retains the original backup. */ const z=storedExtras();if(!read('brio_test_backup',null))write('brio_test_backup',z);z.goodFlippinLuck=true;z.flashlightMode=z.monochrome=false;saveExtras(z);featureEx.at=-Infinity;syncFeatureSettings();renderExtras();log('V66 REVIEW PROFILE',{mode:'challenges',maximumMatches:2});};setup.appendChild(challenge);
+        const contents=D.createElement('button');contents.textContent='Set up V67 modifiers';contents.dataset.testSetup='completion';contents.onclick=()=>{ /* Explicit normal review; never change live challenge modes automatically. */ testSetup(false);const z=storedExtras();z.highContrastPlayers=z.stormEdge=z.customCrosshair=true;saveExtras(z);featureEx.at=-Infinity;syncFeatureSettings();renderExtras();log('V67 REVIEW PROFILE',{mode:'modifiers',maximumMatches:2});};setup.appendChild(contents);const challenge=D.createElement('button');challenge.textContent='Set up V67 challenges (Hell)';challenge.dataset.testSetup='challengeReview';challenge.onclick=()=>{ /* User-selected highest-tier challenge review; restore button retains the original backup. */ const z=storedExtras();if(!read('brio_test_backup',null))write('brio_test_backup',z);z.goodFlippinLuck=true;z.flashlightMode=z.monochrome=false;saveExtras(z);featureEx.at=-Infinity;syncFeatureSettings();renderExtras();log('V67 REVIEW PROFILE',{mode:'challenges',maximumMatches:2});};setup.appendChild(challenge);
         for(const [label,restore]of [['Set up normal test',false],['Restore saved settings',true]]){ /* Explicit profile actions keep routine testing reversible and one-click. */ const b=D.createElement('button');b.type='button';b.textContent=label;b.dataset.testSetup=restore?'restore':'normal';b.onclick=/* BRIO expr V52: renderExtras — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ()=>testSetup(restore);b.disabled=restore&&!read('brio_test_backup',null);setup.appendChild(b);}
         p.appendChild(setup);
         if (s.goodFlippinLuck) { /* BRIO branch: renderExtras — Accept s.goodFlippinLuck. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
@@ -4471,7 +4465,7 @@
      * Parent links AND actual native child-array membership detect stale links left by removal/culling.
      * No global/prototype render hook, node deletion, opacity/resource/physics changes or automatic challenge cycle. */
     const nativeDrawGates=new Map,nativeVisualCoverage=new Map,nativeVisualSuppressed=new Map,remoteInfoRecords=new Map;
-    let infoCanvases=new WeakSet,pickupCanvases=new WeakSet,nativeCandidateCache=new WeakMap,gateInsertions=0;
+    let pickupCanvases=new WeakSet,nativeCandidateCache=new WeakMap,gateInsertions=0;
     const gateAnchor=node=>{ /* Resolve a reached native root with bounded depth; unattached constructors update on first draw. */ let root=node;for(let i=0;i<16&&root.parent;i++)root=root.parent;return root;};
     const restoreNativeGate=(node,record)=>{ /* Restore only our own wrapper; do not overwrite a later native method replacement. */ if(node['éa']===record.wrapper){ /* BRIO block V52: restoreNativeGate — Restore only our own wrapper descriptor and release the retired instance reference. */ if(record.descriptor)Object.defineProperty(node,'éa',record.descriptor);else delete node['éa'];}nativeDrawGates.delete(node);nativeCandidateCache.delete(node);};
     let gateRetirementCursor=null;
@@ -4521,7 +4515,7 @@
     const v55Audit=(detail=false)=>{
         /* BRIO: v55Audit — passive evidence replaces manual exhaustive option cycles. Every enabled category is
          * reached/unobserved plus suppressed draw count; missing capture is explicit. This does NOT certify pixels. */
-        const expected={playersInvisible:['playerPhysical','trailParticles'],lootInvisible:['lootAll','lootArt','lootRarity'],buildsInvisible:['placedBuild','buildPreview'],noMinimap:['mapHud','fullMap'],noCrosshair:['crosshair'],noInventoryHud:['inventoryHud'],invisibleStorm:['stormWorld','stormMap'],noHealthShieldHud:['healthShieldHud'],noInfoPopups:['announcements','killFeed','infoPrompt','eliminationBanner','waitingInfo'],invisibleProjectiles:['projectile'],hideWeapons:['heldWeapons'],noStormTimer:['stormCountdown'],noPickupLabels:['pickupPopup'],noWeaponProgress:['reloadProgress','chargeProgress'],noHitMarker:['hitConfirmation'],noDamageNumbers:['damageNumbers'],noDamageDirection:['damageDirection']},e=exFast(),rows=[],active=new Map;
+        const expected={playersInvisible:['playerPhysical','trailParticles'],lootInvisible:['lootAll','lootArt','lootRarity'],buildsInvisible:['placedBuild','buildPreview'],noMinimap:['mapHud','fullMap'],noCrosshair:['crosshair'],noInventoryHud:['inventoryHud'],invisibleStorm:['stormWorld','stormMap'],noHealthShieldHud:['healthShieldHud'],noInfoPopups:['infoPrompt','pickupPopup'],invisibleProjectiles:['projectile'],hideWeapons:['heldWeapons'],noPickupLabels:['pickupPopup'],noWeaponProgress:['reloadProgress','chargeProgress'],noHitMarker:['hitConfirmation'],noDamageNumbers:['damageNumbers'],noDamageDirection:['damageDirection']},e=exFast(),rows=[],active=new Map;
         for(const record of nativeDrawGates.values())for(const key of record.gates.keys())active.set(key,(active.get(key)||0)+1);
         for(const [id,keys]of Object.entries(expected))if(e[id])for(const key of keys)rows.push({challenge:id,branch:key,reached:nativeVisualCoverage.has(key),activeAdapters:active.get(key)||0,suppressedDraws:nativeVisualSuppressed.get(key)||0});
         return {epoch:S.runEpoch,rows,activeAdapters:nativeDrawGates.size,retiredAdapters:S.visualGateRetired||0,capHit:!!S.visualGateCap,performance:v55PerfReport(),scope:'native draw coverage; unobserved conditions are not failures; visible leak reporting still required'};
@@ -4563,19 +4557,10 @@
              * Four material units in the immediate children validate this exact root; no screen-region guesses. */
             /* V55 complete inventory recognition happens before the48-child generic cap. It follows
              * the source's material wrapper→rectangle→icon depth; old shallow occupied-slot logic failed in Hell. */
-            /* Feed rows have exactly three left-aligned text cells and a black backing; announcements carry
-             * the source âáE lifetime plus yellow text. Native fades/lifetimes and post-game DOM remain native. */
-            const texts=children.filter(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.type==='text'),black=children.filter(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>color(n)==='#000'&&n.type==='rectangle');
-            // Source waiting banner has ÈåÈ state and a35px centered message with black backing.
-            if(Object.hasOwn(root,'ÈåÈ')&&texts.some(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.fontSize===35&&n.align==='center')&&black.length)gateNativeDraw(root,'waitingInfo',/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noInfoPopups);
-            // Elimination banner is rasterized offscreen from two35px centered labels and a black rectangle.
-            // Hide the entire raster root and tag its canvas; the separately drawn cached HUD sprite is gated below.
-            if(texts.length===2&&texts.every(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.fontSize===35&&n.align==='center')&&texts.some(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>['Eliminated','Knocked'].includes(n.text))&&black.length){ /* BRIO block V52: nativeVisualCandidate — Keep this branch bounded and reversible under the enclosing helper. V52 live-pending; regression proof is separate. */
-                gateNativeDraw(root,'eliminationRaster',/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noInfoPopups,ctx=>{ /* BRIO block V52: nativeVisualCandidate — Keep this branch bounded and reversible under the enclosing helper. V52 live-pending; regression proof is separate. */ if(ctx?.canvas?.tagName==='CANVAS')infoCanvases.add(ctx.canvas);});
-            }
-            if(Object.hasOwn(root,'âáE')&&texts.some(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>String(n.fillStyle||n['Äe']).toUpperCase()==='#E9B116')&&black.length)gateNativeDraw(root,'announcements',/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noInfoPopups);
-            if(texts.length===3&&black.length===1&&texts.some(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>['Eliminated','Knocked','Infected'].includes(n.text))&&texts.every(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.align==='left'&&n.fontSize===26))gateNativeDraw(root.parent||root,'killFeed',/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noInfoPopups);
-            for(const text of texts)if(/^(?:Press (?:Q to Build|Tab to Manage Inventory|Space to Pick Up)|Eliminated|Knocked)$/.test(String(text.text||'')))gateNativeDraw(text,'infoPrompt',/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noInfoPopups||!!e.noInventoryHud&&/^Press (?:Q|Tab)/.test(text.text));
+            /* Status announcements, waiting/elimination banners and kill feed ALWAYS draw natively.
+             * Only explicit interaction instructions belong to Hide interaction prompts. */
+            const texts=children.filter(/* Source text nodes only; never suppress their shared HUD parent. */ n=>n.type==='text');
+            for(const text of texts)if(/^Press (?:Q to Build|Tab to Manage Inventory|Space to Pick Up)$/.test(String(text.text||'')))gateNativeDraw(text,'infoPrompt',/* Explicit interaction instructions only, never match status/kill text. */ e=>!!e.noInfoPopups||!!e.noInventoryHud&&/^Press (?:Q|Tab)/.test(text.text));
             /* Genuine placed builds include stage art and a blue underlay, whereas a live placement preview
              * has blue art only. Suppress their complete root including native health labels/new stage children. */
             const stageArt=children.some(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>/\/buildart\/(?:wood|brick|metal|fortified|campfire|boostpad|shield|drill)[0-2]\.png$/i.test(hudPath(n)));
@@ -4590,7 +4575,7 @@
             // Minimap texture is the square, custom-painted child of the waiting/player/kills counter holder.
             if (children.some(/* BRIO expr: nativeVisualCandidate / children.some callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => /\/(?:waitingIcon|movingIcon|timer|storm|playersIcon)\.png$/i.test(hudPath(n)))) { /* BRIO branch: nativeVisualCandidate — Accept children.some(n => /\/(?:waitingIcon|movingIcon|timer|storm|playersIcon)\.png$/i.test(hudPath(n))). Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */
                 for (const map of children) if (Number(map.width)>=200 && map.width===map.height && Object.hasOwn(map,"Eââ") && /aaÀ|aÀÁ|drawImage/.test(String(map["Eââ"])))
-                    { /* V52 No map includes the complete player/kill/timer holder, as requested. */ gateNativeDraw(root,"mapHud",/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noMinimap);gateNativeDraw(map,"minimap",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.noMinimap);}
+                    { /* V67 No map hides only minimap/counters; shared timer/status holder must remain visible. */ for(const counter of children)if(/\/(?:playersIcon|killsIcon)\.png$/i.test(hudPath(counter)))gateNativeDraw(counter,"mapHud",/* Hide source counter branches individually so the sibling storm countdown always survives No map/Hell. */ e=>!!e.noMinimap);gateNativeDraw(map,"minimap",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.noMinimap);}
             }
             // The map overlay scene has four red shade rectangles + a50px outlined white/black storm square.
             const stormBorder = children.find(/* BRIO expr: nativeVisualCandidate / children.find callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ n => Number(n.lineWidth)===50 && ["#FFF","#000"].includes(color(n)) && !n["À"]);
@@ -4614,7 +4599,6 @@
                 const topY=Math.min(...ys.filter(Number.isFinite)),ammoIcon=children.find(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>n.width===40&&n.height===40&&n['À']&&Number(n['ë']?.['Ä'])<topY-40);
                 if(ammoIcon)for(const n of children)if(n['ë']?.['Ä']===ammoIcon['ë']['Ä'])gateNativeDraw(n,'inventoryAmmoHud',/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noInventoryHud);
                 // Native local name is a26px left-aligned label35px above the shield row.
-                for(const n of children)if(n.type==='text'&&n.fontSize===26&&n.align==='left'&&n['ë']?.['Ä']===topY-35)gateNativeDraw(n,'infoPrompt',/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noInfoPopups);
 
                 for (const n of children) if (ys.includes(n["ë"]?.["Ä"]) || n["åÈ"] && n["Â$"])
                     gateNativeDraw(n,"healthShieldHud",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.noHealthShieldHud);
@@ -4637,13 +4621,6 @@
         // This complete source-backed relationship recovers an already-created cache without guessing a screen area.
         if (image?.tagName === "CANVAS" && node.parent?.["Ée"] === "top" && node.height===120 && node.width>=400 && node.width<=1200 && image.height===128 && image.width===node.width+8)
             pickupCanvases.add(image);
-        // Recover a pre-created native elimination cache only under a validated gameplay HUD parent.
-        // Its source canvas and displayed sprite both have height35+25=60 and exactly equal widths.
-        if(image?.tagName==='CANVAS'&&image.height===60&&node.height===60&&node.width===image.width){ /* BRIO block V52: nativeVisualCandidate — Keep this branch bounded and reversible under the enclosing helper. V52 live-pending; regression proof is separate. */
-            const siblings=[...(node.parent?.['âè']||[]).slice(0,48),...(node.parent?.['ÉE']||[]).slice(0,48)];
-            if(siblings.some(/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ n=>nativeDrawGates.get(n)?.gates.has('inventoryHud')||nativeDrawGates.get(n)?.gates.has('mapHud')))infoCanvases.add(image);
-        }
-        if(image&&infoCanvases.has(image))gateNativeDraw(node,'eliminationBanner',/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noInfoPopups);
         if (image && pickupCanvases.has(image)) gateNativeDraw(node,"pickupPopup",pickupPopupHidden);
         // Trail pools and one-shot landing particles use these exact native art paths. Hide the drawable branch,
         // not its shared resource. Pools retain native opacity/lifetime; their future children are also silenced.
@@ -4830,7 +4807,7 @@
         } catch (_) { /* BRIO fallback: resetFeatures — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
         for(const [node,record]of nativeDrawGates)try { /* Restore active own-instance gates centrally, including attached particles. */ restoreNativeGate(node,record);}catch(e){ /* BRIO block V52: resetFeatures — Keep this branch bounded and reversible under the enclosing helper. V52 live-pending; regression proof is separate. */ S.errors.push('draw gate restore: '+String(e));}
         nativeDrawGates.clear();nativeVisualCoverage.clear();nativeVisualSuppressed.clear();remoteInfoRecords.clear();gateInsertions=0;gateRetirementCursor=null;nativeResourcePaths=new WeakMap;S.inventoryRootChecks=new WeakMap;S.visualGateRetired=0;S.visualGateCapKeys=new Set;
-        infoCanvases=new WeakSet;pickupCanvases = new WeakSet; nativeCandidateCache = new WeakMap; S.visualGateCap = false; S.challengeLastReport = -Infinity;
+        pickupCanvases = new WeakSet; nativeCandidateCache = new WeakMap; S.visualGateCap = false; S.challengeLastReport = -Infinity;
         featureEx.at = -Infinity;
         for (const k of Object.keys(indicatorStats)) delete indicatorStats[k];
     }, /* BRIO: lockOpacity

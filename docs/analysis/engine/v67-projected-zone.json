@@ -1,0 +1,9 @@
+{
+  "source": "docs/game-sources/engine.js",
+  "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "circleEventOffset": 753439,
+  "nativeHandler": "Å.æÊÈ(\"\\143\\x69\\x72\\x63\\x6c\\x65\",function(å){ãÉÃ=ÈâÄ;if(å.state!==ÄÂÄ){ÃÄ=å.state;if((\"\\167a\\151\\x74\\x69\\156\\147\"==ÃÄ)||(\"\\x6C\\157\\x62\\x62y\"==ÃÄ)){ÅÉÅ.À=Á[\"\\u0077\\x61\\151\\164\\x69n\\x67\\x49\\x63\\x6F\\x6E\"];}else if(ÃÄ==\"m\\x6Fv\\x69n\\147\"){ÅÉÅ.À=Á[\"\\x6D\\157\\x76\\x69\\x6e\\147\\111\\143\\x6f\\x6E\"];}}if(å.time!==ÂÈ_){Èá=å.time;var aãe=\"\\x30\\x3A\";if(Èá<10)aãe+=\"\\u0030\";aãe+=Math.max(Èá,ËÊ);Êä$.text=aãe;}if(å.AË!==eÈÊ){if(ÃÄ==\"\\155\\157\\166\\151\\x6E\\x67\"){áÊ.ë[ÄÅ]=Å.ÅÅ(áÊ.ë[0],å.AË.ë[aÂ]);áÊ.ë[ÊA]=Å.ÅÅ(áÊ.ë[0X1],å.AË.ë[1]);EÃÊ=áÊ;áÊ=å.AË;EÃÊ.éã=áÉä;áÊ.width=Math.min(áÊ.width,aÂ);}else {âÊ.width=âÊ.height=äEå*å.AË.éã;âÊ.ë=new Å.æÈ(å.AË.ë[0],å.AË.ë[0X1]);}}})",
+  "interpretation": "Non-moving circle updates set native minimap next-zone square center to circle.position and width/height to 2*radius. Moving packets update the separate interpolated live border; projected target stays unchanged. Storm countdown icon ÅÉÅ owns its text Êä$, is a sibling of map/player counters inside AÄÁ: No map must suppress map/counter children individually, never this shared parent.",
+  "implementation": "Four complete projected square segments independent of live shade dimensions/opacity; native world camera/scale; 8-unit cyan line and 14-unit dark backing. Invalid/missing/stale/zero-radius target, off, Invisible storm/Hell and terminal fail closed. Original native announcements, feed and elimination draw paths are untouched.",
+  "limits": "AST/owned helper fixtures and actual payload integration are local behavior proof; final native pixels require user review."
+}
