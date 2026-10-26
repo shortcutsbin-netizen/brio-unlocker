@@ -1,6 +1,7 @@
+// Historical V65 spread evidence only; retired from the active product/test pipeline in V66.
 // Native aimed-pose AST evidence. Parse game data; evaluate only OUR existing scalar interpreter.
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),crypto=require('crypto'),{parse}=require('acorn');
-const raw=fs.readFileSync('docs/game-sources/engine.js','utf8'),ast=parse(raw,{ecmaVersion:'latest'}),ours=fs.readFileSync('src/brio.js','utf8'),oa=parse(ours,{ecmaVersion:'latest'});let interpreter;const assignments=[];
+const raw=fs.readFileSync('docs/game-sources/engine.js','utf8'),ast=parse(raw,{ecmaVersion:'latest'}),ours=fs.readFileSync('versions/v65/brio.js','utf8'),oa=parse(ours,{ecmaVersion:'latest'});let interpreter;const assignments=[];
 function walk(n,visit){if(!n?.type)return;visit(n);for(const v of Object.values(n))if(Array.isArray(v))v.forEach(x=>walk(x,visit));else if(v?.type)walk(v,visit);}
 walk(oa,n=>{if(n.type==='VariableDeclarator'&&n.id?.name==='numericSourceConstants')interpreter=ours.slice(n.init.start,n.init.end)});const ctx={};vm.createContext(ctx);vm.runInContext('this.constants='+interpreter,ctx);const constants=ctx.constants(ast,460000);
 walk(ast,n=>{if(n.type==='AssignmentExpression'&&n.start>457000&&n.start<458100&&raw.slice(n.left.start,n.left.end).startsWith('á.aá'))assignments.push({start:n.start,end:n.end,source:raw.slice(n.start,n.end)});});

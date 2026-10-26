@@ -1,0 +1,491 @@
+{
+  "version": "66",
+  "modifiers": 29,
+  "challenges": 21,
+  "proven": 23,
+  "builtAwaitingVisual": 27,
+  "plannedUnimplemented": 0,
+  "rows": [
+    {
+      "id": "playersInvisible",
+      "label": "All players invisible",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "remote body, held items/builds, glider/grapple; all trail particles",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "lootInvisible",
+      "label": "Mask loot",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "five information levels",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "buildsInvisible",
+      "label": "Builds invisible",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "placement preview separate from placed blue base",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "noMinimap",
+      "label": "No map",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "proven",
+      "description": "minimap + full map + player/kill counters",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "noCrosshair",
+      "label": "No crosshair",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "native arms/center/hit marker",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "noInventoryHud",
+      "label": "No inventory/item bar",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "native item/material/ammo/build widgets",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "invisibleStorm",
+      "label": "Invisible storm",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "world storm + minimap/full-map shading/border",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "noChestsVisible",
+      "label": "Chests invisible",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "proven",
+      "description": "chests + ammo/grenade crates · proven",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "noHealthShieldHud",
+      "label": "No health/shield HUD",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "native own bars; ammo counter retained",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "noInfoPopups",
+      "label": "Hide info popups",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "native announcements, kill feed, elimination banners and gameplay prompts",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "noPickupLabels",
+      "label": "No pickup labels",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "ground loot visible; native nearby pickup popup hidden",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "noHitMarker",
+      "label": "No hit-confirmation marker",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "crosshair retained",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "noDamageDirection",
+      "label": "Hide damage direction",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "native incoming-damage arrow; independent of floating numbers",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "noDamageNumbers",
+      "label": "No floating damage numbers",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "native damage/healing text pools",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "noWeaponProgress",
+      "label": "No reload/charge progress",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "native progress HUD retained in simulation",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "invisibleProjectiles",
+      "label": "Invisible bullets/throwables",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "also silences shared detached trails; native physics/sounds retained",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "hideWeapons",
+      "label": "Hide weapons",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "local + remote held art and aiming build previews",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "noStormTimer",
+      "label": "No storm countdown",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "timer icon/text; player/kill counters retained",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "monochrome",
+      "label": "Monochrome vision",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "proven",
+      "description": "game canvas grayscale · proven",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "flashlightMode",
+      "label": "Flashlight mode",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "proven",
+      "description": "player/cursor light radius; visual-only, excluded from Hell",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "goodFlippinLuck",
+      "label": "Hell",
+      "category": "challenges",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "all gameplay challenges, highest tiers; every modifier locked off",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "transparentRoofs",
+      "label": "Transparent roofs",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "static map roofs",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "healthBars",
+      "label": "Player health bars",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "remote players",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "numericHealthShield",
+      "label": "Health/shield numbers",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "numbers inside native bars · proven",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "playerNames",
+      "label": "Player names",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "remote players",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "allGlidersInvisible",
+      "label": "All gliders invisible",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "self + remote",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "allTrailsInvisible",
+      "label": "All trails invisible",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "self + remote",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "nearestPlayer",
+      "label": "Nearest player indicator",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "off-screen only + distance",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "nearestPlayerName",
+      "label": "Player name in nearest arrow",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "below distance; follows upright label",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "nearestChest",
+      "label": "Nearest chest indicator",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "hide while target is on-screen",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "nearestAirdrop",
+      "label": "Nearest airdrop indicator",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "hide while target is on-screen",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "permanentMeteor",
+      "label": "Permanent meteor location",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "automatic native waypoint retention · proven",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "highContrastPlayers",
+      "label": "High-contrast players",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "yellow contrast halo around remote players; hidden-player challenges take precedence",
+      "evidence": "Built: remote-player yellow halo, suppressed by player invisibility/Hell. Deferred visual review is now included."
+    },
+    {
+      "id": "transparentFoliage",
+      "label": "Transparent foliage",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "canopy opacity 25% · proven",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "stormEdge",
+      "label": "Storm edge highlight",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "cyan current storm boundary; follows native movement",
+      "evidence": "Built: follows native current storm rectangles. New visual check; unencountered storm remains unobserved."
+    },
+    {
+      "id": "stormCenter",
+      "label": "Safe-zone center direction",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "purple off-screen arrow to projected safe-zone center; target retained while moving",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "buildHealth",
+      "label": "Build health outlines",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "green >75%; yellow >50%; orange >25%; red ≤25%",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "objectHealth",
+      "label": "Breakable object health outlines",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "same bands; includes vehicles",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "safeZoneIndicator",
+      "label": "Nearest safe-zone edge",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "blue by default; distance built in; target zone during movement",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "lootIndicator",
+      "label": "Loot indicator",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "selected source guns in gold/red rarity; closest12 off-screen pickups",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "highlightOwnedAmmo",
+      "label": "Highlight ammo for owned guns",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "native pickup ammo matches current carried gun types",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "longerBulletTrails",
+      "label": "Longer bullet trails",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "1.2s observed bullet/throwable history; no trajectory prediction",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "customCrosshair",
+      "label": "Enhanced/custom crosshair",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "dot/cross/ring + PNG/WebP upload; native hit marker retained",
+      "evidence": "Shapes/sizes confirmed; preset color persistence checked. Color/artwork appearance still needs explicit visual approval."
+    },
+    {
+      "id": "lowHealthWarning",
+      "label": "Low-health visual warning",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "own HP at or below threshold · proven",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "lowAmmoWarning",
+      "label": "Low-ammo visual warning",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "inclusive thresholds; grappler5, flare exempt · proven",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "lowMatsWarning",
+      "label": "Low-material warning",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "inclusive thresholds including scraps · proven",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "inventorySlots",
+      "label": "Inventory: 5 item slots",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "larger row aligned to ammo; no counts/hotkeys",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "inventoryMaterials",
+      "label": "Inventory: build materials/counts",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "built-awaiting-visual",
+      "description": "larger icons/counts; wood / brick / metal / scraps",
+      "evidence": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+    },
+    {
+      "id": "inventoryAmmo",
+      "label": "Inventory: ammo by type",
+      "category": "modifiers",
+      "control": "toggle",
+      "state": "proven",
+      "description": "native icons + separate counts · proven",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    },
+    {
+      "id": "inventorySize",
+      "label": "Inventory size",
+      "category": "modifiers",
+      "control": "size preference",
+      "state": "proven",
+      "description": "Small / Medium / Large / XL",
+      "evidence": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+    }
+  ],
+  "additionalApproved": [
+    {
+      "id": "matchBreakdown",
+      "state": "built-awaiting-visual",
+      "scope": "Always-on native postgame replacement; authoritative totals plus explicitly observed movement/weapon-time/loss/projectile counters. No accuracy or per-player damage inference."
+    },
+    {
+      "id": "cosmetics",
+      "state": "proven",
+      "scope": "Existing native/invisible/custom cosmetic workflow retained; exceptions only."
+    }
+  ],
+  "removed": [
+    {
+      "id": "showBulletSpread",
+      "reason": "User explicitly retired all spread display/calibration after V65 failed."
+    },
+    {
+      "id": "stormDistance",
+      "reason": "Unimplemented duplicate of merged M13 distance inside safeZoneIndicator."
+    },
+    {
+      "id": "identifyBots",
+      "reason": "Current client-only authoritative route unsupported; retired V65."
+    },
+    {
+      "id": "screenChests/screenAirdrops/screenFishing",
+      "reason": "Exact pre-open contents unsupported by current client-only evidence; retired V65."
+    }
+  ],
+  "limits": "Built/local checks are not user visual approval. Every retained row has an implemented route; unencountered context stays unobserved."
+}

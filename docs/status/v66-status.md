@@ -1,0 +1,7 @@
+# V66 current status — 2026-10-26
+
+Current src/brio.js, dist/brio-v66.min.js, immutable versions/v66/. Read complete feature matrix/catalog, findings, validation and full procedure. Implementation scope is complete for every retained approved row:29modifiers/preferences,21challenges;23user-proven,27built awaiting native visual approval;zero planned-only controls. Always-on Match breakdown remains built with final native appearance pending. Cosmetics retain prior proof.
+
+V66 permanently removes all spread display/calibration/control/storage activity, completes native-current storm-edge highlight and the planned remote-player contrast halo, removes duplicate stormDistance, labels all rows and automatically audits50options at match end/export. Existing flashlight/outlines remain finalized; no routine retest. Bot/exact pre-open contents and denied/retired prior options remain closed. No automatic live challenge cycles or guessed unsupported statistics.
+
+Next: normal modifier review plus optional Hell review, maximum2played matches TOTAL; full procedure in docs/test-procedures/v66-test-procedure.md and final chat. Full export logs/runs/v66-log.txt and explicit visual observations. Unencountered conditions stay unobserved. Local regression/source route proof is not user approval. Publish scoped completed work to main at every work-turn end; no repeated approval, agents, force push/history deletion or assistant browser/VM test surface.

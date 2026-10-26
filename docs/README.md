@@ -1,3 +1,13 @@
+# V66 — spread removed; remaining planned cues built; exhaustive feature states
+
+Current [complete Console payload](../dist/brio-v66.min.js) · [Every modifier/challenge](status/v66-feature-matrix.md) · [Machine-readable catalog](status/v66-feature-catalog.json) · [Full two-match-maximum procedure](test-procedures/v66-test-procedure.md) · [Findings](findings/v66-findings.md) · [Validation](audits/v66-validation.md).
+
+All spread display/calibration is permanently removed; historical data untouched. Current-storm edge highlight and planned remote-player contrast halo are implemented; duplicate standalone distance removed. Every retained row is explicit:29modifiers/preferences +21challenges;23user-proven,27built awaiting visual approval,zero planned-only controls. Local tests do not grant visual approval. Bots/contents and previously denied/retired items stay closed.
+
+Load V66 → Set up V66 modifiers → one natural review match; optional second match via Set up V66 challenges (Hell), maximum2total → COPY RESULTS to logs/runs/v66-log.txt. Automatic completion audits cover50rows without auto-cycling challenges or asking for more spread/asset/container work. Full procedure prints in chat. Historical checkpoints follow.
+
+---
+
 # Current pipeline continuation — 2026-10-18
 
 - [Browser diagnostic findings](testing/browser-pipeline-diagnosis-2026-10-18.md)

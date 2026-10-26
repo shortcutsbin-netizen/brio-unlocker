@@ -6,9 +6,9 @@ const fs=require('fs'),vm=require('vm'),{minify}=require('terser');
  new vm.Script(code);const comments=[];require('acorn').parse(code,{ecmaVersion:'latest',onComment:comments});
  if(comments.length)throw Error('Minified payload contains comments');
  // Validate immutable readable/payload archives before writing any release output.
- const artifacts=[['versions/v65/brio.js',source],['versions/v65/brio-v65.min.js',code]];
+ const artifacts=[['versions/v66/brio.js',source],['versions/v66/brio-v66.min.js',code]];
  for(const [path,text]of artifacts)if(fs.existsSync(path)&&fs.readFileSync(path,'utf8')!==text)throw Error('Refusing to overwrite version archive: '+path);
- fs.mkdirSync('dist',{recursive:true});fs.mkdirSync('versions/v65',{recursive:true});
- fs.writeFileSync('dist/brio-v65.min.js',code);for(const [path,text]of artifacts)fs.writeFileSync(path,text);
+ fs.mkdirSync('dist',{recursive:true});fs.mkdirSync('versions/v66',{recursive:true});
+ fs.writeFileSync('dist/brio-v66.min.js',code);for(const [path,text]of artifacts)fs.writeFileSync(path,text);
  console.log('Parsed source and standalone minified payload:',Buffer.byteLength(code),'bytes; zero comments; immutable source/payload archives verified');
 })().catch(e=>{console.error(e);process.exitCode=1});

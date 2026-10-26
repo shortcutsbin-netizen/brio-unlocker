@@ -1,3 +1,13 @@
+# V66 native cue and retirement contracts — 2026-10-26
+
+Native engine unchanged; latest V65 log reconstructs exact85chunks. Source AST proof docs/analysis/engine/v66-storm-edge.json shows borderScene's left/right/top/bottom red shades and current interpolated bounds. Read inner edges directly, clip horizontal viewport-wide spans to active sides, divide by current native scalar under native camera. One owned node with reentry guard; no new timer/Canvas/global/prototype/RAF/input hook or native mutation. Halo stays in the existing remote-info context, with playersInvisible/Hell/end precedence. Both cues built/local-tested, native pixel approval pending.
+
+Spread renderer/calibration/storage/API/firing-input observers removed completely at user request. Existing flashlight retains only passive pointer/focus and player-center capture under v66 helpers; its approved drawing/fade is regression-covered. Core decoded storm/end/loss/projectile and ordinary Match breakdown sampling remain independent. No more spread evidence requests. Historical helpers use immutable V65 archive only; active test chain verifies retirement/current50optioncatalog instead.
+
+50retained rows have exhaustive state:23prior user-proven/27built awaiting approval,0placeholders. Duplicate stormDistance removed as merged distance; bots/contents remain closed. Runtime completion audits are context counts, not pixel passes. Optional Hell review manually selected, no automatic challenge cycle. Source/native/UI restore/bounds checks remain; all old archives/uploads/source bytes and knowledge suffixes retained. Historical suffix follows.
+
+---
+
 # V65 native aim, stable reference and retired recon boundary — 2026-10-20 UTC
 
 Supplied engine unchanged. V64 real traces show old BRIO transformed cone axis wrong in46/48frames; native root angle itself follows screen cursor median0.254deg/max3.167deg. Native input arithmetic did not justify reapplying incoming canvas rotation. V65 uses already-screen-space native angle once and trusted projected player center/unit, not animated held ancestors. Static23gun reference table from parsed native steadying/selected-weapon scalar branches in docs/analysis/engine/v65-static-poses.json; zero native execution. Whole-mode frozen empirical width replaces changing spread bins. Temporal and actual-frame replay tests replace the old assumed-transform fixtures; pixel/barrel origin still pending.

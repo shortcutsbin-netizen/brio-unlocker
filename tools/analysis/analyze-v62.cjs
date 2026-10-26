@@ -1,6 +1,7 @@
+// Historical V65 spread evidence only; retired from the active product/test pipeline in V66.
 // Static native source evidence only: parse DATA, evaluate OUR scalar interpreter, never execute engine.
 const fs=require('fs'),crypto=require('crypto'),vm=require('vm'),assert=require('node:assert/strict'),{parse}=require('acorn');
-const raw=fs.readFileSync('docs/game-sources/engine.js','utf8'),ast=parse(raw,{ecmaVersion:'latest'}),ours=fs.readFileSync('src/brio.js','utf8'),oa=parse(ours,{ecmaVersion:'latest'});let interpreter;const expressions=[];
+const raw=fs.readFileSync('docs/game-sources/engine.js','utf8'),ast=parse(raw,{ecmaVersion:'latest'}),ours=fs.readFileSync('versions/v65/brio.js','utf8'),oa=parse(ours,{ecmaVersion:'latest'});let interpreter;const expressions=[];
 function walk(n,visit){if(!n?.type)return;visit(n);for(const v of Object.values(n))if(Array.isArray(v))v.forEach(x=>walk(x,visit));else if(v?.type)walk(v,visit);}
 walk(oa,n=>{if(n.type==='VariableDeclarator'&&n.id?.name==='numericSourceConstants')interpreter=ours.slice(n.init.start,n.init.end)});
 const ctx={};vm.createContext(ctx);vm.runInContext('this.constants='+interpreter,ctx);const constants=ctx.constants(ast,728000);

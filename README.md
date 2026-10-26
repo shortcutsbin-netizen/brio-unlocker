@@ -1,3 +1,13 @@
+# V66 — spread removed; remaining planned cues built; exhaustive feature states
+
+Current [complete Console payload](dist/brio-v66.min.js) · [Every modifier/challenge](docs/status/v66-feature-matrix.md) · [Machine-readable catalog](docs/status/v66-feature-catalog.json) · [Full two-match-maximum procedure](docs/test-procedures/v66-test-procedure.md) · [Findings](docs/findings/v66-findings.md) · [Validation](docs/audits/v66-validation.md).
+
+All spread display/calibration is permanently removed; historical data untouched. Current-storm edge highlight and planned remote-player contrast halo are implemented; duplicate standalone distance removed. Every retained row is explicit:29modifiers/preferences +21challenges;23user-proven,27built awaiting visual approval,zero planned-only controls. Local tests do not grant visual approval. Bots/contents and previously denied/retired items stay closed.
+
+Load V66 → Set up V66 modifiers → one natural review match; optional second match via Set up V66 challenges (Hell), maximum2total → COPY RESULTS to logs/runs/v66-log.txt. Automatic completion audits cover50rows without auto-cycling challenges or asking for more spread/asset/container work. Full procedure prints in chat. Historical checkpoints follow.
+
+---
+
 # V65 — stable cone rebuild; flashlight finalized; unsupported recon retired
 
 Current [complete Console payload](dist/brio-v65.min.js) · [Full one-match procedure](docs/test-procedures/v65-test-procedure.md) · [Findings](docs/findings/v65-findings.md) · [Feature matrix](docs/status/v65-feature-matrix.md) · [Validation](docs/audits/v65-validation.md).

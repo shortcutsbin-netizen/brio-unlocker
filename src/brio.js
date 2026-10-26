@@ -1,7 +1,7 @@
-/* BRIO v65 maintenance map — 2026-10-20
- * V65 draws a stable root-attached cone with native screen aim/frozen width, finalizes flashlight/outlines and retires unsupported bot/contents recon. Frozen spread evidence/storage and retired UI stay intact.
+/* BRIO v66 maintenance map — 2026-10-26
+ * V66 permanently removes spread display/calibration, completes the remaining storm/player cues and audits every retained option. Historical evidence is untouched.
  * Hell is the composite title; saved goodFlippinLuck/noMinimap IDs remain compatible.
- * Damage rankings are unavailable; spread angle interpretation requires live calibration.
+ * Damage rankings/accuracy remain unavailable; retired spread/bot/contents routes never reactivate.
  * V49 user proves warnings (including selected-slot lift), transparent foliage and loot effect suppression.
  * Meteor, monochrome, indicators, cosmetics and chest hiding retain proof; no recurring tests for them.
  * V50 changes warning controls/reset only, remote inventory captions/size, tiered loot/build masking,
@@ -31,8 +31,8 @@
  */
 (() => { /* BRIO block: startup — Own this injection; destroy prior releases before creating UI or native adapters. Saved choices survive; per-Play game state does not. */
     "use strict";
-    const W = window, D = document, K = "__brio_unlocker_v65";
-    for (const k of [ K, "__brio_unlocker_v64", "__brio_unlocker_v63", "__brio_unlocker_v62", "__brio_unlocker_v61", "__brio_unlocker_v60", "__brio_unlocker_v59", "__brio_unlocker_v58", "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
+    const W = window, D = document, K = "__brio_unlocker_v66";
+    for (const k of [ K, "__brio_unlocker_v65", "__brio_unlocker_v64", "__brio_unlocker_v63", "__brio_unlocker_v62", "__brio_unlocker_v61", "__brio_unlocker_v60", "__brio_unlocker_v59", "__brio_unlocker_v58", "__brio_unlocker_v57", "__brio_unlocker_v56", "__brio_unlocker_v55", "__brio_unlocker_v54", "__brio_unlocker_v53", "__brio_unlocker_v52", "__brio_unlocker_v51", "__brio_unlocker_v50", "__brio_unlocker_v49", "__brio_unlocker_v48", "__brio_unlocker_v47", "__brio_unlocker_v46", "__brio_unlocker_v45", "__brio_unlocker_v44", "__brio_unlocker_v43", "__brio_unlocker_v42", "__brio_unlocker_v41", "__brio_unlocker_v40", "__brio_unlocker_v39", "__brio_recon38", "__brio_unlocker_v37", "__brio_unlocker_v36", "__brio_unlocker_v35", "__brio_unlocker_v33", "__brio_unlocker_v32", "__brio_unlocker_v31", "__brio_unlocker_v30", "__brio_unlocker_v29", "__brio_unlocker_v28", "__brio_unlocker_v27" ]) try { /* BRIO guarded: startup — Keep the existing exception boundary for startup. Own the injection lifecycle; native state is restored at the next Play or destroy. */
         W[k]?.destroy?.();
     } catch (_) { /* BRIO fallback: startup — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
     // Acorn 8.19.0 (MIT), vendored locally; parses source data without evaluation.
@@ -41,7 +41,7 @@
     return exports.parse; })();
     const NP = Array.prototype.push, NU = Array.prototype.unshift;
     const S = {
-        v: "65",
+        v: "66",
         log: [],
         errors: [],
         renderer: null,
@@ -109,12 +109,10 @@
      * Keep existing V50 draw gates/cleanup and passive budgets. Solo-only information.
      * Limits:128 projectile histories x32 points x1.2s,256 named entities,100 eliminations,
      * one500ms sampler. No network sends, source evaluation, physics or hit prediction.
-     * Native aim is positive X. Server spread/100 is a reticle scalar with no known angle conversion; draw observed envelopes only.
-     * Persistent gun type/ADS modes, quality-filtered server aim and scalar bins support empirical estimates without fake bounds.
      * Stats damage attribution is unavailable; NEVER attach nearby-player guesses to damage.
      */
     const INDICATOR_COLORS={nearestPlayer:'#a81020',nearestChest:'#ffd21c',nearestAirdrop:'#f28b16',safeZoneIndicator:'#168cff',stormCenter:'#b578ff',lootIndicator:'#ffd21c'};
-    const v55={deferred:new Set,perf:null,playerChecks:new WeakMap,outlineQueue:new Set,outlinePreparing:false,timer:0,zone:null,zoneAt:0,paths:new Map,lootUis:new Map,stats:null,post:null,postStyles:new Map,shotChecks:new Map,recon:{guns:Object.create(null),dirty:false,savedAt:-Infinity,version:0,storageError:false},reconSession:null,reconInput:{known:true,right:false,left:false,at:-Infinity,fireSerial:0},outlines:new Map,outlineFailures:new Set};
+    const v55={deferred:new Set,perf:null,playerChecks:new WeakMap,outlineQueue:new Set,outlinePreparing:false,timer:0,zone:null,zoneAt:0,paths:new Map,lootUis:new Map,stats:null,post:null,postStyles:new Map,outlines:new Map,outlineFailures:new Set};
     /* BRIO: V55 performance telemetry. Only BRIO-owned callbacks are timed (one in64 calls);
      * no native RAF/Canvas/Array/protocol timing hook is installed. Per-phase histograms are capped64 keys.
      * Native local draws supply cadence, not ping/server latency. Long tasks include all page work.
@@ -228,180 +226,26 @@
      * Clip size is learned from native loaded-ammo high-water marks, not the broad old asset table.
      * A partial magazine is a lower bound; later reloads can increase the target/reopen completion.
      * This revision deliberately does not import V54's unreliable measurement/ADS records. */
-    const SPREAD_RECON_KEY='brio_spread_recon_v55';
-    const SPREAD_RECON_REVISION='v55-native-shots-input-ads-clips-1';
-    const SPREAD_GROUP_MS=35;
-    const SPREAD_EXCLUDED=new Set(['mirv','grappler','signal flare','burst shotgun','deagle','grenade launcher','grenade sniper','heavy','mgl','minigun','tommy gun','ump']);
     const v55GunName=/* BRIO expr V55: v55GunName — Canonicalize the native AK variant only; preserve inventory gun identity. */ type=>type==='akƧ'?'ak47':String(type||'');
-    const v55ReconEligible=/* BRIO expr V55: v55ReconEligible — Exclude only the requested utility/throwable/vaulted entries from spread recon; retain other modifiers. */ weapon=>GUN_TYPES.has(v55GunName(weapon))&&!SPREAD_EXCLUDED.has(v55GunName(weapon));
-    const v55ReconCell=/* BRIO expr V55: v55ReconCell — Create separate bounded confirmed-shot and angular-evidence aggregates. */ ()=>({groups:0,projectiles:0,angleGroups:0,sequences:0,reloads:0,maxAbsDegrees:0,minDegrees:null,maxDegrees:null,sumDegrees:0,sumSquaredDegrees:0,tail:[],bins:{},rarities:{},movement:{still:0,moving:0},sources:{},rejected:{},complete:false});
-    const v55ReconGun=weapon=>{ /* BRIO block V55: v55ReconGun — Admit only known gun keys into at most64 persistent entries; pool rarities. */
-        const key=v55GunName(weapon);if(!v55ReconEligible(key))return;
-        if(!v55.recon.guns[key]&&Object.keys(v55.recon.guns).length<64){ /* BRIO block V55: v55ReconGun — Admit only known gun keys into at most64 persistent entries; pool rarities. */ v55.recon.guns[key]={clipSize:null,loadedIncreases:0,ads:v55ReconCell(),hip:v55ReconCell()};v55.recon.dirty=true;}
-        return v55.recon.guns[key];
-    };
-    const v55ReconTarget=/* BRIO expr V55: v55ReconTarget — Use max(10, learned native clip size times3), without a hidden sequence or angle requirement. */ gun=>Number.isInteger(gun?.clipSize)&&gun.clipSize>0?Math.max(10,gun.clipSize*3):null;
-    const v57SingleSpread=/* BRIO expr V57: v57SingleSpread — User-confirmed exceptions share one observed spread; keep old ADS records intact as history. */ weapon=>['charge rifle','grenade pistol'].includes(v55GunName(weapon));
-    const v57SpreadModes=/* BRIO expr V57: v57SpreadModes — Charge Rifle has no ADS, Grenade Pistol has no ADS spread change; other guns require independent evidence. */ weapon=>v57SingleSpread(weapon)?['hip']:['hip','ads'];
-    const v57AngleTarget=/* BRIO expr V57: v57AngleTarget — Keep the existing minimum of twelve or a small gun's shot target; completion concerns observations, never server limits. */ gun=>Math.min(12,v55ReconTarget(gun)||12);
-    const v57SpreadReady=/* BRIO expr V57: v57SpreadReady — Zero width is valid only with qualified samples; unknown widths remain unknown. */ (gun,mode)=>!!gun?.[mode]&&gun[mode].angleGroups>=v57AngleTarget(gun)&&Number.isFinite(gun[mode].maxAbsDegrees)&&gun[mode].maxAbsDegrees>=0&&gun[mode].maxAbsDegrees<60;
-    const v55ReconEvaluate=gun=>{ /* BRIO block V55: v55ReconEvaluate — Recompute clip-based recording completion; angle sampling remains independent. */
-        const target=v55ReconTarget(gun);for(const mode of ['hip','ads'])gun[mode].complete=target!=null&&gun[mode].groups>=target;
-    };
-    const v55ReconClip=(weapon,loaded,reloaded=false)=>{ /* BRIO block V55: v55ReconClip — Track native loaded-ammo high-water marks and reopen completion if a fuller reload raises the target. */
-        const gun=v55ReconGun(weapon);if(!gun||!Number.isInteger(loaded)||loaded<=0||loaded>1000)return;
-        if(gun.clipSize==null||loaded>gun.clipSize){ /* BRIO block V55: v55ReconClip — Track native loaded-ammo high-water marks and reopen completion if a fuller reload raises the target. */ gun.clipSize=loaded;v55ReconEvaluate(gun);v55.recon.dirty=true;}
-        if(reloaded){ /* BRIO block V55: v55ReconClip — Track native loaded-ammo high-water marks and reopen completion if a fuller reload raises the target. */ gun.loadedIncreases++;v55.recon.dirty=true;}
-    };
-    const v55ReconLoad=()=>{
-        /* Validate anonymous bounded aggregates. Completion is recomputed using each learned clip;
-         * missing/forged targets and the previous version's records cannot check a box. */
-        const saved=read(SPREAD_RECON_KEY,null);if(!saved||saved.revision!==SPREAD_RECON_REVISION||!saved.guns||typeof saved.guns!=='object')return;
-        for(const [weapon,rawGun]of Object.entries(saved.guns).slice(0,64)){ /* BRIO block V55: v55ReconLoad — Validate revision-scoped saved aggregates and recompute every checkmark; never trust saved flags. */
-            if(!v55ReconEligible(weapon)||!rawGun||typeof rawGun!=='object')continue;
-            const gun={clipSize:Number.isInteger(rawGun.clipSize)&&rawGun.clipSize>0&&rawGun.clipSize<=1000?rawGun.clipSize:null,loadedIncreases:Number.isInteger(rawGun.loadedIncreases)&&rawGun.loadedIncreases>=0?Math.min(100000,rawGun.loadedIncreases):0};
-            for(const mode of ['hip','ads']){ /* BRIO block V55: v55ReconLoad — Validate revision-scoped saved aggregates and recompute every checkmark; never trust saved flags. */
-                const raw=rawGun[mode],cell=v55ReconCell();gun[mode]=cell;if(!raw||typeof raw!=='object')continue;
-                if(!['groups','projectiles','angleGroups','sequences','reloads','maxAbsDegrees','sumDegrees','sumSquaredDegrees'].every(/* BRIO expr V55: v55ReconLoad — Validate revision-scoped saved aggregates and recompute every checkmark; never trust saved flags. */ k=>Number.isFinite(raw[k])&&Math.abs(raw[k])<=1e10)||!Number.isInteger(raw.groups)||raw.groups<0||raw.groups>100000||raw.angleGroups<0||raw.angleGroups>raw.groups||raw.maxAbsDegrees<0||raw.maxAbsDegrees>180)continue;
-                for(const k of ['groups','projectiles','angleGroups','sequences','reloads','maxAbsDegrees','sumDegrees','sumSquaredDegrees'])cell[k]=raw[k];
-                for(const k of ['minDegrees','maxDegrees'])if(Number.isFinite(raw[k])&&Math.abs(raw[k])<=180)cell[k]=raw[k];
-                cell.tail=Array.isArray(raw.tail)?raw.tail.filter(/* BRIO expr V55: v55ReconLoad — Validate revision-scoped saved aggregates and recompute every checkmark; never trust saved flags. */ x=>Number.isFinite(x)&&x>=0&&x<=180).slice(-100):[];
-                for(const [key,b]of Object.entries(raw.bins||{}).slice(0,48))if(/^\d+(?:\.5)?$/.test(key)&&b&&Number.isInteger(b.groups)&&b.groups>0&&b.groups<=100000&&Number.isFinite(b.maxAbsDegrees)&&b.maxAbsDegrees>=0&&b.maxAbsDegrees<=180)cell.bins[key]={groups:b.groups,maxAbsDegrees:b.maxAbsDegrees};
-                for(const [key,n]of Object.entries(raw.rarities||{}).slice(0,6))if(/^[0-5]$/.test(key)&&Number.isInteger(n)&&n>=0&&n<=100000)cell.rarities[key]=n;
-                for(const key of ['still','moving'])if(Number.isInteger(raw.movement?.[key])&&raw.movement[key]>=0&&raw.movement[key]<=100000)cell.movement[key]=raw.movement[key];
-                for(const key of ['native shot','ammo drop','owned projectile'])if(Number.isInteger(raw.sources?.[key])&&raw.sources[key]>=0&&raw.sources[key]<=100000)cell.sources[key]=raw.sources[key];
-            }v55.recon.guns[weapon]=gun;v55ReconEvaluate(gun);
-        }
-    };
-    const v55ReconSave=(force=false)=>{ /* BRIO block V55: v55ReconSave — Persist dirty anonymous aggregates no more than once per5seconds, plus terminal/teardown flush. */
-        if(!v55.recon.dirty||!force&&performance.now()-v55.recon.savedAt<5000)return;
-        try{ /* BRIO block V55: v55ReconSave — Persist dirty anonymous aggregates no more than once per5seconds, plus terminal/teardown flush. */ localStorage.setItem(SPREAD_RECON_KEY,JSON.stringify({revision:SPREAD_RECON_REVISION,guns:v55.recon.guns}));v55.recon.dirty=false;v55.recon.savedAt=performance.now();v55.recon.storageError=false;}
-        catch(_){ /* BRIO block V55: v55ReconSave — Persist dirty anonymous aggregates no more than once per5seconds, plus terminal/teardown flush. */ v55.recon.storageError=true;v55.recon.savedAt=performance.now();}
-    };
-    const v55ReconCredit=(record,units=1)=>{
-        /* One discharge credit, independently of angle eligibility. Marker+ammo+pellets can refer
-         * to the same firing event; record ownership prevents double credit on that evidence. */
-        const gun=v55ReconGun(record.weapon),cell=gun?.[record.mode];if(!cell)return;
-        const already=record.counted,n=Math.min(Math.max(1,units)-(record.units||0),100000-cell.groups);if(n<=0)return;record.counted=true;record.units=(record.units||0)+n;
-        cell.groups+=n;cell.sources[record.source]=(cell.sources[record.source]||0)+n;
-        const prior=v55.reconSession.lastGroup;if(!already&&(!prior||prior.weapon!==record.weapon||prior.mode!==record.mode||record.at-prior.at>750||prior.fireSerial!==record.fireSerial||prior.reloadSerial!==record.reloadSerial))cell.sequences++;
-        if(!already&&prior&&prior.weapon===record.weapon&&prior.reloadSerial!==record.reloadSerial)cell.reloads++;
-        if(Number.isInteger(record.rarity)&&record.rarity>=0&&record.rarity<=5)cell.rarities[record.rarity]=(cell.rarities[record.rarity]||0)+n;
-        cell.movement[record.moving?'moving':'still']+=n;v55ReconEvaluate(gun);v55.recon.dirty=true;
-        const session=v55.reconSession;session.lastGroup=record;session.lastAccepted=performance.now();session.lastWeapon=record.weapon;session.lastMode=record.mode;
-    };
-    const v55ReconRecord=(source,units=1)=>{
-        /* Keep at most32 short-lived primitive discharge records for joining nearby marker/projectile
-         * evidence. Native markers are individual events; never merge a stream by a sliding window. */
-        const context=v55.stats?.gunContext,session=v55.reconSession,mode=v55ReconMode(),now=performance.now();if(!session||!context||!v55ReconEligible(context.weapon))return null;
-        if(!mode){ /* BRIO block V55: v55ReconRecord — Bound short-lived primitive discharge records to32; never count user clicks as actual firing. */ session.unclassified++;session.lastRejected=now;session.reason='ADS input unavailable';session.lastWeapon=context.weapon;return null;}
-        const record={at:now,weapon:context.weapon,mode,source,counted:false,fireSerial:v55.reconInput.fireSerial,reloadSerial:context.reloadSerial,rarity:context.rarity,moving:!!v55.stats?.serverAim?.moving};
-        session.shots.push(record);while(session.shots.length>32||session.shots[0]&&now-session.shots[0].at>250)session.shots.shift();
-        v55ReconCredit(record,units);return record;
-    };
-    const v58AngleFeedback=(g,cell)=>{
-        /* V58: one primitive last outcome and at most24 focused attempts per match. No objects/IDs,
-         * input sending or quality relaxation; accepted zero degrees is still a qualified sample. */
-        const session=v55.reconSession;if(!session)return;
-        session.angleFeedback={weapon:g.weapon,mode:g.mode,accepted:g.accepted>0,reason:g.accepted>0?'qualified':g.rejectionReason||'no qualified angles',at:performance.now(),angleGroups:cell.angleGroups+(g.accepted>0?1:0),quality:g.quality||null,maxAbsDegrees:g.accepted>0?g.maxAbsDegrees:null};
-        if(g.mode==='ads'&&['bolt','heavy sniper'].includes(g.weapon)&&(session.angleFeedbackLogs||0)<24){
-            /* Export the exact angular outcome only for remaining target modes; never raw identities. */
-            session.angleFeedbackLogs=(session.angleFeedbackLogs||0)+1;log('V58 FOCUSED ANGLE',session.angleFeedback);
-        }
-    };
-    const v55ReconFinishGroup=()=>{
-        /* Pending groups contain only local-owned projectile angles. They update envelope evidence,
-         * not the already credited native shot count. A missing/turning aim never erases firing. */
-        const session=v55.reconSession,g=session?.pending;if(!g)return;session.pending=null;
-        const cell=v55ReconGun(g.weapon)?.[g.mode];if(!cell)return;cell.projectiles+=g.projectiles;v58AngleFeedback(g,cell);
-        if(!g.accepted)return;cell.angleGroups++;cell.maxAbsDegrees=Math.max(cell.maxAbsDegrees,g.maxAbsDegrees);cell.minDegrees=cell.minDegrees==null?g.minDegrees:Math.min(cell.minDegrees,g.minDegrees);cell.maxDegrees=cell.maxDegrees==null?g.maxDegrees:Math.max(cell.maxDegrees,g.maxDegrees);
-        cell.sumDegrees+=g.meanDegrees;cell.sumSquaredDegrees+=g.meanDegrees*g.meanDegrees;cell.tail.push(g.maxAbsDegrees);if(cell.tail.length>100)cell.tail.shift();
-        const bin=String(Math.round(g.scalar*2)/2);let b=cell.bins[bin];if(!b&&Object.keys(cell.bins).length<48)b=cell.bins[bin]={groups:0,maxAbsDegrees:0};if(b){ /* BRIO block V55: v55ReconFinishGroup — Commit one conservative pellet/discharge group to bounded evidence; do not inflate confidence per pellet. */ b.groups++;b.maxAbsDegrees=Math.max(b.maxAbsDegrees,g.maxAbsDegrees);}
-        v55.recon.dirty=true;v55.recon.version++;
-    };
-    const v55ReconInput=e=>{
-        /* Passive input observation only: no preventDefault, event rewriting, clicks or input sends.
-         * Native steadying/renderer true can be hip-fire recoil and never determine ADS or angle eligibility. Blur/hidden invalidates state until a native input event.
-         * Same-state mouse moves return before DOM work; only transitions allocate/update context. */
-        v61Pointer(e);
-        const input=v55.reconInput;if(e.type==='pagehide'||e.type==='blur'||e.type==='visibilitychange'&&D.hidden){ /* BRIO block V55: v55ReconInput — Observe native mouse transitions passively; never alter or synthesize input and invalidate blur state. */ v55ReconFinishGroup();v55ReconSave(true);input.known=false;input.right=false;input.left=false;input.releasedAt=null;input.at=performance.now();return;}
-        if(!S.renderer||v55.stats?.finished)return;
-        let right,left;if(e.type==='mousedown'||e.type==='mouseup'){ /* BRIO block V55: v55ReconInput — Observe native mouse transitions passively; never alter or synthesize input and invalidate blur state. */ const down=e.type==='mousedown';right=e.button===2?down:input.right;left=e.button===0?down:input.left;}
-        else if(e.type==='mousemove'&&Number.isInteger(e.buttons)){ /* BRIO block V55: v55ReconInput — Observe native mouse transitions passively; never alter or synthesize input and invalidate blur state. */ right=!!(e.buttons&2);left=!!(e.buttons&1);}else return;
-        if(input.known&&right===input.right&&left===input.left)return;
-        if(e.target?.closest?.('.brioTerm,.brioModal,[data-brio-recon]'))return;
-        if(left&&!input.left){ /* BRIO block V55: v55ReconInput — Observe native mouse transitions passively; never alter or synthesize input and invalidate blur state. */ input.fireSerial++;input.releasedAt=null;}if(!left&&input.left){ /* BRIO block V55: v55ReconInput — Observe native mouse transitions passively; never alter or synthesize input and invalidate blur state. */ input.releasedAt=performance.now();input.releaseMode=input.right?'ads':'hip';}if(right!==input.right||!input.known)input.at=performance.now();input.right=right;input.left=left;input.known=true;
-    };
-    const v55ReconMode=()=>{
-        /* Held right-click is the requested ADS ground truth. Native steadying is retained diagnostically, never used to relabel or reject hip-fire recoil as ADS. */
-        const input=v55.reconInput;if(!input.known)return null;
-        // V57: right-click cannot create a distinct ADS spread for these user-confirmed guns.
-        if(v57SingleSpread(v55.stats?.gunContext?.weapon||S.renderer?.['Åé']?.[S.renderer?.['ÈÆ']]?.type))return 'hip';
-        if(!input.left&&input.releasedAt!=null&&performance.now()-input.releasedAt<=150)return input.releaseMode;
-        return input.right?'ads':'hip';
-    };
-    const v55ReconContext=p=>{
-        /* Copy primitives from each authoritative delta before native remapping/mutation. Missing
-         * selectedWeapon/slots/ammo retain our previous state rather than stale renderer values,
-         * including multiple deltas in one decoder batch. Never retain decoded object references. */
-        const stats=v55.stats,r=S.renderer;if(!stats||!r)return;
-        const value=/* BRIO expr V55: value — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ name=>v55PacketValue(p,name),old=stats.gunContext,now=performance.now(),steady=value('steadying');if(typeof steady==='boolean')stats.nativeSteadying=steady;
-        const weapons=value('weaponSlots'),selected=value('selectedWeapon'),ammoList=value('wAmmo'),reserve=value('ammo'),oldSlots=stats.weaponSlots;
-        if(Array.isArray(weapons))stats.weaponSlots=weapons.slice(0,6).map(/* BRIO expr V55: v55ReconContext — Read authoritative native inventory/ADS/ammo before renderer mutation; separate gun names from bullet families. */ slot=>({type:v55GunName(slot?.type),rarity:slot?.rarity??slot?.['äã']}));
-        else if(!oldSlots)stats.weaponSlots=(r['Åé']||[]).slice(0,6).map(/* BRIO expr V55: v55ReconContext — Read authoritative native inventory/ADS/ammo before renderer mutation; separate gun names from bullet families. */ slot=>({type:v55GunName(slot?.type),rarity:slot?.['äã']}));
-        if(Array.isArray(ammoList))stats.loadedAmmo=ammoList.slice(0,5);else if(!stats.loadedAmmo)stats.loadedAmmo=(r['áAæ']||[]).slice(0,5);
-        if(Array.isArray(weapons)&&!Array.isArray(ammoList))for(let i=1;i<stats.weaponSlots.length;i++)if(oldSlots?.[i]?.type!==stats.weaponSlots[i].type)stats.loadedAmmo[i-1]=null;
-        if(Array.isArray(reserve))stats.reserveAmmo=reserve.slice(0,5);
-        const index=Number.isInteger(selected)?selected:old?.index??r['ÈÆ'],slot=stats.weaponSlots?.[index],weapon=slot?.type||'',ammo=stats.loadedAmmo?.[index-1];
-        const changed=!old||old.weapon!==weapon||old.index!==index,reload=!!old&&!changed&&Number.isFinite(ammo)&&Number.isFinite(old.ammo)&&ammo>old.ammo;
-        const reloadTimer=value('rt');let reloading=changed?false:!!old?.reloading;if(Number.isFinite(reloadTimer))reloading=reloadTimer>0;
-        stats.gunContext={weapon,index,rarity:slot?.rarity,ammo,at:now,stableSince:changed?now:old.stableSince,reloadSerial:(old?.reloadSerial||0)+(reload?1:0),reloading,building:typeof value('building')==='boolean'?value('building'):old?.building??r['èÂ'],mode:v55ReconMode()};
-        for(let i=1;i<(stats.weaponSlots?.length||0);i++)v55ReconClip(stats.weaponSlots[i].type,stats.loadedAmmo?.[i-1],i===index&&reload);
-        return {old,current:stats.gunContext,changed,explicitAmmo:Array.isArray(ammoList)};
-    };
-    const v55ReconNativeShot=(p,change)=>{
-        /* Source marker shot/ÃAæ is explicit native firing, including weapons sharing a projectile
-         * family. An unchanged-gun loaded-ammo decrease is fallback evidence, not a reload/slot loss.
-         * Exclude pickaxe/build/throwable/utility/vaulted entries. No clicks are counted as shots. */
-        const session=v55.reconSession,context=v55.stats?.gunContext;if(!session||!context||!v55ReconEligible(context.weapon)||context.building===true)return;
-        const marker=v55PacketValue(p,'shot'),native=marker===true||Number.isFinite(marker),delta=change?.explicitAmmo&&!change.changed&&Number.isInteger(change.old?.ammo)&&change.old.ammo>=0&&Number.isInteger(context.ammo)&&context.ammo>=0?change.old.ammo-context.ammo:0;
-        if(!native&&!(delta>0&&delta<=1000&&change.old.mode===context.mode))return;
-        if(session.nativePackets.has(p)){ /* BRIO block V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ session.duplicates++;return;}session.nativePackets.add(p);session.nativeShots+=native?1:0;session.ammoEvents+=!native?1:0;
-        const now=performance.now(),mode=v55ReconMode(),near=session.shots.filter(/* BRIO expr V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ record=>record.weapon===context.weapon&&record.mode===mode&&now-record.at<=120);
-        const units=delta>0&&change.old?.mode===context.mode?Math.min(delta,1000):1;
-        if(!native){ /* BRIO block V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */
-            const matches=near.filter(/* BRIO expr V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ record=>!record.ammoMatched&&record.source!=='ammo drop');
-            if(matches.length){ /* BRIO block V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ const credited=matches.reduce(/* BRIO expr V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ (sum,record)=>sum+record.units,0),last=matches.at(-1);for(const record of matches)record.ammoMatched=true;if(units>credited)v55ReconCredit(last,last.units+units-credited);session.correlated++;return;}
-        }
-        const previous=native?[...near].reverse().find(/* BRIO expr V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ record=>record.source!=='native shot'&&(record.markerCredits||0)<record.units):null;
-        if(previous){ /* BRIO block V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ previous.nativeMatched=true;previous.markerCredits=(previous.markerCredits||0)+1;if(delta>0){ /* BRIO block V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ previous.ammoMatched=true;if(units>previous.units)v55ReconCredit(previous,units);}session.correlated++;return;}
-        const record=v55ReconRecord(native?'native shot':'ammo drop',units);if(record){ /* BRIO block V55: v55ReconNativeShot — Use native shot markers or unchanged-gun ammo decreases; correlate duplicate evidence and exclude non-test weapons. */ record.nativeMatched=true;record.markerCredits=native?1:0;record.ammoMatched=delta>0;session.batchShots.push(record);}
-
-    };
-    const v55ReconReport=/* BRIO expr V55: v55ReconReport — Export anonymous persistent gun/mode aggregates and explicit estimation limits. */ ()=>({revision:SPREAD_RECON_REVISION,anglePolicy:'v57-input-not-recoil; unchanged freshness/alignment/ambiguity gates',singleSpreadWeapons:['charge rifle','grenade pistol'],angleFeedback:v55.reconSession?.angleFeedback||null,threshold:{formula:'max(10, native observed clip size × 3)',minimumShots:10,extraSequenceRequirement:false},guns:v55.recon.guns,diagnostics:v55.reconSession?{nativeShots:v55.reconSession.nativeShots,ammoEvents:v55.reconSession.ammoEvents,ownedProjectiles:v55.reconSession.ownedProjectiles,correlated:v55.reconSession.correlated,duplicates:v55.reconSession.duplicates,unclassified:v55.reconSession.unclassified}:null,storageAvailable:!v55.recon.storageError,scope:'shot progress is separate from qualified angular evidence; input-held ADS/No ADS except user-confirmed single-spread guns; native steadying is recoil, not ADS acknowledgement; clip is native loaded high-water and can increase after a fuller reload; no server-maximum claim'});
-    const V59_ENVELOPES={"revolver":{"hip":{"angleGroups":18,"maxAbsDegrees":4.766167018889638,"bins":{"4":{"groups":10,"maxAbsDegrees":1.5363687275494364},"5":{"groups":2,"maxAbsDegrees":0.9634109324186254},"6":{"groups":2,"maxAbsDegrees":4.766167018889638},"3.5":{"groups":1,"maxAbsDegrees":0.9634109324186254},"5.5":{"groups":3,"maxAbsDegrees":4.401157703203542}}},"ads":{"angleGroups":17,"maxAbsDegrees":4.58366236104659,"bins":{"4":{"groups":3,"maxAbsDegrees":2.291831180523244},"5":{"groups":3,"maxAbsDegrees":4.010704565915779},"3.5":{"groups":3,"maxAbsDegrees":1.145915590261622},"5.5":{"groups":8,"maxAbsDegrees":4.58366236104659}}}},"scoped ar":{"hip":{"angleGroups":25,"maxAbsDegrees":5.339124814020448,"bins":{"2":{"groups":4,"maxAbsDegrees":0.7554624529738585},"1.5":{"groups":19,"maxAbsDegrees":0.9634109324186763},"9.5":{"groups":2,"maxAbsDegrees":5.339124814020448}}},"ads":{"angleGroups":92,"maxAbsDegrees":13.17802928800896,"bins":{"1.5":{"groups":89,"maxAbsDegrees":9.16732472209318},"9.5":{"groups":3,"maxAbsDegrees":13.17802928800896}}}},"combat":{"hip":{"angleGroups":29,"maxAbsDegrees":9.349829379936228,"bins":{"2":{"groups":29,"maxAbsDegrees":9.349829379936228}}},"ads":{"angleGroups":26,"maxAbsDegrees":9.16732472209318,"bins":{"2":{"groups":26,"maxAbsDegrees":9.16732472209318}}}},"scar":{"hip":{"angleGroups":33,"maxAbsDegrees":4.58366236104659,"bins":{"4":{"groups":3,"maxAbsDegrees":4.010704565915779},"3.5":{"groups":30,"maxAbsDegrees":4.58366236104659}}},"ads":{"angleGroups":144,"maxAbsDegrees":4.58366236104659,"bins":{"3.5":{"groups":144,"maxAbsDegrees":4.58366236104659}}}},"smg":{"hip":{"angleGroups":18,"maxAbsDegrees":7.448451336700645,"bins":{"6":{"groups":1,"maxAbsDegrees":6.875493541569936},"5.5":{"groups":15,"maxAbsDegrees":7.448451336700645},"4.5":{"groups":1,"maxAbsDegrees":1.145915590261622},"8.5":{"groups":1,"maxAbsDegrees":0.572957795130811}}},"ads":{"angleGroups":49,"maxAbsDegrees":11.459155902616423,"bins":{"4":{"groups":1,"maxAbsDegrees":2.291831180523244},"4.5":{"groups":2,"maxAbsDegrees":4.1932092237587755},"5.5":{"groups":43,"maxAbsDegrees":7.057998199412881},"2.5":{"groups":1,"maxAbsDegrees":0.1825046578430475},"8.5":{"groups":2,"maxAbsDegrees":11.459155902616423}}}},"spas":{"hip":{"angleGroups":16,"maxAbsDegrees":4.010704565915779,"bins":{"1":{"groups":7,"maxAbsDegrees":4.010704565915779},"1.5":{"groups":9,"maxAbsDegrees":4.010704565915779}}},"ads":{"angleGroups":14,"maxAbsDegrees":4.010704565915779,"bins":{"1":{"groups":13,"maxAbsDegrees":4.010704565915779},"1.5":{"groups":1,"maxAbsDegrees":3.437746770784968}}}},"silencedpistol":{"hip":{"angleGroups":72,"maxAbsDegrees":8.021409131831557,"bins":{"4":{"groups":1,"maxAbsDegrees":0.7554624529738585},"5":{"groups":2,"maxAbsDegrees":1.7188733853925349},"4.5":{"groups":3,"maxAbsDegrees":1.718873385392433},"5.5":{"groups":66,"maxAbsDegrees":8.021409131831557}}},"ads":{"angleGroups":31,"maxAbsDegrees":7.057998199412881,"bins":{"4.5":{"groups":4,"maxAbsDegrees":2.4743358383662915},"5.5":{"groups":27,"maxAbsDegrees":7.057998199412881}}}},"famas":{"hip":{"angleGroups":24,"maxAbsDegrees":3.437746770784968,"bins":{"4":{"groups":1,"maxAbsDegrees":2.291831180523244},"3.5":{"groups":23,"maxAbsDegrees":3.437746770784968}}},"ads":{"angleGroups":48,"maxAbsDegrees":6.692988883726888,"bins":{"5.5":{"groups":3,"maxAbsDegrees":6.692988883726888},"3.5":{"groups":45,"maxAbsDegrees":5.156620156177401}}}},"bolt":{"hip":{"angleGroups":18,"maxAbsDegrees":5.156620156177401,"bins":{"2":{"groups":12,"maxAbsDegrees":0.572957795130811},"1.5":{"groups":5,"maxAbsDegrees":1.7188733853925349},"9.5":{"groups":1,"maxAbsDegrees":5.156620156177401}}},"ads":{"angleGroups":12,"maxAbsDegrees":0.572957795130811,"bins":{"2":{"groups":10,"maxAbsDegrees":0.572957795130811},"1.5":{"groups":2,"maxAbsDegrees":0.572957795130811}}}},"charge rifle":{"hip":{"angleGroups":21,"maxAbsDegrees":0.7554624529738585,"bins":{"2":{"groups":5,"maxAbsDegrees":0.572957795130811},"1.5":{"groups":16,"maxAbsDegrees":0.7554624529738585}}}},"sawedoff":{"hip":{"angleGroups":12,"maxAbsDegrees":10.886198107485614,"bins":{"3":{"groups":12,"maxAbsDegrees":10.886198107485614}}},"ads":{"angleGroups":12,"maxAbsDegrees":10.313240312354802,"bins":{"3":{"groups":12,"maxAbsDegrees":10.313240312354802}}}},"lmg":{"hip":{"angleGroups":17,"maxAbsDegrees":9.74028251722399,"bins":{"7.5":{"groups":16,"maxAbsDegrees":9.74028251722399},"6.5":{"groups":1,"maxAbsDegrees":1.7188733853925349}}},"ads":{"angleGroups":84,"maxAbsDegrees":12.995524630165912,"bins":{"7.5":{"groups":81,"maxAbsDegrees":10.886198107485614},"11.5":{"groups":3,"maxAbsDegrees":12.995524630165912}}}},"shotgun":{"hip":{"angleGroups":15,"maxAbsDegrees":15.07940733124444,"bins":{"3":{"groups":15,"maxAbsDegrees":15.07940733124444}}},"ads":{"angleGroups":12,"maxAbsDegrees":15.469860468532202,"bins":{"3":{"groups":12,"maxAbsDegrees":15.469860468532202}}}},"rifle":{"hip":{"angleGroups":12,"maxAbsDegrees":1.145915590261622,"bins":{"2":{"groups":5,"maxAbsDegrees":0.3904531372878144},"1.5":{"groups":7,"maxAbsDegrees":1.145915590261622}}},"ads":{"angleGroups":20,"maxAbsDegrees":1.145915590261622,"bins":{"2":{"groups":4,"maxAbsDegrees":0},"1.5":{"groups":16,"maxAbsDegrees":1.145915590261622}}}},"aug":{"hip":{"angleGroups":23,"maxAbsDegrees":1.7188733853925349,"bins":{"1.5":{"groups":23,"maxAbsDegrees":1.7188733853925349}}},"ads":{"angleGroups":58,"maxAbsDegrees":2.291831180523244,"bins":{"1.5":{"groups":57,"maxAbsDegrees":2.291831180523244},"4.5":{"groups":1,"maxAbsDegrees":1.5363687275494873}}}},"rpg":{"hip":{"angleGroups":18,"maxAbsDegrees":2.864788975654157,"bins":{"2":{"groups":18,"maxAbsDegrees":2.864788975654157}}},"ads":{"angleGroups":12,"maxAbsDegrees":2.291831180523244,"bins":{"2":{"groups":12,"maxAbsDegrees":2.291831180523244}}}},"heavy sniper":{"hip":{"angleGroups":10,"maxAbsDegrees":0.3904531372878144,"bins":{"2":{"groups":10,"maxAbsDegrees":0.3904531372878144}}},"ads":{"angleGroups":11,"maxAbsDegrees":0.3904531372878144,"bins":{"2":{"groups":11,"maxAbsDegrees":0.3904531372878144}}}},"ak47":{"hip":{"angleGroups":27,"maxAbsDegrees":1.145915590261622,"bins":{"2":{"groups":4,"maxAbsDegrees":0.7554624529738585},"1.5":{"groups":23,"maxAbsDegrees":1.145915590261622}}},"ads":{"angleGroups":99,"maxAbsDegrees":2.291831180523244,"bins":{"1.5":{"groups":99,"maxAbsDegrees":2.291831180523244}}}},"musket":{"hip":{"angleGroups":13,"maxAbsDegrees":2.864788975654157,"bins":{"3":{"groups":7,"maxAbsDegrees":2.864788975654157},"2.5":{"groups":6,"maxAbsDegrees":2.864788975654157}}},"ads":{"angleGroups":11,"maxAbsDegrees":2.864788975654157,"bins":{"3":{"groups":3,"maxAbsDegrees":2.291831180523244},"2.5":{"groups":8,"maxAbsDegrees":2.864788975654157}}}},"drum":{"hip":{"angleGroups":12,"maxAbsDegrees":22.527858667945136,"bins":{"5":{"groups":12,"maxAbsDegrees":22.527858667945136}}},"ads":{"angleGroups":32,"maxAbsDegrees":22.918311805232946,"bins":{"5":{"groups":32,"maxAbsDegrees":22.918311805232946}}}},"vector":{"hip":{"angleGroups":30,"maxAbsDegrees":4.58366236104659,"bins":{"3":{"groups":25,"maxAbsDegrees":4.58366236104659},"3.5":{"groups":4,"maxAbsDegrees":3.437746770784968},"1.5":{"groups":1,"maxAbsDegrees":0.572957795130811}}},"ads":{"angleGroups":56,"maxAbsDegrees":4.766167018889638,"bins":{"3":{"groups":52,"maxAbsDegrees":4.766167018889638},"1.5":{"groups":4,"maxAbsDegrees":0.572957795130811}}}},"crossbow":{"hip":{"angleGroups":11,"maxAbsDegrees":0.9634109324186254,"bins":{"4":{"groups":11,"maxAbsDegrees":0.9634109324186254}}},"ads":{"angleGroups":11,"maxAbsDegrees":3.437746770784968,"bins":{"4":{"groups":11,"maxAbsDegrees":3.437746770784968}}}},"grenade pistol":{"hip":{"angleGroups":12,"maxAbsDegrees":2.864788975654157,"bins":{"2":{"groups":12,"maxAbsDegrees":2.864788975654157}}}}};
-    const SPREAD_LENGTHS={xs:.75,small:1,medium:1.25,large:1.5,xl:2};
-    const v61SpreadView={pointer:null,root:null,checks:0,anchor:null,traceKeys:new Set,suppressed:Object.create(null)};
-    const v61Pointer=e=>{
+    const v66View={pointer:null,root:null};
+    const v66Pointer=e=>{
         /* Reuse existing passive mouse listeners. Keep CSS client coordinates, not world/aim constants.
          * Blur and ordinary Play invalidate the point; UI events never move the gameplay reference. */
-        if(['blur','pagehide','visibilitychange'].includes(e.type)){ /* BRIO block V61: v61Pointer — Keep this branch bounded and reversible under the enclosing helper. V59 live-pending; regression proof is separate. */ v61SpreadView.pointer=null;v61SpreadView.root=null;v61SpreadView.anchor=null;v63FlashlightHide();return;}
+        if(['blur','pagehide','visibilitychange'].includes(e.type)){ /* BRIO block V61: v66Pointer — Keep this branch bounded and reversible under the enclosing helper. V59 live-pending; regression proof is separate. */ v66View.pointer=null;v66View.root=null;v63FlashlightHide();return;}
         if(!S.renderer||v55.stats?.finished||e.target?.tagName!=='CANVAS'||!Number.isFinite(e.clientX)||!Number.isFinite(e.clientY))return;
-        v61SpreadView.pointer={x:e.clientX,y:e.clientY,canvas:e.target};
+        v66View.pointer={x:e.clientX,y:e.clientY,canvas:e.target};
     };
-    const v61RootProjection=(r,ctx,s)=>{
+    const v66RootProjection=(r,ctx,s)=>{
         /* Existing own-root preflight supplies native incoming scale BEFORE native translation.
          * Capture only primitives from the actual canvas matrix; no Canvas/prototype/global hook. */
-        v61SpreadView.root=null;
+        v66View.root=null;
         if(!ctx?.getTransform||!Number.isFinite(s)||s<=0)return;
         const m=ctx.getTransform(),p=r['â']?.['ë'],size=r['â']?.size;
         if(!p||![m.a,m.b,m.c,m.d,m.e,m.f,p['É'],p['Ä'],size,r['â'].A].every(Number.isFinite)||size<=0)return;
-        v61SpreadView.root={r,canvas:ctx.canvas,x:m.e+(m.a*p['É']+m.c*p['Ä'])/s,y:m.f+(m.b*p['É']+m.d*p['Ä'])/s,unit:Math.hypot(m.a,m.b)*size/s,axis:Math.atan2(m.b*Math.cos(r['â'].A)+m.d*Math.sin(r['â'].A),m.a*Math.cos(r['â'].A)+m.c*Math.sin(r['â'].A)),at:performance.now()};
+        v66View.root={r,canvas:ctx.canvas,x:m.e+(m.a*p['É']+m.c*p['Ä'])/s,y:m.f+(m.b*p['É']+m.d*p['Ä'])/s,unit:Math.hypot(m.a,m.b)*size/s,at:performance.now()};
     };
     // V65 closes unsupported bot/contents recon under the current client-only pipeline; historical helpers remain inert for evidence replay.
     const V65_RECON_RETIRED=true;
-    // Parsed native aimed hand/weapon nominal art-edge references; see v65-static-poses.json. These are not measured opaque artwork tips.
-    const V65_AIMED_POSES={"revolver":{"x":88.10437555610869,"y":6.754533163034278},"scoped ar":{"x":88.10437555610869,"y":6.754533163034278},"combat":{"x":88.10437555610869,"y":6.754533163034278},"scar":{"x":88.10437555610869,"y":6.754533163034278},"smg":{"x":88.10437555610869,"y":6.754533163034278},"spas":{"x":88.10437555610869,"y":6.754533163034278},"silencedpistol":{"x":88.10437555610869,"y":6.754533163034278},"famas":{"x":88.10437555610869,"y":6.754533163034278},"bolt":{"x":97.32332815822744,"y":6.650068241228336},"charge rifle":{"x":106.71551892386839,"y":5.57318289597384},"sawedoff":{"x":88.10437555610869,"y":6.754533163034278},"lmg":{"x":88.10437555610869,"y":6.754533163034278},"shotgun":{"x":88.10437555610869,"y":6.754533163034278},"rifle":{"x":88.10437555610869,"y":6.754533163034278},"aug":{"x":88.10437555610869,"y":6.754533163034278},"rpg":{"x":88.10437555610869,"y":6.754533163034278},"heavy sniper":{"x":88.10437555610869,"y":6.754533163034278},"ak47":{"x":88.10437555610869,"y":6.754533163034278},"musket":{"x":88.10437555610869,"y":6.754533163034278},"drum":{"x":88.10437555610869,"y":6.754533163034278},"vector":{"x":88.10437555610869,"y":6.754533163034278},"crossbow":{"x":88.10437555610869,"y":6.754533163034278},"grenade pistol":{"x":88.10437555610869,"y":6.754533163034278}};
     const v63Visual={light:null,hudScene:null,fadeAt:null,lightAt:-Infinity,rect:null,rectAt:-Infinity,canvas:null,image:null,imageSource:'',imageRequested:false,imageReady:false,upload:0,crosshairDraws:0,lightFrames:0};
     const v63NormalizeVisuals=value=>{
         /* Bound persisted presentation only; uploaded image lives separately and is never included in settings exports. */
@@ -441,7 +285,7 @@
             else if(e.reticleStyle==='ring'){ /* Open center preserves target visibility. */ ctx.arc(0,0,r,0,Math.PI*2);ctx.stroke();}
             else { /* Four short arms leave an explicit center gap. */ const gap=Math.max(2,r*.3);for(const sign of [-1,1]){ /* Symmetric horizontal/vertical arms. */ ctx.moveTo(sign*gap,0);ctx.lineTo(sign*r,0);ctx.moveTo(0,sign*gap);ctx.lineTo(0,sign*r);}ctx.stroke();}
         }finally{ /* Restore native transform/alpha on success and draw failure. */ ctx.restore();}
-        v63Visual.reticleRoot=root;v63Visual.crosshairDraws++;
+        v63Visual.reticleRoot=root;v63Visual.crosshairDraws++;v66Mark('customCrosshair');
     };
     const v63FlashlightHide=(smooth=false)=>{
         /* Native match end fades the last valid mask for300ms. Off/focus/reset fail open immediately. */
@@ -462,7 +306,7 @@
     const v63FlashlightFrame=ctx=>{
         /* Paint only after the native world and before native HUD/status/map/crosshair. No DOM overlay,
          * Canvas prototype patch, new timer, native state mutation or duplicated native UI draw. */
-        const e=exFast(),root=v61SpreadView.root,now=performance.now();
+        const e=exFast(),root=v66View.root,now=performance.now();
         if(!e.flashlightMode||!S.renderer||D.hidden||!ctx?.createRadialGradient||!ctx.setTransform){ /* Unsupported/off/focus state is unobscured. */ v63FlashlightHide();return;}
         let alpha=1,geometry=v63Visual.light;
         if(v55.stats?.finished){ /* Fade can finish even when the local player root no longer draws. */
@@ -472,7 +316,7 @@
         }else { /* Fresh local projection and real canvas bounds supply both follow modes. */
             if(!root||root.canvas!==ctx.canvas||now-root.at>100){ /* No stale player or cursor fallback. */ v63FlashlightHide();return;}
             const canvas=ctx.canvas;if(v63Visual.canvas!==canvas||now-v63Visual.rectAt>250){ /* Cache layout reads without throttling native mask/HUD ordering. */ v63Visual.canvas=canvas;v63Visual.rect=canvas.getBoundingClientRect();v63Visual.rectAt=now;}
-            const rect=v63Visual.rect,pointer=v61SpreadView.pointer;
+            const rect=v63Visual.rect,pointer=v66View.pointer;
             if(!rect||![rect.left,rect.top,rect.width,rect.height].every(Number.isFinite)||rect.width<=0||rect.height<=0||canvas.width<=0||canvas.height<=0){ /* Reject invalid geometry. */ v63FlashlightHide();return;}
             const x=e.flashlightFollow==='cursor'?(pointer?.canvas===canvas?pointer.x-rect.left:NaN):root.x*rect.width/canvas.width;
             const y=e.flashlightFollow==='cursor'?(pointer?.canvas===canvas?pointer.y-rect.top:NaN):root.y*rect.height/canvas.height;
@@ -484,7 +328,7 @@
             ctx.setTransform(ctx.canvas.width/geometry.width,0,0,ctx.canvas.height/geometry.height,0,0);ctx.globalAlpha=alpha;
             const gradient=ctx.createRadialGradient(geometry.x,geometry.y,geometry.r*.8,geometry.x,geometry.y,geometry.r);gradient.addColorStop(0,'rgba(0,0,0,0)');gradient.addColorStop(1,'rgba(0,0,0,.96)');ctx.fillStyle=gradient;ctx.fillRect(0,0,geometry.width,geometry.height);
         }finally{ /* Native UI inherits its original transform/alpha/style. */ ctx.restore();}
-        v63Visual.lightFrames++;
+        v63Visual.lightFrames++;v66Mark('flashlightMode');
     };
     const v63VisualReset=()=>{
         /* Play/destroy invalidate pending image callbacks, boundary and mask; saved image/preferences survive. */
@@ -516,51 +360,6 @@
             };row.append(file,message);
         }
         const reset=D.createElement('button');reset.type='button';reset.textContent='Reset to default';reset.dataset.visualReset=id;reset.onclick=()=>{ /* Reset only the chosen group, preserving enables/other preferences/uploaded artwork. */ const z=storedExtras();if(id==='customCrosshair'){ /* Keep uploaded image available for later reselection. */ z.reticleStyle='cross';z.reticleColor='#ffffff';z.reticleSize=24;}else { /* Restore only flashlight presentation. */ z.flashlightFollow='player';z.flashlightRadius=220;}saveExtras(z);featureEx.at=-Infinity;v63Visual.lightAt=-Infinity;renderExtras();};row.appendChild(reset);parent.appendChild(row);
-    };
-    const v62SpreadSkip=reason=>{
-        /* Count suppression reasons without logging every frame or keeping native references. */
-        v61SpreadView.suppressed[reason]=(v61SpreadView.suppressed[reason]||0)+1;
-    };
-    const v65SpreadDraw=(r,ctx)=>{
-        /* Native aim is already a screen-space angle (confirmed by source input math and V64 cursor traces).
-         * Rotate one fixed source-derived nominal muzzle offset once around the projected native player center.
-         * Never read animated hand/held transforms, recoil, spread bins or a just-fired calibration point. */
-        const e=exFast();if(!e.showBulletSpread||e.goodFlippinLuck||r['èÂ']||v55.stats?.finished)return;
-        const root=v61SpreadView.root,weapon=v55GunName(r['Åé']?.[r['ÈÆ']]?.type),mode=v55ReconMode(),pose=V65_AIMED_POSES[weapon],cell=V59_ENVELOPES[weapon]?.[mode];
-        if(!pose||!cell){ /* Unknown gun/mode suppresses; no guessed geometry or zero-width fallback. */ v62SpreadSkip('unknown static reference/envelope');return;}
-        if(!root||root.r!==r||root.canvas!==ctx?.canvas||performance.now()-root.at>100||!ctx.setTransform){ /* A missing reached projection fails open. */ v62SpreadSkip('root projection');return;}
-        const axis=r['â'].A,unit=root.unit,degrees=cell.maxAbsDegrees;
-        if(![root.x,root.y,axis,unit,degrees].every(Number.isFinite)||unit<=0||degrees<0||degrees>=60){ /* Preserve finite empirical/projection validity. */ v62SpreadSkip('invalid static reference');return;}
-        const c=Math.cos(axis),n=Math.sin(axis),x=root.x+unit*(c*pose.x-n*pose.y),y=root.y+unit*(n*pose.x+c*pose.y),half=degrees*Math.PI/180,length=96*SPREAD_LENGTHS[e.spreadSize]*unit;
-        ctx.save();try{ /* Static per gun/mode sector; camera zoom and explicit size settings scale normally. */
-            ctx.setTransform(1,0,0,1,0,0);ctx.translate(x,y);ctx.strokeStyle=e.spreadColor;ctx.fillStyle=e.spreadColor;ctx.lineWidth=Math.max(.6,.85*unit);ctx.lineJoin='round';ctx.lineCap='round';
-            const alpha=ctx.globalAlpha;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(Math.cos(axis-half)*length,Math.sin(axis-half)*length);ctx.arc(0,0,length,axis-half,axis+half);ctx.closePath();ctx.globalAlpha=alpha*.09;ctx.fill();ctx.globalAlpha=alpha*.48;ctx.stroke();
-        }finally{ /* Optional draw failure cannot leak canvas state to native siblings. */ ctx.restore();}
-        const key=weapon+':'+mode+':'+Math.round(axis/(Math.PI/4));
-        if(v61SpreadView.checks<24&&!v61SpreadView.traceKeys.has(key)){ /* Bounded diagnostic primitives only; native visual approval still required. */
-            v61SpreadView.traceKeys.add(key);v61SpreadView.checks++;log('V65 STATIC CONE',{sample:v61SpreadView.checks,weapon,mode,method:'native screen aim / fixed nominal aimed pose / frozen whole-mode width',root:{x:root.x,y:root.y,unit},origin:{x,y},localOffset:pose,axis,length,halfDegrees:degrees,scope:'static numeric geometry, not native pixel proof'});
-        }
-    };
-    const v59Envelope=(weapon,mode)=>{
-        /* Frozen user-run evidence works on a fresh page without fabricating saved shot counts.
-         * Qualified newer evidence may conservatively widen the empirical envelope. */
-        const base=V59_ENVELOPES[v55GunName(weapon)]?.[mode],gun=v55.recon.guns[v55GunName(weapon)],live=v57SpreadReady(gun,mode)?gun[mode]:null;
-        if(!base)return live;if(!live||live.maxAbsDegrees<=base.maxAbsDegrees)return base;return live;
-    };
-    const v59SpreadControls=(parent,settings,locked)=>{
-        /* Independent persisted style group, live effect, disabled with modifier/Hell, group reset.
-         * Length scales the V only; never widen angles or imply ballistic range. */
-        const row=D.createElement('fieldset');row.className='brioColor';row.dataset.spreadControls='';row.disabled=locked||!settings.showBulletSpread;
-        const color=D.createElement('input');color.type='color';color.dataset.spreadColor='';color.value=settings.spreadColor;color.setAttribute('aria-label','Spread color');
-        const size=D.createElement('select');size.dataset.spreadSize='';size.setAttribute('aria-label','Spread size');
-        for(const [value,label]of [['xs','Extra small'],['small','Small'],['medium','Medium'],['large','Large'],['xl','XL']]){ /* BRIO block V59: v59SpreadControls — Keep this branch bounded and reversible under the enclosing helper. V59 live-pending; regression proof is separate. */ const option=D.createElement('option');option.value=value;option.textContent=label;size.appendChild(option);}size.value=settings.spreadSize;
-        const save=()=>{ /* BRIO block V59: save — Keep this branch bounded and reversible under the enclosing helper. V59 live-pending; regression proof is separate. */ const z=storedExtras();z.spreadColor=color.value;z.spreadSize=size.value;saveExtras(z);featureEx.at=-Infinity;};color.oninput=save;size.onchange=save;
-        const reset=D.createElement('button');reset.textContent='Reset to default';reset.type='button';reset.dataset.spreadReset='';reset.onclick=()=>{ /* BRIO block V59: v59SpreadControls — Keep this branch bounded and reversible under the enclosing helper. V59 live-pending; regression proof is separate. */ color.value='#72caff';size.value='medium';save();};
-        const colorLabel=D.createElement('label'),sizeLabel=D.createElement('label');colorLabel.textContent='Color ';sizeLabel.textContent='Size ';colorLabel.appendChild(color);sizeLabel.appendChild(size);row.append(colorLabel,sizeLabel,reset);parent.appendChild(row);
-    };
-    const v65TestSetup=()=>{
-        /* One-match cone review only. Preserve preference backup; finalized flashlight/outlines need no repeated test. */
-        const z=storedExtras();if(!read('brio_test_backup',null))write('brio_test_backup',z);z.goodFlippinLuck=false;z.showBulletSpread=true;z.flashlightMode=false;saveExtras(z);featureEx.at=-Infinity;syncFeatureSettings();renderExtras();log('V65 TEST SETUP',{focus:'static cone',maximumMatches:2,plannedMatches:1,reconRetired:true});
     };
     const weaponChoices=/* BRIO expr V52: weaponChoices — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ()=>[...GUN_TYPES].filter(/* BRIO expr V52: weaponChoices — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ type=>type!=='akƧ'&&(!S.weaponCatalog||S.weaponCatalog.has(type))).sort();
     const indicatorColor=/* BRIO expr V52: indicatorColor — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ (e,id)=>e.indicatorColors?.[id]||INDICATOR_COLORS[id];
@@ -680,26 +479,23 @@
         let path=v55.paths.get(o);if(!path){ /* BRIO block V52: v55TrailSample — Keep this branch bounded and reversible under the enclosing helper. V52 live-pending; regression proof is separate. */ if(v55.paths.size>=128)v55.paths.delete(v55.paths.keys().next().value);path={points:[],at:-Infinity,type:o.type};v55.paths.set(o,path);}
         if(now-path.at<30)return;path.at=now;path.points.push({...p,at:now});if(path.points.length>32)path.points.shift();
     };
-    const v55Player=r=>{ /* BRIO block V52: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */
+    const v55Player=r=>{ /* BRIO block V52: v55Player — Gate held weapons/progress/damage text independently; render retained projectile history. */
         if(!r?.['â'])return;
         /* Native aá/ä/áË/ÄÂ are held-art subtrees; ÁÆ preview is separate. Current replacement is rescanned.
          * Hide weapons covers local+remote held art; player invisibility retains its established remote scope. */
         v55PlayerPreflight(r);
-        gateNativeDraw(r['â'],'v55PlayerChildren',/* BRIO expr V55: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ ()=>false,(ctx,nativeScale)=>{
+        gateNativeDraw(r['â'],'v55PlayerChildren',/* BRIO expr V55: v55Player — Gate held weapons/progress/damage text independently; render retained projectile history. */ ()=>false,(ctx,nativeScale)=>{
             /* Detect native held/pool replacements before first draw with O(1) unchanged-state checks. */
-            v55PlayerPreflight(r);if(isLocal(r)){ /* BRIO block V59: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ v55Frame(ctx);v61RootProjection(r,ctx,nativeScale);}
+            v55PlayerPreflight(r);if(isLocal(r)){ /* BRIO block V59: v55Player — Gate held weapons/progress/damage text independently; render retained projectile history. */ v55Frame(ctx);v66RootProjection(r,ctx,nativeScale);}
         });
         if(!isLocal(r))return;
-        const oldCone=featureNodes.get(r)?.get('spreadCone');
-        if(oldCone&&oldCone.parent!==r['â']){ /* Remove any prior animated-weapon attachment before installing the stable world-layer node. */ oldCone.parent?.remove?.(oldCone);featureNodes.get(r).delete('spreadCone');}
-        attachFeature(r,'spreadCone',r['â'],(ctx)=>{ /* Root projection was captured before this branch; held/hand lifecycle cannot move this visual. */ v65SpreadDraw(r,ctx);});
-        attachFeature(r,'projectileHistory',r['â'],(ctx,s)=>{ /* BRIO block V52: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */
+        attachFeature(r,'projectileHistory',r['â'],(ctx,s)=>{ /* BRIO block V52: v55Player — Gate held weapons/progress/damage text independently; render retained projectile history. */
             if(!exFast().longerBulletTrails)return;const now=performance.now(),me=worldPos(r),angle=Number(r['â'].A)||0;if(!me)return;
             ctx.save();ctx.rotate(-angle);ctx.lineWidth=2/s;
-            for(const [o,path]of v55.paths){ /* BRIO block V52: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */
-                while(path.points.length&&now-path.points[0].at>1200)path.points.shift();if(!path.points.length){ /* BRIO block V52: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ v55.paths.delete(o);continue;}
+            for(const [o,path]of v55.paths){ /* BRIO block V52: v55Player — Gate held weapons/progress/damage text independently; render retained projectile history. */
+                while(path.points.length&&now-path.points[0].at>1200)path.points.shift();if(!path.points.length){ /* BRIO block V52: v55Player — Gate held weapons/progress/damage text independently; render retained projectile history. */ v55.paths.delete(o);continue;}
                 if(exFast().invisibleProjectiles)continue;ctx.strokeStyle=path.type==='throwable'?'#ffb060':'#ffe99a';ctx.globalAlpha=.6*Math.max(0,1-(now-path.at)/1200);ctx.beginPath();
-                path.points.forEach(/* BRIO expr V52: v55Player — Gate held weapons/progress/damage text independently; render local spread and retained projectile history. */ (p,i)=>i?ctx.lineTo((p.x-me.x)/s,(p.y-me.y)/s):ctx.moveTo((p.x-me.x)/s,(p.y-me.y)/s));ctx.stroke();
+                path.points.forEach(/* BRIO expr V52: v55Player — Gate held weapons/progress/damage text independently; render retained projectile history. */ (p,i)=>i?ctx.lineTo((p.x-me.x)/s,(p.y-me.y)/s):ctx.moveTo((p.x-me.x)/s,(p.y-me.y)/s));ctx.stroke();
             }
             ctx.restore();
         });
@@ -770,86 +566,39 @@
         let fields=packetFieldCache.get(name);if(!fields){ /* BRIO block V55: v55PacketValue — Cache decoded native-field aliases per dictionary size; preserve original packet objects/values. */ fields=[];for(const [field,meaning]of schemaFields)if(meaning===name)fields.push(field);packetFieldCache.set(name,fields);}
         for(const field of fields)if(Object.hasOwn(packet,field))return packet[field];return undefined;
     };
-    const v55AngleDifference=(a,b)=>{
-        /* Modular signed radians in[-PI,PI): unlike V52's exported atan2 summaries, this is directly
-         * auditable from the raw angles. Supplied V52 examples differ from their claimed offsets by90deg;
-         * the cause is unknown. Never reuse those summary numbers to calibrate or infer an axis. */
-        const turn=Math.PI*2;return ((a-b+Math.PI)%turn+turn)%turn-Math.PI;
-    };
-    const v55AimObserve=p=>{ /* BRIO block V55: v55AimObserve — Retain fresh local server aim/scalar/stability/position with gun/rarity context; no authority changes. */
-        const stats=v55.stats,a=p.a,now=performance.now();if(!stats)return;const old=stats.serverAim,raw=v55PacketValue(p,'spread');
-        if(!Array.isArray(a)||!Number.isFinite(a[3])){ /* BRIO block V55: v55AimObserve — Retain fresh local server aim/scalar/stability/position with gun/rarity context; no authority changes. */ if(old&&Number.isFinite(raw)){ /* BRIO block V55: v55AimObserve — Retain fresh local server aim/scalar/stability/position with gun/rarity context; no authority changes. */ old.spread=raw/100;old.rawSpread=raw;}return;}
-        const angle=a[3]/100,context=stats.gunContext,moving=!!(old&&Number.isFinite(a[1])&&Number.isFinite(a[2])&&Math.hypot(a[1]-old.x,a[2]-old.y)>3),changed=!old||Math.abs(v55AngleDifference(angle,old.angle))>.0088;
-        stats.serverAim={angle,spread:Number.isFinite(raw)?raw/100:old?.spread,rawSpread:Number.isFinite(raw)?raw:old?.rawSpread,x:a[1],y:a[2],at:now,stableSince:changed?now:old.stableSince,weapon:context?.weapon,moving};
-    };
-    const v55ShotCompare=(p,localId)=>{
-        /* Owner pi is required; never attribute remote/unknown bullets by proximity or family name.
-         * Native firing progress is already counted. Native steadying is recoil, never an ADS acknowledgement. Join one nearby discharge where unambiguous,
-         * otherwise group projectiles as a conservative fallback and expose angle rejection reasons. */
-        if(v55PacketValue(p,'pi')!==localId)return;const r=S.renderer,session=v55.reconSession,context=v55.stats?.gunContext;if(!r||!session||!context)return;
-        const rotation=p.p?.[4],weapon=context.weapon,server=v55.stats?.serverAim,mode=v55ReconMode(),now=performance.now(),input=v55.reconInput;
-        if(!Number.isFinite(rotation)||!v55ReconEligible(weapon)||context.building===true)return;
-        const id=p.i??p.p?.[0];if(id!=null){ /* BRIO block V55: v55ShotCompare — Deduplicate owned projectiles, join native discharges and reject uncertain angles without erasing firing progress. */ if(session.seen.has(id)){ /* BRIO block V55: v55ShotCompare — Deduplicate owned projectiles, join native discharges and reject uncertain angles without erasing firing progress. */ session.duplicates++;return;}session.seen.set(id,true);if(session.seen.size>512)session.seen.delete(session.seen.keys().next().value);}session.ownedProjectiles++;
-        if(!mode){ /* BRIO block V55: v55ShotCompare — Deduplicate owned projectiles, join native discharges and reject uncertain angles without erasing firing progress. */ session.unclassified++;session.lastRejected=now;session.reason='ADS input unavailable';session.lastWeapon=weapon;return;}
-        const near=session.shots.filter(/* BRIO expr V55: v55ShotCompare — Deduplicate owned projectiles, join native discharges and reject uncertain angles without erasing firing progress. */ record=>record.nativeMatched&&(!record.projectileMatched||session.pending?.record===record)&&record.weapon===weapon&&record.mode===mode&&now-record.at<=120),record=near.at(-1);
-        if(session.batchGunChange&&!record){ /* BRIO block V55: v55ShotCompare — Deduplicate owned projectiles, join native discharges and reject uncertain angles without erasing firing progress. */ session.unclassified++;return;}
-        const previous=session.pending;
-        if(previous&&(previous.weapon!==weapon||previous.mode!==mode||now-previous.firstAt>SPREAD_GROUP_MS||previous.fireSerial!==input.fireSerial||previous.reloadSerial!==context.reloadSerial||record&&previous.record!==record))v55ReconFinishGroup();
-        let group=session.pending;if(!group){ /* BRIO block V55: v55ShotCompare — Deduplicate owned projectiles, join native discharges and reject uncertain angles without erasing firing progress. */
-            const credit=record||v55ReconRecord('owned projectile');if(!credit)return;credit.projectileMatched=true;
-            group=session.pending={weapon,mode,record:credit,firstAt:now,at:now,fireSerial:input.fireSerial,reloadSerial:context.reloadSerial,scalar:server?.spread,projectiles:0,accepted:0,meanDegrees:0,maxAbsDegrees:0,minDegrees:null,maxDegrees:null};
-        }group.at=now;group.projectiles++;
-        group.quality={aimAgeMs:server?now-server.at:null,aimStableMs:server?now-server.stableSince:null,gunStableMs:now-context.stableSince,inputStableMs:now-input.at,aimMismatchDegrees:server&&Number.isFinite(r['â']?.A)?Math.abs(v55AngleDifference(r['â'].A,server.angle))*180/Math.PI:null,scalar:server?.spread??null};
-        let reason=null;
-        if(session.batchGunChange)reason='gun changed in native batch';else if(near.length>1||session.batchShots.length>1)reason='multiple discharges in packet window';
-        else if(!v57SingleSpread(weapon)&&now-input.at<100)reason='ADS transition';
-        // V56 log: steadying is also set by native hip-fire recoil. It is not an ADS
-        // acknowledgement. Input, aim freshness/stability, gun stability and alignment still gate angles.
-        else if(!server||now-server.at>150)reason='aim packet stale';else if(now-server.stableSince<80)reason='aim turning';
-        else if(now-context.stableSince<150||server.weapon!==weapon)reason='gun switching';
-        else if(!Number.isFinite(r['â']?.A)||Math.abs(v55AngleDifference(r['â'].A,server.angle))>Math.PI/180)reason='aim not aligned';
-        else if(!Number.isFinite(server.spread)||server.spread<0)reason='spread scalar missing';
-        const cell=v55ReconGun(weapon)?.[mode];if(reason){ /* BRIO block V55: v55ShotCompare — Deduplicate owned projectiles, join native discharges and reject uncertain angles without erasing firing progress. */ group.rejectionReason=reason;if(cell)cell.rejected[reason]=(cell.rejected[reason]||0)+1;v55.recon.dirty=true;return;}
-        const offset=v55AngleDifference(rotation/100,server.angle)*180/Math.PI;group.accepted++;group.meanDegrees+=(offset-group.meanDegrees)/group.accepted;group.maxAbsDegrees=Math.max(group.maxAbsDegrees,Math.abs(offset));group.minDegrees=group.minDegrees==null?offset:Math.min(group.minDegrees,offset);group.maxDegrees=group.maxDegrees==null?offset:Math.max(group.maxDegrees,offset);
-    };
-
     const v55StatsObserve=result=>{ /* BRIO V55: v55StatsObserve — sample this BRIO callback's inclusive cost; return values/errors survive finally. Nested timing rows overlap and must not be summed. */
         const cost=v55PerfBegin('match counters');try{
         /* Reuse the existing native decode observer. Separate counters are independent of deep log caps.
          * Decoder delegates unchanged. Original object identity/packed arrays are NEVER remapped/mutated. */
-        const stats=v55.stats;if(!stats||stats.finished)return;const bullets=[];v55.reconSession.batchShots=[];v55.reconSession.batchGunChange=false;
-        for(const p of Array.isArray(result)?result:[result]){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */
+        const stats=v55.stats;if(!stats||stats.finished)return;
+        for(const p of Array.isArray(result)?result:[result]){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded native match counters; preserve authority and never guess damage attribution. */
             if(!p||typeof p!=='object')continue;const type=p.t??p.type,value=/* BRIO expr V52: value — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ name=>v55PacketValue(p,name);
             if(type==='setID')stats.localId=value('i')??p.id;
-            // V52: retain the newest authoritative local packet angle separately from instantaneous client aim.
-            // Packed rotation/100 is radians. Original packet ADS/selection is read before native recoil/art mutation;
-            // the quality-filtered bounded recorder survives heavy recon caps and never fits a theoretical maximum.
-            if(type==='y'&&(p.i??p.a?.[0])===(stats.localId??S.renderer?.id)){ /* BRIO block V55: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */ const change=v55ReconContext(p);if(change?.changed&&change.old)v55.reconSession.batchGunChange=true;v55AimObserve(p);v55ReconNativeShot(p,change);}
-            if(type==='circle'){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */
+            if(type==='circle'){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded native match counters; preserve authority and never guess damage attribution. */
                 const c=value('circle'),position=c?.position??c?.['ë'],radius=c?.radius??c?.['éã'];
                 const state=p.state||v55.zoneState;
-                if(state!=='moving'&&Array.isArray(position)&&position.length===2&&position.every(Number.isFinite)&&Number.isFinite(radius)&&radius>=0){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */ v55.zone={x:position[0],y:position[1],radius,state,source:'projected waiting border'};v55.zoneAt=performance.now();log('V55 PROJECTED ZONE',{...v55.zone,epoch:S.runEpoch});}
+                if(state!=='moving'&&Array.isArray(position)&&position.length===2&&position.every(Number.isFinite)&&Number.isFinite(radius)&&radius>=0){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded native match counters; preserve authority and never guess damage attribution. */ v55.zone={x:position[0],y:position[1],radius,state,source:'projected waiting border'};v55.zoneAt=performance.now();log('V55 PROJECTED ZONE',{...v55.zone,epoch:S.runEpoch});}
                 if(p.state){ /* Keep native session phase available without the retired exploratory observer. */ v55.zoneState=p.state;deep.circleState=p.state;}
             }
             if(type==='elim'&&!value('knock')&&stats.eliminated.length<100)stats.eliminated.push(String(value('name')||'<unnamed>'));
-            if(type==='x'){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */
-                const kind=p.b??p.p?.[1],id=p.i??p.p?.[0];if(kind==='player'&&id===(stats.localId??S.renderer?.id))v55ReconContext(p);if(kind==='player'&&stats.names.size<256)stats.names.set(id,String(value('name')||'<unnamed>'));
-                if(kind==='bullet'&&value('pi')===(stats.localId??S.renderer?.id)){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */ stats.ownProjectiles++;if(bullets.length<256)bullets.push({p:Array.isArray(p.p)?p.p.slice(0,6):[],i:p.i,pi:value('pi')});}
+            if(type==='x'){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded native match counters; preserve authority and never guess damage attribution. */
+                const kind=p.b??p.p?.[1],id=p.i??p.p?.[0];if(kind==='player'&&stats.names.size<256)stats.names.set(id,String(value('name')||'<unnamed>'));
+                if(kind==='bullet'&&value('pi')===(stats.localId??S.renderer?.id)){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded native match counters; preserve authority and never guess damage attribution. */ stats.ownProjectiles++;}
             }
-            if(type==='y'){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */
-                const id=p.i??p.a?.[0];if(id===(stats.localId??S.renderer?.id))for(const [name,key]of [['hLost','hpLoss'],['sLost','shieldLoss']]){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */ const n=value(name);if(Number.isFinite(n)&&n>0)stats[key]+=n;}
+            if(type==='y'){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded native match counters; preserve authority and never guess damage attribution. */
+                const id=p.i??p.a?.[0];if(id===(stats.localId??S.renderer?.id))for(const [name,key]of [['hLost','hpLoss'],['sLost','shieldLoss']]){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded native match counters; preserve authority and never guess damage attribution. */ const n=value(name);if(Number.isFinite(n)&&n>0)stats[key]+=n;}
             }
-            if(type==='death'){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */
-                for(const bullet of bullets)v55ShotCompare(bullet,stats.localId??S.renderer?.id);bullets.length=0;stats.terminal={place:value('place'),eliminations:value('eliminations'),damage:value('damageToEnemies'),walls:value('wallsBuilt'),seconds:value('timeAlive'),killer:String(value('name')||'')};v55ReconFinishGroup();v55ReconSave(true);stats.finished=true;v63FlashlightHide(true);v55PerfFinish('native match end');
+            if(type==='death'){ /* BRIO block V52: v55StatsObserve — Read original decoded packets once for bounded native match counters; preserve authority and never guess damage attribution. */
+                stats.terminal={place:value('place'),eliminations:value('eliminations'),damage:value('damageToEnemies'),walls:value('wallsBuilt'),seconds:value('timeAlive'),killer:String(value('name')||'')};stats.finished=true;v63FlashlightHide(true);v66Report('native match end');v55PerfFinish('native match end');
                 log('V55 AUTOMATIC AUDIT',v55Audit(true));log('V55 POSTGAME COUNTERS',{epoch:S.runEpoch,terminal:stats.terminal,hpLoss:stats.hpLoss,shieldLoss:stats.shieldLoss,eliminated:stats.eliminated,ownProjectiles:stats.ownProjectiles,attribution:'unavailable: no authoritative attacker/victim on observed loss events'});deepStop('native match end');
             }
         }
 
-        if(!stats.finished)for(const bullet of bullets)v55ShotCompare(bullet,stats.localId??S.renderer?.id);
-        }finally{ /* BRIO block V55: v55StatsObserve — Read original decoded packets once for bounded counters and gun/ADS recon; preserve authority and never guess damage attribution. */ v55PerfEnd('match counters',cost);}
+
+        }finally{ /* BRIO block V55: v55StatsObserve — Read original decoded packets once for bounded native match counters; preserve authority and never guess damage attribution. */ v55PerfEnd('match counters',cost);}
     };
     const v55Sample=()=>{ /* BRIO block V52: v55Sample — Sample bounded movement/weapon-time history; exclude teleports and finished matches. */
-        if(S.destroyed)return;if(v55.reconSession?.pending&&performance.now()-v55.reconSession.pending.at>SPREAD_GROUP_MS)v55ReconFinishGroup();v55ReconSave();v55PerfAdvance();v55PrepareOutline();const stats=v55.stats,now=performance.now(),r=S.renderer;
+        if(S.destroyed)return;v55PerfAdvance();v55PrepareOutline();const stats=v55.stats,now=performance.now(),r=S.renderer;
         if(stats&&!stats.finished&&r&&S.botPhase==='match'){ /* BRIO block V52: v55Sample — Sample bounded movement/weapon-time history; exclude teleports and finished matches. */
             const dt=Math.max(0,Math.min(.75,(now-stats.sampleAt)/1000)),p=worldPos(r),type=r['Åé']?.[r['ÈÆ']]?.type;
             if(type&&(stats.weaponSeconds.has(type)||stats.weaponSeconds.size<64))stats.weaponSeconds.set(type,(stats.weaponSeconds.get(type)||0)+dt);
@@ -883,13 +632,13 @@
         const note=D.createElement('p');note.style='color:#c7d3e2;font:12px Arial;line-height:1.5';note.textContent='Per-player damage dealt/received: unavailable. Native observed loss events identify no attacker/victim; proximity is not attribution. Observed counters cover this injection, with bounded sampling and a match-lifetime recorder; deep diagnostics retain their 15-minute cap; travel excludes '+stats.teleports+' large position jumps.';v55.post.appendChild(note);
     };
     const v55Reset=(start=false)=>{ /* BRIO block V59: v55Reset — Clear per-match references and restore owned DOM changes at Play/destroy; retain saved choices. */
-        v61SpreadView.pointer=null;v61SpreadView.root=null;v61SpreadView.checks=0;v61SpreadView.anchor=null;v61SpreadView.traceKeys.clear();v61SpreadView.suppressed=Object.create(null); /* BRIO block V52: v55Reset — Reset transient references/input/groups at Play/destroy, flushing persistent gun/mode progress and restoring owned DOM. */
-        v55ReconFinishGroup();v55ReconSave(true);v55.reconSession=start?{pending:null,seen:new Map,nativePackets:new WeakSet,shots:[],batchShots:[],nativeShots:0,ammoEvents:0,ownedProjectiles:0,correlated:0,duplicates:0,unclassified:0,lastGroup:null,lastAccepted:-Infinity,lastRejected:-Infinity,reason:'',lastWeapon:'',lastMode:null}:null;v55.reconInput={known:true,right:false,left:false,at:performance.now(),fireSerial:0};
+        v66View.pointer=null;v66View.root=null; /* BRIO block V52: v55Reset — Reset transient references/input/groups at Play/destroy, flushing persistent gun/mode progress and restoring owned DOM. */
+
         v55PerfReset(start);v55.playerChecks=new WeakMap;v55.deferred=new Set;v55.outlineQueue.clear();packetFieldCache.clear();packetFieldRevision=-1;
         clearInterval(v55.timer);v55.timer=0;v55.zone=null;v55.zoneState=null;v55.zoneAt=0;v55.shotChecks=new Map;v55.outlines.clear();v55.outlineFailures.clear();S.outlineMaskLogged=false;v55.paths.clear();
         for(const u of v55.lootUis.values())u.remove();v55.lootUis.clear();if(S.safeZoneUi)S.safeZoneUi.style.display='none';if(S.stormCenterUi)S.stormCenterUi.style.display='none';
         v55.post?.remove();v55.post=null;for(const [node,[value,priority]]of v55.postStyles)node.style.setProperty('display',value,priority);v55.postStyles.clear();
-        v55.stats=start?{localId:null,names:new Map,eliminated:[],hpLoss:0,shieldLoss:0,calibrations:new Set,ownProjectiles:0,weaponSeconds:new Map,distance:0,teleports:0,position:null,sampleAt:performance.now(),finished:false}:null;
+        v55.stats=start?{localId:null,names:new Map,eliminated:[],hpLoss:0,shieldLoss:0,ownProjectiles:0,weaponSeconds:new Map,distance:0,teleports:0,position:null,sampleAt:performance.now(),finished:false}:null;
         if(start)v55.timer=setInterval(v55Sample,500);
     };
 
@@ -953,10 +702,9 @@
         const stored = read("brio_extras_state", {}), value = stored && typeof stored === "object" && !Array.isArray(stored) ? stored : {};
         for (const key of ["buildMaterialLabels", "deployableLabels", "deployableRadius", "highlightLoot", "noFoliage", "cleanLoot", "playerIds"]) delete value[key];
         // V48 choices persist across Play/reinjection. No per-match references belong in this settings record.
-        for(const key of ['screenChests','screenAirdrops','screenFishing','identifyBots','contentsReconFocus'])delete value[key];
+        for(const key of ['screenChests','screenAirdrops','screenFishing','identifyBots','contentsReconFocus','showBulletSpread','spreadColor','spreadSize','stormDistance'])delete value[key];
         v63NormalizeVisuals(value);
         value.warningThresholds = normalizeWarningThresholds(value.warningThresholds);
-        value.spreadColor=/^#[0-9a-f]{6}$/i.test(value.spreadColor||'')?value.spreadColor:'#72caff';value.spreadSize=Object.hasOwn(SPREAD_LENGTHS,value.spreadSize)?value.spreadSize:'medium';
         value.indicatorColors=Object.fromEntries(Object.entries(INDICATOR_COLORS).map(/* BRIO expr V52: storedExtras — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ([id,color])=>[id,/^#[0-9a-f]{6}$/i.test(value.indicatorColors?.[id]||'')?value.indicatorColors[id]:color]));
         value.lootChoices=Array.isArray(value.lootChoices)?[...new Set(value.lootChoices.filter(/* BRIO expr V52: storedExtras — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ x=>typeof x==='string'&&/:[45]$/.test(x)&&GUN_TYPES.has(x.slice(0,-2))))].slice(0,128):[];
         // V50 migrations preserve the previous challenges' actual semantics: art-only loot, completely hidden builds.
@@ -1099,9 +847,56 @@
         });
         d.close();
     };
+    const v66Completion={scene:null,node:null,reached:Object.create(null)};
+    const v66Mark=id=>{ /* Count a reached owned presentation route, never infer pixel correctness. */ v66Completion.reached[id]=Math.min(1000000000,(v66Completion.reached[id]||0)+1);};
+    const v66EvidenceNote=id=>{
+        /* Status is release evidence, not an automatic live verdict; specific partial proof remains visible. */
+        if(statusOf(id)==='green')return 'User-confirmed in prior reports; retained regression checks. Report new exceptions only.';
+        if(id==='stormEdge')return 'Built: follows native current storm rectangles. New visual check; unencountered storm remains unobserved.';
+        if(id==='highContrastPlayers')return 'Built: remote-player yellow halo, suppressed by player invisibility/Hell. Deferred visual review is now included.';
+        if(id==='customCrosshair')return 'Shapes/sizes confirmed; preset color persistence checked. Color/artwork appearance still needs explicit visual approval.';
+        return 'Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure.';
+    };
+    const v66StormSegments=scene=>{
+        /* Supplied borderScene adds left/right/top/bottom red rectangles in that exact order.
+         * Read their current native inner edges, including moving bounds and viewport clipping; no projected-zone guess. */
+        const list=scene?.['âè'];if(scene?.['Ée']!=='borderScene'||!Array.isArray(list)||list.length<4)return [];
+        const segments=[];
+        for(let i=0;i<4;i++){ /* Four fixed constructor branches; no world scan or native mutation. */
+            const n=list[i],p=n?.['ë'],w=n?.width,h=n?.height;
+            if(!n||String(n['Äe']||n.fillStyle||'').toUpperCase()!=='#F00'||n['À'])return [];
+            if(![p?.['É'],p?.['Ä'],w,h].every(Number.isFinite)||w<=0||h<=0||n.visible===false||n.opacity<=0)continue;
+            const x=p['É'],y=p['Ä'];let x1=x-w/2,x2=x+w/2;if(i>=2){ /* Horizontal shade rectangles span the viewport; clip highlights to any visible side boundaries. */ const left=list[0],right=list[1];if(left?.width>0&&left.height>0&&left.opacity>0&&Number.isFinite(left['ë']?.['É']))x1=Math.max(x1,left['ë']['É']+left.width/2);if(right?.width>0&&right.height>0&&right.opacity>0&&Number.isFinite(right['ë']?.['É']))x2=Math.min(x2,right['ë']['É']-right.width/2);if(x2<=x1)continue;}segments.push(i<2?[x+(i===0?w/2:-w/2),y-h/2,x+(i===0?w/2:-w/2),y+h/2]:[x1,y+(i===2?h/2:-h/2),x2,y+(i===2?h/2:-h/2)]);
+        }
+        return segments;
+    };
+    const v66StormScene=scene=>{
+        /* One owned native drawable in the already reached world-storm scene; native suppression and camera ordering remain. */
+        if(scene?.['Ée']!=='borderScene'||v66Completion.scene===scene||!scene.add)return;
+        const list=scene['âè'];if(!Array.isArray(list)||list.length<4||!list.slice(0,4).every(/* Require the original four red shade primitives, not a map or arbitrary rectangle. */ n=>n&&String(n['Äe']||n.fillStyle||'').toUpperCase()==='#F00'&&!n['À']))return;
+        v66Completion.node?.parent?.remove?.(v66Completion.node);
+        const node=nativeNode((ctx,s)=>{ /* Paint only a current, enabled native boundary; preserve native styles and simulation. */
+            const e=exFast();if(!e.stormEdge||e.invisibleStorm||e.goodFlippinLuck||!S.renderer||v55.stats?.finished||!Number.isFinite(s)||s<=0)return;
+            const segments=v66StormSegments(scene);if(!segments.length)return;
+            ctx.save();try{ /* Thin cyan edge with a dark backing keeps the current boundary legible. */
+                ctx.beginPath();for(const [x1,y1,x2,y2]of segments){ /* Each segment already uses actual world coordinates under this native scene. */ ctx.moveTo(x1/s,y1/s);ctx.lineTo(x2/s,y2/s);}ctx.lineJoin='round';ctx.lineCap='round';ctx.strokeStyle='rgba(0,0,0,.65)';ctx.lineWidth=5/s;ctx.stroke();ctx.strokeStyle='#65d9ff';ctx.lineWidth=2/s;ctx.stroke();v66Mark('stormEdge');
+            }finally{ /* Never leak style/alpha to later native map/HUD draws. */ ctx.restore();}
+        });
+        v66Completion.scene=scene;v66Completion.node=node;scene.add(node);log('V66 STORM EDGE BOUND',{source:'native current world shade inner edges',branches:4});
+    };
+    const v66Reset=()=>{ /* Only owned storm node/evidence references are discarded; preferences and original native nodes survive. */ v66Completion.node?.parent?.remove?.(v66Completion.node);v66Completion.node=null;v66Completion.scene=null;v66Completion.reached=Object.create(null);};
+    const v66Report=reason=>{
+        /* Exhaustive retained registry audit. Reached/suppressed counters are evidence of context, never proof of appearance. */
+        const e=exFast(),audit=v55Audit(true),rows=[];
+        for(const category of ['modifiers','challenges'])for(const [id,label]of EXTRA[category]){ /* Include selects and options disabled by Hell; no retained item is silently omitted. */
+            if(!id)continue;const branches=audit.rows.filter(/* Existing audit contains enabled native challenge paths only. */ r=>r.challenge===id);
+            rows.push({id,label,category,state:statusOf(id)==='green'?'proven':statusOf(id)==='yellow'?'built-awaiting-visual':'unplanned',effective:e[id]??false,ownedDraws:v66Completion.reached[id]||0,nativeBranches:branches,note:v66EvidenceNote(id)});
+        }
+        const report={version:S.v,epoch:S.runEpoch,reason,mode:e.goodFlippinLuck?'Hell':'normal',rows,implementationGaps:rows.filter(/* No unknown status can silently become complete. */ r=>r.state==='unplanned').map(/* Report exact unsupported IDs. */ r=>r.id),pendingVisual:rows.filter(/* User proof is separate from implementation verification. */ r=>r.state==='built-awaiting-visual').map(/* Preserve the exhaustive pending list. */ r=>r.id),removed:['showBulletSpread','stormDistance','screenChests','screenAirdrops','screenFishing','identifyBots'],nativeGateCap:audit.capHit,limits:'Run-cumulative reached/suppressed contexts, not visual passes. Unencountered conditions remain unobserved. Local checks cannot grant user visual approval.'};log('V66 COMPLETION AUDIT',report);return report;
+    };
     const STATUS = {
         green: new Set([ "buildHealth", "objectHealth", "flashlightMode", "transparentRoofs", "healthBars", "playerNames", "allGlidersInvisible", "allTrailsInvisible", "inventoryAmmo", "inventorySize", "permanentMeteor", "numericHealthShield", "lowHealthWarning", "nearestPlayer", "nearestChest", "nearestAirdrop", "nearestPlayerName", "noChestsVisible", "monochrome", "lowMatsWarning", "lowAmmoWarning", "transparentFoliage", "noMinimap" ]),
-        yellow: new Set([ "showBulletSpread","safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails","customCrosshair","noDamageDirection","noInfoPopups","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons","noStormTimer", "highContrastPlayers", "playersInvisible", "lootInvisible", "buildsInvisible", "noCrosshair", "noInventoryHud", "invisibleStorm", "noHealthShieldHud", "goodFlippinLuck", "inventorySlots", "inventoryMaterials" ])
+        yellow: new Set([ "safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails","customCrosshair","noDamageDirection","noInfoPopups","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons","noStormTimer", "highContrastPlayers","stormEdge", "playersInvisible", "lootInvisible", "buildsInvisible", "noCrosshair", "noInventoryHud", "invisibleStorm", "noHealthShieldHud", "goodFlippinLuck", "inventorySlots", "inventoryMaterials" ])
     }, statusOf = /* BRIO expr: statusOf — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */ id => STATUS.yellow.has(id) ? "yellow" : STATUS.green.has(id) ? "green" : "red";
     const style = D.createElement("style");
     style.textContent = `[data-brio-mono-page] canvas:not(#playerPreview):not([data-brio-mono]){filter:grayscale(1)!important}#ad,#preroll,#buildroyale-io_300x250,#buildroyale-io_300x250_2,#buildroyale-io_728x90,#buildroyale-io_300x600,#buildroyale-io_970x250,#disableAdsButton,iframe[src*="doubleclick" i],iframe[src*="googlesyndication" i]{display:none!important;visibility:hidden!important;width:0!important;height:0!important;margin:0!important;padding:0!important;border:0!important;pointer-events:none!important}#loggedInLocker.b18,#loggedInShop.b18{box-sizing:border-box!important;width:178px!important;height:53px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:0 12px!important;margin-top:7px!important;border:4px solid #090909!important;border-radius:9px!important;background:#65aee0!important;color:#fff!important;cursor:pointer!important;transition:none!important;overflow:hidden!important}#loggedInLocker.b18{margin-right:0!important}#loggedInShop.b18{margin-right:80px!important}#loggedInLocker.b18>img,#loggedInShop.b18>img{display:none!important}#loggedInLocker.b18>.bi,#loggedInShop.b18>.bi{width:42px;height:42px;flex:0 0 42px;background:center/contain no-repeat;pointer-events:none}#loggedInLocker.b18>p,#loggedInShop.b18>p{position:static!important;margin:0!important;flex:1;text-align:center;font-size:23px!important;color:#fff!important;-webkit-text-stroke:1px #000;pointer-events:none}.brioModal{position:fixed;z-index:2147483645;left:50%;top:50%;transform:translate(-50%,-50%);width:min(980px,96vw);height:min(700px,92vh);display:none;flex-direction:column;background:#000;color:#fff;border:2px solid #fff;font:14px Arial}.brioModal header,.brioTabs,.brioTools,.brioSubs,.brioSlots{display:flex;gap:6px;align-items:center;padding:7px;border-bottom:1px solid #555;flex-wrap:wrap}.brioModal header b{flex:1;font-size:20px}.brioModal button{background:#111;color:#fff;border:1px solid #777;padding:6px;cursor:pointer}.brioModal button.on{background:#555}.brioModal input[type=text]{background:#111;color:#fff;border:1px solid #777;padding:6px;width:220px;cursor:text}.brioModal select{background:#111;color:#fff;border:1px solid #777;padding:5px;min-width:110px}.brioGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;padding:8px;overflow:auto;flex:1;align-content:start}.brioCard{height:126px;border:1px solid #555;background:#090909;text-align:center;position:relative;overflow:hidden;cursor:pointer}.brioCard.sel{outline:3px solid #fff}.brioCard img{width:82px;height:82px;object-fit:contain;margin-top:4px}.brioCard .n{position:absolute;left:3px;right:3px;bottom:5px;font-size:12px}.brioCard .sync{position:absolute;right:3px;top:3px;font-size:9px;border:1px solid #6a6;padding:2px}.brioCard.sp{height:82px;display:flex;align-items:center;justify-content:center;font-weight:bold}.brioThresholds{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;padding:6px 10px 10px 34px;border-bottom:1px solid #555}.brioThresholds fieldset{display:flex;align-items:center;flex:0 0 auto;gap:8px;border:0;margin:0;padding:2px 0;min-width:0}.brioThresholds fieldset:disabled{opacity:.4}.brioThresholds fieldset label{display:flex;flex:0 0 auto;flex-direction:row;align-items:center;gap:4px;font-size:11px;white-space:nowrap}.brioThresholds input{width:56px;box-sizing:border-box;background:#111;color:#fff;border:1px solid #777;padding:4px}.brioThresholds input:disabled{cursor:not-allowed}.brioThresholds button{white-space:nowrap}.brioTier{display:flex;align-items:center;gap:12px;padding:6px 10px 10px 34px;border-bottom:1px solid #333}.brioModal :disabled{cursor:not-allowed}.brioOpt.locked{opacity:.55}.brioLockNote{padding:8px;color:#ffd21c}.brioPage{padding:8px;overflow:auto}.brioOpt{display:flex;gap:10px;padding:10px;border-bottom:1px solid #333;align-items:center}.brioOpt label{flex:1}.brioOpt.child{padding-left:34px}.brioOpt.st-green{background:#153d22}.brioOpt.st-yellow{background:#665700}.brioOpt.st-red{background:#4b1717}.brioBadge{font:700 10px Arial;padding:3px 5px;border:1px solid #aaa;min-width:58px;text-align:center}.brioGroup{padding:12px 10px 5px;font-weight:bold;border-bottom:1px solid #555;color:#9fd4ff}.brioLegend{display:flex;gap:12px;padding:7px;border-bottom:1px solid #555;font-size:11px}.brioLegend span{padding:3px 6px}.brioStatus{padding:7px;border-top:1px solid #555;font:12px Consolas;white-space:pre-wrap}.brioTerm.min .body{display:none!important}.brioTerm.min{width:460px!important;height:34px!important}.brioTerm.min .head{cursor:move!important}`;
@@ -1139,7 +934,7 @@
     const locker = D.createElement("div"), extras = D.createElement("div");
     locker.className = extras.className = "brioModal";
     locker.innerHTML = '<header><b>BRIO (un)Locker</b><button data-close>Close</button></header><div class="brioTabs"></div><div class="brioSubs"></div><div class="brioTools"><input type="text" placeholder="Search"><button data-upload>Upload Custom</button><input type="file" accept="image/*" hidden></div><div class="brioSlots"></div><div class="brioGrid"></div><div class="brioStatus"></div>';
-    extras.innerHTML = '<header><b>BRIO Extras</b><button data-close>Close</button></header><div class="brioTabs"></div><div class="brioLegend"><span style="background:#153d22">GREEN · proven</span><span style="background:#665700">YELLOW · active test</span><span style="background:#4b1717">RED · unproven/incomplete</span></div><div class="brioPage"></div><div class="brioStatus">Configure before Play. BRIO prepends uL# to the current player name when Play is pressed.</div>';
+    extras.innerHTML = '<header><b>BRIO Extras</b><button data-close>Close</button></header><div class="brioTabs"></div><div class="brioLegend"><span style="background:#153d22">GREEN · proven</span><span style="background:#665700">YELLOW · built; visual check pending</span><span style="background:#4b1717">No planned-only controls</span></div><div class="brioPage"></div><div class="brioStatus">Configure before Play. BRIO prepends uL# to the current player name when Play is pressed.</div>';
     D.documentElement.append(locker, extras);
     let tab = "skin", sub = "body", slot = 0, extraTab = "challenges";
     const labels = {
@@ -1318,9 +1113,7 @@
             ["flashlightMode","Flashlight mode","player/cursor light radius; visual-only, excluded from Hell",false,"visual"],
             ["goodFlippinLuck","Hell","all gameplay challenges, highest tiers; every modifier locked off"]
         ],
-        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "highContrastPlayers", "High-contrast players", "deferred; optional native yellow ring" ], [ "transparentFoliage", "Transparent foliage", "canopy opacity 25% · proven" ], [ "stormEdge", "Storm edge highlight", "planned" ], [ "stormCenter", "Safe-zone center direction", "purple off-screen arrow to projected safe-zone center; target retained while moving" ], [ "stormDistance", "Storm-edge distance", "planned" ],
-            ["showBulletSpread","Show bullet spread","static per gun/hip-ADS mode; empirical estimate, not a guaranteed maximum"],
-            ["buildHealth","Build health outlines","green >75%; yellow >50%; orange >25%; red ≤25%"],
+        modifiers: [ [ "transparentRoofs", "Transparent roofs", "static map roofs" ], [ "healthBars", "Player health bars", "remote players" ], [ "numericHealthShield", "Health/shield numbers", "numbers inside native bars · proven" ], [ "playerNames", "Player names", "remote players" ], [ "allGlidersInvisible", "All gliders invisible", "self + remote" ], [ "allTrailsInvisible", "All trails invisible", "self + remote" ], [ "nearestPlayer", "Nearest player indicator", "off-screen only + distance" ], [ "nearestPlayerName", "Player name in nearest arrow", "below distance; follows upright label", true ], [ "nearestChest", "Nearest chest indicator", "hide while target is on-screen" ], [ "nearestAirdrop", "Nearest airdrop indicator", "hide while target is on-screen" ], [ "permanentMeteor", "Permanent meteor location", "automatic native waypoint retention · proven" ], [ "highContrastPlayers", "High-contrast players", "yellow contrast halo around remote players; hidden-player challenges take precedence" ], [ "transparentFoliage", "Transparent foliage", "canopy opacity 25% · proven" ], [ "stormEdge", "Storm edge highlight", "cyan current storm boundary; follows native movement" ], [ "stormCenter", "Safe-zone center direction", "purple off-screen arrow to projected safe-zone center; target retained while moving" ], ["buildHealth","Build health outlines","green >75%; yellow >50%; orange >25%; red ≤25%"],
             ["objectHealth","Breakable object health outlines","same bands; includes vehicles"],
             ["safeZoneIndicator","Nearest safe-zone edge","blue by default; distance built in; target zone during movement"],
             ["lootIndicator","Loot indicator","selected source guns in gold/red rarity; closest12 off-screen pickups"],
@@ -1329,7 +1122,7 @@
     };
     // V50 flags distinguish normal-profile switches from challenges to cycle; no impossible all-on requirement.
     // Warning decisions/foliage/slot-border motion are PROVEN. Only their new reset buttons get UI-check badges.
-    const REQUIRED_TESTS = ["inventorySlots","inventoryMaterials","nearestPlayer","nearestChest","nearestAirdrop","showBulletSpread","safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails"],
+    const REQUIRED_TESTS = ["highContrastPlayers","stormEdge","customCrosshair","inventorySlots","inventoryMaterials","nearestPlayer","nearestChest","nearestAirdrop","safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails"],
         CHALLENGE_TESTS = ["playersInvisible","lootInvisible","buildsInvisible","noMinimap","noCrosshair","noInventoryHud","invisibleStorm","noHealthShieldHud","goodFlippinLuck","noDamageDirection","noInfoPopups","noPickupLabels","noHitMarker","noDamageNumbers","noWeaponProgress","invisibleProjectiles","hideWeapons","noStormTimer"];
     /* BRIO: nativeScanNeeded (V50)
      * Reuse the existing3000-node/second scene scanner even when the composite disables every modifier.
@@ -1337,7 +1130,7 @@
      */
     const nativeScanNeeded = /* BRIO expr: nativeScanNeeded — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ e => !!e.permanentMeteor || !!e.transparentRoofs || !!e.lowMatsWarning || !!e.lowAmmoWarning ||
         !!e.inventorySlots || !!e.inventoryMaterials || !!e.inventoryAmmo || !!e.allTrailsInvisible ||
-        ["showBulletSpread","safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails","customCrosshair","flashlightMode"].some(/* BRIO expr V52: nativeScanNeeded — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ id=>!!e[id]) || CHALLENGE_TESTS.some(/* BRIO expr: nativeScanNeeded / CHALLENGE_TESTS.some callback — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ id => !!e[id]);
+        ["safeZoneIndicator","stormCenter","lootIndicator","highlightOwnedAmmo","longerBulletTrails","customCrosshair","flashlightMode"].some(/* BRIO expr V52: nativeScanNeeded — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ id=>!!e[id]) || CHALLENGE_TESTS.some(/* BRIO expr: nativeScanNeeded / CHALLENGE_TESTS.some callback — Use only reached native objects and existing bounded discovery; discard transient references at Play cleanup. */ id => !!e[id]);
     const /* BRIO: renderWarningThresholds (V50; controls/reset live-pending, decisions proven)
      * V49 inline child row directly under each warning option, like nearest-player name under its indicator.
      * Each group stays on one nonwrapping horizontal row; all11 fields remain labeled and persisted.
@@ -1412,7 +1205,7 @@
     const modifierRows=()=>{
         /* BRIO: modifierRows V52 — render groups from stable registry IDs, minimum three real entries.
          * Keep the registry unchanged for saved settings/Hell derivation. Two-member groups join Miscellaneous. */
-        const definitions=[['Indicators',['nearestPlayer','nearestPlayerName','nearestChest','nearestAirdrop','safeZoneIndicator','stormCenter','lootIndicator']],['Warnings',['lowHealthWarning','lowAmmoWarning','lowMatsWarning']],['Player inventories',['inventorySlots','inventoryMaterials','inventoryAmmo','inventorySize']],['Player information',['healthBars','numericHealthShield','playerNames','highContrastPlayers']],['World appearance',['transparentRoofs','transparentFoliage','buildHealth','objectHealth']]],used=new Set,rows=[];
+        const definitions=[['Indicators',['nearestPlayer','nearestPlayerName','nearestChest','nearestAirdrop','safeZoneIndicator','stormCenter','lootIndicator']],['Warnings',['lowHealthWarning','lowAmmoWarning','lowMatsWarning']],['Player inventories',['inventorySlots','inventoryMaterials','inventoryAmmo','inventorySize']],['Player information',['healthBars','numericHealthShield','playerNames','highContrastPlayers']],['World appearance',['transparentRoofs','transparentFoliage','buildHealth','objectHealth','stormEdge']]],used=new Set,rows=[];
         for(const [title,ids]of definitions){ /* A group counts modifiers, not headings or subordinate name controls. */ const members=EXTRA.modifiers.filter(/* BRIO expr V52: modifierRows — Group stable modifier IDs into sections of at least three, with remaining IDs in Miscellaneous. */ r=>r[0]&&ids.includes(r[0]));if(members.filter(/* BRIO expr V52: modifierRows — Group stable modifier IDs into sections of at least three, with remaining IDs in Miscellaneous. */ r=>r[0]!=='nearestPlayerName').length<3)continue;rows.push([null,title,'']);for(const member of members){ /* BRIO block V52: modifierRows — Group stable modifier IDs into sections of at least three, with remaining IDs in Miscellaneous. */ used.add(member[0]);rows.push(member);}}
         rows.push([null,'Miscellaneous','']);rows.push(...EXTRA.modifiers.filter(/* BRIO expr V52: modifierRows — Group stable modifier IDs into sections of at least three, with remaining IDs in Miscellaneous. */ r=>r[0]&&!used.has(r[0])));return rows;
     };
@@ -1445,7 +1238,7 @@
             a.appendChild(z);
         }
         const setup=D.createElement('div');setup.className='brioTestSetup';
-        const contents=D.createElement('button');contents.textContent='Set up V65 test';contents.dataset.testSetup='cone';contents.onclick=v65TestSetup;setup.appendChild(contents);
+        const contents=D.createElement('button');contents.textContent='Set up V66 modifiers';contents.dataset.testSetup='completion';contents.onclick=()=>{ /* Explicit normal review; never change live challenge modes automatically. */ testSetup(false);const z=storedExtras();z.highContrastPlayers=z.stormEdge=z.customCrosshair=true;saveExtras(z);featureEx.at=-Infinity;syncFeatureSettings();renderExtras();log('V66 REVIEW PROFILE',{mode:'modifiers',maximumMatches:2});};setup.appendChild(contents);const challenge=D.createElement('button');challenge.textContent='Set up V66 challenges (Hell)';challenge.dataset.testSetup='challengeReview';challenge.onclick=()=>{ /* User-selected highest-tier challenge review; restore button retains the original backup. */ const z=storedExtras();if(!read('brio_test_backup',null))write('brio_test_backup',z);z.goodFlippinLuck=true;z.flashlightMode=z.monochrome=false;saveExtras(z);featureEx.at=-Infinity;syncFeatureSettings();renderExtras();log('V66 REVIEW PROFILE',{mode:'challenges',maximumMatches:2});};setup.appendChild(challenge);
         for(const [label,restore]of [['Set up normal test',false],['Restore saved settings',true]]){ /* Explicit profile actions keep routine testing reversible and one-click. */ const b=D.createElement('button');b.type='button';b.textContent=label;b.dataset.testSetup=restore?'restore':'normal';b.onclick=/* BRIO expr V52: renderExtras — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ ()=>testSetup(restore);b.disabled=restore&&!read('brio_test_backup',null);setup.appendChild(b);}
         p.appendChild(setup);
         if (s.goodFlippinLuck) { /* BRIO branch: renderExtras — Accept s.goodFlippinLuck. Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
@@ -1464,9 +1257,9 @@
             const locked = !!s.goodFlippinLuck && (extraTab === "modifiers" || id !== "goodFlippinLuck" && kind !== "visual"), st = statusOf(id), r = D.createElement("div"), l = D.createElement("label"), b = D.createElement("span");
             r.className = `brioOpt${child ? " child" : ""} st-${st}${locked ? " locked" : ""}`; r.dataset.extraId = id;
             l.innerHTML = `${name} <small style="color:#ccc">[${note}]</small>`;
-            b.className = "brioBadge";
-            if(['customCrosshair','showBulletSpread'].includes(id)){ /* Explicitly flag only newly built features for user review. */ const flag=D.createElement('span');flag.textContent='NEW · CHECK';flag.dataset.newFeature=id;flag.style='color:#fff;background:#1164cf;padding:4px;font:bold 10px Arial';r.appendChild(flag);}
-            b.textContent = st === "green" ? "PROVEN" : st === "yellow" ? "TESTING" : "UNPROVEN";
+            b.className = "brioBadge";r.dataset.featureState=st==='green'?'proven':'built';b.title=v66EvidenceNote(id);
+            if(['customCrosshair','highContrastPlayers','stormEdge'].includes(id)){ /* Explicitly flag only newly built features for user review. */ const flag=D.createElement('span');flag.textContent='NEW · CHECK';flag.dataset.newFeature=id;flag.style='color:#fff;background:#1164cf;padding:4px;font:bold 10px Arial';r.appendChild(flag);}
+            b.textContent = st === "green" ? "PROVEN" : st === "yellow" ? "BUILT · CHECK" : "UNPLANNED";
             if (REQUIRED_TESTS.includes(id) || CHALLENGE_TESTS.includes(id)) { /* BRIO branch: renderExtras — Accept REQUIRED_TESTS.includes(id) || CHALLENGE_TESTS.includes(id). Keep checkboxes, tier locks, inline values and test flags consistent with effective settings. */
                 const flag = D.createElement("span");
                 flag.textContent = CHALLENGE_TESTS.includes(id) ? "AUTO CHECK" : "TEST PROFILE";
@@ -1498,7 +1291,7 @@
                     saveExtras(z);
                     featureEx.at = -Infinity;
                     const group = p.querySelector(`[data-warning-modifier="${id}"]`);
-                    if (group) group.disabled = !c.checked;if(id==='showBulletSpread'){ /* BRIO block V59: renderExtras — Keep this branch bounded and reversible under the enclosing helper. V59 live-pending; regression proof is separate. */ const controls=p.querySelector('[data-spread-controls]');if(controls)controls.disabled=!c.checked;}
+                    if (group) group.disabled = !c.checked;
                     const color=p.querySelector(`[data-indicator-color="${id}"]`);if(color)color.disabled=!c.checked;
                     if(id==='lootIndicator'){ /* BRIO block V52: renderExtras — Keep this branch bounded and reversible under the enclosing helper. V52 live-pending; regression proof is separate. */ const choices=p.querySelector('[data-loot-choices]');if(choices)choices.disabled=!c.checked;}
                     const tier = p.querySelector(`[data-challenge-tier="${id === "lootInvisible" ? "lootMaskTier" : id === "buildsInvisible" ? "buildMaskTier" : ""}"]`);
@@ -1514,7 +1307,6 @@
             p.appendChild(r);
             if (["lowHealthWarning","lowAmmoWarning","lowMatsWarning"].includes(id)) renderWarningThresholds(p,effective,id);
             if (kind === "lootTier" || kind === "buildTier") renderChallengeTier(p,effective,id,locked);
-            if(id==='showBulletSpread')v59SpreadControls(p,effective,locked);
             if(['customCrosshair','flashlightMode'].includes(id))v63VisualControls(p,effective,id,locked);
             if(Object.hasOwn(INDICATOR_COLORS,id))renderIndicatorControls(r,effective,id,locked);
         }
@@ -3825,10 +3617,10 @@
     term.style = "position:fixed;right:12px;top:12px;width:720px;height:430px;z-index:2147483647;background:#000;color:#fff;border:1px solid #fff;font:12px Consolas;display:flex;flex-direction:column";
     // V50 reopens the SAME Extras modal during play, including from the minimized terminal. Native home
     // buttons disappear in a match; a reachable control is necessary for tier cycling/preset restoration.
-    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v65</b><button data-a="extras">EXTRAS</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
+    term.innerHTML = '<div class="head" style="display:flex;gap:6px;padding:6px"><b style="flex:1">BRIO v66</b><button data-a="extras">EXTRAS</button><button data-a="min">—</button></div><div class="body" style="display:flex;gap:5px;padding:6px;flex-wrap:wrap"><button data-a="verify">VERIFY</button><button data-a="copy">COPY RESULTS</button></div><textarea class="body" style="flex:1;background:#000;color:#fff;border:0;padding:7px;resize:none"></textarea>';
     D.documentElement.appendChild(term);
     S.out = term.querySelector("textarea");
-    v55ReconLoad();S.performanceCheck=v55PerfStart;S.spreadRecon=v55ReconReport;for(const event of ['mousedown','mouseup','mousemove','blur','pagehide'])W.addEventListener(event,v55ReconInput,{capture:true,passive:true});D.addEventListener('visibilitychange',v55ReconInput,{passive:true});
+    S.performanceCheck=v55PerfStart;for(const event of ['mousemove','blur','pagehide'])W.addEventListener(event,v66Pointer,{capture:true,passive:true});D.addEventListener('visibilitychange',v66Pointer,{passive:true});
     let mini = false, drag = null;
     term.onclick = e => { /* BRIO block: term.onclick — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
         const a = e.target?.dataset?.a;
@@ -3839,7 +3631,7 @@
             term.classList.toggle("min", mini);
             e.target.textContent = mini ? "+" : "—";
         } else if (a === "verify") { /* BRIO branch: term.onclick — Accept a === "verify". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */  deepReport(); verify(); } else if (a === "copy") { /* BRIO branch: term.onclick — Accept a === "copy". Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
-            v55ReconFinishGroup();v55ReconSave(true);v55PerfFinish('results export');log('V55 EXPORT AUDIT',v55Audit(true));S.manualCopy = false; deepReport();
+            v55PerfFinish('results export');log('V55 EXPORT AUDIT',v55Audit(true));S.manualCopy = false; deepReport();v66Report('results export');
             if (S.botTimer) botStop();
             reconContainers();
             const x = "BRIO " + S.v + "\n" + S.log.join("\n") + "\n\n" + J(verify());
@@ -3881,7 +3673,7 @@
      * epoch first so pending promises cannot write into restored native state.
      */
     S.destroy = () => { /* BRIO block: S.destroy — Release only BRIO-owned state/adapters; preserve saved preferences and original native behavior. */
-        for(const event of ['mousedown','mouseup','mousemove','blur','pagehide'])W.removeEventListener(event,v55ReconInput,true);D.removeEventListener('visibilitychange',v55ReconInput);
+        for(const event of ['mousemove','blur','pagehide'])W.removeEventListener(event,v66Pointer,true);D.removeEventListener('visibilitychange',v66Pointer);
         S.destroyed = true;
         v55Reset(false);
         S.runEpoch = (S.runEpoch || 0) + 1;
@@ -4302,7 +4094,7 @@
                 const original = d.value, wrapper = function(...args) { /* BRIO block: wrapper — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
                     const result = Reflect.apply(original, this, args);
                     try { /* BRIO block V52: wrapper — Keep this branch bounded and reversible under the enclosing helper. V52 live-pending; regression proof is separate. */ v55StatsObserve(result);} catch(error) { /* BRIO block V52: wrapper — Keep this branch bounded and reversible under the enclosing helper. V52 live-pending; regression proof is separate. */ deepError("v55 stats",error);}
-                    try { /* BRIO guarded: wrapper — Heavy recon retains its15-minute budget; the bounded shot recorder remains until the live match ends. */ if(!deep.reconOnly)incomingProbe(result);} catch (error) { /* BRIO fallback: wrapper — Handle failure in wrapper through its existing fallback/report path; optional native fields may be unavailable. */ deepError("incoming result", error);}
+                    try { /* BRIO guarded: wrapper — Heavy recon retains its15-minute budget; core match counters remain until the live match ends. */ if(!deep.reconOnly)incomingProbe(result);} catch (error) { /* BRIO fallback: wrapper — Handle failure in wrapper through its existing fallback/report path; optional native fields may be unavailable. */ deepError("incoming result", error);}
                     return result;
                 };
                 Object.defineProperty(codec, "decode", {...d, value: wrapper});
@@ -4354,10 +4146,10 @@
      * Report the probe's own epoch, not an already-incremented next Play. Include missing hooks, lanes, suppression and stage-specific errors.
      */
     deepReport = /* BRIO expr: deepReport — Keep this evidence path read-only and bounded; unresolved/capped observations are not negative proof. */ () => log("V55 PROBE COVERAGE", {
-        retiredBotAndContents:V65_RECON_RETIRED,calibrationOnlyAfterTimeCap:!!deep.reconOnly&&!V65_RECON_RETIRED,incomingInstalled: !!deep.restore, incomingObservedThisRun: !!deep.installedEver, incomingPackets: deep.packets, incomingSchemas: deep.schemas.size, nativeEngineCaptured: deep.engineRestores.length > 0,
+        retiredBotAndContents:V65_RECON_RETIRED,incomingInstalled: !!deep.restore, incomingObservedThisRun: !!deep.installedEver, incomingPackets: deep.packets, incomingSchemas: deep.schemas.size, nativeEngineCaptured: deep.engineRestores.length > 0,
         targetedEntities: deep.replicas.size, records: deep.records, approximateBytes: deep.bytes, truncations: deep.truncations, errors: deep.errors, errorStages: deep.errorStages,
         lanes: deep.lanes, laneCaps: v59LaneCaps(), contentsFocus:!!deep.contentsFocus, suppressed: deep.suppressed, incomingTargetIds: deep.identities.size, circleState: deep.circleState, epoch: deep.epoch,
-        newVisuals:{customCrosshairDraws:v63Visual.crosshairDraws,flashlightFrames:v63Visual.lightFrames,flashlightLayer:!!v63Visual.hudScene,flashlightFadeMs:300},spreadProjection:{samples:v61SpreadView.checks,suppressed:v61SpreadView.suppressed},provenance:deep.provenance?{nativeEntities:deep.provenance.entities,shapes:deep.provenance.shapes.size,envelopes:deep.provenance.envelopes.size,functions:deep.provenance.functions.size,limited:deep.provenance.limited}:null,
+        newVisuals:{customCrosshairDraws:v63Visual.crosshairDraws,flashlightFrames:v63Visual.lightFrames,flashlightLayer:!!v63Visual.hudScene,flashlightFadeMs:300},provenance:deep.provenance?{nativeEntities:deep.provenance.entities,shapes:deep.provenance.shapes.size,envelopes:deep.provenance.envelopes.size,functions:deep.provenance.functions.size,limited:deep.provenance.limited}:null,
         caps: {packets: 80000, records: 1800, bytes: 8000000, entities: 200, durationMs: 900000},
         limitsReached: {packets: deep.packets >= 80000, records: deep.records >= 1800, bytes: deep.bytes >= 8e6, entities: deep.replicas.size >= 200}, source: deep.source,
         conclusion: "Bot/exact-contents recon retired for current client-only pipeline. Core storm/shot/end observer remains active; historical absence is not universal impossibility."
@@ -4732,7 +4524,7 @@
         const expected={playersInvisible:['playerPhysical','trailParticles'],lootInvisible:['lootAll','lootArt','lootRarity'],buildsInvisible:['placedBuild','buildPreview'],noMinimap:['mapHud','fullMap'],noCrosshair:['crosshair'],noInventoryHud:['inventoryHud'],invisibleStorm:['stormWorld','stormMap'],noHealthShieldHud:['healthShieldHud'],noInfoPopups:['announcements','killFeed','infoPrompt','eliminationBanner','waitingInfo'],invisibleProjectiles:['projectile'],hideWeapons:['heldWeapons'],noStormTimer:['stormCountdown'],noPickupLabels:['pickupPopup'],noWeaponProgress:['reloadProgress','chargeProgress'],noHitMarker:['hitConfirmation'],noDamageNumbers:['damageNumbers'],noDamageDirection:['damageDirection']},e=exFast(),rows=[],active=new Map;
         for(const record of nativeDrawGates.values())for(const key of record.gates.keys())active.set(key,(active.get(key)||0)+1);
         for(const [id,keys]of Object.entries(expected))if(e[id])for(const key of keys)rows.push({challenge:id,branch:key,reached:nativeVisualCoverage.has(key),activeAdapters:active.get(key)||0,suppressedDraws:nativeVisualSuppressed.get(key)||0});
-        return {epoch:S.runEpoch,rows,activeAdapters:nativeDrawGates.size,retiredAdapters:S.visualGateRetired||0,capHit:!!S.visualGateCap,spreadRecon:v55ReconReport(),shotComparisons:[...v55.shotChecks.values()].map(/* BRIO expr V55: v55Audit — Report bounded reached/unobserved/suppressed native draw evidence without claiming pixel proof. */ r=>({...r,examples:detail?r.examples:[]})),outlineAssets:v55.outlines.size,performance:v55PerfReport(),spreadMeasurement:'v55 persistent gun type + authoritative ADS;native shot markers/ammo drops plus owned-projectile fallback; input ADS; clip × 3 minimum10; angles independently qualified',scope:'native draw coverage; unobserved conditions are not failures; visible leak reporting still required'};
+        return {epoch:S.runEpoch,rows,activeAdapters:nativeDrawGates.size,retiredAdapters:S.visualGateRetired||0,capHit:!!S.visualGateCap,performance:v55PerfReport(),scope:'native draw coverage; unobserved conditions are not failures; visible leak reporting still required'};
     };
     /* BRIO: pickupPopupHidden (V50)
      * Native closeR/gunType updates set local ÁãÀ before rasterizing the shared popup. Restrict Mask loot to
@@ -4755,6 +4547,7 @@
             // Generic HUD/storm/popup scans fit48 children; the complete inventory validates up to128 before this cap.
             // A world scene with thousands of loot nodes must never be copied once per child during render capture.
             if(root["Ée"]==="mapScene")gateNativeDraw(root,"fullMap",/* BRIO expr V52: nativeVisualCandidate — Read current native/settings data within the enclosing annotated helper; no authority mutation. Live-pending. */ e=>!!e.noMinimap);
+            v66StormScene(root);
             if (root["Ée"] === "borderScene") gateNativeDraw(root,"stormWorld",/* BRIO expr: nativeVisualCandidate / gateNativeDraw callback — Recognize source-backed scene relationships within existing capture caps; never gate arbitrary screen regions. V50 live-pending. */ e => !!e.invisibleStorm);
             const front = root["âè"], back = root["ÉE"], length = (front?.length||0)+(back?.length||0), now = performance.now();
             v55InventoryRoot(root);v64FlashlightBoundary(root.parent);
@@ -5010,7 +4803,7 @@
             featureNodes.set(o, m);
         }
         if (m.has(key)) return;
-        const n = nativeNode(draw, y);
+        const n = nativeNode((ctx,s)=>{ /* Observe reached presentation routes only; disabled or unencountered contexts never become visual passes. */ const id=key==='durability'?(isBuild(o)?'buildHealth':'objectHealth'):key==='ownedAmmo'?'highlightOwnedAmmo':key==='projectileHistory'?'longerBulletTrails':key==='warning'?'lowHealthWarning':key.startsWith('number:')?'numericHealthShield':null;if(id&&exFast()[id])v66Mark(id);draw(ctx,s);}, y);
         parent.add(n);
         m.set(key, n);
     }, featureRing = (ctx, r, s, color) => { /* BRIO block: featureRing — Preserve the established native-compatible behavior; follow the enclosing helper's version/proof annotation. */
@@ -5025,7 +4818,7 @@
      * Remove attached feature nodes, undo descriptor/opacity/monochrome adapters and reset only per-match feature caches.
      */
     resetFeatures = () => { /* BRIO block: resetFeatures — Restore all owned adapters/resources/nodes before discarding this Play's captured native references. */
-        resetMonochrome();v63VisualReset();
+        resetMonochrome();v63VisualReset();v66Reset();
         for (const m of featureNodes.values()) for (const n of m.values()) try { /* BRIO guarded: resetFeatures — Keep the existing exception boundary for resetFeatures. Restore all owned adapters/resources/nodes before discarding this Play's captured native references. */
             n.parent?.remove?.(n);
         } catch (_) { /* BRIO fallback: resetFeatures — Intentionally empty: preserve the surrounding fallback/delegation contract. */ }
@@ -5152,7 +4945,7 @@
                 });
             }
             if (e.highContrastPlayers) attachFeature(r, "player", r.Eâ, (ctx, s) => { /* BRIO block: featurePlayer — attachFeature callback. Attach reversible local render adapters to known player branches; V50 held/trail paths live-pending. */
-                if (exFast().highContrastPlayers) featureRing(ctx, 55, s, "#ffea00");
+                if(exFast().highContrastPlayers&&!exFast().playersInvisible&&!exFast().goodFlippinLuck&&!v55.stats?.finished){ /* Respect native hidden players and keep canvas styling reversible. */ ctx.save();try{ /* One native information-root halo, without touching player art or physics. */ ctx.shadowColor='#ffea00';ctx.shadowBlur=4;featureRing(ctx,55,s,'#ffea00');v66Mark('highContrastPlayers');}finally{ /* Retain original native styles on failure. */ ctx.restore();}}
             });
         }
         // V49 corrects V48 remote circles: only the current native player receives a low-health outline.
@@ -5234,7 +5027,7 @@
                 S.challengeLastReport = performance.now();
                 log("CHALLENGE BRANCH COVERAGE", {epoch:S.runEpoch,tiers:{loot:exFast().lootMaskTier,builds:exFast().buildMaskTier},combined:!!exFast().goodFlippinLuck,
                     installed:Object.fromEntries(nativeVisualCoverage),suppressed:Object.fromEntries(nativeVisualSuppressed),adapterInstances:nativeDrawGates.size,retired:S.visualGateRetired||0,cap:4096,automaticAudit:v55Audit(),
-                    v55:{zone:v55.zone,lootArrows:v55.lootUis.size,projectileHistories:v55.paths.size,statsActive:!!v55.stats&&!v55.stats.finished,localSpread:S.renderer?.["ËÂ"],weaponChoices:S.weaponCatalog?.size||0},
+                    v55:{zone:v55.zone,lootArrows:v55.lootUis.size,projectileHistories:v55.paths.size,statsActive:!!v55.stats&&!v55.stats.finished,weaponChoices:S.weaponCatalog?.size||0},
                     limits:"Reached branches only. Missing categories require live capture; fixtures are not pixel proof."});
             }
             if (S.renderer && !S.meteorAutoTimer && nativeScanNeeded(exFast())) meteorAutoStart("feature watchdog");
@@ -5786,7 +5579,7 @@
     loadCustom().finally(() => { /* BRIO block: startup — loadCustom().finally callback. Own the injection lifecycle; native state is restored at the next Play or destroy. */
         renderLocker();
         bindPlay();
-        log("READY", {measurementRevision:SPREAD_RECON_REVISION,mathChecks:{atan2ZeroOne:Math.atan2(0,1),atan2OneZero:Math.atan2(1,0),quarterTurn:Math.PI/2},
+        log("READY", {spreadDisplay:'retired',remainingPlannedItems:'implemented; visual checks tracked per feature',
             version: S.v,
             nameRule: "prepend uL# at Play; dynamic local capture",
             inventoryScales: INV_SCALE,

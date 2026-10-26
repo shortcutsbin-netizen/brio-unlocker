@@ -1,0 +1,106 @@
+{
+  "source": "docs/game-sources/engine.js",
+  "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "adds": [
+    {
+      "offset": 643615,
+      "child": "ÄÀé"
+    },
+    {
+      "offset": 643671,
+      "child": "ÉÃÃ"
+    },
+    {
+      "offset": 643732,
+      "child": "éÈæ"
+    },
+    {
+      "offset": 643793,
+      "child": "Ééá"
+    }
+  ],
+  "assignments": [
+    {
+      "offset": 645196,
+      "source": "éÈæ.ë.É=Å.Åâ.â.ë.É"
+    },
+    {
+      "offset": 645215,
+      "source": "éÈæ.ë.Ä=(ëâE+èÈ$)/0x2"
+    },
+    {
+      "offset": 645237,
+      "source": "éÈæ.height=ëâE-èÈ$"
+    },
+    {
+      "offset": 645256,
+      "source": "éÈæ.width=1920+(Êä*ÁEê)"
+    },
+    {
+      "offset": 645288,
+      "source": "éÈæ.opacity=âAE"
+    },
+    {
+      "offset": 645335,
+      "source": "Ééá.ë.É=Å.Åâ.â.ë.É"
+    },
+    {
+      "offset": 645354,
+      "source": "Ééá.ë.Ä=(éaæ+eæå)/éÉ"
+    },
+    {
+      "offset": 645375,
+      "source": "Ééá.height=éaæ-eæå"
+    },
+    {
+      "offset": 645394,
+      "source": "Ééá.width=æèÊ+(0X2*ÁEê)"
+    },
+    {
+      "offset": 645426,
+      "source": "Ééá.opacity=âAE"
+    },
+    {
+      "offset": 645465,
+      "source": "ÄÀé.opacity=âAE"
+    },
+    {
+      "offset": 645481,
+      "source": "ÄÀé.ë.É=(ÊEa+eÊA)/0x2"
+    },
+    {
+      "offset": 645503,
+      "source": "ÄÀé.ë.Ä=(éaÃ+åáE)/Ãa"
+    },
+    {
+      "offset": 645524,
+      "source": "ÄÀé.height=åáE-éaÃ"
+    },
+    {
+      "offset": 645543,
+      "source": "ÄÀé.width=ÊEa-eÊA"
+    },
+    {
+      "offset": 645590,
+      "source": "ÉÃÃ.opacity=âAE"
+    },
+    {
+      "offset": 645606,
+      "source": "ÉÃÃ.ë.É=(åaÈ+äÁÅ)/ÅÃ"
+    },
+    {
+      "offset": 645627,
+      "source": "ÉÃÃ.ë.Ä=(éaÃ+åáE)/2"
+    },
+    {
+      "offset": 645647,
+      "source": "ÉÃÃ.height=åáE-éaÃ"
+    },
+    {
+      "offset": 645666,
+      "source": "ÉÃÃ.width=äÁÅ-åaÈ"
+    }
+  ],
+  "interpretation": "Native borderScene four red shade children are left/right/top/bottom. Their inner edges are centerX+width/2, centerX-width/2, centerY+height/2, centerY-height/2. Horizontal shades span the viewport; clip highlight endpoints to active side boundaries. Read live native geometry each draw, not projected waiting-zone packets.",
+  "limits": "AST geometry and actual owned-code fixtures do not certify game pixels; moving/shrinking boundary visual check still pending."
+}

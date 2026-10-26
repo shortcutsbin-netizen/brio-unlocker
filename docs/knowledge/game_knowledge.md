@@ -1,3 +1,13 @@
+# V66 product scope and evidence boundary — 2026-10-26
+
+User rejects V65 cones and PERMANENTLY removes spread modifiers. No more cone fixes, angle measurement, spread controls or test requests. Historical gun/ADS evidence remains stored/archived but V66 does not use or update it. Bot identity/exact pre-open contents stay retired; do not infer unsupported names/IDs/behavior/loot/NONE. V65 upload has1completedmatch/0errors and confirms retired recon remained off, not any new visual pass.
+
+All remaining approved implementations are now built:29modifier/preferences +21challenges,23user-proven/27awaiting explicit visual approval. New stormEdge outlines actual current native world-storm inner edges with thin cyan, distinct from projected safe-zone arrows; native moving/shrinking geometry, not guessed square screen placement. Completed highContrast is the existing planned yellow remote-player halo, hidden by player-invisibility/Hell. Neither new cue is visually approved yet. Duplicate stormDistance removed; safe-zone arrow distance retained. Flashlight/outlines remain finalized, custom color/artwork still partially unproven. Always-on match breakdown uses native totals/observed counters only; accuracy/attacker ranking unavailable.
+
+V66 audits reach/enable/suppression for50retained options, but counts never prove pixels. Explicit Hell review is highest-tier/composite only; lower tiers/ancestor-hidden child effects remain unobserved unless actually checked. No automatic cycle, forced gameplay or all-condition quota. Maximum2matches:normal +optionalHell. Historical suffix follows.
+
+---
+
 # V64 user proof and V65 cone semantics — 2026-10-20 UTC
 
 User: outlines look good; flashlight both follows, HUD/status visibility and fade correct, explicitly finalized. Cone V63/V64 rejected (V63 worse than V62); must remain static and rotate with player aim, origin uncertain due instability. User played2matches, normal then flashlight. Record proofs only for reported surfaces: crosshair color has saved nonwhite evidence but no explicit visual approval.

@@ -1,3 +1,13 @@
+# V66 final-surface workflow — 2026-10-26
+
+Use current full docs/test-procedures/v66-test-procedure.md; print it entirely in final chat. User permanently scraps spread after V65 failure: do NOT ask for cone screenshots or another spread test. Assistant browser/VM control remains abandoned. Load complete raw dist/brio-v66.min.js once on home; confirm BRIOv66. One-click Set up V66 modifiers is sufficient (internally applies normal profile). Observe new cyan current-storm boundary/yellow remote-player halo, remaining built modifiers and natural Match breakdown; finalized flashlight/outlines only exceptions. No gun/opening/rarity/kill/win quota.
+
+Optional second and LAST match: home → Set up V66 challenges (Hell), explicit highest-tier gameplay challenges/modifiers off/visual-only modes off. Stop or disable Hell if impractical. No auto-cycle, no independent50-option checklist or extra match for missing contexts. Composite does not prove every lower-tier/hidden-child effect. All UI rows clearly PROVEN or BUILT·CHECK; unsupported spread/bot/contents and duplicate distance controls absent.
+
+COPY RESULTS after review or early failure → full logs/runs/v66-log.txt. Automatic V66 COMPLETION AUDIT on native end/export records50rows/reached routes/pending proofs; no separate PERF/probe action. Chat report new cues, crosshair color/artwork if tried, explicitly observed built modifiers/postgame/challenge leaks, untested contexts. Maximum2played matches TOTAL; settings edits one extra action type/export separate. Restore saved settings optionally. Historical suffix follows.
+
+---
+
 # V65 operator workflow — 2026-10-20 UTC
 
 Flashlight finalized by user after regular+flashlight V64 matches; both follows/HUD/fade approved. Outlines approved too. Do not ask dedicated retests. Keep established assistant development/publish → user game/export loop; assistant browser/VM play remains abandoned. Maximum2played matches per suite, V65 requests1.
