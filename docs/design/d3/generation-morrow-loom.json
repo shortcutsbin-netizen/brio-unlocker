@@ -1,0 +1,6 @@
+{
+  "key": "morrow-loom",
+  "name": "Morrow Loom",
+  "output": "/workspace/scratch/ad1f2e064cec/generated_images/exec-2caa8f81-1dd3-4654-9a84-83cac0a1d550.png",
+  "hint": "Generated images are saved to /workspace/scratch/ad1f2e064cec/generated_images as /workspace/scratch/ad1f2e064cec/generated_images/exec-2caa8f81-1dd3-4654-9a84-83cac0a1d550.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+}

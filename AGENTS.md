@@ -1,3 +1,9 @@
+# D3 WORK IN PROGRESS — checkpoint, 2026-10-27
+
+User requested next visual iteration with5more original sets (10total), comprehensive useful static crosshairs, native animation recon, home/social fixes, preset effect list/Hell line breaks and centered debrief totals. Live V68 unchanged. Read docs/design/d3/checkpoint.md, generation-plan.json/result metadata and preview-recon.md. D3 copied UI is unfinished; D2 latest working preview UNTIL final D3 handoff supersedes this note. Generation outputs/assets checkpointed: inspect/reuse, never blindly regenerate. OPS-002 exact preset/deselect excluded toggles is NEW USER REQUIREMENT superseding older merge-only preservation rules. Implement in draft then final integration. No subagents/gameplay; preserve historical bytes/captures. Native source parsed not executed; source-based preview improved next but needs focused no-match native reference for exact timing/alignment. Resume UI/build/QA/docs then publish. Checkpoint is partial, not completion.
+
+---
+
 # D2 design iteration — current handoff, 2026-10-27
 
 CURRENT review is docs/design/d2/, not D1; read its README, native-contracts.md, validation/source-contracts JSON and docs/test-procedures/design-d2-review-procedure.md. User is iterating visual designs only. Live V68 unchanged; OPS-001 full-map leak remains DEFERRED for final approved integration. No gameplay now, no V69, terminal removal or memory work. Preserve D1 and all original uploads/native/runtime/archive files. Standing scoped publication to main each turn and FULL applicable procedure in final; now the D2 REVIEW procedure. No subagents. Reload FULL visualize skill before creating/updating inline mockup.

@@ -1,3 +1,13 @@
+# D3 docket update — 2026-10-27
+
+## OPS-002 — General Advantages selects exactly the preset
+
+User changed prior merge-only behavior: pressing General Advantages MUST enable all19 included modifier booleans AND deselect every excluded modifier toggle, set inventorySize Large, restore default warning thresholds, turn Hell off, then remain freely editable. Do not touch unrelated individual challenges, cosmetic/native selections, custom artwork/assets, colors, loot-type choices, flashlight preferences, or saved test backup. Inventory size is a preference, not an excluded boolean to turn off. Excluded modifier preferences are retained in storage but their toggles off. Enumerate modifier booleans from canonical registry so future modifiers cannot leak into the preset. Regression: begin with every modifier on, apply, assert exact included set + excluded false, preserved unrelated fields and later edits persist. D3 demonstrates this in review only; V68 unchanged. Apply with final approved visuals and OPS-001, no separate gameplay suite.
+
+Home native button overlays already exist: no additional buttons/restyling. GitHub label only, Discord branded display-only handle badge. List every enabled preset item; Hell one effect per line. Debrief top metrics centered; native-panel review still required after implementation. Native running-preview fidelity needs focused reference described in docs/design/d3/preview-recon.md; no new probe installed now.
+
+---
+
 # D2 docket update — 2026-10-27
 
 OPS-001 remains deferred/unfixed. User approved continued design iteration, not runtime integration. Supersedes older social requirements below: use project GitHub and plain Discord handle ads0210; no invite/link. No custom Play or whole-page end redesign. Unlocker/Extras independent. Final integration must preserve dynamic native catalogue, implement native-compatible header preview (head/body/trail, held pickaxe/native-wrap gun, glider/no held gear, emote slots), extend custom-glider chooser/cache with tests if artwork approved, and keep new custom wraps excluded pending validation. Five sets/ten crosshair concepts in D2 are not shipped. Read docs/design/d2/native-contracts.md for exact provider/pose/data limits. D2 debrief is only #deathPass replacement; native controls remain. No extra gameplay while reviewing. Max2matches for eventual approved final integration.
