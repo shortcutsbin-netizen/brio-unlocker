@@ -1,0 +1,4565 @@
+{
+  "input": "logs/runs/v67-log.txt",
+  "version": "67",
+  "bytes": 2419400,
+  "sha256": "950896694c34a08238961e379a3e0c8b1b04fe9e89f67c0cc4db27a3e1790647",
+  "events": 1065,
+  "structured": 1042,
+  "malformed": 0,
+  "eventCounts": {
+    "HUD DOM CANDIDATES": 3,
+    "V39 HUMAN GROUND TRUTH": 1,
+    "CUSTOM CACHE": 1,
+    "PLAY BOUND": 1,
+    "READY": 1,
+    "FULL NATIVE SOURCE CHUNK": 85,
+    "SOURCE PACKET REMAPPER": 1,
+    "V55 WEAPON CATALOG": 1,
+    "DEEP FIELD DICTIONARY": 1,
+    "DEEP CALLBACK STRUCTURE": 40,
+    "SOURCE CALLBACK CHUNK": 45,
+    "V55 DYNAMIC GUN CHOICES": 1,
+    "NATIVE AMMO TYPE MAP": 1,
+    "DEEP SEMANTIC REFERENCES": 18,
+    "DEEP SOURCE STRUCTURE": 1,
+    "V55 PROBE COVERAGE": 4,
+    "DECODED FIELD SCHEMA": 1,
+    "NATIVE CALLBACK AUDIT": 12,
+    "TARGETED NATIVE REFERENCE": 2,
+    "NATIVE HUD ASSET MAP": 1,
+    "V55 NATIVE SOURCE": 11,
+    "NATIVE REGISTRATION AUDIT": 4,
+    "NATIVE REGISTRATION REFERENCE": 23,
+    "TARGETED FEATURE SOURCE": 4,
+    "SOURCE LOADED": 1,
+    "PASSIVE SOURCE SURFACE": 8,
+    "WAYPOINT HANDLER SOURCE": 1,
+    "RECON COVERAGE": 1,
+    "INDICATOR STATE": 173,
+    "INVENTORY ASSET RESOLUTION": 38,
+    "V55 TEST PROFILE": 1,
+    "V67 REVIEW PROFILE": 2,
+    "MATCH STATE RESET": 2,
+    "V65 OBSERVER POLICY": 2,
+    "INCOMING DECODE PROBE": 2,
+    "NATIVE RENDER DISCOVERY": 2,
+    "TEST SETTINGS AT PLAY": 2,
+    "PREMATCH ARMED": 2,
+    "NATIVE VISUAL BRANCH": 64,
+    "LOCAL RENDERER": 2,
+    "COSMETIC SELECTIONS": 2,
+    "PASSIVE LOCAL FIELDS": 2,
+    "PASSIVE ASSET": 22,
+    "GLOBAL HOOK RESTORED": 2,
+    "V67 PROJECTED EDGE BOUND": 2,
+    "V55 COMPLETE INVENTORY": 2,
+    "V64 FLASHLIGHT LAYER": 2,
+    "METEOR AUTOMATIC START": 2,
+    "SCENE CAPTURE": 2,
+    "METEOR AUTOMATIC": 2,
+    "PASSIVE NATIVE OBJECT": 120,
+    "LOCAL READY": 2,
+    "NATIVE HUD WIDGET": 14,
+    "OWN MATERIAL WARNING BINDING": 8,
+    "NATIVE WEAPON SLOT": 48,
+    "OWN GUN SLOT WARNING BINDING": 10,
+    "V55 OUTLINE MASK": 1,
+    "NATIVE HUD CAPTURE STATUS": 18,
+    "CHALLENGE BRANCH COVERAGE": 18,
+    "GUN SLOT WARNING STATE": 48,
+    "NATIVE EMPTY SLOT ART": 1,
+    "NATIVE RENDER DISCOVERY RESTORED": 2,
+    "LOCAL HUD STATE": 16,
+    "PASSIVE RUNTIME COVERAGE": 22,
+    "REMOTE HUD SAMPLE": 26,
+    "V55 PROJECTED ZONE": 88,
+    "METEOR NATIVE HOLD INSTALLED": 2,
+    "METEOR NATIVE REMOVE BLOCKED": 1,
+    "V67 COMPLETION AUDIT": 3,
+    "V55 AUTOMATIC AUDIT": 2,
+    "V55 POSTGAME COUNTERS": 2,
+    "DEEP PROBES RESTORED": 2,
+    "OLD MATCH METEORS REMOVED": 1,
+    "LOOT EFFECT BRANCH": 2,
+    "VERIFY": 1,
+    "V55 EXPORT AUDIT": 1
+  },
+  "source": {
+    "chunks": 85,
+    "matches": true,
+    "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4"
+  },
+  "terminals": [
+    {
+      "epoch": 1,
+      "place": 6,
+      "eliminations": 3,
+      "seconds": 116
+    },
+    {
+      "epoch": 2,
+      "place": 28,
+      "eliminations": 0,
+      "seconds": 27
+    }
+  ],
+  "errors": [],
+  "retiredReconRecords": 0,
+  "probe": [
+    {
+      "retiredBotAndContents": true,
+      "incomingInstalled": false,
+      "incomingObservedThisRun": false,
+      "incomingPackets": 0,
+      "incomingSchemas": 0,
+      "nativeEngineCaptured": false,
+      "targetedEntities": 0,
+      "records": 0,
+      "approximateBytes": 0,
+      "truncations": 0,
+      "errors": 0,
+      "errorStages": {},
+      "lanes": {},
+      "laneCaps": {
+        "schema": 350,
+        "player": 350,
+        "container": 700,
+        "replica": 250,
+        "environment": 100,
+        "provenance": 50
+      },
+      "contentsFocus": false,
+      "suppressed": {},
+      "incomingTargetIds": 0,
+      "circleState": null,
+      "epoch": 0,
+      "newVisuals": {
+        "customCrosshairDraws": 0,
+        "flashlightFrames": 0,
+        "flashlightLayer": false,
+        "flashlightFadeMs": 300
+      },
+      "provenance": null,
+      "caps": {
+        "packets": 80000,
+        "records": 1800,
+        "bytes": 8000000,
+        "entities": 200,
+        "durationMs": 900000
+      },
+      "limitsReached": {
+        "packets": false,
+        "records": false,
+        "bytes": false,
+        "entities": false
+      },
+      "source": {
+        "url": "https://buildroyale.io/js/uOfrVi.js",
+        "characters": 764701,
+        "chunks": 85,
+        "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+        "captured": true,
+        "astParsed": true
+      },
+      "conclusion": "Bot/exact-contents recon retired for current client-only pipeline. Core storm/shot/end observer remains active; historical absence is not universal impossibility."
+    },
+    {
+      "retiredBotAndContents": true,
+      "incomingInstalled": false,
+      "incomingObservedThisRun": true,
+      "incomingPackets": 25,
+      "incomingSchemas": 13,
+      "nativeEngineCaptured": false,
+      "targetedEntities": 0,
+      "records": 0,
+      "approximateBytes": 0,
+      "truncations": 0,
+      "errors": 0,
+      "errorStages": {},
+      "lanes": {},
+      "laneCaps": {
+        "schema": 350,
+        "player": 350,
+        "container": 700,
+        "replica": 250,
+        "environment": 100,
+        "provenance": 50
+      },
+      "contentsFocus": false,
+      "suppressed": {},
+      "incomingTargetIds": 0,
+      "circleState": "moving",
+      "epoch": 1,
+      "newVisuals": {
+        "customCrosshairDraws": 10534,
+        "flashlightFrames": 0,
+        "flashlightLayer": true,
+        "flashlightFadeMs": 300
+      },
+      "provenance": {
+        "nativeEntities": 0,
+        "shapes": 0,
+        "envelopes": 0,
+        "functions": 0,
+        "limited": 0
+      },
+      "caps": {
+        "packets": 80000,
+        "records": 1800,
+        "bytes": 8000000,
+        "entities": 200,
+        "durationMs": 900000
+      },
+      "limitsReached": {
+        "packets": false,
+        "records": false,
+        "bytes": false,
+        "entities": false
+      },
+      "source": {
+        "url": "https://buildroyale.io/js/uOfrVi.js",
+        "characters": 764701,
+        "chunks": 85,
+        "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+        "captured": true,
+        "astParsed": true
+      },
+      "conclusion": "Bot/exact-contents recon retired for current client-only pipeline. Core storm/shot/end observer remains active; historical absence is not universal impossibility."
+    },
+    {
+      "retiredBotAndContents": true,
+      "incomingInstalled": false,
+      "incomingObservedThisRun": true,
+      "incomingPackets": 20,
+      "incomingSchemas": 10,
+      "nativeEngineCaptured": false,
+      "targetedEntities": 0,
+      "records": 0,
+      "approximateBytes": 0,
+      "truncations": 0,
+      "errors": 0,
+      "errorStages": {},
+      "lanes": {},
+      "laneCaps": {
+        "schema": 350,
+        "player": 350,
+        "container": 700,
+        "replica": 250,
+        "environment": 100,
+        "provenance": 50
+      },
+      "contentsFocus": false,
+      "suppressed": {},
+      "incomingTargetIds": 0,
+      "circleState": "waiting",
+      "epoch": 2,
+      "newVisuals": {
+        "customCrosshairDraws": 0,
+        "flashlightFrames": 0,
+        "flashlightLayer": true,
+        "flashlightFadeMs": 300
+      },
+      "provenance": {
+        "nativeEntities": 0,
+        "shapes": 0,
+        "envelopes": 0,
+        "functions": 0,
+        "limited": 0
+      },
+      "caps": {
+        "packets": 80000,
+        "records": 1800,
+        "bytes": 8000000,
+        "entities": 200,
+        "durationMs": 900000
+      },
+      "limitsReached": {
+        "packets": false,
+        "records": false,
+        "bytes": false,
+        "entities": false
+      },
+      "source": {
+        "url": "https://buildroyale.io/js/uOfrVi.js",
+        "characters": 764701,
+        "chunks": 85,
+        "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+        "captured": true,
+        "astParsed": true
+      },
+      "conclusion": "Bot/exact-contents recon retired for current client-only pipeline. Core storm/shot/end observer remains active; historical absence is not universal impossibility."
+    },
+    {
+      "retiredBotAndContents": true,
+      "incomingInstalled": false,
+      "incomingObservedThisRun": true,
+      "incomingPackets": 20,
+      "incomingSchemas": 10,
+      "nativeEngineCaptured": false,
+      "targetedEntities": 0,
+      "records": 0,
+      "approximateBytes": 0,
+      "truncations": 0,
+      "errors": 0,
+      "errorStages": {},
+      "lanes": {},
+      "laneCaps": {
+        "schema": 350,
+        "player": 350,
+        "container": 700,
+        "replica": 250,
+        "environment": 100,
+        "provenance": 50
+      },
+      "contentsFocus": false,
+      "suppressed": {},
+      "incomingTargetIds": 0,
+      "circleState": "waiting",
+      "epoch": 2,
+      "newVisuals": {
+        "customCrosshairDraws": 0,
+        "flashlightFrames": 0,
+        "flashlightLayer": true,
+        "flashlightFadeMs": 300
+      },
+      "provenance": {
+        "nativeEntities": 0,
+        "shapes": 0,
+        "envelopes": 0,
+        "functions": 0,
+        "limited": 0
+      },
+      "caps": {
+        "packets": 80000,
+        "records": 1800,
+        "bytes": 8000000,
+        "entities": 200,
+        "durationMs": 900000
+      },
+      "limitsReached": {
+        "packets": false,
+        "records": false,
+        "bytes": false,
+        "entities": false
+      },
+      "source": {
+        "url": "https://buildroyale.io/js/uOfrVi.js",
+        "characters": 764701,
+        "chunks": 85,
+        "sha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+        "captured": true,
+        "astParsed": true
+      },
+      "conclusion": "Bot/exact-contents recon retired for current client-only pipeline. Core storm/shot/end observer remains active; historical absence is not universal impossibility."
+    }
+  ],
+  "visualGateCaps": [],
+  "branchCoverage": [
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 100,
+        "stormMap": 5,
+        "placedBuild": 2,
+        "heldWeapons": 10,
+        "damageDirection": 2,
+        "v55PlayerChildren": 2,
+        "glider": 2,
+        "buildPreview": 2,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 22,
+        "damageNumbers": 2,
+        "playerPhysical": 10,
+        "combinedPlayerInfo": 1
+      },
+      "suppressed": {
+        "customCrosshairArms": 580,
+        "glider": 113
+      },
+      "active": 187,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 121,
+        "stormMap": 5,
+        "placedBuild": 2,
+        "heldWeapons": 20,
+        "damageDirection": 4,
+        "v55PlayerChildren": 5,
+        "glider": 5,
+        "buildPreview": 5,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 22,
+        "damageNumbers": 16,
+        "playerPhysical": 39,
+        "combinedPlayerInfo": 4,
+        "inventoryHudUnit": 9
+      },
+      "suppressed": {
+        "customCrosshairArms": 5380,
+        "glider": 1744
+      },
+      "active": 201,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 135,
+        "stormMap": 5,
+        "placedBuild": 9,
+        "heldWeapons": 30,
+        "damageDirection": 6,
+        "v55PlayerChildren": 8,
+        "glider": 8,
+        "buildPreview": 8,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 29,
+        "damageNumbers": 24,
+        "playerPhysical": 68,
+        "combinedPlayerInfo": 7,
+        "inventoryHudUnit": 9
+      },
+      "suppressed": {
+        "customCrosshairArms": 10180,
+        "glider": 3123
+      },
+      "active": 251,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 143,
+        "stormMap": 5,
+        "placedBuild": 10,
+        "heldWeapons": 51,
+        "damageDirection": 10,
+        "v55PlayerChildren": 14,
+        "glider": 14,
+        "buildPreview": 12,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 30,
+        "damageNumbers": 34,
+        "playerPhysical": 121,
+        "combinedPlayerInfo": 13,
+        "inventoryHudUnit": 9
+      },
+      "suppressed": {
+        "customCrosshairArms": 14975,
+        "glider": 4693
+      },
+      "active": 268,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 177,
+        "stormMap": 5,
+        "placedBuild": 18,
+        "heldWeapons": 61,
+        "damageDirection": 12,
+        "v55PlayerChildren": 17,
+        "glider": 17,
+        "buildPreview": 15,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 91,
+        "damageNumbers": 50,
+        "playerPhysical": 150,
+        "combinedPlayerInfo": 16,
+        "inventoryHudUnit": 9,
+        "lootArt": 9,
+        "lootRarity": 9,
+        "lootAll": 9
+      },
+      "suppressed": {
+        "customCrosshairArms": 19765,
+        "glider": 6604
+      },
+      "active": 347,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 208,
+        "stormMap": 5,
+        "placedBuild": 18,
+        "heldWeapons": 79,
+        "damageDirection": 16,
+        "v55PlayerChildren": 22,
+        "glider": 19,
+        "buildPreview": 17,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 123,
+        "damageNumbers": 60,
+        "playerPhysical": 179,
+        "combinedPlayerInfo": 18,
+        "inventoryHudUnit": 9,
+        "lootArt": 25,
+        "lootRarity": 25,
+        "lootAll": 25,
+        "projectile": 25,
+        "projectileNativeTrail": 9
+      },
+      "suppressed": {
+        "customCrosshairArms": 24475,
+        "glider": 8193
+      },
+      "active": 329,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 208,
+        "stormMap": 5,
+        "placedBuild": 18,
+        "heldWeapons": 89,
+        "damageDirection": 18,
+        "v55PlayerChildren": 24,
+        "glider": 21,
+        "buildPreview": 19,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 193,
+        "damageNumbers": 73,
+        "playerPhysical": 199,
+        "combinedPlayerInfo": 20,
+        "inventoryHudUnit": 9,
+        "lootArt": 57,
+        "lootRarity": 57,
+        "lootAll": 57,
+        "projectile": 39,
+        "projectileNativeTrail": 13
+      },
+      "suppressed": {
+        "customCrosshairArms": 28975,
+        "glider": 9411
+      },
+      "active": 384,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 224,
+        "stormMap": 5,
+        "placedBuild": 18,
+        "heldWeapons": 89,
+        "damageDirection": 18,
+        "v55PlayerChildren": 24,
+        "glider": 21,
+        "buildPreview": 19,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 235,
+        "damageNumbers": 77,
+        "playerPhysical": 199,
+        "combinedPlayerInfo": 20,
+        "inventoryHudUnit": 9,
+        "lootArt": 90,
+        "lootRarity": 90,
+        "lootAll": 90,
+        "projectile": 39,
+        "projectileNativeTrail": 13
+      },
+      "suppressed": {
+        "customCrosshairArms": 33770,
+        "glider": 10371
+      },
+      "active": 396,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 227,
+        "stormMap": 5,
+        "placedBuild": 18,
+        "heldWeapons": 94,
+        "damageDirection": 19,
+        "v55PlayerChildren": 25,
+        "glider": 22,
+        "buildPreview": 20,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 273,
+        "damageNumbers": 118,
+        "playerPhysical": 209,
+        "combinedPlayerInfo": 21,
+        "inventoryHudUnit": 9,
+        "lootArt": 117,
+        "lootRarity": 117,
+        "lootAll": 117,
+        "projectile": 76,
+        "projectileNativeTrail": 23
+      },
+      "suppressed": {
+        "customCrosshairArms": 38415,
+        "glider": 11684
+      },
+      "active": 399,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 227,
+        "stormMap": 5,
+        "placedBuild": 20,
+        "heldWeapons": 94,
+        "damageDirection": 19,
+        "v55PlayerChildren": 25,
+        "glider": 22,
+        "buildPreview": 20,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 349,
+        "damageNumbers": 150,
+        "playerPhysical": 209,
+        "combinedPlayerInfo": 21,
+        "inventoryHudUnit": 9,
+        "lootArt": 220,
+        "lootRarity": 220,
+        "lootAll": 220,
+        "projectile": 76,
+        "projectileNativeTrail": 23
+      },
+      "suppressed": {
+        "customCrosshairArms": 43200,
+        "glider": 12641
+      },
+      "active": 489,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 250,
+        "stormMap": 5,
+        "placedBuild": 66,
+        "heldWeapons": 108,
+        "damageDirection": 22,
+        "v55PlayerChildren": 29,
+        "glider": 27,
+        "buildPreview": 23,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 455,
+        "damageNumbers": 171,
+        "playerPhysical": 248,
+        "combinedPlayerInfo": 25,
+        "inventoryHudUnit": 9,
+        "lootArt": 241,
+        "lootRarity": 241,
+        "lootAll": 241,
+        "projectile": 104,
+        "projectileNativeTrail": 31
+      },
+      "suppressed": {
+        "customCrosshairArms": 47985,
+        "glider": 14554
+      },
+      "active": 545,
+      "automatic": []
+    },
+    {
+      "epoch": 1,
+      "combined": false,
+      "installed": {
+        "trailParticles": 266,
+        "stormMap": 5,
+        "placedBuild": 75,
+        "heldWeapons": 122,
+        "damageDirection": 25,
+        "v55PlayerChildren": 33,
+        "glider": 31,
+        "buildPreview": 26,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 497,
+        "damageNumbers": 199,
+        "playerPhysical": 283,
+        "combinedPlayerInfo": 29,
+        "inventoryHudUnit": 9,
+        "lootArt": 261,
+        "lootRarity": 260,
+        "lootAll": 260,
+        "projectile": 166,
+        "projectileNativeTrail": 42
+      },
+      "suppressed": {
+        "customCrosshairArms": 52670,
+        "glider": 16445
+      },
+      "active": 595,
+      "automatic": []
+    },
+    {
+      "epoch": 2,
+      "combined": true,
+      "installed": {
+        "trailParticles": 216,
+        "stormMap": 5,
+        "placedBuild": 2,
+        "heldWeapons": 15,
+        "damageDirection": 3,
+        "v55PlayerChildren": 3,
+        "glider": 3,
+        "buildPreview": 3,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 29,
+        "damageNumbers": 2,
+        "playerPhysical": 20,
+        "combinedPlayerInfo": 2
+      },
+      "suppressed": {
+        "stormMap": 470,
+        "trailParticles": 6628,
+        "placedBuild": 34,
+        "heldWeapons": 264,
+        "pickupPopup": 76,
+        "chargeProgress": 76,
+        "reloadProgress": 76,
+        "healthShieldHud": 988,
+        "inventoryAmmoHud": 228,
+        "minimap": 76,
+        "mapHud": 152,
+        "inventoryHud": 76,
+        "crosshair": 76,
+        "objectInfo": 1737,
+        "stormWorld": 75,
+        "damageNumbers": 86,
+        "damageDirection": 73,
+        "playerPhysical": 235,
+        "combinedPlayerInfo": 5
+      },
+      "active": 326,
+      "automatic": [
+        {
+          "challenge": "playersInvisible",
+          "branch": "playerPhysical",
+          "reached": true,
+          "activeAdapters": 20,
+          "suppressedDraws": 235
+        },
+        {
+          "challenge": "playersInvisible",
+          "branch": "trailParticles",
+          "reached": true,
+          "activeAdapters": 216,
+          "suppressedDraws": 6628
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootAll",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootArt",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootRarity",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "placedBuild",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 34
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "buildPreview",
+          "reached": true,
+          "activeAdapters": 3,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "mapHud",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 152
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "fullMap",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noCrosshair",
+          "branch": "crosshair",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 76
+        },
+        {
+          "challenge": "noInventoryHud",
+          "branch": "inventoryHud",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 76
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormWorld",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 75
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormMap",
+          "reached": true,
+          "activeAdapters": 5,
+          "suppressedDraws": 470
+        },
+        {
+          "challenge": "noHealthShieldHud",
+          "branch": "healthShieldHud",
+          "reached": true,
+          "activeAdapters": 13,
+          "suppressedDraws": 988
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "infoPrompt",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 76
+        },
+        {
+          "challenge": "invisibleProjectiles",
+          "branch": "projectile",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "hideWeapons",
+          "branch": "heldWeapons",
+          "reached": true,
+          "activeAdapters": 15,
+          "suppressedDraws": 264
+        },
+        {
+          "challenge": "noPickupLabels",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 76
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "reloadProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 76
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "chargeProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 76
+        },
+        {
+          "challenge": "noHitMarker",
+          "branch": "hitConfirmation",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noDamageNumbers",
+          "branch": "damageNumbers",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 86
+        },
+        {
+          "challenge": "noDamageDirection",
+          "branch": "damageDirection",
+          "reached": true,
+          "activeAdapters": 3,
+          "suppressedDraws": 73
+        }
+      ]
+    },
+    {
+      "epoch": 2,
+      "combined": true,
+      "installed": {
+        "trailParticles": 223,
+        "stormMap": 5,
+        "placedBuild": 2,
+        "heldWeapons": 35,
+        "damageDirection": 7,
+        "v55PlayerChildren": 9,
+        "glider": 10,
+        "buildPreview": 9,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 35,
+        "damageNumbers": 8,
+        "playerPhysical": 82,
+        "combinedPlayerInfo": 8,
+        "inventoryHudUnit": 14
+      },
+      "suppressed": {
+        "stormMap": 5260,
+        "trailParticles": 86742,
+        "placedBuild": 34,
+        "heldWeapons": 4369,
+        "pickupPopup": 1034,
+        "chargeProgress": 1034,
+        "reloadProgress": 1034,
+        "healthShieldHud": 13442,
+        "inventoryAmmoHud": 3102,
+        "minimap": 1034,
+        "mapHud": 2068,
+        "inventoryHud": 1034,
+        "crosshair": 1034,
+        "objectInfo": 22712,
+        "stormWorld": 1033,
+        "damageNumbers": 344,
+        "damageDirection": 1031,
+        "playerPhysical": 4742,
+        "combinedPlayerInfo": 129
+      },
+      "active": 350,
+      "automatic": [
+        {
+          "challenge": "playersInvisible",
+          "branch": "playerPhysical",
+          "reached": true,
+          "activeAdapters": 29,
+          "suppressedDraws": 4742
+        },
+        {
+          "challenge": "playersInvisible",
+          "branch": "trailParticles",
+          "reached": true,
+          "activeAdapters": 223,
+          "suppressedDraws": 86742
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootAll",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootArt",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootRarity",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "placedBuild",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 34
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "buildPreview",
+          "reached": true,
+          "activeAdapters": 4,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "mapHud",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 2068
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "fullMap",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noCrosshair",
+          "branch": "crosshair",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1034
+        },
+        {
+          "challenge": "noInventoryHud",
+          "branch": "inventoryHud",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1034
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormWorld",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1033
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormMap",
+          "reached": true,
+          "activeAdapters": 5,
+          "suppressedDraws": 5260
+        },
+        {
+          "challenge": "noHealthShieldHud",
+          "branch": "healthShieldHud",
+          "reached": true,
+          "activeAdapters": 13,
+          "suppressedDraws": 13442
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "infoPrompt",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1034
+        },
+        {
+          "challenge": "invisibleProjectiles",
+          "branch": "projectile",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "hideWeapons",
+          "branch": "heldWeapons",
+          "reached": true,
+          "activeAdapters": 6,
+          "suppressedDraws": 4369
+        },
+        {
+          "challenge": "noPickupLabels",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1034
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "reloadProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1034
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "chargeProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1034
+        },
+        {
+          "challenge": "noHitMarker",
+          "branch": "hitConfirmation",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noDamageNumbers",
+          "branch": "damageNumbers",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 344
+        },
+        {
+          "challenge": "noDamageDirection",
+          "branch": "damageDirection",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 1031
+        }
+      ]
+    },
+    {
+      "epoch": 2,
+      "combined": true,
+      "installed": {
+        "trailParticles": 230,
+        "stormMap": 5,
+        "placedBuild": 2,
+        "heldWeapons": 60,
+        "damageDirection": 12,
+        "v55PlayerChildren": 14,
+        "glider": 16,
+        "buildPreview": 15,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 35,
+        "damageNumbers": 14,
+        "playerPhysical": 139,
+        "combinedPlayerInfo": 13,
+        "inventoryHudUnit": 14
+      },
+      "suppressed": {
+        "stormMap": 10060,
+        "trailParticles": 166774,
+        "placedBuild": 34,
+        "heldWeapons": 6736,
+        "pickupPopup": 1994,
+        "chargeProgress": 1994,
+        "reloadProgress": 1994,
+        "healthShieldHud": 25922,
+        "inventoryAmmoHud": 5982,
+        "minimap": 1994,
+        "mapHud": 3988,
+        "inventoryHud": 1994,
+        "crosshair": 1994,
+        "objectInfo": 42872,
+        "stormWorld": 1993,
+        "damageNumbers": 736,
+        "damageDirection": 1991,
+        "playerPhysical": 5721,
+        "combinedPlayerInfo": 211
+      },
+      "active": 393,
+      "automatic": [
+        {
+          "challenge": "playersInvisible",
+          "branch": "playerPhysical",
+          "reached": true,
+          "activeAdapters": 54,
+          "suppressedDraws": 5721
+        },
+        {
+          "challenge": "playersInvisible",
+          "branch": "trailParticles",
+          "reached": true,
+          "activeAdapters": 230,
+          "suppressedDraws": 166774
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootAll",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootArt",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootRarity",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "placedBuild",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 34
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "buildPreview",
+          "reached": true,
+          "activeAdapters": 8,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "mapHud",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 3988
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "fullMap",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noCrosshair",
+          "branch": "crosshair",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1994
+        },
+        {
+          "challenge": "noInventoryHud",
+          "branch": "inventoryHud",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1994
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormWorld",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1993
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormMap",
+          "reached": true,
+          "activeAdapters": 5,
+          "suppressedDraws": 10060
+        },
+        {
+          "challenge": "noHealthShieldHud",
+          "branch": "healthShieldHud",
+          "reached": true,
+          "activeAdapters": 13,
+          "suppressedDraws": 25922
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "infoPrompt",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1994
+        },
+        {
+          "challenge": "invisibleProjectiles",
+          "branch": "projectile",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "hideWeapons",
+          "branch": "heldWeapons",
+          "reached": true,
+          "activeAdapters": 21,
+          "suppressedDraws": 6736
+        },
+        {
+          "challenge": "noPickupLabels",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1994
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "reloadProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1994
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "chargeProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 1994
+        },
+        {
+          "challenge": "noHitMarker",
+          "branch": "hitConfirmation",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noDamageNumbers",
+          "branch": "damageNumbers",
+          "reached": true,
+          "activeAdapters": 0,
+          "suppressedDraws": 736
+        },
+        {
+          "challenge": "noDamageDirection",
+          "branch": "damageDirection",
+          "reached": true,
+          "activeAdapters": 4,
+          "suppressedDraws": 1991
+        }
+      ]
+    },
+    {
+      "epoch": 2,
+      "combined": true,
+      "installed": {
+        "trailParticles": 230,
+        "stormMap": 5,
+        "placedBuild": 2,
+        "heldWeapons": 70,
+        "damageDirection": 14,
+        "v55PlayerChildren": 17,
+        "glider": 19,
+        "buildPreview": 18,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 35,
+        "damageNumbers": 20,
+        "playerPhysical": 168,
+        "combinedPlayerInfo": 16,
+        "inventoryHudUnit": 14
+      },
+      "suppressed": {
+        "stormMap": 14865,
+        "trailParticles": 245576,
+        "placedBuild": 34,
+        "heldWeapons": 10634,
+        "pickupPopup": 2955,
+        "chargeProgress": 2955,
+        "reloadProgress": 2955,
+        "healthShieldHud": 38415,
+        "inventoryAmmoHud": 8865,
+        "minimap": 2955,
+        "mapHud": 5910,
+        "inventoryHud": 2955,
+        "crosshair": 2955,
+        "objectInfo": 63053,
+        "stormWorld": 2954,
+        "damageNumbers": 1060,
+        "damageDirection": 2952,
+        "playerPhysical": 9681,
+        "combinedPlayerInfo": 217
+      },
+      "active": 389,
+      "automatic": [
+        {
+          "challenge": "playersInvisible",
+          "branch": "playerPhysical",
+          "reached": true,
+          "activeAdapters": 52,
+          "suppressedDraws": 9681
+        },
+        {
+          "challenge": "playersInvisible",
+          "branch": "trailParticles",
+          "reached": true,
+          "activeAdapters": 230,
+          "suppressedDraws": 245576
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootAll",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootArt",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootRarity",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "placedBuild",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 34
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "buildPreview",
+          "reached": true,
+          "activeAdapters": 8,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "mapHud",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 5910
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "fullMap",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noCrosshair",
+          "branch": "crosshair",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 2955
+        },
+        {
+          "challenge": "noInventoryHud",
+          "branch": "inventoryHud",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 2955
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormWorld",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 2954
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormMap",
+          "reached": true,
+          "activeAdapters": 5,
+          "suppressedDraws": 14865
+        },
+        {
+          "challenge": "noHealthShieldHud",
+          "branch": "healthShieldHud",
+          "reached": true,
+          "activeAdapters": 13,
+          "suppressedDraws": 38415
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "infoPrompt",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 2955
+        },
+        {
+          "challenge": "invisibleProjectiles",
+          "branch": "projectile",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "hideWeapons",
+          "branch": "heldWeapons",
+          "reached": true,
+          "activeAdapters": 16,
+          "suppressedDraws": 10634
+        },
+        {
+          "challenge": "noPickupLabels",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 2955
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "reloadProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 2955
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "chargeProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 2955
+        },
+        {
+          "challenge": "noHitMarker",
+          "branch": "hitConfirmation",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noDamageNumbers",
+          "branch": "damageNumbers",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 1060
+        },
+        {
+          "challenge": "noDamageDirection",
+          "branch": "damageDirection",
+          "reached": true,
+          "activeAdapters": 3,
+          "suppressedDraws": 2952
+        }
+      ]
+    },
+    {
+      "epoch": 2,
+      "combined": true,
+      "installed": {
+        "trailParticles": 268,
+        "stormMap": 5,
+        "placedBuild": 49,
+        "heldWeapons": 100,
+        "damageDirection": 20,
+        "v55PlayerChildren": 24,
+        "glider": 27,
+        "buildPreview": 26,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 160,
+        "damageNumbers": 39,
+        "playerPhysical": 244,
+        "combinedPlayerInfo": 23,
+        "inventoryHudUnit": 14,
+        "lootArt": 31,
+        "lootRarity": 31,
+        "lootAll": 31,
+        "projectile": 8,
+        "projectileNativeTrail": 3
+      },
+      "suppressed": {
+        "stormMap": 19655,
+        "trailParticles": 328768,
+        "placedBuild": 8843,
+        "heldWeapons": 14081,
+        "pickupPopup": 3913,
+        "chargeProgress": 3913,
+        "reloadProgress": 3913,
+        "healthShieldHud": 50869,
+        "inventoryAmmoHud": 11739,
+        "minimap": 3913,
+        "mapHud": 7826,
+        "inventoryHud": 3913,
+        "crosshair": 3913,
+        "objectInfo": 82852,
+        "stormWorld": 3912,
+        "damageNumbers": 1974,
+        "damageDirection": 3910,
+        "playerPhysical": 13237,
+        "combinedPlayerInfo": 705,
+        "lootAll": 4429,
+        "projectile": 82
+      },
+      "active": 609,
+      "automatic": [
+        {
+          "challenge": "playersInvisible",
+          "branch": "playerPhysical",
+          "reached": true,
+          "activeAdapters": 79,
+          "suppressedDraws": 13237
+        },
+        {
+          "challenge": "playersInvisible",
+          "branch": "trailParticles",
+          "reached": true,
+          "activeAdapters": 248,
+          "suppressedDraws": 328768
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootAll",
+          "reached": true,
+          "activeAdapters": 19,
+          "suppressedDraws": 4429
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootArt",
+          "reached": true,
+          "activeAdapters": 19,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootRarity",
+          "reached": true,
+          "activeAdapters": 19,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "placedBuild",
+          "reached": true,
+          "activeAdapters": 38,
+          "suppressedDraws": 8843
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "buildPreview",
+          "reached": true,
+          "activeAdapters": 11,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "mapHud",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 7826
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "fullMap",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noCrosshair",
+          "branch": "crosshair",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 3913
+        },
+        {
+          "challenge": "noInventoryHud",
+          "branch": "inventoryHud",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 3913
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormWorld",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 3912
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormMap",
+          "reached": true,
+          "activeAdapters": 5,
+          "suppressedDraws": 19655
+        },
+        {
+          "challenge": "noHealthShieldHud",
+          "branch": "healthShieldHud",
+          "reached": true,
+          "activeAdapters": 13,
+          "suppressedDraws": 50869
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "infoPrompt",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 3913
+        },
+        {
+          "challenge": "invisibleProjectiles",
+          "branch": "projectile",
+          "reached": true,
+          "activeAdapters": 8,
+          "suppressedDraws": 82
+        },
+        {
+          "challenge": "hideWeapons",
+          "branch": "heldWeapons",
+          "reached": true,
+          "activeAdapters": 21,
+          "suppressedDraws": 14081
+        },
+        {
+          "challenge": "noPickupLabels",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 3913
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "reloadProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 3913
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "chargeProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 3913
+        },
+        {
+          "challenge": "noHitMarker",
+          "branch": "hitConfirmation",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noDamageNumbers",
+          "branch": "damageNumbers",
+          "reached": true,
+          "activeAdapters": 9,
+          "suppressedDraws": 1974
+        },
+        {
+          "challenge": "noDamageDirection",
+          "branch": "damageDirection",
+          "reached": true,
+          "activeAdapters": 4,
+          "suppressedDraws": 3910
+        }
+      ]
+    },
+    {
+      "epoch": 2,
+      "combined": true,
+      "installed": {
+        "trailParticles": 283,
+        "stormMap": 5,
+        "placedBuild": 99,
+        "heldWeapons": 105,
+        "damageDirection": 21,
+        "v55PlayerChildren": 25,
+        "glider": 28,
+        "buildPreview": 27,
+        "stormWorld": 1,
+        "pickupPopup": 1,
+        "chargeProgress": 1,
+        "reloadProgress": 1,
+        "inventoryAmmoHud": 3,
+        "healthShieldHud": 13,
+        "mapHud": 2,
+        "minimap": 1,
+        "inventoryHud": 1,
+        "v64FlashlightBoundary": 1,
+        "hitConfirmation": 1,
+        "crosshair": 1,
+        "customCrosshairDraw": 1,
+        "customCrosshairArms": 5,
+        "objectInfo": 295,
+        "damageNumbers": 52,
+        "playerPhysical": 254,
+        "combinedPlayerInfo": 24,
+        "inventoryHudUnit": 14,
+        "lootArt": 65,
+        "lootRarity": 65,
+        "lootAll": 65,
+        "projectile": 47,
+        "projectileNativeTrail": 10
+      },
+      "suppressed": {
+        "stormMap": 24425,
+        "trailParticles": 408097,
+        "placedBuild": 39335,
+        "heldWeapons": 16970,
+        "pickupPopup": 4867,
+        "chargeProgress": 4867,
+        "reloadProgress": 4867,
+        "healthShieldHud": 63271,
+        "inventoryAmmoHud": 14601,
+        "minimap": 4867,
+        "mapHud": 9734,
+        "inventoryHud": 4867,
+        "crosshair": 4867,
+        "objectInfo": 100083,
+        "stormWorld": 4866,
+        "damageNumbers": 2761,
+        "damageDirection": 4864,
+        "playerPhysical": 15892,
+        "combinedPlayerInfo": 1396,
+        "lootAll": 16604,
+        "projectile": 711
+      },
+      "active": 597,
+      "automatic": [
+        {
+          "challenge": "playersInvisible",
+          "branch": "playerPhysical",
+          "reached": true,
+          "activeAdapters": 58,
+          "suppressedDraws": 15892
+        },
+        {
+          "challenge": "playersInvisible",
+          "branch": "trailParticles",
+          "reached": true,
+          "activeAdapters": 263,
+          "suppressedDraws": 408097
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootAll",
+          "reached": true,
+          "activeAdapters": 15,
+          "suppressedDraws": 16604
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootArt",
+          "reached": true,
+          "activeAdapters": 15,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "lootInvisible",
+          "branch": "lootRarity",
+          "reached": true,
+          "activeAdapters": 15,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "placedBuild",
+          "reached": true,
+          "activeAdapters": 44,
+          "suppressedDraws": 39335
+        },
+        {
+          "challenge": "buildsInvisible",
+          "branch": "buildPreview",
+          "reached": true,
+          "activeAdapters": 9,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "mapHud",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 9734
+        },
+        {
+          "challenge": "noMinimap",
+          "branch": "fullMap",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noCrosshair",
+          "branch": "crosshair",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 4867
+        },
+        {
+          "challenge": "noInventoryHud",
+          "branch": "inventoryHud",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 4867
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormWorld",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 4866
+        },
+        {
+          "challenge": "invisibleStorm",
+          "branch": "stormMap",
+          "reached": true,
+          "activeAdapters": 5,
+          "suppressedDraws": 24425
+        },
+        {
+          "challenge": "noHealthShieldHud",
+          "branch": "healthShieldHud",
+          "reached": true,
+          "activeAdapters": 13,
+          "suppressedDraws": 63271
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "infoPrompt",
+          "reached": false,
+          "activeAdapters": 0,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noInfoPopups",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 4867
+        },
+        {
+          "challenge": "invisibleProjectiles",
+          "branch": "projectile",
+          "reached": true,
+          "activeAdapters": 13,
+          "suppressedDraws": 711
+        },
+        {
+          "challenge": "hideWeapons",
+          "branch": "heldWeapons",
+          "reached": true,
+          "activeAdapters": 11,
+          "suppressedDraws": 16970
+        },
+        {
+          "challenge": "noPickupLabels",
+          "branch": "pickupPopup",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 4867
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "reloadProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 4867
+        },
+        {
+          "challenge": "noWeaponProgress",
+          "branch": "chargeProgress",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 4867
+        },
+        {
+          "challenge": "noHitMarker",
+          "branch": "hitConfirmation",
+          "reached": true,
+          "activeAdapters": 1,
+          "suppressedDraws": 0
+        },
+        {
+          "challenge": "noDamageNumbers",
+          "branch": "damageNumbers",
+          "reached": true,
+          "activeAdapters": 3,
+          "suppressedDraws": 2761
+        },
+        {
+          "challenge": "noDamageDirection",
+          "branch": "damageDirection",
+          "reached": true,
+          "activeAdapters": 2,
+          "suppressedDraws": 4864
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "selected": {
+        "playersInvisible": false,
+        "lootInvisible": false,
+        "buildsInvisible": false,
+        "transparentRoofs": true,
+        "healthBars": true,
+        "playerNames": true,
+        "allGlidersInvisible": true,
+        "allTrailsInvisible": false,
+        "nearestPlayer": true,
+        "inventorySlots": true,
+        "inventoryMaterials": true,
+        "inventoryAmmo": true,
+        "permanentMeteor": true,
+        "inventorySize": "large",
+        "nearestChest": true,
+        "nearestAirdrop": true,
+        "numericHealthShield": true,
+        "lowHealthWarning": true,
+        "lowMatsWarning": true,
+        "lowAmmoWarning": true,
+        "nearestPlayerName": true,
+        "highContrastPlayers": true,
+        "transparentFoliage": true,
+        "monochrome": false,
+        "noChestsVisible": false,
+        "warningThresholds": {
+          "health": 20,
+          "ammo": [
+            30,
+            30,
+            10,
+            15,
+            5,
+            5
+          ],
+          "materials": [
+            30,
+            30,
+            30,
+            1
+          ]
+        },
+        "indicatorColors": {
+          "nearestPlayer": "#a81020",
+          "nearestChest": "#ffd21c",
+          "nearestAirdrop": "#f28b16",
+          "safeZoneIndicator": "#168cff",
+          "stormCenter": "#b578ff",
+          "lootIndicator": "#f5f5f5"
+        },
+        "lootChoices": [
+          "ak47:4",
+          "ak47:5",
+          "aug:4",
+          "aug:5",
+          "bolt:4",
+          "bolt:5",
+          "burst shotgun:4",
+          "burst shotgun:5",
+          "charge rifle:4",
+          "charge rifle:5",
+          "combat:4",
+          "combat:5",
+          "crossbow:4",
+          "crossbow:5",
+          "deagle:4",
+          "deagle:5",
+          "drum:4",
+          "drum:5",
+          "famas:4",
+          "famas:5",
+          "grappler:4",
+          "grappler:5",
+          "grenade launcher:4",
+          "grenade launcher:5",
+          "grenade pistol:4",
+          "grenade pistol:5",
+          "grenade sniper:4",
+          "grenade sniper:5",
+          "heavy:4",
+          "heavy:5",
+          "heavy sniper:4",
+          "heavy sniper:5",
+          "lmg:4",
+          "lmg:5",
+          "mgl:4",
+          "mgl:5",
+          "minigun:4",
+          "minigun:5",
+          "mirv:4",
+          "mirv:5",
+          "musket:4",
+          "musket:5",
+          "revolver:4",
+          "revolver:5",
+          "rifle:4",
+          "rifle:5",
+          "rpg:4",
+          "rpg:5",
+          "sawedoff:4",
+          "sawedoff:5",
+          "scar:4",
+          "scar:5",
+          "scoped ar:4",
+          "scoped ar:5",
+          "shotgun:4",
+          "shotgun:5",
+          "signal flare:4",
+          "signal flare:5",
+          "silencedpistol:4",
+          "silencedpistol:5",
+          "smg:4",
+          "smg:5",
+          "spas:4",
+          "spas:5",
+          "tommy gun:4",
+          "tommy gun:5",
+          "ump:4",
+          "ump:5",
+          "vector:4",
+          "vector:5"
+        ],
+        "lootMaskTier": "item",
+        "buildMaskTier": "all",
+        "buildHealth": true,
+        "objectHealth": true,
+        "safeZoneIndicator": true,
+        "lootIndicator": true,
+        "highlightOwnedAmmo": true,
+        "longerBulletTrails": true,
+        "goodFlippinLuck": false,
+        "noMinimap": false,
+        "noCrosshair": false,
+        "noInventoryHud": false,
+        "invisibleStorm": false,
+        "noHealthShieldHud": false,
+        "noInfoPopups": false,
+        "noPickupLabels": false,
+        "noHitMarker": false,
+        "noDamageNumbers": false,
+        "noWeaponProgress": false,
+        "invisibleProjectiles": false,
+        "hideWeapons": false,
+        "flashlightMode": false,
+        "noDamageDirection": false,
+        "reticleStyle": "cross",
+        "reticleColor": "#efdc0b",
+        "reticleSize": 30,
+        "flashlightFollow": "cursor",
+        "flashlightRadius": 220,
+        "customCrosshair": true,
+        "stormCenter": true,
+        "stormEdge": true,
+        "maskLootArt": false,
+        "cleanLoot": false,
+        "maskLootPopup": false,
+        "maskLootOutline": false
+      }
+    },
+    {
+      "selected": {
+        "playersInvisible": true,
+        "lootInvisible": true,
+        "buildsInvisible": true,
+        "transparentRoofs": false,
+        "healthBars": false,
+        "playerNames": false,
+        "allGlidersInvisible": false,
+        "allTrailsInvisible": false,
+        "nearestPlayer": false,
+        "inventorySlots": false,
+        "inventoryMaterials": false,
+        "inventoryAmmo": false,
+        "permanentMeteor": false,
+        "inventorySize": false,
+        "nearestChest": false,
+        "nearestAirdrop": false,
+        "numericHealthShield": false,
+        "lowHealthWarning": false,
+        "lowMatsWarning": false,
+        "lowAmmoWarning": false,
+        "nearestPlayerName": false,
+        "highContrastPlayers": false,
+        "transparentFoliage": false,
+        "monochrome": false,
+        "noChestsVisible": true,
+        "warningThresholds": {
+          "health": 20,
+          "ammo": [
+            30,
+            30,
+            10,
+            15,
+            5,
+            5
+          ],
+          "materials": [
+            30,
+            30,
+            30,
+            1
+          ]
+        },
+        "indicatorColors": {
+          "nearestPlayer": "#a81020",
+          "nearestChest": "#ffd21c",
+          "nearestAirdrop": "#f28b16",
+          "safeZoneIndicator": "#168cff",
+          "stormCenter": "#b578ff",
+          "lootIndicator": "#f5f5f5"
+        },
+        "lootChoices": [
+          "ak47:4",
+          "ak47:5",
+          "aug:4",
+          "aug:5",
+          "bolt:4",
+          "bolt:5",
+          "burst shotgun:4",
+          "burst shotgun:5",
+          "charge rifle:4",
+          "charge rifle:5",
+          "combat:4",
+          "combat:5",
+          "crossbow:4",
+          "crossbow:5",
+          "deagle:4",
+          "deagle:5",
+          "drum:4",
+          "drum:5",
+          "famas:4",
+          "famas:5",
+          "grappler:4",
+          "grappler:5",
+          "grenade launcher:4",
+          "grenade launcher:5",
+          "grenade pistol:4",
+          "grenade pistol:5",
+          "grenade sniper:4",
+          "grenade sniper:5",
+          "heavy:4",
+          "heavy:5",
+          "heavy sniper:4",
+          "heavy sniper:5",
+          "lmg:4",
+          "lmg:5",
+          "mgl:4",
+          "mgl:5",
+          "minigun:4",
+          "minigun:5",
+          "mirv:4",
+          "mirv:5",
+          "musket:4",
+          "musket:5",
+          "revolver:4",
+          "revolver:5",
+          "rifle:4",
+          "rifle:5",
+          "rpg:4",
+          "rpg:5",
+          "sawedoff:4",
+          "sawedoff:5",
+          "scar:4",
+          "scar:5",
+          "scoped ar:4",
+          "scoped ar:5",
+          "shotgun:4",
+          "shotgun:5",
+          "signal flare:4",
+          "signal flare:5",
+          "silencedpistol:4",
+          "silencedpistol:5",
+          "smg:4",
+          "smg:5",
+          "spas:4",
+          "spas:5",
+          "tommy gun:4",
+          "tommy gun:5",
+          "ump:4",
+          "ump:5",
+          "vector:4",
+          "vector:5"
+        ],
+        "lootMaskTier": "all",
+        "buildMaskTier": "all",
+        "buildHealth": false,
+        "objectHealth": false,
+        "safeZoneIndicator": false,
+        "lootIndicator": false,
+        "highlightOwnedAmmo": false,
+        "longerBulletTrails": false,
+        "goodFlippinLuck": true,
+        "noMinimap": true,
+        "noCrosshair": true,
+        "noInventoryHud": true,
+        "invisibleStorm": true,
+        "noHealthShieldHud": true,
+        "noInfoPopups": true,
+        "noPickupLabels": true,
+        "noHitMarker": true,
+        "noDamageNumbers": true,
+        "noWeaponProgress": true,
+        "invisibleProjectiles": true,
+        "hideWeapons": true,
+        "flashlightMode": false,
+        "noDamageDirection": true,
+        "reticleStyle": "cross",
+        "reticleColor": "#efdc0b",
+        "reticleSize": 30,
+        "flashlightFollow": "cursor",
+        "flashlightRadius": 220,
+        "customCrosshair": false,
+        "stormCenter": false,
+        "stormEdge": false,
+        "maskLootArt": true,
+        "cleanLoot": true,
+        "maskLootPopup": true,
+        "maskLootOutline": false
+      }
+    }
+  ],
+  "completionAudits": [
+    {
+      "version": "67",
+      "epoch": 1,
+      "reason": "native match end",
+      "mode": "normal",
+      "rows": [
+        {
+          "id": "transparentRoofs",
+          "label": "Transparent roofs",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "healthBars",
+          "label": "Player health bars",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "numericHealthShield",
+          "label": "Health/shield numbers",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 11936,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "playerNames",
+          "label": "Player names",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "allGlidersInvisible",
+          "label": "All gliders invisible",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "allTrailsInvisible",
+          "label": "All trails invisible",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestPlayer",
+          "label": "Nearest player indicator",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestPlayerName",
+          "label": "Player name in nearest arrow",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestChest",
+          "label": "Nearest chest indicator",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestAirdrop",
+          "label": "Nearest airdrop indicator",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "permanentMeteor",
+          "label": "Permanent meteor location",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "highContrastPlayers",
+          "label": "High-contrast players",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 5968,
+          "nativeBranches": [],
+          "note": "Built: remote-player yellow halo, suppressed by player invisibility/Hell. Deferred visual review is now included."
+        },
+        {
+          "id": "transparentFoliage",
+          "label": "Transparent foliage",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "stormEdge",
+          "label": "Storm edge highlight",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 6846,
+          "nativeBranches": [],
+          "note": "Built: all four projected next-zone sides, matching minimap target; 8-unit cyan edge with dark backing. Corrected visual check pending."
+        },
+        {
+          "id": "stormCenter",
+          "label": "Safe-zone center direction",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "buildHealth",
+          "label": "Build health outlines",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 27374,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "objectHealth",
+          "label": "Breakable object health outlines",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 226459,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "safeZoneIndicator",
+          "label": "Nearest safe-zone edge",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "lootIndicator",
+          "label": "Loot indicator",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "highlightOwnedAmmo",
+          "label": "Highlight ammo for owned guns",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 12759,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "longerBulletTrails",
+          "label": "Longer bullet trails",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 10584,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "customCrosshair",
+          "label": "Enhanced/custom crosshair",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 10534,
+          "nativeBranches": [],
+          "note": "Shapes/sizes confirmed; preset color persistence checked. Color/artwork appearance still needs explicit visual approval."
+        },
+        {
+          "id": "lowHealthWarning",
+          "label": "Low-health visual warning",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 10584,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "lowAmmoWarning",
+          "label": "Low-ammo visual warning",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "lowMatsWarning",
+          "label": "Low-material warning",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "inventorySlots",
+          "label": "Inventory: 5 item slots",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "inventoryMaterials",
+          "label": "Inventory: build materials/counts",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "inventoryAmmo",
+          "label": "Inventory: ammo by type",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "inventorySize",
+          "label": "Inventory size",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": "large",
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "playersInvisible",
+          "label": "All players invisible",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "lootInvisible",
+          "label": "Mask loot",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "buildsInvisible",
+          "label": "Builds invisible",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noMinimap",
+          "label": "No map",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Map hiding previously confirmed; V67 narrows suppression to retain sibling storm countdown. Final countdown visibility check pending."
+        },
+        {
+          "id": "noCrosshair",
+          "label": "No crosshair",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noInventoryHud",
+          "label": "No inventory/item bar",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "invisibleStorm",
+          "label": "Invisible storm",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noChestsVisible",
+          "label": "Chests invisible",
+          "category": "challenges",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "noHealthShieldHud",
+          "label": "No health/shield HUD",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noInfoPopups",
+          "label": "Hide interaction prompts",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noPickupLabels",
+          "label": "No pickup labels",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noHitMarker",
+          "label": "No hit-confirmation marker",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noDamageDirection",
+          "label": "Hide damage direction",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noDamageNumbers",
+          "label": "No floating damage numbers",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noWeaponProgress",
+          "label": "No reload/charge progress",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "invisibleProjectiles",
+          "label": "Invisible bullets/throwables",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "hideWeapons",
+          "label": "Hide weapons",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "monochrome",
+          "label": "Monochrome vision",
+          "category": "challenges",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "flashlightMode",
+          "label": "Flashlight mode",
+          "category": "challenges",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "goodFlippinLuck",
+          "label": "Hell",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        }
+      ],
+      "implementationGaps": [],
+      "pendingVisual": [
+        "highContrastPlayers",
+        "stormEdge",
+        "stormCenter",
+        "safeZoneIndicator",
+        "lootIndicator",
+        "highlightOwnedAmmo",
+        "longerBulletTrails",
+        "customCrosshair",
+        "inventorySlots",
+        "inventoryMaterials",
+        "playersInvisible",
+        "lootInvisible",
+        "buildsInvisible",
+        "noMinimap",
+        "noCrosshair",
+        "noInventoryHud",
+        "invisibleStorm",
+        "noHealthShieldHud",
+        "noInfoPopups",
+        "noPickupLabels",
+        "noHitMarker",
+        "noDamageDirection",
+        "noDamageNumbers",
+        "noWeaponProgress",
+        "invisibleProjectiles",
+        "hideWeapons",
+        "goodFlippinLuck"
+      ],
+      "removed": [
+        "noStormTimer",
+        "showBulletSpread",
+        "stormDistance",
+        "screenChests",
+        "screenAirdrops",
+        "screenFishing",
+        "identifyBots"
+      ],
+      "nativeGateCap": false,
+      "alwaysVisiblePolicy": [
+        "status announcements",
+        "waiting/elimination banners",
+        "kill feed",
+        "storm countdown"
+      ],
+      "limits": "Run-cumulative reached/suppressed contexts, not visual passes. Unencountered conditions remain unobserved. Local checks cannot grant user visual approval."
+    },
+    {
+      "version": "67",
+      "epoch": 2,
+      "reason": "native match end",
+      "mode": "Hell",
+      "rows": [
+        {
+          "id": "transparentRoofs",
+          "label": "Transparent roofs",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "healthBars",
+          "label": "Player health bars",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "numericHealthShield",
+          "label": "Health/shield numbers",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "playerNames",
+          "label": "Player names",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "allGlidersInvisible",
+          "label": "All gliders invisible",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "allTrailsInvisible",
+          "label": "All trails invisible",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestPlayer",
+          "label": "Nearest player indicator",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestPlayerName",
+          "label": "Player name in nearest arrow",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestChest",
+          "label": "Nearest chest indicator",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestAirdrop",
+          "label": "Nearest airdrop indicator",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "permanentMeteor",
+          "label": "Permanent meteor location",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "highContrastPlayers",
+          "label": "High-contrast players",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Built: remote-player yellow halo, suppressed by player invisibility/Hell. Deferred visual review is now included."
+        },
+        {
+          "id": "transparentFoliage",
+          "label": "Transparent foliage",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "stormEdge",
+          "label": "Storm edge highlight",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Built: all four projected next-zone sides, matching minimap target; 8-unit cyan edge with dark backing. Corrected visual check pending."
+        },
+        {
+          "id": "stormCenter",
+          "label": "Safe-zone center direction",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "buildHealth",
+          "label": "Build health outlines",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "objectHealth",
+          "label": "Breakable object health outlines",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "safeZoneIndicator",
+          "label": "Nearest safe-zone edge",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "lootIndicator",
+          "label": "Loot indicator",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "highlightOwnedAmmo",
+          "label": "Highlight ammo for owned guns",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "longerBulletTrails",
+          "label": "Longer bullet trails",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "customCrosshair",
+          "label": "Enhanced/custom crosshair",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Shapes/sizes confirmed; preset color persistence checked. Color/artwork appearance still needs explicit visual approval."
+        },
+        {
+          "id": "lowHealthWarning",
+          "label": "Low-health visual warning",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "lowAmmoWarning",
+          "label": "Low-ammo visual warning",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "lowMatsWarning",
+          "label": "Low-material warning",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "inventorySlots",
+          "label": "Inventory: 5 item slots",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "inventoryMaterials",
+          "label": "Inventory: build materials/counts",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "inventoryAmmo",
+          "label": "Inventory: ammo by type",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "inventorySize",
+          "label": "Inventory size",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "playersInvisible",
+          "label": "All players invisible",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "playersInvisible",
+              "branch": "playerPhysical",
+              "reached": true,
+              "activeAdapters": 58,
+              "suppressedDraws": 16195
+            },
+            {
+              "challenge": "playersInvisible",
+              "branch": "trailParticles",
+              "reached": true,
+              "activeAdapters": 270,
+              "suppressedDraws": 416535
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "lootInvisible",
+          "label": "Mask loot",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "lootInvisible",
+              "branch": "lootAll",
+              "reached": true,
+              "activeAdapters": 13,
+              "suppressedDraws": 17610
+            },
+            {
+              "challenge": "lootInvisible",
+              "branch": "lootArt",
+              "reached": true,
+              "activeAdapters": 13,
+              "suppressedDraws": 0
+            },
+            {
+              "challenge": "lootInvisible",
+              "branch": "lootRarity",
+              "reached": true,
+              "activeAdapters": 13,
+              "suppressedDraws": 0
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "buildsInvisible",
+          "label": "Builds invisible",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "buildsInvisible",
+              "branch": "placedBuild",
+              "reached": true,
+              "activeAdapters": 30,
+              "suppressedDraws": 41916
+            },
+            {
+              "challenge": "buildsInvisible",
+              "branch": "buildPreview",
+              "reached": true,
+              "activeAdapters": 9,
+              "suppressedDraws": 0
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noMinimap",
+          "label": "No map",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noMinimap",
+              "branch": "mapHud",
+              "reached": true,
+              "activeAdapters": 2,
+              "suppressedDraws": 9936
+            },
+            {
+              "challenge": "noMinimap",
+              "branch": "fullMap",
+              "reached": false,
+              "activeAdapters": 0,
+              "suppressedDraws": 0
+            }
+          ],
+          "note": "Map hiding previously confirmed; V67 narrows suppression to retain sibling storm countdown. Final countdown visibility check pending."
+        },
+        {
+          "id": "noCrosshair",
+          "label": "No crosshair",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noCrosshair",
+              "branch": "crosshair",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 4968
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noInventoryHud",
+          "label": "No inventory/item bar",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noInventoryHud",
+              "branch": "inventoryHud",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 4968
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "invisibleStorm",
+          "label": "Invisible storm",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "invisibleStorm",
+              "branch": "stormWorld",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 4967
+            },
+            {
+              "challenge": "invisibleStorm",
+              "branch": "stormMap",
+              "reached": true,
+              "activeAdapters": 5,
+              "suppressedDraws": 24930
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noChestsVisible",
+          "label": "Chests invisible",
+          "category": "challenges",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "noHealthShieldHud",
+          "label": "No health/shield HUD",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noHealthShieldHud",
+              "branch": "healthShieldHud",
+              "reached": true,
+              "activeAdapters": 13,
+              "suppressedDraws": 64584
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noInfoPopups",
+          "label": "Hide interaction prompts",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noInfoPopups",
+              "branch": "infoPrompt",
+              "reached": false,
+              "activeAdapters": 0,
+              "suppressedDraws": 0
+            },
+            {
+              "challenge": "noInfoPopups",
+              "branch": "pickupPopup",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 4968
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noPickupLabels",
+          "label": "No pickup labels",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noPickupLabels",
+              "branch": "pickupPopup",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 4968
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noHitMarker",
+          "label": "No hit-confirmation marker",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noHitMarker",
+              "branch": "hitConfirmation",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 0
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noDamageDirection",
+          "label": "Hide damage direction",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noDamageDirection",
+              "branch": "damageDirection",
+              "reached": true,
+              "activeAdapters": 2,
+              "suppressedDraws": 4965
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noDamageNumbers",
+          "label": "No floating damage numbers",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noDamageNumbers",
+              "branch": "damageNumbers",
+              "reached": true,
+              "activeAdapters": 6,
+              "suppressedDraws": 2954
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noWeaponProgress",
+          "label": "No reload/charge progress",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noWeaponProgress",
+              "branch": "reloadProgress",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 4968
+            },
+            {
+              "challenge": "noWeaponProgress",
+              "branch": "chargeProgress",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 4968
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "invisibleProjectiles",
+          "label": "Invisible bullets/throwables",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "invisibleProjectiles",
+              "branch": "projectile",
+              "reached": true,
+              "activeAdapters": 16,
+              "suppressedDraws": 819
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "hideWeapons",
+          "label": "Hide weapons",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "hideWeapons",
+              "branch": "heldWeapons",
+              "reached": true,
+              "activeAdapters": 11,
+              "suppressedDraws": 17273
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "monochrome",
+          "label": "Monochrome vision",
+          "category": "challenges",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "flashlightMode",
+          "label": "Flashlight mode",
+          "category": "challenges",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "goodFlippinLuck",
+          "label": "Hell",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        }
+      ],
+      "implementationGaps": [],
+      "pendingVisual": [
+        "highContrastPlayers",
+        "stormEdge",
+        "stormCenter",
+        "safeZoneIndicator",
+        "lootIndicator",
+        "highlightOwnedAmmo",
+        "longerBulletTrails",
+        "customCrosshair",
+        "inventorySlots",
+        "inventoryMaterials",
+        "playersInvisible",
+        "lootInvisible",
+        "buildsInvisible",
+        "noMinimap",
+        "noCrosshair",
+        "noInventoryHud",
+        "invisibleStorm",
+        "noHealthShieldHud",
+        "noInfoPopups",
+        "noPickupLabels",
+        "noHitMarker",
+        "noDamageDirection",
+        "noDamageNumbers",
+        "noWeaponProgress",
+        "invisibleProjectiles",
+        "hideWeapons",
+        "goodFlippinLuck"
+      ],
+      "removed": [
+        "noStormTimer",
+        "showBulletSpread",
+        "stormDistance",
+        "screenChests",
+        "screenAirdrops",
+        "screenFishing",
+        "identifyBots"
+      ],
+      "nativeGateCap": false,
+      "alwaysVisiblePolicy": [
+        "status announcements",
+        "waiting/elimination banners",
+        "kill feed",
+        "storm countdown"
+      ],
+      "limits": "Run-cumulative reached/suppressed contexts, not visual passes. Unencountered conditions remain unobserved. Local checks cannot grant user visual approval."
+    },
+    {
+      "version": "67",
+      "epoch": 2,
+      "reason": "results export",
+      "mode": "Hell",
+      "rows": [
+        {
+          "id": "transparentRoofs",
+          "label": "Transparent roofs",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "healthBars",
+          "label": "Player health bars",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "numericHealthShield",
+          "label": "Health/shield numbers",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "playerNames",
+          "label": "Player names",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "allGlidersInvisible",
+          "label": "All gliders invisible",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "allTrailsInvisible",
+          "label": "All trails invisible",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestPlayer",
+          "label": "Nearest player indicator",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestPlayerName",
+          "label": "Player name in nearest arrow",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestChest",
+          "label": "Nearest chest indicator",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "nearestAirdrop",
+          "label": "Nearest airdrop indicator",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "permanentMeteor",
+          "label": "Permanent meteor location",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "highContrastPlayers",
+          "label": "High-contrast players",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Built: remote-player yellow halo, suppressed by player invisibility/Hell. Deferred visual review is now included."
+        },
+        {
+          "id": "transparentFoliage",
+          "label": "Transparent foliage",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "stormEdge",
+          "label": "Storm edge highlight",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Built: all four projected next-zone sides, matching minimap target; 8-unit cyan edge with dark backing. Corrected visual check pending."
+        },
+        {
+          "id": "stormCenter",
+          "label": "Safe-zone center direction",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "buildHealth",
+          "label": "Build health outlines",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "objectHealth",
+          "label": "Breakable object health outlines",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "safeZoneIndicator",
+          "label": "Nearest safe-zone edge",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "lootIndicator",
+          "label": "Loot indicator",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "highlightOwnedAmmo",
+          "label": "Highlight ammo for owned guns",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "longerBulletTrails",
+          "label": "Longer bullet trails",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "customCrosshair",
+          "label": "Enhanced/custom crosshair",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Shapes/sizes confirmed; preset color persistence checked. Color/artwork appearance still needs explicit visual approval."
+        },
+        {
+          "id": "lowHealthWarning",
+          "label": "Low-health visual warning",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "lowAmmoWarning",
+          "label": "Low-ammo visual warning",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "lowMatsWarning",
+          "label": "Low-material warning",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "inventorySlots",
+          "label": "Inventory: 5 item slots",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "inventoryMaterials",
+          "label": "Inventory: build materials/counts",
+          "category": "modifiers",
+          "state": "built-awaiting-visual",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "inventoryAmmo",
+          "label": "Inventory: ammo by type",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "inventorySize",
+          "label": "Inventory size",
+          "category": "modifiers",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "playersInvisible",
+          "label": "All players invisible",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "playersInvisible",
+              "branch": "playerPhysical",
+              "reached": true,
+              "activeAdapters": 50,
+              "suppressedDraws": 17352
+            },
+            {
+              "challenge": "playersInvisible",
+              "branch": "trailParticles",
+              "reached": true,
+              "activeAdapters": 298,
+              "suppressedDraws": 451462
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "lootInvisible",
+          "label": "Mask loot",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "lootInvisible",
+              "branch": "lootAll",
+              "reached": true,
+              "activeAdapters": 3,
+              "suppressedDraws": 23473
+            },
+            {
+              "challenge": "lootInvisible",
+              "branch": "lootArt",
+              "reached": true,
+              "activeAdapters": 3,
+              "suppressedDraws": 0
+            },
+            {
+              "challenge": "lootInvisible",
+              "branch": "lootRarity",
+              "reached": true,
+              "activeAdapters": 3,
+              "suppressedDraws": 0
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "buildsInvisible",
+          "label": "Builds invisible",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "buildsInvisible",
+              "branch": "placedBuild",
+              "reached": true,
+              "activeAdapters": 4,
+              "suppressedDraws": 50060
+            },
+            {
+              "challenge": "buildsInvisible",
+              "branch": "buildPreview",
+              "reached": true,
+              "activeAdapters": 7,
+              "suppressedDraws": 0
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noMinimap",
+          "label": "No map",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noMinimap",
+              "branch": "mapHud",
+              "reached": true,
+              "activeAdapters": 2,
+              "suppressedDraws": 10652
+            },
+            {
+              "challenge": "noMinimap",
+              "branch": "fullMap",
+              "reached": false,
+              "activeAdapters": 0,
+              "suppressedDraws": 0
+            }
+          ],
+          "note": "Map hiding previously confirmed; V67 narrows suppression to retain sibling storm countdown. Final countdown visibility check pending."
+        },
+        {
+          "id": "noCrosshair",
+          "label": "No crosshair",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noCrosshair",
+              "branch": "crosshair",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 4968
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noInventoryHud",
+          "label": "No inventory/item bar",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noInventoryHud",
+              "branch": "inventoryHud",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 5326
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "invisibleStorm",
+          "label": "Invisible storm",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "invisibleStorm",
+              "branch": "stormWorld",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 5325
+            },
+            {
+              "challenge": "invisibleStorm",
+              "branch": "stormMap",
+              "reached": true,
+              "activeAdapters": 5,
+              "suppressedDraws": 27725
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noChestsVisible",
+          "label": "Chests invisible",
+          "category": "challenges",
+          "state": "proven",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "noHealthShieldHud",
+          "label": "No health/shield HUD",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noHealthShieldHud",
+              "branch": "healthShieldHud",
+              "reached": true,
+              "activeAdapters": 13,
+              "suppressedDraws": 69238
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noInfoPopups",
+          "label": "Hide interaction prompts",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noInfoPopups",
+              "branch": "infoPrompt",
+              "reached": false,
+              "activeAdapters": 0,
+              "suppressedDraws": 0
+            },
+            {
+              "challenge": "noInfoPopups",
+              "branch": "pickupPopup",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 5326
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noPickupLabels",
+          "label": "No pickup labels",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noPickupLabels",
+              "branch": "pickupPopup",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 5326
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noHitMarker",
+          "label": "No hit-confirmation marker",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noHitMarker",
+              "branch": "hitConfirmation",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 0
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noDamageDirection",
+          "label": "Hide damage direction",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noDamageDirection",
+              "branch": "damageDirection",
+              "reached": true,
+              "activeAdapters": 0,
+              "suppressedDraws": 5012
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noDamageNumbers",
+          "label": "No floating damage numbers",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noDamageNumbers",
+              "branch": "damageNumbers",
+              "reached": true,
+              "activeAdapters": 2,
+              "suppressedDraws": 3139
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "noWeaponProgress",
+          "label": "No reload/charge progress",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "noWeaponProgress",
+              "branch": "reloadProgress",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 5326
+            },
+            {
+              "challenge": "noWeaponProgress",
+              "branch": "chargeProgress",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 5326
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "invisibleProjectiles",
+          "label": "Invisible bullets/throwables",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "invisibleProjectiles",
+              "branch": "projectile",
+              "reached": true,
+              "activeAdapters": 8,
+              "suppressedDraws": 824
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "hideWeapons",
+          "label": "Hide weapons",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [
+            {
+              "challenge": "hideWeapons",
+              "branch": "heldWeapons",
+              "reached": true,
+              "activeAdapters": 1,
+              "suppressedDraws": 17664
+            }
+          ],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        },
+        {
+          "id": "monochrome",
+          "label": "Monochrome vision",
+          "category": "challenges",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "flashlightMode",
+          "label": "Flashlight mode",
+          "category": "challenges",
+          "state": "proven",
+          "effective": false,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "User-confirmed in prior reports; retained regression checks. Report new exceptions only."
+        },
+        {
+          "id": "goodFlippinLuck",
+          "label": "Hell",
+          "category": "challenges",
+          "state": "built-awaiting-visual",
+          "effective": true,
+          "ownedDraws": 0,
+          "nativeBranches": [],
+          "note": "Implemented and locally regression-checked; remaining native appearance/visibility approval is pending. Missing context is not a failure."
+        }
+      ],
+      "implementationGaps": [],
+      "pendingVisual": [
+        "highContrastPlayers",
+        "stormEdge",
+        "stormCenter",
+        "safeZoneIndicator",
+        "lootIndicator",
+        "highlightOwnedAmmo",
+        "longerBulletTrails",
+        "customCrosshair",
+        "inventorySlots",
+        "inventoryMaterials",
+        "playersInvisible",
+        "lootInvisible",
+        "buildsInvisible",
+        "noMinimap",
+        "noCrosshair",
+        "noInventoryHud",
+        "invisibleStorm",
+        "noHealthShieldHud",
+        "noInfoPopups",
+        "noPickupLabels",
+        "noHitMarker",
+        "noDamageDirection",
+        "noDamageNumbers",
+        "noWeaponProgress",
+        "invisibleProjectiles",
+        "hideWeapons",
+        "goodFlippinLuck"
+      ],
+      "removed": [
+        "noStormTimer",
+        "showBulletSpread",
+        "stormDistance",
+        "screenChests",
+        "screenAirdrops",
+        "screenFishing",
+        "identifyBots"
+      ],
+      "nativeGateCap": false,
+      "alwaysVisiblePolicy": [
+        "status announcements",
+        "waiting/elimination banners",
+        "kill feed",
+        "storm countdown"
+      ],
+      "limits": "Run-cumulative reached/suppressed contexts, not visual passes. Unencountered conditions remain unobserved. Local checks cannot grant user visual approval."
+    }
+  ],
+  "userReport": {
+    "countdown": "Must hide with No map; separate status announcements remain visible",
+    "name": "Own player name leaks in native inventory area under Hell",
+    "release": "Runtime V67 correct but terminal hardcoded v66 caused repeated suite; derive all release labels from runtime and regression-check consistency",
+    "acceptance": "No other issue noticed in either match; acceptance limited to encountered surfaces. Final focused test requested, production visual changes deferred.",
+    "preset": "Add one editable General Advantages preset with exact requested enables/default thresholds/Large inventory; no locks",
+    "design": "Same-code in-chat previews before final integrated design; gather bounded layout/font/viewport evidence now"
+  },
+  "limits": "Reached/suppressed native draws do not prove visible appearance; no inferred user approvals from silence."
+}

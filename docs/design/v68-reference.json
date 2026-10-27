@@ -1,0 +1,65 @@
+{
+  "version": "68",
+  "source": {
+    "file": "src/brio.js",
+    "sha256": "5a7b83cf3ad017bdfe992c28f44b94db26760cd669f406693059259616b92d20",
+    "helpers": {
+      "v63VisualControls": {
+        "start": 156979,
+        "end": 162305
+      },
+      "v55PostGame": {
+        "start": 197022,
+        "end": 202764
+      },
+      "renderLocker": {
+        "start": 248600,
+        "end": 251031
+      },
+      "renderWarningThresholds": {
+        "start": 261529,
+        "end": 266270
+      },
+      "renderChallengeTier": {
+        "start": 266622,
+        "end": 267972
+      },
+      "renderExtras": {
+        "start": 275227,
+        "end": 285376
+      }
+    }
+  },
+  "nativeStylesheet": {
+    "file": "docs/game-sources/main.css",
+    "sha256": "219da77fb7cc452be7418f5905295122d98d0e4d686db1305c4e39e8908e061d",
+    "effect": "Global * assigns Chewy, cursive; existing page resets and native deathscreen layout affect inherited UI. Include in preview before BRIO CSS."
+  },
+  "capturedFont": {
+    "file": "docs/game-sources/brio_asset_retrival-results/20261017T211716283_2906f9d5__asset_01033_uK_94ruUb-k-wn52KjI.woff2",
+    "bytes": 19920,
+    "sha256": "5fb894030e4ade4d9f76ede985bc96d468bcb923fcd4b908a5d8e38178819dc4",
+    "family": "Chewy",
+    "origin": "Captured fonts.gstatic.com/s/chewy/v11/uK_94ruUb-k-wn52KjI.woff2; verified WOFF2 header, no network refetch"
+  },
+  "brioStylesheet": {
+    "file": "docs/design/v68-current-brio.css",
+    "sha256": "5b5beff8494372a4fed9b650db5b022db5199b3273ef99fdf75658904664426c"
+  },
+  "liveCapture": {
+    "event": "V68 DESIGN SNAPSHOT",
+    "bounds": {
+      "snapshotsPerInjection": 8,
+      "nodes": 96,
+      "fontFaces": 24,
+      "valueCharacters": 512
+    },
+    "labels": [
+      "extras:modifiers",
+      "extras:challenges",
+      "postgame"
+    ],
+    "scope": "Viewport/DPR/visual scale, font readiness/descriptors and allowlisted computed box/style metrics. No HTML, input values, player-name text, screenshot, new timer/network/source execution."
+  },
+  "limits": "DOM/style metrics establish constraints, not pixel identity. Design previews must share component HTML/CSS/assets with eventual in-game implementation and match viewport, native CSS cascade and font rendering. Chat may scale screenshots. Native canvas background remains dynamic; final integrated review still required."
+}
