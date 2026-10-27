@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-27",
+  "workflow": "Built-in image generation, transparent-background edits/concepts. Original files retained; selected outputs packaged as WebP.",
+  "generations": {
+    "logo": {
+      "referenced_image_paths": [
+        "/workspace/scratch/ad1f2e064cec/brio-unlocker/docs/design/d1/assets/logo.webp"
+      ],
+      "transparent_background": true,
+      "prompt": "Edit target: the supplied approved BRIO UNLOCKED game logo. Change ONLY the fill inside the letters of the LOWER word UNLOCKED to a polished vertical warm gradient: pale buttery gold at the top, saturated golden amber in the middle, and rich burnt-orange/coral near the lower edge. Preserve the lower letters' small dimensional shading and dark cartoon outline. Keep BRIO on the upper row white with its existing grey shading. Absolutely preserve the wooden board, pickaxe, blueprint, letter shapes, spelling, spacing, composition and transparent background. Text remains exactly BRIO / UNLOCKED. No added text, no glow, no new decorations. This is a narrow color-fill edit to an approved wordmark, not a redesign.",
+      "output": "exec-fe68ac3a-8e29-4925-8059-acdeb128b951.png"
+    },
+    "gliders": {
+      "referenced_image_paths": [
+        "/workspace/scratch/ad1f2e064cec/brio-unlocker/docs/game-sources/brio_asset_retrival-results/20261017T211716283_2906f9d5__asset_00383_glider.png",
+        "/workspace/scratch/ad1f2e064cec/brio-unlocker/docs/design/d1/assets/cosmetics.webp"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Create THREE original 2D static game glider canopy sprites for BuildRoyale, matched to the supplied existing cosmetic board. First reference is the exact native plain-glider shape/camera: keep a broad shallow overhead canopy, simple curved leading edge, swept lower edge, small side handles, flat cartoon outlined drawing. Do not create full characters or any perspective 3D scene. Second reference shows the three existing sets. Arrange three separate complete gliders left-to-right across one clean wide transparent sheet, equal 3 cells, ample padding and gaps, no background, no glow, no text or labels. Glider1 Trail Warden: olive canvas wing with orange strap details, amber edge panels and dark wood handles. Glider2 Citrus Circuit: cream/mint segmented rescue wing with restrained orange center marker and dark handles. Glider3 Nightglass: matte charcoal angular canopy with bright turquoise edge inlays and small violet bands. All use the SAME simple single-sprite canopy silhouette/footprint as the first reference, balanced around their centers and readable at tiny size. Crisp dark outlines, controlled 2-3 cel shades, no particles, no jets, no moving mechanical parts, no lighting halo. Transparent alpha outside each shape. Each is usable as a plain native700x700 glider image after padding/scale, not the special multipart booster glider.",
+      "output": "exec-46b52d0d-d5c9-428c-9966-42e5a38f4d9c.png"
+    },
+    "newsets": {
+      "referenced_image_paths": [
+        "/workspace/scratch/ad1f2e064cec/brio-unlocker/docs/design/d1/assets/cosmetics.webp",
+        "/workspace/scratch/ad1f2e064cec/brio-unlocker/docs/game-sources/brio_asset_retrival-results/20261017T211716283_2906f9d5__asset_00383_glider.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: stylized-concept. Original BuildRoyale2D cosmetic sheet, TWO highly distinctive new matching sets, not another generic sci-fi visor recolor. Arrange a precise2row by4column grid of8complete isolated sprites on genuinely transparent alpha. Columns are HEAD, BODY, PICKAXE, GLIDER, but draw NO labels or text. First reference shows overhead head/body anatomy, short torso with two round shoulder forms and no legs; preserve that game-compatible camera/silhouette. Second reference is the simple plain glider canopy footprint to use, single flat sprite, not multipart. Row1 'Kiln Current': a terracotta ceramic pressure-cap helmet with sculpted concentric pot-lid rings and cobalt blue glaze fractures (no face portrait); short ceramic-and-canvas body with cobalt shoulder caps, copper clasps and pale clay seams; diagonal forged tongs-style crescent pickaxe with cobalt ceramic blade and copper wrapped handle; broad shallow curved terracotta/cobalt segmented canopy with dark handles. Row2 'Margin Runner': a sculptural folded-ivory paper helmet/coif with graphite fold lines, emerald page tabs and an asymmetrical folded peak (no face portrait); short layered-paper shoulder/torso jacket with emerald binding and graphite belt; diagonal oversized black-and-gold calligraphy-nib pickaxe with ivory handle and emerald band; broad shallow folded-paper fan canopy with emerald edge folds and graphite handles. Make both wildly original yet elegant and clean. Heads directly overhead, bodies overhead circular shoulder anatomy, no standing humans, no legs, no faces looking at viewer. Pickaxes diagonal, gliders broad overhead simple canopies. Flat cartoon vector-like2D, crisp dark outline,2-3cel shades, no text/watermarks/scenery/UI borders, no glows or external shadows. Exact grid, centered separate parts, large gutters so later sprite extraction is reliable.",
+      "output": "exec-75edfc8f-7d7c-4531-b0c0-aaff57abc1fc.png"
+    }
+  }
+}

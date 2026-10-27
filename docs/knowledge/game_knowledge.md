@@ -1,3 +1,9 @@
+# D2 design-only update — 2026-10-27
+
+No new matches, game facts or V68 runtime changes. Current work is docs/design/d2/ and its review procedure; no gameplay testing requested. OPS-001 full-map leak remains deferred. Source-only preview/glider/wrap/catalogue contracts are recorded in docs/design/d2/native-contracts.md; private native engine was parsed, never executed. D2 animation and new glider art are design concepts awaiting final native calibration/chooser integration. No new custom wraps; existing native wraps remain. Discord is plain ads0210, no invite needed. Read current AGENTS/D2 handoff before resuming. Historical notes below preserved.
+
+---
+
 # D1 design phase — current handoff, 2026-10-27
 
 User explicitly moved to VISUAL DESIGN ITERATION. Live runtime remains V68 src/dist/immutableversions. NO V69/gameplay suite/fix injection now. User reports No map still permits visible FULL MAP although minimap hides; OPS-001 in `docs/design/deferred-integration-docket.md` is CONFIRMED DEFERRED, not fixed. Apply it only WITH final user-approved visuals. Separate status announcements/elimination banners/kill feed stay visible; map numeric countdown and own HUD-name fixes retained. This latest instruction supersedes all older 'run another/final operational match before design' directions. No more unchanged-surface operational sweeps. Current review procedure is `docs/test-procedures/design-d1-review-procedure.md`: no gameplay.

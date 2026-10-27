@@ -1,0 +1,23 @@
+# D2 source-backed integration contracts
+
+Native source: docs/game-sources/engine.js, SHA256 in source-contracts.json. Parsed as AST; never executed. Captured assets and HAR were not modified. Source offsets below locate this exact archived source and are not a future runtime hook contract.
+
+## Dynamic catalogue
+
+V68 src/brio.js catalog/syncSet/items helpers (~line797) read reached W["Åèa"] each call. renderGrid (~line998) calls items for the current native category. New native entries matching known schema/type appear on render/open; removed entries disappear. Player/skin1/default-body exclusions intentional. Fixture test adds a future skin and verifies it without modifying the helper. D2's thumbnail list is deliberately representative, not the runtime provider. Final new UI must continue using that provider. New native schema/types require validation; do not silently claim arbitrary future compatibility.
+
+## Player preview
+
+Native ÁAê IIFE near515k owns #playerPreview canvas600x200, enlarged for gliders, and #playerEmote four-slot container. Its native player updates running pose; held pickaxe uses the native pickaxe texture, wrap uses âaá.ËAÂ(wrapId,"scar"), glider shows ÂÅ/hides held ä with spread-arm pose; trail remains. Methods and player are lexical/private. Do not call native locker selection handlers merely to render BRIO preview: they can mutate selections/storage. D2 composes assets in an owned canvas with visible-only animation, pause/reduced-motion/visibility guards and cancellation on navigation. Animation/alignment is an approximation to review header design, not a native renderer transplant. Final implementation needs genuine native-compatible anchors, trail animation and pose calibration; no network/protocol/player-state mutation. Emotes enlarge four currently selected slots.
+
+## Plain gliders
+
+Native áÈË near427k loads cosmetics/glider/{id}.png. Default creates a single250x250 image node from700x700 source; valstraxianbooster is a special multipart/animated exception and is NOT a template for these concepts. Native plain captured glider asset00383 provides silhouette/handles/reference. Existing BRIO asset/loadRes and local resource lock paths already handle glider textures (äÀÊ and ÂÅ.À), but custom choose/cache/UI currently only allow head/body/pickaxe. Extend category allow lists, reversible resources, cleanup and tests before shipping originals. D2 custom gliders are preview concepts, not enabled runtime uploads. Export each onto transparent700x700 with template-correct content/anchors; test gliding/no-held-item/trail combination and restore on off/reentry.
+
+## Wraps — new custom art deliberately deferred
+
+Native ËAÂ near441945 caches per-wrap/per-gun art, returns base for empty/nowrap. Áâè near442285 composes textures {id}0.png and {id}1.png through redsheet/greensheet masks onto350x350 weapon art. Sheet cells350x195,6columns; ÀæÀ contains28 base weapon art IDs and appends corresponding top-state IDs; scar index0. Async resource loading/retries and cache lifecycle matter. combos/ice.png is just a menu preview icon, not a full wrap sprite. No reliable custom texture provider/cache invalidation/all-art-state coverage exists yet in BRIO, so user-authorized skip selected. D2 retains native wrap selection and shows native SCAR/Ice examples from captured art/masks, no fabricated new wrap. Future work needs both texture channels, every mask/art/state, loading fallback, cache bounds/cleanup and reversible restore before promising custom wraps.
+
+## Debrief scope and data
+
+V68 renderPostgame reads terminal and observed stats and replaces ONLY #deathPass inside #deathscreen after native end visibility. Keep native result heading, navigation, pass browsing, spectate/play controls outside our replacement. D2 .bu-report is the replacement component; the surrounding review context caption is not product UI. Native metrics: placement, eliminations, damage, placed builds, duration. Observed: eliminated names, HP/shield loss, own projectiles, weapon holding seconds, distance (native units/100), observed players. Derivable without probes: HP+shield loss total, holding proportions, builds/minute, damage/minute, damage/elimination (not per-victim attribution). Use sampled holding-time total for proportions, never assume it covers whole duration; zero/absent data must display unavailable or omit chart. No accuracy, assists, bot labels, hitrate, per-player damage or fabricated event timeline. Scroll overflowing panel content while leaving native end-page controls usable. D2 intentionally does not restyle the full end page.

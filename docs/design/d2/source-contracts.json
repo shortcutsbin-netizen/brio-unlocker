@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-27",
+  "nativeSha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "catalogue": "BRIO helpers support new entries/removals on each render; default skins excluded; schema stable assumption",
+  "engine": "Parsed, never executed",
+  "plainGlider": "single-image default branch, excludes special multipart booster",
+  "wrap": "two texture/mask compositor; scar index0; custom wrap provider deferred",
+  "weaponBaseArtCount": 28,
+  "checks": "pass"
+}

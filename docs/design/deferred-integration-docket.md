@@ -1,3 +1,9 @@
+# D2 docket update — 2026-10-27
+
+OPS-001 remains deferred/unfixed. User approved continued design iteration, not runtime integration. Supersedes older social requirements below: use project GitHub and plain Discord handle ads0210; no invite/link. No custom Play or whole-page end redesign. Unlocker/Extras independent. Final integration must preserve dynamic native catalogue, implement native-compatible header preview (head/body/trail, held pickaxe/native-wrap gun, glider/no held gear, emote slots), extend custom-glider chooser/cache with tests if artwork approved, and keep new custom wraps excluded pending validation. Five sets/ten crosshair concepts in D2 are not shipped. Read docs/design/d2/native-contracts.md for exact provider/pose/data limits. D2 debrief is only #deathPass replacement; native controls remain. No extra gameplay while reviewing. Max2matches for eventual approved final integration.
+
+---
+
 # Deferred final-integration docket — design phase
 
 ## OPS-001 — No map still exposes the full map
