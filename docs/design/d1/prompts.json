@@ -1,0 +1,29 @@
+{
+  "mode": "built-in image_gen; logo edit + cosmetic concept generation using reference images",
+  "logo": {
+    "useCase": "text-localization",
+    "target": "docs/game-sources/brio_asset_retrival-results/20261017T211716283_2906f9d5__asset_00997_logo5.png",
+    "originalSource": "https://buildroyale.io/buildart/logo5.png",
+    "transparentBackground": true,
+    "text": [
+      "BRIO",
+      "UNLOCKED"
+    ],
+    "prompt": "Adapt the original logo so the ONLY displayed words are BRIO on the upper line and UNLOCKED on the lower line. Preserve playful hand-cut chunky white lettering with grey lower shading, thick irregular black cartoon outlines, crooked brown wooden signboard, little tan pickaxe on left and blue folded blueprint on right. Keep essentially the same composition, proportions, palette and native2Dcartoon style; accommodate longer UNLOCKED word with wider lower board. Crisp edges, legible lettering, transparent alpha background, no outer rectangle, extra text, glow, new icons or sans-serif redesign. One centered logo with small transparent margin.",
+    "generatedSource": "exec-a056c4cf-b984-497b-82b6-cf8fdfd61955.png",
+    "selectedAsset": "assets/logo.webp"
+  },
+  "cosmetics": {
+    "useCase": "stylized-concept",
+    "references": [
+      "docs/game-sources/brio_asset_retrival-results/20261017T211716283_2906f9d5__asset_02051_worker_head.png",
+      "docs/game-sources/brio_asset_retrival-results/20261017T211716283_2906f9d5__asset_02221_worker_body.png"
+    ],
+    "transparentBackground": true,
+    "prompt": "Original top-down BuildRoyale cosmetic sprite concept sheet. References show overhead anatomy/camera, not worker colors to copy. 3by3sheet,9distinct isolated separated sprites,equal cells,transparent background,no labels/text. Columns HEAD/BODY/PICKAXE. Row1Trail Warden:forest ranger helmet,amber visor,olive canvas shoulders/torso,orange harness,compact pack,amber resin/wood double-headed pickaxe. Row2Citrus Circuit:off-white courier helmet,mint split stripe,cream/mint utility shoulders with orange trim,angular mint/cream rescue pickaxe/orange grip. Row3Nightglass:matte charcoal helmet,narrow turquoise visor,compact charcoal armored shoulders with turquoise plates and violet cord,black crystalline crescent pickaxe/turquoise edge. Heads directly overhead,rounded cap/back silhouettes,no frontal portraits. Bodies overhead left/right round shoulders and short torso,no legs. Pickaxes diagonal overhead standalone icons. Crisp flat2Dcartoon/vector-like sprites,bold dark outlines,2-3cel shades,controlled colors,readable tiny. Keep clear gaps; no text/watermark/scenery/UI frames/external shadows.",
+    "generatedSource": "exec-5ed4a4fe-0926-445a-9c77-81c3493162dc.png",
+    "selectedAsset": "assets/cosmetics.webp",
+    "limits": "Concept board. Native per-part trim/alpha/scale/rotation/anchor verification deferred; do not equate preview atlas crops with a tested game sprite."
+  },
+  "promptRecord": "Normalized generation-request record; image generation is not deterministic. Reference roles, exact displayed words and selected output files are preserved."
+}

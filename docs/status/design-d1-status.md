@@ -1,0 +1,7 @@
+# D1 visual iteration status — 2026-10-27
+
+User has moved from operational testing to design review. Live V68 unchanged. First samples cover all requested areas, with9review tabs (Extras split into Modifiers and Challenges), full locker navigation,6crosshairs and3head/body/pickaxe-only cosmetic sets. Each component awaits user feedback; none is installed or final-approved. Github project destination chosen, Discord invite missing. Palette is the proposed Field Kit graphite/olive/parchment/orange/mint direction.
+
+OPS-001 No map/full-map exposure is confirmed and explicitly deferred to final visual integration, not resolved by this design. Operational review otherwise moves forward; no new V69/suite/injection, no V68 replay. Full source log analysis:1winning match,5eliminations/240s,0errors/caps,85unchanged source chunks;5layout snapshots at1745x982,DPR1.1. Exact data in docs/analysis/runs/design-d1-v68-analysis.json.
+
+Local preview QA passes all9views/all49controls/locker categories/modes/import/search/equip,Hell/preset,warning reset,reticles,indicator upright label,win/loss states,fonts/images and1120/1024/736/390/320widths with0network/pageerrors/overflow. This is not native integration or sprite anchoring proof. Components/assets are reusable exact source for later integration; final pixels depend on host/font/viewport/native constraints. Current review procedure requires NO GAMEPLAY. Iterate visuals here until accepted, then apply together with full-map fix and production cleanup/measured memory work.

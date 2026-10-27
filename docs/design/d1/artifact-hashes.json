@@ -1,0 +1,52 @@
+[
+  {
+    "file": "ui.js",
+    "bytes": 30421,
+    "sha256": "19fcca89b704052838239f9d915e37042aff7c9652e6d12911001b1a1e2a8847"
+  },
+  {
+    "file": "ui.css",
+    "bytes": 25028,
+    "sha256": "c8ab9f456a4df560b54c32edca50b39865b332ab22ef37d081350478863e455c"
+  },
+  {
+    "file": "review.html",
+    "bytes": 817108,
+    "sha256": "a20444edd9b73dd6624a49dd2e7837dae66b32583228bbb98572de5f9af09bf3"
+  },
+  {
+    "file": "assets/logo.webp",
+    "bytes": 142016,
+    "sha256": "8b06b6b08094ea579a08bd472d4dd6b4b72455cb218f1a5fd007d4011223797c"
+  },
+  {
+    "file": "assets/cosmetics.webp",
+    "bytes": 175924,
+    "sha256": "629d911020961907dae7c9f9fb67f38b9a5ba9907fb48e9791539f6ce09355b9"
+  },
+  {
+    "file": "assets/barlow-condensed-800.woff",
+    "bytes": 42768,
+    "sha256": "7f5a160db50d8158686c854cf933308b0879da173b4d470022dcaeaaaad1ff73"
+  },
+  {
+    "file": "assets/dm-sans-400.woff",
+    "bytes": 26204,
+    "sha256": "652fc4be5e8bab1dae265e1f78efb38e8aaf86cfcb35f0531e70f3b0848b6c99"
+  },
+  {
+    "file": "assets/dm-sans-600.woff",
+    "bytes": 26120,
+    "sha256": "216777e86341667b133bea12b59d7b912366780b4c3318ea0d706e9846b2b169"
+  },
+  {
+    "file": "native-thumbnails.json",
+    "bytes": 179816,
+    "sha256": "3c7d72a82df908520fd3d5e96e6049c76ceffecc6040cca67a247eee363c93f4"
+  },
+  {
+    "file": "lucide-icons.json",
+    "bytes": 6411,
+    "sha256": "f56d1daf9aa60c81ee97c9171094ab4d5de587f6c605858107241531a72d3549"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "family": "Barlow Condensed",
+    "weight": "800",
+    "url": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B47b1_3E.ttf",
+    "bytes": 42768,
+    "sourceFile": "barlow-condensed-800.ttf",
+    "file": "barlow-condensed-800.woff",
+    "sha256": "7f5a160db50d8158686c854cf933308b0879da173b4d470022dcaeaaaad1ff73"
+  },
+  {
+    "family": "DM Sans",
+    "weight": "400",
+    "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxhTg.ttf",
+    "bytes": 26204,
+    "sourceFile": "dm-sans-400.ttf",
+    "file": "dm-sans-400.woff",
+    "sha256": "652fc4be5e8bab1dae265e1f78efb38e8aaf86cfcb35f0531e70f3b0848b6c99"
+  },
+  {
+    "family": "DM Sans",
+    "weight": "600",
+    "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAfJthTg.ttf",
+    "bytes": 26120,
+    "sourceFile": "dm-sans-600.ttf",
+    "file": "dm-sans-600.woff",
+    "sha256": "216777e86341667b133bea12b59d7b912366780b4c3318ea0d706e9846b2b169"
+  }
+]
