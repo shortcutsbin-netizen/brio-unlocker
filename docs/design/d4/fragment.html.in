@@ -1,0 +1,10 @@
+<div id="brio-design-d4" aria-label="BRIO Unlocked fourth design round"></div>
+<style>
+@@FONTS@@
+@@CSS@@
+</style>
+<script>
+window.BRIO_D4_DATA=@@DATA@@;
+window.BRIO_D4_ASSETS=@@ASSETS@@;
+@@JS@@
+</script>

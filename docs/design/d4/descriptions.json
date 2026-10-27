@@ -1,0 +1,4 @@
+{
+  "hell": "All modifiers disabled. Invisible players, builds, build previews, loot (including rarity and pickup positions), chests, ammo crates, grenade crates, storm, and projectiles. No maps, storm countdown, inventory, ammo, materials, health/shield HUD, crosshair, hit markers, pickup labels, damage numbers, or reload progress. Good luck.",
+  "advantages": "Show other players' inventories/materials/ammo (large) and health/shield/names, nearest player (including player name) and airdrop indicators, visual warnings for low health/materials/ammo (default thresholds), permanent meteor location, longer bullet trails, transparent roofs and foliage, next storm edge highlight, highlight ammo for owned guns, and make all gliders invisible. General competitive advantages."
+}

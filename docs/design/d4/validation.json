@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-27",
+  "phase": "D4 design only",
+  "runtimeChanged": false,
+  "browser": "153.0.8010.0",
+  "viewports": [
+    1120,
+    1024,
+    736,
+    390,
+    320
+  ],
+  "screens": 5,
+  "lockerCategories": 6,
+  "emoteSlots": 4,
+  "optionsReachable": 49,
+  "crosshairs": 36,
+  "cosmeticKits": 16,
+  "customWraps": 0,
+  "checks": [
+    "finalized samples preserved; active five-view review; independent menus",
+    "all categories, sample selection/import/search",
+    "preview pickaxe/wrap/glider contexts, pause/reduced motion",
+    "49 feature controls; exact preset selection/deselection with unrelated state preserved; Hell/editing, warning reset, segmented size",
+    "inline crosshair selection; swatches/custom hex/invalid input",
+    "target arrow without bearing input; upright label",
+    "verbatim supplied paragraphs; native-frame-consistent left heading/trail origin; session10/empty/partial states and scrolling",
+    "responsive no horizontal overflow; all images/fonts embedded",
+    "zero network requests and page errors"
+  ],
+  "limits": "Draft rendering only. Native animation alignment, custom glider chooser/cache integration, every native wrap state and final game pixels require later integration validation. Deferred full-map fix unchanged."
+}

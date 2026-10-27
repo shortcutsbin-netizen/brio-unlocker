@@ -41,7 +41,7 @@ for name,key in zip(names,keys):
   bounds=canvas.getchannel('A').getbbox();entry['parts'][part]={'file':str(path.relative_to(d)),'canvas':[side,side],'bounds':list(bounds),'source':sources[key+':'+part],'sourceAspect':raw.width/raw.height,'placedAspect':art.width/art.height,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
   # Menus use tight content centered on SQUARE thumb, independent of native texture padding.
   th=Image.new('RGBA',(160,160));a=raw.copy();a.thumbnail((140,140),Image.Resampling.LANCZOS);th.alpha_composite(a,((160-a.width)//2,(160-a.height)//2));thumbs.append(th)
- alias=out/'pickaxe-inventory.png';alias.write_bytes((out/'pickaxe-held.png').read_bytes());entry['parts']['pickaxe-inventory']={**entry['parts']['pickaxe-held'],'file':str(alias.relative_to(d)),'aliasOf':'pickaxe-held','nativeRotationDegrees':-45}
+ alias=out/'pickaxe-inventory.png';alias.write_bytes((out/'pickaxe-held.png').read_bytes());entry['parts']['pickaxe-inventory']={**entry['parts']['pickaxe-held'],'file':str(alias.relative_to(d)),'aliasOf':'pickaxe-held','nativeRotationDegrees':-123.75}
  atlas=Image.new('RGBA',(320,320))
  for j,th in enumerate(thumbs):atlas.alpha_composite(th,(j%2*160,j//2*160))
  atlas.save(assets/(key+'-atlas.webp'),quality=82,method=4);entry['reviewAtlas']='assets/'+key+'-atlas.webp';manifest['sets'].append(entry)

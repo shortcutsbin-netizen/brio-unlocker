@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-27",
+  "sets": 16,
+  "distinctParts": 64,
+  "inventoryAliases": 16,
+  "individualFiles": 80,
+  "checks": [
+    "RGBA dimensions",
+    "uniform scale/aspect within2%rounding",
+    "alpha bounds centered",
+    "square card cells centered",
+    "inventory aliases byte-identical"
+  ],
+  "limits": "Texture exports prepared; native anatomical anchors/grips/size/timing still require integration check."
+}

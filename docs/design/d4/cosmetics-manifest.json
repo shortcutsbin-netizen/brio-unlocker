@@ -130,7 +130,7 @@
           "placedAspect": 0.9740740740740741,
           "sha256": "f3257ed8a8892b8b4b9473d1f8578c3f1832453b4114480716d294ce2f7263e1",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/trail-warden-atlas.webp"
@@ -264,7 +264,7 @@
           "placedAspect": 0.9851851851851852,
           "sha256": "ef65ee4d906758d8463c095e08793002298fff86c76b5766b51409b4326b724c",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/citrus-circuit-atlas.webp"
@@ -398,7 +398,7 @@
           "placedAspect": 1.0424710424710424,
           "sha256": "e9f05527997c0611e59843c3afbb8f12dde292b41ed8c35252ceff4a3913caa1",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/nightglass-atlas.webp"
@@ -532,7 +532,7 @@
           "placedAspect": 1.0655737704918034,
           "sha256": "24c16846a7bc3c4650a5b1659b584887ee7114ccf661d387e1b4126a930434d4",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/kiln-current-atlas.webp"
@@ -666,7 +666,7 @@
           "placedAspect": 0.9444444444444444,
           "sha256": "e7b621a848d1d2057cd2cc17a9f87b51ccb14f8c6e85a4ea893a0f961eddd99d",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/margin-runner-atlas.webp"
@@ -800,7 +800,7 @@
           "placedAspect": 1.1111111111111112,
           "sha256": "d04044245110cad0997095b74149dd5ef11d4bfe18ea25a4af0fee45d2ed2004",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/tide-archivist-atlas.webp"
@@ -934,7 +934,7 @@
           "placedAspect": 1.210762331838565,
           "sha256": "ca27a4df7e32e2e1f4213da7f477d6b7f8d3adec030b05513c0bc506010cbcd0",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/glass-orchard-atlas.webp"
@@ -1068,7 +1068,7 @@
           "placedAspect": 1.1688311688311688,
           "sha256": "37e05987761e6b79ff60b94e62e1bf99943a2ac8c53239b667135260f5277466",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/rivet-sonata-atlas.webp"
@@ -1202,7 +1202,7 @@
           "placedAspect": 1.7647058823529411,
           "sha256": "c28b7d77a446ba182dda463086bd0c08457014034aa9dcb761feda70a99d6bf9",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/polar-frequency-atlas.webp"
@@ -1336,7 +1336,7 @@
           "placedAspect": 1.134453781512605,
           "sha256": "dbc42a3724d91b33e0b4ce04b468a2c23518887b514fdbc05b3dc384e62d88ae",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/morrow-loom-atlas.webp"
@@ -1470,7 +1470,7 @@
           "placedAspect": 1.3235294117647058,
           "sha256": "f750fba2fd9a32de633b9dd97c9198821e5c27e951882b288566863093d65bfd",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/prismwake-atlas.webp"
@@ -1604,7 +1604,7 @@
           "placedAspect": 1.4361702127659575,
           "sha256": "12748cb828edb33e085f11597d5f7e21d8ec0802c6162ec27aa05864b09232a3",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/cinder-apiary-atlas.webp"
@@ -1738,7 +1738,7 @@
           "placedAspect": 1.3775510204081634,
           "sha256": "fbc287f0439fd6eebc20a21a04dfc57f8c6143c220e6531dd5bf8005b2b43fc5",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/flux-foundry-atlas.webp"
@@ -1872,7 +1872,7 @@
           "placedAspect": 1.5517241379310345,
           "sha256": "4c2eb48a0f0d95d84999e4b4ea5fed1492fac7654cec82d8b6c134b1003eb7f3",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/lunar-marquetry-atlas.webp"
@@ -2006,7 +2006,7 @@
           "placedAspect": 1.5168539325842696,
           "sha256": "6261c6979a4973b524950f4d78e7764a6afc6dbaea8f1e7e611f17fffa1af485",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/hush-velvet-atlas.webp"
@@ -2140,7 +2140,7 @@
           "placedAspect": 1.3636363636363635,
           "sha256": "f39d5a04cfc08636326d4423ca490fc5d37ac67652fe2bcf3f92079f72734656",
           "aliasOf": "pickaxe-held",
-          "nativeRotationDegrees": -45
+          "nativeRotationDegrees": -123.75
         }
       },
       "reviewAtlas": "assets/pepper-forge-atlas.webp"

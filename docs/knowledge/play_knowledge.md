@@ -1,3 +1,15 @@
+# D4 native inventory audit clarification — 2026-10-27
+
+Current D4 inventory contract supersedes earlier -45degree inventory statements below: native INVENTORY reuses the held pickaxe texture with rotation -11*PI/16 (-123.75degrees), from actual AST aliases Ãëä=11,Áéã=16. LOCKER THUMBNAIL uses -45degrees separately. Export inventory aliases remain UNROTATED/byte-identical to held PNG; native code applies the appropriate transform, no double rotation/duplicate GPU texture. See docs/design/d4/cosmetic-native-evidence.json and node tools/analysis/audit-design-d4-inventory.cjs (native parsed, never executed). Other D4 approval/review/implementation constraints below unchanged. Final D4 publication includes this correction; do not reuse older inventory-angle assumptions.
+
+---
+
+# D4 design/asset/session update — 2026-10-27
+
+Live V68 unchanged; no gameplay/newprobe. Current docs/design/d4/ and D4reviewprocedure. User finalized home/socials,debrief,logo,indicator,36crosshairs FOR SAMPLING (post-implementation fine-tuning open). Active review left-facing locker/trailunderorigin/sideglider, aspect-preserving centered16sets (64pieces+16inventoryaliasPNG), EXACT supplied paragraph descriptions, new scrollable300x250per-run sessiondashboard. Native inventory uses same held pickaxe texture with own-45degree rotation; share decoded resource. Prepared exports/manifest not anatomical-anchor/nativeanimation proof. Pure fixed-size session model handles missing coverage/dedup/stale/destroy; no retained match/name/player/history. OPS-003 lifecycle destroys only owned runtime resources, preserves native/shared resources+saveduploads, lazy bounded caches and measuredprofiling; never claim GC guarantees no possible duplication. Read current AGENTS/D4README/checkpoint/contracts. OPS-001/002/003 remain deferred finalintegration, max2playedmatches then. Historical bytes below preserved.
+
+---
+
 # D3 source/design update — 2026-10-27
 
 No gameplay or V68 runtime changes. Current docs/design/d3/ has10cosmeticsets/36staticcrosshairs, source-based native preview hierarchy and centered panel stats. Read current AGENTS/README/checkpoint and preview-recon.md/preview-source.json before resuming. Source-only native running equations and bounds extracted; exact visible cadence/scale/trails need focused native locker reference, no match/probe installed now. OPS-002 exact General Advantages MUST deselect excluded modifier toggles (supersedes merge-only history), preserve unrelated choices, remain editable; D3 draft only. OPS-001 full-map remains deferred alongside it for final integration. No new custom wraps; plain glider choose/cache/anchors remain final work. User’s native home overlays unchanged; Discord branded noninteractive ads0210. D3 review procedure replaces D2; no gameplay suite. Historical bytes below preserved.
