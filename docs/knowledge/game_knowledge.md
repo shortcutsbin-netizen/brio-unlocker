@@ -1,3 +1,9 @@
+# D3 source/design update — 2026-10-27
+
+No gameplay or V68 runtime changes. Current docs/design/d3/ has10cosmeticsets/36staticcrosshairs, source-based native preview hierarchy and centered panel stats. Read current AGENTS/README/checkpoint and preview-recon.md/preview-source.json before resuming. Source-only native running equations and bounds extracted; exact visible cadence/scale/trails need focused native locker reference, no match/probe installed now. OPS-002 exact General Advantages MUST deselect excluded modifier toggles (supersedes merge-only history), preserve unrelated choices, remain editable; D3 draft only. OPS-001 full-map remains deferred alongside it for final integration. No new custom wraps; plain glider choose/cache/anchors remain final work. User’s native home overlays unchanged; Discord branded noninteractive ads0210. D3 review procedure replaces D2; no gameplay suite. Historical bytes below preserved.
+
+---
+
 # D2 design-only update — 2026-10-27
 
 No new matches, game facts or V68 runtime changes. Current work is docs/design/d2/ and its review procedure; no gameplay testing requested. OPS-001 full-map leak remains deferred. Source-only preview/glider/wrap/catalogue contracts are recorded in docs/design/d2/native-contracts.md; private native engine was parsed, never executed. D2 animation and new glider art are design concepts awaiting final native calibration/chooser integration. No new custom wraps; existing native wraps remain. Discord is plain ads0210, no invite needed. Read current AGENTS/D2 handoff before resuming. Historical notes below preserved.

@@ -1,0 +1,10 @@
+<div id="brio-design-d3" aria-label="BRIO Unlocked third design round"></div>
+<style>
+@@FONTS@@
+@@CSS@@
+</style>
+<script>
+window.BRIO_D3_DATA=@@DATA@@;
+window.BRIO_D3_ASSETS=@@ASSETS@@;
+@@JS@@
+</script>

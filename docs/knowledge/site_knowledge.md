@@ -1,3 +1,9 @@
+# D3 source/design update — 2026-10-27
+
+No gameplay or V68 runtime changes. Current docs/design/d3/ has10cosmeticsets/36staticcrosshairs, source-based native preview hierarchy and centered panel stats. Read current AGENTS/README/checkpoint and preview-recon.md/preview-source.json before resuming. Source-only native running equations and bounds extracted; exact visible cadence/scale/trails need focused native locker reference, no match/probe installed now. OPS-002 exact General Advantages MUST deselect excluded modifier toggles (supersedes merge-only history), preserve unrelated choices, remain editable; D3 draft only. OPS-001 full-map remains deferred alongside it for final integration. No new custom wraps; plain glider choose/cache/anchors remain final work. User’s native home overlays unchanged; Discord branded noninteractive ads0210. D3 review procedure replaces D2; no gameplay suite. Historical bytes below preserved.
+
+---
+
 # D1 design phase — current handoff, 2026-10-27
 
 User explicitly moved to VISUAL DESIGN ITERATION. Live runtime remains V68 src/dist/immutableversions. NO V69/gameplay suite/fix injection now. User reports No map still permits visible FULL MAP although minimap hides; OPS-001 in `docs/design/deferred-integration-docket.md` is CONFIRMED DEFERRED, not fixed. Apply it only WITH final user-approved visuals. Separate status announcements/elimination banners/kill feed stay visible; map numeric countdown and own HUD-name fixes retained. This latest instruction supersedes all older 'run another/final operational match before design' directions. No more unchanged-surface operational sweeps. Current review procedure is `docs/test-procedures/design-d1-review-procedure.md`: no gameplay.

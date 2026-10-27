@@ -1,0 +1,242 @@
+{
+  "tide-archivist": {
+    "source": "assets/tide-archivist.webp",
+    "sourceSize": [
+      1200,
+      800
+    ],
+    "boxes": [
+      [
+        148,
+        40,
+        502,
+        348
+      ],
+      [
+        639,
+        68,
+        1137,
+        371
+      ],
+      [
+        106,
+        368,
+        561,
+        777
+      ],
+      [
+        589,
+        462,
+        1174,
+        708
+      ]
+    ],
+    "parts": [
+      "head",
+      "body",
+      "pickaxe",
+      "glider"
+    ],
+    "atlasCell": [
+      350,
+      350
+    ],
+    "atlasSize": [
+      700,
+      700
+    ],
+    "output": "assets/tide-archivist-atlas.webp"
+  },
+  "glass-orchard": {
+    "source": "assets/glass-orchard.webp",
+    "sourceSize": [
+      1200,
+      800
+    ],
+    "boxes": [
+      [
+        163,
+        48,
+        474,
+        364
+      ],
+      [
+        610,
+        88,
+        1119,
+        376
+      ],
+      [
+        109,
+        387,
+        578,
+        773
+      ],
+      [
+        606,
+        475,
+        1126,
+        717
+      ]
+    ],
+    "parts": [
+      "head",
+      "body",
+      "pickaxe",
+      "glider"
+    ],
+    "atlasCell": [
+      350,
+      350
+    ],
+    "atlasSize": [
+      700,
+      700
+    ],
+    "output": "assets/glass-orchard-atlas.webp"
+  },
+  "rivet-sonata": {
+    "source": "assets/rivet-sonata.webp",
+    "sourceSize": [
+      1200,
+      800
+    ],
+    "boxes": [
+      [
+        114,
+        26,
+        484,
+        355
+      ],
+      [
+        598,
+        61,
+        1159,
+        370
+      ],
+      [
+        71,
+        389,
+        522,
+        775
+      ],
+      [
+        561,
+        461,
+        1181,
+        720
+      ]
+    ],
+    "parts": [
+      "head",
+      "body",
+      "pickaxe",
+      "glider"
+    ],
+    "atlasCell": [
+      350,
+      350
+    ],
+    "atlasSize": [
+      700,
+      700
+    ],
+    "output": "assets/rivet-sonata-atlas.webp"
+  },
+  "polar-frequency": {
+    "source": "assets/polar-frequency.webp",
+    "sourceSize": [
+      1200,
+      600
+    ],
+    "boxes": [
+      [
+        154,
+        21,
+        496,
+        304
+      ],
+      [
+        638,
+        68,
+        1069,
+        300
+      ],
+      [
+        74,
+        306,
+        566,
+        583
+      ],
+      [
+        604,
+        354,
+        1137,
+        554
+      ]
+    ],
+    "parts": [
+      "head",
+      "body",
+      "pickaxe",
+      "glider"
+    ],
+    "atlasCell": [
+      350,
+      350
+    ],
+    "atlasSize": [
+      700,
+      700
+    ],
+    "output": "assets/polar-frequency-atlas.webp"
+  },
+  "morrow-loom": {
+    "source": "assets/morrow-loom.webp",
+    "sourceSize": [
+      1200,
+      800
+    ],
+    "boxes": [
+      [
+        129,
+        54,
+        501,
+        353
+      ],
+      [
+        635,
+        94,
+        1118,
+        358
+      ],
+      [
+        95,
+        371,
+        549,
+        771
+      ],
+      [
+        607,
+        463,
+        1160,
+        693
+      ]
+    ],
+    "parts": [
+      "head",
+      "body",
+      "pickaxe",
+      "glider"
+    ],
+    "atlasCell": [
+      350,
+      350
+    ],
+    "atlasSize": [
+      700,
+      700
+    ],
+    "output": "assets/morrow-loom-atlas.webp"
+  }
+}

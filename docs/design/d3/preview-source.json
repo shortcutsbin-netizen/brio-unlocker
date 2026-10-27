@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-27",
+  "nativeSha256": "42ac4c2b8dd1de931a15373421462d0e0047b3303df30f2f6454f08f5abd1ac4",
+  "nativeExecuted": false,
+  "registration": {
+    "create": [
+      444034,
+      451564
+    ],
+    "frame": [
+      451565,
+      463818
+    ]
+  },
+  "localHandCenters": [
+    22,
+    25
+  ],
+  "sizes": {
+    "Ëå": [
+      100,
+      100
+    ],
+    "head": [
+      120,
+      120
+    ]
+  },
+  "settledRunningTargets": {
+    "body": "PI/2+cos(phase)/16",
+    "head": "PI/2+cos(phase)/32",
+    "handGroup": "-cos(phase)/8",
+    "feet": [
+      "2-15*cos(phase)",
+      "2+15*cos(phase)"
+    ]
+  },
+  "evidence": [
+    {
+      "offset": 455756,
+      "target": "á.ÉëÉ",
+      "source": "á.ÉëÉ+=(Å.æè.EA*äÉ)/0Xdc"
+    },
+    {
+      "offset": 455805,
+      "target": "á.ÂaË.ë.É",
+      "source": "á.ÂaË.ë.É=(-ÃEe*15)+0X2"
+    },
+    {
+      "offset": 455829,
+      "target": "á.ÅÆË.ë.É",
+      "source": "á.ÅÆË.ë.É=(0xF*ÃEe)+ÂÊ"
+    },
+    {
+      "offset": 457868,
+      "target": "á.aá.A",
+      "source": "á.aá.A=Å.ÅÅ(á.aá.A,(-ÃEe/8)-á.æa)"
+    },
+    {
+      "offset": 457911,
+      "target": "á.aá.A",
+      "source": "á.aá.A=(-ÃEe/âÆÅ)-á.æa"
+    },
+    {
+      "offset": 457942,
+      "target": "á.aá.A",
+      "source": "á.aá.A=Å.ÅÅ(á.aá.A,(-ÃEe/0x18)-á.æa)"
+    },
+    {
+      "offset": 458209,
+      "target": "á.head.A",
+      "source": "á.head.A=(((ÃEe/ááe)-(á.æa/Êãá))*0.5)+(Math.PI/ee)"
+    }
+  ],
+  "limits": "Source-backed hierarchy/relative phase. Visible cadence, renderer scale, padding, trail lifecycle and transitions require focused native preview reference; no live probe or match requested now."
+}
