@@ -1,3 +1,13 @@
+# D4 docket update — 2026-10-27
+
+## OPS-003 — per-script-run session dashboard and owned lifecycle
+
+New separate native home ad slot300x250reference, scrollable dashboard of completed matches in THIS script instance: wins/win rate/kills per game/average placement/native totals/observed samples with correct missing-data denominators. No persistence across reinjection by default. Destroy prior instance and all owned listeners/timers/observers/rAF/DOM/hooks/objectURLs/exclusive textures/caches/stale promises; preserve user uploads/preferences and native/shared resources. No unbounded result/name/player/event logs or seen-match-ID sets: O(1) accumulators/current terminal epoch and fixed weapon keys. Verify mock lifecycle resource counts, then profile retained resources across repeated injection/menu/match cycles; never equate cleanup calls with guaranteed GC or claim zero possible duplication. See docs/design/d4/session-lifecycle-contract.md. Design/pure model only, not live V68.
+
+New approval policy: FINALIZED = sample approval only, native post-implementation fine tuning remains. Home/socials, debrief, logo, indicator,36crosshairs finalized; do not redesign/resweep them. All new art needs matching native surfaces, grips/anchors/texture reuse and held/inventory coverage.16sets/64distinctparts plus16inventory aliases exported for review; no new custom wraps. Exact user-supplied paragraphs replace lists in Hell/General Advantages without changing feature IDs/locks. No more gameplay now; apply approved visuals with OPS-001(full map), OPS-002(exact preset), OPS-003/lifecycle/terminal removal later, max2matches.
+
+---
+
 # D3 docket update — 2026-10-27
 
 ## OPS-002 — General Advantages selects exactly the preset

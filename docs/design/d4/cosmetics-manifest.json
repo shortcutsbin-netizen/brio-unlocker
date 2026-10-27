@@ -1,0 +1,2150 @@
+{
+  "schema": 1,
+  "sets": [
+    {
+      "name": "Trail Warden",
+      "key": "trail-warden",
+      "parts": {
+        "head": {
+          "file": "exports/trail-warden/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            54,
+            310,
+            296
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              162,
+              52,
+              463,
+              321
+            ]
+          },
+          "sourceAspect": 1.1172161172161172,
+          "placedAspect": 1.115702479338843,
+          "sha256": "467d5ff623be09ef9c68622f0078581dc18dfe9c89414457988ecd4d47a0e8a1"
+        },
+        "body": {
+          "file": "exports/trail-warden/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            76,
+            325,
+            273
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              581,
+              79,
+              956,
+              324
+            ]
+          },
+          "sourceAspect": 1.5220883534136547,
+          "placedAspect": 1.5228426395939085,
+          "sha256": "4302ebf164eeebf957767daf44cae02da19b1b4cdca38801717bfa49c9c677ea"
+        },
+        "pickaxe-held": {
+          "file": "exports/trail-warden/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            18,
+            15,
+            281,
+            285
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              1102,
+              26,
+              1401,
+              333
+            ]
+          },
+          "sourceAspect": 0.9742765273311897,
+          "placedAspect": 0.9740740740740741,
+          "sha256": "f3257ed8a8892b8b4b9473d1f8578c3f1832453b4114480716d294ce2f7263e1"
+        },
+        "glider": {
+          "file": "exports/trail-warden/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            162,
+            262,
+            539,
+            438
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/gliders.webp",
+            "box": [
+              14,
+              100,
+              388,
+              272
+            ]
+          },
+          "sourceAspect": 2.147727272727273,
+          "placedAspect": 2.147727272727273,
+          "sha256": "5f6f18478158f259370cc24f1adfb999448b03db574efba039aa48bdc3666cb2"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/trail-warden/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            18,
+            15,
+            281,
+            285
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              1102,
+              26,
+              1401,
+              333
+            ]
+          },
+          "sourceAspect": 0.9742765273311897,
+          "placedAspect": 0.9740740740740741,
+          "sha256": "f3257ed8a8892b8b4b9473d1f8578c3f1832453b4114480716d294ce2f7263e1",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/trail-warden-atlas.webp"
+    },
+    {
+      "name": "Citrus Circuit",
+      "key": "citrus-circuit",
+      "parts": {
+        "head": {
+          "file": "exports/citrus-circuit/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            57,
+            310,
+            292
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              154,
+              383,
+              469,
+              657
+            ]
+          },
+          "sourceAspect": 1.1474820143884892,
+          "placedAspect": 1.148936170212766,
+          "sha256": "7c03009d8153927a98b7b71041b2261ed4206c943ce72680788e69b1e7c2cd0c"
+        },
+        "body": {
+          "file": "exports/citrus-circuit/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            86,
+            325,
+            264
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              569,
+              412,
+              968,
+              647
+            ]
+          },
+          "sourceAspect": 1.6861924686192469,
+          "placedAspect": 1.6853932584269662,
+          "sha256": "d7253fd7ff93dda7e68998aa5bb9b8a07861ff9e680e350fa083458cfbc07b73"
+        },
+        "pickaxe-held": {
+          "file": "exports/citrus-circuit/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            17,
+            15,
+            283,
+            285
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              1128,
+              359,
+              1427,
+              662
+            ]
+          },
+          "sourceAspect": 0.9869706840390879,
+          "placedAspect": 0.9851851851851852,
+          "sha256": "ef65ee4d906758d8463c095e08793002298fff86c76b5766b51409b4326b724c"
+        },
+        "glider": {
+          "file": "exports/citrus-circuit/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            161,
+            262,
+            538,
+            438
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/gliders.webp",
+            "box": [
+              413,
+              100,
+              787,
+              272
+            ]
+          },
+          "sourceAspect": 2.147727272727273,
+          "placedAspect": 2.147727272727273,
+          "sha256": "ecbedc98382999d25a8ca2fc0e9b0f6c72d085d4ecbb07b8e8b478da45a8f250"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/citrus-circuit/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            17,
+            15,
+            283,
+            285
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              1128,
+              359,
+              1427,
+              662
+            ]
+          },
+          "sourceAspect": 0.9869706840390879,
+          "placedAspect": 0.9851851851851852,
+          "sha256": "ef65ee4d906758d8463c095e08793002298fff86c76b5766b51409b4326b724c",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/citrus-circuit-atlas.webp"
+    },
+    {
+      "name": "Nightglass",
+      "key": "nightglass",
+      "parts": {
+        "head": {
+          "file": "exports/nightglass/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            49,
+            310,
+            300
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              158,
+              697,
+              463,
+              980
+            ]
+          },
+          "sourceAspect": 1.0766550522648084,
+          "placedAspect": 1.0756972111553784,
+          "sha256": "007df8bce81429e94baf9593609dfc98982f417a569db26129d4e9fb6b5eac9b"
+        },
+        "body": {
+          "file": "exports/nightglass/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            79,
+            325,
+            270
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              564,
+              726,
+              972,
+              984
+            ]
+          },
+          "sourceAspect": 1.5725190839694656,
+          "placedAspect": 1.5706806282722514,
+          "sha256": "f4d637177fac470a008dea079af4ba4fcc26d7d5ade2f1c66555b7067ded90ba"
+        },
+        "pickaxe-held": {
+          "file": "exports/nightglass/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            20,
+            285,
+            279
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              1118,
+              664,
+              1447,
+              980
+            ]
+          },
+          "sourceAspect": 1.040625,
+          "placedAspect": 1.0424710424710424,
+          "sha256": "e9f05527997c0611e59843c3afbb8f12dde292b41ed8c35252ceff4a3913caa1"
+        },
+        "glider": {
+          "file": "exports/nightglass/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            160,
+            262,
+            539,
+            438
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/gliders.webp",
+            "box": [
+              812,
+              99,
+              1187,
+              272
+            ]
+          },
+          "sourceAspect": 2.1412429378531073,
+          "placedAspect": 2.1412429378531073,
+          "sha256": "92b6aa55202d0f07155fd18b9950470abd13a67019aeeeaffab967d7b639eda0"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/nightglass/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            20,
+            285,
+            279
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-originals.webp",
+            "box": [
+              1118,
+              664,
+              1447,
+              980
+            ]
+          },
+          "sourceAspect": 1.040625,
+          "placedAspect": 1.0424710424710424,
+          "sha256": "e9f05527997c0611e59843c3afbb8f12dde292b41ed8c35252ceff4a3913caa1",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/nightglass-atlas.webp"
+    },
+    {
+      "name": "Kiln Current",
+      "key": "kiln-current",
+      "parts": {
+        "head": {
+          "file": "exports/kiln-current/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            57,
+            77,
+            292,
+            273
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-new.webp",
+            "box": [
+              35,
+              63,
+              266,
+              255
+            ]
+          },
+          "sourceAspect": 1.1989795918367347,
+          "placedAspect": 1.1989795918367347,
+          "sha256": "18ec45be73092b55badf262b93a28cdfec257dda1b618a3922914c89d7e377f2"
+        },
+        "body": {
+          "file": "exports/kiln-current/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            35,
+            83,
+            314,
+            267
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-new.webp",
+            "box": [
+              311,
+              70,
+              586,
+              250
+            ]
+          },
+          "sourceAspect": 1.516304347826087,
+          "placedAspect": 1.516304347826087,
+          "sha256": "55e97f6787c9565d2a2437c7fa6cec886ce201e59bd555744bad92c6bbb7749e"
+        },
+        "pickaxe-held": {
+          "file": "exports/kiln-current/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            20,
+            28,
+            280,
+            272
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-new.webp",
+            "box": [
+              612,
+              39,
+              868,
+              279
+            ]
+          },
+          "sourceAspect": 1.0655737704918034,
+          "placedAspect": 1.0655737704918034,
+          "sha256": "24c16846a7bc3c4650a5b1659b584887ee7114ccf661d387e1b4126a930434d4"
+        },
+        "glider": {
+          "file": "exports/kiln-current/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            202,
+            283,
+            497,
+            416
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-new.webp",
+            "box": [
+              900,
+              110,
+              1191,
+              239
+            ]
+          },
+          "sourceAspect": 2.218045112781955,
+          "placedAspect": 2.218045112781955,
+          "sha256": "c6d731280f1d9f69492630fd94a247446297ea45bb5751b9cc76ec1f2bbee211"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/kiln-current/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            20,
+            28,
+            280,
+            272
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-new.webp",
+            "box": [
+              612,
+              39,
+              868,
+              279
+            ]
+          },
+          "sourceAspect": 1.0655737704918034,
+          "placedAspect": 1.0655737704918034,
+          "sha256": "24c16846a7bc3c4650a5b1659b584887ee7114ccf661d387e1b4126a930434d4",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/kiln-current-atlas.webp"
+    },
+    {
+      "name": "Margin Runner",
+      "key": "margin-runner",
+      "parts": {
+        "head": {
+          "file": "exports/margin-runner/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            56,
+            72,
+            293,
+            278
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-new.webp",
+            "box": [
+              33,
+              344,
+              266,
+              546
+            ]
+          },
+          "sourceAspect": 1.1504854368932038,
+          "placedAspect": 1.1504854368932038,
+          "sha256": "478d9b9d75dd6a806f953fd6e0389c992549053687f3847120714659d5bfcfd4"
+        },
+        "body": {
+          "file": "exports/margin-runner/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            30,
+            81,
+            319,
+            268
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-new.webp",
+            "box": [
+              306,
+              355,
+              591,
+              538
+            ]
+          },
+          "sourceAspect": 1.5454545454545454,
+          "placedAspect": 1.5454545454545454,
+          "sha256": "4208d61f8185ac4cff347aa11c0fb5e013368ebd9170e41d9f6d564dd6f2de75"
+        },
+        "pickaxe-held": {
+          "file": "exports/margin-runner/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            22,
+            15,
+            277,
+            285
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-new.webp",
+            "box": [
+              606,
+              295,
+              874,
+              579
+            ]
+          },
+          "sourceAspect": 0.9444444444444444,
+          "placedAspect": 0.9444444444444444,
+          "sha256": "e7b621a848d1d2057cd2cc17a9f87b51ccb14f8c6e85a4ea893a0f961eddd99d"
+        },
+        "glider": {
+          "file": "exports/margin-runner/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            202,
+            269,
+            497,
+            430
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-new.webp",
+            "box": [
+              900,
+              366,
+              1191,
+              523
+            ]
+          },
+          "sourceAspect": 1.8322981366459627,
+          "placedAspect": 1.8322981366459627,
+          "sha256": "adcef9eaf7e44939683779337437523c76159bea2a96c0b9ac63a12d13de70b5"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/margin-runner/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            22,
+            15,
+            277,
+            285
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/cosmetics-new.webp",
+            "box": [
+              606,
+              295,
+              874,
+              579
+            ]
+          },
+          "sourceAspect": 0.9444444444444444,
+          "placedAspect": 0.9444444444444444,
+          "sha256": "e7b621a848d1d2057cd2cc17a9f87b51ccb14f8c6e85a4ea893a0f961eddd99d",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/margin-runner-atlas.webp"
+    },
+    {
+      "name": "Tide Archivist",
+      "key": "tide-archivist",
+      "parts": {
+        "head": {
+          "file": "exports/tide-archivist/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            57,
+            310,
+            292
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/tide-archivist.webp",
+            "box": [
+              148,
+              40,
+              502,
+              348
+            ]
+          },
+          "sourceAspect": 1.1474358974358974,
+          "placedAspect": 1.148936170212766,
+          "sha256": "a1029f9e735cb8873eaf21dda41f1c628812a2017ad570997cf4b286c0d16734"
+        },
+        "body": {
+          "file": "exports/tide-archivist/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            83,
+            325,
+            266
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/tide-archivist.webp",
+            "box": [
+              639,
+              68,
+              1137,
+              371
+            ]
+          },
+          "sourceAspect": 1.6351791530944626,
+          "placedAspect": 1.639344262295082,
+          "sha256": "441ba7f638ee2286830acf881dfa8e08d01d2d0f5131fe67716f9274921d335e"
+        },
+        "pickaxe-held": {
+          "file": "exports/tide-archivist/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            28,
+            285,
+            271
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/tide-archivist.webp",
+            "box": [
+              106,
+              368,
+              561,
+              777
+            ]
+          },
+          "sourceAspect": 1.1113801452784504,
+          "placedAspect": 1.1111111111111112,
+          "sha256": "d04044245110cad0997095b74149dd5ef11d4bfe18ea25a4af0fee45d2ed2004"
+        },
+        "glider": {
+          "file": "exports/tide-archivist/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            135,
+            258,
+            565,
+            441
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/tide-archivist.webp",
+            "box": [
+              589,
+              462,
+              1174,
+              708
+            ]
+          },
+          "sourceAspect": 2.356,
+          "placedAspect": 2.349726775956284,
+          "sha256": "af1ad0a25619df04c423939bc3810cbf35fe1fea10d9a1d9fa8882c443c0184b"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/tide-archivist/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            28,
+            285,
+            271
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/tide-archivist.webp",
+            "box": [
+              106,
+              368,
+              561,
+              777
+            ]
+          },
+          "sourceAspect": 1.1113801452784504,
+          "placedAspect": 1.1111111111111112,
+          "sha256": "d04044245110cad0997095b74149dd5ef11d4bfe18ea25a4af0fee45d2ed2004",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/tide-archivist-atlas.webp"
+    },
+    {
+      "name": "Glass Orchard",
+      "key": "glass-orchard",
+      "parts": {
+        "head": {
+          "file": "exports/glass-orchard/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            42,
+            40,
+            308,
+            310
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/glass-orchard.webp",
+            "box": [
+              163,
+              48,
+              474,
+              364
+            ]
+          },
+          "sourceAspect": 0.984375,
+          "placedAspect": 0.9851851851851852,
+          "sha256": "e8a9571db77abcd00aa258111ecddab04ca326502bf1197685584cf12e7baaef"
+        },
+        "body": {
+          "file": "exports/glass-orchard/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            89,
+            325,
+            260
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/glass-orchard.webp",
+            "box": [
+              610,
+              88,
+              1119,
+              376
+            ]
+          },
+          "sourceAspect": 1.7568493150684932,
+          "placedAspect": 1.7543859649122806,
+          "sha256": "343489e8e5c5fa7a888e87f5ceecf72286264c2e09feac2cfd908b7ad7654fdc"
+        },
+        "pickaxe-held": {
+          "file": "exports/glass-orchard/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            38,
+            285,
+            261
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/glass-orchard.webp",
+            "box": [
+              109,
+              387,
+              578,
+              773
+            ]
+          },
+          "sourceAspect": 1.2128205128205127,
+          "placedAspect": 1.210762331838565,
+          "sha256": "ca27a4df7e32e2e1f4213da7f477d6b7f8d3adec030b05513c0bc506010cbcd0"
+        },
+        "glider": {
+          "file": "exports/glass-orchard/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            137,
+            250,
+            563,
+            450
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/glass-orchard.webp",
+            "box": [
+              606,
+              475,
+              1126,
+              717
+            ]
+          },
+          "sourceAspect": 2.130081300813008,
+          "placedAspect": 2.13,
+          "sha256": "7b1dc86668c2d3eac4d3fd383dce096574ab02af62902f9cab109c13c81d97c7"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/glass-orchard/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            38,
+            285,
+            261
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/glass-orchard.webp",
+            "box": [
+              109,
+              387,
+              578,
+              773
+            ]
+          },
+          "sourceAspect": 1.2128205128205127,
+          "placedAspect": 1.210762331838565,
+          "sha256": "ca27a4df7e32e2e1f4213da7f477d6b7f8d3adec030b05513c0bc506010cbcd0",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/glass-orchard-atlas.webp"
+    },
+    {
+      "name": "Rivet Sonata",
+      "key": "rivet-sonata",
+      "parts": {
+        "head": {
+          "file": "exports/rivet-sonata/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            55,
+            310,
+            295
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/rivet-sonata.webp",
+            "box": [
+              114,
+              26,
+              484,
+              355
+            ]
+          },
+          "sourceAspect": 1.1231231231231231,
+          "placedAspect": 1.125,
+          "sha256": "801be11c749368cef1cfe9015abcaa6c326478b30f220886452f3ca19ad64d42"
+        },
+        "body": {
+          "file": "exports/rivet-sonata/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            92,
+            325,
+            258
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/rivet-sonata.webp",
+            "box": [
+              598,
+              61,
+              1159,
+              370
+            ]
+          },
+          "sourceAspect": 1.805111821086262,
+          "placedAspect": 1.8072289156626506,
+          "sha256": "10fc8ab520f0675507b2888a353a6dda9887ef2cd7aa065a7542f97aa7796993"
+        },
+        "pickaxe-held": {
+          "file": "exports/rivet-sonata/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            34,
+            285,
+            265
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/rivet-sonata.webp",
+            "box": [
+              71,
+              389,
+              522,
+              775
+            ]
+          },
+          "sourceAspect": 1.1666666666666667,
+          "placedAspect": 1.1688311688311688,
+          "sha256": "37e05987761e6b79ff60b94e62e1bf99943a2ac8c53239b667135260f5277466"
+        },
+        "glider": {
+          "file": "exports/rivet-sonata/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            135,
+            259,
+            565,
+            440
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/rivet-sonata.webp",
+            "box": [
+              561,
+              461,
+              1181,
+              720
+            ]
+          },
+          "sourceAspect": 2.3726235741444865,
+          "placedAspect": 2.3756906077348066,
+          "sha256": "8e62b69fa8728453f9831af2a9ccae4585e97c6502c533a4a94ab24448217802"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/rivet-sonata/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            34,
+            285,
+            265
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/rivet-sonata.webp",
+            "box": [
+              71,
+              389,
+              522,
+              775
+            ]
+          },
+          "sourceAspect": 1.1666666666666667,
+          "placedAspect": 1.1688311688311688,
+          "sha256": "37e05987761e6b79ff60b94e62e1bf99943a2ac8c53239b667135260f5277466",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/rivet-sonata-atlas.webp"
+    },
+    {
+      "name": "Polar Frequency",
+      "key": "polar-frequency",
+      "parts": {
+        "head": {
+          "file": "exports/polar-frequency/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            63,
+            310,
+            287
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/polar-frequency.webp",
+            "box": [
+              154,
+              21,
+              496,
+              304
+            ]
+          },
+          "sourceAspect": 1.2055749128919862,
+          "placedAspect": 1.2053571428571428,
+          "sha256": "95f3ae1a1a73810ac1aeafb738806c017e4f0647560919f850d322e4c51616bb"
+        },
+        "body": {
+          "file": "exports/polar-frequency/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            93,
+            325,
+            256
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/polar-frequency.webp",
+            "box": [
+              638,
+              68,
+              1069,
+              300
+            ]
+          },
+          "sourceAspect": 1.8432203389830508,
+          "placedAspect": 1.8404907975460123,
+          "sha256": "3811640a1cc85052ccfd484b664bcf91ed70b124d611aafd2cc2f450e4e0b821"
+        },
+        "pickaxe-held": {
+          "file": "exports/polar-frequency/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            73,
+            285,
+            226
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/polar-frequency.webp",
+            "box": [
+              74,
+              306,
+              566,
+              583
+            ]
+          },
+          "sourceAspect": 1.7651245551601424,
+          "placedAspect": 1.7647058823529411,
+          "sha256": "c28b7d77a446ba182dda463086bd0c08457014034aa9dcb761feda70a99d6bf9"
+        },
+        "glider": {
+          "file": "exports/polar-frequency/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            135,
+            268,
+            565,
+            431
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/polar-frequency.webp",
+            "box": [
+              604,
+              354,
+              1137,
+              554
+            ]
+          },
+          "sourceAspect": 2.6323529411764706,
+          "placedAspect": 2.638036809815951,
+          "sha256": "b183c4d6a8a7eb2c5d28525fd4309f961fa4df625d234822040b5de49f631fb6"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/polar-frequency/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            73,
+            285,
+            226
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/polar-frequency.webp",
+            "box": [
+              74,
+              306,
+              566,
+              583
+            ]
+          },
+          "sourceAspect": 1.7651245551601424,
+          "placedAspect": 1.7647058823529411,
+          "sha256": "c28b7d77a446ba182dda463086bd0c08457014034aa9dcb761feda70a99d6bf9",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/polar-frequency-atlas.webp"
+    },
+    {
+      "name": "Morrow Loom",
+      "key": "morrow-loom",
+      "parts": {
+        "head": {
+          "file": "exports/morrow-loom/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            66,
+            310,
+            284
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/morrow-loom.webp",
+            "box": [
+              129,
+              54,
+              501,
+              353
+            ]
+          },
+          "sourceAspect": 1.2409240924092408,
+          "placedAspect": 1.238532110091743,
+          "sha256": "f2ad5707d7a3684d0e9bb6b8869c950d950d57e361e76ec3ed9e158c966d6961"
+        },
+        "body": {
+          "file": "exports/morrow-loom/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            92,
+            325,
+            257
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/morrow-loom.webp",
+            "box": [
+              635,
+              94,
+              1118,
+              358
+            ]
+          },
+          "sourceAspect": 1.8171641791044777,
+          "placedAspect": 1.8181818181818181,
+          "sha256": "da99e72d60579d9156701044a0117568fe5b6079132cdc0536570983128d1158"
+        },
+        "pickaxe-held": {
+          "file": "exports/morrow-loom/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            31,
+            285,
+            269
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/morrow-loom.webp",
+            "box": [
+              95,
+              371,
+              549,
+              771
+            ]
+          },
+          "sourceAspect": 1.1336633663366336,
+          "placedAspect": 1.134453781512605,
+          "sha256": "dbc42a3724d91b33e0b4ce04b468a2c23518887b514fdbc05b3dc384e62d88ae"
+        },
+        "glider": {
+          "file": "exports/morrow-loom/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            135,
+            259,
+            565,
+            440
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/morrow-loom.webp",
+            "box": [
+              607,
+              463,
+              1160,
+              693
+            ]
+          },
+          "sourceAspect": 2.3803418803418803,
+          "placedAspect": 2.3756906077348066,
+          "sha256": "f2275e6ef678736288ebe1dc0814258dec6ca2ae62a7d88640cc1b8702f5e1ab"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/morrow-loom/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            31,
+            285,
+            269
+          ],
+          "source": {
+            "path": "docs/design/d3/assets/morrow-loom.webp",
+            "box": [
+              95,
+              371,
+              549,
+              771
+            ]
+          },
+          "sourceAspect": 1.1336633663366336,
+          "placedAspect": 1.134453781512605,
+          "sha256": "dbc42a3724d91b33e0b4ce04b468a2c23518887b514fdbc05b3dc384e62d88ae",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/morrow-loom-atlas.webp"
+    },
+    {
+      "name": "Prismwake",
+      "key": "prismwake",
+      "parts": {
+        "head": {
+          "file": "exports/prismwake/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            51,
+            310,
+            298
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/prismwake-source.webp",
+            "box": [
+              185,
+              13,
+              481,
+              283
+            ]
+          },
+          "sourceAspect": 1.094890510948905,
+          "placedAspect": 1.0931174089068827,
+          "sha256": "6b75d3bb6f909f74d031159caa5187608100cefb943eaef976720afd958018e6"
+        },
+        "body": {
+          "file": "exports/prismwake/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            83,
+            325,
+            267
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/prismwake-source.webp",
+            "box": [
+              663,
+              46,
+              1063,
+              290
+            ]
+          },
+          "sourceAspect": 1.6290322580645162,
+          "placedAspect": 1.6304347826086956,
+          "sha256": "75c9474caf2def9d36365098062c007d8acbb0c72b83ae421b8d7bafb7c0ae40"
+        },
+        "pickaxe-held": {
+          "file": "exports/prismwake/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            48,
+            285,
+            252
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/prismwake-source.webp",
+            "box": [
+              157,
+              301,
+              524,
+              577
+            ]
+          },
+          "sourceAspect": 1.325,
+          "placedAspect": 1.3235294117647058,
+          "sha256": "f750fba2fd9a32de633b9dd97c9198821e5c27e951882b288566863093d65bfd"
+        },
+        "glider": {
+          "file": "exports/prismwake/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            135,
+            256,
+            565,
+            443
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/prismwake-source.webp",
+            "box": [
+              622,
+              346,
+              1108,
+              555
+            ]
+          },
+          "sourceAspect": 2.300469483568075,
+          "placedAspect": 2.299465240641711,
+          "sha256": "bc4f3d8b564f3f5b12e4b948c14a4e71b463375575a207628e6dfc8470ee5471"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/prismwake/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            48,
+            285,
+            252
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/prismwake-source.webp",
+            "box": [
+              157,
+              301,
+              524,
+              577
+            ]
+          },
+          "sourceAspect": 1.325,
+          "placedAspect": 1.3235294117647058,
+          "sha256": "f750fba2fd9a32de633b9dd97c9198821e5c27e951882b288566863093d65bfd",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/prismwake-atlas.webp"
+    },
+    {
+      "name": "Cinder Apiary",
+      "key": "cinder-apiary",
+      "parts": {
+        "head": {
+          "file": "exports/cinder-apiary/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            57,
+            310,
+            292
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/cinder-apiary-source.webp",
+            "box": [
+              185,
+              28,
+              468,
+              274
+            ]
+          },
+          "sourceAspect": 1.148,
+          "placedAspect": 1.148936170212766,
+          "sha256": "6c9e707b509a970bcaeb2a0a5353ad58a0066a5354e4dacb4a5d2f89dc84daba"
+        },
+        "body": {
+          "file": "exports/cinder-apiary/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            100,
+            325,
+            249
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/cinder-apiary-source.webp",
+            "box": [
+              645,
+              61,
+              1090,
+              280
+            ]
+          },
+          "sourceAspect": 2.013452914798206,
+          "placedAspect": 2.0134228187919465,
+          "sha256": "f437bda75db956bd6705df048a92f02744a6f7cd520af8c99cb35632b268d506"
+        },
+        "pickaxe-held": {
+          "file": "exports/cinder-apiary/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            56,
+            285,
+            244
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/cinder-apiary-source.webp",
+            "box": [
+              132,
+              294,
+              536,
+              574
+            ]
+          },
+          "sourceAspect": 1.4366197183098592,
+          "placedAspect": 1.4361702127659575,
+          "sha256": "12748cb828edb33e085f11597d5f7e21d8ec0802c6162ec27aa05864b09232a3"
+        },
+        "glider": {
+          "file": "exports/cinder-apiary/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            135,
+            266,
+            565,
+            434
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/cinder-apiary-source.webp",
+            "box": [
+              628,
+              357,
+              1132,
+              551
+            ]
+          },
+          "sourceAspect": 2.5656565656565657,
+          "placedAspect": 2.5595238095238093,
+          "sha256": "ef9060ed6ad374377e33f53f08db25180b34d87c7146142b7184fa4cb72f3787"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/cinder-apiary/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            56,
+            285,
+            244
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/cinder-apiary-source.webp",
+            "box": [
+              132,
+              294,
+              536,
+              574
+            ]
+          },
+          "sourceAspect": 1.4366197183098592,
+          "placedAspect": 1.4361702127659575,
+          "sha256": "12748cb828edb33e085f11597d5f7e21d8ec0802c6162ec27aa05864b09232a3",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/cinder-apiary-atlas.webp"
+    },
+    {
+      "name": "Flux Foundry",
+      "key": "flux-foundry",
+      "parts": {
+        "head": {
+          "file": "exports/flux-foundry/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            69,
+            310,
+            281
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/flux-foundry-source.webp",
+            "box": [
+              94,
+              50,
+              501,
+              369
+            ]
+          },
+          "sourceAspect": 1.2724458204334366,
+          "placedAspect": 1.2735849056603774,
+          "sha256": "81d4dfbb195ab4653f9926689e2db71f0d898d843c46e22ca62a93e19f60e85c"
+        },
+        "body": {
+          "file": "exports/flux-foundry/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            94,
+            325,
+            255
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/flux-foundry-source.webp",
+            "box": [
+              586,
+              75,
+              1144,
+              372
+            ]
+          },
+          "sourceAspect": 1.867109634551495,
+          "placedAspect": 1.8633540372670807,
+          "sha256": "0082dc5258186b327ef2f2e4264313b3e6ba78eed06b49ba8ad2de22e6385307"
+        },
+        "pickaxe-held": {
+          "file": "exports/flux-foundry/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            52,
+            285,
+            248
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/flux-foundry-source.webp",
+            "box": [
+              59,
+              384,
+              576,
+              758
+            ]
+          },
+          "sourceAspect": 1.3783068783068784,
+          "placedAspect": 1.3775510204081634,
+          "sha256": "fbc287f0439fd6eebc20a21a04dfc57f8c6143c220e6531dd5bf8005b2b43fc5"
+        },
+        "glider": {
+          "file": "exports/flux-foundry/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            135,
+            261,
+            565,
+            438
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/flux-foundry-source.webp",
+            "box": [
+              588,
+              470,
+              1164,
+              705
+            ]
+          },
+          "sourceAspect": 2.426778242677824,
+          "placedAspect": 2.4293785310734464,
+          "sha256": "cbb81b88846c17f8f539fa98b50b1f44f05d223f84378423504da1d4a2966a76"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/flux-foundry/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            52,
+            285,
+            248
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/flux-foundry-source.webp",
+            "box": [
+              59,
+              384,
+              576,
+              758
+            ]
+          },
+          "sourceAspect": 1.3783068783068784,
+          "placedAspect": 1.3775510204081634,
+          "sha256": "fbc287f0439fd6eebc20a21a04dfc57f8c6143c220e6531dd5bf8005b2b43fc5",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/flux-foundry-atlas.webp"
+    },
+    {
+      "name": "Lunar Marquetry",
+      "key": "lunar-marquetry",
+      "parts": {
+        "head": {
+          "file": "exports/lunar-marquetry/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            68,
+            310,
+            282
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/lunar-marquetry-source.webp",
+            "box": [
+              165,
+              38,
+              464,
+              274
+            ]
+          },
+          "sourceAspect": 1.2625,
+          "placedAspect": 1.2616822429906542,
+          "sha256": "01b0a540a472ac1c20f457fb0e1b7deb4fccf152b0ea9371fc899cc34dcdcf4c"
+        },
+        "body": {
+          "file": "exports/lunar-marquetry/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            90,
+            325,
+            259
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/lunar-marquetry-source.webp",
+            "box": [
+              678,
+              56,
+              1076,
+              278
+            ]
+          },
+          "sourceAspect": 1.7787610619469028,
+          "placedAspect": 1.7751479289940828,
+          "sha256": "772a4019d0210f78fcc219ebb82eb22bf260b3fbc56f3e60043f1c95092c62bd"
+        },
+        "pickaxe-held": {
+          "file": "exports/lunar-marquetry/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            63,
+            285,
+            237
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/lunar-marquetry-source.webp",
+            "box": [
+              74,
+              299,
+              510,
+              578
+            ]
+          },
+          "sourceAspect": 1.5547703180212014,
+          "placedAspect": 1.5517241379310345,
+          "sha256": "4c2eb48a0f0d95d84999e4b4ea5fed1492fac7654cec82d8b6c134b1003eb7f3"
+        },
+        "glider": {
+          "file": "exports/lunar-marquetry/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            135,
+            271,
+            565,
+            428
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/lunar-marquetry-source.webp",
+            "box": [
+              621,
+              353,
+              1156,
+              546
+            ]
+          },
+          "sourceAspect": 2.736040609137056,
+          "placedAspect": 2.738853503184713,
+          "sha256": "7e69b04c99722b465f6c9023aac1e7a8b894042d2a2a9daee804dbdc6a33fb8a"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/lunar-marquetry/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            63,
+            285,
+            237
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/lunar-marquetry-source.webp",
+            "box": [
+              74,
+              299,
+              510,
+              578
+            ]
+          },
+          "sourceAspect": 1.5547703180212014,
+          "placedAspect": 1.5517241379310345,
+          "sha256": "4c2eb48a0f0d95d84999e4b4ea5fed1492fac7654cec82d8b6c134b1003eb7f3",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/lunar-marquetry-atlas.webp"
+    },
+    {
+      "name": "Hush Velvet",
+      "key": "hush-velvet",
+      "parts": {
+        "head": {
+          "file": "exports/hush-velvet/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            55,
+            310,
+            295
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/hush-velvet-source.webp",
+            "box": [
+              184,
+              25,
+              494,
+              300
+            ]
+          },
+          "sourceAspect": 1.125448028673835,
+          "placedAspect": 1.125,
+          "sha256": "886e3cc2837994cf292b8b0ec7f0310d73556028482d898be2b8ce53642096d7"
+        },
+        "body": {
+          "file": "exports/hush-velvet/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            94,
+            325,
+            255
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/hush-velvet-source.webp",
+            "box": [
+              644,
+              78,
+              1061,
+              300
+            ]
+          },
+          "sourceAspect": 1.8628318584070795,
+          "placedAspect": 1.8633540372670807,
+          "sha256": "305470ecb1b61623054d8065778104d1cfba8481c1e72153ef7fef836f21ccda"
+        },
+        "pickaxe-held": {
+          "file": "exports/hush-velvet/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            61,
+            285,
+            239
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/hush-velvet-source.webp",
+            "box": [
+              162,
+              308,
+              585,
+              585
+            ]
+          },
+          "sourceAspect": 1.519572953736655,
+          "placedAspect": 1.5168539325842696,
+          "sha256": "6261c6979a4973b524950f4d78e7764a6afc6dbaea8f1e7e611f17fffa1af485"
+        },
+        "glider": {
+          "file": "exports/hush-velvet/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            137,
+            250,
+            562,
+            450
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/hush-velvet-source.webp",
+            "box": [
+              635,
+              337,
+              1107,
+              557
+            ]
+          },
+          "sourceAspect": 2.125,
+          "placedAspect": 2.125,
+          "sha256": "cfa916e9166c4abfa862317afe6b961848827c073291dbdf00dc794b0b4be1bc"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/hush-velvet/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            61,
+            285,
+            239
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/hush-velvet-source.webp",
+            "box": [
+              162,
+              308,
+              585,
+              585
+            ]
+          },
+          "sourceAspect": 1.519572953736655,
+          "placedAspect": 1.5168539325842696,
+          "sha256": "6261c6979a4973b524950f4d78e7764a6afc6dbaea8f1e7e611f17fffa1af485",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/hush-velvet-atlas.webp"
+    },
+    {
+      "name": "Pepper Forge",
+      "key": "pepper-forge",
+      "parts": {
+        "head": {
+          "file": "exports/pepper-forge/head.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            40,
+            61,
+            310,
+            288
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/pepper-forge-source.webp",
+            "box": [
+              157,
+              24,
+              483,
+              298
+            ]
+          },
+          "sourceAspect": 1.1870503597122302,
+          "placedAspect": 1.1894273127753303,
+          "sha256": "ae9f20e73a2d2fca73089ae37690ab272d2f02440d980bad9bc4b411e9298058"
+        },
+        "body": {
+          "file": "exports/pepper-forge/body.png",
+          "canvas": [
+            350,
+            350
+          ],
+          "bounds": [
+            25,
+            88,
+            325,
+            261
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/pepper-forge-source.webp",
+            "box": [
+              679,
+              64,
+              1068,
+              287
+            ]
+          },
+          "sourceAspect": 1.7312775330396475,
+          "placedAspect": 1.7341040462427746,
+          "sha256": "d077b9e0eddf6a6cc53205f4ecbf68ee51f6496b17f9aec8abf5482d1176b96f"
+        },
+        "pickaxe-held": {
+          "file": "exports/pepper-forge/pickaxe-held.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            51,
+            285,
+            249
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/pepper-forge-source.webp",
+            "box": [
+              142,
+              295,
+              544,
+              589
+            ]
+          },
+          "sourceAspect": 1.3624161073825503,
+          "placedAspect": 1.3636363636363635,
+          "sha256": "f39d5a04cfc08636326d4423ca490fc5d37ac67652fe2bcf3f92079f72734656"
+        },
+        "glider": {
+          "file": "exports/pepper-forge/glider.png",
+          "canvas": [
+            700,
+            700
+          ],
+          "bounds": [
+            135,
+            261,
+            565,
+            438
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/pepper-forge-source.webp",
+            "box": [
+              622,
+              347,
+              1125,
+              552
+            ]
+          },
+          "sourceAspect": 2.425837320574163,
+          "placedAspect": 2.4293785310734464,
+          "sha256": "dd8f71efdc04c1a503b854994f52b45f52e1c3822131ecb602c10445b701b481"
+        },
+        "pickaxe-inventory": {
+          "file": "exports/pepper-forge/pickaxe-inventory.png",
+          "canvas": [
+            300,
+            300
+          ],
+          "bounds": [
+            15,
+            51,
+            285,
+            249
+          ],
+          "source": {
+            "path": "docs/design/d4/assets/pepper-forge-source.webp",
+            "box": [
+              142,
+              295,
+              544,
+              589
+            ]
+          },
+          "sourceAspect": 1.3624161073825503,
+          "placedAspect": 1.3636363636363635,
+          "sha256": "f39d5a04cfc08636326d4423ca490fc5d37ac67652fe2bcf3f92079f72734656",
+          "aliasOf": "pickaxe-held",
+          "nativeRotationDegrees": -45
+        }
+      },
+      "reviewAtlas": "assets/pepper-forge-atlas.webp"
+    }
+  ],
+  "note": "Inventory aliases reuse held pickaxe bytes/decoded texture; native inventory applies -PI/4 itself. Native anchor calibration remains open."
+}

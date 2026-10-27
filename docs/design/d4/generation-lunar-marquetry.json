@@ -1,0 +1,6 @@
+{
+  "key": "lunar-marquetry",
+  "name": "Lunar Marquetry",
+  "output": "/workspace/scratch/ad1f2e064cec/generated_images/exec-de96bae1-443a-4549-9f4f-3f71be6a7f53.png",
+  "hint": "Generated images are saved to /workspace/scratch/ad1f2e064cec/generated_images as /workspace/scratch/ad1f2e064cec/generated_images/exec-de96bae1-443a-4549-9f4f-3f71be6a7f53.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+}
