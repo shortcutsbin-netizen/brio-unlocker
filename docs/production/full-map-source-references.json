@@ -1,0 +1,36 @@
+{
+  "nativeExecuted": false,
+  "scene": "aäÀ / mapScene",
+  "references": [
+    {
+      "offset": 631626,
+      "kind": "VariableDeclarator",
+      "source": "e\\u0065\";var âÄÈ=new Å.äe;âÄÈ.Ée=\"\\x70\\x69\\x6e\\147\\127\\150\\145\\145\\x6C\\123\\143\\u0065\\x6E\\145\";var eÁ_=[];var ÆÁè=[];var aäÀ=new Å.äe;aäÀ.Ée=\"\\x6D\\x61\\x70\\123\\x63\\145n\\145\";var Åè$=new Å.äe;var EÈ=[ÆËé,ÊÁ,aëÅ,äe,aæ,top,éÅ];var eÆã=[new Å.äe,new Å.äe,new Å.äe,new Å.äe,new Å.äe,new Å.äe,new Å.äe];var Eâ=n"
+    },
+    {
+      "offset": 631639,
+      "kind": "MemberExpression",
+      "source": "âÄÈ=new Å.äe;âÄÈ.Ée=\"\\x70\\x69\\x6e\\147\\127\\150\\145\\145\\x6C\\123\\143\\u0065\\x6E\\145\";var eÁ_=[];var ÆÁè=[];var aäÀ=new Å.äe;aäÀ.Ée=\"\\x6D\\x61\\x70\\123\\x63\\145n\\145\";var Åè$=new Å.äe;var EÈ=[ÆËé,ÊÁ,aëÅ,äe,aæ,top,éÅ];var eÆã=[new Å.äe,new Å.äe,new Å.äe,new Å.äe,new Å.äe,new Å.äe,new Å.äe];var Eâ=new Å.äe;aáâ.â"
+    },
+    {
+      "offset": 637089,
+      "kind": "MemberExpression",
+      "source": "56\\x76\\u0061\\163\");EÄe.width=EÄe.height=0X708;var ÀÆa=EÄe.getContext(\"\\62d\");var áéå=new Å.À(Äê.Êå(EÄe),00,0X0,900,900);aäÀ.add(new Å.ÅÆ(0X0,00,03602,0X43A,\"\\43\\60\\x300\",0.3));aäÀ.add(áéå);var EÈÃ=0x0;var EEÆ=-Ãa;var ÊÀ=new Å.À$;var áÁe=new Å.À(Á[\"e\\155\\x6F\\164\\u0065\\x2d\\x63\\x6c\\157\\163\\x65\"],æÉ,0,0X2e"
+    },
+    {
+      "offset": 637145,
+      "kind": "MemberExpression",
+      "source": "e.getContext(\"\\62d\");var áéå=new Å.À(Äê.Êå(EÄe),00,0X0,900,900);aäÀ.add(new Å.ÅÆ(0X0,00,03602,0X43A,\"\\43\\60\\x300\",0.3));aäÀ.add(áéå);var EÈÃ=0x0;var EEÆ=-Ãa;var ÊÀ=new Å.À$;var áÁe=new Å.À(Á[\"e\\155\\x6F\\164\\u0065\\x2d\\x63\\x6c\\157\\163\\x65\"],æÉ,0,0X2e,46);var Eã=[[new Å.À(Á[\"\\145\\x6D\\157\\x74\\145\\631\"],-062"
+    },
+    {
+      "offset": 644309,
+      "kind": "MemberExpression",
+      "source": "40]](\"\\x63\\x61\\x6e\\166\\x61\\x73\");Aæ$.width=Aæ$.height=03410;var ÁëÊ=Aæ$.getContext(\"\\x32\\x64\");ÁëÊ.translate(900,01604);aäÀ.add(new Å.À(Äê.Êå(Aæ$),00,0,900,0x384));var Äåå=new Å.AË(0x0,0X0,50,\"\\x23\\x46\\106\\x46\",01);Äåå.âá(new Å.AË(0X0,ëÁ,0X78,\"\\x23\\x46\\u0046\\x46\",0.4));Äåå.âá(new Å.AË(0,åÄ,0310,\"\\x23\\1"
+    },
+    {
+      "offset": 713271,
+      "kind": "CallExpression",
+      "source": "r(var Ã=Ea;Ã<è.èÊÅ;Ã++){è[\"\\147\\x72\\x61\\163\\x73\"+Ã].âÃá.A=ÉáÅ;}}if(Eâ.opacity!=Äá){Ë.éa(èEå);}if(!Å.EÆ&&èé){}EãÅ&&(Ë.éa(aäÀ));Ã$.Åéé();if(Å.EÆ&&!aËã){eÀÆ();if(0X1!=Eâ.opacity){if(gameWrapper.enabled&&(((0X3C*ÊÁæ)*0x3e8)<(Å.now-ÆÊá))){ÆÊá=Å.now;var ÄãÆ=èää();((null==ÄãÆ)||!ÄãÆ[\"\\151\\163\\x4F\\x77\\x6E\\145\\"
+    }
+  ]
+}

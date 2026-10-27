@@ -132,3 +132,9 @@
 #brio-design-d4 .bu-session-empty{min-height:112px;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:8px}#brio-design-d4 .bu-session-empty strong{font-size:13px}#brio-design-d4 .bu-session-empty p{font-size:11px;color:var(--bu-muted)}
 #brio-design-d4 .bu-session-kpis span{font-size:11px}#brio-design-d4 .bu-session-panel footer{font-size:10px}
 #brio-design-d4 .bu-stage:has(.bu-session-context){min-height:410px}
+/* Approved production adjustment: one aligned header row, full-width prose below. */
+#brio-design-d4 .bu-preset,#brio-design-d4 .bu-hell{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px 18px}
+#brio-design-d4 .bu-preset>div,#brio-design-d4 .bu-hell>div{display:contents}
+#brio-design-d4 .bu-preset strong,#brio-design-d4 .bu-hell h2{grid-column:1;grid-row:1;justify-self:center;text-align:center;font-size:30px;line-height:1.1;align-self:center}
+#brio-design-d4 .bu-preset>.bu-btn,#brio-design-d4 .bu-hell>.bu-toggle{grid-column:2;grid-row:1;align-self:center}
+#brio-design-d4 .bu-preset-description,#brio-design-d4 .bu-hell-description{grid-column:1/-1;grid-row:2;margin:0!important;width:100%}
