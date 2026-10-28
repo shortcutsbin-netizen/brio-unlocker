@@ -1,3 +1,9 @@
+# V69 implementation status — 2026-10-27
+
+OPS-001 full map, OPS-002 exact preset, OPS-003 session/lifecycle and all approved visual integration are implemented in V69. See docs/production/v69-implementation.md for mechanisms/tests/limits and docs/test-procedures/v69-test-procedure.md for the final maximum-two-match native check. No known planned feature remains unimplemented; native visual acceptance is pending and must not be confused with automated fixture proof. Historical deferred/design-only entries below are superseded.
+
+---
+
 # D4 docket update — 2026-10-27
 
 ## OPS-003 — per-script-run session dashboard and owned lifecycle

@@ -1,4 +1,4 @@
-// Design-stage pure accumulator. No native hooks, storage, timers or retained match objects.
+// Pure bounded production session accumulator. No storage, timers or retained match objects.
 (function(global){'use strict';
 const weaponKeys=['pickaxe','scar','shotgun','bolt','deagle','drum','musket','heavy sniper','riffle','famas','smg','ump','scoped ar','tommy gun','rpg','ak47','combat','aug','silencedpistol','lmg','burst shotgun','grenade launcher','grenade pistol','mgl','vector','revolver','charge riffle','sawedoff','spas','Other'];
 const fields=['eliminations','damage','builds','seconds','hpLoss','shieldLoss','distanceMeters','ownProjectiles','observedPlayers'];

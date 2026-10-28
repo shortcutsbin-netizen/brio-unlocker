@@ -1,3 +1,9 @@
+# V69 integration note — 2026-10-27
+
+V69 changes presentation only. Native full map is standalone mapScene with an OWN éa function traversing ÉE/âè; exact map-parent/array identity gates rendering under No map/Hell without changing inputs/simulation. Native SCAR wrap preview composites two wrap images through red/green sheet350×195cells (6columns) on350×350 base, index obtained from source table. Terminal results remain native; observed counters have explicit coverage, no inferred damage attribution/accuracy/bot identity/contents.
+
+---
+
 # D4 native inventory audit clarification — 2026-10-27
 
 Current D4 inventory contract supersedes earlier -45degree inventory statements below: native INVENTORY reuses the held pickaxe texture with rotation -11*PI/16 (-123.75degrees), from actual AST aliases Ãëä=11,Áéã=16. LOCKER THUMBNAIL uses -45degrees separately. Export inventory aliases remain UNROTATED/byte-identical to held PNG; native code applies the appropriate transform, no double rotation/duplicate GPU texture. See docs/design/d4/cosmetic-native-evidence.json and node tools/analysis/audit-design-d4-inventory.cjs (native parsed, never executed). Other D4 approval/review/implementation constraints below unchanged. Final D4 publication includes this correction; do not reuse older inventory-angle assumptions.

@@ -1,3 +1,13 @@
+# V69 production integration
+
+[Run/copy the V69 standalone script](https://raw.githubusercontent.com/shortcutsbin-netizen/brio-unlocker/main/dist/brio-v69.min.js) · [Readable source](src/brio.js) · [Full two-match test procedure](docs/test-procedures/v69-test-procedure.md) · [Implementation/limits](docs/production/v69-implementation.md) · [49-feature status](docs/status/v69-feature-matrix.md)
+
+The approved visual system is integrated: independent Locker/Extras,16original cosmetic sets,36crosshairs, native-panel match report and per-installation session dashboard. Full-map suppression, exact editable General Advantages, lifecycle cleanup and terminal/diagnostic removal are included. Run once on the game’s home page using the established console/snippet method. Both menu headers must say v69. No terminal or log export is expected. Native appearance/performance refinement remains part of the maximum-two-match acceptance pass; automated fixtures do not prove live game/GPU behavior.
+
+npm run build:production-source regenerates source; npm run build packages standalone/archive; npm test checks source/payload; npm run test:browser and npm run test:assets cover rendered UI/art. Older sections below describe historical releases and design sampling, superseded by V69.
+
+---
+
 # D4 native inventory audit clarification — 2026-10-27
 
 Current D4 inventory contract supersedes earlier -45degree inventory statements below: native INVENTORY reuses the held pickaxe texture with rotation -11*PI/16 (-123.75degrees), from actual AST aliases Ãëä=11,Áéã=16. LOCKER THUMBNAIL uses -45degrees separately. Export inventory aliases remain UNROTATED/byte-identical to held PNG; native code applies the appropriate transform, no double rotation/duplicate GPU texture. See docs/design/d4/cosmetic-native-evidence.json and node tools/analysis/audit-design-d4-inventory.cjs (native parsed, never executed). Other D4 approval/review/implementation constraints below unchanged. Final D4 publication includes this correction; do not reuse older inventory-angle assumptions.

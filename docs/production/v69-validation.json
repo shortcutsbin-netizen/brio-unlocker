@@ -1,0 +1,36 @@
+{
+  "version": 69,
+  "artifacts": {
+    "src/brio.js": {
+      "bytes": 643644,
+      "sha256": "6f7ab783fb3f61ef40b70240c3fa7b7dea0c68c110eb7e2cc681dc1ed1a46e8e"
+    },
+    "dist/brio-v69.min.js": {
+      "bytes": 434469,
+      "sha256": "844c70cb6fa88735bd90d29b6dc9ff092c087cc009c66e7f5b567cadb3859985"
+    },
+    "versions/v69/brio.js": {
+      "bytes": 643644,
+      "sha256": "6f7ab783fb3f61ef40b70240c3fa7b7dea0c68c110eb7e2cc681dc1ed1a46e8e"
+    },
+    "versions/v69/brio-v69.min.js": {
+      "bytes": 434469,
+      "sha256": "844c70cb6fa88735bd90d29b6dc9ff092c087cc009c66e7f5b567cadb3859985"
+    }
+  },
+  "checks": {
+    "production_npm_test": "pass (release/contracts/foundations/model/flashlight/native budget/runtime source+payload)",
+    "production_browser": "pass; captured native CSS/assets,320\u20131440px,36glyphs,16sets,presetgeometry,debrief,nativewrap,12reinjections,zero missing asset requests",
+    "original_assets": "pass80RGBAexports/64textures/16aliases; aspect/center/identity",
+    "native_AST_audits": "pass projected target/countdown ownership and native pickaxe inventory -11PI/16; native source never executed",
+    "historical_suffixes": "preserved; verified against previous commit",
+    "release_identity": "source/package/lock/dist/archive69; minified payload no comments",
+    "native_traversal_compatibility": "pass: indexed accessor read once; borrowed zero-length forEach reads no index; callback/native exceptions delegate normally; map data descriptors only"
+  },
+  "limits": [
+    "No live game executed by assistant.",
+    "Native visual/timing/grip/layout and actual game/GPU memory acceptance require user maximum2matches.",
+    "Synthetic browser heap increase is recorded, not a zero-leak claim.",
+    "Unencountered events remain unobserved; no repeated matches required."
+  ]
+}

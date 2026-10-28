@@ -1,3 +1,9 @@
+# V69 integration note — 2026-10-27
+
+V69 player-facing test workflow is docs/test-procedures/v69-test-procedure.md. The small in-match Extras button replaces terminal access; no COPY RESULTS/log export. Native Play/keys remain native. Max2matches normal/Hell, no replacement matches for missed contexts. Reinject at home resets sessiontotals but preserves choices/uploads. No new assistant live-game actions were performed.
+
+---
+
 # D4 native inventory audit clarification — 2026-10-27
 
 Current D4 inventory contract supersedes earlier -45degree inventory statements below: native INVENTORY reuses the held pickaxe texture with rotation -11*PI/16 (-123.75degrees), from actual AST aliases Ãëä=11,Áéã=16. LOCKER THUMBNAIL uses -45degrees separately. Export inventory aliases remain UNROTATED/byte-identical to held PNG; native code applies the appropriate transform, no double rotation/duplicate GPU texture. See docs/design/d4/cosmetic-native-evidence.json and node tools/analysis/audit-design-d4-inventory.cjs (native parsed, never executed). Other D4 approval/review/implementation constraints below unchanged. Final D4 publication includes this correction; do not reuse older inventory-angle assumptions.
