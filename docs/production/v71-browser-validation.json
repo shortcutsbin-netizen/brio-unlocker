@@ -1,0 +1,25 @@
+{
+  "productionUI": true,
+  "nativeSourceExecuted": false,
+  "widths": [
+    1440,
+    1024,
+    736,
+    390,
+    320
+  ],
+  "shapes": 39,
+  "sets": 16,
+  "cycles": 12,
+  "heapBefore": 4572388,
+  "heapAfter": 7924844,
+  "heapDelta": 3352456,
+  "unexpectedRequests": [],
+  "limits": "Local captured-CSS fixture, explicit GC, synthetic terminal. Not actual game/GPU retention or native sprite alignment proof.",
+  "bookmarkletNavigation": true,
+  "nativeAdContextsRemoved": true,
+  "weaponCardsAndRarity": true,
+  "changelogScroll": true,
+  "nativeChildRefreshCycles": 12,
+  "nativeHostReplacement": true
+}

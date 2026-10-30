@@ -1,0 +1,590 @@
+{
+  "date": "2026-10-30",
+  "nativeEngineExecuted": false,
+  "rootRetainerBeforeFix": "Window -> installation closure -> v66View.root.r -> player root -> parent scene; cleared after the exit fade.",
+  "baseline": {
+    "file": "versions/v70/brio-v70.min.js",
+    "sha256": "112383d9a6581d05fe6fef1ea284871a4f2c80e2f722fc38f44c15890773f7a3",
+    "cycles": 3,
+    "configuration": "18-member General Advantages; Kiln Current head/body/pickaxe/glider; 3 remote players; 160 world objects",
+    "roofTextures": 20,
+    "roofRgbaBytes": 87550000,
+    "initial": {
+      "heapBytes": 2998976,
+      "rendererRssBytes": null
+    },
+    "samples": [
+      {
+        "heapBytes": 5497932,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": true,
+          "arrays": 4,
+          "remote": 3,
+          "resources": 4,
+          "roots": 96,
+          "queue": 866,
+          "roofs": 20
+        }
+      },
+      {
+        "heapBytes": 5744504,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": true,
+          "arrays": 3,
+          "remote": 3,
+          "resources": 4,
+          "roots": 96,
+          "queue": 866,
+          "roofs": 20
+        }
+      },
+      {
+        "heapBytes": 5939512,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": true,
+          "arrays": 3,
+          "remote": 3,
+          "resources": 4,
+          "roots": 96,
+          "queue": 866,
+          "roofs": 20
+        }
+      }
+    ],
+    "final": {
+      "heapBytes": 5914340,
+      "rendererRssBytes": null
+    },
+    "liveRootsAfterGC": 1,
+    "blankEncodes": [
+      {
+        "width": 300,
+        "height": 300
+      },
+      {
+        "width": 350,
+        "height": 350
+      },
+      {
+        "width": 300,
+        "height": 300
+      },
+      {
+        "width": 700,
+        "height": 700
+      },
+      {
+        "width": 450,
+        "height": 1100
+      },
+      {
+        "width": 1300,
+        "height": 1000
+      },
+      {
+        "width": 450,
+        "height": 450
+      },
+      {
+        "width": 1300,
+        "height": 1000
+      },
+      {
+        "width": 1000,
+        "height": 700
+      },
+      {
+        "width": 850,
+        "height": 850
+      },
+      {
+        "width": 1300,
+        "height": 1000
+      },
+      {
+        "width": 650,
+        "height": 650
+      },
+      {
+        "width": 1150,
+        "height": 500
+      },
+      {
+        "width": 1900,
+        "height": 1600
+      },
+      {
+        "width": 1300,
+        "height": 1000
+      },
+      {
+        "width": 1300,
+        "height": 1000
+      },
+      {
+        "width": 450,
+        "height": 1100
+      },
+      {
+        "width": 700,
+        "height": 600
+      },
+      {
+        "width": 1300,
+        "height": 1000
+      },
+      {
+        "width": 1300,
+        "height": 1000
+      },
+      {
+        "width": 1300,
+        "height": 1000
+      },
+      {
+        "width": 1000,
+        "height": 1500
+      },
+      {
+        "width": 1150,
+        "height": 500
+      },
+      {
+        "width": 1800,
+        "height": 1300
+      }
+    ],
+    "limits": "Synthetic native-shaped Chromium fixture with explicit GC. Renderer RSS is null when unavailable in the executor process namespace. Not live-game or GPU memory proof."
+  },
+  "current": {
+    "file": "dist/brio-v71.min.js",
+    "sha256": "67ffcc6b918cb2e24616cc40b6f50980fe2f709d424ba8bf75bfd955629e1723",
+    "cycles": 30,
+    "configuration": "18-member General Advantages; Kiln Current head/body/pickaxe/glider; 3 remote players; 160 world objects",
+    "roofTextures": 20,
+    "roofRgbaBytes": 87550000,
+    "initial": {
+      "heapBytes": 3008380,
+      "rendererRssBytes": null
+    },
+    "samples": [
+      {
+        "heapBytes": 5033188,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5107040,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5177724,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5212068,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5283872,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5288304,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5331404,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5348096,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5425472,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5414820,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5425972,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5420356,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5431160,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5425452,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5440420,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5430380,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5441772,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5426172,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5437332,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5432480,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5441552,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5441592,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5452144,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5441456,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5452176,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5437600,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5448320,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5448104,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5461820,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      },
+      {
+        "heapBytes": 5451220,
+        "rendererRssBytes": null,
+        "retention": {
+          "renderer": false,
+          "arrays": 0,
+          "remote": 0,
+          "resources": 0,
+          "roots": 0,
+          "queue": 0,
+          "roofs": 0
+        }
+      }
+    ],
+    "final": {
+      "heapBytes": 5451220,
+      "rendererRssBytes": null
+    },
+    "liveRootsAfterGC": 0,
+    "blankEncodes": [
+      {
+        "width": 2,
+        "height": 2
+      },
+      {
+        "width": 2,
+        "height": 2
+      },
+      {
+        "width": 2,
+        "height": 2
+      },
+      {
+        "width": 2,
+        "height": 2
+      }
+    ],
+    "limits": "Synthetic native-shaped Chromium fixture with explicit GC. Renderer RSS is null when unavailable in the executor process namespace. Not live-game or GPU memory proof."
+  }
+}

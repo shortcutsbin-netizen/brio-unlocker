@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-30",
+  "version": "1.71",
+  "internalRelease": 71,
+  "artifacts": {
+    "src/brio.js": {
+      "bytes": 666164,
+      "sha256": "a3baf07c6a3d15c2c145221e601d10bc36ee3d84f7cbd0399c78c0934d21368b"
+    },
+    "dist/brio-v71.min.js": {
+      "bytes": 450148,
+      "sha256": "67ffcc6b918cb2e24616cc40b6f50980fe2f709d424ba8bf75bfd955629e1723"
+    },
+    "dist/brio-v71.bookmarklet.txt": {
+      "bytes": 585734,
+      "sha256": "2059e6e24deb71d2436529fb3083a6f936feac1b294f40c4a62c54eac1fd2f4c"
+    },
+    "versions/v71/brio.js": {
+      "bytes": 666164,
+      "sha256": "a3baf07c6a3d15c2c145221e601d10bc36ee3d84f7cbd0399c78c0934d21368b"
+    },
+    "versions/v71/brio-v71.min.js": {
+      "bytes": 450148,
+      "sha256": "67ffcc6b918cb2e24616cc40b6f50980fe2f709d424ba8bf75bfd955629e1723"
+    },
+    "versions/v71/brio-v71.bookmarklet.txt": {
+      "bytes": 585734,
+      "sha256": "2059e6e24deb71d2436529fb3083a6f936feac1b294f40c4a62c54eac1fd2f4c"
+    }
+  },
+  "checks": {
+    "production_npm_test": "PASS: release/bookmarklet/archive; all49 contracts; foundations; fixed session model100000matches; flashlight; native gate budget/compatibility; source+payload runtime (8 combinations,20 reinjections each,blank-name local-ID discovery and completed-match cleanup)",
+    "production_browser": "PASS: minified payload; five widths;39glyphs;16sets;weapon-card grid and rarity;preview geometry;ads/changelog/session clearance;12 reinjections including actual javascript: URL navigation;zero unexpected requests/page errors;12 native child refreshes reuse exact panels; full native host replacement releases old observers/nodes",
+    "production_memory": "PASS: final payload SHA matches;30 General Advantages+original-art cycles,3remote players,160objects/20roofs each;zero retained completed scene roots;zero full-size blank PNG encodes;owned caches/arrays/resources cleared",
+    "assets": "PASS:80RGBA exports,64textures,16inventory aliases; historical assets unchanged",
+    "immutable_build": "PASS: source,standalone payload and encoded bookmarklet match version71 archives",
+    "historical_preservation": "PASS: captures/art/logs/prior archives unchanged; seven historical document suffixes preserved",
+    "git_diff_check": "PASS"
+  },
+  "memorySummary": {
+    "configuration": "18-member General Advantages; Kiln Current head/body/pickaxe/glider; 3 remote players; 160 world objects",
+    "cycles": 30,
+    "retainedCompletedScenes": 0,
+    "extraRoofRgbaBytesPerCopyRemoved": 87550000,
+    "lateHeapRangeBytes": [
+      5283872,
+      5461820
+    ],
+    "lateHeapSpreadBytes": 177948,
+    "rendererRssAvailable": false
+  },
+  "limits": [
+    "No native game engine executed or assistant live-game play.",
+    "Synthetic retained JS/scene evidence is not proof that the complete live-game/browser/GPU footprint returns from800MB to300MB.",
+    "Exact independent-preview animation/pixels and live memory require the focused maximum-two-match user check.",
+    "No in-match Extras control or test-name mutation; no victors implementation.",
+    "Public distribution repo linked only; user will manually copy two files; visual README remains after development acceptance; pinned external art host remains a dependency."
+  ]
+}

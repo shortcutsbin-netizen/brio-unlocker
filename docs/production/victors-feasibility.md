@@ -1,3 +1,9 @@
+# Deferred by user — 2026-10-30
+
+The Hell victors feature is deferred. The historical analysis below is reference only; no implementation or test work is scheduled.
+
+---
+
 # Hell victors — feasibility only (no implementation)
 
 User goal: a win-in-Hell end-screen button, reviewed submissions, and a victors list in Challenges. Required standard: nobody can submit successfully without truly winning with Hell active. No submission button, endpoint, credential, background request, list fetching or publication is added in V1.70.

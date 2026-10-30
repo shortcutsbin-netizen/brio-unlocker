@@ -1,3 +1,11 @@
+# V1.71 user acceptance pass — 2026-10-30
+
+Use FULL docs/test-procedures/v71-test-procedure.md and print it entirely in chat. Max TWO ordinary matches: (1) General Advantages with Low-health warning removed plus Nearest chest, expecting individual report items/no preset label; (2) intact General Advantages plus Nearest chest, expecting preset+extra. No Hell resweep: user explicitly accepts it. No new assets/logs/forced wins/weapon hunt. No in-match Extras button or script-added name prefix. Configure only from native home Extras.
+
+Fresh home memory baseline, then same-tab readings after each match's home return/settling; optional JS memory column distinguishes it from total Memory footprint. No forced GC or heap upload. Check one original preview, rarity glows, per-weapon cards and new bottom-right changelog without matches. Social GitHub now brio_unlocked. An encoded javascript: bookmarklet (ONE colon) is included; edit a bookmark's URL and click once, or established minified console paste. Re-run once after final readings: one installation, session resets, saved preferences/imports remain. Report missed conditions unobserved, no third match.
+
+---
+
 # V1.70 test focus — 2026-10-29
 
 Use docs/test-procedures/v70-test-procedure.md, maximum2playedmatches. Most changes checked at home: all4originalcardtypes, preview/head/trail/items, looteligibility,39crosshairs, ads/v1.70/socialbadge/sessionclearance. Normal match checks art/preset summaries/session; Hell checks remote trail leak/restoration and HELL summary. No map/enddesign accepted, exceptions only. No logexport or win required. Extras button remains TEST ONLY; future final build removes it. Victors remains brainstorming, no submission surface.

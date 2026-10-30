@@ -1,0 +1,22 @@
+[
+  {
+    "version": "1.71",
+    "items": [
+      "First public release of BRIO UNLOCKED.",
+      "Unlocker with the live game's cosmetic catalogue, running loadout preview, search, random and invisible choices, and four emote slots.",
+      "Sixteen original head, body, pickaxe and glider sets; native wraps and trails; image imports for heads, bodies and pickaxes. Rarity-colored cosmetic cards.",
+      "Directional player, chest, airdrop, selected-loot and safe-zone indicators with distances and configurable colors; optional player-name labels.",
+      "Other-player inventories, materials, ammo, names, health and shield displays with adjustable inventory size and optional high-contrast player outlines.",
+      "Configurable low-health, ammo and material warnings; transparent roofs and foliage; build and object health outlines.",
+      "Projected next-storm edge highlight, permanent meteor marker, ammo highlighting, longer bullet trails and optional invisible gliders or trails.",
+      "Thirty-nine crosshair designs with color and size controls, plus PNG/WebP crosshair imports.",
+      "Editable General Advantages preset: selects its complete recommended configuration and clears other modifiers.",
+      "Visibility challenges for players, loot, builds, storm, chests, ammo/grenade crates, weapons and projectiles. Tiered loot/build masking.",
+      "HUD challenges for maps/storm countdown, inventory/ammo/materials, health/shield, crosshair, interaction/pickup labels, hit markers, damage direction/numbers and reload/charge progress. HELL combines the gameplay challenges and disables modifiers; status announcements and kill feed remain visible.",
+      "Monochrome and flashlight challenges; flashlight follows the player or cursor and fades smoothly after a match.",
+      "Match report with native results, observed statistics, charts and the modifiers/challenges used; per-run session totals, averages, wins and win rate.",
+      "Home-page ad suppression, BRIO branding and socials, session dashboard and this scrollable changelog.",
+      "Saved cosmetic and Extras preferences, owned-resource cleanup between matches, and safe replacement of a previous installation when run again."
+    ]
+  }
+]

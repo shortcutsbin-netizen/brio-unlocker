@@ -1,3 +1,11 @@
+# V1.71 native presentation and acceptance — 2026-10-30
+
+User accepts V1.70 Hell (including remote trails), in-match cosmetics and session panel. Victors is deferred. V1.71 preview keeps native pickaxe 110×110 and resting 24,10 anchor; removes artificial 1.12 root enlargement, draws native back-to-front feet/hand-group/body/head order, and uses plain glider 250×250 in a larger preview canvas. Previous 24,0 constructor-only notes below do not describe the settled running pose. Original in-match head padding/other art are unchanged. Native rarity is numeric catalogue metadata; display originals as Mythic/red and uploads Common/gray.
+
+General Advantages is now 18 toggles, excluding allGlidersInvisible; the independent modifier remains. No Edited preset label: additions retain full preset label, removals/default changes expand individual used modifiers. Terminal release after 650ms restores owned native hooks/resources and clears projection references; report/session retain bounded summary data only. Do not call used-effects lists full-Hell proof.
+
+---
+
 # V1.70 native presentation findings — 2026-10-29
 
 Native preview hand center22,+/-25, held pickaxe24,0/PI/2+.01; SCAR24,-13/PI/2+.2. Cosmetic emission timer åëÅ is separate from server state; scoped zero getter prevents new local/remote trails under Hell/player invisibility, restores finite progress afterward. Actual catalogue preview trail image is cosmetics/trails/{id}.png, not a fictitious cosmetics/trails/{id}-0.png. GeneralAdvantages/HELL end lists mean used during match, not continuous challenge enforcement. User confirmed No map and original end report correct. Victors proof limits in production/victors-feasibility.md.

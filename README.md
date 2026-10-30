@@ -1,3 +1,15 @@
+# V1.71 feedback and memory candidate
+
+[Console script](https://raw.githubusercontent.com/shortcutsbin-netizen/brio-unlocker/main/dist/brio-v71.min.js) · [Bookmarklet URL](https://raw.githubusercontent.com/shortcutsbin-netizen/brio-unlocker/main/dist/brio-v71.bookmarklet.txt) · [Formatted/commented source](src/brio.js) · [Full two-match procedure](docs/test-procedures/v71-test-procedure.md) · [Implementation](docs/production/v71-implementation.md) · [Memory findings](docs/production/v71-memory-analysis.md)
+
+Weapon rarity cards, 18-member General Advantages (glider hiding independent), precise preset report labels, source-backed preview layering/scale, rarity glows and a scrollable home changelog are integrated. Socials points to the future distribution repository brio_unlocked. In-match Extras/test-name mutation are removed. Hell, in-match cosmetics and session layout are user-accepted; victors is deferred. This is a candidate for final acceptance, not an assertion that real-game memory is already proven solved.
+
+Memory work replaces full-resolution blank roof copies with one tiny texture and releases completed scene/resource references after the exit fade. Synthetic repeated-match evidence and its limits are in the linked findings; the focused user pass checks at most two ordinary matches. No diagnostic terminal/log export or repeated Hell suite. The bookmarklet file already includes the correct javascript: prefix and encodes the exact standalone payload. Scripts retain pinned external original-art URLs; the user will manually move the two distribution files and create the extensive visual README after development acceptance.
+
+Build: npm run build:production-source && npm run build. Checks: npm test, npm run test:browser, npm run test:assets, npm run test:memory. Current source templates are under src/production; V71 archives are immutable after publication. Historical sections below remain unchanged.
+
+---
+
 # V1.70 feedback release
 
 [Standalone test script](https://raw.githubusercontent.com/shortcutsbin-netizen/brio-unlocker/main/dist/brio-v70.min.js) · [Full two-match procedure](docs/test-procedures/v70-test-procedure.md) · [Changes and limits](docs/production/v70-implementation.md) · [Victors brainstorming only](docs/production/victors-feasibility.md)
