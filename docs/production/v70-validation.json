@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-30",
+  "version": "1.70",
+  "internalRelease": 70,
+  "artifacts": {
+    "src/brio.js": {
+      "bytes": 657294,
+      "sha256": "e483422cd7975517de6f0a26d52527c43061ed648e47c0c90e97d0f4c8878ce7"
+    },
+    "dist/brio-v70.min.js": {
+      "bytes": 443768,
+      "sha256": "112383d9a6581d05fe6fef1ea284871a4f2c80e2f722fc38f44c15890773f7a3"
+    },
+    "versions/v70/brio.js": {
+      "bytes": 657294,
+      "sha256": "e483422cd7975517de6f0a26d52527c43061ed648e47c0c90e97d0f4c8878ce7"
+    },
+    "versions/v70/brio-v70.min.js": {
+      "bytes": 443768,
+      "sha256": "112383d9a6581d05fe6fef1ea284871a4f2c80e2f722fc38f44c15890773f7a3"
+    }
+  },
+  "checks": {
+    "production_npm_test": "PASS: release/contracts/foundations/session model/flashlight/native budget/runtime source+payload; eight native-own/inherited and Hell-at-start combinations, 49 controls, 20 reinjections each",
+    "production_browser": "PASS: minified payload; 1440/1024/736/390/320 widths; 39 glyphs; 16 sets; 12 reinjections; zero unexpected requests; cards/previews/ads/session spacing/graphics/adaptive party clearance/hidden host zero hitbox",
+    "original_assets": "PASS: 80 RGBA exports / 64 textures / 16 inventory aliases; aspect, center and identity",
+    "deterministic_build": "PASS: regenerated source plus minification match immutable v70 archives",
+    "historical_preservation": "PASS: six documentation suffixes preserved; historical archives/captures/assets/logs unchanged",
+    "git_diff_check": "PASS"
+  },
+  "browser": {
+    "productionUI": true,
+    "nativeSourceExecuted": false,
+    "widths": [
+      1440,
+      1024,
+      736,
+      390,
+      320
+    ],
+    "shapes": 39,
+    "sets": 16,
+    "cycles": 12,
+    "heapBefore": 4871196,
+    "heapAfter": 7553768,
+    "heapDelta": 2682572,
+    "unexpectedRequests": [],
+    "limits": "Local captured-CSS fixture, explicit GC, synthetic terminal. Not actual game/GPU retention or native sprite alignment proof."
+  },
+  "limits": [
+    "No live game executed by assistant. Native alignment/trails/ads/layout need the focused maximum-two-match user pass.",
+    "Synthetic heap figures are not actual game/GPU memory or a zero-leak claim.",
+    "Used-during-match panels are local summaries, not continuous-Hell attestation.",
+    "Victors feature is brainstorm only; no submit button, API, authentication or list-fetch implementation.",
+    "Current in-match Extras is test-only; distribution flag must be false before final release."
+  ]
+}

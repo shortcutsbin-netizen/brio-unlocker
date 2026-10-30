@@ -1,3 +1,9 @@
+# V1.70 test focus — 2026-10-29
+
+Use docs/test-procedures/v70-test-procedure.md, maximum2playedmatches. Most changes checked at home: all4originalcardtypes, preview/head/trail/items, looteligibility,39crosshairs, ads/v1.70/socialbadge/sessionclearance. Normal match checks art/preset summaries/session; Hell checks remote trail leak/restoration and HELL summary. No map/enddesign accepted, exceptions only. No logexport or win required. Extras button remains TEST ONLY; future final build removes it. Victors remains brainstorming, no submission surface.
+
+---
+
 # V69 integration note — 2026-10-27
 
 V69 player-facing test workflow is docs/test-procedures/v69-test-procedure.md. The small in-match Extras button replaces terminal access; no COPY RESULTS/log export. Native Play/keys remain native. Max2matches normal/Hell, no replacement matches for missed contexts. Reinject at home resets sessiontotals but preserves choices/uploads. No new assistant live-game actions were performed.

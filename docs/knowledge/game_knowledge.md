@@ -1,3 +1,9 @@
+# V1.70 native presentation findings — 2026-10-29
+
+Native preview hand center22,+/-25, held pickaxe24,0/PI/2+.01; SCAR24,-13/PI/2+.2. Cosmetic emission timer åëÅ is separate from server state; scoped zero getter prevents new local/remote trails under Hell/player invisibility, restores finite progress afterward. Actual catalogue preview trail image is cosmetics/trails/{id}.png, not a fictitious cosmetics/trails/{id}-0.png. GeneralAdvantages/HELL end lists mean used during match, not continuous challenge enforcement. User confirmed No map and original end report correct. Victors proof limits in production/victors-feasibility.md.
+
+---
+
 # V69 integration note — 2026-10-27
 
 V69 changes presentation only. Native full map is standalone mapScene with an OWN éa function traversing ÉE/âè; exact map-parent/array identity gates rendering under No map/Hell without changing inputs/simulation. Native SCAR wrap preview composites two wrap images through red/green sheet350×195cells (6columns) on350×350 base, index obtained from source table. Terminal results remain native; observed counters have explicit coverage, no inferred damage attribution/accuracy/bot identity/contents.

@@ -1,3 +1,19 @@
+# V1.70 candidate complete — 2026-10-30
+
+Source, standalone payload and matching v70 archives are built. Final `npm test`, `npm run test:assets`, captured-CSS browser test against the minified payload, immutable archive build and `git diff --check` pass. See `docs/production/v70-validation.json`, `docs/production/v70-browser-validation.json`, implementation notes and the full two-match procedure. Browser fixture: five widths, 39 glyphs, 16 sets, 12 reinjections, no unexpected requests; safe-height hide collapses the native host hitbox too. This is automated fixture evidence, not native gameplay/pixel/GPU-memory acceptance. No assistant live game or victors implementation. Proceed with the focused user pass after publication; no additional sampling or log retrieval needed.
+
+Final publication must use a scoped main commit and exact remote ref/tree verification. Prior archives, captures, art, logs and historical documentation suffixes are unchanged. In-match Extras remains test-only; final distribution must set testingControls false. Future public-repository GitHub destination awaits the user's URL.
+
+---
+
+# V1.70 active work/release handoff — 2026-10-29
+
+Latest feedback supersedes V69 acceptance status: No map and existing end report are USER ACCEPTED. V1.70 addresses atlas cap/compression/missing bottom-row cards, source-backed positive hand/item anchors, .70 original-head scale in preview/native owned texture, valid trail preview images, rarity filters,39inline crosshairs/noLegacy, restored all-ad suppression, session CSS pruning/spacing/visuals/adaptive upward height with JoinParty clearance, v1.70 display/socials badge, Hell cosmetic-emission suppression/restoration and bounded used-effects end panels with preset collapse. Read docs/production/v70-implementation.md and FULL docs/test-procedures/v70-test-procedure.md. Source build now tools/production/integrate-v70.cjs; release.json authoritative70/display1.70/testingControls:true; package1.70.0. Old V69/prior archives immutable.
+
+Victors list is BRAINSTORM ONLY docs/production/victors-feasibility.md. Public client cannot prove unforgeable full-match Hell or event truth; even genuine signed server win alone does not attest client rendering. Need game-operator/trusted challenge cooperation for stronger assurance; reviewed video is explicitly weaker. No submit/list fetch/auth/backend code allowed now. Current used-effects report is not eligibility proof. Distribution repo link pending user URL; do not change socials GitHub yet. Final distribution MUST have testingControls:false/no in-match button attached; keep current testing button for focused2matchcheck. No assistant real game/cloud-browser play, no subagents, no extra matches/probes/logexport. Always scoped push main + verify and print full procedure in chat. Preserve untracked upload temp files, native captures/assets/HAR/logs and historical docsuffixes. Current implementation/check status in production checkpoint.
+
+---
+
 # V69 release candidate COMPLETE — supersedes WIP below
 
 V69 source and standalone payload are built, archived and regression-tested. npm test is the production source+payload suite; browser UI/native-CSS/local-asset review and asset/source audits pass. Latest package outputs: src/brio.js, dist/brio-v69.min.js, versions/v69/{brio.js,brio-v69.min.js}. See v69-implementation.md, v69-validation.json, browser-validation.json and FULL ../test-procedures/v69-test-procedure.md. All requested production surfaces and OPS-001/002/003 are implemented; user native visual acceptance remains maximum2matches, no logexport. Remaining native refinement limits explicitly documented, no new sampling round. Do not revert to old foundation-only checkpoint or tell user no candidate exists. End-of-turn publication uses scoped commit + exact remote tree/ref verification; record actual commit in chat. Older V68 archives/native captures/logs untouched, historical docs preserved as suffixes.

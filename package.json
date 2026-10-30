@@ -1,15 +1,15 @@
 {
   "name": "brio-unlocker",
-  "version": "69.0.0",
+  "version": "1.70.0",
   "private": true,
   "scripts": {
     "build": "node tools/build.cjs",
-    "test": "node tests/release.cjs && node tests/production-contracts.cjs && node tests/production-foundations.cjs && node tests/design-d4-session.cjs && node tests/visuals.cjs && node tests/performance.cjs && node tests/production-runtime.cjs src/brio.js && node tests/production-runtime.cjs dist/brio-v69.min.js",
+    "test": "node tests/release.cjs && node tests/production-contracts.cjs && node tests/production-foundations.cjs && node tests/design-d4-session.cjs && node tests/visuals.cjs && node tests/performance.cjs && node tests/production-runtime.cjs src/brio.js && node tests/production-runtime.cjs dist/brio-v70.min.js",
     "build:assets": "node tools/supplemental/build-assets.cjs",
     "test:assets": "python tests/design-d4-assets.py",
     "test:browser": "node tests/production-browser.cjs",
     "test:legacy": "node tests/regression.cjs versions/v68/brio.js && node tests/challenges.cjs versions/v68/brio.js",
-    "build:production-source": "node tools/production/package-ui.cjs && node tools/production/integrate-v69.cjs"
+    "build:production-source": "node tools/production/package-ui.cjs && node tools/production/integrate-v70.cjs"
   },
   "devDependencies": {
     "acorn": "8.19.0",

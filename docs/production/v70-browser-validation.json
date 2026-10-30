@@ -1,0 +1,19 @@
+{
+  "productionUI": true,
+  "nativeSourceExecuted": false,
+  "widths": [
+    1440,
+    1024,
+    736,
+    390,
+    320
+  ],
+  "shapes": 39,
+  "sets": 16,
+  "cycles": 12,
+  "heapBefore": 4871196,
+  "heapAfter": 7553768,
+  "heapDelta": 2682572,
+  "unexpectedRequests": [],
+  "limits": "Local captured-CSS fixture, explicit GC, synthetic terminal. Not actual game/GPU retention or native sprite alignment proof."
+}

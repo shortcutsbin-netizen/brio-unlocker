@@ -1,3 +1,13 @@
+# V1.70 feedback release
+
+[Standalone test script](https://raw.githubusercontent.com/shortcutsbin-netizen/brio-unlocker/main/dist/brio-v70.min.js) · [Full two-match procedure](docs/test-procedures/v70-test-procedure.md) · [Changes and limits](docs/production/v70-implementation.md) · [Victors brainstorming only](docs/production/victors-feasibility.md)
+
+Fixes atlas card compression/missing pickaxe/glider art, preview anchors/head scale/trails, loot rarity eligibility, inline Cross/Dot/Ring, ad suppression, session graphics/spacing/party-safe height, v1.70 labels/social badge, Hell trail emission and used-effect end panels. No map and the existing end report are user-accepted. In-match Extras is TEST ONLY; final distribution will omit it. No victors submission/list code is implemented. GitHub destination changes after the user supplies the distribution repository URL.
+
+Build source: npm run build:production-source; payload/archive: npm run build; checks: npm test, npm run test:browser and npm run test:assets. Display version 1.70 / package 1.70.0 / internal archive 70 derive from release.json. Historical V69 and earlier sections below remain unchanged.
+
+---
+
 # V69 production integration
 
 [Run/copy the V69 standalone script](https://raw.githubusercontent.com/shortcutsbin-netizen/brio-unlocker/main/dist/brio-v69.min.js) · [Readable source](src/brio.js) · [Full two-match test procedure](docs/test-procedures/v69-test-procedure.md) · [Implementation/limits](docs/production/v69-implementation.md) · [49-feature status](docs/status/v69-feature-matrix.md)
